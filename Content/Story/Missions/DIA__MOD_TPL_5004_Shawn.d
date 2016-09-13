@@ -44,9 +44,9 @@ FUNC INT DIA_Shawn_WORK_Condition()
 FUNC VOID DIA_Shawn_WORK_Info()
 {
     AI_Output (other, self ,"DIA_Shawn_WORK_15_01"); //Na czym polega twoja praca?
-    AI_Output (self, other ,"DIA_Shawn_WORK_03_02"); //S³u¿ê Y'Berionowi rad¹, opiekujê siê œwi¹tyni¹, dbam o drobne sprawy.
-    AI_Output (other, self ,"DIA_Shawn_WORK_15_03"); //Pewnie du¿o z tym zamieszania.
-    AI_Output (self, other ,"DIA_Shawn_WORK_03_04"); //Nie jest tak Ÿle. Palê ziele, aby uspokoiæ mojego ducha.
+    AI_Output (self, other ,"DIA_Shawn_WORK_03_02"); //SÂ³uÂ¿Ãª Y'Berionowi radÂ¹, opiekujÃª siÃª Å“wiÂ¹tyniÂ¹, dbam o drobne sprawy.
+    AI_Output (other, self ,"DIA_Shawn_WORK_15_03"); //Pewnie duÂ¿o z tym zamieszania.
+    AI_Output (self, other ,"DIA_Shawn_WORK_03_04"); //Nie jest tak Å¸le. PalÃª ziele, aby uspokoiÃ¦ mojego ducha.
 };
 
 
@@ -71,9 +71,9 @@ FUNC INT DIA_Shawn_HELLO_Condition()
 
 FUNC VOID DIA_Shawn_HELLO_Info()
 {
-    AI_Output (self, other ,"DIA_Shawn_HELLO_03_01"); //Witaj, przybyszu! Nazywam siê Shawn, pokorny s³uga Œni¹cego.
-    AI_Output (self, other ,"DIA_Shawn_HELLO_03_02"); //Jestem pomocnikiem Y'Beriona. Wydajê tak¿e polecenia.
-    AI_Output (self, other ,"DIA_Shawn_HELLO_03_03"); //Je¿eli szukasz pracy, zg³oœ siê do mnie.
+    AI_Output (self, other ,"DIA_Shawn_HELLO_03_01"); //Witaj, przybyszu! Nazywam siÃª Gor Na Dhun, pokorny sÂ³uga Å’niÂ¹cego.
+    AI_Output (self, other ,"DIA_Shawn_HELLO_03_02"); //Jestem pomocnikiem Y'Beriona. WydajÃª takÂ¿e polecenia.
+    AI_Output (self, other ,"DIA_Shawn_HELLO_03_03"); //JeÂ¿eli szukasz pracy, zgÂ³oÅ“ siÃª do mnie.
 };
 
 ///////////////////////////
@@ -102,7 +102,7 @@ FUNC INT DIA_Shawn_SZEF_Condition()
 
 FUNC VOID DIA_Shawn_SZEF_Info()
 {
-    AI_Output (self, other ,"DIA_Shawn_SZEF_03_01"); //Mistrzu, mamy kilka spraw, którymi natychmiast musisz siê zaj¹æ.
+    AI_Output (self, other ,"DIA_Shawn_SZEF_03_01"); //Mistrzu, mamy kilka spraw, ktÃ³rymi natychmiast musisz siÃª zajÂ¹Ã¦.
 };
 
 //========================================
@@ -130,19 +130,19 @@ FUNC INT DIA_Shawn_QUEST1_Condition()
 FUNC VOID DIA_Shawn_QUEST1_Info()
 {
     AI_Output (other, self ,"DIA_Shawn_QUEST1_15_01"); //Od czego zaczynamy?
-    AI_Output (self, other ,"DIA_Shawn_QUEST1_03_02"); //Podczas rytua³u przywo³ania Œni¹cego na palcu jak i w œwi¹tyni by³o niema³e zamieszanie.
-	AI_Output (other, self ,"DIA_Shawn_QUEST1_15_03"); //Co w zwi¹zku z tym?
-    AI_Output (self, other ,"DIA_Shawn_QUEST1_03_04"); //Wszed³ tu jeden z Nowicjuszy i zabra³ Kostur Œwiat³a nale¿¹cy do Y'Beriona. 
-    AI_Output (self, other ,"DIA_Shawn_QUEST1_03_05"); //To bardzo wa¿ne, aby go odzyskaæ. Jest nam potrzebny do ceremonii pogrzebu Mistrza.
-    AI_Output (self, other ,"DIA_Shawn_QUEST1_03_06"); //Kostur musi siê znaleŸæ w jego grobie. 
-    AI_Output (other, self ,"DIA_Shawn_QUEST1_15_07"); //Gdzie mam zacz¹æ poszukiwania?
-    AI_Output (self, other ,"DIA_Shawn_QUEST1_03_08"); //Popytaj ludzi bêd¹cych na placu. Mówi siê, ¿e z³odziej bardzo szybko wybieg³ i wpad³ po drodze na naszych braci.
-    AI_Output (self, other ,"DIA_Shawn_QUEST1_03_09"); //Mo¿e ktoœ coœ wie...
+    AI_Output (self, other ,"DIA_Shawn_QUEST1_03_02"); //Podczas rytuaÂ³u przywoÂ³ania Å’niÂ¹cego na palcu jak i w Å“wiÂ¹tyni byÂ³o niemaÂ³e zamieszanie.
+	AI_Output (other, self ,"DIA_Shawn_QUEST1_15_03"); //Co w zwiÂ¹zku z tym?
+    AI_Output (self, other ,"DIA_Shawn_QUEST1_03_04"); //WszedÂ³ tu jeden z Nowicjuszy i zabraÂ³ Kostur Å’wiatÂ³a naleÂ¿Â¹cy do Y'Beriona. 
+    AI_Output (self, other ,"DIA_Shawn_QUEST1_03_05"); //To bardzo waÂ¿ne, aby go odzyskaÃ¦. Jest nam potrzebny do ceremonii pogrzebu Mistrza.
+    AI_Output (self, other ,"DIA_Shawn_QUEST1_03_06"); //Kostur musi siÃª znaleÅ¸Ã¦ w jego grobie. 
+    AI_Output (other, self ,"DIA_Shawn_QUEST1_15_07"); //Gdzie mam zaczÂ¹Ã¦ poszukiwania?
+    AI_Output (self, other ,"DIA_Shawn_QUEST1_03_08"); //Popytaj ludzi bÃªdÂ¹cych na placu. MÃ³wi siÃª, Â¿e zÂ³odziej bardzo szybko wybiegÂ³ i wpadÂ³ po drodze na naszych braci.
+    AI_Output (self, other ,"DIA_Shawn_QUEST1_03_09"); //MoÂ¿e ktoÅ“ coÅ“ wie...
     MIS_UciekinierPC = LOG_RUNNING;
 
     Log_CreateTopic          (CH1_UciekinierPC, LOG_MISSION);
     Log_SetTopicStatus       (CH1_UciekinierPC, LOG_RUNNING);
-    B_LogEntry               (CH1_UciekinierPC,"Shawn kaza³ mi znaleŸæ z³odzieja, który w³ama³ siê do œwi¹tyni podczas rytua³u przywo³ania i ukrad³ kostur Y'Beriona. Rabuœ wypad³ ze œwi¹tyni jak oszala³y. Z pewnoœci¹ potr¹ci³ kogoœ na placu. Tam powinienem szukaæ wskazówek.");
+    B_LogEntry               (CH1_UciekinierPC,"Gor Na Dhun kazaÂ³ mi znaleÅ¸Ã¦ zÂ³odzieja, ktÃ³ry wÂ³amaÂ³ siÃª do Å“wiÂ¹tyni podczas rytuaÂ³u przywoÂ³ania i ukradÂ³ kostur Y'Beriona. RabuÅ“ wypadÂ³ ze Å“wiÂ¹tyni jak oszalaÂ³y. Z pewnoÅ“ciÂ¹ potrÂ¹ciÂ³ kogoÅ“ na placu. Tam powinienem szukaÃ¦ wskazÃ³wek.");
 };
 //========================================
 //-----------------> QUEST1_WIN
@@ -155,7 +155,7 @@ INSTANCE DIA_QUEST1_QUEST1_WIN (C_INFO)
    condition    = DIA_QUEST1_QUEST1_WIN_Condition;
    information  = DIA_QUEST1_QUEST1_WIN_Info;
    permanent	= FALSE;
-   description	= "Odzyska³em skradziony kostur.";
+   description	= "OdzyskaÂ³em skradziony kostur.";
 };
 
 FUNC INT DIA_QUEST1_QUEST1_WIN_Condition()
@@ -169,9 +169,9 @@ FUNC INT DIA_QUEST1_QUEST1_WIN_Condition()
 
 FUNC VOID DIA_QUEST1_QUEST1_WIN_Info()
 {
-    AI_Output (other, self ,"DIA_QUEST1_QUEST1_WIN_15_01"); //Odzyska³em skradziony kostur.
-    AI_Output (self, other ,"DIA_QUEST1_QUEST1_WIN_03_02"); //Proszê, daj mi go. Zajmê siê jego przechowaniem.
-    B_LogEntry           (CH1_UciekinierPC,"Odda³em skradziony kostur Shawnowi. On dopilnuje, by broñ zosta³a zabezpieczona razem z cia³em Y'Beriona.");
+    AI_Output (other, self ,"DIA_QUEST1_QUEST1_WIN_15_01"); //OdzyskaÂ³em skradziony kostur.
+    AI_Output (self, other ,"DIA_QUEST1_QUEST1_WIN_03_02"); //ProszÃª, daj mi go. ZajmÃª siÃª jego przechowaniem.
+    B_LogEntry           (CH1_UciekinierPC,"OddaÂ³em skradziony kostur Gor Na Dhunowi. On dopilnuje, by broÃ± zostaÂ³a zabezpieczona razem z ciaÂ³em Y'Beriona.");
     Log_SetTopicStatus   (CH1_UciekinierPC, LOG_SUCCESS);
     MIS_UciekinierPC = LOG_SUCCESS;
 	
@@ -206,21 +206,21 @@ FUNC INT DIA_Shawn_QUEST2_Condition()
 FUNC VOID DIA_Shawn_QUEST2_Info()
 {
     AI_Output (other, self ,"DIA_Shawn_QUEST2_15_01"); //Co jeszcze jest do zrobienia?
-    AI_Output (self, other ,"DIA_Shawn_QUEST2_03_02"); //Ca³kiem sporo...
-    AI_Output (self, other ,"DIA_Shawn_QUEST2_03_03"); //Dowiedzia³em siê, ¿e w Obozie odbywa siê utajniony obrót amuletami i talizmanami. Ktoœ sprzedaje takie artefakty po zawy¿onej cenie.
-    AI_Output (self, other ,"DIA_Shawn_QUEST2_03_04"); //Nie podoba mi siê to. Tylko Guru maj¹ wy³¹cznoœæ na sprzeda¿ magicznych przedmiotów. Powinieneœ siê tym jak najszybciej zaj¹æ.
-    AI_Output (other, self ,"DIA_Shawn_QUEST2_15_05"); //Dlaczego to takie wa¿ne?
-    AI_Output (self, other ,"DIA_Shawn_QUEST2_03_06"); //Sk¹d to pytanie? Magiczne artefakty maj¹ potê¿na moc. W niepowo³anych rêkach mog¹ wyrz¹dziæ wiele szkód. 
-	AI_Output (self, other ,"DIA_Shawn_QUEST2_03_07"); //Tylko Guru maj¹ wystarczaj¹co du¿o doœwiadczenia, by móc oceniæ, czy Nowicjusz ma czyste intencje. 
-	AI_Output (self, other ,"DIA_Shawn_QUEST2_03_08"); //Miej te¿ na uwadze, ¿e od kiedy dowiedzieliœmy siê, ¿e Œni¹cy jest demonem, ludzie w Obozie zaczynaj¹ wariowaæ. 
-    AI_Output (self, other ,"DIA_Shawn_QUEST2_03_09"); //Po prostu znajdŸ tego cz³owieka i naka¿ mu oddaæ wszystkie b³yskotki Baal Cadarowi.
-    AI_Output (other, self ,"DIA_Shawn_QUEST2_15_10"); //Mo¿esz mnie jakoœ naprowadziæ?
-    AI_Output (self, other ,"DIA_Shawn_QUEST2_03_11"); //Twoim punktem zaczepienia powinna byæ rozmowa z Talasem. To on poinformowa³ mnie o tym procederze.
+    AI_Output (self, other ,"DIA_Shawn_QUEST2_03_02"); //CaÂ³kiem sporo...
+    AI_Output (self, other ,"DIA_Shawn_QUEST2_03_03"); //DowiedziaÂ³em siÃª, Â¿e w Obozie odbywa siÃª utajniony obrÃ³t amuletami i talizmanami. KtoÅ“ sprzedaje takie artefakty po zawyÂ¿onej cenie.
+    AI_Output (self, other ,"DIA_Shawn_QUEST2_03_04"); //Nie podoba mi siÃª to. Tylko Guru majÂ¹ wyÂ³Â¹cznoÅ“Ã¦ na sprzedaÂ¿ magicznych przedmiotÃ³w. PowinieneÅ“ siÃª tym jak najszybciej zajÂ¹Ã¦.
+    AI_Output (other, self ,"DIA_Shawn_QUEST2_15_05"); //Dlaczego to takie waÂ¿ne?
+    AI_Output (self, other ,"DIA_Shawn_QUEST2_03_06"); //SkÂ¹d to pytanie? Magiczne artefakty majÂ¹ potÃªÂ¿na moc. W niepowoÂ³anych rÃªkach mogÂ¹ wyrzÂ¹dziÃ¦ wiele szkÃ³d. 
+	AI_Output (self, other ,"DIA_Shawn_QUEST2_03_07"); //Tylko Guru majÂ¹ wystarczajÂ¹co duÂ¿o doÅ“wiadczenia, by mÃ³c oceniÃ¦, czy Nowicjusz ma czyste intencje. 
+	AI_Output (self, other ,"DIA_Shawn_QUEST2_03_08"); //Miej teÂ¿ na uwadze, Â¿e od kiedy dowiedzieliÅ“my siÃª, Â¿e Å’niÂ¹cy jest demonem, ludzie w Obozie zaczynajÂ¹ wariowaÃ¦. 
+    AI_Output (self, other ,"DIA_Shawn_QUEST2_03_09"); //Po prostu znajdÅ¸ tego czÂ³owieka i nakaÂ¿ mu oddaÃ¦ wszystkie bÂ³yskotki Baal Cadarowi.
+    AI_Output (other, self ,"DIA_Shawn_QUEST2_15_10"); //MoÂ¿esz mnie jakoÅ“ naprowadziÃ¦?
+    AI_Output (self, other ,"DIA_Shawn_QUEST2_03_11"); //Twoim punktem zaczepienia powinna byÃ¦ rozmowa z Talasem. To on poinformowaÂ³ mnie o tym procederze.
     MIS_HandlarzSteh = LOG_RUNNING;
 
     Log_CreateTopic          (CH1_HandlarzSteh, LOG_MISSION);
     Log_SetTopicStatus       (CH1_HandlarzSteh, LOG_RUNNING);
-    B_LogEntry               (CH1_HandlarzSteh,"Shawn kaza³ mi odkryæ kto w Obozie prowadzi badania nad bagnem. Wskazówk¹ jest to, ¿e osoba handluje poszukiwanymi przez Y'Beriona przedmiotami.");
+    B_LogEntry               (CH1_HandlarzSteh,"Gor Na Dhun kazaÂ³ mi odkryÃ¦ kto w Obozie prowadzi badania nad bagnem. WskazÃ³wkÂ¹ jest to, Â¿e osoba handluje poszukiwanymi przez Y'Beriona przedmiotami.");
 };
 
 //========================================
@@ -234,7 +234,7 @@ INSTANCE DIA_Shawn_QUEST2_WIN (C_INFO)
    condition    = DIA_Shawn_QUEST2_WIN_Condition;
    information  = DIA_Shawn_QUEST2_WIN_Info;
    permanent	= FALSE;
-   description	= "Odnalaz³em tego handlarza.";
+   description	= "OdnalazÂ³em tego handlarza.";
 };
 
 FUNC INT DIA_Shawn_QUEST2_WIN_Condition()
@@ -249,13 +249,13 @@ FUNC INT DIA_Shawn_QUEST2_WIN_Condition()
 
 FUNC VOID DIA_Shawn_QUEST2_WIN_Info()
 {
-    AI_Output (other, self ,"DIA_Shawn_QUEST2_WIN_15_01"); //Odnalaz³em tego handlarza. Nie bêdzie ju¿ sprzedawa³ artefaktów.
-	AI_Output (other, self ,"DIA_Shawn_QUEST2_WIN_15_02"); //Zgodzi³ siê nawet oddaæ je do œwi¹tyni. Nazywa siê Steh.
-    AI_Output (self, other ,"DIA_Shawn_QUEST2_WIN_03_03"); //Doskonale. Teraz amulety i pierœcienie nie wpadn¹ w niepowo³ane rêce. 
-	AI_Output (self, other ,"DIA_Shawn_QUEST2_WIN_03_04"); //Mimo to odczuliœmy ju¿ skutki niepos³uszeñstwa Steha.
-	AI_Output (other, self ,"DIA_Shawn_QUEST2_WIN_15_05"); //Co siê sta³o?
-    AI_Output (self, other ,"DIA_Shawn_QUEST2_WIN_03_06"); //Porozmawiamy o tym za chwilê. Mistrzu, weŸ tê rudê ze skrzyni Y'Beriona.
-    B_LogEntry               (CH1_HandlarzSteh,"Powiedzia³em Shawnowi o mojej rozmowie ze Stehem. By³ zadowolony, ale jednoczeœnie zaniepokojony. Widocznie sta³o siê coœ z³ego.");
+    AI_Output (other, self ,"DIA_Shawn_QUEST2_WIN_15_01"); //OdnalazÂ³em tego handlarza. Nie bÃªdzie juÂ¿ sprzedawaÂ³ artefaktÃ³w.
+	AI_Output (other, self ,"DIA_Shawn_QUEST2_WIN_15_02"); //ZgodziÂ³ siÃª nawet oddaÃ¦ je do Å“wiÂ¹tyni. Nazywa siÃª Steh.
+    AI_Output (self, other ,"DIA_Shawn_QUEST2_WIN_03_03"); //Doskonale. Teraz amulety i pierÅ“cienie nie wpadnÂ¹ w niepowoÂ³ane rÃªce. 
+	AI_Output (self, other ,"DIA_Shawn_QUEST2_WIN_03_04"); //Mimo to odczuliÅ“my juÂ¿ skutki nieposÂ³uszeÃ±stwa Steha.
+	AI_Output (other, self ,"DIA_Shawn_QUEST2_WIN_15_05"); //Co siÃª staÂ³o?
+    AI_Output (self, other ,"DIA_Shawn_QUEST2_WIN_03_06"); //Porozmawiamy o tym za chwilÃª. Mistrzu, weÅ¸ tÃª rudÃª ze skrzyni Y'Beriona.
+    B_LogEntry               (CH1_HandlarzSteh,"PowiedziaÂ³em Gor Na Dhunowi o mojej rozmowie ze Stehem. ByÂ³ zadowolony, ale jednoczeÅ“nie zaniepokojony. Widocznie staÂ³o siÃª coÅ“ zÂ³ego.");
     Log_SetTopicStatus       (CH1_HandlarzSteh, LOG_SUCCESS);
     MIS_HandlarzSteh = LOG_SUCCESS;
 
@@ -290,15 +290,15 @@ FUNC INT DIA_Shawn_QUEST3_Condition()
 
 FUNC VOID DIA_Shawn_QUEST3_Info()
 {
-    AI_Output (self, other ,"DIA_Shawn_QUEST3_03_01"); //Wróæmy do tego o czym wspomina³em...
-    AI_Output (self, other ,"DIA_Shawn_QUEST3_03_02"); //Podczas twojej pracy na rzecz Bractwa sta³o siê coœ okropnego.
-	AI_Output (self, other ,"DIA_Shawn_QUEST3_03_03"); //W Obozie dokonano trzech zabójstw. Jedno po drugim. Ka¿de kilka godzin po poprzednim.
-    AI_Output (other, self ,"DIA_Shawn_QUEST3_15_04"); //Masz jakichœ podejrzanych?
-    AI_Output (self, other ,"DIA_Shawn_QUEST3_03_05"); //Nie. Musisz popytaæ wœród ludzi, którzy krêcili siê ko³o miejsc zbrodni. Obejrzyj te¿ trupy.
-    AI_Output (self, other ,"DIA_Shawn_QUEST3_03_06"); //Jeden le¿y za wielkim drzewem, na którym stoi chata Kaloma.
+    AI_Output (self, other ,"DIA_Shawn_QUEST3_03_01"); //WrÃ³Ã¦my do tego o czym wspominaÂ³em...
+    AI_Output (self, other ,"DIA_Shawn_QUEST3_03_02"); //Podczas twojej pracy na rzecz Bractwa staÂ³o siÃª coÅ“ okropnego.
+	AI_Output (self, other ,"DIA_Shawn_QUEST3_03_03"); //W Obozie dokonano trzech zabÃ³jstw. Jedno po drugim. KaÂ¿de kilka godzin po poprzednim.
+    AI_Output (other, self ,"DIA_Shawn_QUEST3_15_04"); //Masz jakichÅ“ podejrzanych?
+    AI_Output (self, other ,"DIA_Shawn_QUEST3_03_05"); //Nie. Musisz popytaÃ¦ wÅ“rÃ³d ludzi, ktÃ³rzy krÃªcili siÃª koÂ³o miejsc zbrodni. Obejrzyj teÂ¿ trupy.
+    AI_Output (self, other ,"DIA_Shawn_QUEST3_03_06"); //Jeden leÂ¿y za wielkim drzewem, na ktÃ³rym stoi chata Kaloma.
     AI_Output (self, other ,"DIA_Shawn_QUEST3_15_07"); //Drugi przy palisadzie - niedaleko Steha.
-    AI_Output (self, other ,"DIA_Shawn_QUEST3_03_08"); //A trzeci na bagnie w pobli¿u chaty drwala.
-    AI_Output (other, self ,"DIA_Shawn_QUEST3_15_09"); //W porz¹dku. Biorê siê do roboty.
+    AI_Output (self, other ,"DIA_Shawn_QUEST3_03_08"); //A trzeci na bagnie w pobliÂ¿u chaty drwala.
+    AI_Output (other, self ,"DIA_Shawn_QUEST3_15_09"); //W porzÂ¹dku. BiorÃª siÃª do roboty.
     MIS_SeryjneZabojstwa = LOG_RUNNING;
 	
 	Wld_InsertNpc				(NOV_5011_Martwy_Nowicjusz,"PSI_START");
@@ -310,7 +310,7 @@ FUNC VOID DIA_Shawn_QUEST3_Info()
     Log_CreateTopic            (CH1_SeryjneZabojstwa, LOG_MISSION);
     Log_SetTopicStatus       (CH1_SeryjneZabojstwa, LOG_RUNNING);
 	
-    B_LogEntry                     (CH1_SeryjneZabojstwa,"Ktoœ zabi³ trzech Nowicjuszy z Obozu Bractwa. Mam ustaliæ kim jest zabójca. Cia³a le¿¹ na miejscach zbrodni: za drzewem na którym stoi laboratorium, przy palisadzie (okolice Steha) i na bagnach w pobli¿u chaty drwala.");
+    B_LogEntry                     (CH1_SeryjneZabojstwa,"KtoÅ“ zabiÂ³ trzech Nowicjuszy z Obozu Bractwa. Mam ustaliÃ¦ kim jest zabÃ³jca. CiaÂ³a leÂ¿Â¹ na miejscach zbrodni: za drzewem na ktÃ³rym stoi laboratorium, przy palisadzie (okolice Steha) i na bagnach w pobliÂ¿u chaty drwala.");
     AI_StopProcessInfos	(self);
 };
 
@@ -325,7 +325,7 @@ INSTANCE DIA_Shawn_KILLTOOL (C_INFO)
    condition    = DIA_Shawn_KILLTOOL_Condition;
    information  = DIA_Shawn_KILLTOOL_Info;
    permanent	= FALSE;
-   description	= "Znalaz³em narzêdzia zbrodni.";
+   description	= "ZnalazÂ³em narzÃªdzia zbrodni.";
 };
 
 FUNC INT DIA_Shawn_KILLTOOL_Condition()
@@ -339,12 +339,12 @@ FUNC INT DIA_Shawn_KILLTOOL_Condition()
 
 FUNC VOID DIA_Shawn_KILLTOOL_Info()
 {
-	AI_Output (other, self ,"DIA_Shawn_KILLTOOL_15_01"); //Znalaz³em narzêdzia zbrodni.
-    AI_Output (self, other ,"DIA_Shawn_KILLTOOL_03_02"); //Poka¿ mi je.
-	AI_Output (other, self ,"DIA_Shawn_KILLTOOL_15_03"); //To jakieœ ostrza i siekiery.
+	AI_Output (other, self ,"DIA_Shawn_KILLTOOL_15_01"); //ZnalazÂ³em narzÃªdzia zbrodni.
+    AI_Output (self, other ,"DIA_Shawn_KILLTOOL_03_02"); //PokaÂ¿ mi je.
+	AI_Output (other, self ,"DIA_Shawn_KILLTOOL_15_03"); //To jakieÅ“ ostrza i siekiery.
     AI_Output (self, other ,"DIA_Shawn_KILLTOOL_03_04"); //Siekiery nosi wielu Nowicjuszy. Wykorzystywali je do budowy chat.
-	AI_Output (self, other ,"DIA_Shawn_KILLTOOL_03_05"); //Ale te ostrza s¹ jakieœ dziwne. Wygl¹daj¹ jak z tartaku. Rozmawia³eœ z Hansonem? Mo¿e to on jest zabójc¹?
-    B_LogEntry                     (CH1_SeryjneZabojstwa,"Pokaza³em narzêdzia zbrodni Shawnowi. Powiedzia³ mi, ¿ebym sprawdzi³ Hansona, poniewa¿ tylko on pracuje w tartaku.");
+	AI_Output (self, other ,"DIA_Shawn_KILLTOOL_03_05"); //Ale te ostrza sÂ¹ jakieÅ“ dziwne. WyglÂ¹dajÂ¹ jak z tartaku. RozmawiaÂ³eÅ“ z Hansonem? MoÂ¿e to on jest zabÃ³jcÂ¹?
+    B_LogEntry                     (CH1_SeryjneZabojstwa,"PokazaÂ³em narzÃªdzia zbrodni Gor Na Dhunowi. PowiedziaÂ³ mi, Â¿ebym sprawdziÂ³ Hansona, poniewaÂ¿ tylko on pracuje w tartaku.");
 };
 
 
@@ -359,7 +359,7 @@ INSTANCE DIA_Shawn_QUEST3_OK (C_INFO)
    condition    = DIA_Shawn_QUEST3_OK_Condition;
    information  = DIA_Shawn_QUEST3_OK_Info;
    permanent	= FALSE;
-   description	= "Rozmawia³em z zabójc¹.";
+   description	= "RozmawiaÂ³em z zabÃ³jcÂ¹.";
 };
 
 FUNC INT DIA_Shawn_QUEST3_OK_Condition()
@@ -374,17 +374,17 @@ FUNC INT DIA_Shawn_QUEST3_OK_Condition()
 
 FUNC VOID DIA_Shawn_QUEST3_OK_Info()
 {
-    AI_Output (other, self ,"DIA_Shawn_QUEST3_OK_15_01"); //Rozmawia³em z zabójc¹.
-    AI_Output (self, other ,"DIA_Shawn_QUEST3_OK_03_02"); //Czy stanowi on jeszcze zagro¿enie?
-	AI_Output (other, self ,"DIA_Shawn_QUEST3_OK_15_03"); //Nie, ju¿ nie.
+    AI_Output (other, self ,"DIA_Shawn_QUEST3_OK_15_01"); //RozmawiaÂ³em z zabÃ³jcÂ¹.
+    AI_Output (self, other ,"DIA_Shawn_QUEST3_OK_03_02"); //Czy stanowi on jeszcze zagroÂ¿enie?
+	AI_Output (other, self ,"DIA_Shawn_QUEST3_OK_15_03"); //Nie, juÂ¿ nie.
     AI_Output (self, other ,"DIA_Shawn_QUEST3_OK_03_04"); //Kim on jest?
-    AI_Output (other, self ,"DIA_Shawn_QUEST3_OK_15_05"); //To Hanson - miejscowy drwal. Powodem morderstw by³a zemsta za d³ugi.
-	AI_Output (self, other ,"DIA_Shawn_QUEST3_OK_03_06"); //Ju¿ siê ba³em, ¿e to przez wp³yw Œni¹cego ludzie zaczynaj¹ zachowywaæ siê dziwnie.
-    AI_Output (other, self ,"DIA_Shawn_QUEST3_OK_15_07"); //Bo faktycznie zaczynaj¹. Trac¹ wiarê i to sk³ania ich do ³amania zasad. Steh, Hanson... Ta lista wkrótce mo¿e siê wyd³u¿yæ.
-	AI_Output (other, self ,"DIA_Shawn_QUEST3_OK_15_08"); //Bractwo zaczyna siê rozpadaæ.
-	AI_Output (self, other ,"DIA_Shawn_QUEST3_OK_03_09"); //Spróbujê za³agodziæ sytuacjê. Porozmawiam z pozosta³ymi Guru. Powiem im, ¿eby dostosowali S³owo do nowych warunków.
-	AI_Output (self, other ,"DIA_Shawn_QUEST3_OK_03_10"); //Mistrzu, twoja praca na razie jest zakoñczona. Muszê siê teraz zaj¹æ t¹ spraw¹. 
-    B_LogEntry               (CH1_SeryjneZabojstwa,"Opowiedzia³em Shawnowi o Hansonie. Okazuje siê, ¿e sytuacja w Obozie robi siê coraz mniej ciekawa. Aby zapobiec kolejnym incydentom Shawn porozmawia z pozosta³ymi Guru.");
+    AI_Output (other, self ,"DIA_Shawn_QUEST3_OK_15_05"); //To Hanson - miejscowy drwal. Powodem morderstw byÂ³a zemsta za dÂ³ugi.
+	AI_Output (self, other ,"DIA_Shawn_QUEST3_OK_03_06"); //JuÂ¿ siÃª baÂ³em, Â¿e to przez wpÂ³yw Å’niÂ¹cego ludzie zaczynajÂ¹ zachowywaÃ¦ siÃª dziwnie.
+    AI_Output (other, self ,"DIA_Shawn_QUEST3_OK_15_07"); //Bo faktycznie zaczynajÂ¹. TracÂ¹ wiarÃª i to skÂ³ania ich do Â³amania zasad. Steh, Hanson... Ta lista wkrÃ³tce moÂ¿e siÃª wydÂ³uÂ¿yÃ¦.
+	AI_Output (other, self ,"DIA_Shawn_QUEST3_OK_15_08"); //Bractwo zaczyna siÃª rozpadaÃ¦.
+	AI_Output (self, other ,"DIA_Shawn_QUEST3_OK_03_09"); //SprÃ³bujÃª zaÂ³agodziÃ¦ sytuacjÃª. Porozmawiam z pozostaÂ³ymi Guru. Powiem im, Â¿eby dostosowali SÂ³owo do nowych warunkÃ³w.
+	AI_Output (self, other ,"DIA_Shawn_QUEST3_OK_03_10"); //Mistrzu, twoja praca na razie jest zakoÃ±czona. MuszÃª siÃª teraz zajÂ¹Ã¦ tÂ¹ sprawÂ¹. 
+    B_LogEntry               (CH1_SeryjneZabojstwa,"OpowiedziaÂ³em Gor Na Dhunowi o Hansonie. Okazuje siÃª, Â¿e sytuacja w Obozie robi siÃª coraz mniej ciekawa. Aby zapobiec kolejnym incydentom Gor Na Dhun porozmawia z pozostaÂ³ymi Guru.");
     Log_SetTopicStatus       (CH1_SeryjneZabojstwa, LOG_SUCCESS);
     MIS_SeryjneZabojstwa = LOG_SUCCESS;
 
@@ -392,7 +392,7 @@ FUNC VOID DIA_Shawn_QUEST3_OK_Info()
 };
 
 ////////////////////////////////////////////
-// Czarny Mag - w¹tek nieaktywny
+// Czarny Mag - wÂ¹tek nieaktywny
 ////////////////////////////////////////////
 
 //========================================
@@ -421,16 +421,16 @@ FUNC INT DIA_Shawn_POSZUKIWACZE_Condition()
 FUNC VOID DIA_Shawn_POSZUKIWACZE_Info()
 {
     AI_Output (other, self ,"DIA_Shawn_POSZUKIWACZE_15_01"); //Co z Hansonem?
-    AI_Output (self, other ,"DIA_Shawn_POSZUKIWACZE_03_02"); //Musimy go przes³uchaæ. 
-    AI_Output (self, other ,"DIA_Shawn_POSZUKIWACZE_03_03"); //Nurtuje mnie sk¹d wzi¹³ siê g³os, który kaza³ mu zabiæ Nowicjuszy. 
-    AI_Output (other, self ,"DIA_Shawn_POSZUKIWACZE_15_04"); //Mo¿e Hanson próbuje udawaæ psychopatê, aby nie zostaæ ukaranym?
-    AI_Output (self, other ,"DIA_Shawn_POSZUKIWACZE_03_05"); //To równie¿ ma sens... Ale co je¿eli mówi prawdê? Ktoœ wp³ywowy i niebezpieczny krêci siê w Kolonii.
-    AI_Output (self, other ,"DIA_Shawn_POSZUKIWACZE_03_06"); //Muszê napisaæ list do Cronosa w tej sprawie. 
+    AI_Output (self, other ,"DIA_Shawn_POSZUKIWACZE_03_02"); //Musimy go przesÂ³uchaÃ¦. 
+    AI_Output (self, other ,"DIA_Shawn_POSZUKIWACZE_03_03"); //Nurtuje mnie skÂ¹d wziÂ¹Â³ siÃª gÂ³os, ktÃ³ry kazaÂ³ mu zabiÃ¦ Nowicjuszy. 
+    AI_Output (other, self ,"DIA_Shawn_POSZUKIWACZE_15_04"); //MoÂ¿e Hanson prÃ³buje udawaÃ¦ psychopatÃª, aby nie zostaÃ¦ ukaranym?
+    AI_Output (self, other ,"DIA_Shawn_POSZUKIWACZE_03_05"); //To rÃ³wnieÂ¿ ma sens... Ale co jeÂ¿eli mÃ³wi prawdÃª? KtoÅ“ wpÂ³ywowy i niebezpieczny krÃªci siÃª w Kolonii.
+    AI_Output (self, other ,"DIA_Shawn_POSZUKIWACZE_03_06"); //MuszÃª napisaÃ¦ list do Cronosa w tej sprawie. 
 	MIS_MroczneBractwo = LOG_RUNNING;
 
     Log_CreateTopic            (CH1_MroczneBractwo, LOG_MISSION);
     Log_SetTopicStatus       (CH1_MroczneBractwo, LOG_RUNNING);
-    B_LogEntry                     (CH1_MroczneBractwo,"Shawn obawia siê tego, który rzekomo zleci³ Hansonowi zabójstwo. To coœ mo¿e byæ dla nas zagro¿eniem.");
+    B_LogEntry                     (CH1_MroczneBractwo,"Gor Na Dhun obawia siÃª tego, ktÃ³ry rzekomo zleciÂ³ Hansonowi zabÃ³jstwo. To coÅ“ moÂ¿e byÃ¦ dla nas zagroÂ¿eniem.");
 
    // B_GiveXP (150);
 
@@ -447,7 +447,7 @@ INSTANCE DIA_Shawn_QUEST4 (C_INFO)
    condition    = DIA_Shawn_QUEST4_Condition;
    information  = DIA_Shawn_QUEST4_Info;
    permanent	= FALSE;
-   description	= "Móg³bym zanieœæ twój list.";
+   description	= "MÃ³gÂ³bym zanieÅ“Ã¦ twÃ³j list.";
 };
 
 FUNC INT DIA_Shawn_QUEST4_Condition()
@@ -461,8 +461,8 @@ FUNC INT DIA_Shawn_QUEST4_Condition()
 
 FUNC VOID DIA_Shawn_QUEST4_Info()
 {
-    AI_Output (other, self ,"DIA_Shawn_QUEST4_15_01"); //Móg³bym zanieœæ twój list. W koñcu nie takie rzeczy siê robi³o.
-    AI_Output (self, other ,"DIA_Shawn_QUEST4_03_02"); //Bardzo ci dziêkujê. Œwietny pomys³. Zaczekaj zaraz ci go dam.
+    AI_Output (other, self ,"DIA_Shawn_QUEST4_15_01"); //MÃ³gÂ³bym zanieÅ“Ã¦ twÃ³j list. W koÃ±cu nie takie rzeczy siÃª robiÂ³o.
+    AI_Output (self, other ,"DIA_Shawn_QUEST4_03_02"); //Bardzo ci dziÃªkujÃª. Å’wietny pomysÂ³. Zaczekaj zaraz ci go dam.
     B_UseFakeScroll ();
     CreateInvItems (self, ItMi_ListdoCronosa, 1);
     B_GiveInvItems (self, other, ItMi_ListdoCronosa, 1);
@@ -470,7 +470,7 @@ FUNC VOID DIA_Shawn_QUEST4_Info()
 
     Log_CreateTopic            (CH1_ListDoCronosa, LOG_MISSION);
     Log_SetTopicStatus       (CH1_ListDoCronosa, LOG_RUNNING);
-    B_LogEntry                     (CH1_ListDoCronosa,"Shawn da³ mi list, który muszê wrêczyæ Cronosowi w Nowym Obozie.");
+    B_LogEntry                     (CH1_ListDoCronosa,"Gor Na Dhun daÂ³ mi list, ktÃ³ry muszÃª wrÃªczyÃ¦ Cronosowi w Nowym Obozie.");
 };
 //========================================
 //-----------------> HELLO2
@@ -483,7 +483,7 @@ INSTANCE DIA_Shawn_HELLO2 (C_INFO)
    condition    = DIA_Shawn_HELLO2_Condition;
    information  = DIA_Shawn_HELLO2_Info;
    permanent	= FALSE;
-   description	= "Czyta³em notatki alchemika.";
+   description	= "CzytaÂ³em notatki alchemika.";
 };
 
 FUNC INT DIA_Shawn_HELLO2_Condition()
@@ -498,29 +498,29 @@ FUNC INT DIA_Shawn_HELLO2_Condition()
 
 FUNC VOID DIA_Shawn_HELLO2_Info()
 {
-    AI_Output (other, self ,"DIA_Shawn_HELLO2_15_01"); //Czyta³em notatki alchemika.
-    AI_Output (other, self ,"DIA_Shawn_HELLO2_15_02"); //Uda³ siê w kierunku Cmentarzyska Orków. 
-    AI_Output (self, other ,"DIA_Shawn_HELLO2_03_03"); //Nawet nie myœl o tym, ¿eby tam pójœæ.
+    AI_Output (other, self ,"DIA_Shawn_HELLO2_15_01"); //CzytaÂ³em notatki alchemika.
+    AI_Output (other, self ,"DIA_Shawn_HELLO2_15_02"); //UdaÂ³ siÃª w kierunku Cmentarzyska OrkÃ³w. 
+    AI_Output (self, other ,"DIA_Shawn_HELLO2_03_03"); //Nawet nie myÅ“l o tym, Â¿eby tam pÃ³jÅ“Ã¦.
     AI_Output (self, other ,"DIA_Shawn_HELLO2_03_04"); //To zbyt niebezpieczne.
-    AI_Output (self, other ,"DIA_Shawn_HELLO2_03_05"); //Nasz badacz w koñcu wróci.
+    AI_Output (self, other ,"DIA_Shawn_HELLO2_03_05"); //Nasz badacz w koÃ±cu wrÃ³ci.
     AI_Output (self, other ,"DIA_Shawn_HELLO2_03_06"); //Masz przy sobie jego notatki?
     if (Npc_HasItems (other, NotatkiAlchemika) >=1)
     {
-        AI_Output (other, self ,"DIA_Shawn_HELLO2_15_07"); //Tak. WeŸ je.
-        AI_Output (self, other ,"DIA_Shawn_HELLO2_03_08"); //Dziêkujê.
+        AI_Output (other, self ,"DIA_Shawn_HELLO2_15_07"); //Tak. WeÅ¸ je.
+        AI_Output (self, other ,"DIA_Shawn_HELLO2_03_08"); //DziÃªkujÃª.
         CreateInvItems (self, ItMiNugget, 50);
         B_GiveInvItems (self, other, ItMiNugget, 50);
         B_GiveInvItems (other, self, NotatkiAlchemika, 1);
-        B_LogEntry                     (CH1_PoszukiwanaAlchemika,"Odda³em Shawnowi notatki, które znalaz³em na bagnie. Najpewniej nale¿a³y do alchemika.");
+        B_LogEntry                     (CH1_PoszukiwanaAlchemika,"OddaÂ³em Gor Na Dhunowi notatki, ktÃ³re znalazÂ³em na bagnie. Najpewniej naleÂ¿aÂ³y do alchemika.");
 
         B_GiveXP (200);
     }
     else
     {
         AI_Output (other, self ,"DIA_Shawn_HELLO2_15_09"); //Nie.
-        AI_Output (self, other ,"DIA_Shawn_HELLO2_03_10"); //Mo¿esz ju¿ iœæ.
+        AI_Output (self, other ,"DIA_Shawn_HELLO2_03_10"); //MoÂ¿esz juÂ¿ iÅ“Ã¦.
     };
-    B_LogEntry                     (CH1_PoszukiwanaAlchemika,"Rzomawia³em z Shawnem o moim znalezisku z bagna. Notaki alchemika wykaza³y, ¿e uda³ siê on na Cmentarzysko Orków. Nie mam zamiaru tam iœæ w najbli¿yszm czasie.");
+    B_LogEntry                     (CH1_PoszukiwanaAlchemika,"RzomawiaÂ³em z Gor Na Dhunem o moim znalezisku z bagna. Notaki alchemika wykazaÂ³y, Â¿e udaÂ³ siÃª on na Cmentarzysko OrkÃ³w. Nie mam zamiaru tam iÅ“Ã¦ w najbliÂ¿yszm czasie.");
     AI_StopProcessInfos	(self);
 };
 
@@ -536,7 +536,7 @@ INSTANCE DIA_Shawn_QuestsBractwo2 (C_INFO)
    condition    = DIA_Shawn_QuestsBractwo2_Condition;
    information  = DIA_Shawn_QuestsBractwo2_Info;
    permanent	= FALSE;
-   description	= "Czy Bractwo ma dla mnie jakieœ zlecenia?";
+   description	= "Czy Bractwo ma dla mnie jakieÅ“ zlecenia?";
 };
 
 FUNC INT DIA_Shawn_QuestsBractwo2_Condition()
@@ -550,17 +550,17 @@ FUNC INT DIA_Shawn_QuestsBractwo2_Condition()
 
 FUNC VOID DIA_Shawn_QuestsBractwo2_Info()
 {
-    AI_Output (other, self ,"DIA_Shawn_QuestsBractwo2_15_01"); //Czy Bractwo ma dla mnie jakieœ zlecenia?
-    AI_Output (self, other ,"DIA_Shawn_QuestsBractwo2_03_02"); //Oczywiœcie, ¿e tak!
-    AI_Output (self, other ,"DIA_Shawn_QuestsBractwo2_03_03"); //Zgin¹³ nasz badacz. Dosyæ stary, brodaty mê¿czyzna.
-    AI_Output (self, other ,"DIA_Shawn_QuestsBractwo2_03_04"); //By³ alchemikiem. Kilka dni temu Y'Berion zleci³ mu zbadanie dziwnych miejsc na bagnie.
-    AI_Output (self, other ,"DIA_Shawn_QuestsBractwo2_03_05"); //Jednak do tej pory nie wróci³.
-    AI_Output (self, other ,"DIA_Shawn_QuestsBractwo2_03_06"); //Spróbuj go odnaleŸæ.
+    AI_Output (other, self ,"DIA_Shawn_QuestsBractwo2_15_01"); //Czy Bractwo ma dla mnie jakieÅ“ zlecenia?
+    AI_Output (self, other ,"DIA_Shawn_QuestsBractwo2_03_02"); //OczywiÅ“cie, Â¿e tak!
+    AI_Output (self, other ,"DIA_Shawn_QuestsBractwo2_03_03"); //ZginÂ¹Â³ nasz badacz. DosyÃ¦ stary, brodaty mÃªÂ¿czyzna.
+    AI_Output (self, other ,"DIA_Shawn_QuestsBractwo2_03_04"); //ByÂ³ alchemikiem. Kilka dni temu Y'Berion zleciÂ³ mu zbadanie dziwnych miejsc na bagnie.
+    AI_Output (self, other ,"DIA_Shawn_QuestsBractwo2_03_05"); //Jednak do tej pory nie wrÃ³ciÂ³.
+    AI_Output (self, other ,"DIA_Shawn_QuestsBractwo2_03_06"); //SprÃ³buj go odnaleÅ¸Ã¦.
     MIS_PoszukiwanaAlchemika = LOG_RUNNING;
 	
     Log_CreateTopic            (CH1_PoszukiwanaAlchemika, LOG_MISSION);
     Log_SetTopicStatus       (CH1_PoszukiwanaAlchemika, LOG_RUNNING);
-    B_LogEntry                     (CH1_PoszukiwanaAlchemika,"Shawn kaza³ mi odnaleŸæ starego alchemika, który przeprowadza³ dla Bractwa badania nad bagnem.");
+    B_LogEntry                     (CH1_PoszukiwanaAlchemika,"Gor Na Dhun kazaÂ³ mi odnaleÅ¸Ã¦ starego alchemika, ktÃ³ry przeprowadzaÂ³ dla Bractwa badania nad bagnem.");
     AI_StopProcessInfos	(self);
 };
 
@@ -575,7 +575,7 @@ INSTANCE DIA_Shawn_TalkAboutStones (C_INFO)
    condition    = DIA_Shawn_TalkAboutStones_Condition;
    information  = DIA_Shawn_TalkAboutStones_Info;
    permanent	= FALSE;
-   description	= "Rozmawia³em z alchemikiem.";
+   description	= "RozmawiaÂ³em z alchemikiem.";
 };
 
 FUNC INT DIA_Shawn_TalkAboutStones_Condition()
@@ -589,19 +589,19 @@ FUNC INT DIA_Shawn_TalkAboutStones_Condition()
 
 FUNC VOID DIA_Shawn_TalkAboutStones_Info()
 {
-    AI_Output (other, self ,"DIA_Shawn_TalkAboutStones_15_01"); //Rozmawia³em z alchemikiem.
+    AI_Output (other, self ,"DIA_Shawn_TalkAboutStones_15_01"); //RozmawiaÂ³em z alchemikiem.
     AI_Output (self, other ,"DIA_Shawn_TalkAboutStones_03_02"); //I co? Gdzie on jest?
-    AI_Output (other, self ,"DIA_Shawn_TalkAboutStones_15_03"); //Nie ¿yje. Znalaz³em go umieraj¹cego na Cmentarzysku Orków.
-    AI_Output (self, other ,"DIA_Shawn_TalkAboutStones_03_04"); //Wielka to bêdzie strata. Uda³o ci siê poznaæ wyniki jego badañ?
+    AI_Output (other, self ,"DIA_Shawn_TalkAboutStones_15_03"); //Nie Â¿yje. ZnalazÂ³em go umierajÂ¹cego na Cmentarzysku OrkÃ³w.
+    AI_Output (self, other ,"DIA_Shawn_TalkAboutStones_03_04"); //Wielka to bÃªdzie strata. UdaÂ³o ci siÃª poznaÃ¦ wyniki jego badaÃ±?
     if (Npc_KnowsInfo (hero, DIA_OldAlchemyMan_HELLO4))
     {
-        AI_Output (other, self ,"DIA_Shawn_TalkAboutStones_15_05"); //Tak. Cmentarzysko Orków nie ma nic wspólnego z obiektami na bagnie. 
-        AI_Output (other, self ,"DIA_Shawn_TalkAboutStones_15_06"); //Te swoiste kaplice to czary ¿ycia i energii.
-        AI_Output (other, self ,"DIA_Shawn_TalkAboutStones_15_07"); //Przebywaj¹c wokó³ nich mo¿na zregenerowaæ swoj¹ energiê i nie tylko.
-        AI_Output (self, other ,"DIA_Shawn_TalkAboutStones_03_08"); //Gdybyœmy mogli panowaæ nad ich moc¹, moglibyœmy zrobiæ wiele dobrego.
-        AI_Output (self, other ,"DIA_Shawn_TalkAboutStones_03_09"); //Dziêkujê ci za tw¹ odwagê i poœwiêcenie.
-        AI_Output (self, other ,"DIA_Shawn_TalkAboutStones_03_10"); //WeŸ to jako zap³atê.
-        B_LogEntry                     (CH1_PoszukiwanaAlchemika,"Shawn by³ zadowolony, gdy pozna³ wyniki badañ alchemika. Szkoda, ¿e on sam nie móg³ o nich opowiedzieæ.");
+        AI_Output (other, self ,"DIA_Shawn_TalkAboutStones_15_05"); //Tak. Cmentarzysko OrkÃ³w nie ma nic wspÃ³lnego z obiektami na bagnie. 
+        AI_Output (other, self ,"DIA_Shawn_TalkAboutStones_15_06"); //Te swoiste kaplice to czary Â¿ycia i energii.
+        AI_Output (other, self ,"DIA_Shawn_TalkAboutStones_15_07"); //PrzebywajÂ¹c wokÃ³Â³ nich moÂ¿na zregenerowaÃ¦ swojÂ¹ energiÃª i nie tylko.
+        AI_Output (self, other ,"DIA_Shawn_TalkAboutStones_03_08"); //GdybyÅ“my mogli panowaÃ¦ nad ich mocÂ¹, moglibyÅ“my zrobiÃ¦ wiele dobrego.
+        AI_Output (self, other ,"DIA_Shawn_TalkAboutStones_03_09"); //DziÃªkujÃª ci za twÂ¹ odwagÃª i poÅ“wiÃªcenie.
+        AI_Output (self, other ,"DIA_Shawn_TalkAboutStones_03_10"); //WeÅ¸ to jako zapÂ³atÃª.
+        B_LogEntry                     (CH1_PoszukiwanaAlchemika,"Gor Na Dhun byÂ³ zadowolony, gdy poznaÂ³ wyniki badaÃ± alchemika. Szkoda, Â¿e on sam nie mÃ³gÂ³ o nich opowiedzieÃ¦.");
         Log_SetTopicStatus       (CH1_PoszukiwanaAlchemika, LOG_SUCCESS);
         MIS_PoszukiwanaAlchemika = LOG_SUCCESS;
 
@@ -610,9 +610,9 @@ FUNC VOID DIA_Shawn_TalkAboutStones_Info()
     else
     {
         AI_Output (other, self ,"DIA_Shawn_TalkAboutStones_15_11"); //Niestety nie.
-        AI_Output (other, self ,"DIA_Shawn_TalkAboutStones_15_12"); //Zmar³ przed wczeœnie.
+        AI_Output (other, self ,"DIA_Shawn_TalkAboutStones_15_12"); //ZmarÂ³ przed wczeÅ“nie.
         AI_Output (self, other ,"DIA_Shawn_TalkAboutStones_03_13"); //Trudno.
-        B_LogEntry                     (CH1_PoszukiwanaAlchemika,"Niestety nie uzyska³em kluczowych informacji od alchemika.");
+        B_LogEntry                     (CH1_PoszukiwanaAlchemika,"Niestety nie uzyskaÂ³em kluczowych informacji od alchemika.");
         Log_SetTopicStatus       (CH1_PoszukiwanaAlchemika, LOG_FAILED);
         MIS_PoszukiwanaAlchemika = LOG_FAILED;
 		PrintScreen	("Anulowano zadanie: Poszukiwania alchemika! ", 1,-1,"font_new_10_red.tga",2);	
@@ -636,7 +636,7 @@ INSTANCE DIA_Shawn_QuestCH3 (C_INFO)
    condition    = DIA_Shawn_QuestCH3_Condition;
    information  = DIA_Shawn_QuestCH3_Info;
    permanent	= FALSE;
-   description	= "Mogê coœ dla ciebie zrobiæ?";
+   description	= "MogÃª coÅ“ dla ciebie zrobiÃ¦?";
 };
 
 FUNC INT DIA_Shawn_QuestCH3_Condition()
@@ -651,16 +651,16 @@ FUNC INT DIA_Shawn_QuestCH3_Condition()
 
 FUNC VOID DIA_Shawn_QuestCH3_Info()
 {
-    AI_Output (other, self ,"DIA_Shawn_QuestCH3_15_01"); //Mogê coœ dla ciebie zrobiæ?
-    AI_Output (self, other ,"DIA_Shawn_QuestCH3_03_02"); //Jest pewna sprawa, któr¹ móg³byœ siê zaj¹æ.
+    AI_Output (other, self ,"DIA_Shawn_QuestCH3_15_01"); //MogÃª coÅ“ dla ciebie zrobiÃ¦?
+    AI_Output (self, other ,"DIA_Shawn_QuestCH3_03_02"); //Jest pewna sprawa, ktÃ³rÂ¹ mÃ³gÂ³byÅ“ siÃª zajÂ¹Ã¦.
     AI_Output (other, self ,"DIA_Shawn_QuestCH3_15_03"); //Mianowicie?
-    AI_Output (self, other ,"DIA_Shawn_QuestCH3_03_04"); //Ktoœ z naszych sprzedaje eliksir z wnêtrznoœci pe³zaczy do Nowego Obozu.
-    AI_Output (self, other ,"DIA_Shawn_QuestCH3_03_05"); //Dowiedz siê kto to jest i natychmiast mi o tym powiedz.
+    AI_Output (self, other ,"DIA_Shawn_QuestCH3_03_04"); //KtoÅ“ z naszych sprzedaje eliksir z wnÃªtrznoÅ“ci peÂ³zaczy do Nowego Obozu.
+    AI_Output (self, other ,"DIA_Shawn_QuestCH3_03_05"); //Dowiedz siÃª kto to jest i natychmiast mi o tym powiedz.
     MIS_SellElixer = LOG_RUNNING;
 
     Log_CreateTopic            (CH1_SellElixer, LOG_MISSION);
     Log_SetTopicStatus       (CH1_SellElixer, LOG_RUNNING);
-    B_LogEntry                     (CH1_SellElixer,"Shawn kaza³ mi odkryæ kto nielegalnie sprzedaje eliksir z wnêtrznoœci pe³zaczy. Prawdopodobnie towar w ca³oœci idzie do Nowego Obozu.");
+    B_LogEntry                     (CH1_SellElixer,"Gor Na Dhun kazaÂ³ mi odkryÃ¦ kto nielegalnie sprzedaje eliksir z wnÃªtrznoÅ“ci peÂ³zaczy. Prawdopodobnie towar w caÂ³oÅ“ci idzie do Nowego Obozu.");
     AI_StopProcessInfos	(self);
 	
 	var c_npc dexter;
@@ -695,12 +695,12 @@ FUNC INT DIA_Shawn_SellElixirCaine_Condition()
 FUNC VOID DIA_Shawn_SellElixirCaine_Info()
 {
     AI_Output (other, self ,"DIA_Shawn_SellElixirCaine_15_01"); //Wiem, kto sprzedaje eliksir! To Caine!
-    AI_Output (other, self ,"DIA_Shawn_SellElixirCaine_15_02"); //Ponadto oferowa³ mi bym przysta³ do niego i pomaga³ mu w rozprowadzaniu tego specyfiku.
-    AI_Output (self, other ,"DIA_Shawn_SellElixirCaine_03_03"); //Nie spodziewa³em siê tego po nim.
+    AI_Output (other, self ,"DIA_Shawn_SellElixirCaine_15_02"); //Ponadto oferowaÂ³ mi bym przystaÂ³ do niego i pomagaÂ³ mu w rozprowadzaniu tego specyfiku.
+    AI_Output (self, other ,"DIA_Shawn_SellElixirCaine_03_03"); //Nie spodziewaÂ³em siÃª tego po nim.
     AI_Output (self, other ,"DIA_Shawn_SellElixirCaine_03_04"); //Spotka go kara, a ciebie nagroda.
     CreateInvItems (self, ItMiNugget, 400);
     B_GiveInvItems (self, other, ItMiNugget, 400);
-    B_LogEntry                     (CH1_SellElixer,"Wyda³em Caine'a Shawnowi. Nie ma litoœci dla takiego postêpowania!");
+    B_LogEntry                     (CH1_SellElixer,"WydaÂ³em Caine'a Gor Na Dhunowi. Nie ma litoÅ“ci dla takiego postÃªpowania!");
     Log_SetTopicStatus       (CH1_SellElixer, LOG_SUCCESS);
     MIS_SellElixer = LOG_SUCCESS;
 
@@ -719,7 +719,7 @@ INSTANCE DIA_Shawn_Questdadasd (C_INFO)
    condition    = DIA_Shawn_Questdadasd_Condition;
    information  = DIA_Shawn_Questdadasd_Info;
    permanent	= FALSE;
-   description	= "Masz dla mnie jakieœ zadanie?";
+   description	= "Masz dla mnie jakieÅ“ zadanie?";
 };
 
 FUNC INT DIA_Shawn_Questdadasd_Condition()
@@ -734,17 +734,17 @@ FUNC INT DIA_Shawn_Questdadasd_Condition()
 
 FUNC VOID DIA_Shawn_Questdadasd_Info()
 {
-    AI_Output (other, self ,"DIA_Shawn_Questdadasd_15_01"); //Masz dla mnie jakieœ zadanie?
-    AI_Output (self, other ,"DIA_Shawn_Questdadasd_03_02"); //Akurat mia³em ciê prosiæ o pomoc.
-    AI_Output (self, other ,"DIA_Shawn_Questdadasd_03_03"); //Podobno zawali³a siê Stara Kopalnia. 
-    AI_Output (self, other ,"DIA_Shawn_Questdadasd_03_04"); //Wiesz co siê sta³o z naszymi braæmi z tego miejsca?
-    AI_Output (self, other ,"DIA_Shawn_Questdadasd_03_05"); //Polowali na pe³zacze i nie wiem czy zdo³ali uciec.
-    AI_Output (self, other ,"DIA_Shawn_Questdadasd_03_06"); //Spróbuj ich odszukaæ.
+    AI_Output (other, self ,"DIA_Shawn_Questdadasd_15_01"); //Masz dla mnie jakieÅ“ zadanie?
+    AI_Output (self, other ,"DIA_Shawn_Questdadasd_03_02"); //Akurat miaÂ³em ciÃª prosiÃ¦ o pomoc.
+    AI_Output (self, other ,"DIA_Shawn_Questdadasd_03_03"); //Podobno zawaliÂ³a siÃª Stara Kopalnia. 
+    AI_Output (self, other ,"DIA_Shawn_Questdadasd_03_04"); //Wiesz co siÃª staÂ³o z naszymi braÃ¦mi z tego miejsca?
+    AI_Output (self, other ,"DIA_Shawn_Questdadasd_03_05"); //Polowali na peÂ³zacze i nie wiem czy zdoÂ³ali uciec.
+    AI_Output (self, other ,"DIA_Shawn_Questdadasd_03_06"); //SprÃ³buj ich odszukaÃ¦.
     MIS_HelpBrothersBra = LOG_RUNNING;
 	B_ExchangeRoutine			(BAU_2009_Martin, "patrol");
     Log_CreateTopic            (CH1_HelpBrothersBra, LOG_MISSION);
     Log_SetTopicStatus       (CH1_HelpBrothersBra, LOG_RUNNING);
-    B_LogEntry                     (CH1_HelpBrothersBra,"Shawn kaza³ mi sprawdziæ co sta³o siê z naszymi braæmi ze Starej Kopalni.");
+    B_LogEntry                     (CH1_HelpBrothersBra,"Gor Na Dhun kazaÂ³ mi sprawdziÃ¦ co staÂ³o siÃª z naszymi braÃ¦mi ze Starej Kopalni.");
 };
 
 //========================================
@@ -758,7 +758,7 @@ INSTANCE DIA_Shawn_Uwolnieni (C_INFO)
    condition    = DIA_Shawn_Uwolnieni_Condition;
    information  = DIA_Shawn_Uwolnieni_Info;
    permanent	= FALSE;
-   description	= "Uwolni³em braci!";
+   description	= "UwolniÂ³em braci!";
 };
 
 FUNC INT DIA_Shawn_Uwolnieni_Condition()
@@ -773,19 +773,19 @@ FUNC INT DIA_Shawn_Uwolnieni_Condition()
 
 FUNC VOID DIA_Shawn_Uwolnieni_Info()
 {
-    AI_Output (other, self ,"DIA_Shawn_Uwolnieni_15_01"); //Uwolni³em braci!
-    AI_Output (other, self ,"DIA_Shawn_Uwolnieni_15_02"); //Zostali uwiêzieni za wielk¹ krat¹ s³u¿¹c¹ jako brama do Starej Kopalni.
-    AI_Output (self, other ,"DIA_Shawn_Uwolnieni_03_03"); //Dobra robota, Stra¿niku.
-    AI_Output (self, other ,"DIA_Shawn_Uwolnieni_03_04"); //Masz ze sob¹ jakieœ wieœci z tamtej czêœci Kolonii?
-    AI_Output (other, self ,"DIA_Shawn_Uwolnieni_15_05"); //Sytuacja nie wygl¹da najlepiej.
-    AI_Output (other, self ,"DIA_Shawn_Uwolnieni_15_06"); //Artegor siê zbuntowa³ i utworzy³ w³asny obóz przy Starej Kopalni.
-    AI_Output (other, self ,"DIA_Shawn_Uwolnieni_15_07"); //Obóz ten nie podlega³ Gomezowi.
-    AI_Output (other, self ,"DIA_Shawn_Uwolnieni_15_08"); //Jednak, gdy Magnat dowiedzia³ siê o buncie, wys³a³ olbrzymi oddzia³ swoich ludzi w kierunku kopalni.
-    AI_Output (self, other ,"DIA_Shawn_Uwolnieni_03_09"); //Co siê sta³o potem?
-    AI_Output (other, self ,"DIA_Shawn_Uwolnieni_15_10"); //Wszyscy zginêli! Pozosta³ tylko Artegor, który pozwoli³ mi uwolniæ Gor Na Kosha i innych.
-    AI_Output (self, other ,"DIA_Shawn_Uwolnieni_03_11"); //Wykaza³eœ siê nie lada odwag¹.
-    AI_Output (self, other ,"DIA_Shawn_Uwolnieni_03_12"); //Jestem pe³en podziwu.
-    B_LogEntry                     (CH1_HelpBrothersBra,"Przekaza³em Shawnowi informacje o wydarzeniach z Kolonii. Przy okazji zosta³em wynagrodzony za uwolnienie braci z kopalni.");
+    AI_Output (other, self ,"DIA_Shawn_Uwolnieni_15_01"); //UwolniÂ³em braci!
+    AI_Output (other, self ,"DIA_Shawn_Uwolnieni_15_02"); //Zostali uwiÃªzieni za wielkÂ¹ kratÂ¹ sÂ³uÂ¿Â¹cÂ¹ jako brama do Starej Kopalni.
+    AI_Output (self, other ,"DIA_Shawn_Uwolnieni_03_03"); //Dobra robota, StraÂ¿niku.
+    AI_Output (self, other ,"DIA_Shawn_Uwolnieni_03_04"); //Masz ze sobÂ¹ jakieÅ“ wieÅ“ci z tamtej czÃªÅ“ci Kolonii?
+    AI_Output (other, self ,"DIA_Shawn_Uwolnieni_15_05"); //Sytuacja nie wyglÂ¹da najlepiej.
+    AI_Output (other, self ,"DIA_Shawn_Uwolnieni_15_06"); //Artegor siÃª zbuntowaÂ³ i utworzyÂ³ wÂ³asny obÃ³z przy Starej Kopalni.
+    AI_Output (other, self ,"DIA_Shawn_Uwolnieni_15_07"); //ObÃ³z ten nie podlegaÂ³ Gomezowi.
+    AI_Output (other, self ,"DIA_Shawn_Uwolnieni_15_08"); //Jednak, gdy Magnat dowiedziaÂ³ siÃª o buncie, wysÂ³aÂ³ olbrzymi oddziaÂ³ swoich ludzi w kierunku kopalni.
+    AI_Output (self, other ,"DIA_Shawn_Uwolnieni_03_09"); //Co siÃª staÂ³o potem?
+    AI_Output (other, self ,"DIA_Shawn_Uwolnieni_15_10"); //Wszyscy zginÃªli! PozostaÂ³ tylko Artegor, ktÃ³ry pozwoliÂ³ mi uwolniÃ¦ Gor Na Kosha i innych.
+    AI_Output (self, other ,"DIA_Shawn_Uwolnieni_03_11"); //WykazaÂ³eÅ“ siÃª nie lada odwagÂ¹.
+    AI_Output (self, other ,"DIA_Shawn_Uwolnieni_03_12"); //Jestem peÂ³en podziwu.
+    B_LogEntry                     (CH1_HelpBrothersBra,"PrzekazaÂ³em Gor Na Dhunowi informacje o wydarzeniach z Kolonii. Przy okazji zostaÂ³em wynagrodzony za uwolnienie braci z kopalni.");
     Log_SetTopicStatus       (CH1_HelpBrothersBra, LOG_SUCCESS);
     MIS_HelpBrothersBra = LOG_SUCCESS;
 
@@ -808,7 +808,7 @@ INSTANCE DIA_Shawn_BAN_THREAD (C_INFO)
    condition    = DIA_Shawn_BAN_THREAD_Condition;
    information  = DIA_Shawn_BAN_THREAD_Info;
    permanent	= FALSE;
-   description	= "Co siê sta³o?";
+   description	= "Co siÃª staÂ³o?";
 };
 
 FUNC INT DIA_Shawn_BAN_THREAD_Condition()
@@ -822,45 +822,45 @@ FUNC INT DIA_Shawn_BAN_THREAD_Condition()
 
 FUNC VOID DIA_Shawn_BAN_THREAD_Info()
 {
-    AI_Output (other, self ,"DIA_Shawn_BAN_THREAD_15_01"); //Co siê sta³o?
-    AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_02"); //Dosz³y do nas wieœci o tym, co wyprawia Gomez.
+    AI_Output (other, self ,"DIA_Shawn_BAN_THREAD_15_01"); //Co siÃª staÂ³o?
+    AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_02"); //DoszÂ³y do nas wieÅ“ci o tym, co wyprawia Gomez.
     if FMTaken
     {
-        AI_Output (other, self ,"DIA_Shawn_BAN_THREAD_15_03"); //Tak, te¿ o tym s³ysza³em. Stara Kopalnia zosta³a zalana przez podziemn¹ rzekê. Gomez oszala³.
-        AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_04"); //Dobrze, ¿e jesteœ poinformowany.
-        AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_05"); //S³ysza³em te¿ o planach Bandytów. Chcê, abyœ siê tym zaj¹³ i zda³ mi raport. 
-        AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_06"); //Pogadaj z cz³owiekiem imieniem Drax. Ponoæ planuje on jak¹œ rewolucjê.
+        AI_Output (other, self ,"DIA_Shawn_BAN_THREAD_15_03"); //Tak, teÂ¿ o tym sÂ³yszaÂ³em. Stara Kopalnia zostaÂ³a zalana przez podziemnÂ¹ rzekÃª. Gomez oszalaÂ³.
+        AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_04"); //Dobrze, Â¿e jesteÅ“ poinformowany.
+        AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_05"); //SÂ³yszaÂ³em teÂ¿ o planach BandytÃ³w. ChcÃª, abyÅ“ siÃª tym zajÂ¹Â³ i zdaÂ³ mi raport. 
+        AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_06"); //Pogadaj z czÂ³owiekiem imieniem Drax. PonoÃ¦ planuje on jakÂ¹Å“ rewolucjÃª.
         if (Npc_KnowsInfo (hero, DIA_Drax_Ded)) && (MIS_Do_lowcow == LOG_SUCCESS)
         {
-            AI_Output (other, self ,"DIA_Shawn_BAN_THREAD_15_07"); //Ju¿ rozmawia³em z Draxem. Bandyci chc¹ pozbyæ siê patrolów Stra¿ników w okolicach Obozu.
-            AI_Output (other, self ,"DIA_Shawn_BAN_THREAD_15_08"); //Pomog³em im zdobyæ wsparcie ³owców orków. Mam nadziejê, ¿e jakoœ sobie poradz¹.
+            AI_Output (other, self ,"DIA_Shawn_BAN_THREAD_15_07"); //JuÂ¿ rozmawiaÂ³em z Draxem. Bandyci chcÂ¹ pozbyÃ¦ siÃª patrolÃ³w StraÂ¿nikÃ³w w okolicach Obozu.
+            AI_Output (other, self ,"DIA_Shawn_BAN_THREAD_15_08"); //PomogÂ³em im zdobyÃ¦ wsparcie Â³owcÃ³w orkÃ³w. Mam nadziejÃª, Â¿e jakoÅ“ sobie poradzÂ¹.
             AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_09"); //To wszystko?
-            AI_Output (other, self ,"DIA_Shawn_BAN_THREAD_15_10"); //Tak. Nic wiêcej siê nie wydarzy³o.
-            AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_11"); //Có¿... Pozosta³o czekaæ nam na rozwój wydarzeñ.
-            AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_12"); //Proponujê ci, abyœ uda³ siê w okolice Nowego Obozu. Grupa Najemników prowadzi tam walki ze Stra¿nikami.
-            AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_13"); //Powinieneœ im pomóc.
+            AI_Output (other, self ,"DIA_Shawn_BAN_THREAD_15_10"); //Tak. Nic wiÃªcej siÃª nie wydarzyÂ³o.
+            AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_11"); //CÃ³Â¿... PozostaÂ³o czekaÃ¦ nam na rozwÃ³j wydarzeÃ±.
+            AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_12"); //ProponujÃª ci, abyÅ“ udaÂ³ siÃª w okolice Nowego Obozu. Grupa NajemnikÃ³w prowadzi tam walki ze StraÂ¿nikami.
+            AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_13"); //PowinieneÅ“ im pomÃ³c.
             AI_Output (other, self ,"DIA_Shawn_BAN_THREAD_15_14"); //Dlaczego?
-            AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_15"); //Stra¿nicy staj¹ siê coraz wiêkszym zagro¿eniem równie¿ dla naszego Obozu. 
-            AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_16"); //Dlatego musisz wesprzeæ naszych braci z Nowego Obozu.
+            AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_15"); //StraÂ¿nicy stajÂ¹ siÃª coraz wiÃªkszym zagroÂ¿eniem rÃ³wnieÂ¿ dla naszego Obozu. 
+            AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_16"); //Dlatego musisz wesprzeÃ¦ naszych braci z Nowego Obozu.
 			second_d_shawn = false;
 			go_help_torlof = true;
-			B_LogEntry                     (CH1_Watek_Bandytow_BRACTWO,"Od Shawna nie dowiedzia³em siê nic nowego. Sytuacja w Kolonii jest kiepska. Moim zadaniem by³o wsparcie Bandytów w ich dzia³aniach. Uprzedzi³em polecenie Shawna i ju¿ to zrobi³em. Teraz muszê iœæ do Nowego Obozu i pomóc Najemnikom w walce ze Stra¿nikami.");
+			B_LogEntry                     (CH1_Watek_Bandytow_BRACTWO,"Od Gor Na Dhuna nie dowiedziaÂ³em siÃª nic nowego. Sytuacja w Kolonii jest kiepska. Moim zadaniem byÂ³o wsparcie BandytÃ³w w ich dziaÂ³aniach. UprzedziÂ³em polecenie Gor Na Dhuna i juÂ¿ to zrobiÂ³em. Teraz muszÃª iÅ“Ã¦ do Nowego Obozu i pomÃ³c Najemnikom w walce ze StraÂ¿nikami.");
         }
         else
         {
-            AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_17"); //No dobrze. Pójdê z nim pogadaæ.
+            AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_17"); //No dobrze. PÃ³jdÃª z nim pogadaÃ¦.
 			second_d_shawn = true;
-			B_LogEntry                     (CH1_Watek_Bandytow_BRACTWO,"Shawn martwi siê sytuacj¹ w Kolonii. Muszê pogadaæ z Bandyt¹ Draxem, który ponoæ planuje jakiœ atak na patrole Gomeza.");
+			B_LogEntry                     (CH1_Watek_Bandytow_BRACTWO,"Gor Na Dhun martwi siÃª sytuacjÂ¹ w Kolonii. MuszÃª pogadaÃ¦ z BandytÂ¹ Draxem, ktÃ³ry ponoÃ¦ planuje jakiÅ“ atak na patrole Gomeza.");
    go_help_torlof = false;
         };
     }
     else
     {
-        AI_Output (other, self ,"DIA_Shawn_BAN_THREAD_15_18"); //Przeteleportowa³em siê tutaj najszybciej jak siê da. Mo¿esz mi krótko streœciæ co siê dzieje?
-        AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_19"); //Otó¿ Stara Kopalnia uleg³a zalaniu przez podziemn¹ rzekê. Gomez oszala³ i kaza³ swoim Stra¿nikom atakowaæ kogo popadnie.
-        AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_20"); //Ponoæ Bandyci planuj¹ to ukróciæ. Musisz porozmawiaæ z niejakim Draxem. Goœæ ponoæ zajmuje siê t¹ wypraw¹.
-        AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_21"); //Gdy to zrobisz, wróæ zdaæ mi raport.
-		B_LogEntry                     (CH1_Watek_Bandytow_BRACTWO,"Shawn martwi siê sytuacj¹ w Kolonii. Muszê pogadaæ z Bandyt¹ Draxem, który ponoæ planuje jakiœ atak na patrole Gomeza.");
+        AI_Output (other, self ,"DIA_Shawn_BAN_THREAD_15_18"); //PrzeteleportowaÂ³em siÃª tutaj najszybciej jak siÃª da. MoÂ¿esz mi krÃ³tko streÅ“ciÃ¦ co siÃª dzieje?
+        AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_19"); //OtÃ³Â¿ Stara Kopalnia ulegÂ³a zalaniu przez podziemnÂ¹ rzekÃª. Gomez oszalaÂ³ i kazaÂ³ swoim StraÂ¿nikom atakowaÃ¦ kogo popadnie.
+        AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_20"); //PonoÃ¦ Bandyci planujÂ¹ to ukrÃ³ciÃ¦. Musisz porozmawiaÃ¦ z niejakim Draxem. GoÅ“Ã¦ ponoÃ¦ zajmuje siÃª tÂ¹ wyprawÂ¹.
+        AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_21"); //Gdy to zrobisz, wrÃ³Ã¦ zdaÃ¦ mi raport.
+		B_LogEntry                     (CH1_Watek_Bandytow_BRACTWO,"Gor Na Dhun martwi siÃª sytuacjÂ¹ w Kolonii. MuszÃª pogadaÃ¦ z BandytÂ¹ Draxem, ktÃ³ry ponoÃ¦ planuje jakiÅ“ atak na patrole Gomeza.");
    second_d_shawn = true;
    go_help_torlof = false;
     };
@@ -876,7 +876,7 @@ INSTANCE DIA_Shawn_DRAX_IMPORTANT (C_INFO)
    condition    = DIA_Shawn_DRAX_IMPORTANT_Condition;
    information  = DIA_Shawn_DRAX_IMPORTANT_Info;
    permanent	= FALSE;
-   description	= "Rozmawia³em z Draxem.";
+   description	= "RozmawiaÂ³em z Draxem.";
 };
 
 FUNC INT DIA_Shawn_DRAX_IMPORTANT_Condition()
@@ -892,16 +892,16 @@ FUNC INT DIA_Shawn_DRAX_IMPORTANT_Condition()
 
 FUNC VOID DIA_Shawn_DRAX_IMPORTANT_Info()
 {
-    AI_Output (other, self ,"DIA_Shawn_DRAX_IMPORTANT_15_01"); //Rozmawia³em z Draxem.
-    AI_Output (self, other ,"DIA_Shawn_DRAX_IMPORTANT_03_02"); //I co siê tam dzieje?
-    AI_Output (other, self ,"DIA_Shawn_DRAX_IMPORTANT_15_03"); //Pomog³em Bandytom zorganizowaæ atak na patrole Gomeza. Œci¹gn¹³em im do pomocy ³owców orków.
-    AI_Output (other, self ,"DIA_Shawn_DRAX_IMPORTANT_15_04"); //Mam nadziejê, ¿e sobie poradz¹.
-    AI_Output (self, other ,"DIA_Shawn_DRAX_IMPORTANT_03_05"); //No dobrze. Proponujê ci, abyœ uda³ siê w okolice Nowego Obozu. Grupa Najemników prowadzi tam walki ze Stra¿nikami.
-    AI_Output (self, other ,"DIA_Shawn_DRAX_IMPORTANT_03_06"); //Powinieneœ im pomóc.
+    AI_Output (other, self ,"DIA_Shawn_DRAX_IMPORTANT_15_01"); //RozmawiaÂ³em z Draxem.
+    AI_Output (self, other ,"DIA_Shawn_DRAX_IMPORTANT_03_02"); //I co siÃª tam dzieje?
+    AI_Output (other, self ,"DIA_Shawn_DRAX_IMPORTANT_15_03"); //PomogÂ³em Bandytom zorganizowaÃ¦ atak na patrole Gomeza. Å’ciÂ¹gnÂ¹Â³em im do pomocy Â³owcÃ³w orkÃ³w.
+    AI_Output (other, self ,"DIA_Shawn_DRAX_IMPORTANT_15_04"); //Mam nadziejÃª, Â¿e sobie poradzÂ¹.
+    AI_Output (self, other ,"DIA_Shawn_DRAX_IMPORTANT_03_05"); //No dobrze. ProponujÃª ci, abyÅ“ udaÂ³ siÃª w okolice Nowego Obozu. Grupa NajemnikÃ³w prowadzi tam walki ze StraÂ¿nikami.
+    AI_Output (self, other ,"DIA_Shawn_DRAX_IMPORTANT_03_06"); //PowinieneÅ“ im pomÃ³c.
     AI_Output (other, self ,"DIA_Shawn_DRAX_IMPORTANT_15_07"); //Dlaczego?
-    AI_Output (self, other ,"DIA_Shawn_DRAX_IMPORTANT_03_08"); //Stra¿nicy staj¹ siê coraz wiêkszym zagro¿eniem równie¿ dla naszego Obozu. 
-    AI_Output (self, other ,"DIA_Shawn_DRAX_IMPORTANT_03_09"); //Dlatego musisz wesprzeæ naszych braci z Nowego Obozu.
-    B_LogEntry                     (CH1_Watek_Bandytow_BRACTWO,"Muszê udaæ siê w kierunku Nowego Obozu i pomóc Najemnikom w walce ze Stra¿nikami. ");
+    AI_Output (self, other ,"DIA_Shawn_DRAX_IMPORTANT_03_08"); //StraÂ¿nicy stajÂ¹ siÃª coraz wiÃªkszym zagroÂ¿eniem rÃ³wnieÂ¿ dla naszego Obozu. 
+    AI_Output (self, other ,"DIA_Shawn_DRAX_IMPORTANT_03_09"); //Dlatego musisz wesprzeÃ¦ naszych braci z Nowego Obozu.
+    B_LogEntry                     (CH1_Watek_Bandytow_BRACTWO,"MuszÃª udaÃ¦ siÃª w kierunku Nowego Obozu i pomÃ³c Najemnikom w walce ze StraÂ¿nikami. ");
 
     B_GiveXP (150);
     AI_StopProcessInfos	(self);
@@ -918,7 +918,7 @@ INSTANCE DIA_Shawn_HELP_TORLOF (C_INFO)
    condition    = DIA_Shawn_HELP_TORLOF_Condition;
    information  = DIA_Shawn_HELP_TORLOF_Info;
    permanent	= FALSE;
-   description	= "Pomog³em Torlofowi. ";
+   description	= "PomogÂ³em Torlofowi. ";
 };
 
 FUNC INT DIA_Shawn_HELP_TORLOF_Condition()
@@ -933,10 +933,10 @@ FUNC INT DIA_Shawn_HELP_TORLOF_Condition()
 
 FUNC VOID DIA_Shawn_HELP_TORLOF_Info()
 {
-    AI_Output (other, self ,"DIA_Shawn_HELP_TORLOF_15_01"); //Pomog³em Torlofowi. 
-    AI_Output (self, other ,"DIA_Shawn_HELP_TORLOF_03_02"); //Œwietnie. Mo¿e to da Gomezowi do myœlenia. Ostatnio Stra¿nicy zabili Nowicjusza zbieraj¹cego zio³a. 
-    AI_Output (self, other ,"DIA_Shawn_HELP_TORLOF_03_03"); //Nie podoba mi siê to. Je¿eli takie zdarzenia bêd¹ siê powtarzaæ, bêdziemy musieli przy³¹czyæ siê do tej wojny. 
-    AI_Output (self, other ,"DIA_Shawn_HELP_TORLOF_03_04"); //Na razie mo¿esz ju¿ iœæ.
+    AI_Output (other, self ,"DIA_Shawn_HELP_TORLOF_15_01"); //PomogÂ³em Torlofowi. 
+    AI_Output (self, other ,"DIA_Shawn_HELP_TORLOF_03_02"); //Å’wietnie. MoÂ¿e to da Gomezowi do myÅ“lenia. Ostatnio StraÂ¿nicy zabili Nowicjusza zbierajÂ¹cego zioÂ³a. 
+    AI_Output (self, other ,"DIA_Shawn_HELP_TORLOF_03_03"); //Nie podoba mi siÃª to. JeÂ¿eli takie zdarzenia bÃªdÂ¹ siÃª powtarzaÃ¦, bÃªdziemy musieli przyÂ³Â¹czyÃ¦ siÃª do tej wojny. 
+    AI_Output (self, other ,"DIA_Shawn_HELP_TORLOF_03_04"); //Na razie moÂ¿esz juÂ¿ iÅ“Ã¦.
     Log_SetTopicStatus       (CH1_Watek_Bandytow_BRACTWO, LOG_SUCCESS);
     MIS_Watek_Bandytow_BRACTWO = LOG_SUCCESS;
 

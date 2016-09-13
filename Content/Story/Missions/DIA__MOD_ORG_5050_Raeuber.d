@@ -46,20 +46,20 @@ FUNC INT DIA_Raeuber_HELLO_Condition()
 
 FUNC VOID DIA_Raeuber_HELLO_Info()
 {
-    AI_Output (self, other ,"DIA_Raeuber_HELLO_03_01"); //Ej, cz�owieku!
+    AI_Output (self, other ,"DIA_Raeuber_HELLO_03_01"); //Hej, przyjacielu!
     AI_Output (other, self ,"DIA_Raeuber_HELLO_15_02"); //Czego chcesz?
-    AI_Output (self, other ,"DIA_Raeuber_HELLO_03_03"); //Tam, w jaskini znalaz�em skarb. Jednak stadko kretoszczur�w nie pozwala mi wej��.
-    AI_Output (self, other ,"DIA_Raeuber_HELLO_03_04"); //Pom� mi je zabi�, a podziel� si� zyskami.
+    AI_Output (self, other ,"DIA_Raeuber_HELLO_03_03"); //Jakiś czas temu schowałem w tej jaskini sakiewkę pełną rudy. A teraz jak na złość zalęgły się tam kretoszczury i nie mam jak jej wziąć.  
+    AI_Output (self, other ,"DIA_Raeuber_HELLO_03_04"); //Bądź człowiekiem. Pomóż mi je zabić. Oczywiście zapłacę. Może być 20 bryłek rudy? 
 
     Info_ClearChoices		(DIA_Raeuber_HELLO);
-    Info_AddChoice		(DIA_Raeuber_HELLO, "Dobra, chod�my.", DIA_Raeuber_HELLO_OK);
-    Info_AddChoice		(DIA_Raeuber_HELLO, "Spadaj.", DIA_Raeuber_HELLO_WON);
+    Info_AddChoice		(DIA_Raeuber_HELLO, "Dobra, chodŸmy.", DIA_Raeuber_HELLO_OK);
+    Info_AddChoice		(DIA_Raeuber_HELLO, "Spadaj", DIA_Raeuber_HELLO_WON);
 };
 
 FUNC VOID DIA_Raeuber_HELLO_OK()
 {
-    AI_Output (other, self ,"DIA_Raeuber_HELLO_OK_15_01"); //Dobra. Chod�my.
-    AI_Output (self, other ,"DIA_Raeuber_HELLO_OK_03_02"); //Id� za mn�!
+    AI_Output (other, self ,"DIA_Raeuber_HELLO_OK_15_01"); //Dobra, pomogę ci. Chodźmy.
+    AI_Output (self, other ,"DIA_Raeuber_HELLO_OK_03_02"); //Idź za mną!
     Info_ClearChoices		(DIA_Raeuber_HELLO);
     self.aivar[AIV_PARTYMEMBER] = TRUE;
 	oszukany99 = true;
@@ -75,8 +75,8 @@ FUNC VOID DIA_Raeuber_HELLO_OK()
 
 FUNC VOID DIA_Raeuber_HELLO_WON()
 {
-    AI_Output (other, self ,"DIA_Raeuber_HELLO_WON_15_01"); //Spadaj.
-    AI_Output (self, other ,"DIA_Raeuber_HELLO_WON_03_02"); //Jeste� g�upcem.
+    AI_Output (other, self ,"DIA_Raeuber_HELLO_WON_15_01"); //Spadaj
+    AI_Output (self, other ,"DIA_Raeuber_HELLO_WON_03_02"); //Jesteœ głupcem. Znałem kiedyś takiego jak ty. Bez przyjaciół długo w Kolonii nie pociągniesz. Powodzenia. 
 	oszukany99 = false; 
     Info_ClearChoices		(DIA_Raeuber_HELLO);
     AI_StopProcessInfos	(self);
@@ -109,9 +109,9 @@ FUNC INT DIA_Raeuber_DUREN_Condition()
 
 FUNC VOID DIA_Raeuber_DUREN_Info()
 {
-    AI_Output (self, other ,"DIA_Raeuber_DUREN_03_01"); //Co za dure�! Jeste� strasznie �atwowierny, wiesz? 
-    AI_Output (self, other ,"DIA_Raeuber_DUREN_03_02"); //Bra� go ch�opcy!
-    AI_Output (other, self ,"DIA_Raeuber_DUREN_15_03"); //Zobaczymy, kto b�dzie zbiera� z�by z pod�ogi.
+    AI_Output (self, other ,"DIA_Raeuber_DUREN_03_01"); //Co za dureñ! Pierwszy który dał się na to nabrać. Jesteœ strasznie ³atwowierny, wiesz? 
+    AI_Output (self, other ,"DIA_Raeuber_DUREN_03_02"); //Braæ go ch³opcy!
+    AI_Output (other, self ,"DIA_Raeuber_DUREN_15_03"); //Zobaczymy, kto bêdzie zbiera³ zêby z pod³ogi.
     AI_DrawWeapon (other);
          
 	B_SetPermAttitude	(NON_5050_Raeuber,	ATT_HOSTILE);

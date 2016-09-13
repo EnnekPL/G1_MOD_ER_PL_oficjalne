@@ -31,7 +31,7 @@ FUNC VOID DIA_GUR_1202_CorAngar_Exit_Info()
 };
 
 // ************************	
-//		Später Trainer 
+//		SpÃ¤ter Trainer 
 // ************************
 
 instance DIA_CorAngar_LaterTrainer (C_INFO)
@@ -41,7 +41,7 @@ instance DIA_CorAngar_LaterTrainer (C_INFO)
 	condition	= DIA_CorAngar_LaterTrainer_Condition;
 	information	= DIA_CorAngar_LaterTrainer_Info;
 	permanent	= 0;
-	description = "Mo¿esz mnie czegoœ nauczyæ?";
+	description = "MoÂ¿esz mnie czegoÅ“ nauczyÃ¦?";
 };                       
 
 FUNC int DIA_CorAngar_LaterTrainer_Condition()
@@ -51,12 +51,12 @@ FUNC int DIA_CorAngar_LaterTrainer_Condition()
 
 FUNC VOID DIA_CorAngar_LaterTrainer_Info()
 {
-	AI_Output(other,self,"GUR_1202_CorAngar_LaterTrainer_15_00"); //Mo¿esz mnie czegoœ nauczyæ?
-	AI_Output(self,other,"GUR_1202_CorAngar_LaterTrainer_08_01"); //Chcesz zostaæ silnym wojownikiem, wiêc szukasz mistrza, który wska¿e ci drogê.
-	AI_Output(self,other,"GUR_1202_CorAngar_LaterTrainer_08_02"); //To chwalebne, ale ja nie mogê ci pomóc.
-	AI_Output(self,other,"GUR_1202_CorAngar_LaterTrainer_08_03"); //Poœwiêcam mój czas tylko cz³onkom Wielkiego Krêgu Stra¿y Œwi¹tynnej.
+	AI_Output(other,self,"GUR_1202_CorAngar_LaterTrainer_15_00"); //MoÂ¿esz mnie czegoÅ“ nauczyÃ¦?
+	AI_Output(self,other,"GUR_1202_CorAngar_LaterTrainer_08_01"); //Chcesz zostaÃ¦ silnym wojownikiem, wiÃªc szukasz mistrza, ktÃ³ry wskaÂ¿e ci drogÃª.
+	AI_Output(self,other,"GUR_1202_CorAngar_LaterTrainer_08_02"); //To chwalebne, ale ja nie mogÃª ci pomÃ³c.
+	AI_Output(self,other,"GUR_1202_CorAngar_LaterTrainer_08_03"); //PoÅ“wiÃªcam mÃ³j czas tylko czÂ³onkom Wielkiego KrÃªgu StraÂ¿y Å’wiÂ¹tynnej.
 	Log_CreateTopic   	(GE_TeacherPSI,LOG_NOTE);
-	B_LogEntry			(GE_TeacherPSI,"Cor Angar mo¿e mnie nauczyæ walki dwurêcznym orê¿em lub poka¿e mi jak zwiêkszyæ si³ê i zrêcznoœæ, o ile bêdê cz³onkiem Bractwa. ");
+	B_LogEntry			(GE_TeacherPSI,"Cor Angar moÂ¿e mnie nauczyÃ¦ walki dwurÃªcznym orÃªÂ¿em lub pokaÂ¿e mi jak zwiÃªkszyÃ¦ siÂ³Ãª i zrÃªcznoÅ“Ã¦, o ile bÃªdÃª czÂ³onkiem Bractwa. ");
 };
 
 // ************************	
@@ -70,7 +70,7 @@ instance DIA_CorAngar_WieTempler (C_INFO)
 	condition	= DIA_CorAngar_WieTempler_Condition;
 	information	= DIA_CorAngar_WieTempler_Info;
 	permanent	= 1;
-	description = "Co mam zrobiæ, ¿eby zostaæ Œwi¹tynnym Stra¿nikiem?";
+	description = "Co mam zrobiÃ¦, Â¿eby zostaÃ¦ Å’wiÂ¹tynnym StraÂ¿nikiem?";
 };                       
 
 FUNC int DIA_CorAngar_WieTempler_Condition()
@@ -83,9 +83,9 @@ FUNC int DIA_CorAngar_WieTempler_Condition()
 
 FUNC VOID DIA_CorAngar_WieTempler_Info()
 {
-	AI_Output(other,self,"GUR_1202_CorAngar_WieTempler_15_00"); //Co mam zrobiæ, ¿eby zostaæ Œwi¹tynnym Stra¿nikiem?
-	AI_Output(self,other,"GUR_1202_CorAngar_WieTempler_08_01"); //Najpierw musisz ods³u¿yæ swoje jako Nowicjusz, dopóki nie przekonamy siê, ¿e jesteœ oddanym s³ug¹ Œni¹cego.
-	AI_Output(self,other,"GUR_1202_CorAngar_WieTempler_08_02"); //Dopiero wtedy mo¿esz do mnie wróciæ, a ja udzielê ci lekcji.
+	AI_Output(other,self,"GUR_1202_CorAngar_WieTempler_15_00"); //Co mam zrobiÃ¦, Â¿eby zostaÃ¦ Å’wiÂ¹tynnym StraÂ¿nikiem?
+	AI_Output(self,other,"GUR_1202_CorAngar_WieTempler_08_01"); //Najpierw musisz odsÂ³uÂ¿yÃ¦ swoje jako Nowicjusz, dopÃ³ki nie przekonamy siÃª, Â¿e jesteÅ“ oddanym sÂ³ugÂ¹ Å’niÂ¹cego.
+	AI_Output(self,other,"GUR_1202_CorAngar_WieTempler_08_02"); //Dopiero wtedy moÂ¿esz do mnie wrÃ³ciÃ¦, a ja udzielÃª ci lekcji.
 	AI_StopProcessInfos	( self );
 };
 
@@ -96,7 +96,7 @@ FUNC VOID DIA_CorAngar_WieTempler_Info()
 /////////////////////////////////
 
 //-------------------------------------------------------------------------
-//							STÄRKE UND DEX STEIGERN
+//							STÃ„RKE UND DEX STEIGERN
 //-------------------------------------------------------------------------
 INSTANCE GUR_1202_CorAngar_Teach(C_INFO)
 {
@@ -105,7 +105,7 @@ INSTANCE GUR_1202_CorAngar_Teach(C_INFO)
 	condition	= GUR_1202_CorAngar_Teach_Condition;
 	information	= GUR_1202_CorAngar_Teach_Info;
 	permanent	= 1;
-	description = "Poka¿esz mi, jak poprawiæ moj¹ si³ê i zrêcznoœæ?";
+	description = "PokaÂ¿esz mi, jak poprawiÃ¦ mojÂ¹ siÂ³Ãª i zrÃªcznoÅ“Ã¦?";
 };                       
 
 FUNC INT GUR_1202_CorAngar_Teach_Condition()
@@ -118,8 +118,8 @@ FUNC INT GUR_1202_CorAngar_Teach_Condition()
 
 FUNC VOID GUR_1202_CorAngar_Teach_Info()
 {
-	AI_Output(other,self,"GUR_1202_CorAngar_Teach_15_00"); //Poka¿esz mi, jak poprawiæ moj¹ si³ê i zrêcznoœæ?
-	AI_Output(self,other,"GUR_1202_CorAngar_Teach_08_01"); //Si³a i zrêcznoœæ to cechy wielkiego wojownika.
+	AI_Output(other,self,"GUR_1202_CorAngar_Teach_15_00"); //PokaÂ¿esz mi, jak poprawiÃ¦ mojÂ¹ siÂ³Ãª i zrÃªcznoÅ“Ã¦?
+	AI_Output(self,other,"GUR_1202_CorAngar_Teach_08_01"); //SiÂ³a i zrÃªcznoÅ“Ã¦ to cechy wielkiego wojownika.
 	
 	Info_ClearChoices	(GUR_1202_CorAngar_Teach);
 	Info_AddChoice		(GUR_1202_CorAngar_Teach,DIALOG_BACK									,GUR_1202_CorAngar_Teach_BACK);
@@ -188,7 +188,7 @@ instance  GUR_1202_CorAngar_WANNABETPL (C_INFO)
 	information		= GUR_1202_CorAngar_WANNABETPL_Info;
 	important		= 0;
 	permanent		= 1;
-	description		= "Chcê zostaæ Œwi¹tynnym Stra¿nikiem!"; 
+	description		= "ChcÃª zostaÃ¦ Å’wiÂ¹tynnym StraÂ¿nikiem!"; 
 };
 
 FUNC int  GUR_1202_CorAngar_WANNABETPL_Condition()
@@ -202,36 +202,36 @@ FUNC int  GUR_1202_CorAngar_WANNABETPL_Condition()
 };
 FUNC void  GUR_1202_CorAngar_WANNABETPL_Info()
 {
-	AI_Output			(other, self,"GUR_1202_CorAngar_WANNABETPL_Info_15_01"); //Chcê zostaæ Œwi¹tynnym Stra¿nikiem!
+	AI_Output			(other, self,"GUR_1202_CorAngar_WANNABETPL_Info_15_01"); //ChcÃª zostaÃ¦ Å’wiÂ¹tynnym StraÂ¿nikiem!
 	
 	if	(hero.level < 10)
 	{ 
-		AI_Output		(self, other,"GUR_1202_CorAngar_WANNABETPL_Info_08_02"); //Nie jesteœ jeszcze gotowy. Mo¿esz do nas do³¹czyæ, kiedy zdobêdziesz nieco wiêcej doœwiadczenia.
+		AI_Output		(self, other,"GUR_1202_CorAngar_WANNABETPL_Info_08_02"); //Nie jesteÅ“ jeszcze gotowy. MoÂ¿esz do nas doÂ³Â¹czyÃ¦, kiedy zdobÃªdziesz nieco wiÃªcej doÅ“wiadczenia.
 	    GUR_1202_CorAngar_WANNABETPL.permanent = 1;
     }
     else if	(hero.level >= 10)
     {
-	    AI_Output		(self, other,"GUR_1202_CorAngar_WANNABETPL_Info_08_03"); //Nadszed³ dzieñ, w którym dane ci bêdzie do nas do³¹czyæ.
-		AI_Output		(self, other,"GUR_1202_CorAngar_WANNABETPL_Info_08_04"); //Pamiêtaj, ¿e Œwi¹tynny Stra¿nik to coœ wiêcej ni¿ wojownik strzeg¹cy Obozu Bractwa. Jesteœmy wybranymi stra¿nikami wyznawców Œni¹cego. Bronimy duchowej aury tego miejsca.
-		AI_Output		(self, other,"GUR_1202_CorAngar_WANNABETPL_Info_08_05"); //Wykorzystujemy zarówno nasz¹ si³ê fizyczn¹ jak i duchow¹. Prawdziwym Stra¿nikiem Œwi¹tynnym mo¿e zostaæ tylko ten, którego cia³o i duch funkcjonuj¹ w idealnej harmonii.
-		AI_Output		(self, other,"GUR_1202_CorAngar_WANNABETPL_Info_08_06"); //Cieszê siê, ¿e uda³o ci siê osi¹gn¹æ tak wiele w tak krótkim czasie.
-		AI_Output		(self, other,"GUR_1202_CorAngar_WANNABETPL_Info_08_07"); //Pamiêtaj: Duchowa koncentracja i zdrowe cia³o sprostaj¹ ka¿demu wyzwaniu.
-		AI_Output		(self, other,"GUR_1202_CorAngar_WANNABETPL_Info_08_08"); //IdŸ teraz do Gor Na Totha. Znajdziesz go na placu treningowym. On da ci nowy pancerz.
+	    AI_Output		(self, other,"GUR_1202_CorAngar_WANNABETPL_Info_08_03"); //NadszedÂ³ dzieÃ±, w ktÃ³rym dane ci bÃªdzie do nas doÂ³Â¹czyÃ¦.
+		AI_Output		(self, other,"GUR_1202_CorAngar_WANNABETPL_Info_08_04"); //PamiÃªtaj, Â¿e Å’wiÂ¹tynny StraÂ¿nik to coÅ“ wiÃªcej niÂ¿ wojownik strzegÂ¹cy Obozu Bractwa. JesteÅ“my wybranymi straÂ¿nikami wyznawcÃ³w Å’niÂ¹cego. Bronimy duchowej aury tego miejsca.
+		AI_Output		(self, other,"GUR_1202_CorAngar_WANNABETPL_Info_08_05"); //Wykorzystujemy zarÃ³wno naszÂ¹ siÂ³Ãª fizycznÂ¹ jak i duchowÂ¹. Prawdziwym StraÂ¿nikiem Å’wiÂ¹tynnym moÂ¿e zostaÃ¦ tylko ten, ktÃ³rego ciaÂ³o i duch funkcjonujÂ¹ w idealnej harmonii.
+		AI_Output		(self, other,"GUR_1202_CorAngar_WANNABETPL_Info_08_06"); //CieszÃª siÃª, Â¿e udaÂ³o ci siÃª osiÂ¹gnÂ¹Ã¦ tak wiele w tak krÃ³tkim czasie.
+		AI_Output		(self, other,"GUR_1202_CorAngar_WANNABETPL_Info_08_07"); //PamiÃªtaj: Duchowa koncentracja i zdrowe ciaÂ³o sprostajÂ¹ kaÂ¿demu wyzwaniu.
+		AI_Output		(self, other,"GUR_1202_CorAngar_WANNABETPL_Info_08_08"); //IdÅ¸ teraz do Gor Na Totha. Znajdziesz go na placu treningowym. On da ci nowy pancerz.
 		GUR_1202_CorAngar_WANNABETPL.permanent = 0;
 		Npc_SetTrueGuild(hero, GIL_TPL);
 		hero.guild = GIL_TPL;
 		HeroJoinToPSI ();
 		Log_CreateTopic	(GE_BecomeTemplar,	LOG_NOTE);
-		B_LogEntry		(GE_BecomeTemplar,	"Dziœ Cor Angar przyj¹³ mnie w poczet Stra¿y Œwi¹tynnej. Gor Na Toth ma mi wrêczyæ moj¹ now¹ zbrojê. Znajdê go przy placu treningowym.");
+		B_LogEntry		(GE_BecomeTemplar,	"DziÅ“ Cor Angar przyjÂ¹Â³ mnie w poczet StraÂ¿y Å’wiÂ¹tynnej. Gor Na Toth ma mi wrÃªczyÃ¦ mojÂ¹ nowÂ¹ zbrojÃª. ZnajdÃª go przy placu treningowym.");
 		Log_CreateTopic	(GE_TeacherPSI,		LOG_NOTE);
-		B_LogEntry		(GE_TeacherPSI,		"Cor Angar pomo¿e mi rozwin¹æ moj¹ si³ê, zrêcznoœæ.");
+		B_LogEntry		(GE_TeacherPSI,		"Cor Angar pomoÂ¿e mi rozwinÂ¹Ã¦ mojÂ¹ siÂ³Ãª, zrÃªcznoÅ“Ã¦.");
 	};
 
 };
 
 /*
 //---------------------------------------------------------------
-// NAUKA WALKI ORÊ¯EM 2H
+// NAUKA WALKI ORÃŠÂ¯EM 2H
 //---------------------------------------------------------------
 instance  GUR_1202_CorAngar_TEACH_2H (C_INFO)
 {
@@ -239,7 +239,7 @@ instance  GUR_1202_CorAngar_TEACH_2H (C_INFO)
 	condition		= GUR_1202_CorAngar_TEACH_2H_Condition;
 	information		= GUR_1202_CorAngar_TEACH_2H_Info;
 	permanent		= 0;
-	description		= "Mo¿esz mnie nauczyæ lepiej walczyæ?"; 
+	description		= "MoÂ¿esz mnie nauczyÃ¦ lepiej walczyÃ¦?"; 
 };
 //madfaka
 FUNC int  GUR_1202_CorAngar_TEACH_2H_Condition()
@@ -249,19 +249,19 @@ FUNC int  GUR_1202_CorAngar_TEACH_2H_Condition()
 
 FUNC void  GUR_1202_CorAngar_TEACH_2H_Info()
 {
-	AI_Output (other, self,"GUR_1202_CorAngar_TEACH_2H_Info_15_01"); //Mo¿esz mnie nauczyæ lepiej walczyæ?
-	AI_Output (self, other,"GUR_1202_CorAngar_TEACH_2H_Info_09_02"); //Szkolê wy³¹cznie cz³onków Bractwa.
+	AI_Output (other, self,"GUR_1202_CorAngar_TEACH_2H_Info_15_01"); //MoÂ¿esz mnie nauczyÃ¦ lepiej walczyÃ¦?
+	AI_Output (self, other,"GUR_1202_CorAngar_TEACH_2H_Info_09_02"); //SzkolÃª wyÂ³Â¹cznie czÂ³onkÃ³w Bractwa.
 
 	//if (log_CorAngarfight == FALSE)
 	//{
 		Log_CreateTopic   	(GE_TeacherPSI,LOG_NOTE);
-		B_LogEntry			(GE_TeacherPSI,"CorAngar mo¿e mnie nauczyæ walki dwurêcznym orê¿em o ile bêdê cz³onkiem Bractwa.");
+		B_LogEntry			(GE_TeacherPSI,"CorAngar moÂ¿e mnie nauczyÃ¦ walki dwurÃªcznym orÃªÂ¿em o ile bÃªdÃª czÂ³onkiem Bractwa.");
 		//log_CorAngarfight = TRUE;
 	//};
 }; 
 */
 //---------------------------------------------------------------
-// NAUKA WALKI ORÊ¯EM 2H
+// NAUKA WALKI ORÃŠÂ¯EM 2H
 //---------------------------------------------------------------
 instance  GUR_1202_CorAngar_TEACH_2H_START (C_INFO)
 {
@@ -289,43 +289,43 @@ Info_ClearChoices	(GUR_1202_CorAngar_TEACH_2H_START);
 	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,DIALOG_BACK,GUR_1202_CorAngar_TEACH_2H_STARTBACK);
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 0) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 1, 100 bry³ek rudy, 10 PN",CorAngar_teach_2h1);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 1, 100 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h1);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 1) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 2, 200 bry³ek rudy, 10 PN",CorAngar_teach_2h2);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 2, 200 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h2);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 2) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 3, 300 bry³ek rudy, 10 PN",CorAngar_teach_2h3);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 3, 300 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h3);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 3) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 4, 400 bry³ek rudy, 10 PN",CorAngar_teach_2h4);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 4, 400 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h4);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 4) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 5, 500 bry³ek rudy, 10 PN",CorAngar_teach_2h5);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 5, 500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h5);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 5) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 6, 600 bry³ek rudy, 10 PN",CorAngar_teach_2h6);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 6, 600 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h6);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 6) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 7, 1000 bry³ek rudy, 10 PN",CorAngar_teach_2h7);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 7, 1000 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h7);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 7) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 8, 1500 bry³ek rudy, 10 PN",CorAngar_teach_2h8);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 8, 1500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h8);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 8) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 9, 2000 bry³ek rudy, 10 PN",CorAngar_teach_2h9);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 9, 2000 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h9);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 9) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 10, 2500 bry³ek rudy, 10 PN",CorAngar_teach_2h10);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 10, 2500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h10);
 	};
 };
 
@@ -336,624 +336,624 @@ func void GUR_1202_CorAngar_TEACH_2H_STARTBACK ()
 
 FUNC VOID CorAngar_teach_2h1 ()
 {
-	AI_Output (other,self,"DIA_CorAngar_TRAIN_2h_15_00"); //Chcia³bym nauczyæ siê walki dwurêcznym orê¿em.
+	AI_Output (other,self,"DIA_CorAngar_TRAIN_2h_15_00"); //ChciaÂ³bym nauczyÃ¦ siÃª walki dwurÃªcznym orÃªÂ¿em.
 	if (Npc_HasItems(other,itminugget) >= 100)
 	{
 		if (B_GiveSkill(other, NPC_TALENT_2h, 1, 10))
 		{
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_01"); //Bronie dwurêczne wymagaj¹ sporo si³y. S¹ ciê¿kie, a przez to tak¿e wolniejsze.
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_02"); //Zmieni siê to jednak w trakcie czynienia przez ciebie postêpów w nauce.
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_03"); //Za powolnoœæ bronie dwurêczne odwdziêcz¹ ci siê potê¿nymi obra¿eniami.
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_04"); //Ka¿d¹ broñ musisz odpowiednio wyczuæ. Topory s¹ inaczej zbalansowane ni¿ miecze. Pamiêtaj o tym.
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_01"); //Bronie dwurÃªczne wymagajÂ¹ sporo siÂ³y. SÂ¹ ciÃªÂ¿kie, a przez to takÂ¿e wolniejsze.
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_02"); //Zmieni siÃª to jednak w trakcie czynienia przez ciebie postÃªpÃ³w w nauce.
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_03"); //Za powolnoÅ“Ã¦ bronie dwurÃªczne odwdziÃªczÂ¹ ci siÃª potÃªÂ¿nymi obraÂ¿eniami.
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_04"); //KaÂ¿dÂ¹ broÃ± musisz odpowiednio wyczuÃ¦. Topory sÂ¹ inaczej zbalansowane niÂ¿ miecze. PamiÃªtaj o tym.
 		B_GiveInvItems(other,self,itminugget,100);
 		};
 	}
 	else
 	{
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_NoOre_01_00"); //Nie masz wystarczaj¹cej iloœci rudy!
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_NoOre_01_00"); //Nie masz wystarczajÂ¹cej iloÅ“ci rudy!
 	};	
 	Info_ClearChoices	(GUR_1202_CorAngar_TEACH_2H_START);
 	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,DIALOG_BACK,GUR_1202_CorAngar_TEACH_2H_STARTBACK);
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 0) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 1, 100 bry³ek rudy, 10 PN",CorAngar_teach_2h1);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 1, 100 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h1);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 1) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 2, 200 bry³ek rudy, 10 PN",CorAngar_teach_2h2);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 2, 200 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h2);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 2) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 3, 300 bry³ek rudy, 10 PN",CorAngar_teach_2h3);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 3, 300 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h3);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 3) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 4, 400 bry³ek rudy, 10 PN",CorAngar_teach_2h4);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 4, 400 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h4);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 4) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 5, 500 bry³ek rudy, 10 PN",CorAngar_teach_2h5);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 5, 500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h5);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 5) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 6, 600 bry³ek rudy, 10 PN",CorAngar_teach_2h6);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 6, 600 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h6);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 6) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 7, 1000 bry³ek rudy, 10 PN",CorAngar_teach_2h7);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 7, 1000 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h7);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 7) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 8, 1500 bry³ek rudy, 10 PN",CorAngar_teach_2h8);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 8, 1500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h8);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 8) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 9, 2000 bry³ek rudy, 10 PN",CorAngar_teach_2h9);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 9, 2000 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h9);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 9) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 10, 2500 bry³ek rudy, 10 PN",CorAngar_teach_2h10);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 10, 2500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h10);
 	};
 };
 
 FUNC VOID CorAngar_teach_2h2 ()
 {
-	AI_Output (other,self,"DIA_CorAngar_TRAIN_2h_15_01"); //Naucz mnie sprawniej pos³ugiwaæ siê dwurêczn¹ broni¹.
+	AI_Output (other,self,"DIA_CorAngar_TRAIN_2h_15_01"); //Naucz mnie sprawniej posÂ³ugiwaÃ¦ siÃª dwurÃªcznÂ¹ broniÂ¹.
 	if (Npc_HasItems(other,itminugget) >= 200)
 	{
 		if (B_GiveSkill(other, NPC_TALENT_2h, 2, 10))
 		{
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_06"); //Musisz pracowaæ nad swoj¹ si³¹. Pozwoli ci ona wykonywaæ szybsze ruchy i podnosiæ coraz ciê¿sze bronie. 
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_06"); //Musisz pracowaÃ¦ nad swojÂ¹ siÂ³Â¹. Pozwoli ci ona wykonywaÃ¦ szybsze ruchy i podnosiÃ¦ coraz ciÃªÂ¿sze bronie. 
 		//AI_DrawWeapon (other);
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_07"); //PóŸniej bêdziesz musia³ poznaæ odpowiedni¹ technikê walki i ³¹cznia ciosów. 
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_07"); //PÃ³Å¸niej bÃªdziesz musiaÂ³ poznaÃ¦ odpowiedniÂ¹ technikÃª walki i Â³Â¹cznia ciosÃ³w. 
 		//AI_RemoveWeapon (other);
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_08"); //Na razie nie jesteœ wstanie zadaæ pe³nych obra¿eñ na jakie pozwala ci dana broñ. Spokojnie, zajmiemy siê tym.
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_08"); //Na razie nie jesteÅ“ wstanie zadaÃ¦ peÂ³nych obraÂ¿eÃ± na jakie pozwala ci dana broÃ±. Spokojnie, zajmiemy siÃª tym.
 		B_GiveInvItems(other,self,itminugget,200);
 		};
 	}
 	else
 	{
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_NoOre_01_00"); //Nie masz wystarczaj¹cej iloœci rudy!
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_NoOre_01_00"); //Nie masz wystarczajÂ¹cej iloÅ“ci rudy!
 	};	
 	Info_ClearChoices	(GUR_1202_CorAngar_TEACH_2H_START);
 	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,DIALOG_BACK,GUR_1202_CorAngar_TEACH_2H_STARTBACK);
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 0) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 1, 100 bry³ek rudy, 10 PN",CorAngar_teach_2h1);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 1, 100 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h1);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 1) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 2, 200 bry³ek rudy, 10 PN",CorAngar_teach_2h2);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 2, 200 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h2);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 2) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 3, 300 bry³ek rudy, 10 PN",CorAngar_teach_2h3);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 3, 300 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h3);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 3) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 4, 400 bry³ek rudy, 10 PN",CorAngar_teach_2h4);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 4, 400 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h4);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 4) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 5, 500 bry³ek rudy, 10 PN",CorAngar_teach_2h5);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 5, 500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h5);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 5) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 6, 600 bry³ek rudy, 10 PN",CorAngar_teach_2h6);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 6, 600 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h6);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 6) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 7, 1000 bry³ek rudy, 10 PN",CorAngar_teach_2h7);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 7, 1000 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h7);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 7) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 8, 1500 bry³ek rudy, 10 PN",CorAngar_teach_2h8);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 8, 1500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h8);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 8) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 9, 2000 bry³ek rudy, 10 PN",CorAngar_teach_2h9);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 9, 2000 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h9);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 9) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 10, 2500 bry³ek rudy, 10 PN",CorAngar_teach_2h10);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 10, 2500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h10);
 	};
 };
 
 FUNC VOID CorAngar_teach_2h3 ()
 {
-	AI_Output (other,self,"DIA_CorAngar_TRAIN_2h_15_01"); //Naucz mnie sprawniej pos³ugiwaæ siê dwurêczn¹ broni¹.
+	AI_Output (other,self,"DIA_CorAngar_TRAIN_2h_15_01"); //Naucz mnie sprawniej posÂ³ugiwaÃ¦ siÃª dwurÃªcznÂ¹ broniÂ¹.
 	if (Npc_HasItems(other,itminugget) >= 300)
 	{
 		if (B_GiveSkill(other, NPC_TALENT_2h, 3, 10))
 		{
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_10"); //Wiesz jaka jest jeszcze zaleta dwurêcznych broni?
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_11"); //S¹ d³ugie... Im d³u¿sze tym dalej od siebie mo¿esz trzymaæ przeciwnika. 
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_12"); //Gdy kupujesz broñ zwracaj uwagê na jej górn¹ czêœæ. Jeœli jest wystarczaj¹co ostra to nawet draœniêcie oponenta z daleka zada mu obra¿enia lub zniszczy jego pancerz. 
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_13"); //Poka¿ mi jeszcze jak wyci¹gasz broñ. Robisz jakieœ postêpy?
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_10"); //Wiesz jaka jest jeszcze zaleta dwurÃªcznych broni?
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_11"); //SÂ¹ dÂ³ugie... Im dÂ³uÂ¿sze tym dalej od siebie moÂ¿esz trzymaÃ¦ przeciwnika. 
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_12"); //Gdy kupujesz broÃ± zwracaj uwagÃª na jej gÃ³rnÂ¹ czÃªÅ“Ã¦. JeÅ“li jest wystarczajÂ¹co ostra to nawet draÅ“niÃªcie oponenta z daleka zada mu obraÂ¿enia lub zniszczy jego pancerz. 
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_13"); //PokaÂ¿ mi jeszcze jak wyciÂ¹gasz broÃ±. Robisz jakieÅ“ postÃªpy?
 		AI_DrawWeapon (other);
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_14"); //Nie, nie, nie. Omówimy to na nastêpnej lekcji. 
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_14"); //Nie, nie, nie. OmÃ³wimy to na nastÃªpnej lekcji. 
 		AI_RemoveWeapon (other);
 		B_GiveInvItems(other,self,itminugget,300);
 		};
 	}
 	else
 	{
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_NoOre_01_00"); //Nie masz wystarczaj¹cej iloœci rudy!
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_NoOre_01_00"); //Nie masz wystarczajÂ¹cej iloÅ“ci rudy!
 	};	
 	Info_ClearChoices	(GUR_1202_CorAngar_TEACH_2H_START);
 	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,DIALOG_BACK,GUR_1202_CorAngar_TEACH_2H_STARTBACK);
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 0) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 1, 100 bry³ek rudy, 10 PN",CorAngar_teach_2h1);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 1, 100 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h1);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 1) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 2, 200 bry³ek rudy, 10 PN",CorAngar_teach_2h2);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 2, 200 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h2);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 2) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 3, 300 bry³ek rudy, 10 PN",CorAngar_teach_2h3);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 3, 300 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h3);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 3) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 4, 400 bry³ek rudy, 10 PN",CorAngar_teach_2h4);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 4, 400 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h4);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 4) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 5, 500 bry³ek rudy, 10 PN",CorAngar_teach_2h5);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 5, 500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h5);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 5) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 6, 600 bry³ek rudy, 10 PN",CorAngar_teach_2h6);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 6, 600 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h6);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 6) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 7, 1000 bry³ek rudy, 10 PN",CorAngar_teach_2h7);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 7, 1000 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h7);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 7) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 8, 1500 bry³ek rudy, 10 PN",CorAngar_teach_2h8);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 8, 1500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h8);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 8) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 9, 2000 bry³ek rudy, 10 PN",CorAngar_teach_2h9);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 9, 2000 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h9);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 9) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 10, 2500 bry³ek rudy, 10 PN",CorAngar_teach_2h10);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 10, 2500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h10);
 	};
 };
 
 FUNC VOID CorAngar_teach_2h4 ()
 {
-	AI_Output (other,self,"DIA_CorAngar_TRAIN_2h_15_01"); //Naucz mnie sprawniej pos³ugiwaæ siê dwurêczn¹ broni¹.
+	AI_Output (other,self,"DIA_CorAngar_TRAIN_2h_15_01"); //Naucz mnie sprawniej posÂ³ugiwaÃ¦ siÃª dwurÃªcznÂ¹ broniÂ¹.
 	if (Npc_HasItems(other,itminugget) >= 400)
 	{
 		if (B_GiveSkill(other, NPC_TALENT_2h, 4, 10))
 		{
-		AI_Output (self, other,"GUR_1202_CorAngar_ZWEIHAND1_Info_09_03"); //Wyci¹gnij miecz przed siebie. Aby zaatakowaæ wroga tak ciê¿k¹ broni¹, musisz mocniej siê zamachn¹æ.
-		AI_Output (self, other,"GUR_1202_CorAngar_ZWEIHAND1_Info_09_04"); //Unieœ ramiê i zdecydowanie opuœæ miecz. To powinno wystarczyæ, ¿eby powaliæ przeciwnika na ziemiê.
-		AI_Output (self, other,"GUR_1202_CorAngar_ZWEIHAND1_Info_09_05"); //Wykorzystaj bezw³adnoœæ broni, by unieœæ j¹ ponownie do góry.
-		AI_Output (self, other,"GUR_1202_CorAngar_ZWEIHAND1_Info_09_06"); //Dwurêczne miecze œwietnie sprawdzaj¹ siê przy zadawaniu ciosów z boku. W ten sposób mo¿esz trzymaæ przeciwnika na dystans.
-		AI_Output (self, other,"GUR_1202_CorAngar_ZWEIHAND1_Info_09_07"); //To ci powinno wystarczyæ na pocz¹tek. Teraz trochê poæwicz.
+		AI_Output (self, other,"GUR_1202_CorAngar_ZWEIHAND1_Info_09_03"); //WyciÂ¹gnij miecz przed siebie. Aby zaatakowaÃ¦ wroga tak ciÃªÂ¿kÂ¹ broniÂ¹, musisz mocniej siÃª zamachnÂ¹Ã¦.
+		AI_Output (self, other,"GUR_1202_CorAngar_ZWEIHAND1_Info_09_04"); //UnieÅ“ ramiÃª i zdecydowanie opuÅ“Ã¦ miecz. To powinno wystarczyÃ¦, Â¿eby powaliÃ¦ przeciwnika na ziemiÃª.
+		AI_Output (self, other,"GUR_1202_CorAngar_ZWEIHAND1_Info_09_05"); //Wykorzystaj bezwÂ³adnoÅ“Ã¦ broni, by unieÅ“Ã¦ jÂ¹ ponownie do gÃ³ry.
+		AI_Output (self, other,"GUR_1202_CorAngar_ZWEIHAND1_Info_09_06"); //DwurÃªczne miecze Å“wietnie sprawdzajÂ¹ siÃª przy zadawaniu ciosÃ³w z boku. W ten sposÃ³b moÂ¿esz trzymaÃ¦ przeciwnika na dystans.
+		AI_Output (self, other,"GUR_1202_CorAngar_ZWEIHAND1_Info_09_07"); //To ci powinno wystarczyÃ¦ na poczÂ¹tek. Teraz trochÃª poÃ¦wicz.
 		B_GiveInvItems(other,self,itminugget,400);
 		};
 	}
 	else
 	{
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_NoOre_01_00"); //Nie masz wystarczaj¹cej iloœci rudy!
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_NoOre_01_00"); //Nie masz wystarczajÂ¹cej iloÅ“ci rudy!
 	};	
 Info_ClearChoices	(GUR_1202_CorAngar_TEACH_2H_START);
 	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,DIALOG_BACK,GUR_1202_CorAngar_TEACH_2H_STARTBACK);
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 0) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 1, 100 bry³ek rudy, 10 PN",CorAngar_teach_2h1);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 1, 100 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h1);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 1) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 2, 200 bry³ek rudy, 10 PN",CorAngar_teach_2h2);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 2, 200 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h2);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 2) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 3, 300 bry³ek rudy, 10 PN",CorAngar_teach_2h3);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 3, 300 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h3);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 3) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 4, 400 bry³ek rudy, 10 PN",CorAngar_teach_2h4);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 4, 400 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h4);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 4) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 5, 500 bry³ek rudy, 10 PN",CorAngar_teach_2h5);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 5, 500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h5);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 5) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 6, 600 bry³ek rudy, 10 PN",CorAngar_teach_2h6);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 6, 600 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h6);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 6) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 7, 1000 bry³ek rudy, 10 PN",CorAngar_teach_2h7);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 7, 1000 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h7);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 7) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 8, 1500 bry³ek rudy, 10 PN",CorAngar_teach_2h8);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 8, 1500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h8);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 8) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 9, 2000 bry³ek rudy, 10 PN",CorAngar_teach_2h9);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 9, 2000 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h9);
 	};	
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 9) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 10, 2500 bry³ek rudy, 10 PN",CorAngar_teach_2h10);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 10, 2500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h10);
 	};
 };
 
 FUNC VOID CorAngar_teach_2h5 ()
 {
-	AI_Output (other,self,"DIA_CorAngar_TRAIN_2h_15_01"); //Naucz mnie sprawniej pos³ugiwaæ siê dwurêczn¹ broni¹.
+	AI_Output (other,self,"DIA_CorAngar_TRAIN_2h_15_01"); //Naucz mnie sprawniej posÂ³ugiwaÃ¦ siÃª dwurÃªcznÂ¹ broniÂ¹.
 	if (Npc_HasItems(other,itminugget) >= 500)
 	{
 		if (B_GiveSkill(other, NPC_TALENT_2h, 5, 10))
 		{
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_15"); //Na poprzedniej lekcji nauczy³em ciê jak porz¹dnie trzymaæ broñ i jak wykorzystaæ si³ê bezw³adnoœci ostrza.
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_16"); //Pamiêtaj, ¿e im lepiej wyczujesz balans broni tym ³atwiej bêdzie ci ³¹czyæ kolejne ciosy.
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_17"); //Musisz wiedzieæ, w którym momencie ponownie siê zamachn¹æ, tak by wykorzystaæ przy tym impet pierwszego uderzenia. Pozwoli ci to oszczêdziæ si³y.
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_15"); //Na poprzedniej lekcji nauczyÂ³em ciÃª jak porzÂ¹dnie trzymaÃ¦ broÃ± i jak wykorzystaÃ¦ siÂ³Ãª bezwÂ³adnoÅ“ci ostrza.
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_16"); //PamiÃªtaj, Â¿e im lepiej wyczujesz balans broni tym Â³atwiej bÃªdzie ci Â³Â¹czyÃ¦ kolejne ciosy.
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_17"); //Musisz wiedzieÃ¦, w ktÃ³rym momencie ponownie siÃª zamachnÂ¹Ã¦, tak by wykorzystaÃ¦ przy tym impet pierwszego uderzenia. Pozwoli ci to oszczÃªdziÃ¦ siÂ³y.
 			B_GiveInvItems(other,self,itminugget,500);
 		};
 	}
 	else
 	{
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_NoOre_01_00"); //Nie masz wystarczaj¹cej iloœci rudy!
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_NoOre_01_00"); //Nie masz wystarczajÂ¹cej iloÅ“ci rudy!
 	};	
 Info_ClearChoices	(GUR_1202_CorAngar_TEACH_2H_START);
 	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,DIALOG_BACK,GUR_1202_CorAngar_TEACH_2H_STARTBACK);
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 0) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 1, 100 bry³ek rudy, 10 PN",CorAngar_teach_2h1);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 1, 100 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h1);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 1) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 2, 200 bry³ek rudy, 10 PN",CorAngar_teach_2h2);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 2, 200 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h2);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 2) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 3, 300 bry³ek rudy, 10 PN",CorAngar_teach_2h3);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 3, 300 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h3);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 3) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 4, 400 bry³ek rudy, 10 PN",CorAngar_teach_2h4);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 4, 400 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h4);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 4) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 5, 500 bry³ek rudy, 10 PN",CorAngar_teach_2h5);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 5, 500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h5);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 5) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 6, 600 bry³ek rudy, 10 PN",CorAngar_teach_2h6);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 6, 600 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h6);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 6) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 7, 1000 bry³ek rudy, 10 PN",CorAngar_teach_2h7);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 7, 1000 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h7);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 7) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 8, 1500 bry³ek rudy, 10 PN",CorAngar_teach_2h8);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 8, 1500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h8);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 8) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 9, 2000 bry³ek rudy, 10 PN",CorAngar_teach_2h9);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 9, 2000 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h9);
 	};	
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 9) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 10, 2500 bry³ek rudy, 10 PN",CorAngar_teach_2h10);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 10, 2500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h10);
 	};
 };
 
 FUNC VOID CorAngar_teach_2h6 ()
 {
-	AI_Output (other,self,"DIA_CorAngar_TRAIN_2h_15_01"); //Naucz mnie sprawniej pos³ugiwaæ siê dwurêczn¹ broni¹.
+	AI_Output (other,self,"DIA_CorAngar_TRAIN_2h_15_01"); //Naucz mnie sprawniej posÂ³ugiwaÃ¦ siÃª dwurÃªcznÂ¹ broniÂ¹.
 	if (Npc_HasItems(other,itminugget) >= 600)
 	{
 		if (B_GiveSkill(other, NPC_TALENT_2h, 6, 10))
 		{
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_18"); //Stosuj ró¿ne strategie walki. Uderzaj raz z przodu, raz z boku. A póŸniej jeszcze z drugiej strony. 
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_19"); //Uniki z dwurêcznym mieczem w rêku faktycznie mog¹ byæ trudne, dlatego musisz parowaæ ciosy. Æwicz si³ê miêœni r¹k, pleców i klatki piersiowej. 
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_20"); //To pozwoli ci skutecznie blokowaæ, bez ryzyka po³amania sobie czegoœ. 
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_18"); //Stosuj rÃ³Â¿ne strategie walki. Uderzaj raz z przodu, raz z boku. A pÃ³Å¸niej jeszcze z drugiej strony. 
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_19"); //Uniki z dwurÃªcznym mieczem w rÃªku faktycznie mogÂ¹ byÃ¦ trudne, dlatego musisz parowaÃ¦ ciosy. Ã†wicz siÂ³Ãª miÃªÅ“ni rÂ¹k, plecÃ³w i klatki piersiowej. 
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_20"); //To pozwoli ci skutecznie blokowaÃ¦, bez ryzyka poÂ³amania sobie czegoÅ“. 
 		B_GiveInvItems(other,self,itminugget,600);
 		};
 	}
 	else
 	{
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_NoOre_01_00"); //Nie masz wystarczaj¹cej iloœci rudy!
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_NoOre_01_00"); //Nie masz wystarczajÂ¹cej iloÅ“ci rudy!
 	};
 Info_ClearChoices	(GUR_1202_CorAngar_TEACH_2H_START);
 	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,DIALOG_BACK,GUR_1202_CorAngar_TEACH_2H_STARTBACK);
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 0) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 1, 100 bry³ek rudy, 10 PN",CorAngar_teach_2h1);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 1, 100 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h1);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 1) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 2, 200 bry³ek rudy, 10 PN",CorAngar_teach_2h2);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 2, 200 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h2);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 2) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 3, 300 bry³ek rudy, 10 PN",CorAngar_teach_2h3);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 3, 300 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h3);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 3) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 4, 400 bry³ek rudy, 10 PN",CorAngar_teach_2h4);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 4, 400 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h4);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 4) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 5, 500 bry³ek rudy, 10 PN",CorAngar_teach_2h5);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 5, 500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h5);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 5) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 6, 600 bry³ek rudy, 10 PN",CorAngar_teach_2h6);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 6, 600 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h6);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 6) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 7, 1000 bry³ek rudy, 10 PN",CorAngar_teach_2h7);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 7, 1000 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h7);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 7) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 8, 1500 bry³ek rudy, 10 PN",CorAngar_teach_2h8);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 8, 1500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h8);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 8) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 9, 2000 bry³ek rudy, 10 PN",CorAngar_teach_2h9);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 9, 2000 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h9);
 	};	
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 9) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 10, 2500 bry³ek rudy, 10 PN",CorAngar_teach_2h10);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 10, 2500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h10);
 	};
 };
 
 FUNC VOID CorAngar_teach_2h7 ()
 {
-	AI_Output (other,self,"DIA_CorAngar_TRAIN_2h_15_01"); //Naucz mnie sprawniej pos³ugiwaæ siê dwurêczn¹ broni¹.
+	AI_Output (other,self,"DIA_CorAngar_TRAIN_2h_15_01"); //Naucz mnie sprawniej posÂ³ugiwaÃ¦ siÃª dwurÃªcznÂ¹ broniÂ¹.
 	if (Npc_HasItems(other,itminugget) >= 1000)
 	{
 		if (B_GiveSkill(other, NPC_TALENT_2h, 7, 10))
 		{
-		AI_Output (self, other,"GUR_1202_CorAngar_ZWEIHAND2_Info_09_02"); //Musisz siê nauczyæ p³ynnie przenosiæ œrodek ciê¿koœci. Trzymaj miecz pionowo. Obie d³onie mocno zaciœnij na jego rêkojeœci i przesuñ go nieco w bok.
-		AI_Output (self, other,"GUR_1202_CorAngar_ZWEIHAND2_Info_09_03"); //Teraz uderz szybko od góry, i pozwól klindze powêdrowaæ nad twoje ramiê. Teraz mo¿esz wyprowadziæ szybkie ciêcie na prawo.
-		AI_Output (self, other,"GUR_1202_CorAngar_ZWEIHAND2_Info_09_04"); //Twój przeciwnik nie bêdzie mia³ okazji podejœæ bli¿ej.
-		AI_Output (self, other,"GUR_1202_CorAngar_ZWEIHAND2_Info_09_05"); //Albo spróbuj wyprowadziæ z lewej strony cios do przodu, aby odrzuciæ od siebie rywala.
-		AI_Output (self, other,"GUR_1202_CorAngar_ZWEIHAND2_Info_09_06"); //Teraz obrót, ¿eby kolejny cios nabra³ odpowiedniej mocy. Przy odrobinie szczêœcia wróg nie prze¿yje tego uderzenia.
-		AI_Output (self, other,"GUR_1202_CorAngar_ZWEIHAND2_Info_09_07"); //A jeœli i to nie wystarczy, wykorzystaj resztê si³y zamachowej, by ponownie unieœæ miecz do góry.
-		AI_Output (self, other,"GUR_1202_CorAngar_ZWEIHAND2_Info_09_08"); //Po skoñczonym ataku wykonaj zas³onê i wypatruj luki w obronie przeciwnika.
-		AI_Output (self, other,"GUR_1202_CorAngar_ZWEIHAND2_Info_09_09"); //Kluczem do sukcesu jest ci¹g³a zmiana pozycji i umiejêtne wykorzystanie bezw³adnoœci broni.
+		AI_Output (self, other,"GUR_1202_CorAngar_ZWEIHAND2_Info_09_02"); //Musisz siÃª nauczyÃ¦ pÂ³ynnie przenosiÃ¦ Å“rodek ciÃªÂ¿koÅ“ci. Trzymaj miecz pionowo. Obie dÂ³onie mocno zaciÅ“nij na jego rÃªkojeÅ“ci i przesuÃ± go nieco w bok.
+		AI_Output (self, other,"GUR_1202_CorAngar_ZWEIHAND2_Info_09_03"); //Teraz uderz szybko od gÃ³ry, i pozwÃ³l klindze powÃªdrowaÃ¦ nad twoje ramiÃª. Teraz moÂ¿esz wyprowadziÃ¦ szybkie ciÃªcie na prawo.
+		AI_Output (self, other,"GUR_1202_CorAngar_ZWEIHAND2_Info_09_04"); //TwÃ³j przeciwnik nie bÃªdzie miaÂ³ okazji podejÅ“Ã¦ bliÂ¿ej.
+		AI_Output (self, other,"GUR_1202_CorAngar_ZWEIHAND2_Info_09_05"); //Albo sprÃ³buj wyprowadziÃ¦ z lewej strony cios do przodu, aby odrzuciÃ¦ od siebie rywala.
+		AI_Output (self, other,"GUR_1202_CorAngar_ZWEIHAND2_Info_09_06"); //Teraz obrÃ³t, Â¿eby kolejny cios nabraÂ³ odpowiedniej mocy. Przy odrobinie szczÃªÅ“cia wrÃ³g nie przeÂ¿yje tego uderzenia.
+		AI_Output (self, other,"GUR_1202_CorAngar_ZWEIHAND2_Info_09_07"); //A jeÅ“li i to nie wystarczy, wykorzystaj resztÃª siÂ³y zamachowej, by ponownie unieÅ“Ã¦ miecz do gÃ³ry.
+		AI_Output (self, other,"GUR_1202_CorAngar_ZWEIHAND2_Info_09_08"); //Po skoÃ±czonym ataku wykonaj zasÂ³onÃª i wypatruj luki w obronie przeciwnika.
+		AI_Output (self, other,"GUR_1202_CorAngar_ZWEIHAND2_Info_09_09"); //Kluczem do sukcesu jest ciÂ¹gÂ³a zmiana pozycji i umiejÃªtne wykorzystanie bezwÂ³adnoÅ“ci broni.
 		B_GiveInvItems(other,self,itminugget,1000);
 		};
 	}
 	else
 	{
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_NoOre_01_00"); //Nie masz wystarczaj¹cej iloœci rudy!
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_NoOre_01_00"); //Nie masz wystarczajÂ¹cej iloÅ“ci rudy!
 	};	
 Info_ClearChoices	(GUR_1202_CorAngar_TEACH_2H_START);
 	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,DIALOG_BACK,GUR_1202_CorAngar_TEACH_2H_STARTBACK);
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 0) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 1, 100 bry³ek rudy, 10 PN",CorAngar_teach_2h1);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 1, 100 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h1);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 1) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 2, 200 bry³ek rudy, 10 PN",CorAngar_teach_2h2);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 2, 200 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h2);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 2) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 3, 300 bry³ek rudy, 10 PN",CorAngar_teach_2h3);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 3, 300 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h3);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 3) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 4, 400 bry³ek rudy, 10 PN",CorAngar_teach_2h4);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 4, 400 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h4);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 4) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 5, 500 bry³ek rudy, 10 PN",CorAngar_teach_2h5);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 5, 500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h5);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 5) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 6, 600 bry³ek rudy, 10 PN",CorAngar_teach_2h6);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 6, 600 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h6);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 6) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 7, 1000 bry³ek rudy, 10 PN",CorAngar_teach_2h7);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 7, 1000 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h7);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 7) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 8, 1500 bry³ek rudy, 10 PN",CorAngar_teach_2h8);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 8, 1500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h8);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 8) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 9, 2000 bry³ek rudy, 10 PN",CorAngar_teach_2h9);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 9, 2000 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h9);
 	};	
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 9) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 10, 2500 bry³ek rudy, 10 PN",CorAngar_teach_2h10);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 10, 2500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h10);
 	};
 };
 
 FUNC VOID CorAngar_teach_2h8 ()
 {
-	AI_Output (other,self,"DIA_CorAngar_TRAIN_2h_15_01"); //Naucz mnie sprawniej pos³ugiwaæ siê dwurêczn¹ broni¹.
+	AI_Output (other,self,"DIA_CorAngar_TRAIN_2h_15_01"); //Naucz mnie sprawniej posÂ³ugiwaÃ¦ siÃª dwurÃªcznÂ¹ broniÂ¹.
 	if (Npc_HasItems(other,itminugget) >= 1500)
 	{
 		if (B_GiveSkill(other, NPC_TALENT_2h, 8, 10))
 		{
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_21"); //Robisz postêpy. Skup siê na kolejnych ciosach. £¹cz je coraz szybciej i pewniej.
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_21"); //Robisz postÃªpy. Skup siÃª na kolejnych ciosach. Â£Â¹cz je coraz szybciej i pewniej.
 		B_GiveInvItems(other,self,itminugget,1500);
 		};
 	}
 	else
 	{
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_NoOre_01_00"); //Nie masz wystarczaj¹cej iloœci rudy!
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_NoOre_01_00"); //Nie masz wystarczajÂ¹cej iloÅ“ci rudy!
 	};	
 Info_ClearChoices	(GUR_1202_CorAngar_TEACH_2H_START);
 	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,DIALOG_BACK,GUR_1202_CorAngar_TEACH_2H_STARTBACK);
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 0) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 1, 100 bry³ek rudy, 10 PN",CorAngar_teach_2h1);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 1, 100 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h1);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 1) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 2, 200 bry³ek rudy, 10 PN",CorAngar_teach_2h2);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 2, 200 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h2);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 2) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 3, 300 bry³ek rudy, 10 PN",CorAngar_teach_2h3);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 3, 300 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h3);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 3) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 4, 400 bry³ek rudy, 10 PN",CorAngar_teach_2h4);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 4, 400 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h4);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 4) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 5, 500 bry³ek rudy, 10 PN",CorAngar_teach_2h5);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 5, 500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h5);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 5) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 6, 600 bry³ek rudy, 10 PN",CorAngar_teach_2h6);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 6, 600 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h6);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 6) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 7, 1000 bry³ek rudy, 10 PN",CorAngar_teach_2h7);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 7, 1000 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h7);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 7) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 8, 1500 bry³ek rudy, 10 PN",CorAngar_teach_2h8);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 8, 1500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h8);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 8) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 9, 2000 bry³ek rudy, 10 PN",CorAngar_teach_2h9);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 9, 2000 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h9);
 	};	
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 9) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 10, 2500 bry³ek rudy, 10 PN",CorAngar_teach_2h10);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 10, 2500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h10);
 	};
 };
 
 FUNC VOID CorAngar_teach_2h9 ()
 {
-	AI_Output (other,self,"DIA_CorAngar_TRAIN_2h_15_01"); //Naucz mnie sprawniej pos³ugiwaæ siê dwurêczn¹ broni¹.
+	AI_Output (other,self,"DIA_CorAngar_TRAIN_2h_15_01"); //Naucz mnie sprawniej posÂ³ugiwaÃ¦ siÃª dwurÃªcznÂ¹ broniÂ¹.
 	if (Npc_HasItems(other,itminugget) >= 2000)
 	{
 		if (B_GiveSkill(other, NPC_TALENT_2h, 9, 10))
 		{
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_22"); //Chc¹c najboleœniej zraniæ przeciwnika musisz dobrze wymierzyæ cios. Gdy masz szansê staraj siê trafiaæ w g³owê lub barki.
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_23"); //S³abe punkty to tak¿e ³¹cznia zbroi. Jeœli przeciwnik ma na sobie skórzan¹ zbrojê to po prostu bij w brzuch. 
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_24"); //Skórzane pancerze ³atwo siê rozcina. 
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_25"); //Przypomnij sobie jeszcze raz to wszystko, czego ciê nauczy³em i stosuj siê do tego. 
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_22"); //ChcÂ¹c najboleÅ“niej zraniÃ¦ przeciwnika musisz dobrze wymierzyÃ¦ cios. Gdy masz szansÃª staraj siÃª trafiaÃ¦ w gÂ³owÃª lub barki.
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_23"); //SÂ³abe punkty to takÂ¿e Â³Â¹cznia zbroi. JeÅ“li przeciwnik ma na sobie skÃ³rzanÂ¹ zbrojÃª to po prostu bij w brzuch. 
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_24"); //SkÃ³rzane pancerze Â³atwo siÃª rozcina. 
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_25"); //Przypomnij sobie jeszcze raz to wszystko, czego ciÃª nauczyÂ³em i stosuj siÃª do tego. 
 		B_GiveInvItems(other,self,itminugget,2000);
 		};
 	}
 	else
 	{
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_NoOre_01_00"); //Nie masz wystarczaj¹cej iloœci rudy!
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_NoOre_01_00"); //Nie masz wystarczajÂ¹cej iloÅ“ci rudy!
 	};	
 Info_ClearChoices	(GUR_1202_CorAngar_TEACH_2H_START);
 	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,DIALOG_BACK,GUR_1202_CorAngar_TEACH_2H_STARTBACK);
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 0) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 1, 100 bry³ek rudy, 10 PN",CorAngar_teach_2h1);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 1, 100 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h1);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 1) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 2, 200 bry³ek rudy, 10 PN",CorAngar_teach_2h2);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 2, 200 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h2);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 2) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 3, 300 bry³ek rudy, 10 PN",CorAngar_teach_2h3);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 3, 300 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h3);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 3) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 4, 400 bry³ek rudy, 10 PN",CorAngar_teach_2h4);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 4, 400 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h4);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 4) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 5, 500 bry³ek rudy, 10 PN",CorAngar_teach_2h5);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 5, 500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h5);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 5) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 6, 600 bry³ek rudy, 10 PN",CorAngar_teach_2h6);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 6, 600 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h6);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 6) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 7, 1000 bry³ek rudy, 10 PN",CorAngar_teach_2h7);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 7, 1000 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h7);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 7) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 8, 1500 bry³ek rudy, 10 PN",CorAngar_teach_2h8);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 8, 1500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h8);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 8) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 9, 2000 bry³ek rudy, 10 PN",CorAngar_teach_2h9);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 9, 2000 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h9);
 	};	
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 9) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 10, 2500 bry³ek rudy, 10 PN",CorAngar_teach_2h10);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 10, 2500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h10);
 	};
 };
 
 FUNC VOID CorAngar_teach_2h10 ()
 {
-	AI_Output (other,self,"DIA_CorAngar_TRAIN_2h_15_01"); //Naucz mnie sprawniej pos³ugiwaæ siê dwurêczn¹ broni¹.
+	AI_Output (other,self,"DIA_CorAngar_TRAIN_2h_15_01"); //Naucz mnie sprawniej posÂ³ugiwaÃ¦ siÃª dwurÃªcznÂ¹ broniÂ¹.
 	if (Npc_HasItems(other,itminugget) >= 2500)
 	{
 		if (B_GiveSkill(other, NPC_TALENT_2h, 10, 10))
 		{
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_26"); //To ju¿ nasza ostatnia lekcja. Poka¿ê ci sztuczki, które pozwol¹ ci jeszcze lepiej wyczuæ broñ.
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_27"); //Musisz nauczyæ siê rozpoznawaæ s³abe punkty przeciwników i skupiaæ siê na nich.
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_26"); //To juÂ¿ nasza ostatnia lekcja. PokaÂ¿Ãª ci sztuczki, ktÃ³re pozwolÂ¹ ci jeszcze lepiej wyczuÃ¦ broÃ±.
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_27"); //Musisz nauczyÃ¦ siÃª rozpoznawaÃ¦ sÂ³abe punkty przeciwnikÃ³w i skupiaÃ¦ siÃª na nich.
 		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_npc_28"); //Z czasem dojdziesz do wprawy. 
 		B_GiveInvItems(other,self,itminugget,2500);
 		};
 	}
 	else
 	{
-		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_NoOre_01_00"); //Nie masz wystarczaj¹cej iloœci rudy!
+		AI_Output (self,other,"DIA_CorAngar_TRAIN_2h_NoOre_01_00"); //Nie masz wystarczajÂ¹cej iloÅ“ci rudy!
 	};	
 Info_ClearChoices	(GUR_1202_CorAngar_TEACH_2H_START);
 	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,DIALOG_BACK,GUR_1202_CorAngar_TEACH_2H_STARTBACK);
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 0) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 1, 100 bry³ek rudy, 10 PN",CorAngar_teach_2h1);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 1, 100 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h1);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 1) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 2, 200 bry³ek rudy, 10 PN",CorAngar_teach_2h2);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 2, 200 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h2);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 2) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 3, 300 bry³ek rudy, 10 PN",CorAngar_teach_2h3);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 3, 300 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h3);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 3) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 4, 400 bry³ek rudy, 10 PN",CorAngar_teach_2h4);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 4, 400 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h4);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 4) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 5, 500 bry³ek rudy, 10 PN",CorAngar_teach_2h5);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 5, 500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h5);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 5) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 6, 600 bry³ek rudy, 10 PN",CorAngar_teach_2h6);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 6, 600 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h6);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 6) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 7, 1000 bry³ek rudy, 10 PN",CorAngar_teach_2h7);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 7, 1000 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h7);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 7) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 8, 1500 bry³ek rudy, 10 PN",CorAngar_teach_2h8);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 8, 1500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h8);
 	};
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 8) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 9, 2000 bry³ek rudy, 10 PN",CorAngar_teach_2h9);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 9, 2000 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h9);
 	};	
 	if 	(Npc_GetTalentSkill(hero, NPC_TALENT_2h) == 9) 
 	{
-	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"Broñ dwurêczna, poziom 10, 2500 bry³ek rudy, 10 PN",CorAngar_teach_2h10);
+	Info_AddChoice		(GUR_1202_CorAngar_TEACH_2H_START,"BroÃ± dwurÃªczna, poziom 10, 2500 bryÂ³ek rudy, 10 PN",CorAngar_teach_2h10);
 	};
 };
 
@@ -974,7 +974,7 @@ instance  GUR_1202_CorAngar_ZWEIHAND1 (C_INFO)
 FUNC int  GUR_1202_CorAngar_ZWEIHAND1_Condition()
 {	
 	if (Npc_GetTalentSkill  (hero,NPC_TALENT_2H) < 1)
-	&& (Npc_GetTalentSkill  (hero,NPC_TALENT_1H) == 2) //to trzeba usun¹æ
+	&& (Npc_GetTalentSkill  (hero,NPC_TALENT_1H) == 2) //to trzeba usunÂ¹Ã¦
 	&& ((Npc_GetTrueGuild    (hero) == GIL_TPL) || (Npc_GetTrueGuild    (hero) == GIL_GUR)) 
 	{
 		return TRUE;
@@ -983,18 +983,18 @@ FUNC int  GUR_1202_CorAngar_ZWEIHAND1_Condition()
 };
 FUNC void  GUR_1202_CorAngar_ZWEIHAND1_Info()
 {
-	AI_Output			(other, self,"GUR_1202_CorAngar_ZWEIHAND1_Info_15_01"); //Chcia³bym potrafiæ pos³ugiwaæ siê dwurêcznym mieczem.
+	AI_Output			(other, self,"GUR_1202_CorAngar_ZWEIHAND1_Info_15_01"); //ChciaÂ³bym potrafiÃ¦ posÂ³ugiwaÃ¦ siÃª dwurÃªcznym mieczem.
 	if (hero.attribute[ATR_STRENGTH] >= 80)
 	{
 	if (B_GiveSkill(other,NPC_TALENT_2H , 1, LPCOST_TALENT_2H_1))
 	{
-		AI_Output			(self, other,"GUR_1202_CorAngar_ZWEIHAND1_Info_08_02"); //Walka dwurêcznym orê¿em stanowi powa¿ne wyzwanie dla twojej si³y i zrêcznoœci.
-		AI_Output			(self, other,"GUR_1202_CorAngar_ZWEIHAND1_Info_08_03"); //Aby móc sprawnie pos³ugiwaæ siê dwurêczna broni¹ musisz nie tylko rozwijaæ swoje cia³o, ale równie¿ i umys³.
-		AI_Output			(self, other,"GUR_1202_CorAngar_ZWEIHAND1_Info_08_04"); //Tylko pe³na kontrola nad cia³em i umys³em pozwoli ci rozwijaæ swoje umiejêtnoœci.
-		AI_Output			(self, other,"GUR_1202_CorAngar_ZWEIHAND1_Info_08_05"); //Koncentracja to podstawa. To ona jednoczy cia³o i umys³.
+		AI_Output			(self, other,"GUR_1202_CorAngar_ZWEIHAND1_Info_08_02"); //Walka dwurÃªcznym orÃªÂ¿em stanowi powaÂ¿ne wyzwanie dla twojej siÂ³y i zrÃªcznoÅ“ci.
+		AI_Output			(self, other,"GUR_1202_CorAngar_ZWEIHAND1_Info_08_03"); //Aby mÃ³c sprawnie posÂ³ugiwaÃ¦ siÃª dwurÃªczna broniÂ¹ musisz nie tylko rozwijaÃ¦ swoje ciaÂ³o, ale rÃ³wnieÂ¿ i umysÂ³.
+		AI_Output			(self, other,"GUR_1202_CorAngar_ZWEIHAND1_Info_08_04"); //Tylko peÂ³na kontrola nad ciaÂ³em i umysÂ³em pozwoli ci rozwijaÃ¦ swoje umiejÃªtnoÅ“ci.
+		AI_Output			(self, other,"GUR_1202_CorAngar_ZWEIHAND1_Info_08_05"); //Koncentracja to podstawa. To ona jednoczy ciaÂ³o i umysÂ³.
 		if (Npc_GetTrueGuild    (hero) == GIL_GUR)
 		{
-		AI_Output			(self, other,"GUR_1202_CorAngar_ZWEIHAND1_Info_08_06"); //Jesteœ teraz Guru. Ta wiedza przyda ci siê tak¿e podczas walki kosturem.
+		AI_Output			(self, other,"GUR_1202_CorAngar_ZWEIHAND1_Info_08_06"); //JesteÅ“ teraz Guru. Ta wiedza przyda ci siÃª takÂ¿e podczas walki kosturem.
 		};
 
 		GUR_1202_CorAngar_ZWEIHAND1.permanent		= 0;
@@ -1006,8 +1006,8 @@ FUNC void  GUR_1202_CorAngar_ZWEIHAND1_Info()
 	}
 	else
 	{
-	AI_Output			(self,other,"GUR_1202_CorAngar_NO_ENOUGHT_STR_1"); //Jeszcze nie mogê ciê tego nauczyæ!
-	PrintScreen	("Warunek: Si³a 80", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
+	AI_Output			(self,other,"GUR_1202_CorAngar_NO_ENOUGHT_STR_1"); //Jeszcze nie mogÃª ciÃª tego nauczyÃ¦!
+	PrintScreen	("Warunek: SiÂ³a 80", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 	};
 };  
 //-------------------------------------------------------------------------
@@ -1034,18 +1034,18 @@ FUNC int  GUR_1202_CorAngar_ZWEIHAND2_Condition()
 };
 FUNC void  GUR_1202_CorAngar_ZWEIHAND2_Info()
 {
-	AI_Output			(other, self,"GUR_1202_CorAngar_ZWEIHAND2_Info_15_01");		//Chcia³bym dowiedzieæ siê czegoœ wiêcej o walce dwurêcznym orê¿em.
+	AI_Output			(other, self,"GUR_1202_CorAngar_ZWEIHAND2_Info_15_01");		//ChciaÂ³bym dowiedzieÃ¦ siÃª czegoÅ“ wiÃªcej o walce dwurÃªcznym orÃªÂ¿em.
 		if (hero.attribute[ATR_STRENGTH] >= 120)
 	{
 	if (B_GiveSkill(other,NPC_TALENT_2H , 2, LPCOST_TALENT_2H_2))
 	{
-		AI_Output			(self, other,"GUR_1202_CorAngar_ZWEIHAND2_Info_08_02"); //Wiesz ju¿ jak zmusiæ ostrze swego miecza do tañca œmierci. Teraz poka¿ê ci jak wykorzystaæ twoje umiejêtnoœci w walce.
-		AI_Output			(self, other,"GUR_1202_CorAngar_ZWEIHAND2_Info_08_03"); //Oczyma duszy spróbuj przewidzieæ nastêpny ruch twojego przeciwnika.
-		AI_Output			(self, other,"GUR_1202_CorAngar_ZWEIHAND2_Info_08_04"); //Poznanie sposobu walki nieprzyjaciela to ju¿ po³owa sukcesu.
-		AI_Output			(self, other,"GUR_1202_CorAngar_ZWEIHAND2_Info_08_05"); //B¹dŸ szybki, twoja ruchliwoœæ i p³ynnoœæ twoich ruchów powinny iœæ w parze z si³¹ i precyzj¹ twoich ciosów.
-		AI_Output			(self, other,"GUR_1202_CorAngar_ZWEIHAND2_Info_08_06"); //Naucz siê ignorowaæ ból. To twoja si³a ducha zadecyduje o ostatecznym wyniku starcia.
-		AI_Output			(self, other,"GUR_1202_CorAngar_ZWEIHAND2_Info_08_07"); //Zachowaj spokój. Zachowanie czystoœci umys³u i niezachwianej koncentracji przypieczêtuje twoje zwyciêstwo.
-		AI_Output			(self, other,"GUR_1202_CorAngar_ZWEIHAND2_Info_08_08"); //Rozs¹dnie wykorzystuj swoje umiejêtnoœci, i pamiêtaj: kto prowokuje walkê - ginie w walce.
+		AI_Output			(self, other,"GUR_1202_CorAngar_ZWEIHAND2_Info_08_02"); //Wiesz juÂ¿ jak zmusiÃ¦ ostrze swego miecza do taÃ±ca Å“mierci. Teraz pokaÂ¿Ãª ci jak wykorzystaÃ¦ twoje umiejÃªtnoÅ“ci w walce.
+		AI_Output			(self, other,"GUR_1202_CorAngar_ZWEIHAND2_Info_08_03"); //Oczyma duszy sprÃ³buj przewidzieÃ¦ nastÃªpny ruch twojego przeciwnika.
+		AI_Output			(self, other,"GUR_1202_CorAngar_ZWEIHAND2_Info_08_04"); //Poznanie sposobu walki nieprzyjaciela to juÂ¿ poÂ³owa sukcesu.
+		AI_Output			(self, other,"GUR_1202_CorAngar_ZWEIHAND2_Info_08_05"); //BÂ¹dÅ¸ szybki, twoja ruchliwoÅ“Ã¦ i pÂ³ynnoÅ“Ã¦ twoich ruchÃ³w powinny iÅ“Ã¦ w parze z siÂ³Â¹ i precyzjÂ¹ twoich ciosÃ³w.
+		AI_Output			(self, other,"GUR_1202_CorAngar_ZWEIHAND2_Info_08_06"); //Naucz siÃª ignorowaÃ¦ bÃ³l. To twoja siÂ³a ducha zadecyduje o ostatecznym wyniku starcia.
+		AI_Output			(self, other,"GUR_1202_CorAngar_ZWEIHAND2_Info_08_07"); //Zachowaj spokÃ³j. Zachowanie czystoÅ“ci umysÂ³u i niezachwianej koncentracji przypieczÃªtuje twoje zwyciÃªstwo.
+		AI_Output			(self, other,"GUR_1202_CorAngar_ZWEIHAND2_Info_08_08"); //RozsÂ¹dnie wykorzystuj swoje umiejÃªtnoÅ“ci, i pamiÃªtaj: kto prowokuje walkÃª - ginie w walce.
 
 		GUR_1202_CorAngar_ZWEIHAND2.permanent = 0;
 
@@ -1055,8 +1055,8 @@ FUNC void  GUR_1202_CorAngar_ZWEIHAND2_Info()
 		}
 	else
 	{
-	AI_Output			(self,other,"GUR_1202_CorAngar_NO_ENOUGHT_STR_1"); //Jeszcze nie mogê ciê tego nauczyæ!
-	PrintScreen	("Warunek: Si³a 120", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
+	AI_Output			(self,other,"GUR_1202_CorAngar_NO_ENOUGHT_STR_1"); //Jeszcze nie mogÃª ciÃª tego nauczyÃ¦!
+	PrintScreen	("Warunek: SiÂ³a 120", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 	};
 };  
 */
@@ -1070,7 +1070,7 @@ FUNC void  GUR_1202_CorAngar_ZWEIHAND2_Info()
 //#####################################################################
  
 // **************************************************************************
-// 				nach der großen Beschwörung
+// 				nach der groÃŸen BeschwÃ¶rung
 // **************************************************************************
 instance  GUR_1202_CorAngar_SENDS (C_INFO)
 {
@@ -1079,7 +1079,7 @@ instance  GUR_1202_CorAngar_SENDS (C_INFO)
 	information		= GUR_1202_CorAngar_SENDS_Info;
 	important		= 0;
 	permanent		= 0;
-	description		= "Co siê stanie teraz?"; 
+	description		= "Co siÃª stanie teraz?"; 
 };
 
 FUNC int  GUR_1202_CorAngar_SENDS_Condition()
@@ -1093,33 +1093,33 @@ FUNC int  GUR_1202_CorAngar_SENDS_Condition()
 };
 FUNC void  GUR_1202_CorAngar_SENDS_Info()
 {
-	AI_Output			(other, self,"GUR_1202_CorAngar_SENDS_Info_15_01"); //Co siê stanie teraz?
-	AI_Output			(self, other,"GUR_1202_CorAngar_SENDS_Info_08_02"); //Wizja by³a bardzo mglista. Zamiast odpowiedzi da³a nam jeszcze wiêcej pytañ.
-	AI_Output			(self, other,"GUR_1202_CorAngar_SENDS_Info_08_03"); //Ale jedna rzecz nie ulega w¹tpliwoœci: widzia³em orka w jaskini. W pobli¿u znajduje siê opuszczone miejsce orkowego kultu.
-	AI_Output			(self, other,"GUR_1202_CorAngar_SENDS_Info_08_04"); //Orkowie chowali tam swoich zmar³ych, dlatego nazywamy ten labirynt jaskiñ Cmentarzyskiem Orków.
-	AI_Output			(self, other,"GUR_1202_CorAngar_SENDS_Info_08_05"); //Nasz Guru, Baal Lukor uda³ siê tam z oddzia³em Stra¿ników Œwi¹tynnych. Mo¿e znajd¹ coœ, co pozwoli nam wyjaœniæ znaczenie wizji.
-	AI_Output			(self, other,"GUR_1202_CorAngar_SENDS_Info_08_06"); //Przyda³by mi siê ktoœ, kto rozejrzy siê tam trochê i zda mi raport z sytuacji.
-	AI_Output			(other, self,"GUR_1202_CorAngar_SENDS_Info_15_07"); //Dlaczego nie pójdziesz tam sam? W koñcu jesteœ przywódc¹ Stra¿y Œwi¹tynnej!
-	AI_Output			(self, other,"GUR_1202_CorAngar_SENDS_Info_08_08"); //Moim zadaniem jest ochrona Jaœnie Oœwieconego. Muszê zostaæ na miejscu, ¿eby strzec Y'Beriona.
-	AI_Output			(self, other,"GUR_1202_CorAngar_SENDS_Info_08_09"); //Odda³eœ Obozowi nieocenione us³ugi. Tylko na tobie mogê polegaæ.
-	AI_Output			(self, other,"GUR_1202_CorAngar_SENDS_Info_08_10"); //Proszê, udaj siê na Cmentarzysko Orków i dostarcz mi informacji na temat odkryæ poczynionych przez Stra¿ników.
+	AI_Output			(other, self,"GUR_1202_CorAngar_SENDS_Info_15_01"); //Co siÃª stanie teraz?
+	AI_Output			(self, other,"GUR_1202_CorAngar_SENDS_Info_08_02"); //Wizja byÂ³a bardzo mglista. Zamiast odpowiedzi daÂ³a nam jeszcze wiÃªcej pytaÃ±.
+	AI_Output			(self, other,"GUR_1202_CorAngar_SENDS_Info_08_03"); //Ale jedna rzecz nie ulega wÂ¹tpliwoÅ“ci: widziaÂ³em orka w jaskini. W pobliÂ¿u znajduje siÃª opuszczone miejsce orkowego kultu.
+	AI_Output			(self, other,"GUR_1202_CorAngar_SENDS_Info_08_04"); //Orkowie chowali tam swoich zmarÂ³ych, dlatego nazywamy ten labirynt jaskiÃ± Cmentarzyskiem OrkÃ³w.
+	AI_Output			(self, other,"GUR_1202_CorAngar_SENDS_Info_08_05"); //Nasz Guru, Baal Lukor udaÂ³ siÃª tam z oddziaÂ³em StraÂ¿nikÃ³w Å’wiÂ¹tynnych. MoÂ¿e znajdÂ¹ coÅ“, co pozwoli nam wyjaÅ“niÃ¦ znaczenie wizji.
+	AI_Output			(self, other,"GUR_1202_CorAngar_SENDS_Info_08_06"); //PrzydaÂ³by mi siÃª ktoÅ“, kto rozejrzy siÃª tam trochÃª i zda mi raport z sytuacji.
+	AI_Output			(other, self,"GUR_1202_CorAngar_SENDS_Info_15_07"); //Dlaczego nie pÃ³jdziesz tam sam? W koÃ±cu jesteÅ“ przywÃ³dcÂ¹ StraÂ¿y Å’wiÂ¹tynnej!
+	AI_Output			(self, other,"GUR_1202_CorAngar_SENDS_Info_08_08"); //Moim zadaniem jest ochrona JaÅ“nie OÅ“wieconego. MuszÃª zostaÃ¦ na miejscu, Â¿eby strzec Y'Beriona.
+	AI_Output			(self, other,"GUR_1202_CorAngar_SENDS_Info_08_09"); //OddaÂ³eÅ“ Obozowi nieocenione usÂ³ugi. Tylko na tobie mogÃª polegaÃ¦.
+	AI_Output			(self, other,"GUR_1202_CorAngar_SENDS_Info_08_10"); //ProszÃª, udaj siÃª na Cmentarzysko OrkÃ³w i dostarcz mi informacji na temat odkryÃ¦ poczynionych przez StraÂ¿nikÃ³w.
 	
 	Info_ClearChoices	(GUR_1202_CorAngar_SENDS);
-	Info_AddChoice		(GUR_1202_CorAngar_SENDS,"A co dostanê w zamian?",	GUR_1202_CorAngar_SENDS_EARN);
-	Info_AddChoice		(GUR_1202_CorAngar_SENDS,"Natychmiast ruszê w drogê!",	GUR_1202_CorAngar_SENDS_KNOW);
+	Info_AddChoice		(GUR_1202_CorAngar_SENDS,"A co dostanÃª w zamian?",	GUR_1202_CorAngar_SENDS_EARN);
+	Info_AddChoice		(GUR_1202_CorAngar_SENDS,"Natychmiast ruszÃª w drogÃª!",	GUR_1202_CorAngar_SENDS_KNOW);
 };  
 func void GUR_1202_CorAngar_SENDS_EARN()
 {
-	AI_Output			(other, self,"GUR_1202_CorAngar_SENDS_EARN_Info_15_01"); //A co dostanê w zamian?
-	AI_Output			(self, other,"GUR_1202_CorAngar_SENDS_EARN_Info_08_02"); //Chcesz rudy? Chyba jednak Ÿle ciê oceni³em. Ale potrzebujê twojej pomocy. Proszê, oto 100 bry³ek rudy. Wiêcej ode mnie nie dostaniesz!
+	AI_Output			(other, self,"GUR_1202_CorAngar_SENDS_EARN_Info_15_01"); //A co dostanÃª w zamian?
+	AI_Output			(self, other,"GUR_1202_CorAngar_SENDS_EARN_Info_08_02"); //Chcesz rudy? Chyba jednak Å¸le ciÃª oceniÂ³em. Ale potrzebujÃª twojej pomocy. ProszÃª, oto 100 bryÂ³ek rudy. WiÃªcej ode mnie nie dostaniesz!
 	CreateInvItems		(self,ItMiNugget,100);
 	B_GiveInvItems      (self, hero, ItMiNugget,100);
 };
 
 func void GUR_1202_CorAngar_SENDS_KNOW()
 {
-	AI_Output			(other, self,"GUR_1202_CorAngar_SENDS_KNOW_Info_15_01"); //Natychmiast ruszê w drogê!
-	AI_Output			(self, other,"GUR_1202_CorAngar_SENDS_KNOW_Info_08_02"); //Zanim pójdziesz, weŸ ten pierœcieñ. Niech ciê chroni w walce.
+	AI_Output			(other, self,"GUR_1202_CorAngar_SENDS_KNOW_Info_15_01"); //Natychmiast ruszÃª w drogÃª!
+	AI_Output			(self, other,"GUR_1202_CorAngar_SENDS_KNOW_Info_08_02"); //Zanim pÃ³jdziesz, weÅ¸ ten pierÅ“cieÃ±. Niech ciÃª chroni w walce.
 	
 	B_Story_GotoOrcGraveyard();
 
@@ -1135,7 +1135,7 @@ instance  GUR_1202_CorAngar_WHERE (C_INFO)
 	information		= GUR_1202_CorAngar_WHERE_Info;
 	important		= 0;
 	permanent		= 0;
-	description		= "Gdzie jest to Cmentarzysko Orków?"; 
+	description		= "Gdzie jest to Cmentarzysko OrkÃ³w?"; 
 };
 
 FUNC int  GUR_1202_CorAngar_WHERE_Condition()
@@ -1148,10 +1148,10 @@ FUNC int  GUR_1202_CorAngar_WHERE_Condition()
 };
 FUNC void  GUR_1202_CorAngar_WHERE_Info()
 {
-	AI_Output			(other, self,"GUR_1202_CorAngar_WHERE_Info_15_01"); //Gdzie jest to Cmentarzysko Orków?
-	AI_Output			(self, other,"GUR_1202_CorAngar_WHERE_Info_08_02"); //Niedaleko st¹d. Nowicjusz Talas wska¿e ci drogê. Znajdziesz go na œwi¹tynnym dziedziñcu. On bêdzie twoim przewodnikiem.
+	AI_Output			(other, self,"GUR_1202_CorAngar_WHERE_Info_15_01"); //Gdzie jest to Cmentarzysko OrkÃ³w?
+	AI_Output			(self, other,"GUR_1202_CorAngar_WHERE_Info_08_02"); //Niedaleko stÂ¹d. Nowicjusz Talas wskaÂ¿e ci drogÃª. Znajdziesz go na Å“wiÂ¹tynnym dziedziÃ±cu. On bÃªdzie twoim przewodnikiem.
 
-	B_LogEntry		(CH3_OrcGraveyard,	"Nowicjusz Talas wska¿e mi drogê do Cmentarzyska Orków. Czeka na mnie na œwi¹tynnym dziedziñcu.");
+	B_LogEntry		(CH3_OrcGraveyard,	"Nowicjusz Talas wskaÂ¿e mi drogÃª do Cmentarzyska OrkÃ³w. Czeka na mnie na Å“wiÂ¹tynnym dziedziÃ±cu.");
 };  
 
 // **************************************************************************
@@ -1164,7 +1164,7 @@ instance  GUR_1202_CorAngar_AFTER (C_INFO)
 	information		= GUR_1202_CorAngar_AFTER_Info;
 	important		= 0;
 	permanent		= 0;
-	description		= "By³em na Cmentarzysku Orków."; 
+	description		= "ByÂ³em na Cmentarzysku OrkÃ³w."; 
 };
 
 FUNC int  GUR_1202_CorAngar_AFTER_Condition()
@@ -1179,18 +1179,18 @@ FUNC int  GUR_1202_CorAngar_AFTER_Condition()
 FUNC void  GUR_1202_CorAngar_AFTER_Info()
 {
 	
-	AI_Output			(other, self,"GUR_1202_CorAngar_AFTER_Info_15_01"); //By³em na Cmentarzysku Orków. Tam NIC NIE MA. Ani Œni¹cego, ani znaku... Nic!
-	AI_Output			(self, other,"GUR_1202_CorAngar_AFTER_Info_08_02"); //A co z Baalem Lukorem i Stra¿nikami?
-	AI_Output			(other, self,"GUR_1202_CorAngar_AFTER_Info_15_03"); //Wszyscy zginêli.
-	AI_Output			(self, other,"GUR_1202_CorAngar_AFTER_Info_08_04"); //Zginêli? Ale dlaczego, co siê sta³o?
-	AI_Output			(other, self,"GUR_1202_CorAngar_AFTER_Info_15_05"); //W jaskiniach a¿ roi³o siê od orków. Wybili Stra¿ Œwi¹tynn¹ do nogi.
-	AI_Output			(other, self,"GUR_1202_CorAngar_AFTER_Info_15_06"); //Tylko ja i Baal Lukor wyszliœmy z tego ca³o, ale nagle Baal postrada³ zmys³y.
-	AI_Output			(other, self,"GUR_1202_CorAngar_AFTER_Info_15_07"); //Wrzeszcza³, ¿e Œni¹cy kaza³ mu mnie zabiæ i zamierza³ wykonaæ to polecenie.
-	AI_Output			(self, other,"GUR_1202_CorAngar_AFTER_Info_08_08"); //NajwyraŸniej nie móg³ siê pogodziæ z niepowodzeniem swojej misji.
-	AI_Output			(self, other,"GUR_1202_CorAngar_AFTER_Info_08_09"); //Nie wierzê, ¿eby b³ogos³awiony wp³yw Œni¹cego móg³ go popchn¹æ do tak brutalnego dzia³ania.
-	AI_Output			(self, other,"GUR_1202_CorAngar_AFTER_Info_08_10"); //To nie mo¿e... Nie mo¿e... NIEWA¯NE!!!
-	AI_Output			(self, other,"GUR_1202_CorAngar_AFTER_Info_08_11"); //Najwa¿niejsze, ¿e zamiar Baala Lukora siê nie powiód³.
-	AI_Output			(self, other,"GUR_1202_CorAngar_AFTER_Info_08_12"); //Teraz nasz¹ jedyn¹ nadziej¹ jest Y'Berion.
+	AI_Output			(other, self,"GUR_1202_CorAngar_AFTER_Info_15_01"); //ByÂ³em na Cmentarzysku OrkÃ³w. Tam NIC NIE MA. Ani Å’niÂ¹cego, ani znaku... Nic!
+	AI_Output			(self, other,"GUR_1202_CorAngar_AFTER_Info_08_02"); //A co z Baalem Lukorem i StraÂ¿nikami?
+	AI_Output			(other, self,"GUR_1202_CorAngar_AFTER_Info_15_03"); //Wszyscy zginÃªli.
+	AI_Output			(self, other,"GUR_1202_CorAngar_AFTER_Info_08_04"); //ZginÃªli? Ale dlaczego, co siÃª staÂ³o?
+	AI_Output			(other, self,"GUR_1202_CorAngar_AFTER_Info_15_05"); //W jaskiniach aÂ¿ roiÂ³o siÃª od orkÃ³w. Wybili StraÂ¿ Å’wiÂ¹tynnÂ¹ do nogi.
+	AI_Output			(other, self,"GUR_1202_CorAngar_AFTER_Info_15_06"); //Tylko ja i Baal Lukor wyszliÅ“my z tego caÂ³o, ale nagle Baal postradaÂ³ zmysÂ³y.
+	AI_Output			(other, self,"GUR_1202_CorAngar_AFTER_Info_15_07"); //WrzeszczaÂ³, Â¿e Å’niÂ¹cy kazaÂ³ mu mnie zabiÃ¦ i zamierzaÂ³ wykonaÃ¦ to polecenie.
+	AI_Output			(self, other,"GUR_1202_CorAngar_AFTER_Info_08_08"); //NajwyraÅ¸niej nie mÃ³gÂ³ siÃª pogodziÃ¦ z niepowodzeniem swojej misji.
+	AI_Output			(self, other,"GUR_1202_CorAngar_AFTER_Info_08_09"); //Nie wierzÃª, Â¿eby bÂ³ogosÂ³awiony wpÂ³yw Å’niÂ¹cego mÃ³gÂ³ go popchnÂ¹Ã¦ do tak brutalnego dziaÂ³ania.
+	AI_Output			(self, other,"GUR_1202_CorAngar_AFTER_Info_08_10"); //To nie moÂ¿e... Nie moÂ¿e... NIEWAÂ¯NE!!!
+	AI_Output			(self, other,"GUR_1202_CorAngar_AFTER_Info_08_11"); //NajwaÂ¿niejsze, Â¿e zamiar Baala Lukora siÃª nie powiÃ³dÂ³.
+	AI_Output			(self, other,"GUR_1202_CorAngar_AFTER_Info_08_12"); //Teraz naszÂ¹ jedynÂ¹ nadziejÂ¹ jest Y'Berion.
 	 
 
 	B_GiveXP			(XP_ReportToCorAngar);
@@ -1207,7 +1207,7 @@ INSTANCE Info_CorAngar_FindHerb (C_INFO)
 	information	= Info_CorAngar_FindHerb_Info;
 	permanent	= 0;
 	important 	= 0;
-	description = "Co s³ychaæ u Jaœnie Oœwieconego?";
+	description = "Co sÂ³ychaÃ¦ u JaÅ“nie OÅ“wieconego?";
 };
 
 func INT Info_CorAngar_FindHerb_Condition()
@@ -1221,17 +1221,17 @@ func INT Info_CorAngar_FindHerb_Condition()
 
 FUNC VOID Info_CorAngar_FindHerb_Info()
 {
-	AI_Output			(other, self,"Mis_3_NC_CorAngar_FindHerb_15_01"); //Co s³ychaæ u Jaœnie Oœwieconego?
-	AI_Output			(self, other,"Mis_3_NC_CorAngar_FindHerb_08_02"); //Nie budzi siê. I z godziny na godzinê jest co raz s³abszy. Wiem, jak mo¿na go zbudziæ, ale potrzebujê twojej pomocy.
-	AI_Output			(other, self,"Mis_3_NC_CorAngar_FindHerb_15_03"); //Co mam zrobiæ?
-	AI_Output			(self, other,"Mis_3_NC_CorAngar_FindHerb_08_04"); //Przynieœ mi piêæ najmocniejszych zió³ uzdrawiaj¹cych jakie mo¿na znaleŸæ na bagnach!
-	AI_Output			(self, other,"Mis_3_NC_CorAngar_FindHerb_08_05"); //Spiesz siê!
+	AI_Output			(other, self,"Mis_3_NC_CorAngar_FindHerb_15_01"); //Co sÂ³ychaÃ¦ u JaÅ“nie OÅ“wieconego?
+	AI_Output			(self, other,"Mis_3_NC_CorAngar_FindHerb_08_02"); //Nie budzi siÃª. I z godziny na godzinÃª jest co raz sÂ³abszy. Wiem, jak moÂ¿na go zbudziÃ¦, ale potrzebujÃª twojej pomocy.
+	AI_Output			(other, self,"Mis_3_NC_CorAngar_FindHerb_15_03"); //Co mam zrobiÃ¦?
+	AI_Output			(self, other,"Mis_3_NC_CorAngar_FindHerb_08_04"); //PrzynieÅ“ mi piÃªÃ¦ najmocniejszych ziÃ³Â³ uzdrawiajÂ¹cych jakie moÂ¿na znaleÅ¸Ã¦ na bagnach!
+	AI_Output			(self, other,"Mis_3_NC_CorAngar_FindHerb_08_05"); //Spiesz siÃª!
 	AI_StopProcessInfos	(self);
 	CorAngar_FindHerb = LOG_RUNNING;
 	
 	Log_CreateTopic		(CH3_FindHerbs,	LOG_MISSION);
 	Log_SetTopicStatus	(CH3_FindHerbs,	LOG_RUNNING);
-	B_LogEntry		(CH3_FindHerbs,	"Y'Berion nadal nie odzyska³ przytomnoœci. Cor Angar nakaza³ mi znaleŸæ piêæ leczniczych zió³ o silnym dzia³aniu.");
+	B_LogEntry		(CH3_FindHerbs,	"Y'Berion nadal nie odzyskaÂ³ przytomnoÅ“ci. Cor Angar nakazaÂ³ mi znaleÅ¸Ã¦ piÃªÃ¦ leczniczych ziÃ³Â³ o silnym dziaÂ³aniu.");
 };
 
 // ---------------------------- FindHerb - WHERE ---------------------------------------
@@ -1243,7 +1243,7 @@ INSTANCE Info_CorAngar_FindHerb_WHERE (C_INFO)
 	information	= Info_CorAngar_FindHerb_WHERE_Info;
 	permanent	= 0;
 	important	= 0; 
-	description = "Gdzie mogê znaleŸæ te zio³a?";
+	description = "Gdzie mogÃª znaleÅ¸Ã¦ te zioÂ³a?";
 };                       
 
 FUNC INT Info_CorAngar_FindHerb_WHERE_Condition()
@@ -1256,12 +1256,12 @@ FUNC INT Info_CorAngar_FindHerb_WHERE_Condition()
 
 FUNC VOID Info_CorAngar_FindHerb_WHERE_Info()
 {
-	AI_Output			(other, self,"Info_CorAngar_FindHerb_WHERE_15_01"); //Gdzie mogê znaleŸæ te zio³a?
-	AI_Output			(self, other,"Info_CorAngar_FindHerb_WHERE_08_02"); //Poszukaj na bagnach za Obozem. Musisz siê zapuœciæ doœæ daleko, wiêc uwa¿aj na b³otne wê¿e!
-	AI_Output			(self, other,"Info_CorAngar_FindHerb_WHERE_08_03"); //I nie traæ ani chwili. IdŸ ju¿!
+	AI_Output			(other, self,"Info_CorAngar_FindHerb_WHERE_15_01"); //Gdzie mogÃª znaleÅ¸Ã¦ te zioÂ³a?
+	AI_Output			(self, other,"Info_CorAngar_FindHerb_WHERE_08_02"); //Poszukaj na bagnach za Obozem. Musisz siÃª zapuÅ“ciÃ¦ doÅ“Ã¦ daleko, wiÃªc uwaÂ¿aj na bÂ³otne wÃªÂ¿e!
+	AI_Output			(self, other,"Info_CorAngar_FindHerb_WHERE_08_03"); //I nie traÃ¦ ani chwili. IdÅ¸ juÂ¿!
 	AI_StopProcessInfos	(self);
 
-	B_LogEntry		(CH3_FindHerbs,	"Potrzebne Angarowi zio³a rosn¹ daleko na bagnach, za Obozem Bractwa. Muszê mieæ oczy szeroko otwarte - tamta okolica roi siê od b³otnych wê¿y.");
+	B_LogEntry		(CH3_FindHerbs,	"Potrzebne Angarowi zioÂ³a rosnÂ¹ daleko na bagnach, za Obozem Bractwa. MuszÃª mieÃ¦ oczy szeroko otwarte - tamta okolica roi siÃª od bÂ³otnych wÃªÂ¿y.");
 };
 
 // ---------------------------- FindHerb - LOOK ---------------------------------------
@@ -1273,7 +1273,7 @@ INSTANCE Info_CorAngar_FindHerb_LOOK (C_INFO)
 	information	= Info_CorAngar_FindHerb_LOOK_Info;
 	permanent	= 0;
 	important	= 0; 
-	description = "Jak rozpoznam te zio³a?";
+	description = "Jak rozpoznam te zioÂ³a?";
 };                       
 
 FUNC INT Info_CorAngar_FindHerb_LOOK_Condition()
@@ -1286,12 +1286,12 @@ FUNC INT Info_CorAngar_FindHerb_LOOK_Condition()
 
 FUNC VOID Info_CorAngar_FindHerb_LOOK_Info()
 {
-	AI_Output			(other, self,"Info_CorAngar_FindHerb_LOOK_15_01"); //Jak rozpoznam te zio³a?
-	AI_Output			(self, other,"Info_CorAngar_FindHerb_LOOK_08_02"); //Przypominaj¹ gwiazdê z oœmioma zielonymi i pomarañczowymi liœæmi.
-	AI_Output			(self, other,"Info_CorAngar_FindHerb_LOOK_08_03"); //Ruszaj w drogê.
+	AI_Output			(other, self,"Info_CorAngar_FindHerb_LOOK_15_01"); //Jak rozpoznam te zioÂ³a?
+	AI_Output			(self, other,"Info_CorAngar_FindHerb_LOOK_08_02"); //PrzypominajÂ¹ gwiazdÃª z oÅ“mioma zielonymi i pomaraÃ±czowymi liÅ“Ã¦mi.
+	AI_Output			(self, other,"Info_CorAngar_FindHerb_LOOK_08_03"); //Ruszaj w drogÃª.
 	AI_StopProcessInfos	(self);
 
-	B_LogEntry		(CH3_FindHerbs,	"Lecznicze zio³a przypominaj¹ gwiazdy. Maj¹ cztery zielone i cztery pomarañczowe liœcie.");
+	B_LogEntry		(CH3_FindHerbs,	"Lecznicze zioÂ³a przypominajÂ¹ gwiazdy. MajÂ¹ cztery zielone i cztery pomaraÃ±czowe liÅ“cie.");
 };
 
 
@@ -1305,7 +1305,7 @@ INSTANCE Info_CorAngar_FindHerb_Running (C_INFO)
 	information	= Info_CorAngar_FindHerb_Running_Info;
 	permanent	= 1;
 	important	= 0; 
-	description = "Nie znalaz³em jeszcze potrzebnej iloœci zió³.";
+	description = "Nie znalazÂ³em jeszcze potrzebnej iloÅ“ci ziÃ³Â³.";
 };                       
 
 FUNC INT Info_CorAngar_FindHerb_Running_Condition()
@@ -1321,12 +1321,12 @@ FUNC INT Info_CorAngar_FindHerb_Running_Condition()
 
 FUNC VOID Info_CorAngar_FindHerb_Running_Info()
 {
-	AI_Output			(other, self,"Info_CorAngar_FindHerb_Running_15_01");//Nie znalaz³em jeszcze potrzebnej iloœci zió³.
-	AI_Output			(self, other,"Info_CorAngar_FindHerb_Running_08_02");//Mo¿e Fortuno, handlarz zio³ami, ma trochê w swoich zapasach.
-	AI_Output			(self, other,"Info_CorAngar_FindHerb_Running_08_03");//Pospiesz siê. Potrzebujê piêciu zió³. Y'Berionowi nie zosta³o ju¿ zbyt wiele czasu.
+	AI_Output			(other, self,"Info_CorAngar_FindHerb_Running_15_01");//Nie znalazÂ³em jeszcze potrzebnej iloÅ“ci ziÃ³Â³.
+	AI_Output			(self, other,"Info_CorAngar_FindHerb_Running_08_02");//MoÂ¿e Fortuno, handlarz zioÂ³ami, ma trochÃª w swoich zapasach.
+	AI_Output			(self, other,"Info_CorAngar_FindHerb_Running_08_03");//Pospiesz siÃª. PotrzebujÃª piÃªciu ziÃ³Â³. Y'Berionowi nie zostaÂ³o juÂ¿ zbyt wiele czasu.
 	AI_StopProcessInfos	(self);
 
-	//-------- Fortuno die Kräuter "unterschieben" --------
+	//-------- Fortuno die KrÃ¤uter "unterschieben" --------
 	if	!Fortuno_HasYBerionHerbs
 	{
 		var C_NPC	fortuno;
@@ -1334,7 +1334,7 @@ FUNC VOID Info_CorAngar_FindHerb_Running_Info()
 		CreateInvItems		(fortuno,	ItFo_Plants_Herb_03,	5);	
 
 		Fortuno_HasYBerionHerbs = TRUE;
-		B_LogEntry		(CH3_FindHerbs,	"Fortuno, handlarz zielem, mo¿e mieæ takie zio³a na sk³adzie.");
+		B_LogEntry		(CH3_FindHerbs,	"Fortuno, handlarz zielem, moÂ¿e mieÃ¦ takie zioÂ³a na skÂ³adzie.");
 	};
 };
 
@@ -1345,7 +1345,7 @@ INSTANCE Info_CorAngar_FindHerb_Success (C_INFO)
 	condition	= Info_CorAngar_FindHerb_Success_Condition;
 	information	= Info_CorAngar_FindHerb_Success_Info;
 	permanent	= 0;
-	description	= "Mam ju¿ wszystkie uzdrawiaj¹ce zio³a dla Y'Beriona.";
+	description	= "Mam juÂ¿ wszystkie uzdrawiajÂ¹ce zioÂ³a dla Y'Beriona.";
 };                       
 
 FUNC INT Info_CorAngar_FindHerb_Success_Condition()
@@ -1358,11 +1358,11 @@ FUNC INT Info_CorAngar_FindHerb_Success_Condition()
 
 FUNC VOID Info_CorAngar_FindHerb_Success_Info()
 {	
-	AI_Output			(other, self,"Info_CorAngar_FindHerb_Success_15_01"); //Mam ju¿ wszystkie uzdrawiaj¹ce zio³a dla Y'Beriona.
-	AI_Output			(self, other,"Info_CorAngar_FindHerb_Success_08_02"); //Dobra robota. Y'Berion zbudzi³ siê na chwilê tu¿ przed twoim przybyciem.
-	AI_Output			(other, self,"Info_CorAngar_FindHerb_Success_15_03"); //Powiedzia³ coœ?
-	AI_Output			(self, other,"Info_CorAngar_FindHerb_Success_08_04"); //Tak. Powiedzia³, ¿e Œni¹cy nie jest tym, za co go uwa¿amy. Pod ¿adnym pozorem nie wolno nam go zbudziæ.
-	AI_Output			(self, other,"Info_CorAngar_FindHerb_Success_08_05"); //Pozostaje nam tylko mieæ nadziejê, ¿e dla biednego Y'Beriona nie jest jeszcze za póŸno.
+	AI_Output			(other, self,"Info_CorAngar_FindHerb_Success_15_01"); //Mam juÂ¿ wszystkie uzdrawiajÂ¹ce zioÂ³a dla Y'Beriona.
+	AI_Output			(self, other,"Info_CorAngar_FindHerb_Success_08_02"); //Dobra robota. Y'Berion zbudziÂ³ siÃª na chwilÃª tuÂ¿ przed twoim przybyciem.
+	AI_Output			(other, self,"Info_CorAngar_FindHerb_Success_15_03"); //PowiedziaÂ³ coÅ“?
+	AI_Output			(self, other,"Info_CorAngar_FindHerb_Success_08_04"); //Tak. PowiedziaÂ³, Â¿e Å’niÂ¹cy nie jest tym, za co go uwaÂ¿amy. Pod Â¿adnym pozorem nie wolno nam go zbudziÃ¦.
+	AI_Output			(self, other,"Info_CorAngar_FindHerb_Success_08_05"); //Pozostaje nam tylko mieÃ¦ nadziejÃª, Â¿e dla biednego Y'Beriona nie jest jeszcze za pÃ³Å¸no.
 	Yberion_dead = LOG_RUNNING;
 
 	B_GiveInvItems	(other, self, ItFo_Plants_Herb_03, 5 );
@@ -1371,7 +1371,7 @@ FUNC VOID Info_CorAngar_FindHerb_Success_Info()
 
 	CorAngar_FindHerb = LOG_SUCCESS;
 	
-	B_LogEntry		(CH3_FindHerbs,	"Da³em Cor Angarowi odpowiednie zio³a. Miejmy tylko nadziejê, ¿e nie jest jeszcze za póŸno...");
+	B_LogEntry		(CH3_FindHerbs,	"DaÂ³em Cor Angarowi odpowiednie zioÂ³a. Miejmy tylko nadziejÃª, Â¿e nie jest jeszcze za pÃ³Å¸no...");
 	Log_SetTopicStatus	(CH3_FindHerbs,	LOG_SUCCESS);
 
 	//-------- Versuch YBerion zu heilen... --------
@@ -1385,17 +1385,17 @@ FUNC VOID Info_CorAngar_FindHerb_Success_Info()
 	//AI_StartState		(YBerion,	ZS_Dead,	0,	"");
 
 	//-------- ...scheitert. YBerion ist tot --------
-	AI_Output			(self, other,"GUR_1202_CorAngar_DEATH_Info_08_00"); //Y'BERION NIE ¯YJE. Nasz duchowy przywódca odszed³ w zaœwiaty!
+	AI_Output			(self, other,"GUR_1202_CorAngar_DEATH_Info_08_00"); //Y'BERION NIE Â¯YJE. Nasz duchowy przywÃ³dca odszedÂ³ w zaÅ“wiaty!
 	AI_TurnToNpc		(self, other);
-	AI_Output			(self, other,"GUR_1202_CorAngar_DEATH_Info_08_01"); //Nawet twoja b³yskawiczna pomoc nie mog³a zapobiec jego œmierci.
-	AI_Output			(other, self,"GUR_1202_CorAngar_DEATH_Info_15_02"); //I co teraz bêdzie?
-	AI_Output			(self, other,"GUR_1202_CorAngar_DEATH_Info_08_03"); //Zawsze ufa³em Y'Berionowi. Tu¿ przed œmierci¹ kaza³ nam upatrywaæ nadziei ocalenia w planie ucieczki opracowanym przez Magów Wody.
-	AI_Output			(other, self,"GUR_1202_CorAngar_DEATH_Info_15_04"); //Dlatego powinniœmy wesprzeæ Magów Wody w ich d¹¿eniach.
-	AI_Output			(self, other,"GUR_1202_CorAngar_DEATH_Info_08_05"); //Przyda siê im kamieñ ogniskuj¹cy i almanach. Ale te s¹ wci¹¿ w rêkach Cor Kaloma.
+	AI_Output			(self, other,"GUR_1202_CorAngar_DEATH_Info_08_01"); //Nawet twoja bÂ³yskawiczna pomoc nie mogÂ³a zapobiec jego Å“mierci.
+	AI_Output			(other, self,"GUR_1202_CorAngar_DEATH_Info_15_02"); //I co teraz bÃªdzie?
+	AI_Output			(self, other,"GUR_1202_CorAngar_DEATH_Info_08_03"); //Zawsze ufaÂ³em Y'Berionowi. TuÂ¿ przed Å“mierciÂ¹ kazaÂ³ nam upatrywaÃ¦ nadziei ocalenia w planie ucieczki opracowanym przez MagÃ³w Wody.
+	AI_Output			(other, self,"GUR_1202_CorAngar_DEATH_Info_15_04"); //Dlatego powinniÅ“my wesprzeÃ¦ MagÃ³w Wody w ich dÂ¹Â¿eniach.
+	AI_Output			(self, other,"GUR_1202_CorAngar_DEATH_Info_08_05"); //Przyda siÃª im kamieÃ± ogniskujÂ¹cy i almanach. Ale te sÂ¹ wciÂ¹Â¿ w rÃªkach Cor Kaloma.
 	AI_Output			(other, self,"GUR_1202_CorAngar_DEATH_Info_15_06"); //A gdzie jest Cor Kalom?
-	AI_Output			(self, other,"GUR_1202_CorAngar_DEATH_Info_08_07"); //W gniewie zebra³ oddzia³ Stra¿ników Œwi¹tynnych i wyruszy³ na poszukiwanie Œni¹cego.
-	AI_Output			(other, self,"GUR_1202_CorAngar_DEATH_Info_15_08"); //Niech to szlag! I jak teraz odzyskamy kamieñ ogniskuj¹cy?
-	AI_Output			(self, other,"GUR_1202_CorAngar_DEATH_Info_08_09"); //Zdajê siê, ¿e kamieñ i ksiêga s¹ wci¹¿ w jego laboratorium. Masz tu klucz do skrzyni.
+	AI_Output			(self, other,"GUR_1202_CorAngar_DEATH_Info_08_07"); //W gniewie zebraÂ³ oddziaÂ³ StraÂ¿nikÃ³w Å’wiÂ¹tynnych i wyruszyÂ³ na poszukiwanie Å’niÂ¹cego.
+	AI_Output			(other, self,"GUR_1202_CorAngar_DEATH_Info_15_08"); //Niech to szlag! I jak teraz odzyskamy kamieÃ± ogniskujÂ¹cy?
+	AI_Output			(self, other,"GUR_1202_CorAngar_DEATH_Info_08_09"); //ZdajÃª siÃª, Â¿e kamieÃ± i ksiÃªga sÂ¹ wciÂ¹Â¿ w jego laboratorium. Masz tu klucz do skrzyni.
 
 	CreateInvItem		(self,			ITKE_PSI_KALOM_01); 
 	B_GiveInvItems		(self,	other,	ITKE_PSI_KALOM_01,	1);
@@ -1423,11 +1423,11 @@ FUNC INT Info_CorAngar_TELEPORT_Condition()
 FUNC VOID Info_CorAngar_TELEPORT_Info()
 {	
 	AI_GotoNpc			(self, hero);
-	AI_Output			(self, hero,"Info_CorAngar_TELEPORT_08_01"); //Jeszcze coœ!
+	AI_Output			(self, hero,"Info_CorAngar_TELEPORT_08_01"); //Jeszcze coÅ“!
 	AI_Output			(hero, self,"Info_CorAngar_TELEPORT_15_02"); //Tak?
-	AI_Output			(self, hero,"Info_CorAngar_TELEPORT_08_03"); //WeŸ tê magiczn¹ runê jako symbol naszej wdziêcznoœci za twoje dokonania.
-	AI_Output			(self, hero,"Info_CorAngar_TELEPORT_08_04"); //Pozwoli ci ona w dogodnej chwili przeteleportowaæ siê na œwi¹tynny dziedziniec.
-	AI_Output			(hero, self,"Info_CorAngar_TELEPORT_15_05"); //Dziêkujê!
+	AI_Output			(self, hero,"Info_CorAngar_TELEPORT_08_03"); //WeÅ¸ tÃª magicznÂ¹ runÃª jako symbol naszej wdziÃªcznoÅ“ci za twoje dokonania.
+	AI_Output			(self, hero,"Info_CorAngar_TELEPORT_08_04"); //Pozwoli ci ona w dogodnej chwili przeteleportowaÃ¦ siÃª na Å“wiÂ¹tynny dziedziniec.
+	AI_Output			(hero, self,"Info_CorAngar_TELEPORT_15_05"); //DziÃªkujÃª!
 
 	//-------- Spieler wird losgeschickt --------
 	B_Story_SentToNC	();
@@ -1437,7 +1437,7 @@ FUNC VOID Info_CorAngar_TELEPORT_Info()
 //-----------------> Sprawa
 //========================================
 
-INSTANCE DIA_CorAngar_Sprawa (C_INFO) // przecie¿ to zadanie zleca nam Shawn ***FIX***
+INSTANCE DIA_CorAngar_Sprawa (C_INFO) // przecieÂ¿ to zadanie zleca nam Shawn ***FIX***
 {
    npc          = GUR_1202_CorAngar;
    nr           = 1;
@@ -1461,17 +1461,17 @@ FUNC INT DIA_CorAngar_Sprawa_Condition()
 FUNC VOID DIA_CorAngar_Sprawa_Info()
 {
     AI_Output (self, other ,"DIA_CorAngar_Sprawa_03_01"); //Zaczekaj. Mam dla ciebie zadanie.
-    AI_Output (self, other ,"DIA_CorAngar_Sprawa_03_02"); //Dosz³y nas wieœci ze Starej Kopalni.
-    AI_Output (self, other ,"DIA_CorAngar_Sprawa_03_03"); //Podobno sytuacja w Kolonii jest bardzo z³a.
+    AI_Output (self, other ,"DIA_CorAngar_Sprawa_03_02"); //DoszÂ³y nas wieÅ“ci ze Starej Kopalni.
+    AI_Output (self, other ,"DIA_CorAngar_Sprawa_03_03"); //Podobno sytuacja w Kolonii jest bardzo zÂ³a.
     AI_Output (other, self ,"DIA_CorAngar_Sprawa_15_04"); //Bynajmniej. Na czym polega moje zadanie?
-    AI_Output (self, other ,"DIA_CorAngar_Sprawa_03_05"); //Udaj siê w pobli¿e Starej Kopalni i sprawdŸ, czy nasi bracia z kopalni ¿yj¹.
-    AI_Output (self, other ,"DIA_CorAngar_Sprawa_03_06"); //Mam nadziejê, ¿e uda³o im siê uciec.
-    AI_Output (self, other ,"DIA_CorAngar_Sprawa_03_07"); //Tylko b¹dŸ ostro¿ny.
+    AI_Output (self, other ,"DIA_CorAngar_Sprawa_03_05"); //Udaj siÃª w pobliÂ¿e Starej Kopalni i sprawdÅ¸, czy nasi bracia z kopalni Â¿yjÂ¹.
+    AI_Output (self, other ,"DIA_CorAngar_Sprawa_03_06"); //Mam nadziejÃª, Â¿e udaÂ³o im siÃª uciec.
+    AI_Output (self, other ,"DIA_CorAngar_Sprawa_03_07"); //Tylko bÂ¹dÅ¸ ostroÂ¿ny.
     MIS_HelpBrothersBra  = LOG_RUNNING;
 
     Log_CreateTopic            (CH1_HelpBrothersBra , LOG_MISSION);
     Log_SetTopicStatus       (CH1_HelpBrothersBra , LOG_RUNNING);
-    B_LogEntry                     (CH1_HelpBrothersBra ,"Cor Angar kaza³ mi sprawdziæ, co sta³o siê z naszymi braæmi z kopalni.");
+    B_LogEntry                     (CH1_HelpBrothersBra ,"Cor Angar kazaÂ³ mi sprawdziÃ¦, co staÂ³o siÃª z naszymi braÃ¦mi z kopalni.");
 };
 */
 
@@ -1486,7 +1486,7 @@ INSTANCE DIA_CorAngar_KopalniaClear (C_INFO)
    condition    = DIA_CorAngar_KopalniaClear_Condition;
    information  = DIA_CorAngar_KopalniaClear_Info;
    permanent	= FALSE;
-   description	= "Oczyœci³em kopalniê.";
+   description	= "OczyÅ“ciÂ³em kopalniÃª.";
 };
 
 FUNC INT DIA_CorAngar_KopalniaClear_Condition()
@@ -1500,14 +1500,14 @@ FUNC INT DIA_CorAngar_KopalniaClear_Condition()
 
 FUNC VOID DIA_CorAngar_KopalniaClear_Info()
 {
-    AI_Output (other, self ,"DIA_CorAngar_KopalniaClear_15_01"); //Pomog³em pozbyæ siê ludzi Gomeza z Kopalni.
-    AI_Output (self, other ,"DIA_CorAngar_KopalniaClear_03_02"); //To œwietnie. Pos³aniec dotar³? 
-    AI_Output (other, self ,"DIA_CorAngar_KopalniaClear_15_03"); //Tak, ale nie widzia³em siê z nim. Informacjê przekaza³ mi Najemnik, który poleci³ mi rozmowê z Laresem.
-    AI_Output (self, other ,"DIA_CorAngar_KopalniaClear_03_04"); //Lares to twardy i odpowiedzialny cz³owiek. Dobrze zna Bandytów i stosunki miêdzy obozami.
-    AI_Output (other, self ,"DIA_CorAngar_KopalniaClear_15_05"); //Kopalnia by³a pe³na o¿ywieñców. 
-    AI_Output (other, self ,"DIA_CorAngar_KopalniaClear_15_06"); //Czêœæ korytarzy by³a zalana przez podziemn¹ rzekê. 
-    AI_Output (other, self ,"DIA_CorAngar_KopalniaClear_15_07"); //Wszêdzie roi³o siê od pe³zaczy i innych bestii.
-    AI_Output (self, other ,"DIA_CorAngar_KopalniaClear_03_08"); //To niewiarygodne, ¿e te legendy okaza³y siê prawd¹. Zas³u¿y³eœ na nagrodê. Jesteœ dzielnym wojownikiem i dobrze mieæ ciê po swojej stronie. 
+    AI_Output (other, self ,"DIA_CorAngar_KopalniaClear_15_01"); //PomogÂ³em pozbyÃ¦ siÃª ludzi Gomeza z Kopalni.
+    AI_Output (self, other ,"DIA_CorAngar_KopalniaClear_03_02"); //To Å“wietnie. PosÂ³aniec dotarÂ³? 
+    AI_Output (other, self ,"DIA_CorAngar_KopalniaClear_15_03"); //Tak, ale nie widziaÂ³em siÃª z nim. InformacjÃª przekazaÂ³ mi Najemnik, ktÃ³ry poleciÂ³ mi rozmowÃª z Laresem.
+    AI_Output (self, other ,"DIA_CorAngar_KopalniaClear_03_04"); //Lares to twardy i odpowiedzialny czÂ³owiek. Dobrze zna BandytÃ³w i stosunki miÃªdzy obozami.
+    AI_Output (other, self ,"DIA_CorAngar_KopalniaClear_15_05"); //Kopalnia byÂ³a peÂ³na oÂ¿ywieÃ±cÃ³w. 
+    AI_Output (other, self ,"DIA_CorAngar_KopalniaClear_15_06"); //CzÃªÅ“Ã¦ korytarzy byÂ³a zalana przez podziemnÂ¹ rzekÃª. 
+    AI_Output (other, self ,"DIA_CorAngar_KopalniaClear_15_07"); //WszÃªdzie roiÂ³o siÃª od peÂ³zaczy i innych bestii.
+    AI_Output (self, other ,"DIA_CorAngar_KopalniaClear_03_08"); //To niewiarygodne, Â¿e te legendy okazaÂ³y siÃª prawdÂ¹. ZasÂ³uÂ¿yÂ³eÅ“ na nagrodÃª. JesteÅ“ dzielnym wojownikiem i dobrze mieÃ¦ ciÃª po swojej stronie. 
     CreateInvItems (self, ItMiNugget, 500);
     B_GiveInvItems (self, other, ItMiNugget, 500);
     B_GiveXP (500);
@@ -1525,7 +1525,7 @@ INSTANCE DIA_CorAngar_GuruMomPlese (C_INFO)
    condition    = DIA_CorAngar_GuruMomPlese_Condition;
    information  = DIA_CorAngar_GuruMomPlese_Info;
    permanent	= FALSE;
-   description	= "Mistrzu, kto zast¹pi Y'Beriona?";
+   description	= "Mistrzu, kto zastÂ¹pi Y'Beriona?";
 };
 
 FUNC INT DIA_CorAngar_GuruMomPlese_Condition()
@@ -1541,28 +1541,28 @@ FUNC INT DIA_CorAngar_GuruMomPlese_Condition()
 
 FUNC VOID DIA_CorAngar_GuruMomPlese_Info()
 {
-    AI_Output (other, self ,"DIA_CorAngar_GuruMomPlese_15_01"); //Mistrzu, kto zast¹pi Y'Beriona?
-    AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_02"); //Ciê¿ko mi siê pogodziæ z jego œmierci¹... Na razie to ja postaram siê mieæ wszystko pod kontrol¹.
-    AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_03"); //Jednak sam nie dam sobie rady. Zw³aszcza, ¿e Cor Kalom odszed³. Ktoœ musi go zast¹piæ. 
-	AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_04"); //Ty... Sta³eœ siê silniejszy i bardziej doœwiadczony od kiedy tu przyby³eœ.
-    AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_05"); //Pomagasz nam w trudnoœciach, wiernie s³u¿ysz Bractwu, bez ciebie nie odby³o by siê przywo³anie...
-	AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_06"); //Czy nie zechcia³byœ za³o¿yæ szatê Guru?
-    AI_Output (other, self ,"DIA_CorAngar_GuruMomPlese_15_07"); //Có¿, nie wygl¹da na zbyt wygodn¹... Strasznie d³uga, a to wzornictwo... Okropnoœci...
-    AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_08"); //Próbujesz ukryæ siê pod p³aszczykiem arogancji. Mów, co ciê trapi.
-	AI_Output (other, self ,"DIA_CorAngar_GuruMomPlese_15_09"); //Mistrzu, chodzi o to, ¿e Œni¹cy jest demonem. Obaj dobrze o tym wiemy. Dlaczego mia³bym chcieæ zostaæ Guru, jego najwierniejszym s³ug¹?
-    AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_10"); //Rozumiem twoje obawy. To siê bardzo chwali, ¿e mi o tym powiedzia³eœ. Nie licz¹ siê dla ciebie tytu³y lecz duch!
-    AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_11"); //Zrób to dla tych wszystkich zagubionych ludzi, którzy b³¹kaj¹ siê po tym Obozie bez celu. Oni potrzebuj¹ kogoœ, kto wska¿e im drogê.
-	AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_12"); //Zagubili siê! Musisz im pomóc. Pomyœl o tym. Robisz to nie dla Œni¹cego, tylko dla jego by³ych wyznawców.
-    AI_Output (other, self ,"DIA_CorAngar_GuruMomPlese_15_13"); //No dobrze. Za³o¿ê szatê Guru.
-    AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_14"); //Zaczekaj! Musisz mi wczeœniej udowodniæ, ¿e jesteœ gotów.
+    AI_Output (other, self ,"DIA_CorAngar_GuruMomPlese_15_01"); //Mistrzu, kto zastÂ¹pi Y'Beriona?
+    AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_02"); //CiÃªÂ¿ko mi siÃª pogodziÃ¦ z jego Å“mierciÂ¹... Na razie to ja postaram siÃª mieÃ¦ wszystko pod kontrolÂ¹.
+    AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_03"); //Jednak sam nie dam sobie rady. ZwÂ³aszcza, Â¿e Cor Kalom odszedÂ³. KtoÅ“ musi go zastÂ¹piÃ¦. 
+	AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_04"); //Ty... StaÂ³eÅ“ siÃª silniejszy i bardziej doÅ“wiadczony od kiedy tu przybyÂ³eÅ“.
+    AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_05"); //Pomagasz nam w trudnoÅ“ciach, wiernie sÂ³uÂ¿ysz Bractwu, bez ciebie nie odbyÂ³o by siÃª przywoÂ³anie...
+	AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_06"); //Czy nie zechciaÂ³byÅ“ zaÂ³oÂ¿yÃ¦ szatÃª Guru?
+    AI_Output (other, self ,"DIA_CorAngar_GuruMomPlese_15_07"); //CÃ³Â¿, nie wyglÂ¹da na zbyt wygodnÂ¹... Strasznie dÂ³uga, a to wzornictwo... OkropnoÅ“ci...
+    AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_08"); //PrÃ³bujesz ukryÃ¦ siÃª pod pÂ³aszczykiem arogancji. MÃ³w, co ciÃª trapi.
+	AI_Output (other, self ,"DIA_CorAngar_GuruMomPlese_15_09"); //Mistrzu, chodzi o to, Â¿e Å’niÂ¹cy jest demonem. Obaj dobrze o tym wiemy. Dlaczego miaÂ³bym chcieÃ¦ zostaÃ¦ Guru, jego najwierniejszym sÂ³ugÂ¹?
+    AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_10"); //Rozumiem twoje obawy. To siÃª bardzo chwali, Â¿e mi o tym powiedziaÂ³eÅ“. Nie liczÂ¹ siÃª dla ciebie tytuÂ³y lecz duch!
+    AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_11"); //ZrÃ³b to dla tych wszystkich zagubionych ludzi, ktÃ³rzy bÂ³Â¹kajÂ¹ siÃª po tym Obozie bez celu. Oni potrzebujÂ¹ kogoÅ“, kto wskaÂ¿e im drogÃª.
+	AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_12"); //Zagubili siÃª! Musisz im pomÃ³c. PomyÅ“l o tym. Robisz to nie dla Å’niÂ¹cego, tylko dla jego byÂ³ych wyznawcÃ³w.
+    AI_Output (other, self ,"DIA_CorAngar_GuruMomPlese_15_13"); //No dobrze. ZaÂ³oÂ¿Ãª szatÃª Guru.
+    AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_14"); //Zaczekaj! Musisz mi wczeÅ“niej udowodniÃ¦, Â¿e jesteÅ“ gotÃ³w.
 	AI_Output (other, self ,"DIA_CorAngar_GuruMomPlese_15_15"); //CO?!
-	AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_16"); //Baal Cadar jest w posiadaniu pewniej tajemniczej ksiêgi. Od kilku dni próbuje j¹ sprzedaæ. Czyta³em jej fragmenty. Nale¿a³a do jakiegoœ alchemika.
-	AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_17"); //Odkup j¹ od niego i przeczytaj. Wewn¹trz znajduje siê przepis na miksturê lecz¹c¹ umys³. Uwarz j¹, a uznam, ¿e jesteœ gotów.
+	AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_16"); //Baal Cadar jest w posiadaniu pewniej tajemniczej ksiÃªgi. Od kilku dni prÃ³buje jÂ¹ sprzedaÃ¦. CzytaÂ³em jej fragmenty. NaleÂ¿aÂ³a do jakiegoÅ“ alchemika.
+	AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_17"); //Odkup jÂ¹ od niego i przeczytaj. WewnÂ¹trz znajduje siÃª przepis na miksturÃª leczÂ¹cÂ¹ umysÂ³. Uwarz jÂ¹, a uznam, Â¿e jesteÅ“ gotÃ³w.
     MIS_testGuru = LOG_RUNNING;
 
     Log_CreateTopic          (CH1_testGuru, LOG_MISSION);
     Log_SetTopicStatus       (CH1_testGuru, LOG_RUNNING);
-    B_LogEntry               (CH1_testGuru,"Aby zostaæ Guru muszê przygotowaæ specjaln¹ miksturê. Przepis znajdê w ksiêdze, któr¹ chce sprzedaæ Baal Cadar.");
+    B_LogEntry               (CH1_testGuru,"Aby zostaÃ¦ Guru muszÃª przygotowaÃ¦ specjalnÂ¹ miksturÃª. Przepis znajdÃª w ksiÃªdze, ktÃ³rÂ¹ chce sprzedaÃ¦ Baal Cadar.");
     AI_StopProcessInfos	(self);
 };
 //========================================
@@ -1576,7 +1576,7 @@ INSTANCE DIA_CorAngar_Mixtura156 (C_INFO)
    condition    = DIA_CorAngar_Mixtura156_Condition;
    information  = DIA_CorAngar_Mixtura156_Info;
    permanent	= FALSE;
-   description	= "Uwarzy³em miksturê oczyszczenia.";
+   description	= "UwarzyÂ³em miksturÃª oczyszczenia.";
 };
 
 FUNC INT DIA_CorAngar_Mixtura156_Condition()
@@ -1591,20 +1591,20 @@ FUNC INT DIA_CorAngar_Mixtura156_Condition()
 
 FUNC VOID DIA_CorAngar_Mixtura156_Info()
 {
-    AI_Output (other, self ,"DIA_CorAngar_Mixtura156_15_01"); //Uwarzy³em miksturê oczyszczenia.
-    AI_Output (self, other ,"DIA_CorAngar_Mixtura156_03_02"); //To napój o którym pisano w ksiêdze?
-    AI_Output (other, self ,"DIA_CorAngar_Mixtura156_15_03"); //Tak, ta mikstura oczyszcza umys³ ka¿dego, kto j¹ wypije.
-    AI_Output (other, self ,"DIA_CorAngar_Mixtura156_15_04"); //Przepis by³ bardzo skomplikowany i wymaga³ wielu sk³adników trudnych do zdobycia.
-    AI_Output (self, other ,"DIA_CorAngar_Mixtura156_03_05"); //Udowodni³eœ, ¿e jesteœ godzien nosiæ szatê Guru. Witaj wœród nas. Mo¿esz rozgoœciæ siê w laboratorium Kaloma.
-    AI_Output (self, other ,"DIA_CorAngar_Mixtura156_03_06"); //WeŸ upragnion¹ szatê i ten kostur. Niechaj ci s³u¿¹. Bractwo na ciebie liczy.
-    AI_Output (self, other ,"DIA_CorAngar_Mixtura156_03_07"); //Shawn bêdzie twoim asystentem i powie ci czym nale¿y siê zaj¹æ.
+    AI_Output (other, self ,"DIA_CorAngar_Mixtura156_15_01"); //UwarzyÂ³em miksturÃª oczyszczenia.
+    AI_Output (self, other ,"DIA_CorAngar_Mixtura156_03_02"); //To napÃ³j o ktÃ³rym pisano w ksiÃªdze?
+    AI_Output (other, self ,"DIA_CorAngar_Mixtura156_15_03"); //Tak, ta mikstura oczyszcza umysÂ³ kaÂ¿dego, kto jÂ¹ wypije.
+    AI_Output (other, self ,"DIA_CorAngar_Mixtura156_15_04"); //Przepis byÂ³ bardzo skomplikowany i wymagaÂ³ wielu skÂ³adnikÃ³w trudnych do zdobycia.
+    AI_Output (self, other ,"DIA_CorAngar_Mixtura156_03_05"); //UdowodniÂ³eÅ“, Â¿e jesteÅ“ godzien nosiÃ¦ szatÃª Guru. Witaj wÅ“rÃ³d nas. MoÂ¿esz rozgoÅ“ciÃ¦ siÃª w laboratorium Kaloma.
+    AI_Output (self, other ,"DIA_CorAngar_Mixtura156_03_06"); //WeÅ¸ upragnionÂ¹ szatÃª i ten kostur. Niechaj ci sÂ³uÂ¿Â¹. Bractwo na ciebie liczy.
+    AI_Output (self, other ,"DIA_CorAngar_Mixtura156_03_07"); //Gor Na Dhun bÃªdzie twoim asystentem i powie ci czym naleÂ¿y siÃª zajÂ¹Ã¦.
     hero.guild = GIL_GUR;
     CreateInvItems (self, GUR_ARMOR_M, 1);
     B_GiveInvItems (self, other, GUR_ARMOR_M, 1);
 	CreateInvItems (self, ItMw_2H_Staff_GuruMage_03, 1);
     B_GiveInvItems (self, other, ItMw_2H_Staff_GuruMage_03, 1);
 	AI_EquipBestArmor	(hero); 
-    B_LogEntry                     (CH1_testGuru,"Uda³o mi siê. Zosta³em Guru w Obozie Bractwa. Mam zastêpowaæ Cor Kaloma. Moim asystentem jest Shawn, by³y pomocnik Y'Beriona. Od niego dowiem siê, co mam do zrobienia...");
+    B_LogEntry                     (CH1_testGuru,"UdaÂ³o mi siÃª. ZostaÂ³em Guru w Obozie Bractwa. Mam zastÃªpowaÃ¦ Cor Kaloma. Moim asystentem jest Gor Na Dhun, byÂ³y pomocnik Y'Beriona. Od niego dowiem siÃª, co mam do zrobienia...");
     Log_SetTopicStatus       (CH1_testGuru, LOG_SUCCESS);
     MIS_testGuru = LOG_SUCCESS;
 	Npc_SetTrueGuild (hero,GIL_GUR);
@@ -1627,7 +1627,7 @@ INSTANCE DIA_CorAngar_BuyArmorH (C_INFO)
    condition    = DIA_CorAngar_BuyArmorH_Condition;
    information  = DIA_CorAngar_BuyArmorH_Info;
    permanent	= FALSE;
-   description	= "Kup zdobion¹ szatê Guru.(2460 bry³ek rudy)";
+   description	= "Kup zdobionÂ¹ szatÃª Guru.(2460 bryÂ³ek rudy)";
 };
 
 FUNC INT DIA_CorAngar_BuyArmorH_Condition()
@@ -1641,11 +1641,11 @@ FUNC INT DIA_CorAngar_BuyArmorH_Condition()
 
 FUNC VOID DIA_CorAngar_BuyArmorH_Info()
 {
-    AI_Output (other, self ,"DIA_CorAngar_BuyArmorH_15_01"); //Chcê nosiæ zdobion¹ szatê.
-    AI_Output (self, other ,"DIA_CorAngar_BuyArmorH_03_02"); //A masz rudê?
+    AI_Output (other, self ,"DIA_CorAngar_BuyArmorH_15_01"); //ChcÃª nosiÃ¦ zdobionÂ¹ szatÃª.
+    AI_Output (self, other ,"DIA_CorAngar_BuyArmorH_03_02"); //A masz rudÃª?
     if (Npc_HasItems (hero, ItMiNugget)>=2460)
     {
-        AI_Output (other, self ,"DIA_CorAngar_BuyArmorH_15_03"); //Oczywiœcie.
+        AI_Output (other, self ,"DIA_CorAngar_BuyArmorH_15_03"); //OczywiÅ“cie.
         AI_Output (self, other ,"DIA_CorAngar_BuyArmorH_03_04"); //Oto twoja szata.
         CreateInvItems (self, GUR_ARMOR_H, 1);
         B_GiveInvItems (self, other, GUR_ARMOR_H, 1);
@@ -1654,7 +1654,7 @@ FUNC VOID DIA_CorAngar_BuyArmorH_Info()
     else
     {
         AI_Output (other, self ,"DIA_CorAngar_BuyArmorH_15_05"); //Niestety nie.
-        AI_Output (self, other ,"DIA_CorAngar_BuyArmorH_03_06"); //Wróæ, gdy uzbierasz odpowiedni¹ iloœæ rudy.
+        AI_Output (self, other ,"DIA_CorAngar_BuyArmorH_03_06"); //WrÃ³Ã¦, gdy uzbierasz odpowiedniÂ¹ iloÅ“Ã¦ rudy.
 		DIA_CorAngar_BuyArmorH.permanent = true;
     };
     AI_StopProcessInfos	(self);
@@ -1672,7 +1672,7 @@ INSTANCE DIA_CorAngar_Bractwo_Kopalnia_Finish (C_INFO)
    condition    = DIA_CorAngar_Bractwo_Kopalnia_Finish_Condition;
    information  = DIA_CorAngar_Bractwo_Kopalnia_Finish_Info;
    permanent	= FALSE;
-   description	= "Zaj¹³em siê spraw¹ w Nowym Obozie. ";
+   description	= "ZajÂ¹Â³em siÃª sprawÂ¹ w Nowym Obozie. ";
 };
 
 FUNC INT DIA_CorAngar_Bractwo_Kopalnia_Finish_Condition()
@@ -1686,11 +1686,11 @@ FUNC INT DIA_CorAngar_Bractwo_Kopalnia_Finish_Condition()
 
 FUNC VOID DIA_CorAngar_Bractwo_Kopalnia_Finish_Info()
 {
-    AI_Output (other, self ,"DIA_CorAngar_Bractwo_Kopalnia_Finish_15_01"); //Zaj¹³em siê spraw¹ w Nowym Obozie. 
-    AI_Output (other, self ,"DIA_CorAngar_Bractwo_Kopalnia_Finish_15_02"); //Dziêki mojej pomocy Najemnicy odzyskali dostêp do Opuszczonej Kopalni.
-    AI_Output (self, other ,"DIA_CorAngar_Bractwo_Kopalnia_Finish_03_03"); //Gomez ma teraz niez³y k³opot. To powinno na chwilê ostudziæ jego zapa³.
-    AI_Output (self, other ,"DIA_CorAngar_Bractwo_Kopalnia_Finish_03_04"); //Dobrze siê spisa³eœ. Obawia³em siê, ¿e pos³aniec móg³ nie dotrzeæ do Nowego Obozu.
-    AI_Output (self, other ,"DIA_CorAngar_Bractwo_Kopalnia_Finish_03_05"); //Zas³u¿y³eœ na nagrodê.
+    AI_Output (other, self ,"DIA_CorAngar_Bractwo_Kopalnia_Finish_15_01"); //ZajÂ¹Â³em siÃª sprawÂ¹ w Nowym Obozie. 
+    AI_Output (other, self ,"DIA_CorAngar_Bractwo_Kopalnia_Finish_15_02"); //DziÃªki mojej pomocy Najemnicy odzyskali dostÃªp do Opuszczonej Kopalni.
+    AI_Output (self, other ,"DIA_CorAngar_Bractwo_Kopalnia_Finish_03_03"); //Gomez ma teraz niezÂ³y kÂ³opot. To powinno na chwilÃª ostudziÃ¦ jego zapaÂ³.
+    AI_Output (self, other ,"DIA_CorAngar_Bractwo_Kopalnia_Finish_03_04"); //Dobrze siÃª spisaÂ³eÅ“. ObawiaÂ³em siÃª, Â¿e posÂ³aniec mÃ³gÂ³ nie dotrzeÃ¦ do Nowego Obozu.
+    AI_Output (self, other ,"DIA_CorAngar_Bractwo_Kopalnia_Finish_03_05"); //ZasÂ³uÂ¿yÂ³eÅ“ na nagrodÃª.
     CreateInvItems (self, ItMiNugget, 500);
     B_GiveInvItems (self, other, ItMiNugget, 500);
     b_givexp (200);
@@ -1724,14 +1724,14 @@ FUNC INT DIA_CorAngar_MistrzAreny_Condition()
 
 FUNC VOID DIA_CorAngar_MistrzAreny_Info()
 {
-    AI_Output (self, other ,"DIA_CorAngar_MistrzAreny_03_01"); //Jesteœ teraz mistrzem areny. Zas³ugujesz na specjaln¹ nagrodê.
-    AI_Output (self, other ,"DIA_CorAngar_MistrzAreny_03_02"); //To Miecz Rozpaczy, wybitne ostrze. Zas³ugujesz na nie.
-    AI_Output (other, self ,"DIA_CorAngar_MistrzAreny_15_03"); //Sk¹d masz tê broñ?
-    AI_Output (self, other ,"DIA_CorAngar_MistrzAreny_03_04"); //Dzier¿y³ j¹ pierwszy Stra¿nik Œwi¹tynny, Gor Na Mit.
-    AI_Output (other, self ,"DIA_CorAngar_MistrzAreny_15_05"); //Gdzie jest teraz ten Stra¿nik?
-    AI_Output (self, other ,"DIA_CorAngar_MistrzAreny_03_06"); //Zmar³ kilka lat temu w wyniku choroby. Przed œmierci¹ kaza³ przekazaæ ten miecz Wybrañcowi.
-    AI_Output (self, other ,"DIA_CorAngar_MistrzAreny_03_07"); //Powiedzia³, ¿ebym przekaza³ miecz osobie, która wyka¿e siê wyj¹tkowymi umiejêtnoœciami.
-    AI_Output (self, other ,"DIA_CorAngar_MistrzAreny_03_08"); //Podobno to orê¿ wykuty dla Beliara. Mo¿liwe, ¿e mo¿esz siê pomodliæ do Beliara, by go ulepszyæ.
+    AI_Output (self, other ,"DIA_CorAngar_MistrzAreny_03_01"); //JesteÅ“ teraz mistrzem areny. ZasÂ³ugujesz na specjalnÂ¹ nagrodÃª.
+    AI_Output (self, other ,"DIA_CorAngar_MistrzAreny_03_02"); //To Miecz Rozpaczy, wybitne ostrze. ZasÂ³ugujesz na nie.
+    AI_Output (other, self ,"DIA_CorAngar_MistrzAreny_15_03"); //SkÂ¹d masz tÃª broÃ±?
+    AI_Output (self, other ,"DIA_CorAngar_MistrzAreny_03_04"); //DzierÂ¿yÂ³ jÂ¹ pierwszy StraÂ¿nik Å’wiÂ¹tynny, Gor Na Mit.
+    AI_Output (other, self ,"DIA_CorAngar_MistrzAreny_15_05"); //Gdzie jest teraz ten StraÂ¿nik?
+    AI_Output (self, other ,"DIA_CorAngar_MistrzAreny_03_06"); //ZmarÂ³ kilka lat temu w wyniku choroby. Przed Å“mierciÂ¹ kazaÂ³ przekazaÃ¦ ten miecz WybraÃ±cowi.
+    AI_Output (self, other ,"DIA_CorAngar_MistrzAreny_03_07"); //PowiedziaÂ³, Â¿ebym przekazaÂ³ miecz osobie, ktÃ³ra wykaÂ¿e siÃª wyjÂ¹tkowymi umiejÃªtnoÅ“ciami.
+    AI_Output (self, other ,"DIA_CorAngar_MistrzAreny_03_08"); //Podobno to orÃªÂ¿ wykuty dla Beliara. MoÂ¿liwe, Â¿e moÂ¿esz siÃª pomodliÃ¦ do Beliara, by go ulepszyÃ¦.
 	CreateInvItems (self, Miecz1H9, 1);
     B_GiveInvItems (self, other, Miecz1H9, 1);
 };
