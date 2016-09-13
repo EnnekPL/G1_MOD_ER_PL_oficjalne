@@ -4,7 +4,7 @@ instance TPL_5004_Shawn (Npc_Default)
 
 //----------Info ogolne----------
 
-name = "Shawn";
+name = "Gor Na Dhun";
 Npctype = Npctype_Main;
 guild = GIL_TPL;
 level = 40;
