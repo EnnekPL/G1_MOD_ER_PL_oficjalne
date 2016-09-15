@@ -172,82 +172,7 @@ FUNC VOID DIA_Novize_KasaKasa_Info()
     AI_StopProcessInfos	(self);
 };
 
-//========================================
-//-----------------> DawacPrzepis
-//========================================
 
-INSTANCE DIA_Novize_DawacPrzepis (C_INFO)
-{
-   npc          = NOV_1324_Novize;
-   nr           = 1;
-   condition    = DIA_Novize_DawacPrzepis_Condition;
-   information  = DIA_Novize_DawacPrzepis_Info;
-   permanent	= FALSE;
-   description	= "Podobno macie jakiœ przepis...";
-};
-
-FUNC INT DIA_Novize_DawacPrzepis_Condition()
-{
-    if (MIS_NoweZiele2BAU == LOG_RUNNING)
-    && (Npc_KnowsInfo (hero, DIA_BaalKagan_NamesNovize))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Novize_DawacPrzepis_Info()
-{
-    AI_Output (other, self ,"DIA_Novize_DawacPrzepis_15_01"); //Podobno macie jakiœ przepis...
-    AI_Output (self, other ,"DIA_Novize_DawacPrzepis_03_02"); //Nastêpny dureñ, który myœli, ¿e dostanie coœ za darmo.
-    AI_Output (self, other ,"DIA_Novize_DawacPrzepis_03_03"); //He he he. Przepis mogê ci daæ za 3000 bry³ek rudy.
-    AI_DrawWeapon (other);
-    AI_Output (other, self ,"DIA_Novize_DawacPrzepis_15_05"); //Zaraz nie bêdzie ci tak do œmiechu.
-    AI_Output (other, self ,"DIA_Novize_DawacPrzepis_15_06"); //Sam sobie wezmê ten przepis.
-    AI_Output (self, other ,"DIA_Novize_DawacPrzepis_03_07"); //Nie, nie. Bicie mnie nic ci nie da.
-    AI_Output (self, other ,"DIA_Novize_DawacPrzepis_03_08"); //Nie mam go przy sobie.
-    AI_Output (self, other ,"DIA_Novize_DawacPrzepis_03_09"); //Jest dobrze ukryty. He he.
-    AI_Output (self, other ,"DIA_Novize_DawacPrzepis_03_10"); //Niech ci nawet nie przejdzie przez myœl myszkowaæ w naszej chacie.
-    AI_RemoveWeapon (other);
-    AI_Output (other, self ,"DIA_Novize_DawacPrzepis_15_11"); //G³upcy.
-    B_LogEntry                     (CH1_NoweZiele2BAU,"Nie uda³o mi siê uzyskaæ przepisu od Davsona. Przypuszczam, ¿e jest w jego chacie. Je¿eli wejdê tam od razu, zostanê zaatakowany przez Stra¿ników Œwi¹tynnych. Muszê jakoœ pozbyæ siê Nowicjuszy.");
-
-    B_GiveXP (150);
-    AI_StopProcessInfos	(self);
-};
-
-//========================================
-//-----------------> ImportantAngry
-//========================================
-
-INSTANCE DIA_Novize_ImportantAngry (C_INFO)
-{
-   npc          = NOV_1324_Novize;
-   nr           = 2;
-   condition    = DIA_Novize_ImportantAngry_Condition;
-   information  = DIA_Novize_ImportantAngry_Info;
-   permanent	= FALSE;
-   Important    = TRUE;
-};
-
-FUNC INT DIA_Novize_ImportantAngry_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_CorKalom_Kapus1))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Novize_ImportantAngry_Info()
-{
-    AI_Output (self, other ,"DIA_Novize_ImportantAngry_03_01"); //Ty pieprzony sukinsynie! Wyda³eœ nas!
-    AI_Output (other, self ,"DIA_Novize_ImportantAngry_15_02"); //Spokojnie. Popracujecie trochê w winnicy. Nic wam siê nie stanie.
-    AI_Output (self, other ,"DIA_Novize_ImportantAngry_03_03"); //IdŸ precz! ZjedŸ mi z oczu! 
-    AI_StopProcessInfos	(self);
-};
-
-// *Script was make in Easy Dialog Maker (EDM)
 
 //========================================
 //-----------------> HELLO1
@@ -307,6 +232,86 @@ FUNC VOID DIA_Novize_HELLO2_Info()
     AI_Output (self, other ,"DIA_Novize_HELLO2_03_03"); //Stra¿nicy, z Bloodwynem na czele, ca³y czas okradali mnie z rudy i usi³owali siê nade mn¹ znêcaæ.
     AI_Output (self, other ,"DIA_Novize_HELLO2_03_04"); //Nie mówi¹c ju¿ o tych cwaniaczkach Cieniach. Uczciwoœci¹ to oni nie grzesz¹.
     AI_Output (self, other ,"DIA_Novize_HELLO2_03_05"); //Ca³e szczêœcie, ¿e pozna³em Baal Parveza, który wtajemniczy³ mnie w sprawy Bractwa.
+};
+//========================================
+//-----------------> ImportantAngry
+//========================================
+
+INSTANCE DIA_Novize_ImportantAngry (C_INFO)
+{
+   npc          = NOV_1324_Novize;
+   nr           = 2;
+   condition    = DIA_Novize_ImportantAngry_Condition;
+   information  = DIA_Novize_ImportantAngry_Info;
+   permanent	= FALSE;
+   Important    = TRUE;
+};
+
+FUNC INT DIA_Novize_ImportantAngry_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_CorKalom_Kapus1))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Novize_ImportantAngry_Info()
+{
+    AI_Output (self, other ,"DIA_Novize_ImportantAngry_03_01"); //Ty pieprzony sukinsynie! Wyda³eœ nas!
+    AI_Output (other, self ,"DIA_Novize_ImportantAngry_15_02"); //Spokojnie. Popracujecie trochê w winnicy. Nic wam siê nie stanie.
+    AI_Output (self, other ,"DIA_Novize_ImportantAngry_03_03"); //IdŸ precz! ZjedŸ mi z oczu! 
+    AI_StopProcessInfos	(self);
+};
+
+// *Script was make in Easy Dialog Maker (EDM)
+
+///////////////////////////
+// KALOM
+//////////////////////////
+
+//========================================
+//-----------------> Kapus1
+//========================================
+
+INSTANCE DIA_CorKalom_Kapus1 (C_INFO)
+{
+   npc          = GUR_1201_CorKalom;
+   nr           = 1;
+   condition    = DIA_CorKalom_Kapus1_Condition;
+   information  = DIA_CorKalom_Kapus1_Info;
+   permanent	= FALSE;
+   description	= "Nowicjusze sprzedaj¹ przerobione ziele.";
+};
+
+FUNC INT DIA_CorKalom_Kapus1_Condition()
+{
+    if (MIS_NoweZiele == LOG_RUNNING)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_CorKalom_Kapus1_Info()
+{
+    AI_Output (other, self ,"DIA_CorKalom_Kapus1_15_01"); //Nowicjusze sprzedaj¹ przerobione ziele.
+    AI_Output (self, other ,"DIA_CorKalom_Kapus1_03_02"); //Jacy Nowicjusze?
+    AI_Output (other, self ,"DIA_CorKalom_Kapus1_15_03"); //Ci mieszkaj¹cy nieopodal twojej chaty.
+    AI_Output (other, self ,"DIA_CorKalom_Kapus1_15_04"); //W swoich domach maj¹ laboratoria, w których wyrabiaj¹ nowe odmiany ziela.
+    AI_Output (self, other ,"DIA_CorKalom_Kapus1_03_05"); //Ceniê sobie dobrych kapusiów.
+    CreateInvItems (self, ItMiNugget, 80);
+    B_GiveInvItems (self, other, ItMiNugget, 80);
+	Npc_ExchangeRoutine (NOV_1324_Novize,"wino");
+	Npc_ExchangeRoutine (NOV_1323_Novize,"work");
+
+    B_LogEntry                     (CH1_NoweZiele,"Poinformowa³em Cor Kaloma o nielegalnej produkcji ziela przez Davsona. Takie dzia³ania nie powinny mieæ racji bytu.");
+    Log_SetTopicStatus       (CH1_NoweZiele, LOG_FAILED);
+    MIS_NoweZiele = LOG_FAILED;
+	PrintScreen	("Anulowano zadanie: Nowe, mocne ziele! ", 1,-1,"font_new_10_red.tga",2);	
+	
+    B_GiveXP (50);
+    AI_StopProcessInfos	(self);
 };
 
 //========================================

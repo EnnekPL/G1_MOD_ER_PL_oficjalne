@@ -238,7 +238,7 @@ func void DIA_Bula_DevMode1 ()
 func void DIA_Bula_Opcje1 ()
 {
 	Print ("Sprzeda¿ cukru u Briama");
-	CreateInvItems  (NON_4051_Bandyta,ItMi_Alchemy_Zucker_01,100);
+	CreateInvItems  (BAN_1601_Briam,ItMi_Alchemy_Zucker_01,100);
 	OpinionOM = 4;
 	czas_ucieczki_scar2 = 5;
 	Print ("Opinia w obozie przy kopalni na 4!");

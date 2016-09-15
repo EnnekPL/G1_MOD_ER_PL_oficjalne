@@ -98,7 +98,7 @@ INSTANCE DIA_BaalKagan_TRADE (C_INFO)
 
 FUNC INT DIA_BaalKagan_TRADE_Condition()
 {
-	if (Npc_KnowsInfo(hero,DIA_BaalKagan_WhyHere)) && (!Npc_KnowsInfo(hero,DIA_BaalKagan_KupiszKurwo))
+	if (Npc_KnowsInfo(hero,DIA_BaalKagan_WhyHere))
 	{
 		return 1;
 	};
@@ -459,42 +459,6 @@ FUNC VOID DIA_BaalKagan_SellZiele_Info()
 };
 
 //========================================
-//-----------------> SkupZiela
-//========================================
-
-INSTANCE DIA_BaalKagan_SkupZiela (C_INFO)
-{
-   npc          = Nov_1332_BaalKagan;
-   nr           = 1;
-   condition    = DIA_BaalKagan_SkupZiela_Condition;
-   information  = DIA_BaalKagan_SkupZiela_Info;
-   permanent	= FALSE;
-   description	= "Podobno skupujesz ziele od Nowicjuszy.";
-};
-
-FUNC INT DIA_BaalKagan_SkupZiela_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Jens_Quest3))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_BaalKagan_SkupZiela_Info()
-{
-    AI_Output (other, self ,"DIA_BaalKagan_SkupZiela_15_01"); //Podobno skupujesz ziele od Nowicjuszy.
-    AI_Output (self, other ,"DIA_BaalKagan_SkupZiela_03_02"); //Tak. A co ci do tego?
-    AI_Output (other, self ,"DIA_BaalKagan_SkupZiela_15_03"); //Móg³bym siê dowiedzieæ od których Nowicjuszy?
-    AI_Output (self, other ,"DIA_BaalKagan_SkupZiela_03_04"); //Co? Nie.
-    AI_StopProcessInfos	(self);
-    B_LogEntry                     (CH1_NoweZiele2BAU,"Baal Kagan nie chcia³ mi wyjawiæ jak nazywaj¹ siê Nowicjusze posiadaj¹cy przepis na ziele.");
-
-    B_GiveXP (59);
-};
-
-
-//========================================
 //-----------------> nfosKey
 //========================================
 
@@ -510,7 +474,7 @@ INSTANCE DIA_BaalKagan_nfosKey (C_INFO)
 
 FUNC INT DIA_BaalKagan_nfosKey_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_BaalKagan_SellZiele)) || (Npc_KnowsInfo (hero, DIA_BaalKagan_SkupZiela))
+    if (Npc_KnowsInfo (hero, DIA_BaalKagan_SellZiele))
     {
     return TRUE;
     };
@@ -570,42 +534,6 @@ FUNC VOID DIA_BaalKagan_KeyGive_Info()
     B_GiveInvItems (self, other, ItMiNugget, 40);
 };
 
-
-//========================================
-//-----------------> NamesNovize
-//========================================
-
-INSTANCE DIA_BaalKagan_NamesNovize (C_INFO)
-{
-   npc          = Nov_1332_BaalKagan;
-   nr           = 2;
-   condition    = DIA_BaalKagan_NamesNovize_Condition;
-   information  = DIA_BaalKagan_NamesNovize_Info;
-   permanent	= FALSE;
-   description	= "Czy teraz wyjawisz mi jak nazywaj¹ siê ci Nowicjusze?";
-};
-
-FUNC INT DIA_BaalKagan_NamesNovize_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_BaalKagan_SkupZiela))
-    && (Npc_KnowsInfo (hero, DIA_BaalKagan_KeyGive))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_BaalKagan_NamesNovize_Info()
-{
-    AI_Output (other, self ,"DIA_BaalKagan_NamesNovize_15_01"); //Czy teraz wyjawisz mi jak nazywaj¹ siê ci Nowicjusze?
-    AI_Output (self, other ,"DIA_BaalKagan_NamesNovize_03_02"); //No dobrze.
-    AI_Output (self, other ,"DIA_BaalKagan_NamesNovize_03_03"); //Jeden z nich nazywa³ siê Davson. Wiem tylko tyle.
-    B_LogEntry                     (CH1_NoweZiele2BAU,"Nowicjusz posiadaj¹cy przepis to Davson. Muszê go poszukaæ w Bractwie.");
-
-    B_GiveXP (70);
-    AI_StopProcessInfos	(self);
-};
-
 //========================================
 //-----------------> SkrzynaPelna
 //========================================
@@ -644,35 +572,4 @@ FUNC VOID DIA_BaalKagan_SkrzynaPelna_Info()
     AI_StopProcessInfos	(self);
 };
 
-//========================================
-//-----------------> KupiszKurwo
-//========================================
 
-INSTANCE DIA_BaalKagan_KupiszKurwo (C_INFO)
-{
-   npc          = Nov_1332_BaalKagan;
-   nr           = 1;
-   condition    = DIA_BaalKagan_KupiszKurwo_Condition;
-   information  = DIA_BaalKagan_KupiszKurwo_Info;
-   permanent	= FALSE;
-   description	= "Kupisz od nas ziele?";
-};
-
-FUNC INT DIA_BaalKagan_KupiszKurwo_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Bandyta_Pensja))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_BaalKagan_KupiszKurwo_Info()
-{
-    AI_Output (other, self ,"DIA_BaalKagan_KupiszKurwo_15_01"); //Kupisz od nas ziele?
-    AI_Output (self, other ,"DIA_BaalKagan_KupiszKurwo_03_02"); //Jednak wykrad³eœ recepturê Nowicjuszom.
-    AI_Output (self, other ,"DIA_BaalKagan_KupiszKurwo_03_03"); //Wiedzia³em, ¿e tak bêdzie.
-    AI_Output (self, other ,"DIA_BaalKagan_KupiszKurwo_03_04"); //Nie chcê mieæ z tob¹ nic wspólnego.
-    B_LogEntry                     (CH1_NoweZiele3BAU,"Baal Kagan jest wœciek³y za to co zrobi³em. No có¿. Znajdê innego kupca.");
-    AI_StopProcessInfos	(self);
-};

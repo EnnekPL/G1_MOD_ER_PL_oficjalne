@@ -48,5 +48,9 @@ FUNC VOID Rtn_start_1313 ()
 	TA_Listen		(08,05,23,55,"PSI_12_HUT_EX_TEACH2");
 };
 
-
-
+FUNC VOID Rtn_secret_1313 ()
+{
+	TA_Smoke		(23,55,01,05,"PSI_FORTUNO_CLIENT1");
+	TA_Sleep		(01,05,08,05,"PSI_12_HUT_IN_BED2");
+	TA_Listen		(08,05,23,55,"PSI_12_HUT_EX_TEACH2");
+};

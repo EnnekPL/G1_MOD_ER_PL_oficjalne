@@ -278,7 +278,7 @@ instance QuestMaster (Npc_Default)
 	//ch2
 	CreateInvItem	(self, ItMi_Alchemy_Alcohol_02);
 	CreateInvItem	(self, ItMis_FingersSecretBook);    
-	CreateInvItem	(self, ReceptaNowicjuszy);
+	CreateInvItem	(self, ItMis_RecipeSlepperBreath);
 	CreateInvItem	(self, NotatkiAlchemika);    
 	CreateInvItem	(self, It_OdtrutkaNaKaca);
 	//ch3

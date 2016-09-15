@@ -315,9 +315,9 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		B_ChangeGuild    (STT_311_Fisk,GIL_NONE);  
 		B_SetPermAttitude	(STT_311_Fisk,	ATT_NEUTRAL);
 		
-		B_ExchangeRoutine (BAU_980_Miguel,"nockruka");
-		B_ChangeGuild    (BAU_980_Miguel,GIL_NONE);  
-		B_SetPermAttitude	(BAU_980_Miguel,	ATT_NEUTRAL);
+		B_ExchangeRoutine (BAN_1600_Miguel,"nockruka");
+		B_ChangeGuild    (BAN_1600_Miguel,GIL_NONE);  
+		B_SetPermAttitude	(BAN_1600_Miguel,	ATT_NEUTRAL);
 		
 		B_ExchangeRoutine (VLK_581_Snaf,"nockruka");
 		B_ChangeGuild    (VLK_581_Snaf,GIL_NONE);  
@@ -646,21 +646,6 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		B_SetPermAttitude	(NON_4003_MadNovize,	ATT_HOSTILE);
 		B_SetPermAttitude	(NON_4004_MadNovize,	ATT_HOSTILE);
 		
-		//********************************************************
-		// HANDLARZE
-		//********************************************************
-		//Briam (bandyci)
-		CreateInvItems  (NON_4051_Bandyta,ItMijoint_1,30);
-		CreateInvItems  (NON_4051_Bandyta,ItMijoint_3,30);
-		CreateInvItems  (NON_4051_Bandyta,ItMi_Alchemy_Sulphur_01,100);
-		CreateInvItems  (NON_4051_Bandyta,ItMi_Alchemy_Quicksilver_01,100);
-		CreateInvItems  (NON_4051_Bandyta,ItMi_Alchemy_Salt_01,100);
-		CreateInvItems  (NON_4051_Bandyta,ItMi_Alchemy_Syrianoil_01,100);
-		CreateInvItems  (NON_4051_Bandyta,ItMi_Alchemy_Moleratlubric_01,100);
-		CreateInvItems  (NON_4051_Bandyta,ItMi_Alchemy_Alcohol_01,100);
-		CreateInvItems  (NON_4051_Bandyta,ItMi_Stuff_Amphore_01,20);
-		CreateInvItems  (NON_4051_Bandyta,ItMi_Stuff_Pan_01,2);
-		CreateInvItems  (NON_4051_Bandyta,ItMiFlask,100);
 		//--------------- Kapitel 4 wird angezeigt -------------------------------
 		if (Chapters_Spawn == true)
 		{ 

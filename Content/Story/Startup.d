@@ -1,7 +1,7 @@
 
 func void Mod_Menu_HSkills ()
 {
-if (MEM_KeyState (KEY_P) == KEY_PRESSED) && (InfoManager_HasFinished ())
+if (MEM_KeyState (KEY_SEMICOLON) == KEY_PRESSED) && (InfoManager_HasFinished ())
 {
 UseFunc1Skills ();
 //MEM_Game.singleStep = true;
@@ -1255,7 +1255,7 @@ FUNC VOID STARTUP_SUB_OLDCAMP ()
 	Wld_InsertNpc				(Stt_309_Whistler,"OC1"); //Hut 65, vor Marktplatz unten
 	Wld_InsertNpc				(Stt_310_Schatten,"OC1"); //Hut 8
 	Wld_InsertNpc				(Stt_311_Fisk,"OC1");	  //Hut 49 und 50, Marktplatz Händler
-	Wld_InsertNpc				(BAU_980_Miguel,"OC1");
+	Wld_InsertNpc				(BAN_1600_Miguel,"OC1");
 	Wld_InsertNpc				(Stt_313_Schatten,"OC1"); //Hut 36
 	Wld_InsertNpc				(Stt_314_Schatten,"OC1"); //Hut 38, Fox Platz
 	Wld_InsertNpc				(Stt_315_Sly,"OC1");	  //hut 73
@@ -1785,6 +1785,11 @@ FUNC VOID STARTUP_SUB_SURFACE ()
 	//--------------NC-Jäger---------------------------------------
 	Wld_InsertNpc				(ORG_859_Aidan,"OW_PATH_02");
 
+	//////////////////////////////////////////////////////////////////
+	// OBÓZ BANDYTÓW
+	// STARTUP ER 1.50
+	//////////////////////////////////////////////////////////////////
+	
 	//------------Banditenlager-----------------------------------
 	Wld_InsertNpc				(NON_3033_Bandyta,"LOCATION_11_08");
 	Wld_InsertNpc				(ORG_858_Quentin,"LOCATION_11_08");
@@ -1817,7 +1822,7 @@ FUNC VOID STARTUP_SUB_SURFACE ()
 	Wld_InsertNpc				(BAU_2012_Rocky,"LOCATION_11_08");	  
 	Wld_InsertNpc				(BAU_2011_Jens,"LOCATION_11_08");		
 	Wld_InsertNpc				(NON_4050_Chris,"LOCATION_11_08");
-	Wld_InsertNpc				(NON_4051_Bandyta,"LOCATION_11_08");
+	Wld_InsertNpc				(BAN_1601_Briam,"LOCATION_11_08");
 	//-------------Einsiedler--------------------------------------
 	Wld_InsertNpc				(Non_1500_Gilbert,"LOCATION_01_07");	//SN: hat eh keinen Dialog
 	Wld_InsertNpc				(NON_7508_Angela,"BURDEL");	//1.24

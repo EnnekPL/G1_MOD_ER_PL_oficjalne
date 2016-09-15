@@ -82,7 +82,7 @@ func void B_DeathXP()
 		PrintDebugNpc	(PD_ZS_CHECK,	"...Opfer ist bewußtloser Mensch!");
 		// SN: keine XP für Finishing-Move!!!
 	}
-	else
+	else if (!self.aivar[AIV_WASDEFEATEDBYSC])
 	{
 		PrintDebugNpc	(PD_ZS_CHECK,	"...Opfer ist entweder nicht bewußtlos oder kein Mensch!");
 		B_GiveXP (self.level * XP_PER_LEVEL_DEAD);

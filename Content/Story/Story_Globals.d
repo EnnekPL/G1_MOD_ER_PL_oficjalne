@@ -873,7 +873,7 @@ var int MIS_MineChlopy;
 var int MIS_NoweKola;
 var int MIS_SellAlco;
 var int MIS_Dostawy;
-var int MIS_NoweZiele2BAU;
+
 var int MIS_NoweZiele3BAU;
 var int MIS_PolowanieZDoylem;
 var int MIS_RockyArmor;

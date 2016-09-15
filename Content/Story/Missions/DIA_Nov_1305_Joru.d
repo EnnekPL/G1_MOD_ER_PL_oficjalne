@@ -79,6 +79,11 @@ FUNC VOID  DIA_Joru_Tester_Info()
 	AI_Output (self, other,"DIA_Joru_Tester_07_01"); //Wraz z kolegami testujê magiczne substancje opracowane przez Cor Kaloma w jego laboratorium.
 	AI_Output (self, other,"DIA_Joru_Tester_07_02"); //Jego asystent przynosi nam co kilka dni coœ nowego, a my to testujemy.
 	AI_Output (self, other,"DIA_Joru_Tester_07_03"); //To ziele otwiera twoj¹ duszê. Po za¿yciu odpowiedniej iloœci bêdziesz móg³ nawi¹zaæ kontakt ze Œni¹cym!
+	
+	if (MIS_KalomsNewWeed == LOG_RUNNING)
+	{
+	B_LogEntry          (CH2_KalomsNewWeed,"Podczas rozmowy z Joru dowiedzia³em siê, ¿e zajmuje siê on testowaniem magicznych substancji dla Guru.");
+	};
 };
 
 // **************************************************
@@ -294,12 +299,6 @@ FUNC VOID  DIA_Joru_GetMagic_Info()
 	AI_Output (self, other,"DIA_Joru_GetMagic_07_02"); //Mo¿e inny Guru bêdzie móg³ ci pomóc.
 };
 
-
-
-
-
-
-
 /*
 Sit_1_PSI_Joru_SmokingTeacher
 
@@ -312,8 +311,94 @@ Mach dich frei von Suche und beginne zu finden. Entdecke die Wahrheit. Das alles
 // dopisek gothic1210: epicka opowieœæ o paleniu ziela. ten typek chyba mia³ zostaæ baalem ;) 
 */ 
 
-
+///////////////////////////////////////////////////////////////////////////////////////////
+// Joru
+// Rozdzia³ -
+// Pozosta³e zadania
+///////////////////////////////////////////////////////////////////////////////////////////
 	
+//========================================
+//-----------------> WeedProposition
+//========================================
+
+INSTANCE DIA_Joru_WeedProposition (C_INFO)
+{
+   npc          = Nov_1305_Joru;
+   nr           = 6;
+   condition    = DIA_Joru_WeedProposition_Condition;
+   information  = DIA_Joru_WeedProposition_Info;
+   permanent	= FALSE;
+   description	= "A wiêc to ty masz dostêp do receptury Kaloma.";
+};
+
+FUNC INT DIA_Joru_WeedProposition_Condition()
+{
+    if (MIS_KalomsNewWeed == LOG_RUNNING) && (Npc_KnowsInfo (hero,DIA_Joru_Tester))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Joru_WeedProposition_Info()
+{
+    AI_Output (other, self ,"DIA_Joru_WeedProposition_15_01"); //A wiêc to ty masz dostêp do receptury Kaloma.
+    AI_Output (self, other ,"DIA_Joru_WeedProposition_03_02"); //O czym ty mówisz?
+    AI_Output (other, self ,"DIA_Joru_WeedProposition_15_03"); //Jesteœ testerem magicznych substancji. S³ysza³em, ¿e masz dostêp do najnowszego przepisu Cor Kaloma.
+    AI_Output (self, other ,"DIA_Joru_WeedProposition_03_04"); //Nie mam zamiaru z tob¹ wspó³pracowaæ. Chcê zostaæ Guru, nie bêdê wchodzi³ z tob¹ w ciemne interesy!
+	AI_Output (other, self ,"DIA_Joru_WeedProposition_15_05"); //Zaoferujê dobr¹ cenê.
+	AI_Output (self, other ,"DIA_Joru_WeedProposition_03_06"); //Ommmm...
+   
+	B_LogEntry          (CH2_KalomsNewWeed,"Joru nie jest sk³onny do wspó³pracy. Bêdê go musia³ jakoœ przekonaæ.");
+	 
+    AI_StopProcessInfos	(self);
+};
+
+//========================================
+//-----------------> SecretBook
+//========================================
+
+INSTANCE DIA_Joru_SecretBook (C_INFO)
+{
+   npc          = Nov_1305_Joru;
+   nr           = 6;
+   condition    = DIA_Joru_SecretBook_Condition;
+   information  = DIA_Joru_SecretBook_Info;
+   permanent	= FALSE;
+   description	= "Mam tu coœ twojego.";
+};
+
+FUNC INT DIA_Joru_SecretBook_Condition()
+{
+    if (MIS_KalomsNewWeed == LOG_RUNNING) && (Npc_HasItems (hero,ItMis_JoruSecretBook) >= 1) && (Npc_HasItems (hero,ItMis_JoruKey) >= 1)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Joru_SecretBook_Info()
+{
+    AI_Output (other, self ,"DIA_Joru_SecretBook_15_01"); //Mam tu coœ twojego.
+    AI_Output (self, other ,"DIA_Joru_SecretBook_03_02"); //Co? Jak wszed³eœ w posiadanie mojego notatnika?!
+    AI_Output (other, self ,"DIA_Joru_SecretBook_15_03"); //To bez znaczenia. Chcê ubiæ z tob¹ interes. Notatnik wraz z kluczem do skrzyni, w zamian za przepis.
+	AI_Output (other, self ,"DIA_Joru_SecretBook_15_04"); //Przecie¿ ju¿ nie raz tak robi³eœ.
+    AI_Output (self, other ,"DIA_Joru_SecretBook_03_05"); //Wiem, ale obawiam siê, ¿e Cor Kalom zacznie coœ podejrzewaæ. Nie mogê straciæ mojej funkcji. To jedyna przepustka do zostania Guru.
+	AI_Output (other, self ,"DIA_Joru_SecretBook_15_06"); //Nie narobiê ci k³opotów, tylko daj mi ten przepis. Nikt siê nie dowie sk¹d go mam.
+	AI_Output (self, other ,"DIA_Joru_SecretBook_03_07"); //Có¿, chyba nie mam innego wyboru. 
+	AI_Output (other, self ,"DIA_Joru_SecretBook_15_08"); //Wszystko bêdzie w porz¹dku.
+	AI_Output (self, other ,"DIA_Joru_SecretBook_03_09"); //Trzymam ciê za s³owo.
+	
+	B_GiveInvItems (hero, self, ItMis_JoruSecretBook,1);
+	B_GiveInvItems (hero, self, ItMis_JoruKey,1);
+	
+	B_GiveInvItems (self, hero, ItMis_RecipeSlepperBreath,1);
+   
+	B_LogEntry          (CH2_KalomsNewWeed,"Joru zgodzi³ siê wymieniæ swój notatnik i klucz do skrzyni w zamian za przepis. Mogê wróciæ ju¿ ze œwistkiem do Briama.");
+	 
+    AI_StopProcessInfos	(self);
+};
+
 //========================================
 //-----------------> ORE
 //========================================
@@ -350,7 +435,6 @@ FUNC VOID DIA_Joru_ORE_Info()
     //B_GiveXP (50);
     AI_StopProcessInfos	(self);
 };
-
 
 //========================================
 //-----------------> RUNY_INFO
@@ -439,8 +523,8 @@ FUNC VOID DIA_Joru_ParvezInTroubles_Info()
 	AI_Output(other, self, "DIA_Joru_ParvezInTroubles_15_01"); //O co chodzi? Przecie¿ ja nic...
 	AI_Output(self, other, "DIA_Joru_ParvezInTroubles_03_02"); //Spokojnie, potrzebujê jedynie twojej pomocy, w imiê naszej duchowej spo³ecznoœci rzecz jasna.
 	AI_Output(other, self, "DIA_Joru_ParvezInTroubles_15_03"); //To chyba musi byæ coœ wa¿nego.
-	AI_Output(self, other, "DIA_Joru_ParvezInTroubles_03_04"); //W rzeczy samej. Nasze Bractwo potrzebuje nowych wyznawców tak jak ziemia nasion by daæ owocny plon.
-	AI_Output(self, other, "DIA_Joru_ParvezInTroubles_03_05"); //Dlatego wysy³amy naszych braci do innych obozów by g³osili potrzebê oddania swej duszy w rêce naszego potê¿nego Œni¹cego.
+	AI_Output(self, other, "DIA_Joru_ParvezInTroubles_03_04"); //W rzeczy samej. Nasze Bractwo potrzebuje nowych wyznawców, tak jak ziemia nasion by daæ owocny plon.
+	AI_Output(self, other, "DIA_Joru_ParvezInTroubles_03_05"); //Dlatego wysy³amy naszych braci do innych obozów by g³osili potrzebê oddania swej duszy w rêce potê¿nego Œni¹cego.
 	AI_Output(other, self, "DIA_Joru_ParvezInTroubles_15_06"); //No wiec w czym problem?
 	AI_Output(self, other, "DIA_Joru_ParvezInTroubles_03_07"); //Ktoœ przeszkadza jednemu z naszych w prowadzeniu swych nauk. Chodzi o Baala Parveza, otrzyma³em od niego list.
 	AI_Output(self, other, "DIA_Joru_ParvezInTroubles_03_08"); //Prosi, by przys³ano mu z Bractwa kogoœ, kto pomo¿e mu wykryæ Ÿród³o ostatnich nieprzyjemnych wydarzeñ.
@@ -453,6 +537,6 @@ FUNC VOID DIA_Joru_ParvezInTroubles_Info()
 	MIS_ParvezInTroubles = LOG_RUNNING;
 
    Log_CreateTopic			(CH1_ParvezInTroubles, LOG_MISSION);
-   Log_SetTopicStatus	(CH1_ParvezInTroubles, LOG_RUNNING);
-   B_LogEntry					(CH1_ParvezInTroubles, "Zaczepi³ mnie Nowicjusz Joru i kaza³ udaæ siê do Starego Obozu na rozmowê z Baal Parvezem. Nowicjusz jest przeœladowany i potrzebuje pomocy w pozbyciu siê oprawców.");
+   Log_SetTopicStatus		(CH1_ParvezInTroubles, LOG_RUNNING);
+   B_LogEntry				(CH1_ParvezInTroubles, "Zaczepi³ mnie Nowicjusz Joru i kaza³ udaæ siê do Starego Obozu na rozmowê z Baal Parvezem. Nowicjusz jest przeœladowany i potrzebuje pomocy w pozbyciu siê oprawców.");
 };

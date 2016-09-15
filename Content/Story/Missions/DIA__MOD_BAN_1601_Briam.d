@@ -2,23 +2,24 @@
 //-----------------> OPCJA *KONIEC* 
 //========================================
 
-INSTANCE DIA_BandytaBriam_EXIT(C_INFO)
+INSTANCE DIA_Briam_EXIT(C_INFO)
 {
-	npc             = NON_4051_Bandyta;
+	npc             = BAN_1601_Briam;
 	nr              = 999;
-	condition	= DIA_BandytaBriam_EXIT_Condition;
-	information	= DIA_BandytaBriam_EXIT_Info;
-	permanent	= TRUE;
+	condition		= DIA_Briam_EXIT_Condition;
+	information		= DIA_Briam_EXIT_Info;
+	permanent		= TRUE;
 	description     = DIALOG_ENDE;
 };
 
-FUNC INT DIA_BandytaBriam_EXIT_Condition()
+FUNC INT DIA_Briam_EXIT_Condition()
 {
 	return TRUE;
 };
 
-FUNC VOID DIA_BandytaBriam_EXIT_Info()
+FUNC VOID DIA_Briam_EXIT_Info()
 {
+	AI_Output (self, other ,"DIA_Briam_EXIT_03_01"); //Wpadnij jeszcze kiedyœ.
 	AI_StopProcessInfos	(self);
 };
 
@@ -32,31 +33,31 @@ FUNC VOID DIA_BandytaBriam_EXIT_Info()
 //-----------------> WhoYou
 //========================================
 
-INSTANCE DIA_Bandyta_WhoYou (C_INFO)
+INSTANCE DIA_Briam_WhoYou (C_INFO)
 {
-   npc          = NON_4051_Bandyta;
+   npc          = BAN_1601_Briam;
    nr           = 1;
-   condition    = DIA_Bandyta_WhoYou_Condition;
-   information  = DIA_Bandyta_WhoYou_Info;
+   condition    = DIA_Briam_WhoYou_Condition;
+   information  = DIA_Briam_WhoYou_Info;
    permanent	= FALSE;
    description	= "Kim jesteœ?";
 };
 
-FUNC INT DIA_Bandyta_WhoYou_Condition()
+FUNC INT DIA_Briam_WhoYou_Condition()
 {
     return TRUE;
 };
 
-FUNC VOID DIA_Bandyta_WhoYou_Info()
+FUNC VOID DIA_Briam_WhoYou_Info()
 {
-    AI_Output (other, self ,"DIA_Bandyta_WhoYou_15_01"); //Kim jesteœ?
-    AI_Output (self, other ,"DIA_Bandyta_WhoYou_03_02"); //Nazywam siê Briam, jestem alchemikiem.
-    AI_Output (self, other ,"DIA_Bandyta_WhoYou_03_03"); //Przyrz¹dzam mikstury, eksperymentujê z zielem.
-    AI_Output (self, other ,"DIA_Bandyta_WhoYou_03_04"); //No i oczywiœcie skrêcam ³odygi i destylujê gorza³kê.
-    AI_Output (self, other ,"DIA_Bandyta_WhoYou_03_05"); //To chyba najwa¿niejsza robota w Obozie. Bandyci lubi¹ piæ i paliæ.
-    //AI_Output (self, other ,"DIA_Bandyta_WhoYou_03_06"); //Wszystkim siê dzielimy.
-    AI_Output (other, self ,"DIA_Bandyta_WhoYou_15_07"); //Móg³byœ nauczyæ mnie alchemii?
-	AI_Output (self, other ,"DIA_Bandyta_WhoYou_03_08"); //Myœlê, ¿e za odpowiedni¹ op³at¹... czemu nie?
+    AI_Output (other, self ,"DIA_Briam_WhoYou_15_01"); //Kim jesteœ?
+    AI_Output (self, other ,"DIA_Briam_WhoYou_03_02"); //Nazywam siê Briam, jestem alchemikiem. G³ównie zajmujê siê destylacj¹ gorza³ki i robieniem skrêtów.
+    AI_Output (self, other ,"DIA_Briam_WhoYou_03_03"); //Czesem jednak zdarza siê, ¿e przyrz¹dzê jak¹œ miksturê.
+    AI_Output (self, other ,"DIA_Briam_WhoYou_03_04"); //Ale to raczej rzadko. Mam tu tylko pospolite sk³adniki, sam wiesz. Kontakty z magami s¹ doœæ ograniczone.
+    AI_Output (self, other ,"DIA_Briam_WhoYou_03_05"); //Przygotwywanie u¿ywek to chyba najwa¿niejsza robota w Obozie. Bandyci lubi¹ piæ i paliæ.
+    AI_Output (other, self ,"DIA_Briam_WhoYou_15_07"); //Móg³byœ nauczyæ mnie alchemii?
+	AI_Output (self, other ,"DIA_Briam_WhoYou_03_08"); //Jasne! Kiedyœ terminowa³em u alchemika Constantino, ale to by³o w czasach kiedy mia³ jeszcze bujne w³osy.
+
 	//log
 	Log_CreateTopic   	(GE_TeacherBAN,LOG_NOTE);
 	B_LogEntry			(GE_TeacherBAN,"Briam nauczy mnie alchemii. Znajdê go w jaskini w Obozie Bandytów.");
@@ -66,100 +67,103 @@ FUNC VOID DIA_Bandyta_WhoYou_Info()
 //-----------------> LifeInCamp
 //========================================
 
-INSTANCE DIA_Bandyta_LifeInCamp (C_INFO)
+INSTANCE DIA_Briam_LifeInCamp (C_INFO)
 {
-   npc          = NON_4051_Bandyta;
+   npc          = BAN_1601_Briam;
    nr           = 2;
-   condition    = DIA_Bandyta_LifeInCamp_Condition;
-   information  = DIA_Bandyta_LifeInCamp_Info;
+   condition    = DIA_Briam_LifeInCamp_Condition;
+   information  = DIA_Briam_LifeInCamp_Info;
    permanent	= FALSE;
    description	= "Jak ci siê tu ¿yje?";
 };
 
-FUNC INT DIA_Bandyta_LifeInCamp_Condition()
+FUNC INT DIA_Briam_LifeInCamp_Condition()
 {
-	if (Npc_KnowsInfo (hero, DIA_Bandyta_WhoYou))
+	if (Npc_KnowsInfo (hero, DIA_Briam_WhoYou))
 	{
     return TRUE; 
 	};
 };
 
-FUNC VOID DIA_Bandyta_LifeInCamp_Info()
+FUNC VOID DIA_Briam_LifeInCamp_Info()
 {
-    AI_Output (other, self ,"DIA_Bandyta_LifeInCamp_15_01"); //Jak ci siê tu ¿yje?
-    AI_Output (self, other ,"DIA_Bandyta_LifeInCamp_03_02"); //Nie jest Ÿle. Ka¿dy zajmuje siê swoj¹ robot¹ i nie wchodzi innym w drogê.
-    AI_Output (self, other ,"DIA_Bandyta_LifeInCamp_03_03"); //Quentin dobrze zarz¹dza Obozem i sprawiedliwie dzieli rudê.
-    AI_Output (self, other ,"DIA_Bandyta_LifeInCamp_03_04"); //Zobaczysz, wkrótce siê st¹d wyrwiemy i sprzedamy rudê za z³oto.
+    AI_Output (other, self ,"DIA_Briam_LifeInCamp_15_01"); //Jak ci siê tu ¿yje?
+    AI_Output (self, other ,"DIA_Briam_LifeInCamp_03_02"); //Nie jest Ÿle. Ka¿dy zajmuje siê swoj¹ robot¹ i nie wchodzi innym w drogê.
+    AI_Output (self, other ,"DIA_Briam_LifeInCamp_03_03"); //Quentin dobrze zarz¹dza Obozem i sprawiedliwie dzieli rudê.
+    AI_Output (self, other ,"DIA_Briam_LifeInCamp_03_04"); //Zobaczysz, wkrótce siê st¹d wyrwiemy i sprzedamy rudê za z³oto.
 };
 
 //========================================
 //-----------------> WorkInCamp
 //========================================
 
-INSTANCE DIA_Bandyta_WorkInCamp (C_INFO)
+INSTANCE DIA_Briam_WorkInCamp (C_INFO)
 {
-   npc          = NON_4051_Bandyta;
+   npc          = BAN_1601_Briam;
    nr           = 3;
-   condition    = DIA_Bandyta_WorkInCamp_Condition;
-   information  = DIA_Bandyta_WorkInCamp_Info;
+   condition    = DIA_Briam_WorkInCamp_Condition;
+   information  = DIA_Briam_WorkInCamp_Info;
    permanent	= FALSE;
    description	= "Opowiedz mi o waszej organizacji pracy.";
 };
 
-FUNC INT DIA_Bandyta_WorkInCamp_Condition()
+FUNC INT DIA_Briam_WorkInCamp_Condition()
 {
-	if (Npc_KnowsInfo (hero, DIA_Bandyta_WhoYou))
+	if (Npc_KnowsInfo (hero, DIA_Briam_LifeInCamp))
 	{
     return TRUE;
 	};
 };
 
-FUNC VOID DIA_Bandyta_WorkInCamp_Info()
+FUNC VOID DIA_Briam_WorkInCamp_Info()
 {
-    AI_Output (other, self ,"DIA_Bandyta_WorkInCamp_15_01"); //Opowiedz mi o waszej organizacji pracy.
-    AI_Output (self, other ,"DIA_Bandyta_WorkInCamp_03_03"); //To proste. Ka¿dy ma wyznaczone jakieœ zadanie.
-    AI_Output (self, other ,"DIA_Bandyta_WorkInCamp_03_04"); //Wiêkszoœæ Bandytów pracuje na rzecz Obozu, a czêœæ wykonuje swoj¹ robotê na zewn¹trz.
-    AI_Output (self, other ,"DIA_Bandyta_WorkInCamp_03_05"); //Dziêki temu mamy jedzenie, wódkê i przedmioty potrzebne do przetrwania
-    AI_Output (self, other ,"DIA_Bandyta_WorkInCamp_03_06"); //Od czasu do czasu przychodzi tu jakiœ wys³annik z innego obozu.
-    AI_Output (self, other ,"DIA_Bandyta_WorkInCamp_03_07"); //Zazwyczaj prosz¹ nas o wykonanie jakiegoœ zadania, na które szkoda im w³asnych ludzi.
-    AI_Output (self, other ,"DIA_Bandyta_WorkInCamp_03_08"); //Po prostu najmujemy siê do trudnych zadañ.
-    AI_Output (other, self ,"DIA_Bandyta_WorkInCamp_15_09"); //Czy inne obozy wami gardz¹? Tak mam to rozumieæ?
-    AI_Output (self, other ,"DIA_Bandyta_WorkInCamp_03_10"); //Niby tak, ale czasem zarabiamy po kilka tysiêcy bry³ek. Szczególnie dobrze p³ac¹ Guru.
-    AI_Output (self, other ,"DIA_Bandyta_WorkInCamp_03_11"); //Oczywiœcie, je¿eli uda nam siê prze¿yæ.
-    AI_Output (self, other ,"DIA_Bandyta_WorkInCamp_03_12"); //Najczêœciej jednak wysy³amy doœwiadczonych ludzi takich jak Rocky, Doyle czy Martin.
+    AI_Output (other, self ,"DIA_Briam_WorkInCamp_15_01"); //Opowiedz mi o waszej organizacji pracy.
+    AI_Output (self, other ,"DIA_Briam_WorkInCamp_03_03"); //To proste. Ka¿dy ma wyznaczone jakieœ zadanie.
+    AI_Output (self, other ,"DIA_Briam_WorkInCamp_03_04"); //Wiêkszoœæ Bandytów pracuje na rzecz Obozu, a czêœæ wykonuje swoj¹ robotê na zewn¹trz.
+    AI_Output (self, other ,"DIA_Briam_WorkInCamp_03_05"); //Dziêki temu mamy jedzenie, wódkê i przedmioty potrzebne do przetrwania
+    AI_Output (self, other ,"DIA_Briam_WorkInCamp_03_06"); //Od czasu do czasu przychodzi tu jakiœ wys³annik z innego obozu.
+    AI_Output (self, other ,"DIA_Briam_WorkInCamp_03_07"); //Zazwyczaj prosz¹ nas o wykonanie jakiegoœ zadania, na które szkoda im w³asnych ludzi.
+    AI_Output (self, other ,"DIA_Briam_WorkInCamp_03_08"); //Po prostu najmujemy siê do zleceñ, których nikt nie chce ruszyæ.
+    AI_Output (other, self ,"DIA_Briam_WorkInCamp_15_09"); //Czy inne obozy wami gardz¹? Tak mam to rozumieæ?
+    AI_Output (self, other ,"DIA_Briam_WorkInCamp_03_10"); //Niby tak, ale czasem zarabiamy po kilka tysiêcy bry³ek. Szczególnie dobrze p³ac¹ Guru.
+    AI_Output (self, other ,"DIA_Briam_WorkInCamp_03_11"); //Oczywiœcie, je¿eli uda nam siê prze¿yæ.
+    AI_Output (self, other ,"DIA_Briam_WorkInCamp_03_12"); //Najczêœciej jednak wysy³amy doœwiadczonych ludzi takich jak Rocky, Doyle czy Martin. Oni wiedz¹ co robi¹.
 };
 
 //========================================
 //-----------------> TRADE
 //========================================
-var int know_briam_sell;
-INSTANCE DIA_Bandyta_TRADE (C_INFO)
+
+INSTANCE DIA_Briam_TRADE (C_INFO)
 {
-   npc          = NON_4051_Bandyta;
+   npc          = BAN_1601_Briam;
    nr           = 4;
-   condition    = DIA_Bandyta_TRADE_Condition;
-   information  = DIA_Bandyta_TRADE_Info;
+   condition    = DIA_Briam_TRADE_Condition;
+   information  = DIA_Briam_TRADE_Info;
    permanent	= TRUE;
    trade        = TRUE;
    description	= "Chcê coœ kupiæ.";
 };
 
-FUNC INT DIA_Bandyta_TRADE_Condition()
+FUNC INT DIA_Briam_TRADE_Condition()
 {
-	if (Npc_KnowsInfo (hero, DIA_Bandyta_WhoYou))
+	if (Npc_KnowsInfo (hero, DIA_Briam_WhoYou))
 	{
-    return TRUE; };
+    return TRUE; 
+	};
 };
 
-FUNC VOID DIA_Bandyta_TRADE_Info()
+FUNC VOID DIA_Briam_TRADE_Info()
 {
-    AI_Output (other, self ,"DIA_Bandyta_TRADE_15_01"); //Chcê coœ kupiæ.
-    AI_Output (self, other ,"DIA_Bandyta_TRADE_03_02"); //Wybierz sobie.
-	if know_briam_sell == false
+    AI_Output (other, self ,"DIA_Briam_TRADE_15_01"); //Chcê coœ kupiæ.
+    AI_Output (self, other ,"DIA_Briam_TRADE_03_02"); //Wybierz sobie.
+	
+	var int know_briam_sell;
+	if (know_briam_sell == false)
 	{
 	know_briam_sell = true;
-	Log_CreateTopic	(GE_Bandit,	LOG_NOTE);//fix
-	B_LogEntry		(GE_Bandit,	"Briam handluje ró¿nymi przedmiotami zwi¹zanymi z alchemi¹.");
+	Log_CreateTopic	(GE_Bandit,	LOG_NOTE);
+	B_LogEntry		(GE_Bandit,	"Briam handluje ró¿nymi przedmiotami zwi¹zanymi z alchemi¹. Znajdê go w jaskini w g³êbi Obozu Bandytów.");
 	};
 };
 
@@ -173,17 +177,17 @@ FUNC VOID DIA_Bandyta_TRADE_Info()
 //-----------------> RAYAN
 //========================================
 
-INSTANCE DIA_Bandyta_RAYAN (C_INFO)
+INSTANCE DIA_Briam_RAYAN (C_INFO)
 {
-   npc          = NON_4051_Bandyta;
+   npc          = BAN_1601_Briam;
    nr           = 3;
-   condition    = DIA_Bandyta_RAYAN_Condition;
-   information  = DIA_Bandyta_RAYAN_Info;
+   condition    = DIA_Briam_RAYAN_Condition;
+   information  = DIA_Briam_RAYAN_Info;
    permanent	= FALSE;
    description	= "Wiesz coœ o œmierci Rayana?";
 };
 
-FUNC INT DIA_Bandyta_RAYAN_Condition()
+FUNC INT DIA_Briam_RAYAN_Condition()
 {
 	if (Npc_KnowsInfo (hero, DIA_Jens_TalkWithSmith))
 	{
@@ -191,19 +195,144 @@ FUNC INT DIA_Bandyta_RAYAN_Condition()
 	};
 };
 
-FUNC VOID DIA_Bandyta_RAYAN_Info()
+FUNC VOID DIA_Briam_RAYAN_Info()
 {
-    AI_Output (other, self ,"DIA_Bandyta_RAYAN_15_01"); //Wiesz coœ o œmierci Rayana?
-    AI_Output (self, other ,"DIA_Bandyta_RAYAN_03_02"); //W³aœnie mia³em iœæ pogadaæ na ten temat z Jensem. To prawda, ¿e Kereth coœ kombinuje? 
-	AI_Output (other, self ,"DIA_Bandyta_RAYAN_15_03"); //Tak. Masz jakieœ u¿ytecznie informacje.
-    AI_Output (self, other ,"DIA_Bandyta_RAYAN_03_04"); //Chyba mam. Wczeœniej wydawa³y mi siê niewa¿ne, ale w œwietle tego co siê dzieje mog¹ byæ kluczowe.
-	AI_Output (other, self ,"DIA_Bandyta_RAYAN_15_05"); //Zamieniam siê w s³uch.
-    AI_Output (self, other ,"DIA_Bandyta_RAYAN_03_06"); //Widzia³em jak Kereth chowa³ do skrzyni miecz Jensa. To by³o póŸnym wieczorem. Wraca³ sk¹dœ. Na pocz¹tku myœla³em, ¿e po prostu odkupi³ tê broñ. 
-    AI_Output (self, other ,"DIA_Bandyta_RAYAN_03_07"); //No, ale skoro s¹ skonfliktowani...
-    AI_Output (other, self ,"DIA_Bandyta_RAYAN_15_08"); //Wychodzi³oby na to, ¿e Kereth sam rujnuje grób swojego brata, ¿eby wykurzyæ Jensa z Obozu. 
-	AI_Output (self, other ,"DIA_Bandyta_RAYAN_03_09"); //Kawa³ sukinsyna z niego. Lepiej szybko naprostujcie tê sprawê. 
+    AI_Output (other, self ,"DIA_Briam_RAYAN_15_01"); //Wiesz coœ o œmierci Rayana?
+    AI_Output (self, other ,"DIA_Briam_RAYAN_03_02"); //W³aœnie mia³em iœæ pogadaæ na ten temat z Jensem. To prawda, ¿e Kereth coœ kombinuje? 
+	AI_Output (other, self ,"DIA_Briam_RAYAN_15_03"); //Tak. Masz jakieœ u¿ytecznie informacje?
+    AI_Output (self, other ,"DIA_Briam_RAYAN_03_04"); //Chyba mam. Wczeœniej wydawa³y mi siê niewa¿ne, ale w œwietle tego, co siê dzieje mog¹ byæ kluczowe.
+	AI_Output (other, self ,"DIA_Briam_RAYAN_15_05"); //Zamieniam siê w s³uch.
+    AI_Output (self, other ,"DIA_Briam_RAYAN_03_06"); //Widzia³em jak Kereth chowa³ do skrzyni miecz Jensa. To by³o póŸnym wieczorem. Wraca³ sk¹dœ. Na pocz¹tku myœla³em, ¿e po prostu odkupi³ tê broñ. 
+    AI_Output (self, other ,"DIA_Briam_RAYAN_03_07"); //No, ale skoro s¹ skonfliktowani...
+    AI_Output (other, self ,"DIA_Briam_RAYAN_15_08"); //Wychodzi³oby na to, ¿e Kereth sam rujnuje grób swojego brata, ¿eby wykurzyæ Jensa z Obozu. 
+	AI_Output (self, other ,"DIA_Briam_RAYAN_03_09"); //Kawa³ sukinsyna z niego. Lepiej szybko naprostujcie tê sprawê. 
 	
 	B_LogEntry     (CH1_DestroyedGrave,"Briam przedstawi³ doœæ wa¿n¹ sprawê. Twierdzi, ¿e widzia³ jak Kereth póŸn¹ noc¹ chowa do swojej skrzyni miecz Jensa.");
+};
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Briam
+// Rozdzia³ 2
+// Zadanie: Przepis na nowe ziele 
+///////////////////////////////////////////////////////////////////////////////////////////
+
+//========================================
+//-----------------> New weed alert
+//========================================
+
+INSTANCE DIA_Briam_NewWeedAlert (C_INFO)
+{
+   npc          = BAN_1601_Briam;
+   nr           = 1;
+   condition    = DIA_Briam_NewWeedAlert_Condition;
+   information  = DIA_Briam_NewWeedAlert_Info;
+   permanent	= FALSE;
+   Important    = TRUE;
+};
+
+FUNC INT DIA_Briam_NewWeedAlert_Condition()
+{
+    if (Kapitel == 2)
+    && (Npc_GetTrueGuild(hero) == GIL_BAU)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Briam_NewWeedAlert_Info()
+{
+    AI_Output (self, other ,"DIA_Briam_NewWeedAlert_03_01"); //Hej! Jak bêdziesz mia³ trochê czasu, to daj mi znaæ.
+};
+
+//========================================
+//-----------------> New weed run
+//========================================
+
+INSTANCE DIA_Briam_NewWeedRun (C_INFO)
+{
+   npc          = BAN_1601_Briam;
+   nr           = 2;
+   condition    = DIA_Briam_NewWeedRun_Condition;
+   information  = DIA_Briam_NewWeedRun_Info;
+   permanent	= FALSE;
+   description	= "Czego potrzebujesz?";
+};
+
+FUNC INT DIA_Briam_NewWeedRun_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Briam_NewWeedAlert))
+    && (Kapitel == 2)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Briam_NewWeedRun_Info()
+{
+    AI_Output (other, self ,"DIA_Briam_NewWeedRun_15_01"); //Czego potrzebujesz?
+    AI_Output (self, other ,"DIA_Briam_NewWeedRun_03_02"); //Rozmawia³em ostatnio z moim przyjacielem z Nowego Obozu.
+    AI_Output (self, other ,"DIA_Briam_NewWeedRun_03_03"); //Nazywa siê Sharky. Mo¿liwe, ¿e go znasz.
+    AI_Output (self, other ,"DIA_Briam_NewWeedRun_03_04"); //W ka¿dym razie dowiedzia³em siê od niego, ¿e niejaki Cor Kalom opracowa³ przepis na niesamowite ziele.
+    AI_Output (self, other ,"DIA_Briam_NewWeedRun_03_05"); //Podobno skrêty s¹ perfekcyjne, jednak nie trafi³y na sprzeda¿. Kalom uzna³, ¿e bêd¹ je paliæ wy³¹cznie najwyŸsi cz³onkiwie Sekty.
+	AI_Output (self, other ,"DIA_Briam_NewWeedRun_03_06"); //To gówno musi nieŸle dawaæ w czaszkê, skoro elity trzymaj¹ je wy³¹cznie da siebie.
+    AI_Output (self, other ,"DIA_Briam_NewWeedRun_03_07"); //Chcia³bym, abyœ zdoby³ dla mnie ten przepis. Moglibyœmy na tym sporo zarobiæ.
+    AI_Output (self, other ,"DIA_Briam_NewWeedRun_03_08"); //Niestety nie mam pojêcia jak dotrzeæ do osoby, która ma przepis na skrêty. 
+	AI_Output (self, other ,"DIA_Briam_NewWeedRun_03_09"); //Jedyna poszlaka jak¹ mam jest fakt, ¿e Nowicjusz, który posiada recepturê zajmuje siê testowaniem magicznych substancji dla Guru. 
+	AI_Output (self, other ,"DIA_Briam_NewWeedRun_03_10"); //Znasz kogoœ takiego? Có¿, jeœli nie, to bêdziesz musia³ poznaæ. 
+	
+	//log
+    MIS_KalomsNewWeed = LOG_RUNNING;
+    Log_CreateTopic     (CH2_KalomsNewWeed, LOG_MISSION);
+    Log_SetTopicStatus  (CH2_KalomsNewWeed, LOG_RUNNING);
+    B_LogEntry          (CH2_KalomsNewWeed,"Briam opowiedzia³ mi o nowej recepturze na skrêty opracowanej przez samego Cor Kaloma. Bandyta chce, abym zdoby³ tê recepturê. Wiem tylko, ¿e jest ona w posiadaniu pewnego Nowicjusza, który zajmuje siê testowaniem magicznych substancji dla Guru. Muszê sobie przypomnieæ, czy znam kogoœ takiego.");
+	
+	if (Npc_KnowsInfo(hero,DIA_Joru_Tester))
+	{
+	B_LogEntry          (CH2_KalomsNewWeed,"Przypomnia³em sobie! Rozmawia³em kiedyœ na ten temat z Nowicjuszem Joru.");
+	};
+};
+
+//========================================
+//-----------------> DobraRobota
+//========================================
+
+INSTANCE DIA_Jens_DobraRobota (C_INFO)
+{
+   npc          = BAU_2011_Jens;
+   nr           = 1;
+   condition    = DIA_Jens_DobraRobota_Condition;
+   information  = DIA_Jens_DobraRobota_Info;
+   permanent	= FALSE;
+   description	= "Mam recepturê.";
+};
+
+FUNC INT DIA_Jens_DobraRobota_Condition()
+{
+    if (Npc_HasItems (other, ItMis_RecipeSlepperBreath) >=1)
+    && (MIS_KalomsNewWeed == LOG_RUNNING)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Jens_DobraRobota_Info()
+{
+    AI_Output (other, self ,"DIA_Jens_DobraRobota_15_01"); //Mam recepturê.
+    AI_Output (self, other ,"DIA_Jens_DobraRobota_03_02"); //Poka¿ mi j¹!
+    B_UseFakeScroll ();
+    AI_Output (self, other ,"DIA_Jens_DobraRobota_03_03"); //Hmm... Interesuj¹ce. Spróbujmy ukrêciæ trochê rudy z tego przepisu.
+    AI_Output (other, self ,"DIA_Jens_DobraRobota_15_04"); //Co z moj¹ dzia³k¹?
+    AI_Output (self, other ,"DIA_Jens_DobraRobota_03_05"); //Trzymaj. Zas³u¿y³eœ.
+	//log
+    B_LogEntry                     (CH2_KalomsNewWeed,"Briam otrzyma³ recepturê, a ja swoj¹ dolê za wykonanie zadania.");
+	//experience
+    B_GiveXP (XP_PrzepisNaZiolo);
+	CreateInvItems (self, itminugget, 150);
+    B_GiveInvItems (self, other, itminugget, 150);
+	B_GiveInvItems (hero, self, ItMis_RecipeSlepperBreath, 1);
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -218,7 +347,7 @@ FUNC VOID DIA_Bandyta_RAYAN_Info()
 
 INSTANCE DIA_Bandyta_Dostwy (C_INFO)
 {
-   npc          = NON_4051_Bandyta;
+   npc          = BAN_1601_Briam;
    nr           = 1;
    condition    = DIA_Bandyta_Dostwy_Condition;
    information  = DIA_Bandyta_Dostwy_Info;
@@ -268,7 +397,7 @@ var int dostawa3;//SO
 
 INSTANCE DIA_Bandyta_DostawaNO (C_INFO)
 {
-   npc          = NON_4051_Bandyta;
+   npc          = BAN_1601_Briam;
    nr           = 1;
    condition    = DIA_Bandyta_DostawaNO_Condition;
    information  = DIA_Bandyta_DostawaNO_Info;
@@ -298,7 +427,7 @@ FUNC VOID DIA_Bandyta_DostawaNO_Info()
 
 INSTANCE DIA_Bandyta_DostawaPSI (C_INFO)
 {
-   npc          = NON_4051_Bandyta;
+   npc          = BAN_1601_Briam;
    nr           = 1;
    condition    = DIA_Bandyta_DostawaPSI_Condition;
    information  = DIA_Bandyta_DostawaPSI_Info;
@@ -328,7 +457,7 @@ FUNC VOID DIA_Bandyta_DostawaPSI_Info()
 
 INSTANCE DIA_Bandyta_DostawaSO (C_INFO)
 {
-   npc          = NON_4051_Bandyta;
+   npc          = BAN_1601_Briam;
    nr           = 1;
    condition    = DIA_Bandyta_DostawaSO_Condition;
    information  = DIA_Bandyta_DostawaSO_Info;
@@ -358,7 +487,7 @@ FUNC VOID DIA_Bandyta_DostawaSO_Info()
 
 INSTANCE DIA_Bandyta_DostawaALL (C_INFO)
 {
-   npc          = NON_4051_Bandyta;
+   npc          = BAN_1601_Briam;
    nr           = 1;
    condition    = DIA_Bandyta_DostawaALL_Condition;
    information  = DIA_Bandyta_DostawaALL_Info;
@@ -388,119 +517,6 @@ FUNC VOID DIA_Bandyta_DostawaALL_Info()
 	B_GiveInvItems      (self, hero, ItFo_OM_Beer_01,6);
 };
 
-//========================================
-//-----------------> Przepisek
-//========================================
-
-INSTANCE DIA_Bandyta_Przepisek (C_INFO)
-{
-   npc          = NON_4051_Bandyta;
-   nr           = 1;
-   condition    = DIA_Bandyta_Przepisek_Condition;
-   information  = DIA_Bandyta_Przepisek_Info;
-   permanent	= FALSE;
-   description	= "Mam dla ciebie przepis.";
-};
-
-FUNC INT DIA_Bandyta_Przepisek_Condition()
-{
-    if (Npc_HasItems (other, ReceptaNowicjuszy) >=1)
-    && (Npc_KnowsInfo (hero, DIA_Jens_DobraRobota))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Bandyta_Przepisek_Info()
-{
-    AI_Output (other, self ,"DIA_Bandyta_Przepisek_15_01"); //Mam dla ciebie przepis.
-    AI_Output (self, other ,"DIA_Bandyta_Przepisek_03_02"); //Ten od Jensa?
-    AI_Output (other, self ,"DIA_Bandyta_Przepisek_15_03"); //Tak. Rozmawia³eœ ju¿ z nim?
-    AI_Output (self, other ,"DIA_Bandyta_Przepisek_03_04"); //Taa... Ju¿ siê pochwali³. 
-    AI_Output (self, other ,"DIA_Bandyta_Przepisek_03_05"); //Daj mi ten przepis. Zobaczymy co z tego bêdzie.
-    B_GiveInvItems (other, self, ReceptaNowicjuszy, 1);
-    B_LogEntry               (CH1_NoweZiele2BAU,"Odnios³em recepturê Briamowi zgodnie z poleceniem. Pora czekaæ na efekty.");
-    Log_SetTopicStatus       (CH1_NoweZiele2BAU, LOG_SUCCESS);
-    MIS_NoweZiele2BAU = LOG_SUCCESS;
-
-    B_GiveXP (50);
-    AI_StopProcessInfos	(self);
-};
-
-//========================================
-//-----------------> Pensja
-//========================================
-
-INSTANCE DIA_Bandyta_Pensja (C_INFO)
-{
-   npc          = NON_4051_Bandyta;
-   nr           = 2;
-   condition    = DIA_Bandyta_Pensja_Condition;
-   information  = DIA_Bandyta_Pensja_Info;
-   permanent	= FALSE;
-   description	= "Kiedy mam siê zg³aszaæ po swoj¹ dzia³kê?";
-};
-
-FUNC INT DIA_Bandyta_Pensja_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Bandyta_Przepisek))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Bandyta_Pensja_Info()
-{
-    AI_Output (other, self ,"DIA_Bandyta_Pensja_15_01"); //Kiedy mam siê zg³aszaæ po swoj¹ dzia³kê?
-    AI_Output (self, other ,"DIA_Bandyta_Pensja_03_02"); //Chwila, chwila. Najpierw musisz znaleŸæ kupca na ziele. Dopiero wtedy bêdziemy mogli myœleæ o zyskach.
-    AI_Output (self, other ,"DIA_Bandyta_Pensja_03_03"); //To musi byæ ktoœ, kto ma du¿y utarg. Popytaj handlarzy, a mo¿e ktoœ ci wpadnie w rêce. 
-    AI_Output (self, other ,"DIA_Bandyta_Pensja_03_04"); //Daruj sobie wycieczkê do Sekty. To z góry skazane na pora¿kê.
-    MIS_NoweZiele3BAU = LOG_RUNNING;
-
-    Log_CreateTopic          (CH1_NoweZiele3BAU, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_NoweZiele3BAU, LOG_RUNNING);
-    B_LogEntry               (CH1_NoweZiele3BAU,"Okazuje siê, ¿e receptura, któr¹ przynios³em nie wystarczy do osi¹gniêcia zysków. Aby zarabiaæ na zielu, musimy mieæ je komu sprzedaæ. Mam znaleŸæ jakiegoœ kupca na nasz towar. Briam od razu odradzi³ mi udanie siê do obozu Bractwa Œni¹cego. Powinienem zapytaæ w Nowym lub Starym Obozie. ");
-    AI_StopProcessInfos	(self);
-};
-
-//========================================
-//-----------------> KupiecSS
-//========================================
-
-INSTANCE DIA_Bandyta_KupiecSS (C_INFO)
-{
-   npc          = NON_4051_Bandyta;
-   nr           = 1;
-   condition    = DIA_Bandyta_KupiecSS_Condition;
-   information  = DIA_Bandyta_KupiecSS_Info;
-   permanent	= FALSE;
-   description	= "Za³atwi³em kupca.";
-};
-
-FUNC INT DIA_Bandyta_KupiecSS_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Dexter_MocneZiele2))
-    && (MIS_NoweZiele3BAU == LOG_RUNNING)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Bandyta_KupiecSS_Info()
-{
-    AI_Output (other, self ,"DIA_Bandyta_KupiecSS_15_01"); //Za³atwi³em kupca. To handlarz Dexter ze Starego Obozu.
-    AI_Output (other, self ,"DIA_Bandyta_KupiecSS_15_02"); //Du¿o handluje z Nowicjuszami. Zna siê na zielu.
-    AI_Output (self, other ,"DIA_Bandyta_KupiecSS_03_03"); //Dobra robota. Zabieram siê za produkcjê.
-    AI_Output (self, other ,"DIA_Bandyta_KupiecSS_03_04"); //Kwestie wyp³aty reguluj z Jensem. To nie moja sprawa.
-    B_LogEntry                     (CH1_NoweZiele3BAU,"Zg³osi³em Braimowi, ¿e bêdziemy teraz wspó³pracowaæ z Dexterem. Po wyp³atê mogê zg³aszaæ siê do Jensa.");
-    Log_SetTopicStatus       (CH1_NoweZiele3BAU, LOG_SUCCESS);
-    MIS_NoweZiele3BAU = LOG_SUCCESS;
-	//experience
-    B_GiveXP (200);
-};
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 // Briam
@@ -514,7 +530,7 @@ FUNC VOID DIA_Bandyta_KupiecSS_Info()
 
 INSTANCE DIA_Bandyta_FreePotions (C_INFO)
 {
-   npc          = NON_4051_Bandyta;
+   npc          = BAN_1601_Briam;
    nr           = 1;
    condition    = DIA_Bandyta_FreePotions_Condition;
    information  = DIA_Bandyta_FreePotions_Info;
@@ -553,7 +569,7 @@ FUNC VOID DIA_Bandyta_FreePotions_Info()
 
 INSTANCE DIA_Bandyta_KnowsAlchemy2 (C_INFO)
 {
-   npc          = NON_4051_Bandyta;
+   npc          = BAN_1601_Briam;
    nr           = 4;
    condition    = DIA_Bandyta_KnowsAlchemy2_Condition;
    information  = DIA_Bandyta_KnowsAlchemy2_Info;
@@ -563,7 +579,7 @@ INSTANCE DIA_Bandyta_KnowsAlchemy2 (C_INFO)
 
 FUNC INT DIA_Bandyta_KnowsAlchemy2_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Bandyta_WhoYou))
+    if (Npc_KnowsInfo (hero, DIA_Briam_WhoYou))
     && (Npc_GetTalentSkill(other, NPC_TALENT_FIREMASTER) == 0)
     {
     return TRUE;
@@ -611,7 +627,7 @@ FUNC VOID DIA_Bandyta_KnowsAlchemy2_Info()
 
 INSTANCE DIA_Bandyta_KnowsAlchemy2_L2 (C_INFO)
 {
-   npc          = NON_4051_Bandyta;
+   npc          = BAN_1601_Briam;
    nr           = 4;
    condition    = DIA_Bandyta_KnowsAlchemy2_L2_Condition;
    information  = DIA_Bandyta_KnowsAlchemy2_L2_Info;
@@ -621,7 +637,7 @@ INSTANCE DIA_Bandyta_KnowsAlchemy2_L2 (C_INFO)
 
 FUNC INT DIA_Bandyta_KnowsAlchemy2_L2_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Bandyta_WhoYou))
+    if (Npc_KnowsInfo (hero, DIA_Briam_WhoYou))
     && (Npc_GetTalentSkill(other, NPC_TALENT_FIREMASTER) == 1)
     {
     return TRUE;
@@ -678,7 +694,7 @@ FUNC VOID DIA_Bandyta_KnowsAlchemy2_L2_Info()
 
 INSTANCE DIA_Bandyta_Zanisione (C_INFO)
 {
-   npc          = NON_4051_Bandyta;
+   npc          = BAN_1601_Briam;
    nr           = 1;
    condition    = DIA_Bandyta_Zanisione_Condition;
    information  = DIA_Bandyta_Zanisione_Info;
@@ -781,7 +797,7 @@ FUNC VOID DIA_Bandyta_Zanisione_Info()
 
 INSTANCE DIA_Bandyta_Odtrutka (C_INFO)
 {
-   npc          = NON_4051_Bandyta;
+   npc          = BAN_1601_Briam;
    nr           = 1;
    condition    = DIA_Bandyta_Odtrutka_Condition;
    information  = DIA_Bandyta_Odtrutka_Info;
@@ -814,7 +830,7 @@ FUNC VOID DIA_Bandyta_Odtrutka_Info()
 
 INSTANCE DIA_Bandyta_Rezepte (C_INFO)
 {
-   npc          = NON_4051_Bandyta;
+   npc          = BAN_1601_Briam;
    nr           = 2;
    condition    = DIA_Bandyta_Rezepte_Condition;
    information  = DIA_Bandyta_Rezepte_Info;
@@ -848,7 +864,7 @@ FUNC VOID DIA_Bandyta_Rezepte_Info()
 
 INSTANCE DIA_Bandyta_GiveLeki (C_INFO)
 {
-   npc          = NON_4051_Bandyta;
+   npc          = BAN_1601_Briam;
    nr           = 3;
    condition    = DIA_Bandyta_GiveLeki_Condition;
    information  = DIA_Bandyta_GiveLeki_Info;

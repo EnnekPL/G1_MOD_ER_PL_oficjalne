@@ -6,7 +6,7 @@
 
 INSTANCE DIA_Miguel_EXIT(C_INFO)
 {
-	npc             = BAU_980_Miguel;
+	npc             = BAN_1600_Miguel;
 	nr              = 999;
 	condition	= DIA_Miguel_EXIT_Condition;
 	information	= DIA_Miguel_EXIT_Info;
@@ -30,7 +30,7 @@ FUNC VOID DIA_Miguel_EXIT_Info()
 
 INSTANCE DIA_Miguel_HELLO1 (C_INFO)
 {
-   npc          = BAU_980_Miguel;
+   npc          = BAN_1600_Miguel;
    nr           = 1;
    condition    = DIA_Miguel_HELLO1_Condition;
    information  = DIA_Miguel_HELLO1_Info;
@@ -58,7 +58,7 @@ FUNC VOID DIA_Miguel_HELLO1_Info()
 
 INSTANCE DIA_Miguel_HELLO2 (C_INFO)
 {
-   npc          = BAU_980_Miguel;
+   npc          = BAN_1600_Miguel;
    nr           = 2;
    condition    = DIA_Miguel_HELLO2_Condition;
    information  = DIA_Miguel_HELLO2_Info;
@@ -109,7 +109,7 @@ FUNC VOID DIA_Miguel_HELLO2_Info()
 
 INSTANCE DIA_Miguel_FindFirstRing (C_INFO)
 {
-   npc          = BAU_980_Miguel;
+   npc          = BAN_1600_Miguel;
    nr           = 1;
    condition    = DIA_Miguel_FindFirstRing_Condition;
    information  = DIA_Miguel_FindFirstRing_Info;
@@ -146,7 +146,7 @@ FUNC VOID DIA_Miguel_FindFirstRing_Info()
 
 INSTANCE DIA_Miguel_MagnaciEnter (C_INFO)
 {
-   npc          = BAU_980_Miguel;
+   npc          = BAN_1600_Miguel;
    nr           = 1;
    condition    = DIA_Miguel_MagnaciEnter_Condition;
    information  = DIA_Miguel_MagnaciEnter_Info;
@@ -183,7 +183,7 @@ FUNC VOID DIA_Miguel_MagnaciEnter_Info()
 
 INSTANCE DIA_Miguel_FindSecondRing (C_INFO)
 {
-   npc          = BAU_980_Miguel;
+   npc          = BAN_1600_Miguel;
    nr           = 2;
    condition    = DIA_Miguel_FindSecondRing_Condition;
    information  = DIA_Miguel_FindSecondRing_Info;
@@ -218,7 +218,7 @@ FUNC VOID DIA_Miguel_FindSecondRing_Info()
 
 INSTANCE DIA_Miguel_AboutThirdRing (C_INFO)
 {
-   npc          = BAU_980_Miguel;
+   npc          = BAN_1600_Miguel;
    nr           = 1;
    condition    = DIA_Miguel_AboutThirdRing_Condition;
    information  = DIA_Miguel_AboutThirdRing_Info;
@@ -249,7 +249,7 @@ FUNC VOID DIA_Miguel_AboutThirdRing_Info()
 
 INSTANCE DIA_Miguel_IFindThirdRing (C_INFO)
 {
-   npc          = BAU_980_Miguel;
+   npc          = BAN_1600_Miguel;
    nr           = 1;
    condition    = DIA_Miguel_IFindThirdRing_Condition;
    information  = DIA_Miguel_IFindThirdRing_Info;
@@ -283,7 +283,7 @@ FUNC VOID DIA_Miguel_IFindThirdRing_Info()
 
 INSTANCE DIA_Miguel_AllRings (C_INFO)
 {
-   npc          = BAU_980_Miguel;
+   npc          = BAN_1600_Miguel;
    nr           = 2;
    condition    = DIA_Miguel_AllRings_Condition;
    information  = DIA_Miguel_AllRings_Info;
@@ -318,7 +318,7 @@ FUNC VOID DIA_Miguel_AllRings_Info()
 
 INSTANCE DIA_Miguel_QuentinUcieczka (C_INFO)
 {
-   npc          = BAU_980_Miguel;
+   npc          = BAN_1600_Miguel;
    nr           = 1;
    condition    = DIA_Miguel_QuentinUcieczka_Condition;
    information  = DIA_Miguel_QuentinUcieczka_Info;

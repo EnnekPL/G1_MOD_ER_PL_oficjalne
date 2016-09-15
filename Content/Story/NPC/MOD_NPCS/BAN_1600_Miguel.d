@@ -1,14 +1,14 @@
-instance BAU_980_Miguel (Npc_Default)
+instance BAN_1600_Miguel (Npc_Default)
 {
 	//-------- primary data --------
 	
-	name =					"Miguel";
+	name 	=				"Miguel";
 	Npctype =				Npctype_Main;
-	guild =					GIL_BAU;      
-	level =					11;
-	flags =  npc_flag_immortal;
-	voice =					2;
-	id =					980;
+	guild 	=				GIL_BAU;      
+	level 	=				11;
+	flags 	=  				npc_flag_immortal;
+	voice 	=				2;
+	id 		=				1600;
 
 	//-------- abilities --------
 
@@ -50,29 +50,29 @@ instance BAU_980_Miguel (Npc_Default)
 	CreateInvItems (self, ItAmArrow, 200);
 	
 	//-------------Daily Routine-------------
-	daily_routine = Rtn_start_980;
+	daily_routine = Rtn_start_1600;
 };
 
 
 
-FUNC VOID Rtn_prestart_980 () 
+FUNC VOID Rtn_prestart_1600 () 
 {
  	TA_Position	(00,00,12,00,"MIGUEL");	
 	TA_Position	(12,00,24,00,"MIGUEL");
 };
 
-FUNC VOID Rtn_start_980 ()
+FUNC VOID Rtn_start_1600 ()
 {
     TA_SitAround	(00,00,12,00,"MIGUEL");	
 	TA_SitAround	(12,00,24,00,"MIGUEL");
 };
 
-FUNC VOID Rtn_OMFull_980 ()
+FUNC VOID Rtn_OMFull_1600 ()
 {
 	TA_SitCampfire	(00,00,12,00,"MIGUEL2");	
 	TA_SitCampfire	(12,00,24,00,"MIGUEL2");
 };
-FUNC VOID Rtn_nockruka_980 ()
+FUNC VOID Rtn_nockruka_1600 ()
 {
 	TA_SitCampfire	(00,00,12,00,"MIGUEL_NK");	
 	TA_SitCampfire	(12,00,24,00,"MIGUEL_NK");

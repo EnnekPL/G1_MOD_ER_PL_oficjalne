@@ -1479,54 +1479,7 @@ FUNC VOID DIA_CorKalom_GetDrug_Info()
     B_LogEntry                     (CH1_ChoryDrwal,"Cor Kalom da³ mi przygotowany lek. Muszê go teraz zanieœæ Hansonowi.");
 };
 
-//========================================
-//-----------------> Kapus1
-//========================================
 
-INSTANCE DIA_CorKalom_Kapus1 (C_INFO)
-{
-   npc          = GUR_1201_CorKalom;
-   nr           = 1;
-   condition    = DIA_CorKalom_Kapus1_Condition;
-   information  = DIA_CorKalom_Kapus1_Info;
-   permanent	= FALSE;
-   description	= "Nowicjusze sprzedaj¹ przerobione ziele.";
-};
-
-FUNC INT DIA_CorKalom_Kapus1_Condition()
-{
-    if (MIS_NoweZiele == LOG_RUNNING) || (Npc_KnowsInfo (hero, DIA_Novize_DawacPrzepis))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_CorKalom_Kapus1_Info()
-{
-    AI_Output (other, self ,"DIA_CorKalom_Kapus1_15_01"); //Nowicjusze sprzedaj¹ przerobione ziele.
-    AI_Output (self, other ,"DIA_CorKalom_Kapus1_03_02"); //Jacy Nowicjusze?
-    AI_Output (other, self ,"DIA_CorKalom_Kapus1_15_03"); //Ci mieszkaj¹cy nieopodal twojej chaty.
-    AI_Output (other, self ,"DIA_CorKalom_Kapus1_15_04"); //W swoich domach maj¹ laboratoria, w których wyrabiaj¹ nowe odmiany ziela.
-    AI_Output (self, other ,"DIA_CorKalom_Kapus1_03_05"); //Ceniê sobie dobrych kapusiów.
-    CreateInvItems (self, ItMiNugget, 80);
-    B_GiveInvItems (self, other, ItMiNugget, 80);
-	Npc_ExchangeRoutine (NOV_1324_Novize,"wino");
-	Npc_ExchangeRoutine (NOV_1323_Novize,"work");
-	if (MIS_NoweZiele == LOG_RUNNING)
-	{
-    B_LogEntry                     (CH1_NoweZiele,"Poinformowa³em Cor Kaloma o nielegalnej produkcji ziela przez Davsona. Takie dzia³ania nie powinny mieæ racji bytu.");
-    Log_SetTopicStatus       (CH1_NoweZiele, LOG_FAILED);
-    MIS_NoweZiele = LOG_FAILED;
-	PrintScreen	("Anulowano zadanie: Nowe, mocne ziele! ", 1,-1,"font_new_10_red.tga",2);	
-	}
-	else
-	{
-	B_LogEntry                     (CH1_NoweZiele2BAU,"Poinformowa³em Cor Kaloma o nielegalnej produkcji ziela przez Nowicjuszy. Powinien wstrzymaæ ich pracê.");
-	};
-    B_GiveXP (50);
-    AI_StopProcessInfos	(self);
-};
 //========================================
 //-----------------> NAUKA_ASK
 //========================================

@@ -233,20 +233,20 @@ const string	CH6_Sleeper				=	"Przebudzenie Œni¹cego";
 //---------------------------------------------------------------------
 //   Bractwo 
 //---------------------------------------------------------------------
-const string CH1_Bractwo_Kopalnia    = "Wsparcie Nowego Obozu";
-const string CH1_PSIcampWORK     	 = "Szpieg na bagnie";
-const string CH1_HelpBrothersBra     = "Bracia z kopalni";
-const string CH1_testGuru    		 = "Zostaæ Guru";
-const string CH1_NoweZiele    		 = "Nowe, mocne ziele";
-const string CH1_KeyKagan   	     = "Klucz Baal Kagana"; 
-const string CH1_UciekinierPC    	 = "Ukradzione artefakty";
-const string CH1_Tabliczki 			 = "Tabliczki dla Steha";
-const string CH1_HandlarzSteh     	 = "Badacz bagien";
-const string CH1_OszukanyHandlarz    = "Oszukany handlarz";
-const string CH1_SeryjneZabojstwa    = "Seria zabójstw w Bractwie";
-const string CH1_ChoryDrwal      	 = "Chory drwal";
-const string CH1_ListDoCronosa   	 = "Poselstwo z Bractwa";
-const string CH1_SellElixer    		 = "Sprzeda¿ eliksirów";
+const string CH1_Bractwo_Kopalnia    	= "Wsparcie Nowego Obozu";
+const string CH1_PSIcampWORK     	 	= "Szpieg na bagnie";
+const string CH1_HelpBrothersBra     	= "Bracia z kopalni";
+const string CH1_testGuru    		 	= "Zostaæ Guru";
+const string CH1_NoweZiele    		 	= "Nowe, mocne ziele";
+const string CH1_KeyKagan   	     	= "Klucz Baal Kagana"; 
+const string CH1_UciekinierPC    		= "Ukradzione artefakty";
+const string CH1_Tabliczki 			 	= "Tabliczki dla Steha";
+const string CH1_HandlarzSteh     	 	= "Badacz bagien";
+const string CH1_OszukanyHandlarz    	= "Oszukany handlarz";
+const string CH1_SeryjneZabojstwa    	= "Seria zabójstw w Bractwie";
+const string CH1_ChoryDrwal      	 	= "Chory drwal";
+const string CH1_ListDoCronosa   	 	= "Poselstwo z Bractwa";
+const string CH1_SellElixer    		 	= "Sprzeda¿ eliksirów";
 const string CH1_PoszukiwanaAlchemika 	= "Poszukiwania alchemika";
 const string CH1_WalkiBractwo      		= "Mistrz areny w Bractwie";
 const string CH1_Watek_Bandytow_BRACTWO = "Co siê dzieje u Bandytów";
@@ -301,31 +301,31 @@ const string CH1_JimsSword      		= "Sentymentalny miecz";
 //---------------------------------------------------------------------
 //   Nowy Obóz 
 //---------------------------------------------------------------------
-const string CH1_PoparcieNC     	= "Poparcie czterech Najemników";
-const string CH1_BuntZbieraczy      = "Bunt zbieraczy";
-const string CH1_KilnagaWolfa      	= "Ozdobna klinga";
-const string CH1_OkylQuest      	= "Zadanie Okyla";
-const string CH1_NC_Mine      		= "Lee i kopalnia";
-const string CH1_KillFingers      	= "Stra¿nik w karczmie";
-const string CH1_FindPosazekKlina   = "Poszukiwania pos¹¿ka";
-const string CH1_ZnowuZapierdalam   = "Kto ukrad³ pos¹¿ek Klina?";
-const string CH1_NekInNC      		= "Droga do Nowego Obozu";
-const string CH1_AwansJakoKret      = "Œcie¿ka Kreta";
-const string CH1_MapForRatford      = "Mapa dla Ratforda";
-const string CH1_TopielcewChacie    = "Rybacka chata";
-const string CH1_Trzej_Lordowie     = "Trzej Lordowie";
-const string CH1_ZabijThompsona     = "Zlecenie Will'a"; 
-const string CH1_KopalniaZlota      = "Kopalnia z³ota";
-const string CH1_DrogaDoKopalni     = "Do kopalni z³ota";
-const string CH1_KryjowkaNaKase     = "Skrytka";
-const string CH1_PamietnikZNieba   	= "Lataj¹cy pamiêtnik";
-const string CH1_InfoDlaLaresa      = "Ostrzec Bandytów";
-const string CH1_PomocTorlofowi     = "Na pomoc Torlofowi";
-const string CH1_BandyciNiwiadomo   = "Banda Quentina";
-const string CH1_PomocQuentinowi    = "Wsparcie dla Quentina";
-const string CH1_Wodospad      		= "Szkodnik-magik w Nowym Obozie";
-const string CH1_MagicySzkodnicy    = "Nieudolni magicy";
-const string CH1_PathToFreeMine		= "Droga do Wolnej Kopalni";
+const string CH1_PoparcieNC     		= "Poparcie czterech Najemników";
+const string CH1_BuntZbieraczy      	= "Bunt zbieraczy";
+const string CH1_KilnagaWolfa      		= "Ozdobna klinga";
+const string CH1_OkylQuest      		= "Zadanie Okyla";
+const string CH1_NC_Mine      			= "Lee i kopalnia";
+const string CH1_KillFingers      		= "Stra¿nik w karczmie";
+const string CH1_FindPosazekKlina   	= "Poszukiwania pos¹¿ka";
+const string CH1_ZnowuZapierdalam   	= "Kto ukrad³ pos¹¿ek Klina?";
+const string CH1_NekInNC      			= "Droga do Nowego Obozu";
+const string CH1_AwansJakoKret      	= "Œcie¿ka Kreta";
+const string CH1_MapForRatford      	= "Mapa dla Ratforda";
+const string CH1_TopielcewChacie    	= "Rybacka chata";
+const string CH1_Trzej_Lordowie     	= "Trzej Lordowie";
+const string CH1_ZabijThompsona     	= "Zlecenie Will'a"; 
+const string CH1_KopalniaZlota      	= "Kopalnia z³ota";
+const string CH1_DrogaDoKopalni     	= "Do kopalni z³ota";
+const string CH1_KryjowkaNaKase     	= "Skrytka";
+const string CH1_PamietnikZNieba   		= "Lataj¹cy pamiêtnik";
+const string CH1_InfoDlaLaresa      	= "Ostrzec Bandytów";
+const string CH1_PomocTorlofowi     	= "Na pomoc Torlofowi";
+const string CH1_BandyciNiwiadomo   	= "Banda Quentina";
+const string CH1_PomocQuentinowi    	= "Wsparcie dla Quentina";
+const string CH1_Wodospad      			= "Szkodnik-magik w Nowym Obozie";
+const string CH1_MagicySzkodnicy    	= "Nieudolni magicy";
+const string CH1_PathToFreeMine			= "Droga do Wolnej Kopalni";
 //---------------------------------------------------------------------
 //   Bandycki Obóz 
 //---------------------------------------------------------------------
@@ -346,7 +346,7 @@ const string CH1_AtakNaOC      			= "Plany Draxa";
 const string CH1_NoweKola     			= "2 ko³a zêbate";
 const string CH1_SellAlco      			= "Sprzeda¿ alkoholu";
 const string CH1_Dostawy      			= "Dostawy alkoholu";
-const string CH1_NoweZiele2BAU      	= "Przepis na mocniejsze ziele";
+
 const string CH1_NoweZiele3BAU      	= "Kupiec na ziele";
 const string CH1_PolowanieZDoylem      	= "Polowanie z Doylem";
 const string CH1_KordelasQuentina      	= "Kordelas dla Quentina";

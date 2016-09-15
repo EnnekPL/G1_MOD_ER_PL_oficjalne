@@ -92,6 +92,7 @@ FUNC VOID DIA_Jens_FirstArmorPrice_Info()
 	AI_Output (self, other ,"DIA_Jens_FirstArmorPrice_03_03"); //Jest warte swojej ceny!
 };
 
+var int Jens_SellArmor_OneTime;
 //========================================
 //-----------------> ArmorLeather
 //========================================
@@ -102,13 +103,13 @@ INSTANCE DIA_Jens_ArmorLeather (C_INFO)
    nr           = 1;
    condition    = DIA_Jens_ArmorLeather_Condition;
    information  = DIA_Jens_ArmorLeather_Info;
-   permanent	= FALSE;
+   permanent	= TRUE;
    description	= "Dobrze, daj mi tê zbrojê. (ochrona: broñ: 20, strza³y: 10, koszt: 750)";
 };
 
 FUNC INT DIA_Jens_ArmorLeather_Condition()
 {
-	if  (Npc_KnowsInfo (hero, DIA_Jens_FirstArmorPrice)) //&& (kapitel == 10)
+	if  (Npc_KnowsInfo (hero, DIA_Jens_FirstArmorPrice)) && (Jens_SellArmor_OneTime == FALSE)
 	{
     return TRUE;
 	};
@@ -127,12 +128,11 @@ FUNC VOID DIA_Jens_ArmorLeather_Info()
         AI_Output (self, other ,"DIA_Jens_ArmorLeather_03_02"); //Proszê. Oto ona.
         B_GiveInvItems (other, self, ItMiNugget, 750);
 		AI_EquipBestArmor	(hero); 
-		DIA_Jens_ArmorLeather.permanent = false;
+		Jens_SellArmor_OneTime = TRUE;
     }
     else
     {
         AI_Output (self, other ,"DIA_Jens_ArmorLeather_03_03"); //Nie masz tyle rudy!
-		DIA_Jens_ArmorLeather.permanent = true;
     };
 };
 
@@ -166,6 +166,12 @@ FUNC VOID DIA_Jens_HELLO2_Info()
     AI_Output (other, self ,"DIA_Jens_HELLO2_15_04"); //Co wyrabiasz ze skór?
     AI_Output (self, other ,"DIA_Jens_HELLO2_03_05"); //Zazwyczaj ubrania, pancerze i inne tego typu przedmioty.
 };
+
+///////////////////////////////////////////////////////////////////////////////////////////
+// Jens
+// Rozdzia³ -
+// Zadanie od Keretha (Œmieræ Rayana)
+///////////////////////////////////////////////////////////////////////////////////////////
 
 //========================================
 //-----------------> YourSwordPieces
@@ -327,7 +333,7 @@ INSTANCE DIA_Jens_BriamsEvidence (C_INFO)
 
 FUNC INT DIA_Jens_BriamsEvidence_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Bandyta_RAYAN))
+    if (Npc_KnowsInfo (hero, DIA_Briam_RAYAN))
     {
     return TRUE;
     };
@@ -341,16 +347,25 @@ FUNC VOID DIA_Jens_BriamsEvidence_Info()
     AI_Output (other, self ,"DIA_Jens_BriamsEvidence_15_03"); //Widzia³ jak Kereth wraca sk¹dœ póŸn¹ noc¹, a póŸniej chowa twój miecz do swojej skrzyni. 
     AI_Output (self, other ,"DIA_Jens_BriamsEvidence_03_04"); //Dobra robota. Wykorzystam to przeciwko Kerethowi. Quentin powinien mi ju¿ uwierzyæ. 
 	AI_Output (other, self ,"DIA_Jens_BriamsEvidence_15_05"); //Czyli moja robota skoñczona? Poradzisz sobie dalej sam?
+	
+	if (Jens_SellArmor_OneTime == FALSE)
+	{
 	AI_Output (self, other ,"DIA_Jens_BriamsEvidence_03_06"); //Tak, naprawdê bardzo mi pomog³eœ. Jestem twoim d³u¿nikiem. WeŸ w nagrodê ten pancerz. Mo¿esz go sprzedaæ, jeœli ci siê nie przyda. 
+	CreateInvItem		(self, NON_LEATHER_ARMOR_L);
+	B_GiveInvItems      (self, hero, NON_LEATHER_ARMOR_L, 1);
+	}
+	else
+	{
+	AI_Output (self, other ,"DIA_Jens_BriamsEvidence_03_07"); //Tak, jestem twoim d³u¿nikiem. WeŸ te skóry w nagrodê.
+	CreateInvItems		(self, ItAt_Wolf_02,5);
+	B_GiveInvItems      (self, hero, ItAt_Wolf_02, 5);
+	};
 	
     B_LogEntry             		(CH1_DestroyedGrave,"Zeznania Briama oka¿¹ siê kluczowe dla rozwi¹zania ca³ej sprawy. Jens by³ mi bardzo wdziêczny za pomoc. Szkoda tylko, ¿e dalej nie mam pewnoœci co do tego jak zgin¹³ Rayan.");
 	Log_SetTopicStatus    	 (CH1_DestroyedGrave, LOG_SUCCESS);
     MIS_DestroyedGrave = LOG_SUCCESS;
 	
 	B_GiveXP (275);
-	
-	CreateInvItem		(self, NON_LEATHER_ARMOR_L);
-	B_GiveInvItems      (self, hero, NON_LEATHER_ARMOR_L, 1);
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -359,154 +374,6 @@ FUNC VOID DIA_Jens_BriamsEvidence_Info()
 // Zadania
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-//========================================
-//-----------------> Quest2
-//========================================
-
-INSTANCE DIA_Jens_Quest2 (C_INFO)
-{
-   npc          = BAU_2011_Jens;
-   nr           = 1;
-   condition    = DIA_Jens_Quest2_Condition;
-   information  = DIA_Jens_Quest2_Info;
-   permanent	= FALSE;
-   Important    = TRUE;
-};
-
-FUNC INT DIA_Jens_Quest2_Condition()
-{
-    if (Kapitel == 2)
-    && (Npc_GetTrueGuild(hero) == GIL_BAU)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Jens_Quest2_Info()
-{
-    AI_Output (self, other ,"DIA_Jens_Quest2_03_01"); //Hej! Jak bêdziesz mia³ trochê czasu, to daj mi znaæ.
-};
-
-//========================================
-//-----------------> Quest3
-//========================================
-
-INSTANCE DIA_Jens_Quest3 (C_INFO)
-{
-   npc          = BAU_2011_Jens;
-   nr           = 2;
-   condition    = DIA_Jens_Quest3_Condition;
-   information  = DIA_Jens_Quest3_Info;
-   permanent	= FALSE;
-   description	= "Czego potrzebujesz?";
-};
-
-FUNC INT DIA_Jens_Quest3_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Jens_Quest2))
-    && (Kapitel == 2)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Jens_Quest3_Info()
-{
-    AI_Output (other, self ,"DIA_Jens_Quest3_15_01"); //Czego potrzebujesz?
-    AI_Output (self, other ,"DIA_Jens_Quest3_03_02"); //Rozmawia³em ostatnio z moim przyjacielem z Nowego Obozu.
-    AI_Output (self, other ,"DIA_Jens_Quest3_03_03"); //Nazywa siê Sharky. Mo¿liwe, ¿e go znasz.
-    AI_Output (self, other ,"DIA_Jens_Quest3_03_04"); //W ka¿dym razie dowiedzia³em siê od niego, ¿e Nowicjusze z Bractwa opracowali przepis na nowe ziele.
-    AI_Output (self, other ,"DIA_Jens_Quest3_03_05"); //Podobno sprzedaj¹ sztukê za 35 bry³ek rudy Baal Kaganowi.
-    AI_Output (self, other ,"DIA_Jens_Quest3_03_06"); //Chcia³bym, abyœ zdoby³ dla mnie ten przepis.
-    AI_Output (self, other ,"DIA_Jens_Quest3_03_07"); //Moglibyœmy na tym sporo zarobiæ.
-    AI_Output (other, self ,"DIA_Jens_Quest3_15_08"); //Mam rozumieæ, ¿e potrafisz korzystaæ z takiego przepisu?
-    AI_Output (self, other ,"DIA_Jens_Quest3_03_09"); //Ja? Nie... Dogadamy siê z Briamem.
-    AI_Output (self, other ,"DIA_Jens_Quest3_03_10"); //Powiedzmy, ¿e bêdziemy sprzedawaæ to ziele za 30 bry³ek rudy.
-    AI_Output (self, other ,"DIA_Jens_Quest3_03_11"); //Taniej ni¿ Nowicjusze.
-    AI_Output (other, self ,"DIA_Jens_Quest3_15_12"); //Ile bym wtedy otrzymywa³?
-    AI_Output (self, other ,"DIA_Jens_Quest3_03_13"); //To zale¿y od sprzeda¿y. Na tak drogie ziele nie bêdzie staæ byle robotnika. Mimo wszystko powinno nam siê zwróciæ.
-    AI_Output (other, self ,"DIA_Jens_Quest3_15_14"); //Niech bêdzie.
-	//log
-    MIS_NoweZiele2BAU = LOG_RUNNING;
-    Log_CreateTopic     (CH1_NoweZiele2BAU, LOG_MISSION);
-    Log_SetTopicStatus  (CH1_NoweZiele2BAU, LOG_RUNNING);
-    B_LogEntry          (CH1_NoweZiele2BAU,"Jens zaproponowa³ mi uk³ad. Je¿eli zdobêdê przepis na ziele produkowane przez Nowicjuszy, otrzymam 10 bry³ek rudy z ka¿dego sprzedanego skrêta. Nie wiem, którzy Nowicjusze maj¹ przepis, ale z pewnoœci¹ uda mi siê to ustaliæ.");
-};
-
-//========================================
-//-----------------> DobraRobota
-//========================================
-
-INSTANCE DIA_Jens_DobraRobota (C_INFO)
-{
-   npc          = BAU_2011_Jens;
-   nr           = 1;
-   condition    = DIA_Jens_DobraRobota_Condition;
-   information  = DIA_Jens_DobraRobota_Info;
-   permanent	= FALSE;
-   description	= "Mam recepturê.";
-};
-
-FUNC INT DIA_Jens_DobraRobota_Condition()
-{
-    if (Npc_HasItems (other, ReceptaNowicjuszy) >=1)
-    && (MIS_NoweZiele2BAU == LOG_RUNNING)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Jens_DobraRobota_Info()
-{
-    AI_Output (other, self ,"DIA_Jens_DobraRobota_15_01"); //Mam recepturê.
-    AI_Output (self, other ,"DIA_Jens_DobraRobota_03_02"); //Poka¿ mi j¹!
-    B_UseFakeScroll ();
-    AI_Output (self, other ,"DIA_Jens_DobraRobota_03_03"); //Hmm... Nie wierzê, ¿e to siê bêdzie dobrze paliæ.
-    AI_Output (other, self ,"DIA_Jens_DobraRobota_15_04"); //Czyli moja praca by³a daremna?
-    AI_Output (self, other ,"DIA_Jens_DobraRobota_03_05"); //No coœ ty! Spróbujmy ukrêciæ trochê rudy z tego przepisu.
-    AI_Output (self, other ,"DIA_Jens_DobraRobota_03_06"); //Zanieœ to do Briama i powiedz, ¿e to pewny zysk. Niech siê bierze do roboty.
-	//log
-    B_LogEntry                     (CH1_NoweZiele2BAU,"Zanios³em recepturê Jensowi. By³ bardzo zadowolony. Teraz muszê j¹ przekazaæ Briamowi i mo¿emy zaczynaæ produkcjê.");
-	//experience
-    B_GiveXP (XP_PrzepisNaZiolo);
-};
-
-//========================================
-//-----------------> Pensyja
-//========================================
-
-INSTANCE DIA_Jens_Pensyja (C_INFO)
-{
-   npc          = BAU_2011_Jens;
-   nr           = 1;
-   condition    = DIA_Jens_Pensyja_Condition;
-   information  = DIA_Jens_Pensyja_Info;
-   permanent	= true;
-   description	= "Przyszed³em po swoj¹ dzia³kê.";
-};
-
-FUNC INT DIA_Jens_Pensyja_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Bandyta_KupiecSS))
-    && (pensja1 != Wld_GetDay())
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Jens_Pensyja_Info()
-{
-    AI_Output (other, self ,"DIA_Jens_Pensyja_15_01"); //Przyszed³em po swoj¹ dzia³kê.
-    AI_Output (self, other ,"DIA_Jens_Pensyja_03_02"); //Proszê. Oto ona.
-    CreateInvItems (self, ItMiNugget, 10);
-    B_GiveInvItems (self, other, ItMiNugget, 10);
-	pensja1 = wld_getday();
-    AI_StopProcessInfos	(self);
-};
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 // Jens

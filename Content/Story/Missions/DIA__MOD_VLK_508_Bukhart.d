@@ -82,7 +82,7 @@ INSTANCE DIA_Bukhart_HowAreYou (C_INFO)
 	nr			= 1;
 	condition	= DIA_Bukhart_HowAreYou_Condition;
 	information	= DIA_Bukhart_HowAreYou_Info;
-	permanent	= 0;
+	permanent	= 1;
 	description = "Co słychać?";
 };                       
 
@@ -97,7 +97,7 @@ FUNC INT DIA_Bukhart_HowAreYou_Condition()
 FUNC VOID DIA_Bukhart_HowAreYou_Info()
 {
 	AI_Output (other, self,"DIA_Bukhart_HowAreYou_15_00"); //Co słychać?
-	AI_Output (self, other,"DIA_Bukhart_HowAreYou_01_01"); //Nareszcie nie słychać tego kwiczenia. Jeszcze trochę i bym chyba zwariował. 
+	AI_Output (self, other,"DIA_Bukhart_HowAreYou_01_01"); //Raczej czego nie słychać. A mówię o tym cholernym kwiczeniu. Jeszcze trochę i bym chyba zwariował. 
 };
 
 INSTANCE DIA_Bukhart_AnyAdvice (C_INFO)
@@ -126,38 +126,7 @@ FUNC VOID DIA_Bukhart_AnyAdvice_Info()
 	AI_Output (self, other,"DIA_Bukhart_AnyAdvice_01_03"); //Na twoim miejscu jednak nie próbowałbym podchodzić wtedy do szefa Magnatów. 
 	AI_Output (self, other,"DIA_Bukhart_AnyAdvice_01_04"); //Snaf kiedyś opowiadał jak jakiś głupiec postanowił wejść do loży i zaoferować Gomezowi swe usługi. Thorus na miejscu rozłupał temu kretynowi czaszkę.
 };
-/* Wyzyskk:To jest dialog Rono. Przez pomyłkę musiano wrzucić go Bukhartowi. Można skasować. 
-INSTANCE DIA_Bukhart_Hut (C_INFO)
-{
-	npc			= VLK_508_Buddler;
-	nr			= 1;
-	condition	= DIA_Bukhart_Hut_Condition;
-	information	= DIA_Bukhart_Hut_Info;
-	permanent	= 0;
-	description = "Nie przeszkadzają ci ludzie przechodzący przez twoją chatę?";
-};                       
 
-FUNC INT DIA_Bukhart_Hut_Condition()
-{
-	if (Npc_KnowsInfo(hero, DIA_Bukhart_Hello))
-	{
-		return 1;
-	};
-};
-
-FUNC VOID DIA_Bukhart_Hut_Info()
-{
-	AI_Output (other, self,"DIA_Bukhart_Hut_15_00"); //Nie przeszkadzają ci ludzie przechodzący przez twoją chatę?
-	AI_Output (self, other,"DIA_Bukhart_Hut_01_01"); //Nie ty pierwszy zadajesz to pytanie.
-	AI_Output (self, other,"DIA_Bukhart_Hut_01_02"); //Naprawdę idzie się przyzwyczaić.
-	AI_Output (self, other,"DIA_Bukhart_Hut_01_03"); //Rzadko w niej siedzę i nie trzymam w niej nic cennego.
-	AI_Output (other, self,"DIA_Bukhart_Hut_15_04"); //Dlatego właśnie obok łóżka masz zamkniętą skrzynię?
-	AI_Output (self, other,"DIA_Bukhart_Hut_01_05"); //A ty skąd wiesz, że jest zamknięta?
-	AI_Output (other, self,"DIA_Bukhart_Hut_15_06"); //...
-	AI_Output (self, other,"DIA_Bukhart_Hut_01_07"); //Nie odpowiadaj - przecież doskonale wiem, gdzie trafiłem. W Kolonii Karnej jest pełno złodziejaszków, nie wspominając już o tym, że sam zostałem tu zesłany za kradzież narzędzi ze stoczni.
-	AI_Output (self, other,"DIA_Bukhart_Hut_01_08"); //Rozczaruję cię jednak - w tej skrzyni najcenniejszą rzeczą jest zardzewiały talerz. Raczej nie warto dla takiego "skarbu" ryzykować wtopą, prawda?
-};
-*/
 //========================================
 // Zadanie "Kto komu piasek sypie"
 //========================================
@@ -187,11 +156,11 @@ FUNC VOID DIA_Bukhart_UscanPlan_Info()
 	AI_Output (self, other,"DIA_Bukhart_UscanPlan_01_01"); //Ja nie wiem o niczym. Poza tym jestem zajęty.
 	AI_Output (other, self,"DIA_Bukhart_UscanPlan_15_02"); //Czerwona Latarnia.
 	AI_Output (self, other,"DIA_Bukhart_UscanPlan_01_03"); //Przecież to burdel w dzielnicy portowej w Khorinis. Ano tak, chodzi o to hasło co to je ustaliliśmy z Uscanem.
- +	AI_Output (self, other,"DIA_Bukhart_UscanPlan_01_04"); //Ile to już lat tam nie byłem? Jeszcze chyba jak za młodu. A niech mnie, kiedyś muszę znów odwiedzić to miasto! No dobrze, bo się rozgadałem...
- +	AI_Output (other, self,"DIA_Bukhart_UscanPlan_15_05"); //Uscan powiedział, że potrafisz dobrze wymieszać mąkę z piaskiem, by Eskel nic nie zauważył i upiekł z tego chleb.
- +	AI_Output (self, other,"DIA_Bukhart_UscanPlan_01_06"); //Znam się na tym. Pamiętam też tego złośliwca Eskela. Ludzie opowiadali o nim w portowej karczmie, jak tracili przez niego zęby.
- +	AI_Output (self, other,"DIA_Bukhart_UscanPlan_01_07"); //Mam mąkę, muszę ją jeszcze odpowiednio wymieszać z piaskiem. Wróć do mnie za 2 godziny.
- +	AI_Output (other, self,"DIA_Bukhart_UscanPlan_15_08"); //Tak zrobię.
+ 	AI_Output (self, other,"DIA_Bukhart_UscanPlan_01_04"); //Ile to już lat tam nie byłem? Jeszcze chyba jak za młodu. A niech mnie, kiedyś muszę znów odwiedzić to miasto! No dobrze, bo się rozgadałem...
+ 	AI_Output (other, self,"DIA_Bukhart_UscanPlan_15_05"); //Uscan powiedział, że potrafisz dobrze wymieszać mąkę z piaskiem, by Eskel nic nie zauważył i upiekł z tego chleb.
+ 	AI_Output (self, other,"DIA_Bukhart_UscanPlan_01_06"); //Znam się na tym. Pamiętam też tego złośliwca Eskela. Ludzie opowiadali o nim w portowej karczmie, jak tracili przez niego zęby.
+ 	AI_Output (self, other,"DIA_Bukhart_UscanPlan_01_07"); //Mam mąkę, muszę ją jeszcze odpowiednio wymieszać z piaskiem. Wróć do mnie za 2 godziny.
+	AI_Output (other, self,"DIA_Bukhart_UscanPlan_15_08"); //Tak zrobię.
 	
 	BukhartTime = Wld_GetDay() * 24 + Wld_GetHour() + 2;
 	

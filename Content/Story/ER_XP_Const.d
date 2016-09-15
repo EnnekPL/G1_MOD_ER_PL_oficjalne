@@ -31,9 +31,9 @@ const int XP_JobInOldMine			= 500;
 const int XP_YBerionDeath			= 300;
 const int XP_DostawaDoNO			= 75;
 const int XP_SellAlco				= 200;
-const int XP_DostawyAlco			= 55;
+const int XP_DostawyAlco			= 55;//nieaktywne
 const int XP_PrzepisNaZiolo			= 235;
-const int XP_KupiecNaZiolo			= 175;
+const int XP_KupiecNaZiolo			= 175;//nieaktywne
 //rozdział 3
 const int XP_PolowanieDoyle			= 250;
 const int XP_AboutKalom				= 150;

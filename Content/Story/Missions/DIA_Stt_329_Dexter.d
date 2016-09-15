@@ -454,50 +454,7 @@ FUNC VOID DIA_Dexter_GivePlant_Info()
 	
 	B_LogEntry(CH2_MessengerRecall, "Kupi³em roœlinê. Mogê wracaæ do Bractwa. ");
 };
-//========================================
-//-----------------> MocneZiele2
-//========================================
 
-INSTANCE DIA_Dexter_MocneZiele2 (C_INFO)
-{
-   npc          = STT_329_Dexter;
-   nr           = 1;
-   condition    = DIA_Dexter_MocneZiele2_Condition;
-   information  = DIA_Dexter_MocneZiele2_Info;
-   permanent	= FALSE;
-   description	= "Bandyci maj¹ na sprzeda¿ zupe³nie nowy rodzaj ziela.";
-};
-
-FUNC INT DIA_Dexter_MocneZiele2_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Bandyta_Pensja))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Dexter_MocneZiele2_Info()
-{
-    AI_Output (other, self ,"DIA_Dexter_MocneZiele2_15_01"); //Bandyci maj¹ na sprzeda¿ zupe³nie nowy rodzaj ziela.
-    AI_Output (self, other ,"DIA_Dexter_MocneZiele2_03_02"); //Hmm? Mam sta³ych dostawców w Bractwie. Skupujê wszystko od Nowicjuszy.
-    AI_Output (other, self ,"DIA_Dexter_MocneZiele2_15_03"); //Ci Nowicjusze chyba nie s¹ zbyt uczciwi w stosunku do ciebie.
-    AI_Output (other, self ,"DIA_Dexter_MocneZiele2_15_04"); //Opracowali przepis na œwietnego skrêta, jednak wszystko sprzedaj¹ do Nowego Obozu za twoimi plecami.
-    AI_Output (self, other ,"DIA_Dexter_MocneZiele2_03_05"); //Nic o tym nie s³ysza³em.
-    AI_Output (other, self ,"DIA_Dexter_MocneZiele2_15_06"); //Wykrad³em przepis i przekaza³em go naszemu alchemikowi. Teraz zostali z niczym.
-    //AI_Output (other, self ,"DIA_Dexter_MocneZiele2_15_07"); //Sprzedamy ci ziele o 5 bry³ek taniej ni¿ Nowicjusze.
-    AI_Output (other, self ,"DIA_Dexter_MocneZiele2_15_08"); //Mo¿emy wejœæ w uk³ad. Dostaniesz monopol na handlem nowym rodzajem jointów. Co ty na to?
-    AI_Output (self, other ,"DIA_Dexter_MocneZiele2_03_09"); //Wchodzê w to! Tylko ile dok³adnie mam p³aciæ?
-    AI_Output (other, self ,"DIA_Dexter_MocneZiele2_15_10"); //30 bry³ek rudy za sztukê.
-    AI_Output (self, other ,"DIA_Dexter_MocneZiele2_03_11"); //Czego wy tam do cholery napchaliœcie? Z³ota?!
-    AI_Output (self, other ,"DIA_Dexter_MocneZiele2_03_12"); //Jesteœ pewien, ¿e mi siê zwróci?
-    AI_Output (other, self ,"DIA_Dexter_MocneZiele2_15_13"); //Oczywiœcie. Zawsze mo¿esz podnieœæ cenê. 
-    AI_Output (self, other ,"DIA_Dexter_MocneZiele2_03_14"); //W takim razie czekam na dostawy, ale jeœli coœ krêcisz, to ciê za³atwiê!
-    B_LogEntry                     (CH1_NoweZiele3BAU,"Negocjacje z Dexterem to czysta przyjemnoœæ. Od razu przysta³ na moj¹ propozycjê.");
-
-    B_GiveXP (200);
-    AI_StopProcessInfos	(self);
-};
 
 //========================================
 //-----------------> SellElixirDexter

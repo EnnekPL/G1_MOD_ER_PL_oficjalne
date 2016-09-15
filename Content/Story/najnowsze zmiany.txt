@@ -9,6 +9,7 @@
 - naprawiono b³¹d z handlem u Cronosa
 - Gilberta nie mo¿na ju¿ zaprowadziæ do bractwa (w miejscu w którym jest pe³ni doœæ wa¿n¹ rolê)
 - gdy wyprowadzamy Flinta z obozu nie zaczepia nas Jarvis tylko jego kumpel, dialog zosta³ zmieniony tak ¿eby pasowa³ nawet po buncie 
-- pod klawieszem P dostêpne jest menu zdolnoœci myœliwskich (wczeœniej by³o jako przedmiot w ekwipunku)
+- pod klawiszem ";" dostêpne jest menu zdolnoœci myœliwskich (wczeœniej by³o jako przedmiot w ekwipunku)
 - zmieniony wygl¹d lorda Mertinosa
 - lordowie zostali wzmocnieni
+- poprawiony bug gry w którym mo¿na by³o po pobiciu przeciwnika zebraæ drugi raz XP za jego zabicie
