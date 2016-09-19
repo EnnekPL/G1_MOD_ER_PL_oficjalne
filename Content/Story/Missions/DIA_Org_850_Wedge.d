@@ -758,6 +758,7 @@ func void TRIA_KillFingers_info()
     var c_npc Fingers; 		Fingers = Hlp_GetNpc(STT_331_Fingers);
 	
     //TRIA_Invite(Fingers);   // Lade Robotnik in diesen Dialog ein
+	TRIA_Invite(Wedge); 
     TRIA_Invite(Fingers); // Lade Fingers in diesen Dialog ein
     TRIA_Start();         // Starte das Gespräch
     // Der Held und Wedge müssen/dürfen nicht eingeladen werden. Sie sind sowieso im Dialog.

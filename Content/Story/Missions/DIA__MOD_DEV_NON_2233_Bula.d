@@ -1,4 +1,3 @@
-
 //========================================
 //-----------------> Opcje
 //========================================
@@ -49,7 +48,15 @@ FUNC VOID DIA_Bula_Opcje_Info()
 	Info_AddChoice		(DIA_Bula_Opcje,"devmode -- unlock: dostawy alkoholu",DIA_Bula_DevMode21);
 	Info_AddChoice		(DIA_Bula_Opcje,"devmode -- guild to none",DIA_Bula_DevMode22);
 	Info_AddChoice		(DIA_Bula_Opcje,"devmode -- guild to org",DIA_Bula_DevMode23);
+	Info_AddChoice		(DIA_Bula_Opcje,"devmode -- rutyny do trialogów",DIA_Bula_DevMode24);
 	//Info_AddChoice		(DIA_Bula_Opcje,B_BuildLearnString(NAME_LearnStrength_1,LPCOST_ATTRIBUTE_STRENGTH,0)			,DIA_Bula_Opcje2);
+};
+
+func void DIA_Bula_DevMode24 ()
+{
+	Npc_ExchangeRoutine (ORG_850_Wedge, "hanargument");
+	Npc_ExchangeRoutine (STT_331_Fingers, "hanargument");
+	Npc_ExchangeRoutine (VLK_517_Buddler, "meetscatty");
 };
 
 func void DIA_Bula_DevMode23 ()

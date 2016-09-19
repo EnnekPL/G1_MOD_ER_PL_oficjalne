@@ -1494,13 +1494,11 @@ instance TRIA_ZakladyErensa (C_INFO)
     information = TRIA_ZakladyErensa_info;
     important   = true;
     permanent   = false;
-    //description = "TRIALOGTEST";
 };
 
 func int TRIA_ZakladyErensa_condition()
 {
 	if (Npc_GetDistToWP(hero,"OCR_STAND_WETT")<500) && (Npc_GetDistToWP(VLK_517_Buddler,"OCR_STAND_WETT")<500) && Npc_KnowsInfo (hero,DIA_Erens_ORE)
-	//&& (kapitel == 10)
 	{
     return TRUE;
 	};
@@ -1514,6 +1512,7 @@ func void TRIA_ZakladyErensa_info()
 	
     //TRIA_Invite(Robotnik);   // Lade Robotnik in diesen Dialog ein
     TRIA_Invite(Erens); // Lade Erens in diesen Dialog ein
+	TRIA_Invite(Scatty);
     TRIA_Start();         // Starte das Gespräch
     // Der Held und Diego müssen/dürfen nicht eingeladen werden. Sie sind sowieso im Dialog.
 

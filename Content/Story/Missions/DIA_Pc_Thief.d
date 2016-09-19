@@ -615,13 +615,11 @@ instance TRIA_BramaPlac (C_INFO)
     information = TRIA_BramaPlac_info;
     important   = true;
     permanent   = false;
-    //description = "TRIALOGTEST";
 };
 
 func int TRIA_BramaPlac_condition()
 {
 	if (Npc_GetDistToWP(hero,"OW_PATH_1_16_6")<300)
-	//&& (kapitel == 10)
 	{
     return TRUE;
 	};
@@ -634,6 +632,7 @@ func void TRIA_BramaPlac_info()
     var c_npc Gardist; 		Gardist = Hlp_GetNpc(GRD_254_Orry);
 	
     //TRIA_Invite(Robotnik);   // Lade Robotnik in diesen Dialog ein
+	TRIA_Invite(Diego);
     TRIA_Invite(Gardist); // Lade Gardist in diesen Dialog ein
     TRIA_Start();         // Starte das Gespräch
     // Der Held und Diego müssen/dürfen nicht eingeladen werden. Sie sind sowieso im Dialog.

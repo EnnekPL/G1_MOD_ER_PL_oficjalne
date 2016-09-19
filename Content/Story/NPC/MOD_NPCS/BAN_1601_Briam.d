@@ -66,6 +66,6 @@ daily_routine = Rtn_start_1601;
 
 FUNC VOID Rtn_start_1601 ()
 {
-	TA_Sleep		(00,00,08,00,"LOCATION_11_11");
+	TA_Sleep				(00,00,08,00,"LOCATION_11_11");
 	TA_PotionAlchemy		(08,00,22,00,"BALCHEMY");
 };

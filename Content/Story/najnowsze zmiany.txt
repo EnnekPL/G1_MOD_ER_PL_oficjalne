@@ -13,3 +13,5 @@
 - zmieniony wygl¹d lorda Mertinosa
 - lordowie zostali wzmocnieni
 - poprawiony bug gry w którym mo¿na by³o po pobiciu przeciwnika zebraæ drugi raz XP za jego zabicie
+- przerobione zadanie "Przepis na nowe ziele"
+- usuniête zadanie "Kupiec na ziele"
