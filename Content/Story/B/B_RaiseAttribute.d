@@ -24,7 +24,22 @@ func void B_RaiseAttribute (var int attribute,	var int value)
 	//PrintString = ConcatStrings(NAME_BuyAttributeSTR, AtrPlusSTRING);
 	msg2 = ConcatStrings(msg, " = ");
 	msg3 = ConcatStrings(msg2, posiadane_pkt);
-	PrintS_Ext		(msg3, COL_Lime);
+	if (attribute == ATR_STRENGTH)
+	{
+	PrintS_Ext		(msg3, COL_Yellow);
+	}
+	else if (attribute == ATR_DEXTERITY)
+	{
+	PrintS_Ext		(msg3, COL_Olive);
+	}
+	else if (attribute == ATR_MANA_MAX)
+	{
+	PrintS_Ext		(msg3, COL_Blue);
+	}
+	else if (attribute == ATR_HITPOINTS_MAX)
+	{
+	PrintS_Ext		(msg3, COL_Red);
+	};
 };
 
 

@@ -1,7 +1,7 @@
 // **************************************************
 // 						 EXIT 
 // **************************************************
-//sprawdzone przez gothic1210
+
 INSTANCE DIA_STT_331_Fingers_Exit (C_INFO)
 {
 	npc			= STT_331_Fingers;

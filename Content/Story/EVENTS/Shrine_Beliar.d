@@ -16,36 +16,41 @@ func void Beliar_S1 ()
 };
 
 //////////////////////////////////////////////
-// 					VAR
+// 					CONST
 //////////////////////////////////////////////
-var int Day_BeliarShrine;
-const string Print_NoBless 			= "Nie otrzyma³eœ b³ogos³awieñstwa";
-const string Print_BeliarIsHappy 	= "Beliara cieszy twoja modlitwa";
+const string Print_BeliarNoBless 			= "Nie otrzyma³eœ b³ogos³awieñstwa!";
+const string Print_BeliarIsHappy 	= "Beliara cieszy twoja modlitwa!";
+const string Print_BeliarPunished	= "Beliar ciê ukara³!";
+const string Print_BeliarFullMana	= "Beliar uleczy³ twoje rany!";
 
 //////////////////////////////////////////////
 // 					FUNC
 //////////////////////////////////////////////
-func void NoBless ()
+func void NoBlessBeliar ()
 {
-	PrintS_Ext (Print_NoBless,COL_WHITE);
+	PrintS_Ext (Print_BeliarNoBless,COL_WHITE);
 };
 
-func void NoBlessToday ()
+func void NoBlessBeliarToday ()
 {
 	PrintS_Ext (Print_BeliarIsHappy,COL_WHITE);
 };
 
-func void GodRestoreMana ()
+func void BeliarRestoreMana ()
 {
 	var int hero_mana; hero_mana = hero.attribute[ATR_MANA_MAX];
 	Npc_ChangeAttribute	(hero,	ATR_MANA,	hero_mana);
+	PrintS_Ext (Print_BeliarFullMana,COL_WHITE);
 };
 
-func void GodRestoreLife ()
+func void BeliarPunishedHero ()
 {
-	var int hero_life; hero_life = hero.attribute[ATR_HITPOINTS_MAX];
-	Npc_ChangeAttribute	(hero,	ATR_HITPOINTS,	hero_life);
-};
+	var int hero_life; hero_life = hero.attribute[ATR_HITPOINTS];
+	var int heropunishment; heropunishment = hero_life - 5;
+	Npc_ChangeAttribute	(hero,	ATR_HITPOINTS,-heropunishment);
+	Wld_PlayEffect("spellFX_Firestorm",  hero, hero, 0, 0, 0, FALSE );
+	PrintS_Ext (Print_BeliarPunished,COL_WHITE);
+};	
 
 ///////////////////////////////////////////
 // 					EXIT
@@ -76,7 +81,6 @@ FUNC VOID DIA_PC_HERO_EXIT_Beliar_Info()
 };
 
 
-
 ///////////////////////////////////////////
 // 					PRAY
 ///////////////////////////////////////////
@@ -103,17 +107,17 @@ FUNC VOID DIA_BeliarShrine_Pray_Info()
 {
     Info_ClearChoices	(DIA_BeliarShrine_Pray);
     Info_AddChoice		(DIA_BeliarShrine_Pray, DIALOG_BACK, DIA_BeliarShrine_Pray_BACK);
-	if (Npc_HasItems (hero, Itminugget) >= 1000)
-	{
-    Info_AddChoice		(DIA_BeliarShrine_Pray, "(Ofiara: 1000 bry³ek rudy)"	, DIA_BeliarShrine_Pray_1000Nuggets);
-	};
-	if (Npc_HasItems (hero, Itminugget) >= 500)
-	{
-	Info_AddChoice		(DIA_BeliarShrine_Pray, "(Ofiara: 500 bry³ek rudy)"		, DIA_BeliarShrine_Pray_500Nuggets);
-	};
 	if (Npc_HasItems (hero, Itminugget) >= 100)
 	{
-	Info_AddChoice		(DIA_BeliarShrine_Pray, "(Ofiara: 100 bry³ek rudy)"		, DIA_BeliarShrine_Pray_100Nuggets);
+    Info_AddChoice		(DIA_BeliarShrine_Pray, "(Ofiara: 100 bry³ek rudy)"	, DIA_BeliarShrine_Pray_100Nuggets);
+	};
+	if (Npc_HasItems (hero, Itminugget) >= 50)
+	{
+	Info_AddChoice		(DIA_BeliarShrine_Pray, "(Ofiara: 50 bry³ek rudy)"		, DIA_BeliarShrine_Pray_50Nuggets);
+	};
+	if (Npc_HasItems (hero, Itminugget) >= 10)
+	{
+	Info_AddChoice		(DIA_BeliarShrine_Pray, "(Ofiara: 10 bry³ek rudy)"		, DIA_BeliarShrine_Pray_10Nuggets);
 	};
 	Info_AddChoice		(DIA_BeliarShrine_Pray, "(Modlitwa bez ofiary)"			, DIA_BeliarShrine_Pray_0Nuggets);
 };
@@ -126,26 +130,98 @@ FUNC VOID DIA_BeliarShrine_Pray_BACK()
 FUNC VOID DIA_BeliarShrine_Pray_0Nuggets()
 {
 	var int lucky; lucky = Hlp_Random(100);
-    if (Day_BeliarShrine != wld_getday())
+	
+	if (Day_BeliarShrine != wld_getday())
 	{
-	Day_BeliarShrine = wld_getday();
-		if (lucky <= 4)
+		if (lucky <= 15)
 		{
-		B_RaiseAttribute	(ATR_MANA_MAX,	1);
+		B_RaiseAttribute	(ATR_HITPOINTS_MAX,	-1);
+		CreateInvItems (hero, Itminugget, 50);
+		PrintS_Ext ("Beliar zamieni³ twoj¹ krew na 50 bry³ek rudy!", COL_WHITE);
 		}
-		else if (lucky <= 10)
+		else if (lucky <= 50)
 		{
-		GodRestoreMana ();
+		BeliarPunishedHero ();
 		}
 		else 
 		{
-		NoBlessToday ();
+		NoBlessBeliarToday ();
+		};
+	}
+	else 
+	{
+	NoBlessBeliar ();
+	};
+	Day_BeliarShrine = wld_getday();
+	Info_ClearChoices	(DIA_BeliarShrine_Pray);
+};
+
+FUNC VOID DIA_BeliarShrine_Pray_10Nuggets()
+{
+	B_GiveInvItems (hero, PC_THIEF, Itminugget, 10);
+	Npc_RemoveInvItems (PC_THIEF, itminugget, 10);
+	var int lucky; lucky = Hlp_Random(100);
+    if (Day_BeliarShrine == wld_getday())
+	{
+		if (lucky <= 15)
+		{
+		B_RaiseAttribute	(ATR_HITPOINTS_MAX,	-1);
+		CreateInvItems (hero, Itminugget, 100);
+		PrintS_Ext ("Beliar zamieni³ twoj¹ krew na 100 bry³ek rudy!", COL_WHITE);
+		}
+		else if (lucky <= 30)
+		{
+		BeliarRestoreMana ();
+		}
+		else if (lucky <= 40)
+		{
+		BeliarPunishedHero ();
+		}
+		else
+		{
+		NoBlessBeliarToday ();
 		};
 	}
 	else
 	{
-	NoBless ();
+	NoBlessBeliar ();
 	};
+	Day_BeliarShrine = wld_getday();
+	Info_ClearChoices	(DIA_BeliarShrine_Pray);
+};
+
+FUNC VOID DIA_BeliarShrine_Pray_50Nuggets()
+{
+	B_GiveInvItems (hero, PC_THIEF, Itminugget, 50);
+	Npc_RemoveInvItems (PC_THIEF, itminugget, 50);
+	var int lucky; lucky = Hlp_Random(100);
+    if (Day_BeliarShrine == wld_getday())
+	{
+		if (lucky <= 15)
+		{
+		B_RaiseAttribute	(ATR_HITPOINTS_MAX,	-1);
+		CreateInvItems (hero, Itminugget, 150);
+		PrintS_Ext ("Beliar zamieni³ twoj¹ krew na 150 bry³ek rudy!", COL_WHITE);
+		}
+		else if (lucky <= 25)
+		{
+		BeliarPunishedHero ();
+		}
+		else if (lucky <= 50)
+		{
+		BeliarRestoreMana ();
+		}
+		else
+		{
+		NoBlessBeliarToday ();
+		};
+	}
+	else
+	{
+	NoBlessBeliar ();
+	};
+	Day_BeliarShrine = wld_getday();
+	Info_ClearChoices	(DIA_BeliarShrine_Pray);
 };
 
 FUNC VOID DIA_BeliarShrine_Pray_100Nuggets()
@@ -153,110 +229,41 @@ FUNC VOID DIA_BeliarShrine_Pray_100Nuggets()
 	B_GiveInvItems (hero, PC_THIEF, Itminugget, 100);
 	Npc_RemoveInvItems (PC_THIEF, itminugget, 100);
 	var int lucky; lucky = Hlp_Random(100);
-    if (Day_BeliarShrine != wld_getday())
+    if (Day_BeliarShrine == wld_getday())
 	{
-	Day_BeliarShrine = wld_getday();
-		if (lucky <= 4)
+		if (lucky <= 5)
 		{
-		B_RaiseAttribute	(ATR_MANA_MAX,	1);
+		B_RaiseAttribute	(ATR_HITPOINTS_MAX,	-1);
+		CreateInvItems (hero, Itminugget, 300);
+		PrintS_Ext ("Beliar zamieni³ twoj¹ krew na 300 bry³ek rudy!", COL_WHITE);
 		}
-		else if (lucky <= 10)
+		else if (lucky <= 15)
 		{
-		B_RaiseAttribute	(ATR_HITPOINTS_MAX,	1);
+		B_RaiseAttribute	(ATR_HITPOINTS_MAX,	-1);
+		CreateInvItems (hero, Itminugget, 200);
+		PrintS_Ext ("Beliar zamieni³ twoj¹ krew na 200 bry³ek rudy!", COL_WHITE);
 		}
 		else if (lucky <= 25)
 		{
-		GodRestoreMana ();
-		GodRestoreLife ();
-		}
-		else 
-		{
-		NoBlessToday ();
-		};
-	}
-	else
-	{
-	NoBless ();
-	};
-};
-
-FUNC VOID DIA_BeliarShrine_Pray_500Nuggets()
-{
-	B_GiveInvItems (hero, PC_THIEF, Itminugget, 500);
-	Npc_RemoveInvItems (PC_THIEF, itminugget, 500);
-	var int lucky; lucky = Hlp_Random(100);
-    if (Day_BeliarShrine != wld_getday())
-	{
-	Day_BeliarShrine = wld_getday();
-		if (lucky <= 8)
-		{
-		B_RaiseAttribute	(ATR_MANA_MAX,	1);
-		}
-		else if (lucky <= 16)
-		{
-		B_RaiseAttribute	(ATR_HITPOINTS_MAX,	1);
-		}
-		else if (lucky <= 50)
-		{
-		GodRestoreMana ();
-		GodRestoreLife ();
-		}
-		else 
-		{
-		NoBlessToday ();
-		};
-	}
-	else
-	{
-	NoBless ();
-	};
-};
-
-FUNC VOID DIA_BeliarShrine_Pray_1000Nuggets()
-{
-	B_GiveInvItems (hero, PC_THIEF, Itminugget, 1000);
-	Npc_RemoveInvItems (PC_THIEF, itminugget, 1000);
-	var int lucky; lucky = Hlp_Random(100);
-    if (Day_BeliarShrine != wld_getday())
-	{
-	Day_BeliarShrine = wld_getday();
-		if (lucky <= 8)
-		{
-			if (lucky <= 4)
-			{
-			B_RaiseAttribute	(ATR_MANA_MAX,	2);
-			}
-			else
-			{
-			B_RaiseAttribute	(ATR_MANA_MAX,	1);
-			};
-		}
-		else if (lucky <= 16)
-		{
-			if (lucky <= 8)
-			{
-			B_RaiseAttribute	(ATR_HITPOINTS_MAX,	3);
-			}
-			else
-			{
-			B_RaiseAttribute	(ATR_HITPOINTS_MAX,	1);
-			};
+		BeliarPunishedHero ();
 		}
 		else if (lucky <= 90)
 		{
-		GodRestoreMana ();
-		GodRestoreLife ();
+		BeliarRestoreMana ();
 		}
 		else 
 		{
-		NoBlessToday ();
+		NoBlessBeliarToday ();
 		};
 	}
 	else
 	{
-	NoBless ();
+	NoBlessBeliar ();
 	};
+	Day_BeliarShrine = wld_getday();
+	Info_ClearChoices	(DIA_BeliarShrine_Pray);
 };
+
 //========================================
 //-----------------> MAGIC_SWORD_2
 //========================================
@@ -268,7 +275,7 @@ INSTANCE DIA_PC_HERO_MAGIC_SWORD_2 (C_INFO)
    condition    = DIA_PC_HERO_MAGIC_SWORD_2_Condition;
    information  = DIA_PC_HERO_MAGIC_SWORD_2_Info;
    permanent	= FALSE;
-   description	= "Ulepsz: Miecz Rozpacz (250 z³tych monet)";
+   description	= "(Ulepsz: Miecz Rozpaczy za 250 monet)";
 };
 
 FUNC INT DIA_PC_HERO_MAGIC_SWORD_2_Condition()

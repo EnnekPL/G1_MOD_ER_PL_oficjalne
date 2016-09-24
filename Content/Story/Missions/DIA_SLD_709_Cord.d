@@ -1012,12 +1012,15 @@ FUNC VOID DIA_Cord_IHaveStone_Info()
 {
     AI_Output (other, self ,"DIA_Cord_IHaveStone_15_01"); //By³em w kopalni.
     AI_Output (self, other ,"DIA_Cord_IHaveStone_03_02"); //Co wydarzy³o siê w œrodku?
-    AI_Output (other, self ,"DIA_Cord_IHaveStone_03_03"); //Spotka³em ledwie ¿ywego Kopacza. Opowiedzia³ mi o artefakcie, który rzekomo ma wp³yw na o¿ywieñców. W posiadaniu artefaktu by³ pewien nekromanta. Zabi³em go i zabra³em kamieñ.
-    AI_Output (self, other ,"DIA_Cord_IHaveStone_03_04"); //Nekromanta? Cholera jasna, uda³o ci siê pokonaæ tego skurwiela? Jestem pod wra¿eniem. Zawsze trzymam siê z dala od mrocznej magii. 
-	AI_Output (other, self ,"DIA_Cord_IHaveStone_03_05"); //Potrzebujê chwili odpoczynku.
-	AI_Output (self, other ,"DIA_Cord_IHaveStone_03_06"); //Nic dziwnego! Nale¿y ci siê jak psu buda! Wracaj do Obozu, a my sprawdzimy czy nie krêci siê tu ¿aden œmieæ. 
-	AI_Output (self, other ,"DIA_Cord_IHaveStone_03_07"); //W sumie, skoro kopalnia jest ju¿ w miarê bezpiecznym miejscem, to mo¿esz zaproponowaæ Lee, aby wys³a³ tu paru ludzi. Kolejne Ÿród³o rudy da³oby nam przewagê.
-	AI_Output (self, other ,"DIA_Cord_IHaveStone_03_08"); //Zobaczê, co da siê zrobiæ. 
+    AI_Output (other, self ,"DIA_Cord_IHaveStone_03_03"); //Spotka³em ledwie ¿ywego Kopacza. Opowiedzia³ mi o artefakcie, który rzekomo ma wp³yw na o¿ywieñców. 
+	AI_Output (other, self ,"DIA_Cord_IHaveStone_03_04"); //W posiadaniu artefaktu by³ pewien nekromanta. Zabi³em go i zabra³em kamieñ.
+    AI_Output (self, other ,"DIA_Cord_IHaveStone_03_05"); //Nekromanta? Cholera jasna, uda³o ci siê pokonaæ tego skurwiela? 
+	AI_Output (self, other ,"DIA_Cord_IHaveStone_03_06"); //Jestem pod wra¿eniem. Zawsze trzymam siê z dala od mrocznej magii. 
+	AI_Output (other, self ,"DIA_Cord_IHaveStone_03_07"); //Potrzebujê chwili odpoczynku.
+	AI_Output (self, other ,"DIA_Cord_IHaveStone_03_08"); //Nic dziwnego! Nale¿y ci siê jak psu buda! Wracaj do Obozu, a my sprawdzimy czy nie krêci siê tu ¿aden œmieæ. 
+	AI_Output (self, other ,"DIA_Cord_IHaveStone_03_09"); //W sumie, skoro kopalnia jest ju¿ w miarê bezpiecznym miejscem, to mo¿esz zaproponowaæ Lee, aby wys³a³ tu paru ludzi. 
+	AI_Output (self, other ,"DIA_Cord_IHaveStone_03_10"); //Kolejne Ÿród³o rudy da³oby nam przewagê.
+	AI_Output (other, self ,"DIA_Cord_IHaveStone_03_11"); //Zobaczê, co da siê zrobiæ. 
 	
 	//nowe zadanie 
 	MIS_NC_Mine = LOG_RUNNING;

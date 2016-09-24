@@ -131,7 +131,7 @@ FUNC VOID Info_Diego_Gamestart_Choice_Dex()
 	AI_Output(hero,self,"CM_Info_Diego_Gamestart_Choice_Dex_15_00"); //Zosta³em przy³apany na kradzie¿y ³adunku rudy.
 	AI_Output(hero,self,"CM_Info_Diego_Gamestart_Choice_Dex_15_01"); //Niestety, facet, który mi pomaga³ wyda³ mnie stra¿y i zebra³ ca³¹ nagrodê. 
 	//PrintScreen	("Zrêcznoœæ +3", -1,-1,"FONT_OLD_20_WHITE.TGA",3);
-	PrintS_Ext ("Zrêcznoœæ + 3",COL_Lime) ;
+	PrintS_Ext ("Zrêcznoœæ + 3",COL_Olive) ;
 	hero.attribute[ATR_DEXTERITY] = hero.attribute[ATR_DEXTERITY]+3;
 	Info_ClearChoices(Info_Diego_Gamestart );
 };
@@ -141,7 +141,7 @@ FUNC VOID Info_Diego_Gamestart_Choice_Str()
 	AI_Output(hero,self,"CM_Info_Diego_Gamestart_Choice_Str_15_00"); //Ujmê to tak: jeden z tych królewskich przydupasów mia³ trochê za d³ugi jêzyk.
 	AI_Output(hero,self,"CM_Info_Diego_Gamestart_Choice_Str_15_01"); //O wiele za d³ugi. 	
 	//PrintScreen	("Si³a +3", -1,-1,"FONT_OLD_20_WHITE.TGA",3);
-	PrintS_Ext ("Si³a + 3",COL_Lime) ;
+	PrintS_Ext ("Si³a + 3",COL_Yellow) ;
 	hero.attribute[ATR_STRENGTH] = hero.attribute[ATR_STRENGTH]+3;
 	//B_RaiseAttribute	(ATR_STRENGTH,	3);
 	Info_ClearChoices(Info_Diego_Gamestart );
@@ -152,7 +152,7 @@ FUNC VOID Info_Diego_Gamestart_Choice_Man()
 	AI_Output(hero,self,"CM_Info_Diego_Gamestart_Choice_Man_15_00"); //Siedzia³em w karczmie i rozmawia³em o Królu i podatkach.
 	AI_Output(hero,self,"CM_Info_Diego_Gamestart_Choice_Man_15_01"); //Niestety za póŸno sobie przypomnia³em, ¿e ten kto mówi prawdê powinien mieæ szybkiego konia.
 	//PrintScreen	("Mana +3", -1,-1,"FONT_OLD_20_WHITE.TGA",3);
-	PrintS_Ext ("Mana + 3",COL_Lime) ;
+	PrintS_Ext ("Mana + 3",COL_Blue) ;
 	hero.attribute[ATR_MANA] 		= hero.attribute[ATR_MANA]+3;
 	hero.attribute[ATR_MANA_MAX] 	= hero.attribute[ATR_MANA_MAX]+3;
 	//B_RaiseAttribute	(ATR_MANA_MAX,	3);

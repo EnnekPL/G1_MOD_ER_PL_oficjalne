@@ -1,3 +1,26 @@
+***
+
+- brama do opuszczonej kopalni nie otwiera siê na pocz¹tku rozdzia³u tylko dopiero po przyjêciu odpowiedniego questa
+- drobne zmiany w menu statystyk
+- uporz¹dkowane zadania z czwartego rodzia³u (opuszczona kopalnia)
+- naprawiony czwarty rozdzia³ u Bandytów (zadanie z kopalni¹)
+	* dojrzalsze dialogi
+	* zmieniona przyczyna zaginiêcia Draxa
+	* ulepszone wpisy i poprawki w ich kolejnoœci
+	* usuniête zbêdne wpisy
+	* usuniêtne zbêdne popl¹tane skrypty
+- zwiêkszona wymagana iloœæ sk³adników dla mikstury si³y
+- Stanley ma wiêcej si³y
+- naprawiony b³¹d z podstawki "krêgupoziom"
+- ulepszone wpisy do zadania od Okyla
+- zmniejszone wymagania zrêcznoœci porz¹dnego miecza jednorêcznego
+- naprawiony b³¹d z wpisem pojawiaj¹cym siê, gdy wejdziemy do jaskini ko³o przejœcia na ziemie orków
+- poprawiona wypowiadana przez bohatera kwestia Andrewa
+- poprawiona kolejnoœæ dialogów u Stanleya
+- zmodyfikowane i ulepszone dialogi o buncie z Horacym, Rufusem, Pockiem i Homerem, oraz ulepszone wpisy do tego zadania
+
+***
+
 - naprawiony b³¹d z oddawaniem dwóch pierwszych zadañ dla nowicjusza zlecanych przez Cor Kaloma (b³¹d PB)
 - naprawiony warunek w dialogu z R¹czk¹ (gdy mamy go noc¹ odnaleŸæ w karczmie Silasa)
 - zmieniony dialog z R¹czk¹ noc¹ w karczmie (nie prosi nas ju¿ o litoœæ - dialog by³ s³abiutki)

@@ -1,0 +1,550 @@
+
+
+
+//............................................
+// LeGo view handles
+var int H_Bar; // hp
+var int M_Bar; // mana
+var int S_Bar; // stamina
+var int A_Bar; // air
+//............................................
+
+//............................................
+// alpha variables
+var int H_Bar_Alpha;
+var int M_Bar_Alpha;
+var int S_Bar_Alpha;
+var int A_Bar_Alpha;
+//............................................
+
+//............................................
+// speed constants
+const int Bar_FadeIn = 20;
+const int Bar_FadeOut = 10;
+//............................................
+
+//............................................
+// misc
+const int POS_OFFSCREEN = 8192 + 256;
+//............................................
+
+//========================================
+// Prototype for Bars
+//========================================
+prototype ImmersiveBar(Bar) {
+    x = Print_Screen[PS_X] / 2;
+    y = Print_Screen[PS_Y] - 20;
+    barTop = 3;
+    barLeft = 5;
+    width = 200;
+    height = 20;
+    backTex = "Bar_Back.tga";
+    barTex = "Bar_Misc.tga";
+    value = 100;
+    valueMax = 100;
+};
+
+//======================================
+// HalthBar Instance
+//======================================
+instance HealthBar(ImmersiveBar) {
+	x =  128 ;
+	barTex = "Bar_Health.tga";
+};
+
+//======================================
+// ManaBar Instance
+//======================================
+instance ManaBar(ImmersiveBar) {
+	x = Print_Screen[PS_X] - 128 ;
+	barTex = "Bar_Mana.tga";
+};
+
+//======================================
+// StaminaBar Instance
+//======================================
+/*
+instance StaminaBar(ImmersiveBar) {
+	x = Print_Screen[PS_X] / 2;
+	barTex = "Bar_Misc.tga";
+};
+*/
+//======================================
+// AirBar Instance
+//======================================
+instance AirBar(ImmersiveBar) {
+	x = Print_Screen[PS_X] / 2;
+	y = Print_Screen[PS_Y] - 40;
+	barTex = "Bar_Air.tga";
+};
+
+//======================================
+// Function that sets up bar values
+//======================================
+func void HUD_Loop() {
+    
+    if(!Hlp_IsValidHandle(H_Bar)) {
+        H_Bar = Bar_Create(HealthBar);
+    };
+	if(!Hlp_IsValidHandle(M_Bar)) {
+        M_Bar = Bar_Create(ManaBar); 
+    };
+	//if(!Hlp_IsValidHandle(S_Bar)) {
+  //      S_Bar = Bar_Create(StaminaBar);
+   // };
+	if(!Hlp_IsValidHandle(A_Bar)) {
+        A_Bar = Bar_Create(AirBar);
+    };
+
+    Bar_SetMax(H_Bar, hero.attribute[ATR_HITPOINTS_MAX]);
+    Bar_SetValue(H_Bar, hero.attribute[ATR_HITPOINTS]);
+	
+	Bar_SetMax(M_Bar, hero.attribute[ATR_MANA_MAX]);
+    Bar_SetValue(M_Bar, hero.attribute[ATR_MANA]);
+	
+	//Bar_SetMax(S_Bar, Stamina_max);
+   // Bar_SetValue(S_Bar, Stamina);
+	
+	var oCViewStatusBar miscBar; miscBar = _^(MEM_ReadInt(MEM_ReadInt(MEMINT_oGame_Pointer_Address)+144));
+	
+	var int _swimVal; _swimVal = miscBar.maxHigh; // max val
+	var float swimVal2; swimVal2 = castFromIntf (_swimVal); // float
+	var int swimVal; swimVal = FloatToInt (swimVal2); // int
+	
+	Bar_SetMax(A_Bar, swimVal);
+	
+	_swimVal = miscBar.currentValue; // curr value
+	swimVal2 = castFromIntf (_swimVal);
+	swimVal = FloatToInt (swimVal2); // int
+    Bar_SetValue(A_Bar, swimVal);
+};
+
+//======================================
+// HealthBar FadeIn/Out function
+//======================================
+// [internal]
+func void _HealthBar_Show() {
+	
+	if (H_Bar_Alpha == 0) {
+		Bar_Show(H_Bar);
+	};
+	
+	H_Bar_Alpha += Bar_FadeIn;
+	
+	if (H_Bar_Alpha>255) {
+		H_Bar_Alpha = 255;
+		FF_Remove (_HealthBar_Show);
+	};
+	
+	Bar_SetAlpha(H_Bar,H_Bar_Alpha);
+};
+// [internal]
+func void _HealthBar_Hide() {
+	
+	H_Bar_Alpha -= Bar_FadeOut;
+	
+	if (H_Bar_Alpha<0) {
+		H_Bar_Alpha = 0;
+		Bar_Hide(H_Bar);
+		FF_Remove (_HealthBar_Hide);
+	};	
+	
+	Bar_SetAlpha(H_Bar,H_Bar_Alpha);
+};
+
+func void HealthBar_Show() {
+	if (FF_Active(_HealthBar_Hide)) {
+		FF_Remove (_HealthBar_Hide);	
+	};
+	FF_ApplyOnce(_HealthBar_Show);
+};
+
+func void HealthBar_Hide() {
+	if (FF_Active(_HealthBar_Show)) {
+		FF_Remove (_HealthBar_Show);	
+	};
+	FF_ApplyOnce(_HealthBar_Hide);
+};
+//======================================
+// ManaBar FadeIn/Out function
+//======================================
+// [internal]
+func void _ManaBar_Show() {
+
+	if (M_Bar_Alpha == 0) {
+		Bar_Show(M_Bar);
+	};
+	
+	M_Bar_Alpha += Bar_FadeIn;
+	
+	if (M_Bar_Alpha>255) {
+		M_Bar_Alpha = 255;
+		FF_Remove (_ManaBar_Show);
+	};
+	
+	Bar_SetAlpha(M_Bar,M_Bar_Alpha);
+};
+// [internal]
+func void _ManaBar_Hide() {
+	M_Bar_Alpha -= Bar_FadeOut;
+	
+	if (M_Bar_Alpha<0) {
+		M_Bar_Alpha = 0;
+		Bar_Hide(M_Bar);
+		FF_Remove (_ManaBar_Hide);
+	};	
+	
+	Bar_SetAlpha(M_Bar,M_Bar_Alpha);
+};
+//======================================
+func void ManaBar_Show() {
+	if (FF_Active(_ManaBar_Hide)) {
+		FF_Remove (_ManaBar_Hide);	
+	};
+	FF_ApplyOnce(_ManaBar_Show);
+};
+//======================================
+func void ManaBar_Hide() {
+	if (FF_Active(_ManaBar_Show)) {
+		FF_Remove (_ManaBar_Show);	
+	};
+	FF_ApplyOnce(_ManaBar_Hide);
+};
+//======================================
+// StaminaBar FadeIn/Out function
+//======================================
+/*
+// [internal]
+func void _StaminaBar_Show() {
+
+	if (S_Bar_Alpha == 0) {
+		Bar_Show(S_Bar);
+	};
+	
+	S_Bar_Alpha += Bar_FadeIn;
+	
+	if (S_Bar_Alpha>255) {
+		S_Bar_Alpha = 255;
+		
+		FF_Remove (_StaminaBar_Show);
+	};
+	
+	Bar_SetAlpha(S_Bar,S_Bar_Alpha);
+};
+// [internal]
+func void _StaminaBar_Hide() {
+	S_Bar_Alpha -= Bar_FadeOut;
+	
+	if (S_Bar_Alpha<0) {
+		S_Bar_Alpha = 0;
+		Bar_Hide(S_Bar);
+		FF_Remove (_StaminaBar_Hide);
+	};	
+	
+	Bar_SetAlpha(S_Bar,S_Bar_Alpha);
+};
+//======================================
+func void StaminaBar_Show() {
+	if (FF_Active(_StaminaBar_Hide)) {
+		FF_Remove (_StaminaBar_Hide);	
+	};
+	FF_ApplyOnce(_StaminaBar_Show);
+};
+//======================================
+func void StaminaBar_Hide() {
+	if (FF_Active(_StaminaBar_Show)) {
+		FF_Remove (_StaminaBar_Show);	
+	};
+	FF_ApplyOnce(_StaminaBar_Hide);
+};*/
+//======================================
+// AirBar FadeIn/Out function
+//======================================
+// [internal]
+func void _AirBar_Show() {
+
+	if (A_Bar_Alpha == 0) {
+		Bar_Show(A_Bar);
+	};
+
+	A_Bar_Alpha += Bar_FadeIn;
+	
+	if (A_Bar_Alpha>255) {
+		A_Bar_Alpha = 255;
+		FF_Remove (AirBar_Show);
+	};
+	
+	Bar_SetAlpha(A_Bar,A_Bar_Alpha);
+};
+// [internal]
+func void _AirBar_Hide() {
+	A_Bar_Alpha -= Bar_FadeOut;
+	
+	if (A_Bar_Alpha<0) {
+		A_Bar_Alpha = 0;
+		Bar_Hide(A_Bar);
+		FF_Remove (AirBar_Hide);
+	};	
+	
+	Bar_SetAlpha(A_Bar,A_Bar_Alpha);
+};
+//======================================
+func void AirBar_Show() {
+	if (FF_Active(_AirBar_Hide)) {
+		FF_Remove (_AirBar_Hide);	
+	};
+	FF_ApplyOnce(_AirBar_Show);
+};
+//======================================
+func void AirBar_Hide() {
+	if (FF_Active(_AirBar_Show)) {
+		FF_Remove (_AirBar_Show);	
+	};
+	FF_ApplyOnce(_AirBar_Hide);
+};
+//==================================
+// Main FadeIn/Out logic
+//==================================
+func void ImmersiveHUD_func()
+{
+	
+	var int hpBar_ptr; hpBar_ptr = MEM_ReadInt(MEM_ReadInt(MEMINT_oGame_Pointer_Address)+140);
+	var int miscBar_ptr; miscBar_ptr = MEM_ReadInt(MEM_ReadInt(MEMINT_oGame_Pointer_Address)+144);
+	var int manaBar_ptr; manaBar_ptr = MEM_ReadInt(MEM_ReadInt(MEMINT_oGame_Pointer_Address)+148);
+	
+	var oCViewStatusBar hpBar; 		hpBar 	= _^(hpBar_ptr);
+	var oCViewStatusBar miscBar;	miscBar = _^(miscBar_ptr);
+	var oCViewStatusBar manaBar;	manaBar = _^(manaBar_ptr);
+	
+	
+	hpBar.zCView_vposy = POS_OFFSCREEN;
+	miscBar.zCView_vposy = POS_OFFSCREEN;
+	manaBar.zCView_vposy = POS_OFFSCREEN;
+
+	if ((MEM_Game.pause_screen)) || (!InfoManager_HasFinished()) 	{
+		HealthBar_Hide();
+		ManaBar_Hide();
+		//StaminaBar_Hide();	
+		AirBar_Hide();
+		return;
+	};	
+	
+	
+	//if (PC_HasOpenInventory() || C_NpcIsInFightMode(hero)) {
+	//	HealthBar_Show();
+	//	ManaBar_Show();
+		//StaminaBar_Show();
+	//	return;
+	//};
+	
+	if (hero.attribute[ATR_HITPOINTS] < hero.attribute[ATR_HITPOINTS_MAX]) {
+		HealthBar_Show();
+	} else {
+		HealthBar_Hide();
+	};
+	
+	if (hero.attribute[ATR_MANA] < hero.attribute[ATR_MANA_MAX]) {
+		ManaBar_Show();
+	} else {
+		ManaBar_Hide();	
+	};
+	
+	
+	if (Ani_BodyStateContains(hero,BS_DIVE)) {
+		AirBar_Show();
+	} else {
+		AirBar_Hide();
+	};
+};
+
+//==================================
+// Init func, for Init_global
+//==================================
+func void ImmersiveHUD_Init() {
+    //FF_ApplyOnce(HUD_Loop);
+};
+
+//===================================================
+// Get ani name
+//===================================================
+func string Get_CurrentAniName(var int npc_inst)
+{
+	var ocNpc npc; npc = Hlp_getNpc(npc_inst);
+	
+	var int hlp;
+	hlp = MEM_ReadInt(npc.anictrl+104);//zCModel 		
+	if(hlp) 
+	{
+		hlp = MEM_ReadInt(hlp+56);//*ActiveAniLayer1			
+		if(hlp)
+		{
+			hlp = MEM_ReadInt(hlp);//*oCAni				
+			if(hlp)
+			{ 
+				return MEM_ReadString(hlp+36); // This will read active ani name(?)
+			};//aniname(zstring)
+		};
+	};
+	return "ERR";
+};
+//===================================================
+// Check bodystate
+//===================================================
+func int  Ani_BodyStateContains	(var C_NPC slf, var int bodystate)
+{
+	if ((Npc_GetBodyState(slf)&(BS_MAX|BS_FLAG_INTERRUPTABLE|BS_FLAG_FREEHANDS)) == (bodystate&(BS_MAX|BS_FLAG_INTERRUPTABLE|BS_FLAG_FREEHANDS)))			// sowohl bei der Abfrage als auch beim Vergleichswert die höhren Bits ausmaskieren!
+	{																// ...ja!
+		return TRUE;
+	}
+	else
+	{
+		return FALSE;
+	};
+};
+
+
+
+
+var int CSColor;
+var int CSAlpha;
+
+func string oCInfo__OnGetText() {
+	return MEM_ReadString (ECX + 48);
+};
+
+func void SetChoicesPos() {
+	var int manager; manager = MEM_ReadInt (MEMINT_oCInformationManager_Address + 28);
+	var zCArray arr; arr = _^ (manager + 172);
+	
+	Print_GetScreenSize();
+	
+	var int i; i = 0;
+	var int loop; loop = MEM_StackPos.position;
+	
+	if (arr.array)
+	&& (i < arr.numInArray) {
+																		// Change if other
+		var int len; len = Print_GetStringWidth (oCInfo__OnGetText(), "font_old_10_white.tga");
+		MEM_WriteInt (manager + 56, len);
+		
+		i += 1;
+		MEM_StackPos.position = loop;
+	};
+};
+
+func void CSEnable()
+{/*
+	var int View_ptr;
+View_ptr=MEM_InstGetOffset(MEM_GAME)+52;
+View_ptr=MEM_ReadInt(View_ptr);
+View_ptr=View_ptr+60;
+MEM_WriteInt(View_ptr,0);
+View_ptr=View_ptr+8;
+MEM_WriteInt(View_ptr,1);
+		//disable zoom effect
+	View_ptr=MEM_InstGetOffset(MEM_GAME)+60;
+	View_ptr=MEM_ReadInt(View_ptr);
+	View_ptr=View_ptr+4;
+	MEM_WriteInt(View_ptr,0);
+
+	//remove tex - conversation
+	View_ptr=MEM_InstGetOffset(MEM_GAME)+52;
+	View_ptr=MEM_ReadInt(View_ptr);
+	View_ptr=View_ptr+60;
+	MEM_WriteInt(View_ptr,0);
+	//change ypos of conversation window
+		View_ptr=View_ptr+8;
+	MEM_WriteInt(View_ptr,1);
+		//choicebox move
+	View_ptr = MEM_ReadInt(MEMINT_oCInformationManager_Address+28);
+	var int screen_y_size;
+	var int tmp;
+	screen_y_size=MEM_ReadInt(View_ptr+76); //4c
+	screen_y_size=MEM_ReadInt(screen_y_size+68); //44
+	view_ptr = view_ptr+60;//
+	if(screen_y_size<=768)
+	{
+	tmp=screen_y_size*21/24 - ((screen_y_size*21/24)%1);
+	MEM_WriteInt(View_ptr,tmp);//3C /nothing /0 - y moved		
+	view_ptr = view_ptr+8;
+	MEM_WriteInt(View_ptr,screen_y_size-tmp);//44 //rest of screen for box			
+	}
+	else
+	{
+		tmp=screen_y_size*113/128; tmp = tmp - (tmp%1);
+		if(screen_y_size-tmp>120)//if there is more than 120 px at the cinema bar - center box
+		{
+		tmp = tmp + (screen_y_size-tmp-120)/2;
+		tmp = tmp - (tmp%1);
+		MEM_WriteInt(View_ptr,tmp);//3C  - y moved		
+		view_ptr = view_ptr+8;
+		MEM_WriteInt(View_ptr,120);//44 //120 px for box				
+		}
+		else
+		{
+		MEM_WriteInt(View_ptr,tmp);//3C  - y moved			view_ptr = view_ptr+8;
+		view_ptr = view_ptr+8;		
+		MEM_WriteInt(View_ptr,screen_y_size-tmp);//44 //rest of screen for box			
+		};
+	};
+	view_ptr = view_ptr+28;
+	MEM_WriteInt(View_ptr,0); //60 tex*/
+
+	MEM_Game.array_view_visible[3] = 1;
+	MEM_Game.array_view_enabled[3] = 1;
+	
+	var int CSptr; CSptr = MEM_InstGetOffset (MEM_Game) + 12;	
+				   CSptr = MEM_ReadInt (CSptr);
+				   CSptr += 2248;
+	MEM_WriteInt (CSptr, 1);
+				   CSptr += 4;	CSColor = CSptr;
+	MEM_WriteInt (CSptr, 0);
+
+	var int CSViewptr; CSViewptr = MEM_InstGetOffset (MEM_Game) + 60;
+					   CSViewptr = MEM_ReadInt (CSViewptr);
+					   CSViewptr += 4;
+	MEM_WriteInt (CSViewptr, 0);
+	
+	//SetChoicesPos();
+	
+	var int info; info = MEM_ReadInt (MEMINT_oCInformationManager_Address + 28);
+	MEM_WriteInt (info + 104, RGBA (0, 0, 0, 0));
+	MEM_WriteInt (info + 52, 8192);
+	
+	var int box; box = MEM_InstGetOffset (MEM_GAME) + 52;
+				 box = MEM_ReadInt(box);
+				 box += 60;
+	MEM_WriteInt (box, 0);
+	
+	var int View_ptr;
+View_ptr=MEM_InstGetOffset(MEM_GAME)+52;
+View_ptr=MEM_ReadInt(View_ptr);
+View_ptr=View_ptr+60;
+MEM_WriteInt(View_ptr,0);
+View_ptr=View_ptr+8;
+MEM_WriteInt(View_ptr,1);
+};
+
+func void SetCSColor() {
+	CSEnable();
+	
+	CSAlpha += 5;
+	
+	if (CSAlpha >= 255) { 
+		CSAlpha = 255;
+	};
+	MEM_WriteInt (CSColor, RGBA (0, 0, 0, CSAlpha));
+};
+
+func void _SetCSColor() {
+	CSEnable();
+	
+	CSAlpha -= 5;
+	MEM_WriteInt (CSColor, RGBA (0, 0, 0, CSAlpha));
+	
+	if (CSAlpha <= 4) {
+		CSAlpha = 0;
+		FF_Remove (_SetCSColor);
+	};
+};
+

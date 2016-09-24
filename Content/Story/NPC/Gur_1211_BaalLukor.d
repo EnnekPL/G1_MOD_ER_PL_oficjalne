@@ -11,8 +11,8 @@ instance GUR_1211_BaalLukor (Npc_Default)
 	id 			=		1211;
 		
 	///-------- abilities --------
-	attribute[ATR_STRENGTH]	 		=	20;
-	attribute[ATR_DEXTERITY] 		=	40;
+	attribute[ATR_STRENGTH]	 		=	50;
+	attribute[ATR_DEXTERITY] 		=	50;
 	attribute[ATR_MANA_MAX] 		=	100;
 	attribute[ATR_MANA] 			=	100;
 	attribute[ATR_HITPOINTS_MAX] 	=	388;
@@ -32,7 +32,7 @@ instance GUR_1211_BaalLukor (Npc_Default)
 	Npc_SetTalentSkill	(self,	NPC_TALENT_MAGE,		6);
 	Npc_SetTalentSkill (self, NPC_TALENT_1H,7);		
 	//-------- inventory --------
-	EquipItem			(self,	ItMw_1H_Sword_02);
+	EquipItem			(self,	ItMw_1H_Mace_War_04);
 	
 	//------------- AI -------------
 	daily_routine	=	Rtn_start_1211;
@@ -94,7 +94,7 @@ instance GUR_1213_BaalLukor_world (Npc_Default)
 	id 			=		1213;
 		
 	///-------- abilities --------
-	attribute[ATR_STRENGTH]	 		=	20;
+	attribute[ATR_STRENGTH]	 		=	50;
 	attribute[ATR_DEXTERITY] 		=	40;
 	attribute[ATR_MANA_MAX] 		=	100;
 	attribute[ATR_MANA] 			=	100;
@@ -116,7 +116,7 @@ instance GUR_1213_BaalLukor_world (Npc_Default)
 	Npc_SetTalentSkill (self, NPC_TALENT_1H,7);		
 
 	//-------- inventory --------
-	EquipItem			(self,	ItMw_1H_Sword_02);
+	EquipItem			(self,	ItMw_1H_Mace_War_04);
 	
 	//------------- AI -------------
 	daily_routine	=	Rtn_start_1213;

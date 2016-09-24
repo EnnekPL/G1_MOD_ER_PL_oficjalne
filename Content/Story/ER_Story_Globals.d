@@ -128,6 +128,8 @@ var int CanTellToGomezAboutSecretPath;//Thorus & Gomez (zadanie ze œcie¿k¹ do wo
 //***Wld_GetDay***
 var int NiepokornyKopacz;
 var int UscanDay;
+var int Day_BeliarShrine;
+var int Day_InnosShrine;
 
 //***Pomocnicze***
 //***Przedmioty***
