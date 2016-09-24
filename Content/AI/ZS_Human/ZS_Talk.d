@@ -9,32 +9,7 @@ FUNC VOID B_RefuseTalk()
 // **********************************************************
 
 FUNC void ZS_Talk ()
-{
-
-//Trade_ChangeSellMultiplier (1/2);
-/*	const int hook = 0;
-	if (!hook) {
-		const int oCInfo__OnGetText = 6707312;
-		HookEngine (oCInfo__OnGetText, 8, "Choices_Hook");
-		
-		hook = 1;
-	};
-	FF_ApplyOnce (SetCSColor);*/
-	
-	//if (Npc_IsInState(self,ZS_Teaching_Joru)) ||  (Npc_IsInState(self,ZS_Teaching_Tondral))  ||  (Npc_IsInState(self,ZS_Teaching_Cadar)) ||  (Npc_IsInState(self,ZS_Teaching_Tyon))  ||  (Npc_IsInState(self,ZS_PracticeSword)) 
-	//{
-	//AI_Output (self, other,"hymnmm"); //Hmm? 
-		//AI_PlayAni		(self,	"T_PLUNDER");
-		//AI_PlayAni (self,"T_LGUARD_2_STAND");	
-		//AI_RemoveWeapon (self);
-	//};
-	
-/*	if (self == hlp_getnpc(GRD_2003_Stra¿nik))
-	{
-	AI_Output		(self,hero,"Destroy_practicesword"); //Witaj!
-	print ("jsaasass");
-	};*/
-	
+{	
 	PrintDebugNpc(PD_ZS_FRAME,"ZS_Talk");
 	//Npc_PercEnable		(self,	PERC_NPCCOMMAND			,	B_CheckSheath);
 	//-------- Verhindern von Mehrfachansprechen der NSCs --------
@@ -169,8 +144,6 @@ FUNC INT ZS_Talk_Loop ()
 FUNC VOID ZS_Talk_End ()
 {
     PrintDebugNpc(PD_ZS_FRAME,"ZS_Talk_End");
-	//FF_Remove (SetCSColor);
-	//FF_ApplyOnce (_SetCSColor);
 };
 
 
