@@ -25,6 +25,7 @@ const int XP_AtakNaKonwoj			= 150;
 const int XP_NaprawaPaliasady		= 75;
 const int XP_EBR_Rings				= 345;
 const int XP_ZamekWejscie			= 125;
+const int XP_LurkersInHut			= 100;
 //rozdział 2
 const int XP_HelpGUR				= 250;
 const int XP_JobInOldMine			= 500;

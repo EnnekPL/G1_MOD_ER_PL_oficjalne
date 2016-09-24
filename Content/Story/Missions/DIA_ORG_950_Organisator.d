@@ -46,7 +46,7 @@ FUNC INT DIA_Organisator50_HELLO1_Condition()
 FUNC VOID DIA_Organisator50_HELLO1_Info()
 {
     AI_Output (other, self ,"DIA_Organisator50_HELLO1_15_01"); //Co tam?
-    if (MIS_TopielceWChacie == LOG_SUCCESS)
+    if (MIS_LurkersInHut == LOG_SUCCESS)
     {
         AI_Output (self, other ,"DIA_Organisator50_HELLO1_03_02"); //Dobrze. Tutaj przynajmniej mam spokój.
     }

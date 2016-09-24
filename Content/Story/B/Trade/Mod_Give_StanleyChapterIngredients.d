@@ -11,7 +11,7 @@ func void B_Give_StanleyChapter1Ingredients ()
 	CreateInvItems  (self,ItMi_Alchemy_Alcohol_01,4);
 	
 	CreateInvItems  (self,ItMi_Plants_Swampherb_01,3);
-	CreateInvItems  (self,itmiflask,10);//kolby
+	CreateInvItems  (self,itmiflask,6);//kolby
 
 };
 
@@ -33,7 +33,7 @@ func void B_Give_StanleyChapter3Ingredients ()
 	CreateInvItems  (self,ItMi_Alchemy_Syrianoil_01,2);
 	CreateInvItems  (self,ItMi_Alchemy_Moleratlubric_01,5);
 	CreateInvItems  (self,ItMi_Alchemy_Alcohol_01,7);
-	CreateInvItems  (self,itmiflask,10);//kolby
+	CreateInvItems  (self,itmiflask,4);//kolby
 };
 
 func void B_Give_StanleyChapter4Ingredients ()

@@ -312,7 +312,7 @@ const string CH1_ZnowuZapierdalam   	= "Kto ukrad³ pos¹¿ek Klina?";
 const string CH1_NekInNC      			= "Droga do Nowego Obozu";
 const string CH1_AwansJakoKret      	= "Œcie¿ka Kreta";
 const string CH1_MapForRatford      	= "Mapa dla Ratforda";
-const string CH1_TopielcewChacie    	= "Rybacka chata";
+
 const string CH1_Trzej_Lordowie     	= "Trzej Lordowie";
 const string CH1_ZabijThompsona     	= "Zlecenie Will'a"; 
 const string CH1_KopalniaZlota      	= "Kopalnia z³ota";

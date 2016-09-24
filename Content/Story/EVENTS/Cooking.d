@@ -20,9 +20,9 @@ INSTANCE DIA_PC_Hero_Cook_EXIT(C_INFO)
 {
 	npc             = PC_Hero;
 	nr              = 999;
-	condition	= DIA_PC_Hero_Cook_EXIT_Condition;
-	information	= DIA_PC_Hero_Cook_EXIT_Info;
-	permanent	= TRUE;
+	condition		= DIA_PC_Hero_Cook_EXIT_Condition;
+	information		= DIA_PC_Hero_Cook_EXIT_Info;
+	permanent		= TRUE;
 	description     = DIALOG_ENDE;
 };
 
@@ -67,27 +67,27 @@ FUNC VOID DIA_PC_Hero_Soups_Info()
 {
     Info_ClearChoices		(DIA_PC_Hero_Soups);
 	Info_AddChoice		(DIA_PC_Hero_Soups, DIALOG_BACK, DIA_PC_Hero_Soups_Back);
-	if (Npc_HasItems (other, przepis_zupaserowa) >=1)
+	if (Npc_HasItems (hero, przepis_zupaserowa) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa serowa", DIA_PC_Hero_Soups_ChesseSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisSnafSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisSnafSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Potrawka z chrz¹szcza", DIA_PC_Hero_Soups_BugsSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisMoleratSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisMoleratSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z kretoszczura", DIA_PC_Hero_Soups_MoleratSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisCrawelSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisCrawelSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pe³zacza", DIA_PC_Hero_Soups_BeastSopu);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisScaSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisScaSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Rosó³ ze œcierwojada", DIA_PC_Hero_Soups_Rosolek);
 	};
-	if (Npc_HasItems (other, RezepturenFish) >=1)
+	if (HeroKnows_CookingFish == TRUE)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga têczowego", DIA_PC_Hero_Soups_F1);
 	Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga", DIA_PC_Hero_Soups_F2);
@@ -110,27 +110,27 @@ FUNC VOID DIA_PC_Hero_Soups_F1()
 	B_giveXP (10);
 	    Info_ClearChoices		(DIA_PC_Hero_Soups);
 	Info_AddChoice		(DIA_PC_Hero_Soups, DIALOG_BACK, DIA_PC_Hero_Soups_Back);
-	if (Npc_HasItems (other, przepis_zupaserowa) >=1)
+	if (Npc_HasItems (hero, przepis_zupaserowa) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa serowa", DIA_PC_Hero_Soups_ChesseSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisSnafSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisSnafSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Potrawka z chrz¹szcza", DIA_PC_Hero_Soups_BugsSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisMoleratSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisMoleratSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z kretoszczura", DIA_PC_Hero_Soups_MoleratSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisCrawelSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisCrawelSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pe³zacza", DIA_PC_Hero_Soups_BeastSopu);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisScaSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisScaSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Rosó³ ze œcierwojada", DIA_PC_Hero_Soups_Rosolek);
 	};
-	if (Npc_HasItems (other, RezepturenFish) >=1)
+	if (HeroKnows_CookingFish == TRUE)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga têczowego", DIA_PC_Hero_Soups_F1);
 	Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga", DIA_PC_Hero_Soups_F2);
@@ -142,27 +142,27 @@ FUNC VOID DIA_PC_Hero_Soups_F1()
     AI_StopProcessInfos	(self);     
     Info_ClearChoices		(DIA_PC_Hero_Soups);
 	Info_AddChoice		(DIA_PC_Hero_Soups, DIALOG_BACK, DIA_PC_Hero_Soups_Back);
-	if (Npc_HasItems (other, przepis_zupaserowa) >=1)
+	if (Npc_HasItems (hero, przepis_zupaserowa) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa serowa", DIA_PC_Hero_Soups_ChesseSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisSnafSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisSnafSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Potrawka z chrz¹szcza", DIA_PC_Hero_Soups_BugsSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisMoleratSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisMoleratSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z kretoszczura", DIA_PC_Hero_Soups_MoleratSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisCrawelSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisCrawelSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pe³zacza", DIA_PC_Hero_Soups_BeastSopu);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisScaSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisScaSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Rosó³ ze œcierwojada", DIA_PC_Hero_Soups_Rosolek);
 	};
-	if (Npc_HasItems (other, RezepturenFish) >=1)
+	if (HeroKnows_CookingFish == TRUE)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga têczowego", DIA_PC_Hero_Soups_F1);
 	Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga", DIA_PC_Hero_Soups_F2);
@@ -182,27 +182,27 @@ FUNC VOID DIA_PC_Hero_Soups_F2()
 	B_giveXP (10);
 	    Info_ClearChoices		(DIA_PC_Hero_Soups);
 	Info_AddChoice		(DIA_PC_Hero_Soups, DIALOG_BACK, DIA_PC_Hero_Soups_Back);
-	if (Npc_HasItems (other, przepis_zupaserowa) >=1)
+	if (Npc_HasItems (hero, przepis_zupaserowa) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa serowa", DIA_PC_Hero_Soups_ChesseSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisSnafSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisSnafSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Potrawka z chrz¹szcza", DIA_PC_Hero_Soups_BugsSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisMoleratSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisMoleratSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z kretoszczura", DIA_PC_Hero_Soups_MoleratSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisCrawelSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisCrawelSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pe³zacza", DIA_PC_Hero_Soups_BeastSopu);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisScaSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisScaSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Rosó³ ze œcierwojada", DIA_PC_Hero_Soups_Rosolek);
 	};
-	if (Npc_HasItems (other, RezepturenFish) >=1)
+	if (HeroKnows_CookingFish == TRUE)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga têczowego", DIA_PC_Hero_Soups_F1);
 	Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga", DIA_PC_Hero_Soups_F2);
@@ -214,27 +214,27 @@ FUNC VOID DIA_PC_Hero_Soups_F2()
     AI_StopProcessInfos	(self);  
     Info_ClearChoices		(DIA_PC_Hero_Soups);
 	Info_AddChoice		(DIA_PC_Hero_Soups, DIALOG_BACK, DIA_PC_Hero_Soups_Back);
-	if (Npc_HasItems (other, przepis_zupaserowa) >=1)
+	if (Npc_HasItems (hero, przepis_zupaserowa) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa serowa", DIA_PC_Hero_Soups_ChesseSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisSnafSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisSnafSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Potrawka z chrz¹szcza", DIA_PC_Hero_Soups_BugsSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisMoleratSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisMoleratSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z kretoszczura", DIA_PC_Hero_Soups_MoleratSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisCrawelSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisCrawelSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pe³zacza", DIA_PC_Hero_Soups_BeastSopu);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisScaSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisScaSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Rosó³ ze œcierwojada", DIA_PC_Hero_Soups_Rosolek);
 	};
-	if (Npc_HasItems (other, RezepturenFish) >=1)
+	if (HeroKnows_CookingFish == TRUE)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga têczowego", DIA_PC_Hero_Soups_F1);
 	Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga", DIA_PC_Hero_Soups_F2);
@@ -254,27 +254,27 @@ FUNC VOID DIA_PC_Hero_Soups_F3()
 	B_giveXP (10);
 	    Info_ClearChoices		(DIA_PC_Hero_Soups);
 	Info_AddChoice		(DIA_PC_Hero_Soups, DIALOG_BACK, DIA_PC_Hero_Soups_Back);
-	if (Npc_HasItems (other, przepis_zupaserowa) >=1)
+	if (Npc_HasItems (hero, przepis_zupaserowa) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa serowa", DIA_PC_Hero_Soups_ChesseSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisSnafSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisSnafSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Potrawka z chrz¹szcza", DIA_PC_Hero_Soups_BugsSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisMoleratSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisMoleratSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z kretoszczura", DIA_PC_Hero_Soups_MoleratSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisCrawelSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisCrawelSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pe³zacza", DIA_PC_Hero_Soups_BeastSopu);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisScaSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisScaSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Rosó³ ze œcierwojada", DIA_PC_Hero_Soups_Rosolek);
 	};
-	if (Npc_HasItems (other, RezepturenFish) >=1)
+	if (HeroKnows_CookingFish == TRUE)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga têczowego", DIA_PC_Hero_Soups_F1);
 	Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga", DIA_PC_Hero_Soups_F2);
@@ -286,27 +286,27 @@ FUNC VOID DIA_PC_Hero_Soups_F3()
     AI_StopProcessInfos	(self);     
     Info_ClearChoices		(DIA_PC_Hero_Soups);
 	Info_AddChoice		(DIA_PC_Hero_Soups, DIALOG_BACK, DIA_PC_Hero_Soups_Back);
-	if (Npc_HasItems (other, przepis_zupaserowa) >=1)
+	if (Npc_HasItems (hero, przepis_zupaserowa) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa serowa", DIA_PC_Hero_Soups_ChesseSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisSnafSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisSnafSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Potrawka z chrz¹szcza", DIA_PC_Hero_Soups_BugsSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisMoleratSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisMoleratSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z kretoszczura", DIA_PC_Hero_Soups_MoleratSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisCrawelSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisCrawelSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pe³zacza", DIA_PC_Hero_Soups_BeastSopu);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisScaSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisScaSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Rosó³ ze œcierwojada", DIA_PC_Hero_Soups_Rosolek);
 	};
-	if (Npc_HasItems (other, RezepturenFish) >=1)
+	if (HeroKnows_CookingFish == TRUE)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga têczowego", DIA_PC_Hero_Soups_F1);
 	Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga", DIA_PC_Hero_Soups_F2);
@@ -326,27 +326,27 @@ FUNC VOID DIA_PC_Hero_Soups_F4()
 	B_giveXP (10);
 	    Info_ClearChoices		(DIA_PC_Hero_Soups);
 	Info_AddChoice		(DIA_PC_Hero_Soups, DIALOG_BACK, DIA_PC_Hero_Soups_Back);
-	if (Npc_HasItems (other, przepis_zupaserowa) >=1)
+	if (Npc_HasItems (hero, przepis_zupaserowa) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa serowa", DIA_PC_Hero_Soups_ChesseSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisSnafSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisSnafSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Potrawka z chrz¹szcza", DIA_PC_Hero_Soups_BugsSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisMoleratSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisMoleratSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z kretoszczura", DIA_PC_Hero_Soups_MoleratSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisCrawelSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisCrawelSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pe³zacza", DIA_PC_Hero_Soups_BeastSopu);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisScaSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisScaSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Rosó³ ze œcierwojada", DIA_PC_Hero_Soups_Rosolek);
 	};
-	if (Npc_HasItems (other, RezepturenFish) >=1)
+	if (HeroKnows_CookingFish == TRUE)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga têczowego", DIA_PC_Hero_Soups_F1);
 	Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga", DIA_PC_Hero_Soups_F2);
@@ -358,27 +358,27 @@ FUNC VOID DIA_PC_Hero_Soups_F4()
     AI_StopProcessInfos	(self);    
     Info_ClearChoices		(DIA_PC_Hero_Soups);
 	Info_AddChoice		(DIA_PC_Hero_Soups, DIALOG_BACK, DIA_PC_Hero_Soups_Back);
-	if (Npc_HasItems (other, przepis_zupaserowa) >=1)
+	if (Npc_HasItems (hero, przepis_zupaserowa) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa serowa", DIA_PC_Hero_Soups_ChesseSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisSnafSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisSnafSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Potrawka z chrz¹szcza", DIA_PC_Hero_Soups_BugsSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisMoleratSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisMoleratSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z kretoszczura", DIA_PC_Hero_Soups_MoleratSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisCrawelSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisCrawelSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pe³zacza", DIA_PC_Hero_Soups_BeastSopu);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisScaSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisScaSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Rosó³ ze œcierwojada", DIA_PC_Hero_Soups_Rosolek);
 	};
-	if (Npc_HasItems (other, RezepturenFish) >=1)
+	if (HeroKnows_CookingFish == TRUE)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga têczowego", DIA_PC_Hero_Soups_F1);
 	Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga", DIA_PC_Hero_Soups_F2);
@@ -399,27 +399,27 @@ FUNC VOID DIA_PC_Hero_Soups_ChesseSoup()
 	B_giveXP (10);
 	    Info_ClearChoices		(DIA_PC_Hero_Soups);
 	Info_AddChoice		(DIA_PC_Hero_Soups, DIALOG_BACK, DIA_PC_Hero_Soups_Back);
-	if (Npc_HasItems (other, przepis_zupaserowa) >=1)
+	if (Npc_HasItems (hero, przepis_zupaserowa) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa serowa", DIA_PC_Hero_Soups_ChesseSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisSnafSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisSnafSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Potrawka z chrz¹szcza", DIA_PC_Hero_Soups_BugsSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisMoleratSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisMoleratSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z kretoszczura", DIA_PC_Hero_Soups_MoleratSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisCrawelSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisCrawelSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pe³zacza", DIA_PC_Hero_Soups_BeastSopu);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisScaSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisScaSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Rosó³ ze œcierwojada", DIA_PC_Hero_Soups_Rosolek);
 	};
-	if (Npc_HasItems (other, RezepturenFish) >=1)
+	if (HeroKnows_CookingFish == TRUE)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga têczowego", DIA_PC_Hero_Soups_F1);
 	Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga", DIA_PC_Hero_Soups_F2);
@@ -431,27 +431,27 @@ FUNC VOID DIA_PC_Hero_Soups_ChesseSoup()
     AI_StopProcessInfos	(self);   
     Info_ClearChoices		(DIA_PC_Hero_Soups);
 	Info_AddChoice		(DIA_PC_Hero_Soups, DIALOG_BACK, DIA_PC_Hero_Soups_Back);
-	if (Npc_HasItems (other, przepis_zupaserowa) >=1)
+	if (Npc_HasItems (hero, przepis_zupaserowa) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa serowa", DIA_PC_Hero_Soups_ChesseSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisSnafSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisSnafSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Potrawka z chrz¹szcza", DIA_PC_Hero_Soups_BugsSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisMoleratSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisMoleratSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z kretoszczura", DIA_PC_Hero_Soups_MoleratSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisCrawelSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisCrawelSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pe³zacza", DIA_PC_Hero_Soups_BeastSopu);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisScaSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisScaSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Rosó³ ze œcierwojada", DIA_PC_Hero_Soups_Rosolek);
 	};
-	if (Npc_HasItems (other, RezepturenFish) >=1)
+	if (HeroKnows_CookingFish == TRUE)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga têczowego", DIA_PC_Hero_Soups_F1);
 	Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga", DIA_PC_Hero_Soups_F2);
@@ -473,27 +473,27 @@ FUNC VOID DIA_PC_Hero_Soups_BugsSoup()
 	B_giveXP (10);
 	    Info_ClearChoices		(DIA_PC_Hero_Soups);
 	Info_AddChoice		(DIA_PC_Hero_Soups, DIALOG_BACK, DIA_PC_Hero_Soups_Back);
-	if (Npc_HasItems (other, przepis_zupaserowa) >=1)
+	if (Npc_HasItems (hero, przepis_zupaserowa) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa serowa", DIA_PC_Hero_Soups_ChesseSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisSnafSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisSnafSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Potrawka z chrz¹szcza", DIA_PC_Hero_Soups_BugsSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisMoleratSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisMoleratSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z kretoszczura", DIA_PC_Hero_Soups_MoleratSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisCrawelSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisCrawelSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pe³zacza", DIA_PC_Hero_Soups_BeastSopu);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisScaSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisScaSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Rosó³ ze œcierwojada", DIA_PC_Hero_Soups_Rosolek);
 	};
-	if (Npc_HasItems (other, RezepturenFish) >=1)
+	if (HeroKnows_CookingFish == TRUE)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga têczowego", DIA_PC_Hero_Soups_F1);
 	Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga", DIA_PC_Hero_Soups_F2);
@@ -505,27 +505,27 @@ FUNC VOID DIA_PC_Hero_Soups_BugsSoup()
     AI_StopProcessInfos	(self);    
     Info_ClearChoices		(DIA_PC_Hero_Soups);
 	Info_AddChoice		(DIA_PC_Hero_Soups, DIALOG_BACK, DIA_PC_Hero_Soups_Back);
-	if (Npc_HasItems (other, przepis_zupaserowa) >=1)
+	if (Npc_HasItems (hero, przepis_zupaserowa) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa serowa", DIA_PC_Hero_Soups_ChesseSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisSnafSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisSnafSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Potrawka z chrz¹szcza", DIA_PC_Hero_Soups_BugsSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisMoleratSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisMoleratSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z kretoszczura", DIA_PC_Hero_Soups_MoleratSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisCrawelSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisCrawelSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pe³zacza", DIA_PC_Hero_Soups_BeastSopu);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisScaSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisScaSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Rosó³ ze œcierwojada", DIA_PC_Hero_Soups_Rosolek);
 	};
-	if (Npc_HasItems (other, RezepturenFish) >=1)
+	if (HeroKnows_CookingFish == TRUE)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga têczowego", DIA_PC_Hero_Soups_F1);
 	Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga", DIA_PC_Hero_Soups_F2);
@@ -547,27 +547,27 @@ FUNC VOID DIA_PC_Hero_Soups_MoleratSoup()
 	B_giveXP (10);
 	    Info_ClearChoices		(DIA_PC_Hero_Soups);
 	Info_AddChoice		(DIA_PC_Hero_Soups, DIALOG_BACK, DIA_PC_Hero_Soups_Back);
-	if (Npc_HasItems (other, przepis_zupaserowa) >=1)
+	if (Npc_HasItems (hero, przepis_zupaserowa) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa serowa", DIA_PC_Hero_Soups_ChesseSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisSnafSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisSnafSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Potrawka z chrz¹szcza", DIA_PC_Hero_Soups_BugsSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisMoleratSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisMoleratSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z kretoszczura", DIA_PC_Hero_Soups_MoleratSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisCrawelSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisCrawelSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pe³zacza", DIA_PC_Hero_Soups_BeastSopu);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisScaSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisScaSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Rosó³ ze œcierwojada", DIA_PC_Hero_Soups_Rosolek);
 	};
-	if (Npc_HasItems (other, RezepturenFish) >=1)
+	if (HeroKnows_CookingFish == TRUE)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga têczowego", DIA_PC_Hero_Soups_F1);
 	Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga", DIA_PC_Hero_Soups_F2);
@@ -579,27 +579,27 @@ FUNC VOID DIA_PC_Hero_Soups_MoleratSoup()
     AI_StopProcessInfos	(self);        
     Info_ClearChoices		(DIA_PC_Hero_Soups);
 	Info_AddChoice		(DIA_PC_Hero_Soups, DIALOG_BACK, DIA_PC_Hero_Soups_Back);
-	if (Npc_HasItems (other, przepis_zupaserowa) >=1)
+	if (Npc_HasItems (hero, przepis_zupaserowa) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa serowa", DIA_PC_Hero_Soups_ChesseSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisSnafSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisSnafSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Potrawka z chrz¹szcza", DIA_PC_Hero_Soups_BugsSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisMoleratSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisMoleratSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z kretoszczura", DIA_PC_Hero_Soups_MoleratSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisCrawelSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisCrawelSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pe³zacza", DIA_PC_Hero_Soups_BeastSopu);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisScaSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisScaSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Rosó³ ze œcierwojada", DIA_PC_Hero_Soups_Rosolek);
 	};
-	if (Npc_HasItems (other, RezepturenFish) >=1)
+	if (HeroKnows_CookingFish == TRUE)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga têczowego", DIA_PC_Hero_Soups_F1);
 	Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga", DIA_PC_Hero_Soups_F2);
@@ -621,27 +621,27 @@ FUNC VOID DIA_PC_Hero_Soups_BeastSopu()
 	B_giveXP (10);
 	    Info_ClearChoices		(DIA_PC_Hero_Soups);
 	Info_AddChoice		(DIA_PC_Hero_Soups, DIALOG_BACK, DIA_PC_Hero_Soups_Back);
-	if (Npc_HasItems (other, przepis_zupaserowa) >=1)
+	if (Npc_HasItems (hero, przepis_zupaserowa) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa serowa", DIA_PC_Hero_Soups_ChesseSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisSnafSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisSnafSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Potrawka z chrz¹szcza", DIA_PC_Hero_Soups_BugsSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisMoleratSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisMoleratSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z kretoszczura", DIA_PC_Hero_Soups_MoleratSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisCrawelSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisCrawelSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pe³zacza", DIA_PC_Hero_Soups_BeastSopu);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisScaSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisScaSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Rosó³ ze œcierwojada", DIA_PC_Hero_Soups_Rosolek);
 	};
-	if (Npc_HasItems (other, RezepturenFish) >=1)
+	if (HeroKnows_CookingFish == TRUE)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga têczowego", DIA_PC_Hero_Soups_F1);
 	Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga", DIA_PC_Hero_Soups_F2);
@@ -653,27 +653,27 @@ FUNC VOID DIA_PC_Hero_Soups_BeastSopu()
     AI_StopProcessInfos	(self);       
     Info_ClearChoices		(DIA_PC_Hero_Soups);
 	Info_AddChoice		(DIA_PC_Hero_Soups, DIALOG_BACK, DIA_PC_Hero_Soups_Back);
-	if (Npc_HasItems (other, przepis_zupaserowa) >=1)
+	if (Npc_HasItems (hero, przepis_zupaserowa) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa serowa", DIA_PC_Hero_Soups_ChesseSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisSnafSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisSnafSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Potrawka z chrz¹szcza", DIA_PC_Hero_Soups_BugsSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisMoleratSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisMoleratSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z kretoszczura", DIA_PC_Hero_Soups_MoleratSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisCrawelSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisCrawelSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pe³zacza", DIA_PC_Hero_Soups_BeastSopu);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisScaSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisScaSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Rosó³ ze œcierwojada", DIA_PC_Hero_Soups_Rosolek);
 	};
-	if (Npc_HasItems (other, RezepturenFish) >=1)
+	if (HeroKnows_CookingFish == TRUE)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga têczowego", DIA_PC_Hero_Soups_F1);
 	Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga", DIA_PC_Hero_Soups_F2);
@@ -695,27 +695,27 @@ FUNC VOID DIA_PC_Hero_Soups_Rosolek()
 	B_giveXP (10);
 	    Info_ClearChoices		(DIA_PC_Hero_Soups);
 	Info_AddChoice		(DIA_PC_Hero_Soups, DIALOG_BACK, DIA_PC_Hero_Soups_Back);
-	if (Npc_HasItems (other, przepis_zupaserowa) >=1)
+	if (Npc_HasItems (hero, przepis_zupaserowa) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa serowa", DIA_PC_Hero_Soups_ChesseSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisSnafSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisSnafSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Potrawka z chrz¹szcza", DIA_PC_Hero_Soups_BugsSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisMoleratSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisMoleratSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z kretoszczura", DIA_PC_Hero_Soups_MoleratSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisCrawelSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisCrawelSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pe³zacza", DIA_PC_Hero_Soups_BeastSopu);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisScaSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisScaSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Rosó³ ze œcierwojada", DIA_PC_Hero_Soups_Rosolek);
 	};
-	if (Npc_HasItems (other, RezepturenFish) >=1)
+	if (HeroKnows_CookingFish == TRUE)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga têczowego", DIA_PC_Hero_Soups_F1);
 	Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga", DIA_PC_Hero_Soups_F2);
@@ -727,27 +727,27 @@ FUNC VOID DIA_PC_Hero_Soups_Rosolek()
     AI_StopProcessInfos	(self);      
     Info_ClearChoices		(DIA_PC_Hero_Soups);
 	Info_AddChoice		(DIA_PC_Hero_Soups, DIALOG_BACK, DIA_PC_Hero_Soups_Back);
-	if (Npc_HasItems (other, przepis_zupaserowa) >=1)
+	if (Npc_HasItems (hero, przepis_zupaserowa) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa serowa", DIA_PC_Hero_Soups_ChesseSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisSnafSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisSnafSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Potrawka z chrz¹szcza", DIA_PC_Hero_Soups_BugsSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisMoleratSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisMoleratSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z kretoszczura", DIA_PC_Hero_Soups_MoleratSoup);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisCrawelSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisCrawelSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pe³zacza", DIA_PC_Hero_Soups_BeastSopu);
 	};
-	if (Npc_HasItems (other, ItWe_PrzepisScaSoup) >=1)
+	if (Npc_HasItems (hero, ItWe_PrzepisScaSoup) >=1)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Rosó³ ze œcierwojada", DIA_PC_Hero_Soups_Rosolek);
 	};
-	if (Npc_HasItems (other, RezepturenFish) >=1)
+	if (HeroKnows_CookingFish == TRUE)
     {
     Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga têczowego", DIA_PC_Hero_Soups_F1);
 	Info_AddChoice		(DIA_PC_Hero_Soups, "Zupa z pstr¹ga", DIA_PC_Hero_Soups_F2);

@@ -68,7 +68,7 @@ INSTANCE DIA_JIM_Frau (C_INFO)
 
 FUNC INT DIA_JIM_Frau_Condition()
 {
-	if (Npc_KnowsInfo (hero,DIA_JIM_Hello))
+	if (Npc_KnowsInfo (hero,DIA_JIM_Hello)) &&  (Npc_GetTrueGuild(hero) != GIL_KDF) 
 	{
 		return 1;
 	};
@@ -106,7 +106,7 @@ INSTANCE DIA_JIM_PERM (C_INFO)
 
 FUNC INT DIA_JIM_PERM_Condition()
 {
-	if (Npc_KnowsInfo (hero,DIA_JIM_Frau))
+	if (Npc_KnowsInfo (hero,DIA_JIM_Hello))
 	{
 		return 1;
 	};
@@ -115,7 +115,7 @@ FUNC INT DIA_JIM_PERM_Condition()
 FUNC VOID DIA_JIM_PERM_Info()
 {	
 	AI_Output (other, self,"DIA_JIM_PERM_15_00"); //Jak leci?
-	AI_Output (self, other,"DIA_JIM_PERM_08_01"); //Nie najgorzej. Interes siê krêci. 
+	AI_Output (self, other,"DIA_JIM_PERM_08_01"); //Nienajgorzej. Interes siê krêci. 
 };
 
 //========================================
@@ -134,8 +134,10 @@ INSTANCE DIA_Jim_Leczenie (C_INFO)
 
 FUNC INT DIA_Jim_Leczenie_Condition()
 {
-if (Npc_KnowsInfo (hero,DIA_JIM_Hello)) {
-    return TRUE; };
+	if (Npc_KnowsInfo (hero,DIA_JIM_Hello)) 
+	{
+    return TRUE; 
+	};
 };
 
 FUNC VOID DIA_Jim_Leczenie_Info()
@@ -230,7 +232,7 @@ FUNC VOID DIA_Jim_HELP_WARRIOR_POMOGE()
 
 FUNC VOID DIA_Jim_HELP_WARRIOR_NIE()
 {
-Jim_odrzucilem = true;
+	Jim_odrzucilem = true;
     AI_Output (other, self ,"DIA_Jim_HELP_WARRIOR_NIE_15_01"); //Nie jestem zainteresowany.
     B_LogEntry                     (CH1_RannyWojownik,"Odrzuci³em propozycjê Jima. Poszukam kogoœ innego.");
     Info_ClearChoices		(DIA_Jim_HELP_WARRIOR);
@@ -253,7 +255,7 @@ INSTANCE DIA_Jim_Church (C_INFO)
 
 FUNC INT DIA_Jim_Church_Condition()
 {
-    if (Jim_odrzucilem == false)
+    if (Jim_odrzucilem == FALSE)
     && (Npc_KnowsInfo (hero, DIA_Jim_HELP_WARRIOR))
     {
     return TRUE;
@@ -267,8 +269,6 @@ FUNC VOID DIA_Jim_Church_Info()
     AI_Output (self, other ,"DIA_Jim_Church_03_02"); //Tych ku czci Innosa. Ma³o kto na nie przychodzi. Tutejsi ludzie stracili wiarê.
     AI_Output (self, other ,"DIA_Jim_Church_03_03"); //Mimo to Damarok dzieñ w dzieñ wychodzi przed kaplicê, by modliæ siê do Innosa.
 };
-
-
 
 //========================================
 //-----------------> OBIETNICA
@@ -297,7 +297,7 @@ FUNC INT DIA_Jim_OBIETNICA_Condition()
 
 FUNC VOID DIA_Jim_OBIETNICA_Info()
 {
-    AI_Output (self, other ,"DIA_Jim_OBIETNICA_03_01"); //Jesteœ! Obowi¹zuje nas umowa, jesteœ mi winien przys³ugê.
+    AI_Output (self, other ,"DIA_Jim_OBIETNICA_03_01"); //Nareszcie! Obowi¹zuje nas umowa, jesteœ mi winien przys³ugê.
 
     Info_ClearChoices		(DIA_Jim_OBIETNICA);
     Info_AddChoice		(DIA_Jim_OBIETNICA, "Co mam zrobiæ?", DIA_Jim_OBIETNICA_POMOGE);
@@ -313,9 +313,9 @@ FUNC VOID DIA_Jim_OBIETNICA_POMOGE()
     AI_Output (other, self ,"DIA_Jim_OBIETNICA_POMOGE_15_05"); //W porz¹dku, spróbujê go odnaleŸæ.
     MIS_JimsSword = LOG_RUNNING;
 
-    Log_CreateTopic            (CH1_JimsSword, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_JimsSword, LOG_RUNNING);
-    B_LogEntry                     (CH1_JimsSword,"Mam odnaleŸæ miecz Jima, który zgubi³ nieopodal placu wymian. To nie powinno byæ zbyt trudne...");
+    Log_CreateTopic            		(CH1_JimsSword, LOG_MISSION);
+    Log_SetTopicStatus       		(CH1_JimsSword, LOG_RUNNING);
+    B_LogEntry                      (CH1_JimsSword,"Mam odnaleŸæ miecz Jima, który zgubi³ nieopodal placu wymian. To nie powinno byæ zbyt trudne...");
     Info_ClearChoices		(DIA_Jim_OBIETNICA);
     AI_StopProcessInfos	(self);
 };
@@ -361,60 +361,18 @@ FUNC INT DIA_Jim_SWORD_MAM_Condition()
 FUNC VOID DIA_Jim_SWORD_MAM_Info()
 {
     AI_Output (other, self ,"DIA_Jim_SWORD_MAM_15_01"); //Odnalaz³em twój miecz.
-    AI_Output (self, other ,"DIA_Jim_SWORD_MAM_03_02"); //Dziêkujê ci, weŸ te kilka eliksirów w nagrodê.
-    B_LogEntry                     (CH1_JimsSword,"Odnalaz³em miecz Jima.");
+    AI_Output (self, other ,"DIA_Jim_SWORD_MAM_03_02"); //Dziêkujê ci, weŸ ten eliksir.
+    B_LogEntry                     (CH1_JimsSword,"Odnalaz³em miecz Jima i trafi³ on ju¿ w jego rêce. Wywi¹za³em siê tym samym z obietnicy, jak¹ mu niegdyœ z³o¿y³em.");
     Log_SetTopicStatus       (CH1_JimsSword, LOG_SUCCESS);
     MIS_JimsSword = LOG_SUCCESS;
 
     B_GiveXP (50);
-    CreateInvItems (self, ItFo_Potion_Health_01, 5);
-    B_GiveInvItems (self, other, ItFo_Potion_Health_01, 5);
+    CreateInvItems (self, ItFo_Potion_Health_01, 1);
+    B_GiveInvItems (self, other, ItFo_Potion_Health_01, 1);
 	B_GiveInvItems (hero, self, ALTESSCHWERT, 1);
 	Npc_RemoveInvItems (self, ALTESSCHWERT, 1);
     AI_StopProcessInfos	(self);
 };
-
-//========================================
-//-----------------> NOVIZE
-//========================================
-
-INSTANCE DIA_Jim_NOVIZE (C_INFO)
-{
-   npc          = STT_2077_Jim;
-   nr           = 1;
-   condition    = DIA_Jim_NOVIZE_Condition;
-   information  = DIA_Jim_NOVIZE_Info;
-   permanent	= FALSE;
-   description	= "Mo¿e móg³bym zostaæ kurierem magów?";
-};
-
-FUNC INT DIA_Jim_NOVIZE_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_JIM_Frau)) && (Kapitel == 10) //offf
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Jim_NOVIZE_Info()
-{
-    AI_Output (other, self ,"DIA_Jim_NOVIZE_15_01"); //Mo¿e móg³bym zostaæ kurierem magów?
-    AI_Output (self, other ,"DIA_Jim_NOVIZE_03_02"); //Hmm.. No nie wiem. Mhmm...
-    AI_Output (self, other ,"DIA_Jim_NOVIZE_03_03"); //No dobrze. Spróbujê ciê jakoœ wkrêciæ, ale musisz coœ dla mnie zrobiæ.
-    AI_Output (other, self ,"DIA_Jim_NOVIZE_15_04"); //Jestem gotowy.
-    AI_Output (self, other ,"DIA_Jim_NOVIZE_03_05"); //Trzeba zaj¹æ siê starym o³tarzem Beliara w jaskini za Obozem. O³tarz zosta³ sprofanowany przez kilku Kopaczy.
-    AI_Output (self, other ,"DIA_Jim_NOVIZE_03_06"); //Taki sprofanowany o³tarz jest bardzo niebezpieczny. Nie mo¿emy dopuœciæ, ¿eby zalêgli siê tu nieumarli.
-    AI_Output (self, other ,"DIA_Jim_NOVIZE_03_07"); //Dam ci butelkê wody œwiêconej. IdŸ do o³tarza i pokrop go wod¹.
-    AI_Output (self, other ,"DIA_Jim_NOVIZE_03_08"); //Aha. Zajrzyj te¿ na stary cmentarz. Obawiam siê, ¿e i tam dotarli.
-    AI_Output (other, self ,"DIA_Jim_NOVIZE_15_09"); //Gdzie znajdê ten cmentarz?
-    AI_Output (self, other ,"DIA_Jim_NOVIZE_03_10"); //Cmentarz poleg³ych Kopaczy znajduje siê nad Opuszczon¹ Kopalni¹. 
-    AI_Output (self, other ,"DIA_Jim_NOVIZE_03_11"); //Le¿¹ tam g³ównie ci, którzy zginêli w katastrofie. 
-    AI_Output (other, self ,"DIA_Jim_NOVIZE_15_12"); //Rozumiem.
-    AI_Output (self, other ,"DIA_Jim_NOVIZE_03_13"); //No. Masz tê wodê i wróæ jak skoñczysz. 
-    B_Story_JimQuest ();
-};
-
 
 //========================================
 //-----------------> Zlecenie
@@ -437,7 +395,6 @@ FUNC INT DIA_Jim_Zlecenie_Condition()
     return TRUE;
     };
 };
-
 
 FUNC VOID DIA_Jim_Zlecenie_Info()
 {

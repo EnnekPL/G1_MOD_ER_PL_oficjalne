@@ -2,7 +2,7 @@
 func void B_GiverivFishFoodCH2 ()
 {
 	var C_NPC npc;
-	npc = Hlp_GetNpc(ORG_952_Organisator);
+	npc = Hlp_GetNpc(ORG_952_Riv);
 	
 	//FOOD
 	CreateInvItems	(npc, ItFo_Fish5,1);
@@ -38,7 +38,7 @@ func void B_GiverivFishFoodCH2 ()
 func void B_GiverivFishFoodCH3 ()
 {
 	var C_NPC npc;
-	npc = Hlp_GetNpc(ORG_952_Organisator);
+	npc = Hlp_GetNpc(ORG_952_Riv);
 	CreateInvItems	(npc, ItFo_Fish5,2);
 	CreateInvItems	(npc, ItFo_Fish4,10);
 	CreateInvItems	(npc, ItFo_Fish3,10);
@@ -69,7 +69,7 @@ func void B_GiverivFishFoodCH3 ()
 func void B_GiverivFishFoodCH4 ()
 {
 	var C_NPC npc;
-	npc = Hlp_GetNpc(ORG_952_Organisator);
+	npc = Hlp_GetNpc(ORG_952_Riv);
 	CreateInvItems	(npc, ItFo_Fish5,3);
 	CreateInvItems	(npc, ItFo_Fish4,10);
 	CreateInvItems	(npc, ItFo_Fish3,10);
@@ -95,7 +95,7 @@ func void B_GiverivFishFoodCH4 ()
 func void B_GiverivFishFoodCH5 ()
 {
 	var C_NPC npc;
-	npc = Hlp_GetNpc(ORG_952_Organisator);
+	npc = Hlp_GetNpc(ORG_952_Riv);
 		CreateInvItems	(npc, ItFo_Fish5,5);
 	CreateInvItems	(npc, ItFo_Fish4,10);
 	CreateInvItems	(npc, ItFo_Fish3,10);
@@ -117,5 +117,3 @@ func void B_GiverivFishFoodCH5 ()
 	
 	CreateInvItems  (self,itmiflask,30);
 };
-
-

@@ -75,16 +75,22 @@ var int MIS_SupportFromOrcHunters;
 const string CH1_SupportFromOrcHunters      = "Pomoc ³owców orków";
 
 var int BANMordragRaport;
-const string    CH1_BANMordragRaport    	= "Wieœci od Skazy";
+const string CH1_BANMordragRaport    		= "Wieœci od Skazy";
 
 var int MordragProblemOC;
-const string    CH1_MordragProblemOC    	= "Problemy Skazy";
+const string CH1_MordragProblemOC    		= "Problemy Skazy";
 
 var int MIS_DraxTest;
 const string CH1_DraxTest      				= "Test Draxa";
 
 var int MIS_KalomsNewWeed;
 const string CH2_KalomsNewWeed      		= "Przepis na niesamowite ziele";
+
+//***Nowy Obóz***
+//***Zmienne zadañ*** 
+
+var int MIS_LurkersInHut;
+const string CH1_LurkersInHut    			= "Rybacka chata";
 
 //***Kolonia***
 //***Zmienne zadañ***
@@ -112,6 +118,7 @@ const string CH1_KdWCourier 				= "Kurier Magów Wody";
 //***Logi***
 
 const string NOTE_AlchemyRecepts  	= "Umiejêtnoœæ alchemii";
+const string NOTE_CookingRecepts  	= "Umiejêtnoœæ gotowania";
 
 //***Pomocnicze***
 //***Dialogi***
@@ -148,6 +155,9 @@ var int HeroKnows_AlchemyPotionsPower; //wywary potêgi
 var int HeroKnows_AlchemyFullRegenarate; //pe³nie
 var int empty_var;
 
+//***Pomocnicze***
+//***Gotowanie***
+var int HeroKnows_CookingFish; //zupy rybne
 
 var int MIS_GamalHelp; //nope
 const string Ch1_GamalHelp		 			= "Propozycja Gamala";

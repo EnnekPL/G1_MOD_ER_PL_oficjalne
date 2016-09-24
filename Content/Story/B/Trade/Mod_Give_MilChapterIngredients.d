@@ -7,7 +7,7 @@ func void B_Give_MilChapter1Ingredients ()
 	CreateInvItems  (self,ItAt_Teeth_01,10);
 	CreateInvItems  (self,ItAt_Wolf_01,5);//skóry wilków
 	CreateInvItems  (self,ItAt_Claws_01,5);//pazury
-	CreateInvItems  (self,itmiflask,10);//kolby
+	CreateInvItems  (self,itmiflask,5);//kolby
 	CreateInvItems  (self,ItWr_BrownShadowbeast,1);
 	CreateInvItems  (self,ItWr_WhiteScavenger,1);
 };
@@ -19,7 +19,7 @@ func void B_Give_MilChapter2Ingredients ()
 	CreateInvItems  (self,ItAt_Wolf_02,1);//skóra warga
 	CreateInvItems  (self,ItAt_Lurker_02,1);//skóra jaszczura
 	CreateInvItems  (self,Plan_Miecz1H7,1);
-	CreateInvItems  (self,itmiflask,25);
+	CreateInvItems  (self,itmiflask,7);
 	CreateInvItems  (self,ItMiNugget,55);//handel
 };
 
@@ -45,7 +45,7 @@ func void B_Give_MilChapter3Ingredients ()
 	CreateInvItems (self, itmi_bait_01, 15);
 	CreateInvItems (self, itmi_bait_02, 12);
 	
-	CreateInvItems  (self,itmiflask,30);
+	CreateInvItems  (self,itmiflask,10);
 	CreateInvItems  (self,ItMiNugget,112);//handel
 
 };
@@ -73,7 +73,7 @@ func void B_Give_MilChapter4Ingredients ()
 	CreateInvItems (self, itmi_bait_01, 30);
 	CreateInvItems (self, itmi_bait_02, 30);
 	
-	CreateInvItems  (self,itmiflask,30);
+	CreateInvItems  (self,itmiflask,3);
 	CreateInvItems  (self,ItMiNugget,50);//handel
 };
 
@@ -81,7 +81,7 @@ func void B_Give_MilChapter5Ingredients ()
 {
 	var C_NPC npc;
 	npc = Hlp_GetNpc(NON_5612_Mil);
-		CreateInvItems	(npc, ItFo_Fish5,5);
+	CreateInvItems	(npc, ItFo_Fish5,5);
 	CreateInvItems	(npc, ItFo_Fish4,10);
 	CreateInvItems	(npc, ItFo_Fish3,10);
 	CreateInvItems	(npc, ItFo_Fish2,10);
@@ -100,7 +100,7 @@ func void B_Give_MilChapter5Ingredients ()
 	CreateInvItems (self, itmi_bait_01, 30);
 	CreateInvItems (self, itmi_bait_02, 30);
 	
-	CreateInvItems  (self,itmiflask,30);
+	CreateInvItems  (self,itmiflask,5);
 	CreateInvItems  (self,ItMiNugget,200);//handel
 };
 

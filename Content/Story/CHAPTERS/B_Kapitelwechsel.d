@@ -176,9 +176,9 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		
 		var C_NPC Novize_1;		Novize_1	 	 = Hlp_GetNpc	(NOV_1319_Novize);
 		Novize_1.senses =		hero.senses;
-		CreateInvItems (ORG_952_Organisator, ItFo_Fish, 30);
-		CreateInvItems (ORG_952_Organisator, JajoSca2, 30);
-		CreateInvItems (ORG_952_Organisator, ItFo_MoleratW, 30);
+		//CreateInvItems (ORG_952_Riv, ItFo_Fish, 30);
+		//CreateInvItems (ORG_952_Riv, JajoSca2, 30);
+		//CreateInvItems (ORG_952_Riv, ItFo_MoleratW, 30);
 		if (Chapters_Spawn == true)
 		{ 
 		B_Story_RespawnOW();
@@ -661,7 +661,7 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 	else if (neues_Kapitel == 5)
 	{
 		PrintDebugNpc	(PD_MISSION, "---=== DAS FÜNFTE KAPITEL ===---");
-		B_KillNpc			(NON_3933_Uturiel);//1.4
+		//B_KillNpc			(NON_3933_Uturiel);//1.4
 		//zadanie tylko do 5 rozdzia³u
 		if (MIS_NewLocationForPirates != LOG_SUCCESS)
 		{
@@ -696,9 +696,9 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		B_Give_StanleyChapter5Ingredients ();
 		//-------- Tagebucheinträge --------
 		B_LogEntry		(CH4_EnterTemple,	"Gorn nie by³ przekonany co do skutecznoœci mojego amuletu ochronnego. Có¿... Wkrótce na w³asnej skórze przekonam siê, kto ma racjê!");
-	CreateInvItems (ORG_952_Organisator, ItFo_Fish, 30);
-	CreateInvItems (ORG_952_Organisator, JajoSca2, 30);
-	CreateInvItems (ORG_952_Organisator, ItFo_MoleratW, 30);
+	//CreateInvItems (ORG_952_Riv, ItFo_Fish, 30);
+	//CreateInvItems (ORG_952_Riv, JajoSca2, 30);
+	//CreateInvItems (ORG_952_Riv, ItFo_MoleratW, 30);
 		//-------- Oberwelt-Monster nochmal "nachfüllen" --------	
 		B_Story_RespawnOW_Ch5();
 		

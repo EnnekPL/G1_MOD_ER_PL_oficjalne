@@ -1,5 +1,3 @@
-//poprawione i sprawdzone - Nocturn
-
 //========================================
 //-----------------> OPCJA *KONIEC* 
 //========================================
@@ -8,9 +6,9 @@ INSTANCE DIA_Organisator51_EXIT(C_INFO)
 {
 	npc             = ORG_951_Organisator;
 	nr              = 999;
-	condition	= DIA_Organisator51_EXIT_Condition;
-	information	= DIA_Organisator51_EXIT_Info;
-	permanent	= TRUE;
+	condition		= DIA_Organisator51_EXIT_Condition;
+	information		= DIA_Organisator51_EXIT_Info;
+	permanent		= TRUE;
 	description     = DIALOG_ENDE;
 };
 
@@ -40,7 +38,7 @@ INSTANCE DIA_Organisator51_HELLO1 (C_INFO)
 
 FUNC INT DIA_Organisator51_HELLO1_Condition()
 {
-    if (MIS_TopielcewChacie == LOG_SUCCESS)
+    if (MIS_LurkersInHut == LOG_SUCCESS)
     && (Npc_GetDistToWP (self, "RYBAK1") < 500)
     && (Wld_IsTime     (06,00,09,00))
     {

@@ -530,10 +530,10 @@ INSTANCE RezepturenFish (C_ITEM)
 	material 				=	MAT_LEATHER;
 
 	scemeName				=	"MAP";
-	description			= "Przepisy";
-	TEXT[0]				= "Na zupy rybne";
-	TEXT[5]				= NAME_Value;
-	COUNT[5]			= value;
+	description				= "Przepisy";
+	TEXT[0]					= "Na zupy rybne";
+	TEXT[5]					=  NAME_Value;
+	COUNT[5]				=  value;
 	on_state[0]				=	UseRezepturenFish;
 };
 
@@ -566,6 +566,13 @@ INSTANCE RezepturenFish (C_ITEM)
 					Doc_PrintLines	( nDocID,  1, "Karaœ"					);
 					Doc_PrintLines	( nDocID,  1, "Zupa z karasi najlepiej smakuje z suchym chlebem. ");
 					Doc_Show		( nDocID );
+					
+					if (HeroKnows_CookingFish == FALSE)
+					{
+					HeroKnows_CookingFish = TRUE;
+					Log_CreateTopic	(NOTE_AlchemyRecepts,	LOG_NOTE);
+					B_LogEntry		(NOTE_CookingRecepts,	"Umiejêtnoœæ przyrz¹dzenia zup rybnych.");
+					};
 	};
 /******************************************************************************************/	
 INSTANCE ItWe_PrzepisMoleratSoup (C_Item)

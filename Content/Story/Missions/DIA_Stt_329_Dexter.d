@@ -529,9 +529,9 @@ FUNC VOID DIA_Dexter_WkurwionyDexter_Info()
     AI_StopProcessInfos	(self);
 };
 
-/***********************************************
-***** CSI: KRYMINALNE ZAGADKI STAREGO OBOZU
-***********************************************/
+/////////////////////////////////////////////////////
+//  CSI: KRYMINALNE ZAGADKI STAREGO OBOZU
+/////////////////////////////////////////////////////
 
 //========================================
 //-----------------> CSI_SO
@@ -688,6 +688,8 @@ FUNC VOID DIA_Dexter_ReadBook_Info()
 	B_GiveInvItems (self,other,itminugget,50);
 	
 	B_LogEntry                     (CH1_HandDed,"Pomoc Dextera w tym momencie siê koñczy. Mój dotychczasowy pomocnik uwa¿a, ¿e R¹czka na pewno nie ¿yje, a pójœcie do Nowego Obozu to samobójstwo. By³em ju¿ kilka razy w Nowym Obozie, wiêc to dla mnie nie pierwszyzna. Wypytam o naszego zaginionego Cienia i wrócê do Diego.");
+	
+	Npc_ExchangeRoutine (self,"start");
 };
 //========================================
 //-----------------> Kapitel4_dialog

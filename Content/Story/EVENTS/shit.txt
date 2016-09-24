@@ -574,3 +574,44 @@ func void _SetCSColor() {
 	
 		//FF_Remove (SetCSColor);
 	//FF_ApplyOnce (_SetCSColor);
+	
+	//========================================
+//-----------------> NOVIZE
+//========================================
+
+INSTANCE DIA_Jim_NOVIZE (C_INFO)
+{
+   npc          = STT_2077_Jim;
+   nr           = 1;
+   condition    = DIA_Jim_NOVIZE_Condition;
+   information  = DIA_Jim_NOVIZE_Info;
+   permanent	= FALSE;
+   description	= "Może mógłbym zostać kurierem magów?";
+};
+
+FUNC INT DIA_Jim_NOVIZE_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_JIM_Frau)) && (Kapitel == 10) //offf
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Jim_NOVIZE_Info()
+{
+    AI_Output (other, self ,"DIA_Jim_NOVIZE_15_01"); //Może mógłbym zostać kurierem magów?
+    AI_Output (self, other ,"DIA_Jim_NOVIZE_03_02"); //Hmm.. No nie wiem. Mhmm...
+    AI_Output (self, other ,"DIA_Jim_NOVIZE_03_03"); //No dobrze. Spróbuję cię jakoś wkręcić, ale musisz coś dla mnie zrobić.
+    AI_Output (other, self ,"DIA_Jim_NOVIZE_15_04"); //Jestem gotowy.
+    AI_Output (self, other ,"DIA_Jim_NOVIZE_03_05"); //Trzeba zająć się starym ołtarzem Beliara w jaskini za Obozem. Ołtarz został sprofanowany przez kilku Kopaczy.
+    AI_Output (self, other ,"DIA_Jim_NOVIZE_03_06"); //Taki sprofanowany ołtarz jest bardzo niebezpieczny. Nie możemy dopuścić, żeby zalęgli się tu nieumarli.
+    AI_Output (self, other ,"DIA_Jim_NOVIZE_03_07"); //Dam ci butelkę wody święconej. Idź do ołtarza i pokrop go wodą.
+    AI_Output (self, other ,"DIA_Jim_NOVIZE_03_08"); //Aha. Zajrzyj też na stary cmentarz. Obawiam się, że i tam dotarli.
+    AI_Output (other, self ,"DIA_Jim_NOVIZE_15_09"); //Gdzie znajdę ten cmentarz?
+    AI_Output (self, other ,"DIA_Jim_NOVIZE_03_10"); //Cmentarz poległych Kopaczy znajduje się nad Opuszczoną Kopalnią. 
+    AI_Output (self, other ,"DIA_Jim_NOVIZE_03_11"); //Leżą tam głównie ci, którzy zginęli w katastrofie. 
+    AI_Output (other, self ,"DIA_Jim_NOVIZE_15_12"); //Rozumiem.
+    AI_Output (self, other ,"DIA_Jim_NOVIZE_03_13"); //No. Masz tę wodę i wróć jak skończysz. 
+    B_Story_JimQuest ();
+};

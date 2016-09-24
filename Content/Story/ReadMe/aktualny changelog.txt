@@ -15,3 +15,7 @@
 - poprawiony bug gry w którym mo¿na by³o po pobiciu przeciwnika zebraæ drugi raz XP za jego zabicie
 - przerobione zadanie "Przepis na nowe ziele"
 - usuniête zadanie "Kupiec na ziele"
+- Baal Lukor zosta³ wzmocniony oraz otrzyma³ swoj¹ broñ "£amacz serc"
+- przerobione kapliczki Innosa i Beliara
+- Riv za pomoc daje nam przepisy na zupy z ryb
+- Dexter wraca do siebie, gdy skoñczy nam pomagaæ

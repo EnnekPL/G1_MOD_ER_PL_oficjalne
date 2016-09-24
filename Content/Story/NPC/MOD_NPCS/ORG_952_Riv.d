@@ -1,4 +1,4 @@
-instance ORG_952_Organisator (Npc_Default)
+instance ORG_952_Riv (Npc_Default)
 {
 	//-------- primary data --------
 	

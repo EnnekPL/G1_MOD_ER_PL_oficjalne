@@ -2272,6 +2272,7 @@ FUNC VOID DIA_PC_Thief_NoWPyte_Info()
 
     B_GiveXP (200);
     AI_StopProcessInfos	(self);
+	Npc_ExchangeRoutine (STT_329_Dexter,"start");
 };
 
 //========================================
@@ -2315,6 +2316,7 @@ FUNC VOID DIA_PC_Thief_FingersStayAlive_Info()
 
     B_GiveXP (325);
     AI_StopProcessInfos	(self);
+	Npc_ExchangeRoutine (STT_329_Dexter,"start");
 };
 
 //========================================
