@@ -1,5 +1,3 @@
-//poprawione i sprawdzone - Nocturn
-
 //========================================
 //-----------------> OPCJA *KONIEC* 
 //========================================
@@ -8,9 +6,9 @@ INSTANCE DIA_Berg_EXIT(C_INFO)
 {
 	npc             = GRD_3934_Berg;
 	nr              = 999;
-	condition	= DIA_Berg_EXIT_Condition;
-	information	= DIA_Berg_EXIT_Info;
-	permanent	= TRUE;
+	condition		= DIA_Berg_EXIT_Condition;
+	information		= DIA_Berg_EXIT_Info;
+	permanent		= TRUE;
 	description     = DIALOG_ENDE;
 };
 
@@ -74,6 +72,7 @@ FUNC VOID DIA_Berg_HELLO1_200_ORE()
     B_GiveXP (120);
     Info_ClearChoices		(DIA_Berg_HELLO1);
     AI_StopProcessInfos	(self);
+	Choice_BergsRing = FALSE;
 };
 
 FUNC VOID DIA_Berg_HELLO1_INNE_ROZW()
@@ -89,6 +88,7 @@ FUNC VOID DIA_Berg_HELLO1_INNE_ROZW()
     AI_StopProcessInfos	(self);
     CreateInvItems (self, ItKe_DunegonKeyOC, 1);
     B_GiveInvItems (self, other, ItKe_DunegonKeyOC, 1);
+	Choice_BergsRing = TRUE;
 };
 
 //========================================
@@ -110,6 +110,7 @@ FUNC INT DIA_Berg_GIVE_RING_Condition()
     if (Npc_KnowsInfo (hero, DIA_Berg_HELLO1))
     && (Berg_ring_giveday == wld_getday ())
 	&& (Npc_HasItems (other, Bergs_Ring) >=1)
+	&& (Choice_BergsRing == TRUE)
     {
     return TRUE;
     };
@@ -146,6 +147,7 @@ FUNC INT DIA_Berg_WARN_Condition()
 {
     if (Berg_ring_giveday != wld_getday ())
     && (Npc_KnowsInfo (hero, DIA_Berg_HELLO1))
+	&& (Choice_BergsRing == TRUE)
     {
     return TRUE;
     };
@@ -218,4 +220,3 @@ FUNC VOID DIA_Berg_HowAreYou_Info()
     AI_Output (other, self ,"DIA_Berg_HowAreYou_15_16"); //Mo¿e ktoœ powinien im o tym powiedzieæ.
     AI_Output (self, other ,"DIA_Berg_HowAreYou_03_17"); //Oni nie s¹ g³upi, z czasem sami siê zorientuj¹. 
 };
-

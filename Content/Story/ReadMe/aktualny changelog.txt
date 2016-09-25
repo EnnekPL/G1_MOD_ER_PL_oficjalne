@@ -19,3 +19,6 @@
 - przerobione kapliczki Innosa i Beliara
 - Riv za pomoc daje nam przepisy na zupy z ryb
 - Dexter wraca do siebie, gdy skoñczy nam pomagaæ
+- Uturiel nie umiera w 5 rozdziale z automatu
+- kolorowe nazwy atrybutów podczas nauki
+- naprawiony b³¹d z Bergiem, który atakuje nas jeœli zap³acimy mu rud¹ za klucz
