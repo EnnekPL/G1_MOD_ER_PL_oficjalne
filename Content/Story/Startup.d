@@ -2736,7 +2736,8 @@ const int FogColors[12] =
     167, 141, 159, // swit
 	107,	86,	54,
     240, 128, 128,   // wieczór
-    18,  16,  60   // noc
+		25, 25, 112
+   // 18,  16,  60   // noc
 };    //188, 143, 143, // dzien
 // Kolorki se ustaw xD
 /*

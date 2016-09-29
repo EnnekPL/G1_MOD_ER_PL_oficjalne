@@ -868,12 +868,12 @@ FUNC VOID DIA_Corristo_MamSkalke_Info()
 {
     AI_Output (other, self ,"DIA_Corristo_MamSkalke_15_01"); //Mam twój kamieñ.
 	AI_Output (other, self ,"DIA_Corristo_MamSkalke_15_02"); //Doskonale! Spróbujê zabezpieczyæ jego moc. 
-   // AI_Output (other, self ,"DIA_Corristo_MamSkalke_15_02"); //Co teraz z nim zrobimy?
-  //  AI_Output (self, other ,"DIA_Corristo_MamSkalke_03_03"); //My? Nic. Bêdê prowadzi³ nad nim badania, ale potrzebujê spokojnego miejsca.
-	AI_Output (self, other ,"DIA_Corristo_MamSkalke_03_03"); //Bêdê tak¿e prowadzi³ nad nim badania, ale potrzebujê spokojnego miejsca.
-    AI_Output (self, other ,"DIA_Corristo_MamSkalke_03_04"); //Najlepiej wyposa¿onego w zestaw alchemiczny.
-    AI_Output (self, other ,"DIA_Corristo_MamSkalke_03_05"); //ZaprowadŸ mnie do takiego miejsca, a obsypiê ciê rud¹.
-    B_LogEntry                     (CH1_CorristoEvil,"Odda³em artefakt Corristo. By³ bardzo zadowolony, jednak kaza³ mi zaprowadziæ siê do jakiegoœ laboratorium alchemicznego.");
+    AI_Output (other, self ,"DIA_Corristo_MamSkalke_15_03"); //Co teraz z nim zrobimy?
+    AI_Output (self, other ,"DIA_Corristo_MamSkalke_03_04"); //My? Nic. Bêdê prowadzi³ nad nim badania, ale potrzebujê spokojnego miejsca.
+    AI_Output (self, other ,"DIA_Corristo_MamSkalke_03_05"); //Najlepiej wyposa¿onego w stó³ alchemiczny. Dobrze by by³o jakby by³ tam wygodny teleport...
+	AI_Output (other, self ,"DIA_Corristo_MamSkalke_15_06"); //Oczywiœcie! Zadbam te¿ o wannê z gor¹c¹ wod¹ i us³uguj¹ce kurtyzany!
+    AI_Output (self, other ,"DIA_Corristo_MamSkalke_03_07"); //To nie pora ma ¿arty, ch³opcze. To nader powa¿na sprawa. Pomyœl nad tym, co ci powiedzia³em.
+    B_LogEntry                     (CH1_CorristoEvil,"Odda³em artefakt Corristo. By³ bardzo zadowolony, jednak kaza³ mi znaleŸæ dla niego jakieœ ustronne miejse do pracy. Powinno byæ wyposa¿one w stó³ alchemiczny. Dobrze by by³o, jeœli mo¿naby siê by³o tam przeteleportowaæ. Hmm... Mo¿e kryjówka jakiegoœ maga?");
 	B_GiveInvItems (other, self, Focus_Corristo, 1);
     B_GiveXP (500);
 };
@@ -894,7 +894,7 @@ INSTANCE DIA_Corristo_LetsGoToCave (C_INFO)
 
 FUNC INT DIA_Corristo_LetsGoToCave_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Corristo_MamSkalke))
+    if (Npc_KnowsInfo (hero, DIA_Corristo_MamSkalke)) //daæ bagietce specjaln¹ zmienn¹ odblokowuj¹c¹ ten dialog
     {
     return TRUE;
     };
