@@ -787,6 +787,98 @@ FUNC void  KDF_402_Corristo_HEAVYARMOR_Info()
 	
 };  
 
+
+////////////////////////////////////////////////////////////////
+// ZADANIE NA 3 ROZDZIA£
+////////////////////////////////////////////////////////////////
+
+//========================================
+//-----------------> DRAGO_QUEST
+//========================================
+
+INSTANCE DIA_Corristo_DRAGO_QUEST (C_INFO)
+{
+   npc          = KDF_402_Corristo;
+   nr           = 1;
+   condition    = DIA_Corristo_DRAGO_QUEST_Condition;
+   information  = DIA_Corristo_DRAGO_QUEST_Info;
+   permanent	= FALSE;
+   description	= "Przysy³a mnie Drago. Musimy podj¹æ odpowiednie kroki w sprawie Œni¹cego.";
+};
+
+FUNC INT DIA_Corristo_DRAGO_QUEST_Condition()
+{
+    if (must_talk_corristo == true)
+    && (kapitel == 3)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Corristo_DRAGO_QUEST_Info()
+{
+	
+    AI_Output (other, self ,"DIA_Corristo_DRAGO_QUEST_15_01"); //Przysy³a mnie Drago. Musimy podj¹æ odpowiednie kroki w sprawie Œni¹cego.
+    AI_Output (self, other ,"DIA_Corristo_DRAGO_QUEST_03_02"); //Tak, wiem ju¿ o wszystkim. Nie jestem tym faktem szczególnie zaskoczony. 
+	AI_Output (self, other ,"DIA_Corristo_DRAGO_QUEST_03_03"); //Œni¹cy od pocz¹tku wydawa³ mi siê podejrzany. Interesuje mnie natomiast, co teraz stanie siê z Bractwem.
+    AI_Output (other, self ,"DIA_Corristo_DRAGO_QUEST_15_04"); //Cor Angar przej¹³ w³adzê w Obozie, wyrzekaj¹c siê wraz ze swoimi ludŸmi Œni¹cego. 
+	AI_Output (other, self ,"DIA_Corristo_DRAGO_QUEST_15_05"); //Cor Kalom natomiast zebra³ grupê ludzi, którzy nie porzucili swej wiary i uda³ siê na poszukiwania demona.
+    AI_Output (self, other ,"DIA_Corristo_DRAGO_QUEST_03_06"); //Na Innosa, to istna katastrofa. Ci ludzie potrzebuj¹ teraz wielkiego wsparcia. Jakie teraz maj¹ plany?
+    AI_Output (other, self ,"DIA_Corristo_DRAGO_QUEST_15_07"); //Wys³ali mnie do Nowego Obozu, abym wspomóg³ Magów Wody w ich planie zniszczenia Bariery.
+    AI_Output (self, other ,"DIA_Corristo_DRAGO_QUEST_03_08"); //Oczywiœcie, Magowie Wody... IdŸ do nich natychmiast i zrób wszystko, co jesteœ w stanie. My w tym czasie pomyœlimy, co nale¿y robiæ w sprawie Œni¹cego.
+    B_LogEntry                     (CH1_NEW_GOD,"Có¿... Pozostaje mi czekaæ na rozwój wydarzeñ i dalej robiæ to, co do mnie nale¿y, czyli próbowaæ siê st¹d wydostaæ.");
+    Log_SetTopicStatus       (CH1_NEW_GOD, LOG_SUCCESS);
+    MIS_NEW_GOD = LOG_SUCCESS;
+
+    B_GiveXP (100);
+    AI_StopProcessInfos	(self);
+};
+
+//========================================
+//-----------------> ALTERNATIVE_QUEST_END
+//========================================
+
+INSTANCE DIA_Corristo_ALTERNATIVE_QUEST_END (C_INFO)
+{
+   npc          = KDF_402_Corristo;
+   nr           = 2;
+   condition    = DIA_Corristo_ALTERNATIVE_QUEST_END_Condition;
+   information  = DIA_Corristo_ALTERNATIVE_QUEST_END_Info;
+   permanent	= FALSE;
+   description	= "Drago, gdy ¿y³, kaza³ mi z tob¹ pogadaæ.";
+};
+
+FUNC INT DIA_Corristo_ALTERNATIVE_QUEST_END_Condition()
+{
+    if (!Npc_KnowsInfo (hero, DIA_Corristo_DRAGO_QUEST))
+    && (must_talk_corristo == true)
+    && (kapitel > 3)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Corristo_ALTERNATIVE_QUEST_END_Info()
+{
+    AI_Output (other, self ,"DIA_Corristo_ALTERNATIVE_QUEST_END_15_01"); //Drago, gdy ¿y³, kaza³ mi z tob¹ pogadaæ.
+    AI_Output (self, other ,"DIA_Corristo_ALTERNATIVE_QUEST_END_03_02"); //Niby o czym?
+    AI_Output (other, self ,"DIA_Corristo_ALTERNATIVE_QUEST_END_15_03"); //O tym, co siê dzia³o w Bractwie. O Œni¹cym. 
+    AI_Output (self, other ,"DIA_Corristo_ALTERNATIVE_QUEST_END_03_04"); //Nie s¹dzisz, ¿e przychodzisz trochê za póŸno?
+    AI_Output (self, other ,"DIA_Corristo_ALTERNATIVE_QUEST_END_03_05"); //Teraz ju¿ nic nie zmienimy. Œni¹cy jest demonem, a ja zosta³em ostatnim ¿yj¹cym Magiem Ognia w Kolonii.
+    AI_Output (other, self ,"DIA_Corristo_ALTERNATIVE_QUEST_END_15_06"); //Nie. Jest jeszcze Milten.
+    AI_Output (self, other ,"DIA_Corristo_ALTERNATIVE_QUEST_END_03_07"); //Ach, Milten... No tak...
+    AI_Output (other, self ,"DIA_Corristo_ALTERNATIVE_QUEST_END_15_08"); //Wszystko w porz¹dku?
+    AI_Output (self, other ,"DIA_Corristo_ALTERNATIVE_QUEST_END_03_09"); //Tak, tak. Daj mi chwilkê...
+    B_LogEntry                     (CH1_NEW_GOD,"Chcia³em porozmawiaæ z Corristo o wydarzeniach w Bractwie, ale przyszed³em chyba zbyt póŸno. W¹tpiê, ¿e gdyby ta rozmowa odby³aby siê kilka dni wczeœniej, coœ by³oby inaczej.");
+    Log_SetTopicStatus       (CH1_NEW_GOD, LOG_SUCCESS);
+    MIS_NEW_GOD = LOG_SUCCESS;
+
+    B_GiveXP (50);
+    AI_StopProcessInfos	(self);
+};
+
 //========================================
 //-----------------> Chapter4_NewStoryLine
 //========================================
@@ -835,9 +927,9 @@ FUNC VOID DIA_Corristo_Chapter4_NewStoryLine_Info()
     AI_Output (other, self ,"DIA_Corristo_Chapter4_NewStoryLine_15_21"); //Skoro tak, to chyba nie mam innego wyboru. 
 	 MIS_CorristoEvil = LOG_RUNNING;
 
-    Log_CreateTopic          (CH1_CorristoEvil, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_CorristoEvil, LOG_RUNNING);
-    B_LogEntry               (CH1_CorristoEvil,"Id¹c w kierunku Opuszczonej Kopalni spotka³em Arcymaga Ognia, Corristo. Okaza³o siê, ¿e uciek³ ze Starego Obozu. Muszê udaæ siê do kopalni i znaleŸæ artefakt przypominaj¹cy kamienie ogniskuj¹ce. Ponoæ do kopalni dobieraj¹ siê ludzie Gomeza. Nie mogê dopuœciæ, by kamieñ wpad³ w ich rêce. ");
+    Log_CreateTopic          (CH4_CorristoEvil, LOG_MISSION);
+    Log_SetTopicStatus       (CH4_CorristoEvil, LOG_RUNNING);
+    B_LogEntry               (CH4_CorristoEvil,"Id¹c w kierunku Opuszczonej Kopalni spotka³em Arcymaga Ognia, Corristo. Okaza³o siê, ¿e uciek³ ze Starego Obozu. Muszê udaæ siê do kopalni i znaleŸæ artefakt przypominaj¹cy kamienie ogniskuj¹ce. Ponoæ do kopalni dobieraj¹ siê ludzie Gomeza. Nie mogê dopuœciæ, by kamieñ wpad³ w ich rêce. ");
 
 };
 
@@ -869,219 +961,14 @@ FUNC VOID DIA_Corristo_MamSkalke_Info()
     AI_Output (other, self ,"DIA_Corristo_MamSkalke_15_01"); //Mam twój kamieñ.
 	AI_Output (other, self ,"DIA_Corristo_MamSkalke_15_02"); //Doskonale! Spróbujê zabezpieczyæ jego moc. 
     AI_Output (other, self ,"DIA_Corristo_MamSkalke_15_03"); //Co teraz z nim zrobimy?
-    AI_Output (self, other ,"DIA_Corristo_MamSkalke_03_04"); //My? Nic. Bêdê prowadzi³ nad nim badania, ale potrzebujê spokojnego miejsca.
-    AI_Output (self, other ,"DIA_Corristo_MamSkalke_03_05"); //Najlepiej wyposa¿onego w stó³ alchemiczny. Dobrze by by³o jakby by³ tam wygodny teleport...
-	AI_Output (other, self ,"DIA_Corristo_MamSkalke_15_06"); //Oczywiœcie! Zadbam te¿ o wannê z gor¹c¹ wod¹ i us³uguj¹ce kurtyzany!
-    AI_Output (self, other ,"DIA_Corristo_MamSkalke_03_07"); //To nie pora ma ¿arty, ch³opcze. To nader powa¿na sprawa. Pomyœl nad tym, co ci powiedzia³em.
-    B_LogEntry                     (CH1_CorristoEvil,"Odda³em artefakt Corristo. By³ bardzo zadowolony, jednak kaza³ mi znaleŸæ dla niego jakieœ ustronne miejse do pracy. Powinno byæ wyposa¿one w stó³ alchemiczny. Dobrze by by³o, jeœli mo¿naby siê by³o tam przeteleportowaæ. Hmm... Mo¿e kryjówka jakiegoœ maga?");
+    AI_Output (self, other ,"DIA_Corristo_MamSkalke_03_04"); //My? Nic. Bêdê prowadzi³ nad nim badania. Jeœli bêdziesz mnie szuka³, bêdê w Klasztorze Zmiennokszta³tnych.
+    AI_Output (self, other ,"DIA_Corristo_MamSkalke_03_05"); //Myœlê, ¿e znasz to miejsce...
+	AI_Output (other, self ,"DIA_Corristo_MamSkalke_15_06"); //Co? ¯adnych wyjaœnieñ? Tak poprostu zabierasz kamieñ i odchodzisz?! Ryzkowa³em ¿ycie...!
+    AI_Output (self, other ,"DIA_Corristo_MamSkalke_03_07"); //Doceniam to, ale nie czas teraz na wyjaœnienia. Do zobaczenia. 
+    B_LogEntry                     (CH4_CorristoEvil,"Odda³em artefakt Corristo. By³ tajemniczy i nie z³o¿y³ mi ¿adnych wyjaœnieñ. Tak po prostu uda³ siê do Klasztoru Zmiennokszta³tnych. Bez s³owa... Chyba dam temu spokój.");
 	B_GiveInvItems (other, self, Focus_Corristo, 1);
-    B_GiveXP (500);
-};
-
-//========================================
-//-----------------> LetsGoToCave
-//========================================
-
-INSTANCE DIA_Corristo_LetsGoToCave (C_INFO)
-{
-   npc          = KDF_402_Corristo;
-   nr           = 1;
-   condition    = DIA_Corristo_LetsGoToCave_Condition;
-   information  = DIA_Corristo_LetsGoToCave_Info;
-   permanent	= FALSE;
-   description	= "ChodŸ za mn¹!";
-};
-
-FUNC INT DIA_Corristo_LetsGoToCave_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Corristo_MamSkalke)) //daæ bagietce specjaln¹ zmienn¹ odblokowuj¹c¹ ten dialog
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Corristo_LetsGoToCave_Info()
-{
-    AI_Output (other, self ,"DIA_Corristo_LetsGoToCave_15_01"); //ChodŸ za mn¹!
-    AI_Output (self, other ,"DIA_Corristo_LetsGoToCave_03_02"); //ProwadŸ, m³odzieñcze.
-    self.aivar[AIV_PARTYMEMBER] = TRUE;
-    Npc_ExchangeRoutine (self,"FOLLOW");
-    AI_StopProcessInfos	(self);
-};
-
-//========================================
-//-----------------> Cave1n
-//========================================
-
-INSTANCE DIA_Corristo_Cave1n (C_INFO)
-{
-   npc          = KDF_402_Corristo;
-   nr           = 2;
-   condition    = DIA_Corristo_Cave1n_Condition;
-   information  = DIA_Corristo_Cave1n_Info;
-   permanent	= FALSE;
-   Important    = TRUE;
-};
-
-FUNC INT DIA_Corristo_Cave1n_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Corristo_LetsGoToCave))
-    && (Npc_GetDistToWP (self, "LOCATION_23_CAVE_1_OUT") < 1000)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Corristo_Cave1n_Info()
-{
-	AI_GotoNpc			(self, hero);
-    AI_Output (other, self ,"DIA_Corristo_Cave1n_15_01"); //Chyba tutaj ci siê spodoba.
-    AI_Output (self, other ,"DIA_Corristo_Cave1n_03_02"); //Sk¹d wiedzia³eœ o tym miejscu?
-    AI_Output (other, self ,"DIA_Corristo_Cave1n_15_03"); //To stara destylarnia. Pracowa³o tu kilku Szkodników.
-    AI_Output (self, other ,"DIA_Corristo_Cave1n_03_04"); //Na pewno jest tu bezpiecznie?
-    AI_Output (other, self ,"DIA_Corristo_Cave1n_15_05"); //Tak. Zadba³em o to.
-    B_LogEntry                     (CH1_CorristoEvil,"Zaprowadzi³em Corristo do starej destylarni za Nowym Obozem. To chyba koniec mojej pracy dla niego. Mogê wróciæ do w³asnych problemów.");
-    Log_SetTopicStatus       (CH1_CorristoEvil, LOG_SUCCESS);
-    MIS_CorristoEvil = LOG_SUCCESS;
-
-    B_GiveXP (300);
-    CreateInvItems (self, ItMiNugget, 300);
-    B_GiveInvItems (self, other, ItMiNugget, 300);
-	self.aivar[AIV_PARTYMEMBER] = false;
-    Npc_ExchangeRoutine (KDF_402_Corristo,"cave1");
-    AI_StopProcessInfos	(self);
-};
-
-//========================================
-//-----------------> CAVE2IN
-//========================================
-
-INSTANCE DIA_Corristo_CAVE2IN (C_INFO)
-{
-   npc          = KDF_402_Corristo;
-   nr           = 3;
-   condition    = DIA_Corristo_CAVE2IN_Condition;
-   information  = DIA_Corristo_CAVE2IN_Info;
-   permanent	= FALSE;
-   Important    = TRUE;
-};
-
-FUNC INT DIA_Corristo_CAVE2IN_Condition()
-{
-    if (Npc_GetDistToWP (self, "OW_PATH_ORCRUIN_GOLEM") < 1000)
-    && (Npc_KnowsInfo (hero, DIA_Corristo_LetsGoToCave))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Corristo_CAVE2IN_Info()
-{
-	AI_GotoNpc			(self, hero);
-    AI_Output (other, self ,"DIA_Corristo_CAVE2IN_15_01"); //No i jesteœmy.
-    AI_Output (self, other ,"DIA_Corristo_CAVE2IN_03_02"); //Laboratorium alchemiczne w opuszczonej œwi¹tyni?
-    AI_Output (self, other ,"DIA_Corristo_CAVE2IN_03_03"); //Wspaniale! WeŸ tê rudê.
-    AI_Output (self, other ,"DIA_Corristo_CAVE2IN_03_04"); //Nale¿y ci siê.
-
-    Npc_ExchangeRoutine (self,"cave2");
-    B_LogEntry                     (CH1_CorristoEvil,"Zaprowadzi³em Corristo do laboratoriom alchemicznego w starej œwi¹tyni. To chyba koniec mojej pracy dla niego. Mogê wróciæ do w³asnych problemów.");
-    Log_SetTopicStatus       (CH1_CorristoEvil, LOG_SUCCESS);
-    MIS_CorristoEvil = LOG_SUCCESS;
-	self.aivar[AIV_PARTYMEMBER] = false;
-    Npc_ExchangeRoutine (KDF_402_Corristo,"cave2");
-    B_GiveXP (600);
-    CreateInvItems (self, ItMiNugget, 1000);
-    B_GiveInvItems (self, other, ItMiNugget, 1000);
-    AI_Output (other, self ,"DIA_Corristo_CAVE2IN_15_05"); //Jeszcze coœ.
-    AI_Output (other, self ,"DIA_Corristo_CAVE2IN_15_06"); //W tym miejscu mog¹ czaiæ siê z³e moce. 
-    AI_Output (self, other ,"DIA_Corristo_CAVE2IN_03_07"); //Spokojnie, poradzê sobie z nimi.
-    AI_Output (self, other ,"DIA_Corristo_CAVE2IN_03_08"); //Powiedzmy, ¿e zale¿y mi na ciszy i spokoju.
-    AI_StopProcessInfos	(self);
-};
-
-//========================================
-//-----------------> DRAGO_QUEST
-//========================================
-
-INSTANCE DIA_Corristo_DRAGO_QUEST (C_INFO)
-{
-   npc          = KDF_402_Corristo;
-   nr           = 1;
-   condition    = DIA_Corristo_DRAGO_QUEST_Condition;
-   information  = DIA_Corristo_DRAGO_QUEST_Info;
-   permanent	= FALSE;
-   description	= "Przysy³a mnie Drago. Musimy podj¹æ odpowiednie kroki w sprawie Œni¹cego.";
-};
-
-FUNC INT DIA_Corristo_DRAGO_QUEST_Condition()
-{
-    if (must_talk_corristo == true)
-    && (kapitel == 3)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Corristo_DRAGO_QUEST_Info()
-{
+    B_GiveXP (XP_CorristoEvil);
 	
-    AI_Output (other, self ,"DIA_Corristo_DRAGO_QUEST_15_01"); //Przysy³a mnie Drago. Musimy podj¹æ odpowiednie kroki w sprawie Œni¹cego.
-    AI_Output (self, other ,"DIA_Corristo_DRAGO_QUEST_03_02"); //Tak, wiem ju¿ o wszystkim. Nie jestem tym faktem szczególnie zaskoczony. Œni¹cy od pocz¹tku wydawa³ mi siê podejrzany. Interesuje mnie natomiast, co teraz stanie siê z Bractwem.
-    AI_Output (other, self ,"DIA_Corristo_DRAGO_QUEST_15_03"); //Cor Angar przej¹³ w³adzê w Obozie, wyrzekaj¹c siê wraz ze swoimi ludŸmi Œni¹cego. Cor Kalom natomiast zebra³ grupê ludzi, którzy nie porzucili swej wiary i uda³ siê na poszukiwania demona.
-    AI_Output (self, other ,"DIA_Corristo_DRAGO_QUEST_03_04"); //Na Innosa, to istna katastrofa. Ci ludzie potrzebuj¹ teraz wielkiego wsparcia. Jakie teraz maj¹ plany?
-    AI_Output (other, self ,"DIA_Corristo_DRAGO_QUEST_15_05"); //Wys³ali mnie do Nowego Obozu, abym wspomóg³ Magów Wody w ich planie zniszczenia Bariery.
-    AI_Output (self, other ,"DIA_Corristo_DRAGO_QUEST_03_06"); //Oczywiœcie, Magowie Wody... IdŸ do nich natychmiast i zrób wszystko, co jesteœ w stanie. My w tym czasie pomyœlimy, co nale¿y robiæ w sprawie Œni¹cego.
-    B_LogEntry                     (CH1_NEW_GOD,"Có¿... Pozostaje mi czekaæ na rozwój wydarzeñ i dalej robiæ to, co do mnie nale¿y, czyli próbowaæ siê st¹d wydostaæ.");
-    Log_SetTopicStatus       (CH1_NEW_GOD, LOG_SUCCESS);
-    MIS_NEW_GOD = LOG_SUCCESS;
-
-    B_GiveXP (100);
-    AI_StopProcessInfos	(self);
-};
-//========================================
-//-----------------> ALTERNATIVE_QUEST_END
-//========================================
-
-INSTANCE DIA_Corristo_ALTERNATIVE_QUEST_END (C_INFO)
-{
-   npc          = KDF_402_Corristo;
-   nr           = 2;
-   condition    = DIA_Corristo_ALTERNATIVE_QUEST_END_Condition;
-   information  = DIA_Corristo_ALTERNATIVE_QUEST_END_Info;
-   permanent	= FALSE;
-   description	= "Drago, gdy ¿y³, kaza³ mi z tob¹ pogadaæ.";
-};
-
-FUNC INT DIA_Corristo_ALTERNATIVE_QUEST_END_Condition()
-{
-    if (!Npc_KnowsInfo (hero, DIA_Corristo_DRAGO_QUEST))
-    && (must_talk_corristo == true)
-    && (kapitel > 3)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Corristo_ALTERNATIVE_QUEST_END_Info()
-{
-    AI_Output (other, self ,"DIA_Corristo_ALTERNATIVE_QUEST_END_15_01"); //Drago, gdy ¿y³, kaza³ mi z tob¹ pogadaæ.
-    AI_Output (self, other ,"DIA_Corristo_ALTERNATIVE_QUEST_END_03_02"); //Niby o czym?
-    AI_Output (other, self ,"DIA_Corristo_ALTERNATIVE_QUEST_END_15_03"); //O tym, co siê dzia³o w Bractwie. O Œni¹cym. 
-    AI_Output (self, other ,"DIA_Corristo_ALTERNATIVE_QUEST_END_03_04"); //Nie s¹dzisz, ¿e przychodzisz trochê za póŸno?
-    AI_Output (self, other ,"DIA_Corristo_ALTERNATIVE_QUEST_END_03_05"); //Teraz ju¿ nic nie zmienimy. Œni¹cy jest demonem, a ja zosta³em ostatnim ¿yj¹cym Magiem Ognia w Kolonii.
-    AI_Output (other, self ,"DIA_Corristo_ALTERNATIVE_QUEST_END_15_06"); //Nie. Jest jeszcze Milten.
-    AI_Output (self, other ,"DIA_Corristo_ALTERNATIVE_QUEST_END_03_07"); //Ach, Milten... No tak...
-    AI_Output (other, self ,"DIA_Corristo_ALTERNATIVE_QUEST_END_15_08"); //Wszystko w porz¹dku?
-    AI_Output (self, other ,"DIA_Corristo_ALTERNATIVE_QUEST_END_03_09"); //Tak, tak. Daj mi chwilkê...
-    B_LogEntry                     (CH1_NEW_GOD,"Chcia³em porozmawiaæ z Corristo o wydarzeniach w Bractwie, ale przyszed³em chyba zbyt póŸno. W¹tpiê, ¿e gdyby ta rozmowa odby³aby siê kilka dni wczeœniej, coœ by³oby inaczej.");
-    Log_SetTopicStatus       (CH1_NEW_GOD, LOG_SUCCESS);
-    MIS_NEW_GOD = LOG_SUCCESS;
-
-    B_GiveXP (50);
-    AI_StopProcessInfos	(self);
+    Log_SetTopicStatus       (CH4_CorristoEvil, LOG_SUCCESS);
+    MIS_CorristoEvil = LOG_SUCCESS;
 };

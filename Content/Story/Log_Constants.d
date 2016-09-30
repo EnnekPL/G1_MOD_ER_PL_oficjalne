@@ -360,7 +360,7 @@ const string CH1_WejscieDoZamku      	= "Wejœcie do zamku";
 //---------------------------------------------------------------------
 //   KOLONIA
 //---------------------------------------------------------------------
-const string CH1_CorristoEvil      = "Ucieczka Corristo";
+
 const string CH1_Poszukiwacze      = "Poszukiwacze";
 const string CH1_blackMage      = "Tajemnicza mapa";
 const string CH1_WlakaZczarym      = "Nowe Zagro¿enie";

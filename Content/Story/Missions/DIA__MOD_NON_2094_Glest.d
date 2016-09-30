@@ -148,7 +148,7 @@ FUNC VOID DIA_Glest_ISerachartef_Info()
     AI_Output (self, other ,"DIA_Glest_ISerachartef_03_04"); //Czy to przez to cholerstwo zjawiaj¹ siê tu o¿ywieñcy?
     AI_Output (other, self ,"DIA_Glest_ISerachartef_15_05"); //Byæ mo¿e. Wiesz gdzie znajdê ten artefakt?
     AI_Output (self, other ,"DIA_Glest_ISerachartef_03_06"); //Nie, ale o¿ywieñcy nadchodz¹ z wnêtrza kopalni. Twoje magiczne œwiecide³ko musi gdzieœ tam byæ. 
-    B_LogEntry                     (CH1_CorristoEvil,"Glest twierdzi, ¿e artefakt znajdê na samym dnie kopalni, bo to w³aœnie stamt¹d wychodz¹ o¿ywieñcy.");
+    B_LogEntry                     (CH4_CorristoEvil,"Glest twierdzi, ¿e artefakt znajdê na samym dnie kopalni, bo to w³aœnie stamt¹d wychodz¹ o¿ywieñcy.");
 	//CreateInvItems (self, Focus_Corristo, 1);
     //B_GiveInvItems (self, other, Focus_Corristo, 1); 1.4 ultra fix
 };

@@ -905,7 +905,7 @@ var int MIS_Cytadelaposzukiwacz;
 var int MIS_lekiDlaAva;
 var int MIS_Wherevart;
 var int MIS_Wherevart2;
-var int MIS_CorristoEvil;
+
 var int MIS_blackMage;
 var int MIS_MapaRicka;
 var int MIS_EqAngusa;

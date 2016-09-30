@@ -107,6 +107,9 @@ const string CH1_Women 						= "Tajemnicza kobieta";
 var int MIS_Massage;
 const string CH1_Massage 					= "List do Magów Ognia";
 
+var int MIS_CorristoEvil;
+const string CH4_CorristoEvil      			= "Ucieczka Corristo";
+
 const string CH1_HelpJesse 					= "Przys³uga za przys³ugê";
 
 var int MIS_GrimAmulet;

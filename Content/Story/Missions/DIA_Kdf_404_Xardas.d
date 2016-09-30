@@ -258,7 +258,7 @@ FUNC int  Info_Xardas_DANGER_Condition()
 FUNC void  Info_Xardas_DANGER_Info()
 {
 	AI_Output 		(hero, self,"Info_Xardas_DANGER_15_01"); //Jeœli detonacja kopca rudy nie wystarczy, by za¿egnaæ niebezpieczeñstwo...
-	if MIS_CorristoEvil == LOG_SUCCESS 
+	if (MIS_CorristoEvil == LOG_SUCCESS) 
 	{
 	AI_Output 		(self, hero,"Info_Xardas_DANGER_14_02"); //...Zapomnij o tym ca³ym kopcu! Jego potêga nie wystarczy, by prze³amaæ Barierê.
 	AI_Output 		(self, hero,"Info_Xardas_DANGER_14_03"); //Gdyby Corristo i Saturas nie tracili cennego czasu na te swoje dziecinne spory, wiedzieliby teraz co nale¿y zrobiæ.

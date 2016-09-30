@@ -307,10 +307,7 @@ FUNC VOID DIA_Uturiel_EXPERIMENT_Info()
     Log_SetTopicStatus     	 (CH1_MagicalCrystals, LOG_SUCCESS);
     MIS_MagicalCrystals = LOG_SUCCESS;
 
-    B_GiveXP (350);
-   
-	
-	
+    B_GiveXP (350);	
 };
 
 //========================================

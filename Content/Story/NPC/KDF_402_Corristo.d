@@ -85,11 +85,19 @@ FUNC VOID Rtn_back_402 ()
 	ZADANIE Z KAMIENIEM MA BYĆ PO INICJALIZYACJI WĄTKÓW GILDYJNYCH
 	*/
 };
+
+FUNC VOID Rtn_monestry_402 ()
+{
+	TA_ReadBook		(19,05,06,55,"OW_CORRISTO_BOOK");
+	TA_ReadBook		(06,55,19,05,"OW_CORRISTO_BOOK");
+};
+//rutyny poniżej nieaktywne
 FUNC VOID Rtn_follow_402 ()
 {
 	TA_FollowPC		(19,05,06,55,"OW_PATH_155");
 	TA_FollowPC		(06,55,19,05,"OW_PATH_155");
 };
+
 FUNC VOID Rtn_cave1_402 ()
 {
 	TA_PotionAlchemy		(19,05,06,55,"LOCATION_23_CAVE_1_02");
@@ -100,5 +108,7 @@ FUNC VOID Rtn_cave2_402 ()
 	TA_PotionAlchemy		(19,05,06,55,"TPL_ALCHEMY");
 	TA_PotionAlchemy		(06,55,19,05,"TPL_ALCHEMY");
 };
+
+
 
 

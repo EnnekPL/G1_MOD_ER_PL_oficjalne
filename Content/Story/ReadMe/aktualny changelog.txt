@@ -22,3 +22,5 @@
 - Uturiel nie umiera w 5 rozdziale z automatu
 - kolorowe nazwy atrybutów podczas nauki
 - naprawiony b³¹d z Bergiem, który atakuje nas jeœli zap³acimy mu rud¹ za klucz
+- usuniêto czêœæ zadania od Corristo zwi¹zan¹ z jego prowadzeniem do kryjówki
+- usuniêto laboratorium ze starej orkowej areny

@@ -55,7 +55,7 @@ const int XP_HelpSLD				= 350;
 const int XP_RockyMaterials			= 250;
 const int XP_Zniewolenie			= 500;
 const int XP_SkorpioWork			= 450;
-
+const int XP_CorristoEvil			= 500;
 //******NOWY OBÓZ**************************************************************
 const int XP_GoToFreeMineCamp		= 300;
 const int XP_BecomeSfb				= 100;
