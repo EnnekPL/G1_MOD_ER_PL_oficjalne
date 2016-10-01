@@ -2915,7 +2915,7 @@ FUNC VOID INIT_WORLD ()
 	
 	//FF_ApplyOnce(ExpBarFunc); 
 	
-	FF_Apply (ScreenFade);
+	//FF_Apply (ScreenFade);
 	
 	//ScreenFx_Init();
 	//ScreenFX2_Init();

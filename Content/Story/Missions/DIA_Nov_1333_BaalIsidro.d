@@ -363,7 +363,7 @@ FUNC VOID DIA_BaalIsidro_INTERESY_Info()
     AI_Output (self, other ,"DIA_BaalIsidro_INTERESY_03_02"); //Hmmm... Mo¿e. Sk¹d to pytanie?
     AI_Output (other, self ,"DIA_BaalIsidro_INTERESY_15_03"); //Chcê wiedzieæ co wymieniasz i w jakim celu?
     AI_Output (self, other ,"DIA_BaalIsidro_INTERESY_03_04"); //Nic nielegalnego. Ot tylko ¿ywnoœæ, broñ, narzêdzia - g³ównie siekiery.
-    B_LogEntry                     (CH1_PodejrzanyCyrus,"Odkry³em, ¿e Baal Isidro prowadzi interesy z Cyrusem. Dobrze mu p³aci za czêœæ dostaw, które s¹ przeznaczone dla Kot³a. Towary sprzedaje w Bractwie.");
+    B_LogEntry                     (CH1_Scams,"Odkry³em, ¿e Baal Isidro prowadzi interesy z Cyrusem. Dobrze mu p³aci za czêœæ dostaw, które s¹ przeznaczone dla Kot³a. Towary sprzedaje w Bractwie.");
 
     B_GiveXP (300);
     AI_Output (self, other ,"DIA_BaalIsidro_INTERESY_03_05"); //Bardzo dobrze p³acê Cyrusowi za jego towary. Mimo wszystko i tak wyjdê na swoje. 

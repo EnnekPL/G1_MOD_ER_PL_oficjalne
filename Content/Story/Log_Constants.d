@@ -407,7 +407,7 @@ const string CH1_DziwnyJosep    		     	= "Dziwne zachowania";
 
 const string CH1_RannyWojownik      	= "Ranny wojownik";
 
-const string CH1_PodejrzanyCyrus     	= "Przekrêty";
+
 
 const string CH1_EqKopalnia      		= "Dostawa kilofów";
 

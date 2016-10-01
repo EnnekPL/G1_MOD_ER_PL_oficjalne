@@ -29,7 +29,7 @@ FUNC VOID DIA_Najemnik_INTERESY_Info()
     AI_Output (self, other ,"DIA_Najemnik_INTERESY_03_04"); //By³o ciemno, ale dostrzeg³em, ¿e mia³ doœæ ciekawy kolor ubioru. Jasny, nieco podniszczony.
     AI_Output (other, self ,"DIA_Najemnik_INTERESY_15_05"); //To mi za wiele nie pomog³o.
     AI_Output (self, other ,"DIA_Najemnik_INTERESY_03_06"); //O! Jeszcze jedno. Mia³ jeden metalowy naramiennik.
-    B_LogEntry                     (CH1_PodejrzanyCyrus,"Jeden z myœliwych-najemników wygada³ mi, ¿e Cyrus spotyka siê z jakimœ kupcem. Kupiec by³ odziany w jasny strój i posiada³ jeden naramiennik. Mieszkañcy którego obozu nosz¹ jasny ubiór i naramienniki?");
+    B_LogEntry                     (CH1_Scams,"Jeden z myœliwych-najemników wygada³ mi, ¿e Cyrus spotyka siê z jakimœ kupcem. Kupiec by³ odziany w jasny strój i posiada³ jeden naramiennik. Mieszkañcy którego obozu nosz¹ jasny ubiór i naramienniki?");
 
     B_GiveXP (50);
     AI_StopProcessInfos	(self);

@@ -92,6 +92,9 @@ const string CH2_KalomsNewWeed      		= "Przepis na niesamowite ziele";
 var int MIS_LurkersInHut;
 const string CH1_LurkersInHut    			= "Rybacka chata";
 
+var int MIS_Scams;
+const string CH1_Scams     					= "Przekrêty";
+
 //***Kolonia***
 //***Zmienne zadañ***
 
@@ -134,6 +137,7 @@ var int ArtegorIsDistracted;//Oczekuj¹cy (K³ykacz), Artegor
 var int JensIsVictimOfKereth;
 var int CanTellToGomezAboutSecretPath;//Thorus & Gomez (zadanie ze œcie¿k¹ do wolnej kopalni)
 var int Choice_BergsRing;//TRUE pomagam, FALSE nie pomagam
+var int QuestFromOkyl;
 
 //***Pomocnicze***
 //***Wld_GetDay***

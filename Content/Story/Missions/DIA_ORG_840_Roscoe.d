@@ -132,12 +132,12 @@ FUNC VOID DIA_Roscoe_Okyl_Info()
 
 INSTANCE DIA_Roscoe_IveGuild (C_INFO)
 {
-   npc          		= Org_840_Roscoe;
-   nr           		= 1;
+   npc          	= Org_840_Roscoe;
+   nr           	= 1;
    condition    	= DIA_Roscoe_IveGuild_Condition;
    information  	= DIA_Roscoe_IveGuild_Info;
-   permanent	= FALSE;
-   description	= "ZejdŸ mi z drogi. Nale¿ê do Nowego Obozu i chcê pogadaæ z Laresem.";
+   permanent		= FALSE;
+   description		= "ZejdŸ mi z drogi. Nale¿ê do Nowego Obozu i chcê pogadaæ z Laresem.";
 };
 
 FUNC INT DIA_Roscoe_IveGuild_Condition()
@@ -159,42 +159,6 @@ FUNC VOID DIA_Roscoe_IveGuild_Info()
     self.aivar[AIV_PASSGATE] = TRUE;
     AI_StopProcessInfos	(self);
 };
-
-/*
-//========================================
-//-----------------> JarvisKoxSzmaciarzu
-//========================================
-
-INSTANCE DIA_Roscoe_JarvisKoxSzmaciarzu (C_INFO)
-{
-   npc          = Org_840_Roscoe;
-   nr           = 1;
-   condition    = DIA_Roscoe_JarvisKoxSzmaciarzu_Condition;
-   information  = DIA_Roscoe_JarvisKoxSzmaciarzu_Info;
-   permanent	= FALSE;
-   description	= "Przysy³a mnie Jarvis.";
-};
-
-FUNC INT DIA_Roscoe_JarvisKoxSzmaciarzu_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Jarvis_LikeIt))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Roscoe_JarvisKoxSzmaciarzu_Info()
-{
-	//edit by Nocturn
-    AI_Output (other, self ,"DIA_Roscoe_JarvisKoxSzmaciarzu_15_01"); //Przysy³a mnie Jarvis.
-    AI_Output (other, self ,"DIA_Roscoe_JarvisKoxSzmaciarzu_15_02"); //Mam poparcie kilku Najemników.
-    AI_Output (self, other ,"DIA_Roscoe_JarvisKoxSzmaciarzu_03_03"); //No có¿... Nie chcemy k³opotów z Lee.
-    AI_Output (self, other ,"DIA_Roscoe_JarvisKoxSzmaciarzu_03_04"); //Mo¿esz wejœæ.
-    self.aivar[AIV_PASSGATE] = TRUE;
-    AI_StopProcessInfos	(self);
-};
-*/
 
 // ****************************************
 // 				Wanna Join
@@ -224,8 +188,7 @@ FUNC int  DIA_Roscoe_WannaJoin_Condition()
 func void  DIA_Roscoe_WannaJoin_Info()
 {
 	AI_Output (other, self,"DIA_Roscoe_WannaJoin_15_00"); //Chcia³bym do was do³¹czyæ.
-	AI_Output (self, other,"DIA_Roscoe_WannaJoin_10_01"); //Nie ty jeden, ale samo "chcenie" nie wystarczy. Musisz udowodniæ, ¿e bêdzie z ciebie jakiœ po¿ytek.
-	
+	AI_Output (self, other,"DIA_Roscoe_WannaJoin_10_01"); //Nie ty jeden, ale samo "chcenie" nie wystarczy. Musisz udowodniæ, ¿e bêdzie z ciebie jakiœ po¿ytek.	
 };
 
 // ****************************************
@@ -295,7 +258,6 @@ FUNC VOID DIA_Roscoe_LetterForFireMages_Info()
     AI_Output (self, other ,"DIA_Roscoe_LetterForFireMages_03_08"); //Nie musisz do mnie wracaæ jak dostarczysz list. Wierz mi, bêdê o tym wiedzia³.
     AI_Output (other, self ,"DIA_Roscoe_LetterForFireMages_15_09"); //Sk¹d? Œledzisz mnie?
     AI_Output (self, other ,"DIA_Roscoe_LetterForFireMages_03_10"); //Mam swoje Ÿród³a.
-    B_LogEntry                     (CH1_CourierFireMage,"Roscoe przekaza³ mi list do Magów Ognia. Podobno Lares ma do nich jakiœ interes.");
     AI_Output (other, self ,"DIA_Roscoe_LetterForFireMages_15_11"); //Dlaczego chcia³eœ siê spotkaæ akurat tutaj?
     AI_Output (self, other ,"DIA_Roscoe_LetterForFireMages_03_12"); //Jako cz³onek Starego Obozu nie masz wstêpu do siedziby Laresa.
     AI_Output (self, other ,"DIA_Roscoe_LetterForFireMages_03_13"); //Stra¿nicy nigdy nie pozwoliliby ci przejœæ.
@@ -303,6 +265,8 @@ FUNC VOID DIA_Roscoe_LetterForFireMages_Info()
     B_GiveInvItems (self, other, ItMis_LetterLaresToFireMages, 1);
     Npc_ExchangeRoutine (self, "START");
     AI_StopProcessInfos	(self);
+	
+	B_LogEntry                     (CH1_CourierFireMage,"Roscoe przekaza³ mi list do Magów Ognia. Podobno Lares ma do nich jakiœ interes.");
 };
 
 
@@ -474,7 +438,7 @@ instance DIA_Roscoe_TreasureOldGuard (C_INFO)
 
 FUNC int DIA_Roscoe_TreasureOldGuard_Condition()
 {	
-	if self.aivar[AIV_PASSGATE] == TRUE && (kapitel < 3)
+	if self.aivar[AIV_PASSGATE] == TRUE && (kapitel == 2) && ( (Npc_GetTrueGuild (hero) == GIL_ORG) || (Npc_GetTrueGuild (hero) == GIL_SLD) )
 	{
 	return 1;
 	};
@@ -488,17 +452,17 @@ func void  DIA_Roscoe_TreasureOldGuard_Info()
 	AI_Output (self, other, "DIA_Roscoe_TreasureOldGuard_10_03"); //Ta, któr¹ teraz posiadam mo¿e nie wp³ynie specjalnie na los Nowego Obozu, ale mo¿e sprawiæ, ¿e paru ludzi nieŸle siê wzbogaci.
 	AI_Output (other, self, "DIA_Roscoe_TreasureOldGuard_15_04"); //Brzmi interesuj¹co. Jakieœ konkrety?
 	AI_Output (self, other, "DIA_Roscoe_TreasureOldGuard_10_05"); //Ponoæ w obozie pod Star¹ Kopalni¹ s³yszy siê ostatnio o pewnym dawno ukrytym skarbie.
-	AI_Output (self, other, "DIA_Roscoe_TreasureOldGuard_10_06"); //Z tego co mi wiadomo ukry³ go pewien stary Stra¿nik wiele lat temu. Mia³ na imiê Craig.
+	AI_Output (self, other, "DIA_Roscoe_TreasureOldGuard_10_06"); //Z tego co mi wiadomo ukry³ go stary Stra¿nik wiele lat temu. Mia³ na imiê Craig.
 	AI_Output (other, self, "DIA_Roscoe_TreasureOldGuard_15_07"); //No dobra. Chyba nie na darmo mówisz mi o tym skarbie. Jeœli dowiem siê gdzie jest, to jak go podzielimy?
 	AI_Output (self, other, "DIA_Roscoe_TreasureOldGuard_10_08"); //Tak siê sk³ada, ¿e wiem nawet co wchodzi w jego sk³ad. Sporo rudy oraz wisior z pere³ i amulet. Ja wezmê b³yskotki, a ty rudê. Zgoda?
 	AI_Output (other, self, "DIA_Roscoe_TreasureOldGuard_15_09"); //Niech bêdzie. Masz jakiœ pomys³ co do miejsca poszukiwañ?
-	AI_Output (self, other, "DIA_Roscoe_TreasureOldGuard_10_10"); //Có¿, popytaj o tego Craiga pod Kopalni¹. Powiedzia³em ci ju¿ wszystko co wiem.
+	AI_Output (self, other, "DIA_Roscoe_TreasureOldGuard_10_10"); //Có¿, popytaj o tego Craiga pod Kopalni¹. Powiedzia³em ci ju¿ wszystko, co wiem.
 	
 	MIS_TreasureOldGuard = LOG_RUNNING;
 
-   Log_CreateTopic			(CH1_TreasureOldGuard, LOG_MISSION);
-   Log_SetTopicStatus	(CH1_TreasureOldGuard, LOG_RUNNING);
-   B_LogEntry					(CH1_TreasureOldGuard,"Szkodnik pilnuj¹cy wejœcia do chaty Laresa powiedzia³ mi, ¿e pewien Stra¿nik pe³ni¹cy s³u¿bê w Starej Kopalni przed wieloma laty ukry³ doœæ spory skarb. Jeœli uda mi siê go odnaleŸæ, to Lares podzieli siê ze mn¹ zyskiem. Powinienem popytaæ w obozie przed Kopalni¹ o stra¿nika Craiga.");
+	Log_CreateTopic			(CH1_TreasureOldGuard, LOG_MISSION);
+	Log_SetTopicStatus		(CH1_TreasureOldGuard, LOG_RUNNING);
+	B_LogEntry				(CH1_TreasureOldGuard,"Szkodnik pilnuj¹cy wejœcia do chaty Laresa powiedzia³ mi, ¿e pewien Stra¿nik pe³ni¹cy s³u¿bê w Starej Kopalni przed wieloma laty ukry³ doœæ spory skarb. Jeœli uda mi siê go odnaleŸæ, to Lares podzieli siê ze mn¹ zyskiem. Powinienem popytaæ w obozie przed Kopalni¹ o stra¿nika Craiga.");
 };
 
 instance DIA_Roscoe_TreasureFound (C_INFO)

@@ -992,7 +992,7 @@ var int MIS_MagicySzkodnicy;
 var int MIS_RannyWojownik;
 var int MIS_SzponyTopielca;
 var int MIS_JimsSword;
-var int MIS_PodejrzanyCyrus;
+
 var int MIS_Cpuny;
 var int MIS_4Friends;
 var int MIS_GoldSword_Bartholo;

@@ -418,7 +418,7 @@ FUNC VOID DIA_Outlam_KOCIOL_Info()
         AI_Output (other, self ,"DIA_Outlam_KOCIOL_15_06"); //Bêdziesz mia³, je¿eli nie powiesz mi czegoœ wiêcej.
         AI_Output (self, other ,"DIA_Outlam_KOCIOL_03_07"); //Dobra, dobra. Cyrus spotyka siê z Nowicjuszem, na którego wo³aj¹ Isidro. Nic wiêcej nie wiem.
         AI_Output (other, self ,"DIA_Outlam_KOCIOL_15_08"); //Tyle na razie mi wystarczy.
-        B_LogEntry                     (CH1_PodejrzanyCyrus,"Cyrus spotyka siê z Nowicjuszem imieniem Isidro. Najpewniej maj¹ razem jakieœ interesy.");
+        B_LogEntry                     (CH1_Scams,"Cyrus spotyka siê z Nowicjuszem imieniem Isidro. Najpewniej maj¹ razem jakieœ interesy.");
     };
     AI_StopProcessInfos	(self);
 };

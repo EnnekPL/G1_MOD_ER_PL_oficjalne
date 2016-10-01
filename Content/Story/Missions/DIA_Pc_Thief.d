@@ -1,44 +1,4 @@
 var int Diego_After_Gamestart;
-
-var int ScreenFadeEnabled;
-var int ScreenFadeAlpha;
-
-func void ScreenFade () 
-{
-    MEM_Camera.screenFadeEnabled = true;
-    MEM_Camera.screenFadeColor = RGBA (0, 0, 0, ScreenFadeAlpha);
-
-    if (ScreenFadeEnabled)
-    {
-        if (ScreenFadeAlpha < 255)
-        {
-        ScreenFadeAlpha += 5;
-        MEM_Game.game_drawall = false;
-        };
-    }
-    else
-    {
-        if (ScreenFadeAlpha > 0)
-        {
-        ScreenFadeAlpha -= 5;
-        };
-
-        if (ScreenFadeAlpha == 0)
-        {
-        MEM_Game.game_drawall = true;
-        };
-    };
-};
-
-func void run_gunwo ()
-{
-ScreenFadeEnabled = true;
-};
-
-func void stop_gunw ()
-{
-ScreenFadeEnabled = false;
-};
 // ************************************************************
 // 							GAMESTART
 // ************************************************************

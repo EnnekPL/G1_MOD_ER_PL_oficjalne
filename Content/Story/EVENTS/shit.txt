@@ -1,4 +1,38 @@
+/*
+//========================================
+//-----------------> JarvisKoxSzmaciarzu
+//========================================
 
+INSTANCE DIA_Roscoe_JarvisKoxSzmaciarzu (C_INFO)
+{
+   npc          = Org_840_Roscoe;
+   nr           = 1;
+   condition    = DIA_Roscoe_JarvisKoxSzmaciarzu_Condition;
+   information  = DIA_Roscoe_JarvisKoxSzmaciarzu_Info;
+   permanent	= FALSE;
+   description	= "Przysyła mnie Jarvis.";
+};
+
+FUNC INT DIA_Roscoe_JarvisKoxSzmaciarzu_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Jarvis_LikeIt))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Roscoe_JarvisKoxSzmaciarzu_Info()
+{
+	//edit by Nocturn
+    AI_Output (other, self ,"DIA_Roscoe_JarvisKoxSzmaciarzu_15_01"); //Przysyła mnie Jarvis.
+    AI_Output (other, self ,"DIA_Roscoe_JarvisKoxSzmaciarzu_15_02"); //Mam poparcie kilku Najemników.
+    AI_Output (self, other ,"DIA_Roscoe_JarvisKoxSzmaciarzu_03_03"); //No cóż... Nie chcemy kłopotów z Lee.
+    AI_Output (self, other ,"DIA_Roscoe_JarvisKoxSzmaciarzu_03_04"); //Możesz wejść.
+    self.aivar[AIV_PASSGATE] = TRUE;
+    AI_StopProcessInfos	(self);
+};
+*/
 
 
 //............................................
@@ -740,4 +774,35 @@ FUNC VOID DIA_Corristo_CAVE2IN_Info()
     AI_Output (self, other ,"DIA_Corristo_CAVE2IN_03_07"); //Spokojnie, poradzę sobie z nimi.
     AI_Output (self, other ,"DIA_Corristo_CAVE2IN_03_08"); //Powiedzmy, że zależy mi na ciszy i spokoju.
     AI_StopProcessInfos	(self);
+};
+
+
+var int ScreenFadeEnabled;
+var int ScreenFadeAlpha;
+
+func void ScreenFade () 
+{
+    MEM_Camera.screenFadeEnabled = true;
+    MEM_Camera.screenFadeColor = RGBA (0, 0, 0, ScreenFadeAlpha);
+
+    if (ScreenFadeEnabled)
+    {
+        if (ScreenFadeAlpha < 255)
+        {
+        ScreenFadeAlpha += 5;
+        MEM_Game.game_drawall = false;
+        };
+    }
+    else
+    {
+        if (ScreenFadeAlpha > 0)
+        {
+        ScreenFadeAlpha -= 5;
+        };
+
+        if (ScreenFadeAlpha == 0)
+        {
+        MEM_Game.game_drawall = true;
+        };
+    };
 };

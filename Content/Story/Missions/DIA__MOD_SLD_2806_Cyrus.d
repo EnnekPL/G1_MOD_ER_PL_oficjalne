@@ -184,7 +184,7 @@ FUNC VOID DIA_Cyrus_DOSTAWY_Info()
     AI_Output (self, other ,"DIA_Cyrus_DOSTAWY_03_04"); //Co ten idiota sobie myœli!
     AI_Output (other, self ,"DIA_Cyrus_DOSTAWY_15_05"); //No wiêc... co z tymi dostawami?
     AI_Output (self, other ,"DIA_Cyrus_DOSTAWY_03_06"); //Nic! 
-    B_LogEntry                     (CH1_PodejrzanyCyrus,"Cyrus nie jest zbyt rozmowny. Myœlê, ¿e coœ ukrywa.");
+    B_LogEntry                     (CH1_Scams,"Cyrus nie jest zbyt rozmowny. Myœlê, ¿e coœ ukrywa.");
     AI_StopProcessInfos	(self);
 };
 
@@ -204,7 +204,7 @@ INSTANCE DIA_Cyrus_WYZWISKA (C_INFO)
 
 FUNC INT DIA_Cyrus_WYZWISKA_Condition()
 {
-    if (MIS_PodejrzanyCyrus == LOG_SUCCESS)
+    if (MIS_Scams == LOG_SUCCESS)
     {
     return TRUE;
     };

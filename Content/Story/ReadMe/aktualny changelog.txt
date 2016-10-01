@@ -24,3 +24,5 @@
 - naprawiony b³¹d z Bergiem, który atakuje nas jeœli zap³acimy mu rud¹ za klucz
 - usuniêto czêœæ zadania od Corristo zwi¹zan¹ z jego prowadzeniem do kryjówki
 - usuniêto laboratorium ze starej orkowej areny
+- zadanie od Roscoe ("Skarb starego Stra¿nika") jest tylko dla cz³onków Nowego Obozu (tylko rozdzia³ 2)
+- zadanie od Okyla ("Przekrêty") jest tylko dla cz³onków Nowego Obozu

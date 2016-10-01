@@ -475,31 +475,49 @@ INSTANCE DIA_OKYL_WORK_FIND (C_INFO)
    nr           = 1;
    condition    = DIA_OKYL_WORK_FIND_Condition;
    information  = DIA_OKYL_WORK_FIND_Info;
-   permanent	= FALSE;
+   permanent	= TRUE;
    description	= "Szukam roboty.";
 };
 
 FUNC INT DIA_OKYL_WORK_FIND_Condition()
 {
+	if (QuestFromOkyl == FALSE)
+	{
     return TRUE;
+	};
 };
 
 FUNC VOID DIA_OKYL_WORK_FIND_Info()
 {
     AI_Output (other, self ,"DIA_OKYL_WORK_FIND_15_01"); //Szukam roboty.
-    AI_Output (self, other ,"DIA_OKYL_WORK_FIND_03_02"); //Jesteœ tu nowy. Hmm... Mo¿esz mi siê na coœ przydaæ.
-    AI_Output (other, self ,"DIA_OKYL_WORK_FIND_15_03"); //Co mam zrobiæ?
-    AI_Output (self, other ,"DIA_OKYL_WORK_FIND_03_04"); //IdŸ do obozu myœliwych i powêsz tam trochê. 
-    AI_Output (other, self ,"DIA_OKYL_WORK_FIND_15_05"); //Na co konkretnie mam zwróciæ uwagê?
-    AI_Output (self, other ,"DIA_OKYL_WORK_FIND_03_06"); //Na dostawy, które maj¹ trafiaæ do naszego obozu. Cyrus ZAWSZE siê spóŸnia o kilka dni. Tyle razy mu powtarza³em, ¿e szybko kurcz¹ nam siê zasoby.
-    AI_Output (self, other ,"DIA_OKYL_WORK_FIND_03_07"); //Myœlê, ¿e on coœ kombinuje. SprawdŸ to. 
-    MIS_PodejrzanyCyrus = LOG_RUNNING;
+	if (Npc_GetTrueGuild(hero) != GIL_SLD) || (Npc_GetTrueGuild(hero) != GIL_ORG)
+	{
+    AI_Output (self, other ,"DIA_OKYL_WORK_FIND_03_02"); //Mam coœ, jednak nie zaufam byle komu w tak wa¿nej sprawie. 
+	AI_Output (self, other ,"DIA_OKYL_WORK_FIND_03_03"); //Wróæ, gdy ju¿ zostaniesz jednym z ludzi Laresa lub Lee. Ha ha ha ha...
+	AI_Output (other, self ,"DIA_OKYL_WORK_FIND_15_04"); //Co ciê tak bawi?
+	AI_Output (self, other ,"DIA_OKYL_WORK_FIND_03_05"); //To raczej niemo¿liwe.
+	}
+	else
+	{
+	AI_Output (self, other ,"DIA_OKYL_WORK_FIND_03_06"); //Jest jedna rzecz...
+    AI_Output (other, self ,"DIA_OKYL_WORK_FIND_15_07"); //Co mam zrobiæ?
+    AI_Output (self, other ,"DIA_OKYL_WORK_FIND_03_08"); //IdŸ do obozu myœliwych i powêsz tam trochê. 
+    AI_Output (other, self ,"DIA_OKYL_WORK_FIND_15_09"); //Na co konkretnie mam zwróciæ uwagê?
+    AI_Output (self, other ,"DIA_OKYL_WORK_FIND_03_10"); //Na dostawy, które maj¹ trafiaæ do naszego obozu. Cyrus ZAWSZE siê spóŸnia o kilka dni. Tyle razy mu powtarza³em, ¿e szybko kurcz¹ nam siê zasoby.
+    AI_Output (self, other ,"DIA_OKYL_WORK_FIND_03_11"); //Myœlê, ¿e on coœ kombinuje. SprawdŸ to. 
+	
+	QuestFromOkyl = TRUE;
+	
+    MIS_Scams = LOG_RUNNING;
 
-    Log_CreateTopic            (CH1_PodejrzanyCyrus, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_PodejrzanyCyrus, LOG_RUNNING);
-    B_LogEntry                     (CH1_PodejrzanyCyrus,"Dostawy zasobów z obozu myœliwych do Kot³a zawsze siê opóŸniaj¹. Mam ustaliæ dlaczego Cyrus, mimo próœb Okyla przysy³a dostawy póŸniej.");
-    AI_StopProcessInfos	(self);
+    Log_CreateTopic          (CH1_Scams, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_Scams, LOG_RUNNING);
+    B_LogEntry               (CH1_Scams,"Dostawy zasobów z obozu myœliwych do Kot³a zawsze siê opóŸniaj¹. Mam ustaliæ dlaczego Cyrus, mimo próœb Okyla przysy³a dostawy póŸniej.");
+	
+	};
+	AI_StopProcessInfos	(self);
 };
+
 //========================================
 //-----------------> HELLO1
 //========================================
@@ -517,7 +535,7 @@ INSTANCE DIA_OKYL_HELLO1 (C_INFO)
 FUNC INT DIA_OKYL_HELLO1_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_BaalIsidro_INTERESY))
-    && (MIS_PodejrzanyCyrus == LOG_RUNNING)
+    && (MIS_Scams == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -532,9 +550,9 @@ FUNC VOID DIA_OKYL_HELLO1_Info()
     AI_Output (other, self ,"DIA_OKYL_HELLO1_15_04"); //Sprawdza³eœ paczki? Mo¿e dostajecie mniej ni¿ powinniœcie?
     AI_Output (self, other ,"DIA_OKYL_HELLO1_03_05"); //Cholera. Nikomu nigdy nie kaza³em sprawdzaæ paczek. Ufa³em temu sukinsynowi.
     AI_Output (self, other ,"DIA_OKYL_HELLO1_03_06"); //Ju¿ ja siê zemszczê.
-    B_LogEntry                     (CH1_PodejrzanyCyrus,"Cyrus od miesiêcy oszukiwa³ Okyla dorabiaj¹c sobie na boku. Za przekrêty spotka go kara z rêki Okyla.");
-    Log_SetTopicStatus       (CH1_PodejrzanyCyrus, LOG_SUCCESS);
-    MIS_PodejrzanyCyrus = LOG_SUCCESS;
+    B_LogEntry                     (CH1_Scams,"Cyrus od miesiêcy oszukiwa³ Okyla dorabiaj¹c sobie na boku. Za przekrêty spotka go kara z rêki Okyla.");
+    Log_SetTopicStatus       (CH1_Scams, LOG_SUCCESS);
+    MIS_Scams = LOG_SUCCESS;
 
     B_GiveXP (300);
     AI_Output (self, other ,"DIA_OKYL_HELLO1_03_07"); //Masz tu coœ za pomoc. To niez³a broñ. Zarekwirowa³em jednemu z Kretów.
