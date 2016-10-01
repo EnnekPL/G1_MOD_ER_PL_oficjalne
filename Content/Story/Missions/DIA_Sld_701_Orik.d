@@ -1,5 +1,3 @@
-// *Script was make in Easy Dialog Maker (EDM)
-
 //========================================
 //-----------------> OPCJA *KONIEC* 
 //========================================
@@ -8,9 +6,9 @@ INSTANCE DIA_Orik_EXIT(C_INFO)
 {
 	npc             = Sld_701_Orik;
 	nr              = 999;
-	condition	= DIA_Orik_EXIT_Condition;
-	information	= DIA_Orik_EXIT_Info;
-	permanent	= TRUE;
+	condition		= DIA_Orik_EXIT_Condition;
+	information		= DIA_Orik_EXIT_Info;
+	permanent		= TRUE;
 	description     = DIALOG_ENDE;
 };
 
@@ -61,20 +59,25 @@ INSTANCE DIA_Orik_QUEST1 (C_INFO)
    nr           = 2;
    condition    = DIA_Orik_QUEST1_Condition;
    information  = DIA_Orik_QUEST1_Info;
-   permanent	= FALSE;
+   permanent	= TRUE;
    description	= "Jak siê maj¹ sprawy Obozu?";
 };
 
 FUNC INT DIA_Orik_QUEST1_Condition()
 {
+	if (QuestFromOrik == FALSE)
+	{
     return TRUE;
+	};
 };
 
 FUNC VOID DIA_Orik_QUEST1_Info()
 {
     AI_Output (other, self ,"DIA_Orik_QUEST1_15_01"); //Jak siê maj¹ sprawy Obozu?
+	if (Npc_GetTrueGuild (hero) == GIL_SLD)
+	{
     AI_Output (self, other ,"DIA_Orik_QUEST1_03_02"); //Szkodniki coraz bardziej mnie irytuj¹. Ostatnio w Obozie mia³a miejsce kradzie¿.
-    AI_Output (other, self ,"DIA_Orik_QUEST1_15_03"); //Kradzie¿? Nic mi o tym nie wiadomo.
+    AI_Output (other, self ,"DIA_Orik_QUEST1_15_03"); //Jaka kradzie¿?
     AI_Output (self, other ,"DIA_Orik_QUEST1_03_04"); //Ukradziono jakieœ magiczne duperele Cronosowi. Z³odzieje to banda Szkodników.
     AI_Output (self, other ,"DIA_Orik_QUEST1_03_05"); //Ostatnio jeden z nich zwróci³ moj¹ uwagê. Zachowuje siê dziwnie. Nie znam tego goœcia. Zawsze wtapia siê w t³um.
     AI_Output (self, other ,"DIA_Orik_QUEST1_03_06"); //Ale wygl¹da, jakby mia³ coœ do ukrycia. 
@@ -91,13 +94,20 @@ FUNC VOID DIA_Orik_QUEST1_Info()
 	B_SetPermAttitude	(Sld_701_Orik,	ATT_FRIENDLY);
 	Sld_701_Orik.flags = 2;
 	
-    MIS_Wodospad = LOG_RUNNING;
-    Log_CreateTopic            	(CH1_Wodospad, LOG_MISSION);
-    Log_SetTopicStatus       	(CH1_Wodospad, LOG_RUNNING);
-    B_LogEntry                  (CH1_Wodospad,"Orik podejrzewa, ¿e jeden ze Szkodników w Obozie nale¿y do bandy z³odziei artefaktów. Widzia³ go po drugiej stronie jeziora. Musimy tam iœæ i dowiedzieæ siê co knuje bandzior.");
-    AI_StopProcessInfos	(self);
-	
+    MIS_StupidMagican = LOG_RUNNING;
+    Log_CreateTopic            	(CH2_StupidMagican, LOG_MISSION);
+    Log_SetTopicStatus       	(CH2_StupidMagican, LOG_RUNNING);
+    B_LogEntry                  (CH2_StupidMagican,"Orik podejrzewa, ¿e jeden ze Szkodników w Obozie nale¿y do bandy z³odziei artefaktów. Widzia³ go po drugiej stronie jeziora. Musimy tam iœæ i dowiedzieæ siê co knuje bandzior.");
+    
 	Wld_InsertNpc				(ORG_953_OrganisatorMage,"WODOSPAD");
+	
+	QuestFromOrik = TRUE;
+	}
+	else
+	{
+	AI_Output (self, other ,"DIA_Orik_QUEST1_03_14"); //Rozmawiam o sprawach obozu WY£¥CZNIE z Najemnikami. Lepiej zajmij siê swoimi sprawami. 
+	};
+	AI_StopProcessInfos	(Sld_701_Orik);
 };
 
 //========================================
@@ -172,9 +182,9 @@ FUNC VOID DIA_Orik_QUEST1_SUCCESS_Info()
     AI_Output (self, other ,"DIA_Orik_QUEST1_SUCCESS_03_03"); //Ten g³upi magik próbowa³ przywo³aæ jakiegoœ potwora. Kr¹¿y³y niegdyœ legendy o duchu z jeziora, ale to co przywo³a³ ducha mi nie przypomina³o.
     AI_Output (other, self ,"DIA_Orik_QUEST1_SUCCESS_15_04"); //Najwa¿niejsze, ¿e pozbyliœmy siê tego potwora.
     AI_Output (self, other ,"DIA_Orik_QUEST1_SUCCESS_03_05"); //IdŸ teraz do Cronosa i wypytaj go o kradzie¿. Musisz pozbyæ siê reszty tych œwirów, bo to siê zaczyna robiæ niebezpieczne.
-    B_LogEntry                     (CH1_Wodospad,"Nieudolny magik przywo³a³ wodnego potwora, którego nie móg³ opanowaæ. Podczas przywo³ania Szkodnik zgin¹³, a my rozprawiliœmy siê z przyzwanym przez niego magicznym tworem.");
-    Log_SetTopicStatus       (CH1_Wodospad, LOG_SUCCESS);
-    MIS_Wodospad = LOG_SUCCESS;
+    B_LogEntry                     (CH2_StupidMagican,"Nieudolny magik przywo³a³ wodnego potwora, którego nie móg³ opanowaæ. Podczas przywo³ania Szkodnik zgin¹³, a my rozprawiliœmy siê z przyzwanym przez niego magicznym tworem.");
+    Log_SetTopicStatus       (CH2_StupidMagican, LOG_SUCCESS);
+    MIS_StupidMagican = LOG_SUCCESS;
 
     B_GiveXP (100);
     Npc_ExchangeRoutine (self, "START");

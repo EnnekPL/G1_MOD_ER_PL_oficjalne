@@ -262,7 +262,7 @@ FUNC VOID DIA_BaalNamib_RUNE_SLEEP_Info()
     AI_Output (self, other ,"DIA_BaalNamib_RUNE_SLEEP_03_02"); //Ach, tak. Rozmawia³em ju¿ z Lesterem na twój temat. Twierdzi ¿e mo¿na ci zaufaæ. Mistrz Y'Berion wyra¿a siê tak¿e bardzo pochlebnie o tobie.
     AI_Output (self, other ,"DIA_BaalNamib_RUNE_SLEEP_03_03"); //Mimo, ¿e nie nale¿ysz do naszego Bractwa, podzielê siê z tob¹ nasz¹ magi¹. WeŸ tê runê snu. Z jej pomoc¹ lepiej zrozumiesz œcie¿kê, któr¹ wskaza³ nam Œni¹cy.
     AI_Output (other, self ,"DIA_BaalNamib_RUNE_SLEEP_15_04"); //Dziêkujê, mistrzu. Niech Œni¹cy bêdzie z tob¹.
-    B_LogEntry                     (CH1_NEW_GOD,"Uda³o mi siê dostaæ runê snu od Baal Namiba.");
+    B_LogEntry                     (CH2_New_God,"Uda³o mi siê dostaæ runê snu od Baal Namiba.");
 
     B_GiveXP (200);
     CreateInvItems (self, ItArRuneSleep, 1);

@@ -489,7 +489,7 @@ FUNC VOID DIA_Dexter_SellElixirDexter_Info()
     AI_Output (self, other ,"DIA_Dexter_SellElixirDexter_03_05"); //Jak zrobisz jak¹œ burdê, to natychmiast wezwê Stra¿ników i zrobi¹ ci z dupy Nowy Obóz.
     AI_RemoveWeapon (other);
     AI_Output (other, self ,"DIA_Dexter_SellElixirDexter_15_06"); //Dobra, ju¿ idê.
-    B_LogEntry                     (CH1_SellElixer,"Uda³o mi siê znaleŸæ kolejny rynek zbytu. Okazuje siê, ¿e Dexter tak¿e ma w swojej ofercie eliksir. Jednak nie uda³o mi siê ustaliæ, od kogo go skupuje.");
+    B_LogEntry                     (CH3_SellElixer,"Uda³o mi siê znaleŸæ kolejny rynek zbytu. Okazuje siê, ¿e Dexter tak¿e ma w swojej ofercie eliksir. Jednak nie uda³o mi siê ustaliæ, od kogo go skupuje.");
     B_GiveXP (350);
     AI_StopProcessInfos	(self);
 };

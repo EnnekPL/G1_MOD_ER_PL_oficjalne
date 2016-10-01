@@ -1352,7 +1352,7 @@ FUNC VOID DIA_PC_Psionic_RUNY_INFOS_Info()
     AI_Output (self, other ,"DIA_PC_Psionic_RUNY_INFOS_03_06"); //Z tego co wiem runy sprzedaje Baal Cadar.
     AI_Output (other, self ,"DIA_PC_Psionic_RUNY_INFOS_15_07"); //Tak, ale s¹ one bardzo drogie. Jako skromny s³uga Innosa nie mam doœæ rudy.
     AI_Output (self, other ,"DIA_PC_Psionic_RUNY_INFOS_03_08"); //No có¿, w takim razie mo¿e powinieneœ pomówiæ z moim mistrzem, Baal Namibem. Mo¿e zechce podzieliæ siê z tob¹ wiedz¹.
-    B_LogEntry                     (CH1_NEW_GOD,"Powinienem porozmawiaæ z Baal Namibem na temat run. Mo¿e uda mi siê jedn¹ dostaæ.");
+    B_LogEntry                     (CH2_New_God,"Powinienem porozmawiaæ z Baal Namibem na temat run. Mo¿e uda mi siê jedn¹ dostaæ.");
 
     B_GiveXP (50);
     AI_StopProcessInfos	(self);

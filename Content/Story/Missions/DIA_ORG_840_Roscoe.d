@@ -460,9 +460,9 @@ func void  DIA_Roscoe_TreasureOldGuard_Info()
 	
 	MIS_TreasureOldGuard = LOG_RUNNING;
 
-	Log_CreateTopic			(CH1_TreasureOldGuard, LOG_MISSION);
-	Log_SetTopicStatus		(CH1_TreasureOldGuard, LOG_RUNNING);
-	B_LogEntry				(CH1_TreasureOldGuard,"Szkodnik pilnuj¹cy wejœcia do chaty Laresa powiedzia³ mi, ¿e pewien Stra¿nik pe³ni¹cy s³u¿bê w Starej Kopalni przed wieloma laty ukry³ doœæ spory skarb. Jeœli uda mi siê go odnaleŸæ, to Lares podzieli siê ze mn¹ zyskiem. Powinienem popytaæ w obozie przed Kopalni¹ o stra¿nika Craiga.");
+	Log_CreateTopic			(CH2_TreasureOldGuard, LOG_MISSION);
+	Log_SetTopicStatus		(CH2_TreasureOldGuard, LOG_RUNNING);
+	B_LogEntry				(CH2_TreasureOldGuard,"Szkodnik pilnuj¹cy wejœcia do chaty Laresa powiedzia³ mi, ¿e pewien Stra¿nik pe³ni¹cy s³u¿bê w Starej Kopalni przed wieloma laty ukry³ doœæ spory skarb. Jeœli uda mi siê go odnaleŸæ, to Lares podzieli siê ze mn¹ zyskiem. Powinienem popytaæ w obozie przed Kopalni¹ o stra¿nika Craiga.");
 };
 
 instance DIA_Roscoe_TreasureFound (C_INFO)
@@ -498,6 +498,6 @@ func void  DIA_Roscoe_TreasureFound_Info()
 	MIS_TreasureOldGuard = LOG_SUCCESS;
 
 	B_GiveXP (275);
-	Log_SetTopicStatus(CH1_TreasureOldGuard, LOG_SUCCESS);
-	B_LogEntry(CH1_TreasureOldGuard,"Odda³em Roscoe wisior i amulet, które mu obieca³em. Ruda ze skarbu jest moja.");
+	Log_SetTopicStatus(CH2_TreasureOldGuard, LOG_SUCCESS);
+	B_LogEntry(CH2_TreasureOldGuard,"Odda³em Roscoe wisior i amulet, które mu obieca³em. Ruda ze skarbu jest moja.");
 };

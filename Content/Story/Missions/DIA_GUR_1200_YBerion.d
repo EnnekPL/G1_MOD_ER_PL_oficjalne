@@ -291,7 +291,7 @@ INSTANCE DIA_Yberion_MustMix (C_INFO)
 FUNC INT DIA_Yberion_MustMix_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Caine_JadJaszczura))
-    && (MIS_PomocClawowi == LOG_RUNNING)
+    && (MIS_SickHunter == LOG_RUNNING)
 	&& (YBerion_BringFocus == LOG_SUCCESS)
     && (!Npc_KnowsInfo (hero, DIA_Caine_300Oreive))
     {
@@ -309,7 +309,7 @@ FUNC VOID DIA_Yberion_MustMix_Info()
     AI_Output (self, other ,"DIA_Yberion_MustMix_03_05"); //Masz racjê. Myœliwi pomagali nam pozbyæ siê bagiennych wê¿y.
     AI_Output (self, other ,"DIA_Yberion_MustMix_03_06"); //Powiedz Caine'owi, ¿e nakazujê mu sporz¹dziæ tê miksturê.
     AI_Output (other, self ,"DIA_Yberion_MustMix_15_07"); //Dziêkujê, Jaœnie Oœwiecony.
-    B_LogEntry                     (CH1_PomocClawowi,"Y'Berion przemówi Caine'owi do rozs¹dku. Nowicjusz musi mi pomóc! Czy tego chce, czy nie.");
+    B_LogEntry                     (CH2_SickHunter,"Y'Berion przemówi Caine'owi do rozs¹dku. Nowicjusz musi mi pomóc! Czy tego chce, czy nie.");
 
     B_GiveXP (200);
 };

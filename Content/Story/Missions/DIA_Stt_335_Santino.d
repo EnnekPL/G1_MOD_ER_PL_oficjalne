@@ -209,7 +209,7 @@ FUNC VOID DIA_Santino_AskAboutCraig_Info()
 	AI_Output(other, self, "DIA_Santino_AskAboutCraig_15_04"); //Mhm... Nie ma to jak szukaæ informacji u handlarzy. Ile to mnie bêdzie kosztowaæ?
    AI_Output(self, other, "DIA_Santino_AskAboutCraig_03_05"); //75 bry³³ek.
 	
-	B_LogEntry(CH1_TreasureOldGuard, "Santino za informacje ¿¹da 75 bry³ek.");
+	B_LogEntry(CH2_TreasureOldGuard, "Santino za informacje ¿¹da 75 bry³ek.");
 };
 
 INSTANCE DIA_Santino_CraigsNephew (C_INFO)
@@ -241,5 +241,5 @@ FUNC VOID DIA_Santino_CraigsNephew_Info()
 	B_GiveInvItems (other, self, itminugget, 75);
 	B_GiveXP (50);
 	
-	B_LogEntry(CH1_TreasureOldGuard, "Bratankiem Craiga jest Stra¿nik Joel. Muszê z nim pogadaæ. To mój jedyny trop w sprawie skarbu.");
+	B_LogEntry(CH2_TreasureOldGuard, "Bratankiem Craiga jest Stra¿nik Joel. Muszê z nim pogadaæ. To mój jedyny trop w sprawie skarbu.");
 };

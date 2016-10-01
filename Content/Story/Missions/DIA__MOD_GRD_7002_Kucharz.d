@@ -576,7 +576,7 @@ FUNC VOID DIA_KUCHARZ_AskAboutCraig_Info()
    AI_Output(self, other, "DIA_KUCHARZ_AskAboutCraig_03_07"); //Nie zna³em go osobiœcie, ale w Starej Kopalni jest pewien starszy goœæ o imieniu Asghan. Mo¿liwe, ¿e zna³ Craiga.
    AI_Output(other, self, "DIA_KUCHARZ_AskAboutCraig_15_08"); //Có¿, pogadam z nim.
 	
-	B_LogEntry(CH1_TreasureOldGuard, "Matt nie wie zbyt wiele o Craigu poza tym, ¿e goœæ nie ¿yje od d³u¿szego czasu... Asghan prawdopodobnie mo¿e powiedzieæ o nim coœ wiêcej.");
+	B_LogEntry(CH2_TreasureOldGuard, "Matt nie wie zbyt wiele o Craigu poza tym, ¿e goœæ nie ¿yje od d³u¿szego czasu... Asghan prawdopodobnie mo¿e powiedzieæ o nim coœ wiêcej.");
 };
 
 //========================================
@@ -617,5 +617,5 @@ FUNC VOID DIA_KUCHARZ_AskAboutTreasure_Info()
 	
 	Npc_ExchangeRoutine (GRD_7006_Joel,"treasure");
 	Wld_InsertItem	   (ItMi_CraigsMap,"OW_JOELMAPSPAWN");
-	B_LogEntry(CH1_TreasureOldGuard, "Matt zdradzi³, ¿e Joel co wieczór idzie siê przejœæ w stronê w¹wozu nieopodal Kopalni. Musze sprawdziæ ten trop.");
+	B_LogEntry(CH2_TreasureOldGuard, "Matt zdradzi³, ¿e Joel co wieczór idzie siê przejœæ w stronê w¹wozu nieopodal Kopalni. Musze sprawdziæ ten trop.");
 };

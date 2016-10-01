@@ -2121,10 +2121,9 @@ FUNC VOID DIA_Darrion_GoldAmullet_Info()
 	
 	MIS_GoldMedallion == LOG_RUNNING;
 	
-	Log_CreateTopic		(CH1_GoldMedallion, LOG_MISSION);
-	Log_SetTopicStatus	(CH1_GoldMedallion, LOG_RUNNING);
-    B_LogEntry                 (CH1_GoldMedallion,"Darrion powiedzia³ mi, ¿e niejaki Gor Boba razem z Kalomem opuœci³ obóz. Kowal z Bractwa spisuje ich na stratê i powiedzia³, ¿e jeœli kiedyœ spotkam Gor Bobê, to nieŸle mi zap³aci za zabranie jego z³otego medalionu. ");
-
+	Log_CreateTopic		(CH4_GoldMedallion, LOG_MISSION);
+	Log_SetTopicStatus	(CH4_GoldMedallion, LOG_RUNNING);
+    B_LogEntry          (CH4_GoldMedallion,"Darrion powiedzia³ mi, ¿e niejaki Gor Boba razem z Kalomem opuœci³ obóz. Kowal z Bractwa spisuje ich na stratê i powiedzia³, ¿e jeœli kiedyœ spotkam Gor Bobê, to nieŸle mi zap³aci za zabranie jego z³otego medalionu. ");
 };
 
 //========================================
@@ -2160,8 +2159,8 @@ FUNC VOID DIA_Darrion_GiveMedallion_Info()
     AI_Output (self, other ,"DIA_Darrion_GiveMedallion_03_05"); //Powiedz po prostu, ¿e spotka³eœ go w jakiejœ melinie i wygra³eœ dla mnie medalion w karty. 
     AI_Output (other, self ,"DIA_Darrion_GiveMedallion_15_06"); //Nie umiem graæ w karty.
     AI_Output (self, other ,"DIA_Darrion_GiveMedallion_03_07"); //Niewa¿ne. Oto obiecana ruda.
-    B_LogEntry                     (CH1_GoldMedallion,"Odda³em Darrionowi medalion, który znalaz³em przy ciele Gor Boby. ");
-    Log_SetTopicStatus       (CH1_GoldMedallion, LOG_SUCCESS);
+    B_LogEntry                     (CH4_GoldMedallion,"Odda³em Darrionowi medalion, który znalaz³em przy ciele Gor Boby. ");
+    Log_SetTopicStatus       (CH4_GoldMedallion, LOG_SUCCESS);
     MIS_GoldMedallion = LOG_SUCCESS;
 
     B_GiveXP (450);

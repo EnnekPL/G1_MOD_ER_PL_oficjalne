@@ -359,5 +359,5 @@ FUNC VOID DIA_Asghan_AskAboutCraig_Info()
 	AI_Output(other, self, "DIA_Asghan_AskAboutCraig_15_05"); //Widze, ¿e nie znasz i nie chcesz znaæ szczegó³ów w tej sprawie. Jest ktoœ kto móg³by mi powiedzieæ coœ jeszcze?
    AI_Output(self, other, "DIA_Asghan_AskAboutCraig_03_06"); //Naiwniak z ciebie. Dla formalnoœci mo¿esz popytaæ handlarza Santino, on wie sporo o ludziach z kopalni. Potem strzel sobie kilka piw i zapomnij o tym skarbie!
 	
-	B_LogEntry(CH1_TreasureOldGuard, "Asghan te¿ nie by³ zbyt rozmowny na temat Craiga. Odes³a³ mnie do Santino.");
+	B_LogEntry(CH2_TreasureOldGuard, "Asghan te¿ nie by³ zbyt rozmowny na temat Craiga. Odes³a³ mnie do Santino.");
 };

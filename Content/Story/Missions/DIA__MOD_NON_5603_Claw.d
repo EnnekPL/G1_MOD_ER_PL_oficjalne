@@ -351,16 +351,16 @@ FUNC VOID DIA_Claw_Kapitel2Mission_Info()
     AI_Output (self, hero ,"DIA_Claw_Kapitel2Mission_03_09"); //Proszê. Umieram.
     AI_Output (hero, self ,"DIA_Claw_Kapitel2Mission_15_10"); //Natychmiast ruszam w drogê.
     AI_Output (self, hero ,"DIA_Claw_Kapitel2Mission_03_11"); //Dziêkujê. WeŸ te wywary. Przydadz¹ ci siê.
-    CreateInvItems (self, ItFo_Potion_Mana_01, 3);
-    B_GiveInvItems (self, hero, ItFo_Potion_Mana_01, 3);
-    CreateInvItems (self, ItFo_Potion_Health_01, 3);
-    B_GiveInvItems (self, hero, ItFo_Potion_Health_01, 3);
-    MIS_PomocClawowi = LOG_RUNNING;
+    CreateInvItems (self, ItFo_Potion_Mana_01, 2);
+    B_GiveInvItems (self, hero, ItFo_Potion_Mana_01, 2);
+    CreateInvItems (self, ItFo_Potion_Health_01, 2);
+    B_GiveInvItems (self, hero, ItFo_Potion_Health_01, 2);
+    MIS_SickHunter = LOG_RUNNING;
 	Wld_InsertNpc				(WaranJadowity,"WARAN_JADOWITY");
 	Npc_ExchangeRoutine (NON_5603_Claw,"chory");
-    Log_CreateTopic            (CH1_PomocClawowi, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_PomocClawowi, LOG_RUNNING);
-    B_LogEntry                     (CH1_PomocClawowi,"Myœliwy Claw zosta³ zatruty przez podejrzanego jaszczura. Muszê iœæ do Bractwa i poszukaæ odtrutki dla myœliwego. ");
+    Log_CreateTopic            (CH2_SickHunter, LOG_MISSION);
+    Log_SetTopicStatus       (CH2_SickHunter, LOG_RUNNING);
+    B_LogEntry                     (CH2_SickHunter,"Myœliwy Claw zosta³ zatruty przez podejrzanego jaszczura. Muszê iœæ do Bractwa i poszukaæ odtrutki dla myœliwego. ");
 };
 
 //========================================
@@ -395,7 +395,7 @@ FUNC VOID DIA_Claw_SKINJASZ_Info()
     AI_Output (other, self ,"DIA_Claw_SKINJASZ_15_05"); //A wiêc? Gdzie to jest?
     AI_Output (self, other ,"DIA_Claw_SKINJASZ_03_06"); //Spotka³em go w jaskini w okolicy obozu na bagnie. B¹dŸ ostro¿ny.
     AI_Output (self, other ,"DIA_Claw_SKINJASZ_03_07"); //W okolicy krêci siê sporo innych zwierz¹t.
-    B_LogEntry                     (CH1_PomocClawowi,"Jaszczura powinienem szukaæ w jaskini przy obozie na bagnie. Poznam go po zielonym kolorze skóry.");
+    B_LogEntry                     (CH2_SickHunter,"Jaszczura powinienem szukaæ w jaskini przy obozie na bagnie. Poznam go po zielonym kolorze skóry.");
 
     B_GiveXP (50);
 };
@@ -416,7 +416,7 @@ INSTANCE DIA_Claw_Antybiotyk (C_INFO)
 FUNC INT DIA_Claw_Antybiotyk_Condition()
 {
     if (Npc_HasItems (other, ItMi_AnitdotumNaJad) >=1)
-    && (MIS_PomocClawowi == LOG_RUNNING)
+    && (MIS_SickHunter == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -427,9 +427,9 @@ FUNC VOID DIA_Claw_Antybiotyk_Info()
 {
     AI_Output (other, self ,"DIA_Claw_Antybiotyk_15_01"); //Mam antidotum!
     AI_Output (self, other ,"DIA_Claw_Antybiotyk_03_02"); //Daj mi je! Szybko!
-    B_LogEntry                     (CH1_PomocClawowi,"Myœliwy otrzyma³ miksturê. ");
-    Log_SetTopicStatus       (CH1_PomocClawowi, LOG_SUCCESS);
-    MIS_PomocClawowi = LOG_SUCCESS;
+    B_LogEntry                     (CH2_SickHunter,"Myœliwy otrzyma³ miksturê. ");
+    Log_SetTopicStatus       (CH2_SickHunter, LOG_SUCCESS);
+    MIS_SickHunter = LOG_SUCCESS;
 
     B_GiveXP (450);
     B_GiveInvItems (other, self, ItMi_AnitdotumNaJad, 1);
@@ -462,7 +462,7 @@ INSTANCE DIA_Claw_Samopoczucie (C_INFO)
 
 FUNC INT DIA_Claw_Samopoczucie_Condition()
 {
-    if (MIS_PomocClawowi == LOG_SUCCESS)
+    if (MIS_SickHunter == LOG_SUCCESS)
     {
     return TRUE;
     };
@@ -616,7 +616,7 @@ INSTANCE DIA_Claw_Help22 (C_INFO)
 
 FUNC INT DIA_Claw_Help22_Condition()
 {
-    if (MIS_PomocClawowi == LOG_SUCCESS)
+    if (MIS_SickHunter == LOG_SUCCESS)
     {
     return TRUE;
     };

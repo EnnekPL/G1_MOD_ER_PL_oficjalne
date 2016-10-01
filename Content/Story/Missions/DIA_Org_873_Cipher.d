@@ -229,7 +229,7 @@ FUNC VOID DIA_Cipher_ElixirSellCipher_Info()
     AI_Output (self, other ,"DIA_Cipher_ElixirSellCipher_03_06"); //Dobra, dobra. Tak sie tylko droczê. Tylko zostawcie mój interes... Skupujê wszystko od Caine'a.
     AI_RemoveWeapon (other);
     AI_Output (other, self ,"DIA_Cipher_ElixirSellCipher_15_07"); //Widzisz? To nie by³o takie trudne.
-    B_LogEntry                     (CH1_SellElixer,"Cipher kupi³ eliksiry od Nowicjusza Caine'a.");
+    B_LogEntry                     (CH3_SellElixer,"Cipher kupi³ eliksiry od Nowicjusza Caine'a.");
 
     B_GiveXP (350);
     AI_StopProcessInfos	(self);

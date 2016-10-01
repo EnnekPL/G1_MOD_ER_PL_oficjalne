@@ -323,7 +323,7 @@ FUNC VOID DIA_Caine_Machujki_Kabelek()
     AI_Output (self, other ,"DIA_Caine_Machujki_Kabelek_03_02"); //Jesteœ g³upcem.
     AI_Output (self, other ,"DIA_Caine_Machujki_Kabelek_03_03"); //Bêdziesz tego ¿a³owa³, gdy przyciœnie ciê bieda jak mnie!
     AI_Output (other, self ,"DIA_Caine_Machujki_Kabelek_15_04"); //Milcz, oszuœcie!
-    B_LogEntry                     (CH1_SellElixer,"Mistrz Shawn dowie siê o czynach Caine'a. Nie odpuszczê mu tego.");
+    B_LogEntry                     (CH3_SellElixer,"Mistrz Shawn dowie siê o czynach Caine'a. Nie odpuszczê mu tego.");
 	CaineFriend = false;
     B_GiveXP (200);
     Info_ClearChoices		(DIA_Caine_Machujki);
@@ -335,8 +335,8 @@ FUNC VOID DIA_Caine_Machujki_KasaKasaKasa()
     AI_Output (other, self ,"DIA_Caine_Machujki_KasaKasaKasa_15_01"); //Dobra. Umowa stoi!
     AI_Output (self, other ,"DIA_Caine_Machujki_KasaKasaKasa_03_02"); //Œwietnie. PrzychodŸ do mnie codziennie po swoj¹ czêœæ. 
     AI_Output (self, other ,"DIA_Caine_Machujki_KasaKasaKasa_03_03"); //Tylko nikomu ani s³owa!
-    B_LogEntry                     (CH1_SellElixer,"Caine zaoferowa³ mi 60 bry³ek dziennie, jeœli bêdê trzyma³ jêzyk za zêbami. Uwa¿am, ¿e to uczciwa propozycja.");
-    Log_SetTopicStatus       (CH1_SellElixer, LOG_SUCCESS);
+    B_LogEntry                     (CH3_SellElixer,"Caine zaoferowa³ mi 60 bry³ek dziennie, jeœli bêdê trzyma³ jêzyk za zêbami. Uwa¿am, ¿e to uczciwa propozycja.");
+    Log_SetTopicStatus       (CH3_SellElixer, LOG_SUCCESS);
     MIS_SellElixer = LOG_SUCCESS;
 	CaineFriend = true;
     B_GiveXP (200);
@@ -393,7 +393,7 @@ INSTANCE DIA_Caine_JadJaszczura (C_INFO)
 
 FUNC INT DIA_Caine_JadJaszczura_Condition()
 {
-    if (MIS_PomocClawowi == LOG_RUNNING)
+    if (MIS_SickHunter == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -408,7 +408,7 @@ FUNC VOID DIA_Caine_JadJaszczura_Info()
     AI_Output (self, other ,"DIA_Caine_JadJaszczura_03_04"); //Nie znam twojego przyjaciela. 
     AI_Output (self, other ,"DIA_Caine_JadJaszczura_03_05"); //Nie obchodzi mnie jego ¿ycie, ale skoro tak ci na tym zale¿y, to pewnie nie posk¹pisz kilku bry³ek rudy.
     AI_Output (self, other ,"DIA_Caine_JadJaszczura_03_06"); //300 bry³ek i powiem ci co robiæ.
-    B_LogEntry                     (CH1_PomocClawowi,"Caine pomo¿e mi za 300 bry³ek rudy. Chyba nie mam wyboru. ");
+    B_LogEntry                     (CH2_SickHunter,"Caine pomo¿e mi za 300 bry³ek rudy. Chyba nie mam wyboru. ");
 };
 
 //========================================
@@ -444,7 +444,7 @@ FUNC VOID DIA_Caine_300Oreive_Info()
     AI_Output (self, other ,"DIA_Caine_300Oreive_03_03"); //W porz¹dku. Pomogê ci.
     AI_Output (self, other ,"DIA_Caine_300Oreive_03_04"); //Aby stworzyæ odtrutkê, potrzebujê jadu jaszczura, który ugryz³ twojego przyjaciela.
     AI_Output (self, other ,"DIA_Caine_300Oreive_03_05"); //Przynieœ mi go jak najprêdzej.
-    B_LogEntry                     (CH1_PomocClawowi,"Caine chce, abym przyniós³ mu jad jaszczura, który pogryz³ Clawa. ");
+    B_LogEntry                     (CH2_SickHunter,"Caine chce, abym przyniós³ mu jad jaszczura, który pogryz³ Clawa. ");
 };
 //========================================
 //-----------------> MusMixCaine
@@ -463,7 +463,7 @@ INSTANCE DIA_Caine_MusMixCaine (C_INFO)
 FUNC INT DIA_Caine_MusMixCaine_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Yberion_MustMix))
-    && (MIS_PomocClawowi == LOG_RUNNING)
+    && (MIS_SickHunter == LOG_RUNNING)
     && (!Npc_KnowsInfo (hero, DIA_Caine_300Oreive))
     {
     return TRUE;
@@ -478,7 +478,7 @@ FUNC VOID DIA_Caine_MusMixCaine_Info()
     AI_Output (self, other ,"DIA_Caine_MusMixCaine_03_03"); //Przekabaci³eœ staruszka?! He he. 
     AI_Output (self, other ,"DIA_Caine_MusMixCaine_03_04"); //No dobra. Aby stworzyæ odtrutkê potrzebujê jadu jaszczura, który ugryz³ twojego przyjaciela.
     AI_Output (self, other ,"DIA_Caine_MusMixCaine_03_05"); //Przynieœ mi go jak najprêdzej.
-	B_LogEntry                     (CH1_PomocClawowi,"Caine chce, abym przyniós³ mu jad jaszczura, który pogryz³ Clawa. ");
+	B_LogEntry                     (CH2_SickHunter,"Caine chce, abym przyniós³ mu jad jaszczura, który pogryz³ Clawa. ");
 };
 
 
@@ -519,7 +519,7 @@ FUNC VOID DIA_Caine_JadJaszczuraMAm_Info()
     AI_Output (self, other ,"DIA_Caine_JadJaszczuraMAm_03_09"); //Nasi Nowicjusze nie s¹ tacy g³upi, jak ci siê wydaje.
     AI_Output (self, other ,"DIA_Caine_JadJaszczuraMAm_03_10"); //Wiedz¹, ¿e to ziele jest niezwykle cenne. 
     AI_Output (self, other ,"DIA_Caine_JadJaszczuraMAm_03_11"); //Bêdziesz musia³ jakoœ zdobyæ jedn¹ sadzonkê.
-    B_LogEntry                     (CH1_PomocClawowi,"Muszê zdobyæ sadzonkê magicznego ziela. Jednak te roœliny s¹ wy³¹cznie w posiadaniu Nowicjuszy pracuj¹cych na bagnie.");
+    B_LogEntry                     (CH2_SickHunter,"Muszê zdobyæ sadzonkê magicznego ziela. Jednak te roœliny s¹ wy³¹cznie w posiadaniu Nowicjuszy pracuj¹cych na bagnie.");
 	B_GiveInvItems (hero, self, ItMi_TruciznaJaszczura, 1); //1.24
     B_GiveXP (150);
     AI_StopProcessInfos	(self);
@@ -554,7 +554,7 @@ FUNC VOID DIA_Caine_ZdobylemZiele_Info()
     AI_Output (other, self ,"DIA_Caine_ZdobylemZiele_15_01"); //Zdoby³em magiczne ziele.
     AI_Output (self, other ,"DIA_Caine_ZdobylemZiele_03_02"); //Daj mi je. Zaraz sporz¹dzê miksturê.
     B_GiveInvItems (other, self, ItFo_Plants_MagicHerb_01, 1);
-    B_LogEntry                     (CH1_PomocClawowi,"Nowicjusz Caine otrzyma³ wszystkie sk³adniki. Zaraz sporz¹dzi miksturê. ");
+    B_LogEntry                     (CH2_SickHunter,"Nowicjusz Caine otrzyma³ wszystkie sk³adniki. Zaraz sporz¹dzi miksturê. ");
 
     B_GiveXP (150);
     AI_StopProcessInfos	(self);
@@ -576,7 +576,7 @@ INSTANCE DIA_Caine_AntidotumKuhwy (C_INFO)
 FUNC INT DIA_Caine_AntidotumKuhwy_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Caine_ZdobylemZiele))
-    && (MIS_PomocClawowi == LOG_RUNNING)
+    && (MIS_SickHunter == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -591,7 +591,7 @@ FUNC VOID DIA_Caine_AntidotumKuhwy_Info()
     CreateInvItems (self, ItMi_AnitdotumNaJad, 1);
     B_GiveInvItems (self, other, ItMi_AnitdotumNaJad, 1);
 	
-    B_LogEntry                     (CH1_PomocClawowi,"Caine sporz¹dzi³ antidotum na jad. Zmarnowa³em ju¿ wiele czasu. Mam kilka minut na dotarcie z powrotem do obozu myœliwych.");
+    B_LogEntry                     (CH2_SickHunter,"Caine sporz¹dzi³ antidotum na jad. Zmarnowa³em ju¿ wiele czasu. Mam kilka minut na dotarcie z powrotem do obozu myœliwych.");
 
     timer_ClawQuest = 5 * 60;
     AI_StopProcessInfos	(self);

@@ -140,9 +140,9 @@ FUNC VOID DIA_Drago_HELLO3_Info()
     AI_Output (self, other ,"DIA_Drago_HELLO3_03_16"); //Zatem ruszam w drogê. 
     MIS_NEW_GOD = LOG_RUNNING;
 
-    Log_CreateTopic            (CH1_NEW_GOD, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_NEW_GOD, LOG_RUNNING);
-    B_LogEntry                     (CH1_NEW_GOD,"Drago, Mag Ognia ze Starego Obozu musi zbadaæ, kim naprawdê jest Œni¹cy i sk¹d Guru bior¹ swoj¹ moc. Aby pomóc mu w badaniach, muszê przynieœæ trzy runy: Uderzenie Wiatru, Sen i Pirokineza.");
+    Log_CreateTopic          (CH2_New_God, LOG_MISSION);
+    Log_SetTopicStatus       (CH2_New_God, LOG_RUNNING);
+    B_LogEntry               (CH2_New_God,"Drago, Mag Ognia ze Starego Obozu musi zbadaæ, kim naprawdê jest Œni¹cy i sk¹d Guru bior¹ swoj¹ moc. Aby pomóc mu w badaniach, muszê przynieœæ trzy runy: Uderzenie Wiatru, Sen i Pirokineza.");
     AI_StopProcessInfos	(self);
 };
 var int herocan_askaboutresarch_drago;
@@ -183,7 +183,7 @@ FUNC VOID DIA_Drago_RUNES_ALL_HEVE_Info()
 	AI_Output (self, other ,"DIA_Drago_RUNES_ALL_HEVE_03_03"); //Niech zwiêkszy ona twoje duchowe zdolnoœci. Wróæ do mnie za jakiœ czas, gdy skoñczê moje badania.
     CreateInvItems (self, ItFo_Potion_Mana_Perma_01, 1);
     B_GiveInvItems (self, other, ItFo_Potion_Mana_Perma_01, 1);
-    B_LogEntry                     (CH1_NEW_GOD,"Odda³em wszystkie trzy runy magowi Drago. W zamian otrzyma³em potê¿na miksturê, oraz œwiadomoœæ, ¿e pomog³em Magom Ognia. Teraz muszê tylko czekaæ na wyniki badañ.");
+    B_LogEntry                     (CH2_New_God,"Odda³em wszystkie trzy runy magowi Drago. W zamian otrzyma³em potê¿na miksturê, oraz œwiadomoœæ, ¿e pomog³em Magom Ognia. Teraz muszê tylko czekaæ na wyniki badañ.");
     
 	herocan_askaboutresarch_drago = true;
     B_GiveXP (500);
@@ -233,7 +233,7 @@ FUNC VOID DIA_Drago_RUNES_RESEARCH_PROGRESS_Info()
         AI_Output (self, other ,"DIA_Drago_RUNES_RESEARCH_PROGRESS_03_11"); //O Innosie, powstrzymaj tego szaleñca. Pomów natychmiast z Corristo, musimy podj¹æ odpowiednie kroki.
         AI_Output (other, self ,"DIA_Drago_RUNES_RESEARCH_PROGRESS_15_12"); //W porz¹dku.
 		DIA_Drago_RUNES_RESEARCH_PROGRESS.permanent = false;
-		B_LogEntry                     (CH1_NEW_GOD,"Drago powiedzia³ mi dok³adnie to samo, co ju¿ wiedzia³em. Œni¹cy to demon, który oszuka³ cz³onków Bractwa. Muszê szybko porozmawiaæ z Corristo. To, co dzieje siê na bagnach mo¿e wp³yn¹æ na ¿ycie wszystkich ludzi pod Barier¹.");
+		B_LogEntry                     (CH2_New_God,"Drago powiedzia³ mi dok³adnie to samo, co ju¿ wiedzia³em. Œni¹cy to demon, który oszuka³ cz³onków Bractwa. Muszê szybko porozmawiaæ z Corristo. To, co dzieje siê na bagnach mo¿e wp³yn¹æ na ¿ycie wszystkich ludzi pod Barier¹.");
 		must_talk_corristo = true;
 		B_GiveXP (100);
     };

@@ -298,7 +298,7 @@ FUNC VOID DIA_Dusty_RUNY_INFO_2_Info()
     AI_Output (self, other ,"DIA_Dusty_RUNY_INFO_2_03_06"); //Cz³owieku, jakbym teraz móg³ wróciæ do Starego Obozu i potraktowaæ tym Bloodwyna, da³by mi spokój raz na zawsze. 
     AI_Output (other, self ,"DIA_Dusty_RUNY_INFO_2_15_07"); //Cieszê siê, ¿e ci siê powodzi. Trzymaj siê.
     AI_Output (self, other ,"DIA_Dusty_RUNY_INFO_2_03_08"); //Do nastêpnego razu, przyjacielu.
-    B_LogEntry                     (CH1_NEW_GOD,"W chacie Baal Tondrala znajdê runê Uderzenie Wiatru.");
+    B_LogEntry                     (CH2_New_God,"W chacie Baal Tondrala znajdê runê Uderzenie Wiatru.");
 
     B_GiveXP (50);
     AI_StopProcessInfos	(self);

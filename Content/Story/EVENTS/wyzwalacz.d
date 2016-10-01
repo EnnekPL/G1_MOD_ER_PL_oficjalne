@@ -833,15 +833,15 @@ B_LogEntry    (CH1_NieSpelnionaZemsta,"Uda³o mi siê odnaleŸæ o³tarz oczyszczenia
 		seconds_count_claw = seconds_count_claw + 20;
 		};
 		
-        if (timer_ClawQuest == 0) && (MIS_PomocClawowi == LOG_RUNNING)
+        if (timer_ClawQuest == 0) && (MIS_SickHunter == LOG_RUNNING)
 		{
-			MIS_PomocClawowi = LOG_FAILED;
-			Log_SetTopicStatus       (CH1_PomocClawowi, LOG_FAILED);
-		    B_LogEntry                     (CH1_PomocClawowi,"SpóŸni³em siê! Wszystko na marne.");
+			MIS_SickHunter = LOG_FAILED;
+			Log_SetTopicStatus       (CH2_SickHunter, LOG_FAILED);
+		    B_LogEntry                     (CH2_SickHunter,"SpóŸni³em siê! Wszystko na marne.");
 			B_KillNPC (NON_5603_Claw);
 			PrintS_Ext("SpóŸni³eœ siê! Calaw nie ¿yje!", COL_Red);
 			}
-			else if (timer_ClawQuest == 0) && (MIS_PomocClawowi == LOG_SUCCESS)
+			else if (timer_ClawQuest == 0) && (MIS_SickHunter == LOG_SUCCESS)
 			{
 			
         };

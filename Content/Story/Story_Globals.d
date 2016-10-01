@@ -930,7 +930,7 @@ var int MIS_Odstraszeni;
 
 var int MIS_NekInNC;
 var int MIS_KordelasQuentina;
-var int MIS_SellElixer;
+
 var int MIS_Search_Poslaniec;
 var int MIS_AlternativBanditoSCamp;
 var int MIS_EskortaKopaczy;
@@ -964,7 +964,7 @@ var int MIS_WpierdolNaArenie;
 var int MIS_FightWithScar;
 var int MIS_MagnackiePi4erscienie;
 var int MIS_SprawaFirna;
-var int MIS_PomocClawowi;
+
 var int MIS_UCieczkaShrata;
 var int MIS_PorwanieAlexa;
 var int MIS_ZabijThompsona;
@@ -987,7 +987,7 @@ var int MIS_PamietnikZNieba;
 var int MIS_JosepZniknal;
 var int MIS_DziwnyJosep;
 var int MIS_WalkiBractwo;
-var int MIS_Wodospad;
+
 var int MIS_MagicySzkodnicy;
 var int MIS_RannyWojownik;
 var int MIS_SzponyTopielca;

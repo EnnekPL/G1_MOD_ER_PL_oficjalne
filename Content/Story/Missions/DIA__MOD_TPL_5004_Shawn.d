@@ -658,9 +658,9 @@ FUNC VOID DIA_Shawn_QuestCH3_Info()
     AI_Output (self, other ,"DIA_Shawn_QuestCH3_03_05"); //Dowiedz siê kto to jest i natychmiast mi o tym powiedz.
     MIS_SellElixer = LOG_RUNNING;
 
-    Log_CreateTopic            (CH1_SellElixer, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_SellElixer, LOG_RUNNING);
-    B_LogEntry                     (CH1_SellElixer,"Shawn kaza³ mi odkryæ kto nielegalnie sprzedaje eliksir z wnêtrznoœci pe³zaczy. Prawdopodobnie towar w ca³oœci idzie do Nowego Obozu.");
+    Log_CreateTopic          (CH3_SellElixer, LOG_MISSION);
+    Log_SetTopicStatus       (CH3_SellElixer, LOG_RUNNING);
+    B_LogEntry               (CH3_SellElixer,"Shawn kaza³ mi odkryæ kto nielegalnie sprzedaje eliksir z wnêtrznoœci pe³zaczy. Prawdopodobnie towar w ca³oœci idzie do Nowego Obozu.");
     AI_StopProcessInfos	(self);
 	
 	var c_npc dexter;
@@ -700,8 +700,8 @@ FUNC VOID DIA_Shawn_SellElixirCaine_Info()
     AI_Output (self, other ,"DIA_Shawn_SellElixirCaine_03_04"); //Spotka go kara, a ciebie nagroda.
     CreateInvItems (self, ItMiNugget, 400);
     B_GiveInvItems (self, other, ItMiNugget, 400);
-    B_LogEntry                     (CH1_SellElixer,"Wyda³em Caine'a Shawnowi. Nie ma litoœci dla takiego postêpowania!");
-    Log_SetTopicStatus       (CH1_SellElixer, LOG_SUCCESS);
+    B_LogEntry                     (CH3_SellElixer,"Wyda³em Caine'a Shawnowi. Nie ma litoœci dla takiego postêpowania!");
+    Log_SetTopicStatus       (CH3_SellElixer, LOG_SUCCESS);
     MIS_SellElixer = LOG_SUCCESS;
 
     B_GiveXP (300);

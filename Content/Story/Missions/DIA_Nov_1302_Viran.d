@@ -273,7 +273,7 @@ INSTANCE DIA_Viran_GivMeMagicZiele (C_INFO)
 FUNC INT DIA_Viran_GivMeMagicZiele_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Caine_JadJaszczuraMAm))
-    && (MIS_PomocClawowi == LOG_RUNNING)
+    && (MIS_SickHunter == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -297,12 +297,12 @@ FUNC VOID DIA_Viran_GivMeMagicZiele_Info()
     if (Viran_Bloodflies == LOG_SUCCESS)
     {
     AI_Output (self, other ,"DIA_Viran_GivMeMagicZiele_03_12"); //No dobra. Pomog³eœ nam z krwiopijcami, wiêc sprzedam ci ziele za 300 bry³ek rudy.
-    B_LogEntry                     (CH1_PomocClawowi,"Viran sprzeda mi ziele za 300 bry³ek rudy, gdy¿ pomog³em mu z krwiopijcami."); 
+    B_LogEntry                     (CH2_SickHunter,"Viran sprzeda mi ziele za 300 bry³ek rudy, gdy¿ pomog³em mu z krwiopijcami."); 
     }
     else
     {
         AI_Output (self, other ,"DIA_Viran_GivMeMagicZiele_03_13"); //Nie!
-    B_LogEntry                     (CH1_PomocClawowi,"Viran sprzeda mi magiczne ziele za 500 bry³ek rudy. Cholernie drogo...");
+    B_LogEntry                     (CH2_SickHunter,"Viran sprzeda mi magiczne ziele za 500 bry³ek rudy. Cholernie drogo...");
     };
 };
 
@@ -325,7 +325,7 @@ FUNC INT DIA_Viran_DawajZielezAGoldy_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Caine_JadJaszczuraMAm))
     && (Npc_KnowsInfo (hero, DIA_Viran_GivMeMagicZiele))
-    && (MIS_PomocClawowi == LOG_RUNNING)
+    && (MIS_SickHunter == LOG_RUNNING)
 
     {
     return TRUE;

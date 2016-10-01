@@ -827,8 +827,8 @@ FUNC VOID DIA_Corristo_DRAGO_QUEST_Info()
     AI_Output (self, other ,"DIA_Corristo_DRAGO_QUEST_03_06"); //Na Innosa, to istna katastrofa. Ci ludzie potrzebuj¹ teraz wielkiego wsparcia. Jakie teraz maj¹ plany?
     AI_Output (other, self ,"DIA_Corristo_DRAGO_QUEST_15_07"); //Wys³ali mnie do Nowego Obozu, abym wspomóg³ Magów Wody w ich planie zniszczenia Bariery.
     AI_Output (self, other ,"DIA_Corristo_DRAGO_QUEST_03_08"); //Oczywiœcie, Magowie Wody... IdŸ do nich natychmiast i zrób wszystko, co jesteœ w stanie. My w tym czasie pomyœlimy, co nale¿y robiæ w sprawie Œni¹cego.
-    B_LogEntry                     (CH1_NEW_GOD,"Có¿... Pozostaje mi czekaæ na rozwój wydarzeñ i dalej robiæ to, co do mnie nale¿y, czyli próbowaæ siê st¹d wydostaæ.");
-    Log_SetTopicStatus       (CH1_NEW_GOD, LOG_SUCCESS);
+    B_LogEntry                     (CH2_New_God,"Có¿... Pozostaje mi czekaæ na rozwój wydarzeñ i dalej robiæ to, co do mnie nale¿y, czyli próbowaæ siê st¹d wydostaæ.");
+    Log_SetTopicStatus       (CH2_New_God, LOG_SUCCESS);
     MIS_NEW_GOD = LOG_SUCCESS;
 
     B_GiveXP (100);
@@ -871,8 +871,8 @@ FUNC VOID DIA_Corristo_ALTERNATIVE_QUEST_END_Info()
     AI_Output (self, other ,"DIA_Corristo_ALTERNATIVE_QUEST_END_03_07"); //Ach, Milten... No tak...
     AI_Output (other, self ,"DIA_Corristo_ALTERNATIVE_QUEST_END_15_08"); //Wszystko w porz¹dku?
     AI_Output (self, other ,"DIA_Corristo_ALTERNATIVE_QUEST_END_03_09"); //Tak, tak. Daj mi chwilkê...
-    B_LogEntry                     (CH1_NEW_GOD,"Chcia³em porozmawiaæ z Corristo o wydarzeniach w Bractwie, ale przyszed³em chyba zbyt póŸno. W¹tpiê, ¿e gdyby ta rozmowa odby³aby siê kilka dni wczeœniej, coœ by³oby inaczej.");
-    Log_SetTopicStatus       (CH1_NEW_GOD, LOG_SUCCESS);
+    B_LogEntry                     (CH2_New_God,"Chcia³em porozmawiaæ z Corristo o wydarzeniach w Bractwie, ale przyszed³em chyba zbyt póŸno. W¹tpiê, ¿e gdyby ta rozmowa odby³aby siê kilka dni wczeœniej, coœ by³oby inaczej.");
+    Log_SetTopicStatus       (CH2_New_God, LOG_SUCCESS);
     MIS_NEW_GOD = LOG_SUCCESS;
 
     B_GiveXP (50);

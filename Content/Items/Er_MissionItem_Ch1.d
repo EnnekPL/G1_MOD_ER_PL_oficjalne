@@ -2887,7 +2887,7 @@ INSTANCE ItMi_CraigsMap(C_Item)
 		ItemUsed_CraigsMapKeySpawn = true;
 		CreateInvItems (self, ItMi_CraigsChestKey,1);
 		PrintS_Ext("Znalaz³eœ klucz!", COL_White);
-		B_LogEntry(CH1_TreasureOldGuard, "Oszo³omiony Joel zaprowadzi³ mnie prosto do mapy, któr¹ ukry³ w krzakach. Na tej starej kartce papieru wyraŸnie ktoœ wyrwa³ dziurê palcem. Prawdopodobnie Craig nie potrafi³ pisaæ, albo nie mia³ pod rêk¹ pióra (ciê¿ko o takie rzeczy w Kopalni). Nie powinienem mieæ wiêkszych problemów z odszukaniem wydartego miejsca. W pergaminie by³ zawiniêty klucz.");
+		B_LogEntry(CH2_TreasureOldGuard, "Oszo³omiony Joel zaprowadzi³ mnie prosto do mapy, któr¹ ukry³ w krzakach. Na tej starej kartce papieru wyraŸnie ktoœ wyrwa³ dziurê palcem. Prawdopodobnie Craig nie potrafi³ pisaæ, albo nie mia³ pod rêk¹ pióra (ciê¿ko o takie rzeczy w Kopalni). Nie powinienem mieæ wiêkszych problemów z odszukaniem wydartego miejsca. W pergaminie by³ zawiniêty klucz.");
 		};
 	};
 	

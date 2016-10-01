@@ -391,7 +391,7 @@ INSTANCE DIA_Shrat_MagicZiolo (C_INFO)
 FUNC INT DIA_Shrat_MagicZiolo_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Caine_JadJaszczuraMAm))
-    && (MIS_PomocClawowi == LOG_RUNNING) && (kapitel == 10)
+    && (MIS_SickHunter == LOG_RUNNING) && (kapitel == 10)
     {
     return TRUE;
     };

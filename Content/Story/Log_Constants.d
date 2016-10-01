@@ -246,7 +246,7 @@ const string CH1_OszukanyHandlarz    	= "Oszukany handlarz";
 const string CH1_SeryjneZabojstwa    	= "Seria zabójstw w Bractwie";
 const string CH1_ChoryDrwal      	 	= "Chory drwal";
 const string CH1_ListDoCronosa   	 	= "Poselstwo z Bractwa";
-const string CH1_SellElixer    		 	= "Sprzeda¿ eliksirów";
+
 const string CH1_PoszukiwanaAlchemika 	= "Poszukiwania alchemika";
 const string CH1_WalkiBractwo      		= "Mistrz areny w Bractwie";
 const string CH1_Watek_Bandytow_BRACTWO = "Co siê dzieje u Bandytów";
@@ -323,7 +323,7 @@ const string CH1_InfoDlaLaresa      	= "Ostrzec Bandytów";
 const string CH1_PomocTorlofowi     	= "Na pomoc Torlofowi";
 const string CH1_BandyciNiwiadomo   	= "Banda Quentina";
 const string CH1_PomocQuentinowi    	= "Wsparcie dla Quentina";
-const string CH1_Wodospad      			= "Szkodnik-magik w Nowym Obozie";
+
 const string CH1_MagicySzkodnicy    	= "Nieudolni magicy";
 const string CH1_PathToFreeMine			= "Droga do Wolnej Kopalni";
 //---------------------------------------------------------------------
@@ -361,13 +361,7 @@ const string CH1_WejscieDoZamku      	= "Wejœcie do zamku";
 //   KOLONIA
 //---------------------------------------------------------------------
 
-const string CH1_Poszukiwacze      = "Poszukiwacze";
-const string CH1_blackMage      = "Tajemnicza mapa";
-const string CH1_WlakaZczarym      = "Nowe Zagro¿enie";
-const string CH1_LowcyPoszukiwaczy      = "£owcy Poszukiwaczy";
-const string CH1_MagWGoorach1      = "Czarny Mag w górach";
-const string CH1_Cytadelaposzukiwacz      = "Poszukiwacze w pobli¿u cytadeli";
-const string CH1_lekiDlaAva      = "Lekarstwo dla Avallacha";
+
 const string CH1_Wherevart      = "Zaginiony Vart";
 const string CH1_Wherevart2      = "Dlaczego Vart nie ¿yje?";
 const string CH1_NowyVart      = "Pomocnik Cavalorna";
@@ -386,18 +380,18 @@ const string CH1_PamietnikiOK      = "Stare pamiêtniki";
 //   Obóz myœliwych
 //---------------------------------------------------------------------
 const string CH1_SprawaFirna     			 	 = "Sprawa Firna";
-const string CH1_PomocClawowi     			 = "Chory myœliwy";
+
 const string CH1_UCieczkaShrata    			 = "Nowe miejsce dla Shrata";
 const string CH1_PorwanieAlexa    			 = "Porwanie Alexa";
 const string CH1_NieSpelnionaZemsta   		 = "Niespe³niona zemsta";
-const string CH1_MroczneBractwo      		 = "Mroczne Bractwo";
+
 const string CH1_ZieleClawa      			 	= "Ziele dla Clawa";
 const string CH1_PracaUMysliwych      		 = "Praca w obozie myœliwych";
 const string CH1_KradziezUMysliwych      	 = "Tajemnicza kradzie¿";
 const string CH1_DziwneKrzyki      			 	= "Dziwne krzyki";
 const string CH1_GoblinyUMysliwych     	 	= "Uci¹¿liwe gobliny";
 const string CH1_Nieroby   					 	= "Nieroby";
-const string CH1_PolowanieNaMorakha  	= "Polowanie z Olivierem";
+const string CH1_PolowanieNaMorakha  			= "Polowanie z Olivierem";
 const string CH1_FindWhiteSkin   				= "Bia³y wilk";
 const string CH1_ZabojstwBlizny  		     	= "Blizna na sumieniu";
 const string CH1_JosepZniknal    			 	= "Josep znikn¹³";
@@ -439,3 +433,11 @@ const string CH4_NewLocationForPirates  = "Spokojniejsze miejsce dla piratów";
 // USUNIÊTE
 //////////////////////////////////////////
 const string CH1_materials4Rocky      	= "Materia³y dla Rockiego";
+const string CH1_MroczneBractwo      	= "Mroczne Bractwo";
+const string CH1_Poszukiwacze      		= "Poszukiwacze";
+const string CH1_blackMage      		= "Tajemnicza mapa";
+const string CH1_WlakaZczarym      		= "Nowe Zagro¿enie";
+const string CH1_LowcyPoszukiwaczy      = "£owcy Poszukiwaczy";
+const string CH1_MagWGoorach1      		= "Czarny Mag w górach";
+const string CH1_Cytadelaposzukiwacz    = "Poszukiwacze w pobli¿u cytadeli";
+const string CH1_lekiDlaAva      		= "Lekarstwo dla Avallacha";

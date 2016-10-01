@@ -487,7 +487,7 @@ FUNC VOID DIA_Joru_RUNY_INFO_KOLEKCJA()
     AI_Output (other, self ,"DIA_Joru_RUNY_INFO_KOLEKCJA_15_04"); //Dziêki za pomoc. 
     AI_Output (self, other ,"DIA_Joru_RUNY_INFO_KOLEKCJA_03_05"); //Wróæ jeszcze kiedyœ, porozmawiamy sobie o naszych kolekcjach.
     AI_Output (other, self ,"DIA_Joru_RUNY_INFO_KOLEKCJA_15_06"); //Jasne.
-    B_LogEntry                     (CH1_NEW_GOD,"Runê Pirokinezy znajdê w chacie Baal Cadara. ");
+    B_LogEntry                     (CH2_New_God,"Runê Pirokinezy znajdê w chacie Baal Cadara. ");
 
     B_GiveXP (50);
     Info_ClearChoices		(DIA_Joru_RUNY_INFO);

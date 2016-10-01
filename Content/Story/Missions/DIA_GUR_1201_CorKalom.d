@@ -1647,7 +1647,7 @@ INSTANCE DIA_CorKalom_HelpMePliz (C_INFO)
 
 FUNC INT DIA_CorKalom_HelpMePliz_Condition()
 {
-    if (MIS_PomocClawowi == LOG_RUNNING)
+    if (MIS_SickHunter == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -1660,5 +1660,5 @@ FUNC VOID DIA_CorKalom_HelpMePliz_Info()
     AI_Output (self, other ,"DIA_CorKalom_HelpMePliz_03_02"); //Co? Nie mam czasu na jakieœ bzdury. 
     AI_Output (self, other ,"DIA_CorKalom_HelpMePliz_03_03"); //Mam inne sprawy na g³owie. 
     AI_Output (self, other ,"DIA_CorKalom_HelpMePliz_03_04"); //OdejdŸ!
-    B_LogEntry                     (CH1_PomocClawowi,"Cor Kalom nie jest skory do pomocy. Po tym starym dziadzie mo¿na by³o siê tego spodziewaæ.");
+    B_LogEntry                     (CH2_SickHunter,"Cor Kalom nie jest skory do pomocy. Po tym starym dziadzie mo¿na by³o siê tego spodziewaæ.");
 };

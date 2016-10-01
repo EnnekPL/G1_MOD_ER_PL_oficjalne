@@ -304,7 +304,7 @@ FUNC VOID DIA_Joel_AskAboutTreasure_Info()
 	AI_Output(self, other, "DIA_Joel_AskAboutTreasure_04_06"); //Nie pozwolê, aby pozosta³oœci po moich przodkach zosta³y wymienione na gorza³ê przez kilku brudasów!
 	AI_Output(other, self, "DIA_Joel_AskAboutTreasure_15_07"); //No dobrze, dobrze. Zapomnijmy o tej rozmowie. 
 	
-	B_LogEntry(CH1_TreasureOldGuard, "Od Joela niczego siê nie dowiedzia³em konkretnego. Coœ musi byæ na rzeczy. Stra¿nik by³ bardzo nerwowy.");
+	B_LogEntry(CH2_TreasureOldGuard, "Od Joela niczego siê nie dowiedzia³em konkretnego. Coœ musi byæ na rzeczy. Stra¿nik by³ bardzo nerwowy.");
 };
 
 //========================================
