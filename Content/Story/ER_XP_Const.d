@@ -38,6 +38,7 @@ const int XP_KupiecNaZiolo			= 175;//nieaktywne
 //rozdział 3
 const int XP_PolowanieDoyle			= 250;
 const int XP_AboutKalom				= 150;
+const int XP_SellElixer				= 400;
 //rozdział 4
 const int XP_FireMagesDeath			= 500;
 const int XP_Kordelas				= 200;

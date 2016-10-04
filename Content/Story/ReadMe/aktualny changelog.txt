@@ -28,3 +28,6 @@
 - zadanie od Okyla ("Przekrêty") jest tylko dla cz³onków Nowego Obozu
 - zadanie od Orika ("Szkodnik-magik w Nowym Obozie") jest tylko dla Najemników (a w konsekwencji tego równie¿ zadanie od Cronosa)
 - Claw daje nam nieco mniej mikstur gdy prosi nas o pomoc
+- dodano nowe skrzynki w œwiecie
+- poprawiony b³¹d z nauk¹ broni dwurêcznej u Stanleya
+- przerobione zadanie "Sprzeda¿ eliskirów"

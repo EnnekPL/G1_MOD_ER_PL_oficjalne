@@ -624,6 +624,9 @@ FUNC VOID DIA_Shawn_TalkAboutStones_Info()
     AI_StopProcessInfos	(self);
 };
 
+//////////////////////////////////////////////
+//	Zadanie: Sprzeda¿ eliksirów
+//////////////////////////////////////////////
 
 //========================================
 //-----------------> QuestCH3
@@ -654,13 +657,13 @@ FUNC VOID DIA_Shawn_QuestCH3_Info()
     AI_Output (other, self ,"DIA_Shawn_QuestCH3_15_01"); //Mogê coœ dla ciebie zrobiæ?
     AI_Output (self, other ,"DIA_Shawn_QuestCH3_03_02"); //Jest pewna sprawa, któr¹ móg³byœ siê zaj¹æ.
     AI_Output (other, self ,"DIA_Shawn_QuestCH3_15_03"); //Mianowicie?
-    AI_Output (self, other ,"DIA_Shawn_QuestCH3_03_04"); //Ktoœ z naszych sprzedaje eliksir z wnêtrznoœci pe³zaczy do Nowego Obozu.
-    AI_Output (self, other ,"DIA_Shawn_QuestCH3_03_05"); //Dowiedz siê kto to jest i natychmiast mi o tym powiedz.
+    AI_Output (self, other ,"DIA_Shawn_QuestCH3_03_04"); //Ktoœ z naszych sprzedaje eliksir z wnêtrznoœci pe³zaczy do pozosta³ych obozów.
+    AI_Output (self, other ,"DIA_Shawn_QuestCH3_03_05"); //Dowiedz siê, kto to jest i natychmiast mi o tym powiedz. Nie wiem od czego mia³byœ zacz¹æ. Spróbuj pogadaæ z handlarzami.
     MIS_SellElixer = LOG_RUNNING;
 
     Log_CreateTopic          (CH3_SellElixer, LOG_MISSION);
     Log_SetTopicStatus       (CH3_SellElixer, LOG_RUNNING);
-    B_LogEntry               (CH3_SellElixer,"Shawn kaza³ mi odkryæ kto nielegalnie sprzedaje eliksir z wnêtrznoœci pe³zaczy. Prawdopodobnie towar w ca³oœci idzie do Nowego Obozu.");
+    B_LogEntry               (CH3_SellElixer,"Shawn kaza³ mi odkryæ, kto nielegalnie sprzedaje eliksir z wnêtrznoœci pe³zaczy. Towar trafia do pozosta³ych obozów. Powinienem popytaæ wœród handlarzy.");
     AI_StopProcessInfos	(self);
 	
 	var c_npc dexter;
@@ -679,13 +682,13 @@ INSTANCE DIA_Shawn_SellElixirCaine (C_INFO)
    condition    = DIA_Shawn_SellElixirCaine_Condition;
    information  = DIA_Shawn_SellElixirCaine_Info;
    permanent	= FALSE;
-   description	= "Wiem, kto sprzedaje eliksir!";
+   description	= "Uda³o mi siê odnaleŸæ sprzedawcê eliksiru.";
 };
 
 FUNC INT DIA_Shawn_SellElixirCaine_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Caine_Machujki))
-    && (CaineFriend == false)
+    if (Npc_KnowsInfo (hero, DIA_Caine_Exposed))
+    && (CaineFriend == FALSE)
     {
     return TRUE;
     };
@@ -694,17 +697,61 @@ FUNC INT DIA_Shawn_SellElixirCaine_Condition()
 
 FUNC VOID DIA_Shawn_SellElixirCaine_Info()
 {
-    AI_Output (other, self ,"DIA_Shawn_SellElixirCaine_15_01"); //Wiem, kto sprzedaje eliksir! To Caine!
-    AI_Output (other, self ,"DIA_Shawn_SellElixirCaine_15_02"); //Ponadto oferowa³ mi bym przysta³ do niego i pomaga³ mu w rozprowadzaniu tego specyfiku.
-    AI_Output (self, other ,"DIA_Shawn_SellElixirCaine_03_03"); //Nie spodziewa³em siê tego po nim.
-    AI_Output (self, other ,"DIA_Shawn_SellElixirCaine_03_04"); //Spotka go kara, a ciebie nagroda.
-    CreateInvItems (self, ItMiNugget, 400);
-    B_GiveInvItems (self, other, ItMiNugget, 400);
-    B_LogEntry                     (CH3_SellElixer,"Wyda³em Caine'a Shawnowi. Nie ma litoœci dla takiego postêpowania!");
+    AI_Output (other, self ,"DIA_Shawn_SellElixirCaine_15_01"); //Uda³o mi siê odnaleŸæ sprzedawcê eliksiru. To Nowicjusz Caine.
+    AI_Output (other, self ,"DIA_Shawn_SellElixirCaine_15_02"); //Próbowa³ mnie przekupiæ, ale nie przyj¹³em jego propozycji.
+    AI_Output (self, other ,"DIA_Shawn_SellElixirCaine_03_03"); //Caine? Nieprawdopodobne. Nie spodziewa³em siê tego po nim. Jest zaufanym cz³owiekiem Cor Kaloma.
+	AI_Output (other, self ,"DIA_Shawn_SellElixirCaine_15_04"); //Ju¿ chyba nim nie bêdzie...
+    AI_Output (self, other ,"DIA_Shawn_SellElixirCaine_03_05"); //Oczywiœcie, spotka go kara, jednak w¹tpiê, ¿e zniknie z Obozu. Jego doœwiadczenie jest dla nas bardzo wa¿ne.
+	AI_Output (other, self ,"DIA_Shawn_SellElixirCaine_15_06"); //Jaki problem przyuczyæ kogoœ nowego do pomocy?
+	AI_Output (self, other ,"DIA_Shawn_SellElixirCaine_03_07"); //Wiesz, to wymaga czasu. Mamy teraz wa¿niejsze sprawy na g³owie. Jednak porozmawiam o tym z mistrzem Kalomem.
+	AI_Output (self, other ,"DIA_Shawn_SellElixirCaine_03_07"); //Tak czy inaczej, dobrze siê spisa³eœ. Oto twoja nagroda. 
+	
+    CreateInvItems (self, ItFo_Potion_Mana_Perma_01, 1);
+    B_GiveInvItems (self, other, ItFo_Potion_Mana_Perma_01, 1);
+	
+    B_LogEntry               (CH3_SellElixer,"Powiedzia³em o wszystkim Shawnowi. Caina chyba jednak nie spotka tak bolesna kara, jak s¹dzi³em. Niemniej jednak zachowa³em siê uczciwie, za co Shawn mnie wynagrodzi³.");
     Log_SetTopicStatus       (CH3_SellElixer, LOG_SUCCESS);
     MIS_SellElixer = LOG_SUCCESS;
 
-    B_GiveXP (300);
+    B_GiveXP (XP_SellElixer);
+    AI_StopProcessInfos	(self);
+};
+
+//========================================
+//-----------------> LieAboutCaine
+//========================================
+
+INSTANCE DIA_Shawn_LieAboutCaine (C_INFO)
+{
+   npc          = TPL_5004_Shawn;
+   nr           = 1;
+   condition    = DIA_Shawn_LieAboutCaine_Condition;
+   information  = DIA_Shawn_LieAboutCaine_Info;
+   permanent	= FALSE;
+   description	= "Nie uda³o mi siê znaleŸæ sprzedawcy eliksiru.";
+};
+
+FUNC INT DIA_Shawn_LieAboutCaine_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Caine_Exposed))
+    && (CaineFriend == TRUE)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Shawn_LieAboutCaine_Info()
+{
+    AI_Output (other, self ,"DIA_Shawn_LieAboutCaine_15_01"); //Nie uda³o mi siê znaleŸæ sprzedawcy eliksiru.
+    AI_Output (other, self ,"DIA_Shawn_LieAboutCaine_15_02"); //Sprawdzi³em wszystkie poszlaki, jednak trop siê urwa³.
+    AI_Output (self, other ,"DIA_Shawn_LieAboutCaine_03_03"); //Nie cieszy mnie ta wiadomoœæ. Oznacza to, ¿e zdrajca jest wci¹¿ na wolnoœci. 
+	AI_Output (other, self ,"DIA_Shawn_LieAboutCaine_15_04"); //Có¿, bêdê musia³ poleciæ pozosta³ym Œwi¹tynnym by mieli tê sprawê na uwadze. 
+    
+    B_LogEntry               (CH3_SellElixer,"Powiedzia³em Shawnowi, ¿e trop w sprawie siê urwa³. Wprawdzie zawali³em zadanie, jednak sporo zarobi³em.");
+    Log_SetTopicStatus       (CH3_SellElixer, LOG_FAILED);
+    MIS_SellElixer = LOG_FAILED;
+	
     AI_StopProcessInfos	(self);
 };
 

@@ -806,3 +806,37 @@ func void ScreenFade ()
         };
     };
 };
+
+
+//========================================
+//-----------------> OreWyplata
+//========================================
+
+INSTANCE DIA_Caine_OreWyplata (C_INFO)
+{
+   npc          = Nov_1301_Caine;
+   nr           = 2;
+   condition    = DIA_Caine_OreWyplata_Condition;
+   information  = DIA_Caine_OreWyplata_Info;
+   permanent	= FALSE;
+   description	= "Gdzie moja ruda?";
+};
+
+FUNC INT DIA_Caine_OreWyplata_Condition()
+{
+    if (pensja2 != wld_getday()) && (CaineFriend == true)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Caine_OreWyplata_Info()
+{
+    AI_Output (other, self ,"DIA_Caine_OreWyplata_15_01"); //Gdzie moja ruda?
+    AI_Output (self, other ,"DIA_Caine_OreWyplata_03_02"); //Trzymaj. 
+    CreateInvItems (self, ItMiNugget, 60);
+    B_GiveInvItems (self, other, ItMiNugget, 60);
+    pensja2  = wld_getday();
+    AI_StopProcessInfos	(self);
+};

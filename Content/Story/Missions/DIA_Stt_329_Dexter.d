@@ -68,8 +68,12 @@ INSTANCE DIA_Dexter_Kraut (C_INFO)
 
 FUNC INT DIA_Dexter_Kraut_Condition()
 {
-if (Kapitel < 4){
-	return 1; };
+	if (Kapitel < 4)
+	&& (Npc_KnowsInfo (hero,DIA_Dexter_First))
+	&& (!Npc_KnowsInfo (hero, DIA_Dexter_Angry))
+	{
+	return 1; 
+	};
 };
 
 FUNC VOID DIA_Dexter_Kraut_Info()
@@ -97,9 +101,9 @@ INSTANCE DIA_Dexter_Trade (C_INFO)
 
 FUNC INT DIA_Dexter_Trade_Condition()
 {
-if (!Npc_KnowsInfo (hero, DIA_Dexter_WkurwionyDexter))
-&& (Kapitel < 4)
-{
+	if (!Npc_KnowsInfo (hero, DIA_Dexter_Angry))
+	&& (Kapitel < 4)
+	{
 	return 1;
 	};
 };
@@ -455,77 +459,79 @@ FUNC VOID DIA_Dexter_GivePlant_Info()
 	B_LogEntry(CH2_MessengerRecall, "Kupi³em roœlinê. Mogê wracaæ do Bractwa. ");
 };
 
+//////////////////////////////////////////////
+//	Zadanie: Sprzeda¿ eliksirów
+//////////////////////////////////////////////
 
 //========================================
-//-----------------> SellElixirDexter
+//-----------------> SellElixer
 //========================================
 
-INSTANCE DIA_Dexter_SellElixirDexter (C_INFO)
+INSTANCE DIA_Dexter_SellElixer (C_INFO)
 {
    npc          = STT_329_Dexter;
    nr           = 1;
-   condition    = DIA_Dexter_SellElixirDexter_Condition;
-   information  = DIA_Dexter_SellElixirDexter_Info;
+   condition    = DIA_Dexter_SellElixer_Condition;
+   information  = DIA_Dexter_SellElixer_Info;
    permanent	= FALSE;
    description	= "Sprzedajesz eliksir z wnêtrznoœci pe³zaczy?";
 };
 
-FUNC INT DIA_Dexter_SellElixirDexter_Condition()
+FUNC INT DIA_Dexter_SellElixer_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Shawn_QuestCH3))
+    if (MIS_SellElixer == LOG_RUNNING)
     {
     return TRUE;
     };
 };
 
 
-FUNC VOID DIA_Dexter_SellElixirDexter_Info()
+FUNC VOID DIA_Dexter_SellElixer_Info()
 {
-    AI_Output (other, self ,"DIA_Dexter_SellElixirDexter_15_01"); //Sprzedajesz eliksir z wnêtrznoœci pe³zaczy?
-    AI_Output (self, other ,"DIA_Dexter_SellElixirDexter_03_02"); //Jasne! To nowy towar. Widzê, ¿e jesteœ zainteresowany.
-    AI_Output (other, self ,"DIA_Dexter_SellElixirDexter_15_03"); //Bardziej mnie interesuje, kto ci go sprzeda³?
-    AI_DrawWeapon (self);
-    AI_Output (self, other ,"DIA_Dexter_SellElixirDexter_03_04"); //Gówno ciê to powinno obchodziæ.
-    AI_Output (self, other ,"DIA_Dexter_SellElixirDexter_03_05"); //Jak zrobisz jak¹œ burdê, to natychmiast wezwê Stra¿ników i zrobi¹ ci z dupy Nowy Obóz.
+    AI_Output (other, self ,"DIA_Dexter_SellElixer_15_01"); //Sprzedajesz eliksir z wnêtrznoœci pe³zaczy?
+    AI_Output (self, other ,"DIA_Dexter_SellElixer_03_02"); //Jasne! To nowy towar. Widzê, ¿e jesteœ zainteresowany.
+    AI_Output (other, self ,"DIA_Dexter_SellElixer_15_03"); //Bardziej mnie interesuje, kto ci go sprzeda³?  
+    AI_Output (self, other ,"DIA_Dexter_SellElixer_03_04"); //To nie twoja sprawa.
+	AI_DrawWeapon (hero);
+    AI_Output (self, other ,"DIA_Dexter_SellElixer_03_05"); //Jak zrobisz jak¹œ burdê, to natychmiast wezwê Stra¿ników i zrobi¹ ci z dupy Nowy Obóz.
     AI_RemoveWeapon (other);
-    AI_Output (other, self ,"DIA_Dexter_SellElixirDexter_15_06"); //Dobra, ju¿ idê.
-    B_LogEntry                     (CH3_SellElixer,"Uda³o mi siê znaleŸæ kolejny rynek zbytu. Okazuje siê, ¿e Dexter tak¿e ma w swojej ofercie eliksir. Jednak nie uda³o mi siê ustaliæ, od kogo go skupuje.");
-    B_GiveXP (350);
+    AI_Output (self, other ,"DIA_Dexter_SellElixer_03_06"); //Po prostu st¹d spadaj. Chyba, ¿e coœ bierzesz...
+	
+    B_LogEntry                     (CH3_SellElixer,"Okazuje siê, ¿e Dexter tak¿e ma w swojej ofercie nasz eliksir. Jednak nie uda³o mi siê ustaliæ, od kogo go skupuje.");
+    B_GiveXP (50);
     AI_StopProcessInfos	(self);
 };
 
 //========================================
-//-----------------> WkurwionyDexter
+//-----------------> Angry
 //========================================
 
-INSTANCE DIA_Dexter_WkurwionyDexter (C_INFO)
+INSTANCE DIA_Dexter_Angry (C_INFO)
 {
    npc          = STT_329_Dexter;
    nr           = 1;
-   condition    = DIA_Dexter_WkurwionyDexter_Condition;
-   information  = DIA_Dexter_WkurwionyDexter_Info;
+   condition    = DIA_Dexter_Angry_Condition;
+   information  = DIA_Dexter_Angry_Info;
    permanent	= FALSE;
    Important    = TRUE;
 };
 
-FUNC INT DIA_Dexter_WkurwionyDexter_Condition()
+FUNC INT DIA_Dexter_Angry_Condition()
 {
     if (CaineFriend == false)
-    && (Npc_KnowsInfo (hero, DIA_Caine_Machujki))
+    && (Npc_KnowsInfo (hero, DIA_Caine_Exposed))
     {
     return TRUE;
     };
 };
 
 
-FUNC VOID DIA_Dexter_WkurwionyDexter_Info()
+FUNC VOID DIA_Dexter_Angry_Info()
 {
-    AI_Output (self, other ,"DIA_Dexter_WkurwionyDexter_03_01"); //Gdzie moja dostawa eliksirów?
-    AI_Output (other, self ,"DIA_Dexter_WkurwionyDexter_15_02"); //Ju¿ nigdy jej nie zobaczysz! 
-    AI_Output (other, self ,"DIA_Dexter_WkurwionyDexter_15_03"); //Mo¿na powiedzieæ, ¿e Caine wstrzyma³ dzia³alnoœæ.
-    AI_Output (self, other ,"DIA_Dexter_WkurwionyDexter_03_04"); //Ty sukinsynu!
-    AI_Output (self, other ,"DIA_Dexter_WkurwionyDexter_03_05"); //Spieprzy³eœ mój interes!
-    AI_Output (self, other ,"DIA_Dexter_WkurwionyDexter_03_06"); //IdŸ precz.
+    AI_Output (self, other ,"DIA_Dexter_Angry_03_01"); //Gdzie moja dostawa eliksirów?
+    AI_Output (other, self ,"DIA_Dexter_Angry_15_02"); //Ju¿ nigdy jej nie zobaczysz. Mo¿na powiedzieæ, ¿e Caine wstrzyma³ dzia³alnoœæ.
+    AI_Output (other, self ,"DIA_Dexter_Angry_15_03"); //Ty sukinsynu! Kiedyœ mi za to zap³acisz.
+    AI_Output (self, other ,"DIA_Dexter_Angry_03_04"); //IdŸ precz!
     AI_StopProcessInfos	(self);
 };
 
@@ -718,7 +724,7 @@ FUNC VOID DIA_Dexter_Kapitel4_dialog_Info()
 {
     AI_Output (other, self ,"DIA_Dexter_Kapitel4_dialog_15_01"); //Wci¹¿ sprzedajesz bagienne ziele?
     AI_Output (self, other ,"DIA_Dexter_Kapitel4_dialog_03_02"); //Ju¿ nie. Po tym jak zostali zamordowani Magowie Ognia, urwa³ mi siê kontakt z Bractwem.
-    AI_Output (self, other ,"DIA_Dexter_Kapitel4_dialog_03_03"); //Straci³em dostawców, wiêkszoœæ nie ¿yje. Nie mia³em wyboru i musia³em zwin¹æ interes.
+    AI_Output (self, other ,"DIA_Dexter_Kapitel4_dialog_03_03"); //Straci³em dostawców. Nie mia³em wyboru i musia³em zwin¹æ interes.
     AI_Output (self, other ,"DIA_Dexter_Kapitel4_dialog_03_04"); //Teraz jestem zwiadowc¹ Kruka i jego lew¹ rêk¹.
     AI_Output (other, self ,"DIA_Dexter_Kapitel4_dialog_15_05"); //A kto jest praw¹?
     AI_Output (self, other ,"DIA_Dexter_Kapitel4_dialog_03_06"); //Bloodwyn, dawny Stra¿nik z Zewnêtrznego Pierœcienia.

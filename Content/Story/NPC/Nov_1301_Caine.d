@@ -69,3 +69,23 @@ FUNC VOID Rtn_start_1301 ()
 	TA_PotionAlchemy(22,00,23,00,"PSI_LABOR_BASEMENT_1");
 };
 
+FUNC VOID Rtn_badguy_1301 ()
+{
+	TA_Stand		(23,00,05,00,"OW_NC_ABYSS2");
+	TA_PotionAlchemy(05,00,09,00,"PSI_LABOR_BASEMENT_1");
+	TA_Smoke		(09,00,10,00,"PSI_21_HUT_EX");
+	TA_PotionAlchemy(10,00,11,00,"PSI_LABOR_BASEMENT_1");
+	TA_Smoke		(11,00,12,00,"PSI_21_HUT_EX");
+	TA_PotionAlchemy(12,00,13,00,"PSI_LABOR_BASEMENT_1");
+	TA_Smoke		(13,00,14,00,"PSI_21_HUT_EX");
+	TA_PotionAlchemy(14,00,15,00,"PSI_LABOR_BASEMENT_1");
+	TA_Smoke		(15,00,16,00,"PSI_21_HUT_EX");
+	TA_PotionAlchemy(16,00,17,00,"PSI_LABOR_BASEMENT_1");
+	TA_Smoke		(17,00,18,00,"PSI_21_HUT_EX");
+	TA_PotionAlchemy(18,00,19,00,"PSI_LABOR_BASEMENT_1");
+	TA_Smoke		(19,00,20,00,"PSI_21_HUT_EX");
+	TA_PotionAlchemy(20,00,21,00,"PSI_LABOR_BASEMENT_1");
+	TA_Smoke		(21,00,22,00,"PSI_21_HUT_EX");
+	TA_PotionAlchemy(22,00,23,00,"PSI_LABOR_BASEMENT_1");
+};
+

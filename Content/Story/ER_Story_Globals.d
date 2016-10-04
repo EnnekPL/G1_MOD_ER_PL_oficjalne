@@ -148,6 +148,7 @@ var int CanTellToGomezAboutSecretPath;//Thorus & Gomez (zadanie ze œcie¿k¹ do wo
 var int Choice_BergsRing;//TRUE pomagam, FALSE nie pomagam
 var int QuestFromOkyl;
 var int QuestFromOrik;
+var int HeroKnowCipherSellElixier;
 
 //***Pomocnicze***
 //***Wld_GetDay***

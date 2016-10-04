@@ -274,107 +274,77 @@ FUNC void  Nov_1301_Caine_CHEST_Info()
 	AI_Output (other, self,"Nov_1301_Caine_CHEST_Info_15_01"); //Jak mogê zdobyæ recepturê Kaloma?
 	AI_Output (self, other,"Nov_1301_Caine_CHEST_Info_13_02"); //Nie mo¿esz. Wszystkie receptury przechowywane s¹ w zamkniêtej skrzyni.
 };  
-//edycja rozszerzona
+
+//////////////////////////////////////////////
+//	Zadanie: Sprzeda¿ eliksirów
+//////////////////////////////////////////////
+
 //========================================
-//-----------------> Machujki
+//-----------------> Exposed
 //========================================
 
-INSTANCE DIA_Caine_Machujki (C_INFO)
+INSTANCE DIA_Caine_Exposed (C_INFO)
 {
    npc          = Nov_1301_Caine;
    nr           = 1;
-   condition    = DIA_Caine_Machujki_Condition;
-   information  = DIA_Caine_Machujki_Info;
+   condition    = DIA_Caine_Exposed_Condition;
+   information  = DIA_Caine_Exposed_Info;
    permanent	= FALSE;
-   description	= "Wiem o twoich machlojkach!";
+   important	= TRUE;
 };
 
-FUNC INT DIA_Caine_Machujki_Condition()
+FUNC INT DIA_Caine_Exposed_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Cipher_ElixirSellCipher))
+    if (Npc_KnowsInfo (hero, DIA_Cipher_WhoSellElixier)) && (Npc_GetDistToWP (self, "OW_NC_ABYSS2") < 700)
     {
     return TRUE;
     };
 };
 
 
-FUNC VOID DIA_Caine_Machujki_Info()
+FUNC VOID DIA_Caine_Exposed_Info()
 {
-    AI_Output (other, self ,"DIA_Caine_Machujki_15_01"); //Wiem o twoich machlojkach!
-    AI_Output (self, other ,"DIA_Caine_Machujki_03_02"); //O czym ty bredzisz?! 
-    AI_Output (other, self ,"DIA_Caine_Machujki_15_03"); //To ty sprzedajesz eliksir z wnêtrznoœci pe³zaczy!
-    AI_Output (other, self ,"DIA_Caine_Machujki_15_04"); //Ten eliksir jest nam potrzebny! Zawiod³em siê na tobie.
-    AI_Output (self, other ,"DIA_Caine_Machujki_03_05"); //Zaczekaj!
-    AI_Output (self, other ,"DIA_Caine_Machujki_03_06"); //Chcê negocjowaæ.
-    AI_Output (other, self ,"DIA_Caine_Machujki_15_07"); //No, s³ucham.
+    AI_Output (self, other ,"DIA_Caine_Exposed_03_01"); //Co ty tutaj robisz? Sk¹d wiedzia³eœ, ¿e tu bêdê?
+    AI_Output (other, self ,"DIA_Caine_Exposed_15_02"); //Wyda³ ciê jeden z twoich odbiorców. Wystarczy³o go odpowiednio zmotykowaæ...
+	AI_Output (self, other ,"DIA_Caine_Exposed_03_03"); //Dlaczego zacz¹³eœ wokó³ mnie wêszyæ? Na co ci to by³o? Powinieneœ rozumieæ, ¿e tutaj ten, kto nie kombinuje, szybko ginie.
+    AI_Output (other, self ,"DIA_Caine_Exposed_15_04"); //Spraw¹ eliksiru zainteresowali siê Guru. Shawn kaza³ mi to sprawdziæ.
+    AI_Output (self, other ,"DIA_Caine_Exposed_03_05"); //Zaczekaj! Czy ty powiedzia³eœ Guru?
+    AI_Output (self, other ,"DIA_Caine_Exposed_03_06"); //Nie chcê k³opotów.
+    AI_Output (other, self ,"DIA_Caine_Exposed_15_07"); //Trochê na to za póŸno.
 
-    AI_Output (self, other ,"DIA_Caine_Machujki_03_08"); //Za ka¿d¹ butelkê eliksiru dostajê 30 bry³ek rudy. Dziennie sprzedajê cztery butelki.
-    AI_Output (self, other ,"DIA_Caine_Machujki_03_09"); //To daje mi zysk w wysokoœci 120 bry³ek dziennie.
-    AI_Output (self, other ,"DIA_Caine_Machujki_03_10"); //Dam ci po³owê, je¿eli mnie nie wydasz. Co ty na to?
+    AI_Output (self, other ,"DIA_Caine_Exposed_03_08"); //Poczekaj, dam ci wszystko co do tej pory zarobi³em, jeœli mnie nie wydasz. Bedzie tego z 500 bry³ek rudy!
 
-    Info_ClearChoices		(DIA_Caine_Machujki);
-    Info_AddChoice		(DIA_Caine_Machujki, "Zapomnij. Mistrz Shawn o wszystkim siê dowie!", DIA_Caine_Machujki_Kabelek);
-    Info_AddChoice		(DIA_Caine_Machujki, "Dobra. Umowa stoi.", DIA_Caine_Machujki_KasaKasaKasa);
+	B_LogEntry     (CH3_SellElixer,"Noc¹, w umówionym miejscu spotka³em nikogo innego jak Caine'a. Mog³em siê tego domyœleæ. Ten Nowicjusz ca³e dnie spêdza z Cor Kalomem. Mia³ ³atwy dostêp do receptury. Zaproponowa³ mi, ¿e jeœli go nie wydam, otrzymam 500 bry³ek rudy. Muszê podj¹æ decyzjê, co z nim zrobiê.");
+	
+    Info_ClearChoices	(DIA_Caine_Exposed);
+    Info_AddChoice		(DIA_Caine_Exposed, "Zapomnij. Mistrz Shawn o wszystkim siê dowie!", DIA_Caine_Exposed_Nope);
+    Info_AddChoice		(DIA_Caine_Exposed, "Dobra. Umowa stoi.", DIA_Caine_Exposed_Money);
 };
 
-FUNC VOID DIA_Caine_Machujki_Kabelek()
+FUNC VOID DIA_Caine_Exposed_Nope()
 {
-    AI_Output (other, self ,"DIA_Caine_Machujki_Kabelek_15_01"); //Zapomnij. Mistrz Shawn o wszystkim siê dowie!
-    AI_Output (self, other ,"DIA_Caine_Machujki_Kabelek_03_02"); //Jesteœ g³upcem.
-    AI_Output (self, other ,"DIA_Caine_Machujki_Kabelek_03_03"); //Bêdziesz tego ¿a³owa³, gdy przyciœnie ciê bieda jak mnie!
-    AI_Output (other, self ,"DIA_Caine_Machujki_Kabelek_15_04"); //Milcz, oszuœcie!
-    B_LogEntry                     (CH3_SellElixer,"Mistrz Shawn dowie siê o czynach Caine'a. Nie odpuszczê mu tego.");
+    AI_Output (other, self ,"DIA_Caine_Exposed_Nope_15_01"); //Zapomnij. Mistrz Shawn o wszystkim siê dowie!
+    AI_Output (self, other ,"DIA_Caine_Exposed_Nope_03_02"); //Jesteœ g³upcem. Bêdziesz tego ¿a³owa³, gdy przyciœnie ciê bieda jak mnie!
+    AI_Output (other, self ,"DIA_Caine_Exposed_Nope_15_03"); //Skoñcz ju¿ tê paplaninê.
+	
+    B_LogEntry    (CH3_SellElixer,"Zdecydowa³em, ¿e Caine zas³u¿y³ na karê. Mam zamiar powiedzieæ o wszystkim Shawn'owi.");
 	CaineFriend = false;
-    B_GiveXP (200);
-    Info_ClearChoices		(DIA_Caine_Machujki);
+    Info_ClearChoices		(DIA_Caine_Exposed);
     AI_StopProcessInfos	(self);
+	Npc_ExchangeRoutine (self,"start");
 };
 
-FUNC VOID DIA_Caine_Machujki_KasaKasaKasa()
+FUNC VOID DIA_Caine_Exposed_Money()
 {
-    AI_Output (other, self ,"DIA_Caine_Machujki_KasaKasaKasa_15_01"); //Dobra. Umowa stoi!
-    AI_Output (self, other ,"DIA_Caine_Machujki_KasaKasaKasa_03_02"); //Œwietnie. PrzychodŸ do mnie codziennie po swoj¹ czêœæ. 
-    AI_Output (self, other ,"DIA_Caine_Machujki_KasaKasaKasa_03_03"); //Tylko nikomu ani s³owa!
-    B_LogEntry                     (CH3_SellElixer,"Caine zaoferowa³ mi 60 bry³ek dziennie, jeœli bêdê trzyma³ jêzyk za zêbami. Uwa¿am, ¿e to uczciwa propozycja.");
-    Log_SetTopicStatus       (CH3_SellElixer, LOG_SUCCESS);
-    MIS_SellElixer = LOG_SUCCESS;
+    AI_Output (other, self ,"DIA_Caine_Exposed_Money_15_01"); //Dobra. Umowa stoi!
+    AI_Output (self, other ,"DIA_Caine_Exposed_Money_03_02"); //Œwietnie. Oto twoja ruda. Jestem ci naprawdê wdziêczny...
+    AI_Output (self, other ,"DIA_Caine_Exposed_Money_03_03"); //Tylko nikomu ani s³owa!
+	
+    B_LogEntry    (CH3_SellElixer,"Przyj¹³em rudê od Caine. Kolonia to miejsce, w którym najwa¿niejsza jest ruda. Pe³na sakiewka mo¿e mi kiedyœ uratowaæ ¿ycie. Muszê teraz jakoœ wyt³umaczyæ siê Shawn'owi.");
 	CaineFriend = true;
-    B_GiveXP (200);
-    Info_ClearChoices		(DIA_Caine_Machujki);
+    Info_ClearChoices		(DIA_Caine_Exposed);
     AI_StopProcessInfos	(self);
-};
-
-//========================================
-//-----------------> OreWyplata
-//========================================
-
-INSTANCE DIA_Caine_OreWyplata (C_INFO)
-{
-   npc          = Nov_1301_Caine;
-   nr           = 2;
-   condition    = DIA_Caine_OreWyplata_Condition;
-   information  = DIA_Caine_OreWyplata_Info;
-   permanent	= FALSE;
-   description	= "Gdzie moja ruda?";
-};
-
-FUNC INT DIA_Caine_OreWyplata_Condition()
-{
-    if (pensja2 != wld_getday()) && (CaineFriend == true)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Caine_OreWyplata_Info()
-{
-    AI_Output (other, self ,"DIA_Caine_OreWyplata_15_01"); //Gdzie moja ruda?
-    AI_Output (self, other ,"DIA_Caine_OreWyplata_03_02"); //Trzymaj. 
-    CreateInvItems (self, ItMiNugget, 60);
-    B_GiveInvItems (self, other, ItMiNugget, 60);
-    pensja2  = wld_getday();
-    AI_StopProcessInfos	(self);
+	Npc_ExchangeRoutine (self,"start");
 };
 
 //========================================

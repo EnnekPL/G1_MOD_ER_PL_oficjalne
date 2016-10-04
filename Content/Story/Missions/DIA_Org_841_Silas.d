@@ -215,37 +215,42 @@ FUNC VOID DIA_Silas_KillPaluchy_Info()
     B_GiveXP (300);
     AI_StopProcessInfos	(self);
 };
+
+//////////////////////////////////////////////
+//	Zadanie: Sprzeda¿ eliksirów
+//////////////////////////////////////////////
+
 //========================================
-//-----------------> 60brylekKyrwo
+//-----------------> WhoSellElixier
 //========================================
 
-INSTANCE DIA_Silas_60brylekKyrwo (C_INFO)
+INSTANCE DIA_Silas_WhoSellElixier (C_INFO)
 {
    npc          = Org_841_Silas;
    nr           = 1;
-   condition    = DIA_Silas_60brylekKyrwo_Condition;
-   information  = DIA_Silas_60brylekKyrwo_Info;
+   condition    = DIA_Silas_WhoSellElixier_Condition;
+   information  = DIA_Silas_WhoSellElixier_Info;
    permanent	= FALSE;
    description	= "Wiesz, gdzie mogê kupiæ eliksir z pe³zaczy?";
 };
 
-FUNC INT DIA_Silas_60brylekKyrwo_Condition()
+FUNC INT DIA_Silas_WhoSellElixier_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Shawn_QuestCH3))
+    if (MIS_SellElixer == LOG_RUNNING)
     {
     return TRUE;
     };
 };
 
 
-FUNC VOID DIA_Silas_60brylekKyrwo_Info()
+FUNC VOID DIA_Silas_WhoSellElixier_Info()
 {
-    AI_Output (other, self ,"DIA_Silas_60brylekKyrwo_15_01"); //Wiesz, gdzie mogê kupiæ eliksir z pe³zaczy?
-    AI_Output (self, other ,"DIA_Silas_60brylekKyrwo_03_02"); //Taka informacja bêdzie sporo kosztowaæ.
-    AI_Output (other, self ,"DIA_Silas_60brylekKyrwo_15_03"); //Ile?
-    AI_Output (self, other ,"DIA_Silas_60brylekKyrwo_03_04"); //75 bry³ek rudy. Nie wygl¹dasz mi na biedaka.
+    AI_Output (other, self ,"DIA_Silas_WhoSellElixier_15_01"); //Wiesz, gdzie mogê kupiæ eliksir z pe³zaczy?
+    AI_Output (self, other ,"DIA_Silas_WhoSellElixier_03_02"); //Taka informacja bêdzie sporo kosztowaæ.
+    AI_Output (other, self ,"DIA_Silas_WhoSellElixier_15_03"); //Ile?
+    AI_Output (self, other ,"DIA_Silas_WhoSellElixier_03_04"); //75 bry³ek rudy. Nie wygl¹dasz mi na biedaka.
 };
-var int CipherSprzedajeEliksir;
+
 //========================================
 //-----------------> Elixir
 //========================================
@@ -256,13 +261,13 @@ INSTANCE DIA_Silas_Elixir (C_INFO)
    nr           = 2;
    condition    = DIA_Silas_Elixir_Condition;
    information  = DIA_Silas_Elixir_Info;
-   permanent	= FALSE;
-   description	= "Kto sprzedaje eliksir? (75 bry³ek rudy)";
+   permanent	= TRUE;
+   description	= "Kto sprzedaje eliksir?";
 };
 
 FUNC INT DIA_Silas_Elixir_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Silas_60brylekKyrwo))
+    if (Npc_KnowsInfo (hero, DIA_Silas_WhoSellElixier)) && (HeroKnowCipherSellElixier == FALSE)
     {
     return TRUE;
     };
@@ -274,9 +279,10 @@ FUNC VOID DIA_Silas_Elixir_Info()
     AI_Output (other, self ,"DIA_Silas_Elixir_15_01"); //Kto sprzedaje eliksir?
     if (Npc_HasItems (hero, ItMiNugget)>=75)
     {
-        AI_Output (self, other ,"DIA_Silas_Elixir_03_02"); //To Cipher. Znajdziesz go w karczmie.
+        AI_Output (self, other ,"DIA_Silas_Elixir_03_02"); //To Cipher. Znajdziesz go w karczmie. Handluje te¿ zielem, ale bierze tylko du¿e partie. 
         B_GiveInvItems (other, self, ItMiNugget, 75);
-		CipherSprzedajeEliksir = true;
+		HeroKnowCipherSellElixier = true;
+		B_LogEntry     (CH3_SellElixer,"Od Silasa dowiedzia³em siê, ¿e Cipher handluje eliksirem.");
     }
     else
     {

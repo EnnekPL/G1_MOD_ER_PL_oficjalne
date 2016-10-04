@@ -93,10 +93,10 @@ FUNC void  NON_Stanley_TEACH_2H_Info()
 //---------------------------------------------------------------
 instance  DIA_Stanley_Teach_2H (C_INFO)
 {
-	npc					= NON_5602_Stanley;
-	condition			= DIA_Stanley_Teach_2H_Condition;
+	npc				= NON_5602_Stanley;
+	condition		= DIA_Stanley_Teach_2H_Condition;
 	information		= DIA_Stanley_Teach_2H_Info;
-	permanent		= 800;
+	permanent		= 1;
 	description		= "Zacznijmy trening broni dwurêcznej."; 
 };
 //

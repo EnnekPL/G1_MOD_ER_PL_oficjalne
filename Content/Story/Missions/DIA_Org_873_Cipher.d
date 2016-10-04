@@ -194,44 +194,59 @@ FUNC VOID  Org_873_Cipher_TRADE_Info()
 	AI_Output (self, other,"DIA_Cipher_TRADE_12_01"); //Czego chcesz?
 };
 
+//////////////////////////////////////////////
+//	Zadanie: Sprzeda¿ eliksirów
+//////////////////////////////////////////////
+
 //========================================
-//-----------------> ElixirSellCipher
+//-----------------> WhoSellElixier
 //========================================
 
-INSTANCE DIA_Cipher_ElixirSellCipher (C_INFO)
+INSTANCE DIA_Cipher_WhoSellElixier (C_INFO)
 {
    npc          = Org_873_Cipher;
    nr           = 1;
-   condition    = DIA_Cipher_ElixirSellCipher_Condition;
-   information  = DIA_Cipher_ElixirSellCipher_Info;
+   condition    = DIA_Cipher_WhoSellElixier_Condition;
+   information  = DIA_Cipher_WhoSellElixier_Info;
    permanent	= FALSE;
    description	= "Sprzedajesz eliksir z wydzieliny pe³zaczy?";
 };
 
-FUNC INT DIA_Cipher_ElixirSellCipher_Condition()
+FUNC INT DIA_Cipher_WhoSellElixier_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Shawn_QuestCH3))
-    && (CipherSprzedajeEliksir == true)
+    if (MIS_SellElixer == LOG_RUNNING)
+    && (HeroKnowCipherSellElixier == true)
     {
     return TRUE;
     };
 };
 
 
-FUNC VOID DIA_Cipher_ElixirSellCipher_Info()
+FUNC VOID DIA_Cipher_WhoSellElixier_Info()
 {
-    AI_Output (other, self ,"DIA_Cipher_ElixirSellCipher_15_01"); //Sprzedajesz eliksir z wydzieliny pe³zaczy?
-    AI_Output (self, other ,"DIA_Cipher_ElixirSellCipher_03_02"); //Tak, a co ci do tego?
-    AI_Output (other, self ,"DIA_Cipher_ElixirSellCipher_15_03"); //Chcê wiedzieæ, od kogo go kupi³eœ.
-    AI_Output (self, other ,"DIA_Cipher_ElixirSellCipher_03_04"); //A co, jeœli ci nie powiem?
-    AI_DrawWeapon (other);
-    AI_Output (other, self ,"DIA_Cipher_ElixirSellCipher_15_05"); //Chyba nie chcesz mieæ k³opotów z moimi braæmi. Mog¹ ci bardzo zaszkodziæ, jeœli mnie zdenerwujesz.
-    AI_Output (self, other ,"DIA_Cipher_ElixirSellCipher_03_06"); //Dobra, dobra. Tak sie tylko droczê. Tylko zostawcie mój interes... Skupujê wszystko od Caine'a.
-    AI_RemoveWeapon (other);
-    AI_Output (other, self ,"DIA_Cipher_ElixirSellCipher_15_07"); //Widzisz? To nie by³o takie trudne.
-    B_LogEntry                     (CH3_SellElixer,"Cipher kupi³ eliksiry od Nowicjusza Caine'a.");
+    AI_Output (other, self ,"DIA_Cipher_WhoSellElixier_15_01"); //Sprzedajesz eliksir z wydzieliny pe³zaczy?
+    AI_Output (self, other ,"DIA_Cipher_WhoSellElixier_03_02"); //Tak, a co ci do tego?
+    AI_Output (other, self ,"DIA_Cipher_WhoSellElixier_15_03"); //Chcê wiedzieæ, od kogo go kupi³eœ.
+    AI_Output (self, other ,"DIA_Cipher_WhoSellElixier_03_04"); //Od kogoœ od was. To chyba jasne!
+    AI_Output (other, self ,"DIA_Cipher_WhoSellElixier_15_05"); //Nie mam czasu na twoje gierki. Gadaj z kim wspó³pracujesz.
+    AI_Output (self, other ,"DIA_Cipher_WhoSellElixier_03_06"); //Ty naprawdê nie wiesz?
+    AI_Output (other, self ,"DIA_Cipher_WhoSellElixier_15_07"); //Czemu ciê to tak dziwi?
+	AI_Output (self, other ,"DIA_Cipher_WhoSellElixier_03_08"); //Powinieneœ wiedzieæ, co siê dzieje w obozie do którego nale¿ysz. Nie s¹dzisz? 
+	AI_Output (other, self ,"DIA_Cipher_WhoSellElixier_15_09"); //Pos³uchaj mnie, cz³owiek, który robi z tob¹ interesy robi to wbrew woli Guru. Chyba nie chcia³byœ ich rozgniewaæ?
+	AI_Output (self, other ,"DIA_Cipher_WhoSellElixier_03_10"); //A co mnie obchodz¹ jacyœ Guru? S¹ daleko st¹d. Chyba sam Cor Kalom nie pofatyguje siê tutaj, ¿eby skopaæ mi ty³ek?
+	AI_Output (other, self ,"DIA_Cipher_WhoSellElixier_15_11"); //Nie, ale mo¿e przys³aæ na przyk³ad mnie.
+	AI_Output (self, other ,"DIA_Cipher_WhoSellElixier_03_12"); //Myœlisz, ¿e siê ciebie bojê? Rusz mnie tylko, a nie masz ¿ycia w tym Obozie.
+	AI_Output (other, self ,"DIA_Cipher_WhoSellElixier_15_13"); //Jeœli wyprowadzisz mnie z równowagi postawiê ca³e bagna na g³owie, ¿eby tylko znaleŸæ twoich dostawców i pozbyæ siê ich.
+	AI_Output (self, other ,"DIA_Cipher_WhoSellElixier_03_14"); //Poczekaj, zostaw mój interes w spokoju. 
+	AI_Output (other, self ,"DIA_Cipher_WhoSellElixier_15_15"); //W takim razie powiedz mi, co wiesz.
+	AI_Output (self, other ,"DIA_Cipher_WhoSellElixier_03_16"); //Nasza wymiana odbywa siê bez zbêdnych s³ów. Jest pewna skrzynia... Zostawiam w niej na noc rudê, a nastêpnego dnia znajdujê tam eliksiry.
+	AI_Output (self, other ,"DIA_Cipher_WhoSellElixier_03_17"); //Wiem, jest to doœæ ryzykowne, ale ufam moim tajemniczym wspólnikom. Jeszcze mnie nie oszukali, wiêc chyba tego nie planuj¹. 
+	AI_Output (other, self ,"DIA_Cipher_WhoSellElixier_15_18"); //Gdzie jest ta skrzynia? 
+	AI_Output (self, other ,"DIA_Cipher_WhoSellElixier_03_19"); //W ma³ym w¹wozie, pod starym mostem. T¹ drog¹ mo¿na siê dostaæ do obozu Aidana. Zazwyczaj stoj¹ tam jakieœ zbiry. 
+	AI_Output (self, other ,"DIA_Cipher_WhoSellElixier_03_20"); //Zjaw siê tam w nocy, a mo¿e spotkasz mojego wspólnika. Ja siê z nim nie widujê. Tylko tyle mogê ci powiedzieæ. 
+	
+    B_LogEntry                     (CH3_SellElixer,"Cipher wreszcie da³ mi jak¹œ wskazówkê. Nie zna on to¿samoœci swojego wspólnika, jednak zdradzi³ mi, ¿e dochodzi miêdzy nimi do wymiany pod starym mostem dziêki, któremu mo¿na siê ³atwo dostaæ do obozowiska Aidana. Znam to miejsce. Widzia³em tam niegdyœ dwóch rabusiów. Pod owym mostem mam szukaæ starej skrzyni. To w niej Cipher zostawia rudê, a jego wspólnik eliksiry. Muszê siê tam udaæ póŸn¹ noc¹ i spróbowaæ przy³apaæ handlarza.");
 
-    B_GiveXP (350);
     AI_StopProcessInfos	(self);
 };
 
