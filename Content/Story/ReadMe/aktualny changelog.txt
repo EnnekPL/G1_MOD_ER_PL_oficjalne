@@ -31,3 +31,6 @@
 - dodano nowe skrzynki w œwiecie
 - poprawiony b³¹d z nauk¹ broni dwurêcznej u Stanleya
 - przerobione zadanie "Sprzeda¿ eliskirów"
+- naprawiony dialog z Felgorem, ¯elazn¹ Garot¹
+- zmiany w wyœwietlaniu doœwiadczenia
+- dodano bonus za pierwsz¹ krew

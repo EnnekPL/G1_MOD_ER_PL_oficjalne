@@ -408,7 +408,7 @@ FUNC VOID DIA_Jens_Idziesz_Info()
 {
     AI_Output (other, self ,"DIA_Jens_Idziesz_15_01"); //Idziesz ze mn¹ do kopalni?
     AI_Output (self, other ,"DIA_Jens_Idziesz_03_02"); //Niestety, mam du¿o pracy.
-    if (Npc_IsDead(BAU_2006_Emanuel))
+    if (Npc_IsDead(BAN_1602_Emanuel))
     {
         AI_Output (self, other ,"DIA_Jens_Idziesz_03_03"); //Muszê gotowaæ za Emanuela i zaj¹æ siê naszym ekwipunkiem.
         AI_Output (other, self ,"DIA_Jens_Idziesz_15_04"); //Rozumiem.

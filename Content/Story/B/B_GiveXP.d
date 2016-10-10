@@ -22,23 +22,32 @@ func void B_GiveXP (var int add_xp)
 	msg = ConcatStrings(msg,	IntToString(add_xp));
 	msg2 = ConcatStrings("+ ",	IntToString(add_xp));
 	//PrintScreen	(msg, -1,_YPOS_MESSAGE_XPGAINED,"font_old_10_white.tga",_TIME_MESSAGE_XPGAINED);
-	PrintS_Ext(msg, COL_White);
+	//PrintS_Ext(msg, COL_White);
 	var string s1;
 	var string s2;
 	var string s3;
 	var string s4;
 	var string s5;
 	//,s2,s3,s4,s5;
+	var string n1;
+	var string n2;
+	var string n3;
 	
 	s4	=IntToString(hero.exp);//z liczby jak¹ jest doœwiadczenie bohatera robimy ci¹g znaków (czyli z liczby tekst)
 	s5	=IntToString(hero.exp_next);//to samo co wy¿ej tyle ze co do punktów wymaganych do zdobycia
 
-	s1	=ConcatStrings ("Doœwiadczenie ",s4); //tutaj ³¹czymy TEKST s4 czyli nasz exp w postaci tekstowej razem z wyrazem doœwiadczenia
+	s1	=ConcatStrings (" Stan: ",s4); //tutaj ³¹czymy TEKST s4 czyli nasz exp w postaci tekstowej razem z wyrazem doœwiadczenia
 	s2	=ConcatStrings (" / ", s5);//tutaj ³¹czymy nasz exp do zdobycia z wyrazem "na"
 
 	s3	=ConcatStrings (s1,s2);//tutaj ³¹czymy 2 powy¿sze w ca³oœæ
-
-	PrintScreen ( s3, -1, _YPOS_MESSAGE_XPGAINED+2, "Font_Old_10_White.TGA",_TIME_MESSAGE_XPGAINED);//tutaj wyœwietlamy s3 czyli ca³oœæ naszej pracy
+	n1 = ConcatStrings (msg,"(");
+	n2 = ConcatStrings (n1,s3);
+	n3 = ConcatStrings (n2,")");
+	
+	
+	PrintS_Ext(n3, COL_White);
+	
+	//PrintScreen ( s3, -1, _YPOS_MESSAGE_XPGAINED+2, "Font_Old_10_White.TGA",_TIME_MESSAGE_XPGAINED);//tutaj wyœwietlamy s3 czyli ca³oœæ naszej pracy
 	
 /*	if hero.exp_next < 100
 /	{

@@ -35,12 +35,12 @@ INSTANCE DIA_Felgor_HELLO1 (C_INFO)
    condition    = DIA_Felgor_HELLO1_Condition;
    information  = DIA_Felgor_HELLO1_Info;
    permanent	= FALSE;
-   Important    = TRUE;
+   description  = "Witaj, Felgorze.";
 };
 
 FUNC INT DIA_Felgor_HELLO1_Condition()
 {
-    if self.aivar[AIV_INVINCIBLE]==false && (Npc_HasItems (hero, ItMi_FattersInPocket) >=1)
+    if (Npc_HasItems (hero, ItMi_FattersInPocket) >=1)
     {
     return TRUE;
     };
@@ -49,6 +49,7 @@ FUNC INT DIA_Felgor_HELLO1_Condition()
 
 FUNC VOID DIA_Felgor_HELLO1_Info()
 {
+	AI_Output (other, self ,"DIA_Felgor_HELLO1_15_00"); //Witaj, Felgorze.
     AI_Output (self, other ,"DIA_Felgor_HELLO1_03_01"); //Kajdany, którymi udusi³em jednego z tych sukinsynów...
     AI_Output (self, other ,"DIA_Felgor_HELLO1_03_02"); //Znasz Jarreda? Kim ty w ogóle jesteœ?
     AI_Output (other, self ,"DIA_Felgor_HELLO1_15_03"); //To nieistotne. Spotka³em Jarreda w lochach. Podarowa³ mi te kajdany. Nie chcia³ ich nosiæ ze sob¹.
@@ -77,6 +78,7 @@ FUNC VOID DIA_Felgor_HELLO1_Info()
 	
 	B_GiveInvItems (hero,self,ItMi_FattersInPocket,1);
 	B_GiveXP (500);
+	AI_StopProcessInfos	(self);
 	AI_Teleport (self,"START");
 	Npc_Exchangeroutine (self,"nope");
 };

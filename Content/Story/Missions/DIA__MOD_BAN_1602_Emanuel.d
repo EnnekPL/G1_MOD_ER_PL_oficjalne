@@ -4,7 +4,7 @@
 
 INSTANCE DIA_Emanuel_EXIT(C_INFO)
 {
-	npc         = BAU_2006_Emanuel;
+	npc         = BAN_1602_Emanuel;
 	nr          = 999;
 	condition	= DIA_Emanuel_EXIT_Condition;
 	information	= DIA_Emanuel_EXIT_Info;
@@ -28,7 +28,7 @@ FUNC VOID DIA_Emanuel_EXIT_Info()
 
 INSTANCE DIA_Emanuel_HELLO (C_INFO)
 {
-   npc          = BAU_2006_Emanuel;
+   npc          = BAN_1602_Emanuel;
    nr           = 1;
    condition    = DIA_Emanuel_HELLO_Condition;
    information  = DIA_Emanuel_HELLO_Info;
@@ -57,7 +57,7 @@ FUNC VOID DIA_Emanuel_HELLO_Info()
 
 INSTANCE DIA_Emanuel_QUEST1 (C_INFO)
 {
-   npc          = BAU_2006_Emanuel;
+   npc          = BAN_1602_Emanuel;
    nr           = 2;
    condition    = DIA_Emanuel_QUEST1_Condition;
    information  = DIA_Emanuel_QUEST1_Info;
@@ -99,7 +99,7 @@ FUNC VOID DIA_Emanuel_QUEST1_Info()
 
 INSTANCE DIA_Emanuel_MAMZIOLA (C_INFO)
 {
-   npc          = BAU_2006_Emanuel;
+   npc          = BAN_1602_Emanuel;
    nr           = 3;
    condition    = DIA_Emanuel_MAMZIOLA_Condition;
    information  = DIA_Emanuel_MAMZIOLA_Info;
@@ -148,7 +148,7 @@ FUNC VOID DIA_Emanuel_MAMZIOLA_Info()
 
 INSTANCE DIA_Emanuel_RAYAN (C_INFO)
 {
-   npc          = BAU_2006_Emanuel;
+   npc          = BAN_1602_Emanuel;
    nr           = 2;
    condition    = DIA_Emanuel_RAYAN_Condition;
    information  = DIA_Emanuel_RAYAN_Info;
@@ -180,7 +180,7 @@ FUNC VOID DIA_Emanuel_RAYAN_Info()
 
 INSTANCE DIA_Emanuel_REPUTACJA (C_INFO)
 {
-   npc          = BAU_2006_Emanuel;
+   npc          = BAN_1602_Emanuel;
    nr           = 4;
    condition    = DIA_Emanuel_REPUTACJA_Condition;
    information  = DIA_Emanuel_REPUTACJA_Info;
@@ -243,7 +243,7 @@ FUNC VOID DIA_Emanuel_REPUTACJA_Info()
 
 INSTANCE DIA_Emanuel_RUDAOK (C_INFO)
 {
-   npc          = BAU_2006_Emanuel;
+   npc          = BAN_1602_Emanuel;
    nr           = 5;
    condition    = DIA_Emanuel_RUDAOK_Condition;
    information  = DIA_Emanuel_RUDAOK_Info;
@@ -293,7 +293,7 @@ FUNC VOID DIA_Emanuel_RUDAOK_Info()
 
 INSTANCE DIA_Emanuel_Findeat (C_INFO)
 {
-   npc          = BAU_2006_Emanuel;
+   npc          = BAN_1602_Emanuel;
    nr           = 1;
    condition    = DIA_Emanuel_Findeat_Condition;
    information  = DIA_Emanuel_Findeat_Info;
@@ -333,7 +333,7 @@ FUNC VOID DIA_Emanuel_Findeat_Info()
 
 INSTANCE DIA_Emanuel_Trade (C_INFO)
 {
-   npc          = BAU_2006_Emanuel;
+   npc          = BAN_1602_Emanuel;
    nr           = 888;
    condition    = DIA_Emanuel_Trade_Condition;
    information  = DIA_Emanuel_Trade_Info;

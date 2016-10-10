@@ -3547,7 +3547,7 @@ FUNC INT DIA_Quentin_EmanuelLife_Condition()
 FUNC VOID DIA_Quentin_EmanuelLife_Info()
 {
     AI_Output (other, self ,"DIA_Quentin_EmanuelLife_15_01"); //Co do Emanuela...
-    if (Npc_IsDead(BAU_2006_Emanuel))
+    if (Npc_IsDead(BAN_1602_Emanuel))
     {
         AI_Output (other, self ,"DIA_Quentin_EmanuelLife_15_02"); //Niestety nie ¿yje.
         AI_Output (self, other ,"DIA_Quentin_EmanuelLife_03_03"); //To ciê¿ka strata.

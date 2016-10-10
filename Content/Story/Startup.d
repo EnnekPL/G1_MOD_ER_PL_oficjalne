@@ -1414,7 +1414,7 @@ FUNC VOID STARTUP_SUB_SURFACE ()
 	//Wld_InsertNpc				(tarcza_strzelecka_01,"TARCZA1");
 	//Wld_InsertNpc				(tarcza_strzelecka_02,"TARCZA2");
 	//---------------nowi----------------------------------------
-	Wld_InsertNpc				(BAU_2006_Emanuel,"LOCATION_11_08");
+	Wld_InsertNpc				(BAN_1602_Emanuel,"LOCATION_11_08");
 	Wld_InsertNpc				(BAU_2009_Martin,"LOCATION_11_08");	 
 	Wld_InsertNpc				(BAU_2012_Rocky,"LOCATION_11_08");	  
 	Wld_InsertNpc				(BAU_2011_Jens,"LOCATION_11_08");		

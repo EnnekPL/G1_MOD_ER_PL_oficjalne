@@ -178,5 +178,9 @@ var int empty_var;
 //***Gotowanie***
 var int HeroKnows_CookingFish; //zupy rybne
 
+//***Pomocnicze***
+//***Globalne***
+var int Bonus_FirtsBlood;
+
 var int MIS_GamalHelp; //nope
 const string Ch1_GamalHelp		 			= "Propozycja Gamala";

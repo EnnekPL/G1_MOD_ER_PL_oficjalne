@@ -7,6 +7,13 @@ func void ZS_Dead ()
 
 	self.aivar[AIV_PLUNDERED] = FALSE;
 	
+	if (self.guild != GIL_MEATBUG) && (Bonus_FirtsBlood == FALSE)
+	{
+	Bonus_FirtsBlood = TRUE;
+	B_GiveXP (100);
+	PrintS_Ext("Pierwsza krew! Bonus doœwiadczenia.", COL_Red);
+	};
+	
 	//-------- Erfahrungspunkte für den Spieler ? --------
 	//SN: VORSICHT, auch in B_MagicHurtNpc() vorhanden!
 	if	Npc_IsPlayer   (other)
