@@ -1867,8 +1867,27 @@ FUNC VOID STARTUP_SUB_SURFACE ()
 
 	Wld_InsertNpc		(YMolerat,"SPAWN_MOLELRAT_TOTU_LEFT_PLAT4");
 	Wld_InsertNpc		(YMolerat,"SPAWN_MOLELRAT_TOTU_LEFT_PLAT4");
-	Wld_InsertNpc		(GreenGobboClub,"SPAWN_OW_GOBBO_01_01");
-
+	Wld_InsertNpc		(YGobbo,"SPAWN_OW_GOBBO_01_01");
+	
+	// Góry _mod
+	Wld_InsertNpc		(YGobbo,"SPAWN_OW_MOD_STARTMOLERAT_01"); 
+	Wld_InsertNpc		(YGobbo,"SPAWN_OW_MOD_STARTMOLERAT_01"); 
+	
+	// Skrzynia _mod
+	Wld_InsertNpc		(YGobbo,"SPAWN_OW_MOD_STARTGOBBO_CHEST1"); 
+	
+	// Rzeka _mod
+	Wld_InsertNpc		(YMolerat,"FP_ROAM_SZUKAJCIE_TERAZ_KURWY_1");
+	Wld_InsertNpc		(YMolerat,"FP_ROAM_SZUKAJCIE_TERAZ_KURWY_2");
+	Wld_InsertNpc		(YMolerat,"FP_ROAM_SZUKAJCIE_TERAZ_KURWY_3");
+	
+	// Rzeka 2 _mod
+	Wld_InsertNpc		(YScavenger,"SPAWN_OW_MOD_STARTSCAV_BEACH");
+	Wld_InsertNpc		(YScavenger,"SPAWN_OW_MOD_STARTSCAV_BEACH");
+	Wld_InsertNpc		(YScavenger,"SPAWN_OW_MOD_STARTSCAV_BEACH");
+	// Zejœæie do Cavalorna _mod
+	Wld_InsertNpc		(YScavenger,"OW_PATH_268");
+	
 	// Pfad zum OC
 	Wld_InsertNpc		(YScavenger,"SPAWN_TOTURIAL_CHICKEN_2_2");
 	Wld_InsertNpc		(YScavenger, "OW_PATH_1_5_4");

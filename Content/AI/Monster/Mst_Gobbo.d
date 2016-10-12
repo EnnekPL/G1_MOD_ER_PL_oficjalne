@@ -86,6 +86,25 @@ INSTANCE GreenGobboSword (Mst_Default_GreenGobbo)
 	attribute[ATR_STRENGTH] = attribute	[ATR_STRENGTH] + 10; // da technisch im Faustkampf
 };
 
+INSTANCE YGobbo (Mst_Default_GreenGobbo)
+{
+	name							=	"Młody goblin";
+	Set_GreenGobbo_Visuals();
+	level							=	Level_FirtsMonester;
+	fight_tactic					=	FAI_MONSTER_COWARD;
+	Npc_SetToFightMode (self, ItMw_1h_Club_01);
+	
+	attribute	[ATR_STRENGTH]		=	12;
+	attribute	[ATR_DEXTERITY]		=	12;
+
+	attribute	[ATR_HITPOINTS_MAX]	=	35;
+	attribute	[ATR_HITPOINTS]		=	35;
+
+//------------------------------------------------------------
+	protection	[PROT_BLUNT]		=	5;
+	protection	[PROT_EDGE]			=	5;
+};
+
 
 
 

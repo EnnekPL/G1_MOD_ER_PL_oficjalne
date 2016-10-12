@@ -36,11 +36,11 @@ func void B_GiveXP (var int add_xp)
 	s4	=IntToString(hero.exp);//z liczby jak¹ jest doœwiadczenie bohatera robimy ci¹g znaków (czyli z liczby tekst)
 	s5	=IntToString(hero.exp_next);//to samo co wy¿ej tyle ze co do punktów wymaganych do zdobycia
 
-	s1	=ConcatStrings (" Stan: ",s4); //tutaj ³¹czymy TEKST s4 czyli nasz exp w postaci tekstowej razem z wyrazem doœwiadczenia
+	s1	=ConcatStrings ("Stan: ",s4); //tutaj ³¹czymy TEKST s4 czyli nasz exp w postaci tekstowej razem z wyrazem doœwiadczenia
 	s2	=ConcatStrings (" / ", s5);//tutaj ³¹czymy nasz exp do zdobycia z wyrazem "na"
 
 	s3	=ConcatStrings (s1,s2);//tutaj ³¹czymy 2 powy¿sze w ca³oœæ
-	n1 = ConcatStrings (msg,"(");
+	n1 = ConcatStrings (msg," (");
 	n2 = ConcatStrings (n1,s3);
 	n3 = ConcatStrings (n2,")");
 	
