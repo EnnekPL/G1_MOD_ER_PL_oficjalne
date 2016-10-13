@@ -93,6 +93,7 @@ FUNC INT DIA_Snake_CELLAR_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_DungeonGuard_KILL))
     && (MIS_ZabojstwBlizny == LOG_RUNNING)
+	&& (Npc_CanSee (other))
     {
     return TRUE;
     };

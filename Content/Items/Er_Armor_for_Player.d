@@ -29,13 +29,13 @@ instance SFB_ARMOR_M(C_Item)
 	mainflag 				=	ITEM_KAT_ARMOR;
 	flags 					=	0;
 
-	protection [PROT_EDGE]	=	4;
-	protection [PROT_BLUNT] = 	4;
+	protection [PROT_EDGE]	=	10;
+	protection [PROT_BLUNT] = 	10;
 	protection [PROT_POINT] = 	0;
 	protection [PROT_FIRE] 	= 	1;
 	protection [PROT_MAGIC] = 	0;
 
-	value 					=	500;
+	value 					=	375;
 
 	wear 					=	WEAR_TORSO;
 
@@ -60,13 +60,13 @@ instance SFB_ARMOR_DARK(C_Item)
 	mainflag 				=	ITEM_KAT_ARMOR;
 	flags 					=	0;
 
-	protection [PROT_EDGE]	=	6;
-	protection [PROT_BLUNT] = 	6;
+	protection [PROT_EDGE]	=	12;
+	protection [PROT_BLUNT] = 	12;
 	protection [PROT_POINT] = 	0;
 	protection [PROT_FIRE] 	= 	0;
 	protection [PROT_MAGIC] = 	0;
 
-	value 					=	650;
+	value 					=	450;
 
 	wear 					=	WEAR_TORSO;
 
@@ -95,13 +95,13 @@ INSTANCE VLK_ARMOR_H(C_Item)
 	mainflag 				=	ITEM_KAT_ARMOR;
 	flags 					=	0;
 
-	protection [PROT_EDGE]	=	10;
-	protection [PROT_BLUNT] = 	10;
+	protection [PROT_EDGE]	=	18;
+	protection [PROT_BLUNT] = 	18;
 	protection [PROT_POINT] =   2;
 	protection [PROT_FIRE] 	= 	2;
 	protection [PROT_MAGIC] = 	0;
 
-	value 					=	1000;
+	value 					=	670;
 
 	wear 					=	WEAR_TORSO;
 
@@ -126,14 +126,14 @@ INSTANCE NOV2_ARMOR_M(C_Item)
 	mainflag 				=	ITEM_KAT_ARMOR;
 	flags 					=	0;
 
-	protection [PROT_EDGE]	=	23;
-	protection [PROT_BLUNT] = 	23;
+	protection [PROT_EDGE]	=	20;
+	protection [PROT_BLUNT] = 	20;
 	protection [PROT_POINT] = 	2;
 	protection [PROT_FIRE] 	= 	15;
 	protection [PROT_MAGIC] = 	10;
 	wear 					=	WEAR_TORSO;
 
-	value 					=	VALUE_NOV_ARMOR_M;
+	value 					=	1000;
 
  
 	visual 					=	"kdfl.3ds";
@@ -201,9 +201,9 @@ INSTANCE HUN_ARMOR_L(C_Item)
 	mainflag 				=	ITEM_KAT_ARMOR;
 	flags 					=	0;
 
-	protection [PROT_EDGE] 	=	6;
-	protection [PROT_BLUNT] = 	6;
-	protection [PROT_POINT] = 	2;
+	protection [PROT_EDGE] 	=	8;
+	protection [PROT_BLUNT] = 	8;
+	protection [PROT_POINT] = 	5;
 	protection [PROT_FIRE] 	= 	2;
 	protection [PROT_MAGIC] = 	0;
 

@@ -28,7 +28,7 @@ const int VALUE_SLD_ARMOR_L = 1350;
 const int VALUE_SLD_ARMOR_M = 1650;
 const int VALUE_SLD_ARMOR_H = 2100;
 
-const int VALUE_NOV_ARMOR_L = 500;
+const int VALUE_NOV_ARMOR_L = 150;
 const int VALUE_NOV_ARMOR_M = 750;
 const int VALUE_NOV_ARMOR_H = 1200;
 
@@ -53,8 +53,8 @@ INSTANCE VLK_ARMOR_L(C_Item)
 	mainflag 				=	ITEM_KAT_ARMOR;
 	flags 					=	0;
 
-	protection [PROT_EDGE]	=	2;
-	protection [PROT_BLUNT] = 	2;
+	protection [PROT_EDGE]	=	8;
+	protection [PROT_BLUNT] = 	8;
 	protection [PROT_POINT] = 	0;
 	protection [PROT_FIRE] 	= 	0;
 	protection [PROT_MAGIC] = 	0;
@@ -86,8 +86,8 @@ INSTANCE VLK_ARMOR_M(C_Item)
 	mainflag 				=	ITEM_KAT_ARMOR;
 	flags 					=	0;
 
-	protection [PROT_EDGE]	=	4;
-	protection [PROT_BLUNT] = 	4;
+	protection [PROT_EDGE]	=	16;
+	protection [PROT_BLUNT] = 	16;
 	protection [PROT_POINT] =   0;
 	protection [PROT_FIRE] 	= 	1;
 	protection [PROT_MAGIC] = 	0;
@@ -385,8 +385,8 @@ instance SFB_ARMOR_L(C_Item)
 	mainflag 				=	ITEM_KAT_ARMOR;
 	flags 					=	0;
 
-	protection [PROT_EDGE]	=	10;
-	protection [PROT_BLUNT] = 	10;
+	protection [PROT_EDGE]	=	7;
+	protection [PROT_BLUNT] = 	7;
 	protection [PROT_POINT] = 	0;
 	protection [PROT_FIRE] 	= 	5;
 	protection [PROT_MAGIC] = 	0;
@@ -611,8 +611,8 @@ INSTANCE NOV_ARMOR_L(C_Item)
 	mainflag 				=	ITEM_KAT_ARMOR;
 	flags 					=	0;
 
-	protection [PROT_EDGE]	=   3;
-	protection [PROT_BLUNT] = 	3;
+	protection [PROT_EDGE]	=   5;
+	protection [PROT_BLUNT] = 	5;
 	protection [PROT_POINT] = 	0;
 	protection [PROT_FIRE] 	= 	1;
 	protection [PROT_MAGIC] = 	0;
