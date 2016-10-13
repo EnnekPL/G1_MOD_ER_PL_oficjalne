@@ -7,7 +7,7 @@ instance BAN_1602_Emanuel (Npc_Default)
 name = "Emanuel";
 Npctype = Npctype_Main;
 guild = GIL_BAU;
-level = 30;
+level = 17;
 voice = 10;
 id = 2006;
 

@@ -7,7 +7,7 @@
 
 INSTANCE DIA_Martin_EXIT(C_INFO)
 {
-	npc             = BAU_2009_Martin;
+	npc             = BAN_1603_Martin;
 	nr              = 999;
 	condition	= DIA_Martin_EXIT_Condition;
 	information	= DIA_Martin_EXIT_Info;
@@ -31,7 +31,7 @@ FUNC VOID DIA_Martin_EXIT_Info()
 
 INSTANCE DIA_Martin_KTOTO (C_INFO)
 {
-   npc          = BAU_2009_Martin;
+   npc          = BAN_1603_Martin;
    nr           = 1;
    condition    = DIA_Martin_KTOTO_Condition;
    information  = DIA_Martin_KTOTO_Info;
@@ -60,7 +60,7 @@ FUNC VOID DIA_Martin_KTOTO_Info()
 
 INSTANCE DIA_Martin_TRADE (C_INFO)
 {
-   npc          = BAU_2009_Martin;
+   npc          = BAN_1603_Martin;
    nr           = 2;
    condition    = DIA_Martin_TRADE_Condition;
    information  = DIA_Martin_TRADE_Info;
@@ -91,7 +91,7 @@ FUNC VOID DIA_Martin_TRADE_Info()
 
 INSTANCE DIA_Martin_QUEST (C_INFO)
 {
-   npc          = BAU_2009_Martin;
+   npc          = BAN_1603_Martin;
    nr           = 3;
    condition    = DIA_Martin_QUEST_Condition;
    information  = DIA_Martin_QUEST_Info;
@@ -130,7 +130,7 @@ PrintScreen     ("Przyjêto zadanie: Doœwiadczenie", 1,25,"FONT_OLD_20_WHITE.TGA"
 
 INSTANCE DIA_Martin_LEVEL (C_INFO)
 {
-   npc          = BAU_2009_Martin;
+   npc          = BAN_1603_Martin;
    nr           = 4;
    condition    = DIA_Martin_LEVEL_Condition;
    information  = DIA_Martin_LEVEL_Info;
@@ -167,7 +167,7 @@ FUNC VOID DIA_Martin_LEVEL_Info()
 
 INSTANCE DIA_Martin_Trueasd (C_INFO)
 {
-   npc          = BAU_2009_Martin;
+   npc          = BAN_1603_Martin;
    nr           = 1;
    condition    = DIA_Martin_Trueasd_Condition;
    information  = DIA_Martin_Trueasd_Info;
@@ -210,7 +210,7 @@ FUNC VOID DIA_Martin_Trueasd_Info()
 
 INSTANCE DIA_Martin_Camik (C_INFO)
 {
-   npc          = BAU_2009_Martin;
+   npc          = BAN_1603_Martin;
    nr           = 2;
    condition    = DIA_Martin_Camik_Condition;
    information  = DIA_Martin_Camik_Info;
@@ -239,7 +239,7 @@ FUNC VOID DIA_Martin_Camik_Info()
 
 INSTANCE DIA_Martin_HELLO3 (C_INFO)
 {
-   npc          = BAU_2009_Martin;
+   npc          = BAN_1603_Martin;
    nr           = 3;
    condition    = DIA_Martin_HELLO3_Condition;
    information  = DIA_Martin_HELLO3_Info;
@@ -270,7 +270,7 @@ FUNC VOID DIA_Martin_HELLO3_Info()
 
 INSTANCE DIA_Martin_ScorpioTalk (C_INFO)
 {
-   npc          = BAU_2009_Martin;
+   npc          = BAN_1603_Martin;
    nr           = 1;
    condition    = DIA_Martin_ScorpioTalk_Condition;
    information  = DIA_Martin_ScorpioTalk_Info;

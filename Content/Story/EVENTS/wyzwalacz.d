@@ -112,7 +112,7 @@ if (Npc_IsDead(NON_3073_Czarny_Mag)) && (resp_demonow_kopalnia == false) && (Npc
 var int once_killJosh;
 if (Npc_HasItems (hero, itmi_joshpocket) >=1) && (!Npc_KnowsInfo (hero, DIA_Hysen_Fight)) && (once_killJosh == false)
 {
-B_KillNpc (BAU_2015_Josh);
+B_KillNpc (BAN_1606_Josh);
 once_killJosh = true;
 };
 //BOSSOWIE!

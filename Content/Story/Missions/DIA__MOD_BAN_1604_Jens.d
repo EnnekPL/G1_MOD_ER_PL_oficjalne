@@ -4,7 +4,7 @@
 
 INSTANCE DIA_Jens_EXIT(C_INFO)
 {
-	npc             = BAU_2011_Jens;
+	npc             = BAN_1604_Jens;
 	nr              = 999;
 	condition	= DIA_Jens_EXIT_Condition;
 	information	= DIA_Jens_EXIT_Info;
@@ -34,7 +34,7 @@ FUNC VOID DIA_Jens_EXIT_Info()
 
 INSTANCE DIA_Jens_HELLO1 (C_INFO)
 {
-   npc          = BAU_2011_Jens;
+   npc          = BAN_1604_Jens;
    nr           = 1;
    condition    = DIA_Jens_HELLO1_Condition;
    information  = DIA_Jens_HELLO1_Info;
@@ -69,7 +69,7 @@ FUNC VOID DIA_Jens_HELLO1_Info()
 
 INSTANCE DIA_Jens_FirstArmorPrice (C_INFO)
 {
-   npc          = BAU_2011_Jens;
+   npc          = BAN_1604_Jens;
    nr           = 1;
    condition    = DIA_Jens_FirstArmorPrice_Condition;
    information  = DIA_Jens_FirstArmorPrice_Info;
@@ -99,7 +99,7 @@ var int Jens_SellArmor_OneTime;
 
 INSTANCE DIA_Jens_ArmorLeather (C_INFO)
 {
-   npc          = BAU_2011_Jens;
+   npc          = BAN_1604_Jens;
    nr           = 1;
    condition    = DIA_Jens_ArmorLeather_Condition;
    information  = DIA_Jens_ArmorLeather_Info;
@@ -142,7 +142,7 @@ FUNC VOID DIA_Jens_ArmorLeather_Info()
 
 INSTANCE DIA_Jens_HELLO2 (C_INFO)
 {
-   npc          = BAU_2011_Jens;
+   npc          = BAN_1604_Jens;
    nr           = 2;
    condition    = DIA_Jens_HELLO2_Condition;
    information  = DIA_Jens_HELLO2_Info;
@@ -179,7 +179,7 @@ FUNC VOID DIA_Jens_HELLO2_Info()
 
 INSTANCE DIA_Jens_YourSwordPieces (C_INFO)
 {
-   npc          = BAU_2011_Jens;
+   npc          = BAN_1604_Jens;
    nr           = 1;
    condition    = DIA_Jens_YourSwordPieces_Condition;
    information  = DIA_Jens_YourSwordPieces_Info;
@@ -250,7 +250,7 @@ FUNC VOID DIA_Jens_YourSwordPieces_Nope2 ()
 
 INSTANCE DIA_Jens_DoyleAboutJens (C_INFO)
 {
-   npc          = BAU_2011_Jens;
+   npc          = BAN_1604_Jens;
    nr           = 1;
    condition    = DIA_Jens_DoyleAboutJens_Condition;
    information  = DIA_Jens_DoyleAboutJens_Info;
@@ -288,7 +288,7 @@ FUNC VOID DIA_Jens_DoyleAboutJens_Info()
 
 INSTANCE DIA_Jens_TalkWithSmith (C_INFO)
 {
-   npc          = BAU_2011_Jens;
+   npc          = BAN_1604_Jens;
    nr           = 1;
    condition    = DIA_Jens_TalkWithSmith_Condition;
    information  = DIA_Jens_TalkWithSmith_Info;
@@ -323,7 +323,7 @@ FUNC VOID DIA_Jens_TalkWithSmith_Info()
 
 INSTANCE DIA_Jens_BriamsEvidence (C_INFO)
 {
-   npc          = BAU_2011_Jens;
+   npc          = BAN_1604_Jens;
    nr           = 1;
    condition    = DIA_Jens_BriamsEvidence_Condition;
    information  = DIA_Jens_BriamsEvidence_Info;
@@ -387,7 +387,7 @@ FUNC VOID DIA_Jens_BriamsEvidence_Info()
 
 INSTANCE DIA_Jens_Idziesz (C_INFO)
 {
-   npc          = BAU_2011_Jens;
+   npc          = BAN_1604_Jens;
    nr           = 1;
    condition    = DIA_Jens_Idziesz_Condition;
    information  = DIA_Jens_Idziesz_Info;
@@ -422,7 +422,7 @@ FUNC VOID DIA_Jens_Idziesz_Info()
 
 INSTANCE DIA_Jens_Okregi (C_INFO)
 {
-   npc          = BAU_2011_Jens;
+   npc          = BAN_1604_Jens;
    nr           = 1;
    condition    = DIA_Jens_Okregi_Condition;
    information  = DIA_Jens_Okregi_Info;
@@ -460,7 +460,7 @@ FUNC VOID DIA_Jens_Okregi_Info()
 
 INSTANCE DIA_Jens_HeavyArmor (C_INFO)
 {
-   npc          = BAU_2011_Jens;
+   npc          = BAN_1604_Jens;
    nr           = 1;
    condition    = DIA_Jens_HeavyArmor_Condition;
    information  = DIA_Jens_HeavyArmor_Info;
@@ -492,7 +492,7 @@ FUNC VOID DIA_Jens_HeavyArmor_Info()
 
 INSTANCE DIA_Jens_BuyHeavyArmor (C_INFO)
 {
-   npc          = BAU_2011_Jens;
+   npc          = BAN_1604_Jens;
    nr           = 1;
    condition    = DIA_Jens_BuyHeavyArmor_Condition;
    information  = DIA_Jens_BuyHeavyArmor_Info;
@@ -548,7 +548,7 @@ FUNC VOID DIA_Jens_BuyHeavyArmor_Info()
 
 INSTANCE DIA_Jens_SYTUACJA (C_INFO)
 {
-   npc          = BAU_2011_Jens;
+   npc          = BAN_1604_Jens;
    nr           = 1;
    condition    = DIA_Jens_SYTUACJA_Condition;
    information  = DIA_Jens_SYTUACJA_Info;

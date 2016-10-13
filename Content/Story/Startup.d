@@ -704,7 +704,7 @@ FUNC VOID STARTUP_SUB_OLDCAMP ()
 	Wld_InsertNpc				(NON_2056_Patrick,"OC1");
 	Wld_InsertNpc				(NON_2022_Oczekujacy,"OC1");
 	Wld_InsertNpc				(NON_2016_Oczekujacy,"OC1");
-	Wld_InsertNpc				(BAU_2015_Josh,"OC1");
+	Wld_InsertNpc				(BAN_1606_Josh,"OC1");
 	Wld_InsertNpc				(NON_3077_Peratur,"OC1");//wykorzystanie starego skryptu, obecnie Stra¿nik
 	Wld_InsertNpc				(GRD_7015_PalissadeGuard,"OC1");//stra¿nik na palisadzie 
 	
@@ -1415,10 +1415,10 @@ FUNC VOID STARTUP_SUB_SURFACE ()
 	//Wld_InsertNpc				(tarcza_strzelecka_02,"TARCZA2");
 	//---------------nowi----------------------------------------
 	Wld_InsertNpc				(BAN_1602_Emanuel,"LOCATION_11_08");
-	Wld_InsertNpc				(BAU_2009_Martin,"LOCATION_11_08");	 
-	Wld_InsertNpc				(BAU_2012_Rocky,"LOCATION_11_08");	  
-	Wld_InsertNpc				(BAU_2011_Jens,"LOCATION_11_08");		
-	Wld_InsertNpc				(NON_4050_Chris,"LOCATION_11_08");
+	Wld_InsertNpc				(BAN_1603_Martin,"LOCATION_11_08");	 
+	Wld_InsertNpc				(BAN_1605_Rocky,"LOCATION_11_08");	  
+	Wld_InsertNpc				(BAN_1604_Jens,"LOCATION_11_08");		
+	Wld_InsertNpc				(BAN_1607_Chris,"LOCATION_11_08");
 	Wld_InsertNpc				(BAN_1601_Briam,"LOCATION_11_08");
 	//-------------Einsiedler--------------------------------------
 	Wld_InsertNpc				(Non_1500_Gilbert,"LOCATION_01_07");	//SN: hat eh keinen Dialog

@@ -760,8 +760,8 @@ FUNC VOID DIA_Drax_DOKOPALNI_Info()
     AI_Output (self, other ,"DIA_Drax_DOKOPALNI_03_06"); //Pamiêtaj przy tym, ¿eby dzia³aæ dyskretnie. Gdyby ktoœ niepowo³any siê o tym dowiedzia³, by³oby po Joshu.
  
     MIS_OreInOM = LOG_RUNNING;
-	//Wld_InsertNpc			(BAU_2015_Josh,"OM_122");
-	//B_KillNpc  				(BAU_2015_Josh);   
+	//Wld_InsertNpc			(BAN_1606_Josh,"OM_122");
+	//B_KillNpc  				(BAN_1606_Josh);   
     Log_CreateTopic           (CH1_OreInOM, LOG_MISSION);
     Log_SetTopicStatus       (CH1_OreInOM, LOG_RUNNING);
     B_LogEntry               	(CH1_OreInOM,"Drax kaza³ mi pójœæ do Starej Kopalni i poszukaæ Josha. Mam odebraæ od niego dostawê zdobytej na lewo rudy.");
@@ -1305,9 +1305,9 @@ FUNC VOID DIA_Drax_AtakNaSO_Info()
 	Npc_ExchangeRoutine (ORG_870_Raeuber,"help");
 	ORG_870_Raeuber.aivar[AIV_PARTYMEMBER] = TRUE;
 	
-    //B_ExchangeRoutine (BAU_2009_Martin , "atak");
-    //B_ExchangeRoutine (BAU_2015_Josh , "atak");
-    //B_ExchangeRoutine (BAU_2011_Jens , "atak");
+    //B_ExchangeRoutine (BAN_1603_Martin , "atak");
+    //B_ExchangeRoutine (BAN_1606_Josh , "atak");
+    //B_ExchangeRoutine (BAN_1604_Jens , "atak");
 	//B_ExchangeRoutine (NON_2702_SZEFU , "atak");
 	//Npc_ExchangeRoutine (NON_2703_MYSLIWY,"burdel");
 	//Npc_ExchangeRoutine (ORG_864_Raeuber,"help");	

@@ -4,7 +4,7 @@
 
 INSTANCE DIA_Rocky_EXIT(C_INFO)
 {
-	npc             = BAU_2012_Rocky;
+	npc             = BAN_1605_Rocky;
 	nr              = 999;
 	condition	= DIA_Rocky_EXIT_Condition;
 	information	= DIA_Rocky_EXIT_Info;
@@ -28,7 +28,7 @@ FUNC VOID DIA_Rocky_EXIT_Info()
 
 INSTANCE DIA_Rocky_EqDoWalki (C_INFO)
 {
-   npc          = BAU_2012_Rocky;
+   npc          = BAN_1605_Rocky;
    nr           = 1;
    condition    = DIA_Rocky_EqDoWalki_Condition;
    information  = DIA_Rocky_EqDoWalki_Info;
@@ -68,7 +68,7 @@ FUNC VOID DIA_Rocky_EqDoWalki_Info()
 
 INSTANCE DIA_Rocky_Towary (C_INFO)
 {
-   npc          = BAU_2012_Rocky;
+   npc          = BAN_1605_Rocky;
    nr           = 1;
    condition    = DIA_Rocky_Towary_Condition;
    information  = DIA_Rocky_Towary_Info;
@@ -113,7 +113,7 @@ FUNC VOID DIA_Rocky_Towary_Info()
 
 INSTANCE DIA_Rocky_POGADUCHY (C_INFO)
 {
-   npc          = BAU_2012_Rocky;
+   npc          = BAN_1605_Rocky;
    nr           = 1;
    condition    = DIA_Rocky_POGADUCHY_Condition;
    information  = DIA_Rocky_POGADUCHY_Info;
@@ -139,7 +139,7 @@ FUNC VOID DIA_Rocky_POGADUCHY_Info()
 
 INSTANCE DIA_Rocky_PAST (C_INFO)
 {
-   npc          = BAU_2012_Rocky;
+   npc          = BAN_1605_Rocky;
    nr           = 2;
    condition    = DIA_Rocky_PAST_Condition;
    information  = DIA_Rocky_PAST_Info;
@@ -176,7 +176,7 @@ FUNC VOID DIA_Rocky_PAST_Info()
 
 INSTANCE DIA_Rocky_CHATA (C_INFO)
 {
-   npc          = BAU_2012_Rocky;
+   npc          = BAN_1605_Rocky;
    nr           = 1;
    condition    = DIA_Rocky_CHATA_Condition;
    information  = DIA_Rocky_CHATA_Info;
@@ -206,7 +206,7 @@ FUNC VOID DIA_Rocky_CHATA_Info()
 
 INSTANCE DIA_Rocky_ADVENTURE (C_INFO)
 {
-   npc          = BAU_2012_Rocky;
+   npc          = BAN_1605_Rocky;
    nr           = 2;
    condition    = DIA_Rocky_ADVENTURE_Condition;
    information  = DIA_Rocky_ADVENTURE_Info;
@@ -251,7 +251,7 @@ FUNC VOID DIA_Rocky_ADVENTURE_Info()
 
 INSTANCE DIA_Rocky_BUDOWA_OBOZU (C_INFO)
 {
-   npc          = BAU_2012_Rocky;
+   npc          = BAN_1605_Rocky;
    nr           = 1;
    condition    = DIA_Rocky_BUDOWA_OBOZU_Condition;
    information  = DIA_Rocky_BUDOWA_OBOZU_Info;
@@ -292,7 +292,7 @@ FUNC VOID DIA_Rocky_BUDOWA_OBOZU_Info()
 
 INSTANCE DIA_Rocky_GLUPIEC (C_INFO)
 {
-   npc          = BAU_2012_Rocky;
+   npc          = BAN_1605_Rocky;
    nr           = 1;
    condition    = DIA_Rocky_GLUPIEC_Condition;
    information  = DIA_Rocky_GLUPIEC_Info;
@@ -323,7 +323,7 @@ FUNC VOID DIA_Rocky_GLUPIEC_Info()
 var int log_rocky_nau;
 INSTANCE DIA_Rocky_NAUKA (C_INFO)
 {
-   npc          = BAU_2012_Rocky;
+   npc          = BAN_1605_Rocky;
    nr           = 3;
    condition    = DIA_Rocky_NAUKA_Condition;
    information  = DIA_Rocky_NAUKA_Info;
@@ -385,7 +385,7 @@ FUNC VOID DIA_Rocky_NAUKA_BACK()
 
 INSTANCE DIA_Rocky_Lehrer (C_INFO)
 {
-	npc				= BAU_2012_Rocky;
+	npc				= BAN_1605_Rocky;
 	nr				= 2;
 	condition		= DIA_Rocky_Lehrer_Condition;
 	information		= DIA_Rocky_Lehrer_Info;
@@ -487,7 +487,7 @@ func VOID DIA_Rocky_Lehrer_BACK()
 
 INSTANCE DIA_Rocky_RAYAN (C_INFO)
 {
-   npc          = BAU_2012_Rocky;
+   npc          = BAN_1605_Rocky;
    nr           = 1;
    condition    = DIA_Rocky_RAYAN_Condition;
    information  = DIA_Rocky_RAYAN_Info;
@@ -523,7 +523,7 @@ FUNC VOID DIA_Rocky_RAYAN_Info()
 
 INSTANCE DIA_Rocky_QUEST1 (C_INFO)
 {
-   npc          = BAU_2012_Rocky;
+   npc          = BAN_1605_Rocky;
    nr           = 4;
    condition    = DIA_Rocky_QUEST1_Condition;
    information  = DIA_Rocky_QUEST1_Info;
@@ -558,7 +558,7 @@ FUNC VOID DIA_Rocky_QUEST1_Info()
 
 INSTANCE DIA_Rocky_ROZPIERDUCHA (C_INFO)
 {
-   npc          		= BAU_2012_Rocky;
+   npc          		= BAN_1605_Rocky;
    nr           		= 5;
    condition    	= DIA_Rocky_ROZPIERDUCHA_Condition;
    information  	= DIA_Rocky_ROZPIERDUCHA_Info;
@@ -609,7 +609,7 @@ FUNC VOID DIA_Rocky_ROZPIERDUCHA_Info()
 
 INSTANCE DIA_Rocky_DOTARLI (C_INFO)
 {
-   npc          = BAU_2012_Rocky;
+   npc          = BAN_1605_Rocky;
    nr           = 6;
    condition    = DIA_Rocky_DOTARLI_Condition;
    information  = DIA_Rocky_DOTARLI_Info;
@@ -643,11 +643,11 @@ FUNC VOID DIA_Rocky_DOTARLI_Info()
 	VLK_5089_Tragaz.guild = GIL_MOLERAT;
 	VLK_5088_Tragaz.guild = GIL_MOLERAT;
 	VLK_5090_Tragaz.guild = GIL_MOLERAT;
-		Npc_SetTarget(GRD_5054_Gardist,BAU_2012_Rocky);
+		Npc_SetTarget(GRD_5054_Gardist,BAN_1605_Rocky);
 		AI_StartState(GRD_5054_Gardist,ZS_ATTACK,1,"");
-		Npc_SetTarget(GRD_5053_Gardist,BAU_2012_Rocky);
+		Npc_SetTarget(GRD_5053_Gardist,BAN_1605_Rocky);
 		AI_StartState(GRD_5053_Gardist,ZS_ATTACK,1,"");
-		Npc_SetTarget(GRD_5055_Eskorta,BAU_2012_Rocky);
+		Npc_SetTarget(GRD_5055_Eskorta,BAN_1605_Rocky);
 		AI_StartState(GRD_5055_Eskorta,ZS_ATTACK,1,"");
     Npc_SetTempAttitude	(GRD_5054_Gardist,	ATT_HOSTILE);
 	Npc_SetTempAttitude	(GRD_5053_Gardist,	ATT_HOSTILE);
@@ -665,7 +665,7 @@ FUNC VOID DIA_Rocky_DOTARLI_Info()
 
 INSTANCE DIA_Rocky_WIN_O (C_INFO)
 {
-   npc          = BAU_2012_Rocky;
+   npc          = BAN_1605_Rocky;
    nr           = 7;
    condition    = DIA_Rocky_WIN_O_Condition;
    information  = DIA_Rocky_WIN_O_Info;
@@ -707,7 +707,7 @@ FUNC VOID DIA_Rocky_WIN_O_Info()
 
 INSTANCE DIA_Rocky_GiveSwords (C_INFO)
 {
-   npc          = BAU_2012_Rocky;
+   npc          = BAN_1605_Rocky;
    nr           = 2;
    condition    = DIA_Rocky_GiveSwords_Condition;
    information  = DIA_Rocky_GiveSwords_Info;
@@ -740,7 +740,7 @@ FUNC VOID DIA_Rocky_GiveSwords_Info()
 
 INSTANCE DIA_Rocky_GivEq (C_INFO)
 {
-   npc          = BAU_2012_Rocky;
+   npc          = BAN_1605_Rocky;
    nr           = 1;
    condition    = DIA_Rocky_GivEq_Condition;
    information  = DIA_Rocky_GivEq_Info;
@@ -775,7 +775,7 @@ FUNC VOID DIA_Rocky_GivEq_Info()
 
 INSTANCE DIA_Rocky_WtfRozwalaWobozie (C_INFO)
 {
-   npc          = BAU_2012_Rocky;
+   npc          = BAN_1605_Rocky;
    nr           = 1;
    condition    = DIA_Rocky_WtfRozwalaWobozie_Condition;
    information  = DIA_Rocky_WtfRozwalaWobozie_Info;
@@ -825,7 +825,7 @@ FUNC VOID DIA_Rocky_WtfRozwalaWobozie_Info()
 
 INSTANCE DIA_Rocky_GoToMine (C_INFO)
 {
-   npc          = BAU_2012_Rocky;
+   npc          = BAN_1605_Rocky;
    nr           = 1;
    condition    = DIA_Rocky_GoToMine_Condition;
    information  = DIA_Rocky_GoToMine_Info;
@@ -864,7 +864,7 @@ FUNC VOID DIA_Rocky_GoToMine_Info()
 
 INSTANCE DIA_Rocky_AddArmor (C_INFO)
 {
-   npc          = BAU_2012_Rocky;
+   npc          = BAN_1605_Rocky;
    nr           = 1;
    condition    = DIA_Rocky_AddArmor_Condition;
    information  = DIA_Rocky_AddArmor_Info;
@@ -979,7 +979,7 @@ FUNC VOID DIA_Quentin_DOOBOZU_PIRAT()
 
 INSTANCE DIA_Rocky_Follow (C_INFO)
 {
-   npc          = BAU_2012_Rocky;
+   npc          = BAN_1605_Rocky;
    nr           = 1;
    condition    = DIA_Rocky_Follow_Condition;
    information  = DIA_Rocky_Follow_Info;
@@ -1014,7 +1014,7 @@ FUNC VOID DIA_Rocky_Follow_Info()
 
 INSTANCE DIA_Rocky_BackToCamp (C_INFO)
 {
-   npc          = BAU_2012_Rocky;
+   npc          = BAN_1605_Rocky;
    nr           = 2;
    condition    = DIA_Rocky_BackToCamp_Condition;
    information  = DIA_Rocky_BackToCamp_Info;
@@ -1046,7 +1046,7 @@ FUNC VOID DIA_Rocky_BackToCamp_Info()
 
 INSTANCE DIA_Rocky_BackFromMine (C_INFO)
 {
-   npc          = BAU_2012_Rocky;
+   npc          = BAN_1605_Rocky;
    nr           = 1;
    condition    = DIA_Rocky_BackFromMine_Condition;
    information  = DIA_Rocky_BackFromMine_Info;
@@ -1093,7 +1093,7 @@ FUNC VOID DIA_Rocky_BackFromMine_Info()
 
 INSTANCE DIA_Rocky_NoNareszcie (C_INFO)
 {
-   npc          = BAU_2012_Rocky;
+   npc          = BAN_1605_Rocky;
    nr           = 1;
    condition    = DIA_Rocky_NoNareszcie_Condition;
    information  = DIA_Rocky_NoNareszcie_Info;
@@ -1151,7 +1151,7 @@ FUNC VOID DIA_Rocky_NoNareszcie_Info()
 
 INSTANCE DIA_Rocky_SYTUACJA (C_INFO)
 {
-   npc          = BAU_2012_Rocky;
+   npc          = BAN_1605_Rocky;
    nr           = 1;
    condition    = DIA_Rocky_SYTUACJA_Condition;
    information  = DIA_Rocky_SYTUACJA_Info;
@@ -1215,7 +1215,7 @@ FUNC VOID DIA_Rocky_SYTUACJA_Info()
 
 INSTANCE DIA_Rocky_THX_ZA_ROBOTE (C_INFO)
 {
-   npc          = BAU_2012_Rocky;
+   npc          = BAN_1605_Rocky;
    nr           = 1;
    condition    = DIA_Rocky_THX_ZA_ROBOTE_Condition;
    information  = DIA_Rocky_THX_ZA_ROBOTE_Info;

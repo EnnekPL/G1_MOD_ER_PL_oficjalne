@@ -7,7 +7,7 @@ instance BAN_1601_Briam (Npc_Default)
 	name 	= "Briam";
 	Npctype = npctype_main;
 	guild 	= GIL_BAU;
-	level 	= 54;
+	level 	= 20;
 	voice 	= 6;
 	id 		= 1601;
 

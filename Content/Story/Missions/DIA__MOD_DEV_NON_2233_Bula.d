@@ -861,8 +861,8 @@ FUNC VOID DIA_Bula_Funkcje_Info()
 FUNC VOID DIA_Bula_Funkcje_Rozpierdol11()
 {
     AI_Output (other, self ,"DIA_Bula_Funkcje_Rozpierdol11_15_01"); //Startuj funkcjê!
-    BAU_2012_Rocky.aivar[AIV_PARTYMEMBER] = TRUE;
-    Npc_ExchangeRoutine (BAU_2012_Rocky,"atak2");
+    BAN_1605_Rocky.aivar[AIV_PARTYMEMBER] = TRUE;
+    Npc_ExchangeRoutine (BAN_1605_Rocky,"atak2");
 	/*GRD_5054_Gardist.guild = GIL_MOLERAT;
 	GRD_5053_Gardist.guild = GIL_MOLERAT;
 	GRD_5055_Eskorta.guild = GIL_MOLERAT;
@@ -882,11 +882,11 @@ FUNC VOID DIA_Bula_Funkcje_Rozpierdol11()
 	  Npc_ExchangeRoutine (VLK_5088_Tragaz,"las"); //1.24
 	  B_ChangeGuild    (VLK_5088_Tragaz,GIL_DMB);
 	  /*
-		Npc_SetTarget(GRD_5054_Gardist,BAU_2012_Rocky);
+		Npc_SetTarget(GRD_5054_Gardist,BAN_1605_Rocky);
 		AI_StartState(GRD_5054_Gardist,ZS_ATTACK,1,"");
-		Npc_SetTarget(GRD_5053_Gardist,BAU_2012_Rocky);
+		Npc_SetTarget(GRD_5053_Gardist,BAN_1605_Rocky);
 		AI_StartState(GRD_5053_Gardist,ZS_ATTACK,1,"");
-		Npc_SetTarget(GRD_5055_Eskorta,BAU_2012_Rocky);
+		Npc_SetTarget(GRD_5055_Eskorta,BAN_1605_Rocky);
 		AI_StartState(GRD_5055_Eskorta,ZS_ATTACK,1,"");
     Npc_SetTempAttitude	(GRD_5054_Gardist,	ATT_HOSTILE);
 	Npc_SetTempAttitude	(GRD_5053_Gardist,	ATT_HOSTILE);

@@ -1039,7 +1039,7 @@ FUNC VOID DIA_Cord_IHaveStone_Info()
 	//Npc_ExchangeRoutine (SLD_737_Torlof,"start");
 	Npc_ExchangeRoutine (SLD_728_Jarvis,"start");
 	Npc_ExchangeRoutine (SLD_709_Cord,"start");
-	Npc_ExchangeRoutine (BAU_2012_Rocky,"start");
+	Npc_ExchangeRoutine (BAN_1605_Rocky,"start");
    AI_StopProcessInfos	(self);
 };
 

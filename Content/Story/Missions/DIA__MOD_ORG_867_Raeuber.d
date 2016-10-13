@@ -1434,8 +1434,8 @@ FUNC VOID DIA_Raeuber_Spiepszam_Info()
     B_LogEntry          (CH1_OdbijanieOpKop,"Dotarliœmy na miejsce. Wokó³ wejœcia do kopalni roi³o siê od Stra¿ników i nieumar³ych. Pod ziemiê bêdê musia³ zejœæ sam. Doyle, ani pozostali Bandyci nie s¹ sk³onni mi pomóc.");
     AI_StopProcessInfos	(self);
 	Npc_ExchangeRoutine (self,"kopalnia");
-	Npc_ExchangeRoutine (NON_4050_Chris,"kopalnia");
-	Npc_ExchangeRoutine (BAU_2012_rocky,"mine");
+	Npc_ExchangeRoutine (BAN_1607_Chris,"kopalnia");
+	Npc_ExchangeRoutine (BAN_1605_Rocky,"mine");
 };
 
 //========================================

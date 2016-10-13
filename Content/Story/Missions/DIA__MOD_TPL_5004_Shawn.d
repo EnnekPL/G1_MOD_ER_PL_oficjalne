@@ -788,7 +788,7 @@ FUNC VOID DIA_Shawn_Questdadasd_Info()
     AI_Output (self, other ,"DIA_Shawn_Questdadasd_03_05"); //Polowali na pe³zacze i nie wiem czy zdo³ali uciec.
     AI_Output (self, other ,"DIA_Shawn_Questdadasd_03_06"); //Spróbuj ich odszukaæ.
     MIS_HelpBrothersBra = LOG_RUNNING;
-	B_ExchangeRoutine			(BAU_2009_Martin, "patrol");
+	B_ExchangeRoutine			(BAN_1603_Martin, "patrol");
     Log_CreateTopic            (CH1_HelpBrothersBra, LOG_MISSION);
     Log_SetTopicStatus       (CH1_HelpBrothersBra, LOG_RUNNING);
     B_LogEntry                     (CH1_HelpBrothersBra,"Shawn kaza³ mi sprawdziæ co sta³o siê z naszymi braæmi ze Starej Kopalni.");

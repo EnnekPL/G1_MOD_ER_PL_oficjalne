@@ -138,6 +138,6 @@ func VOID DIA_Hysen_Fight_Info()
     AI_StartState (self, ZS_ATTACK, 1, "");
 	
 	Npc_ExchangeRoutine (self,"start");
-	B_KillNpc (BAU_2015_Josh);
+	B_KillNpc (BAN_1606_Josh);
 	Npc_ExchangeRoutine (GRD_7006_Joel,"joshkiller");
 };

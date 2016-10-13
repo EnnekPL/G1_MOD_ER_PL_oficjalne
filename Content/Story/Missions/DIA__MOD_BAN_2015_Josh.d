@@ -4,7 +4,7 @@
 
 instance DIA_Josh_Exit (C_INFO)
 {
-	npc				= BAU_2015_Josh;
+	npc				= BAN_1606_Josh;
 	nr				= 999;
 	condition		= DIA_Josh_Exit_Condition;
 	information		= DIA_Josh_Exit_Info;
@@ -28,7 +28,7 @@ func VOID DIA_Josh_Exit_Info()
 
 instance DIA_Josh_Hallo(C_INFO)
 {
-	npc				= BAU_2015_Josh;
+	npc				= BAN_1606_Josh;
 	nr				= 1;
 	condition		= DIA_Josh_Hallo_Condition;
 	information		= DIA_Josh_Hallo_Info;
@@ -91,7 +91,7 @@ func VOID DIA_Josh_Hallo_Info()
 
 INSTANCE DIA_Josh_TheftFind (C_INFO)
 {
-   npc          = BAU_2015_Josh;
+   npc          = BAN_1606_Josh;
    nr           = 1;
    condition    = DIA_Josh_TheftFind_Condition;
    information  = DIA_Josh_TheftFind_Info;
@@ -126,7 +126,7 @@ FUNC VOID DIA_Josh_TheftFind_Info()
 
 INSTANCE DIA_Josh_Lehrer (C_INFO)
 {
-	npc				= BAU_2015_Josh;
+	npc				= BAN_1606_Josh;
 	nr				= 2;
 	condition		= DIA_Josh_Lehrer_Condition;
 	information		= DIA_Josh_Lehrer_Info;

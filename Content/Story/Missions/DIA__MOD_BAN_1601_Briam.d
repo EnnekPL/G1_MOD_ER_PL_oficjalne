@@ -300,7 +300,7 @@ FUNC VOID DIA_Briam_NewWeedRun_Info()
 
 INSTANCE DIA_Jens_DobraRobota (C_INFO)
 {
-   npc          = BAU_2011_Jens;
+   npc          = BAN_1604_Jens;
    nr           = 1;
    condition    = DIA_Jens_DobraRobota_Condition;
    information  = DIA_Jens_DobraRobota_Info;

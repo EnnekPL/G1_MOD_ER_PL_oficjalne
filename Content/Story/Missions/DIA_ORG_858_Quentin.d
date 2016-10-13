@@ -1638,9 +1638,9 @@ FUNC VOID DIA_Quentin_WykonanoXD_Info()
 	//Npc_ExchangeRoutine (NON_2702_SZEFU,"atak");
 	//Npc_ExchangeRoutine (ORG_864_Raeuber,"pupil");
 	//Npc_ExchangeRoutine (ORG_869_Raeuber,"pupil");
-	//Npc_ExchangeRoutine (BAU_2009_Martin,"wait");
-	//Npc_ExchangeRoutine (BAU_2011_Jens,"wait");
-	//Npc_ExchangeRoutine (BAU_2015_Josh,"wait");
+	//Npc_ExchangeRoutine (BAN_1603_Martin,"wait");
+	//Npc_ExchangeRoutine (BAN_1604_Jens,"wait");
+	//Npc_ExchangeRoutine (BAN_1606_Josh,"wait");
 };
 
 //========================================
@@ -1693,21 +1693,21 @@ FUNC VOID DIA_Quentin_AkcjaUkonczona_Info()
 	
 	Npc_ExchangeRoutine (ORG_867_Raeuber,"zwial");//Doyle ucieka do Nowego Obozu
 	
-	Npc_ExchangeRoutine (BAU_2012_Rocky,"ucieczka");//Rocky ucieczka przed obóz
-	Npc_RemoveInvItem (BAU_2012_Rocky, BAU_ARMOR_H);//usuniêcie pancerza
+	Npc_ExchangeRoutine (BAN_1605_Rocky,"ucieczka");//Rocky ucieczka przed obóz
+	Npc_RemoveInvItem (BAN_1605_Rocky, BAU_ARMOR_H);//usuniêcie pancerza
 	
-	//Npc_ExchangeRoutine (BAU_2009_Martin,"wait");
-	//Npc_ExchangeRoutine (BAU_2011_Jens,"wait");
-	//Npc_ExchangeRoutine (BAU_2015_Josh,"wait");
+	//Npc_ExchangeRoutine (BAN_1603_Martin,"wait");
+	//Npc_ExchangeRoutine (BAN_1604_Jens,"wait");
+	//Npc_ExchangeRoutine (BAN_1606_Josh,"wait");
 	//Npc_ExchangeRoutine (NON_2703_MYSLIWY,"atak"); 
 	//Npc_ExchangeRoutine (NON_2702_SZEFU,"czekanie");
 	//Npc_ExchangeRoutine (ORG_864_Raeuber,"pupil");
 	//Npc_ExchangeRoutine (ORG_870_Raeuber,"pupil");
 	//Npc_ExchangeRoutine (ORG_869_Raeuber,"pupil");
-	//Npc_ExchangeRoutine (BAU_2009_Martin,"start");
-	//Npc_ExchangeRoutine (BAU_2011_Jens,"start");
-	//Npc_ExchangeRoutine (BAU_2015_Josh,"start");
-	//Npc_ExchangeRoutine (BAU_2011_Jens,"start");
+	//Npc_ExchangeRoutine (BAN_1603_Martin,"start");
+	//Npc_ExchangeRoutine (BAN_1604_Jens,"start");
+	//Npc_ExchangeRoutine (BAN_1606_Josh,"start");
+	//Npc_ExchangeRoutine (BAN_1604_Jens,"start");
 	//Npc_ExchangeRoutine (NON_2702_SZEFU,"wait");
 	//Npc_ExchangeRoutine (NON_2705_Rakus ,"wait");
 	//Npc_ExchangeRoutine (NON_2706_osko  ,"wait");
@@ -1916,8 +1916,8 @@ FUNC VOID DIA_Quentin_LetsGo2346567_Info()
 
 	B_KillNpc (ORG_819_Drax);
 	
-	Npc_ExchangeRoutine (BAU_2012_Rocky , "odb");
-	BAU_2012_Rocky.aivar[AIV_PARTYMEMBER] = TRUE;
+	Npc_ExchangeRoutine (BAN_1605_Rocky , "odb");
+	BAN_1605_Rocky.aivar[AIV_PARTYMEMBER] = TRUE;
 	
 	NON_2705_Rakus.aivar[AIV_PARTYMEMBER] = TRUE;
 	Npc_ExchangeRoutine (NON_2705_Rakus , "burdel");
@@ -1941,12 +1941,12 @@ FUNC VOID DIA_Quentin_LetsGo2346567_Info()
     AI_StopProcessInfos	(self);
 	
 	//nieu¿ywane od 1.2
-	//BAU_2009_Martin.aivar[AIV_PARTYMEMBER] = TRUE;
-    //Npc_ExchangeRoutine (BAU_2009_Martin , "atak");
-	//BAU_2015_Josh.aivar[AIV_PARTYMEMBER] = TRUE;
-    //Npc_ExchangeRoutine (BAU_2015_Josh , "atak");
-	//BAU_2011_Jens.aivar[AIV_PARTYMEMBER] = TRUE;
-    //Npc_ExchangeRoutine (BAU_2011_Jens , "atak");
+	//BAN_1603_Martin.aivar[AIV_PARTYMEMBER] = TRUE;
+    //Npc_ExchangeRoutine (BAN_1603_Martin , "atak");
+	//BAN_1606_Josh.aivar[AIV_PARTYMEMBER] = TRUE;
+    //Npc_ExchangeRoutine (BAN_1606_Josh , "atak");
+	//BAN_1604_Jens.aivar[AIV_PARTYMEMBER] = TRUE;
+    //Npc_ExchangeRoutine (BAN_1604_Jens , "atak");
 	//NON_2702_SZEFU.aivar[AIV_PARTYMEMBER] = TRUE;
 	//Npc_ExchangeRoutine (NON_2702_SZEFU , "atak");
 	//NON_2702_SZEFU.guild = GIL_BAU;
@@ -1999,8 +1999,8 @@ FUNC VOID DIA_Quentin_54_Info()
 	//powrót bandytów do obozu
 	ORG_858_Quentin.aivar[AIV_PARTYMEMBER] = false;
 	Npc_ExchangeRoutine (ORG_858_Quentin,"start");
-	BAU_2012_Rocky.aivar[AIV_PARTYMEMBER] = false;
-	Npc_ExchangeRoutine (BAU_2012_Rocky , "start");
+	BAN_1605_Rocky.aivar[AIV_PARTYMEMBER] = false;
+	Npc_ExchangeRoutine (BAN_1605_Rocky , "start");
 	
 	ORG_864_Raeuber.aivar[AIV_PARTYMEMBER] = false;
 	Npc_ExchangeRoutine (ORG_864_Raeuber,"start");
@@ -2018,13 +2018,13 @@ FUNC VOID DIA_Quentin_54_Info()
 	//old stuff
 	//Wld_SendTrigger("PULAPKA1");
 	//Npc_ExchangeRoutine (NON_2703_MYSLIWY , "wait");
-	//Npc_ExchangeRoutine (BAU_2009_Martin , "start");
-    //Npc_ExchangeRoutine (BAU_2015_Josh , "start");
-    //Npc_ExchangeRoutine (BAU_2011_Jens , "start");
+	//Npc_ExchangeRoutine (BAN_1603_Martin , "start");
+    //Npc_ExchangeRoutine (BAN_1606_Josh , "start");
+    //Npc_ExchangeRoutine (BAN_1604_Jens , "start");
     //Npc_ExchangeRoutine (NON_2702_SZEFU , "wait");
-	//BAU_2009_Martin.aivar[AIV_PARTYMEMBER] = false;
-	//BAU_2015_Josh.aivar[AIV_PARTYMEMBER] = false;
-	//BAU_2011_Jens.aivar[AIV_PARTYMEMBER] = false;
+	//BAN_1603_Martin.aivar[AIV_PARTYMEMBER] = false;
+	//BAN_1606_Josh.aivar[AIV_PARTYMEMBER] = false;
+	//BAN_1604_Jens.aivar[AIV_PARTYMEMBER] = false;
 	//NON_2702_SZEFU.aivar[AIV_PARTYMEMBER] = false;
 	//NON_2703_MYSLIWY.aivar[AIV_PARTYMEMBER] = false;
 };
@@ -2273,9 +2273,9 @@ FUNC VOID DIA_Quentin_MineIsClean_Info()
 	Wld_InsertNpc				(NON_3037_Bandyta,"KOPACZ");	
 	Wld_InsertNpc				(NON_3035_Bandyta,"KOPACZ");//luis
 	//Wld_InsertNpc				(NON_3033_Bandyta,"KOPACZ"); kereth fix
-	Npc_ExchangeRoutine (BAU_2012_rocky,"start");
+	Npc_ExchangeRoutine (BAN_1605_Rocky,"start");
 	Npc_ExchangeRoutine (ORG_867_Raeuber,"afterstart");
-	Npc_ExchangeRoutine (NON_4050_Chris,"start");
+	Npc_ExchangeRoutine (BAN_1607_Chris,"start");
     B_GiveXP (XP_ClearAbMine);
 	
 	CreateInvItems (self, ItMiNugget, 1000);
@@ -3595,9 +3595,9 @@ FUNC VOID DIA_Quentin_MamPiczec_Info()
     AI_Output (self, other ,"DIA_Quentin_MamPiczec_03_07"); //ProwadŸ i postaraj siê nas nie pozabijaæ.
     B_LogEntry                     (CH1_Zniewolenie,"Muszê podejœæ jak najbli¿ej Obozu i u¿yæ czaru. Potem zostanie nam ju¿ tylko obserwowaæ i pozbyæ siê tego, co zostanie po tym starciu.");
     B_ExchangeRoutine (ORG_858_Quentin , "atak");
-    B_ExchangeRoutine (BAU_2009_Martin , "atak");
-    B_ExchangeRoutine (BAU_2015_Josh , "atak");
-    B_ExchangeRoutine (BAU_2011_Jens , "atak");
+    B_ExchangeRoutine (BAN_1603_Martin , "atak");
+    B_ExchangeRoutine (BAN_1606_Josh , "atak");
+    B_ExchangeRoutine (BAN_1604_Jens , "atak");
     B_ExchangeRoutine (NON_2702_SZEFU , "atak");
     Npc_ExchangeRoutine (NON_2705_Rakus,"burdel");
     Npc_ExchangeRoutine (NON_2703_MYSLIWY,"burdel");  
@@ -3685,11 +3685,11 @@ FUNC VOID DIA_Quentin_DedALlQuent_Info()
     Log_SetTopicStatus       (CH1_zniewolenie, LOG_SUCCESS);
     MIS_zniewolenie = LOG_SUCCESS;
 	Npc_ExchangeRoutine (self,"start");
-    Npc_ExchangeRoutine (BAU_2009_Martin , "start");
-    Npc_ExchangeRoutine (BAU_2015_Josh , "start");
-    Npc_ExchangeRoutine (BAU_2011_Jens , "start");
+    Npc_ExchangeRoutine (BAN_1603_Martin , "start");
+    Npc_ExchangeRoutine (BAN_1606_Josh , "start");
+    Npc_ExchangeRoutine (BAN_1604_Jens , "start");
     Npc_ExchangeRoutine (NON_2702_SZEFU , "wait");
-	Npc_ExchangeRoutine (BAU_2012_Rocky , "start");
+	Npc_ExchangeRoutine (BAN_1605_Rocky , "start");
 	Npc_ExchangeRoutine (NON_2703_MYSLIWY , "wait");
 	Npc_ExchangeRoutine (NON_2705_Rakus , "wait");
 	Npc_ExchangeRoutine (NON_2706_osko , "lowcaPoszukiwaczy");

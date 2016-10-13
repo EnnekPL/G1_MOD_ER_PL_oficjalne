@@ -1,7 +1,7 @@
 func void B_GiveMartinItemsCH1 ()
 {
 	var C_NPC npc;
-	npc = Hlp_GetNpc(BAU_2009_Martin);
+	npc = Hlp_GetNpc(BAN_1603_Martin);
 	CreateInvItem (npc,ItWrWorldmap);	
 	CreateInvItem	(npc,	ItMw_1H_Sword_Short_01);
 	CreateInvItem	(npc,	ItMw_1H_Sword_Short_02);
@@ -22,7 +22,7 @@ func void B_GiveMartinItemsCH1 ()
 func void B_GiveMartinItemsCH2 ()
 {
 	var C_NPC npc;
-	npc = Hlp_GetNpc(BAU_2009_Martin);
+	npc = Hlp_GetNpc(BAN_1603_Martin);
 		CreateInvItem	(npc,	ItMw_1H_Sword_Short_01);
 	CreateInvItem	(npc,	ItMwZ_1H_Sword_01);
 	CreateInvItem	(npc,	ItMw_1H_Sword_02);
@@ -39,7 +39,7 @@ func void B_GiveMartinItemsCH2 ()
 func void B_GiveMartinItemsCH3 ()
 {
 	var C_NPC npc;
-	npc = Hlp_GetNpc(BAU_2009_Martin);
+	npc = Hlp_GetNpc(BAN_1603_Martin);
 	CreateInvItem	(npc,	ItMw_1H_Sword_Long_01);
 	CreateInvItem	(npc,	ItMw_1H_Sword_Long_02);
 	CreateInvItem	(npc,	ItMw_1H_Sword_Long_03);
@@ -49,7 +49,7 @@ func void B_GiveMartinItemsCH3 ()
 func void B_GiveMartinItemsCH4 ()
 {
 	var C_NPC npc;
-	npc = Hlp_GetNpc(BAU_2009_Martin);
+	npc = Hlp_GetNpc(BAN_1603_Martin);
 	CreateInvItem	(npc,	ItMw_1H_Sword_Broad_01);
 	CreateInvItem	(npc,	ItMw_1H_Sword_Broad_02);
 	CreateInvItem	(npc,	ItMw_1H_Sword_Broad_03);
@@ -81,7 +81,7 @@ func void B_GiveMartinItemsCH4 ()
 func void B_GiveMartinItemsCH5 ()
 {
 	var C_NPC npc;
-	npc = Hlp_GetNpc(BAU_2009_Martin);
+	npc = Hlp_GetNpc(BAN_1603_Martin);
 	CreateInvItem	(npc,	ItMw_2H_Sword_Light_02);
 	CreateInvItem	(npc,	ItMw_2H_Sword_Light_03);
 	CreateInvItem	(npc,	ItMw_2H_Sword_Light_04);
@@ -100,7 +100,7 @@ func void B_GiveMartinItemsCH5 ()
 func void B_GiveMartinItemsCH6 ()
 {
 	var C_NPC npc;
-	npc = Hlp_GetNpc(BAU_2009_Martin);
+	npc = Hlp_GetNpc(BAN_1603_Martin);
 	
 	CreateInvItem (npc,Plan7b); 
 };

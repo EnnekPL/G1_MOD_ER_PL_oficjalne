@@ -6,7 +6,7 @@
 
 INSTANCE DIA_Chris_EXIT(C_INFO)
 {
-	npc             = NON_4050_Chris;
+	npc             = BAN_1607_Chris;
 	nr              = 999;
 	condition	= DIA_Chris_EXIT_Condition;
 	information	= DIA_Chris_EXIT_Info;
@@ -30,7 +30,7 @@ FUNC VOID DIA_Chris_EXIT_Info()
 
 INSTANCE DIA_Chris_Hello (C_INFO)
 {
-   npc          = NON_4050_Chris;
+   npc          = BAN_1607_Chris;
    nr           = 1;
    condition    = DIA_Chris_Hello_Condition;
    information  = DIA_Chris_Hello_Info;
@@ -56,7 +56,7 @@ FUNC VOID DIA_Chris_Hello_Info()
 
 INSTANCE DIA_Chris_Hey (C_INFO)
 {
-   npc          = NON_4050_Chris;
+   npc          = BAN_1607_Chris;
    nr           = 2;
    condition    = DIA_Chris_Hey_Condition;
    information  = DIA_Chris_Hey_Info;
@@ -85,7 +85,7 @@ FUNC VOID DIA_Chris_Hey_Info()
 //edit by Nocturn
 INSTANCE DIA_Chris_HELLO3 (C_INFO)
 {
-   npc          = NON_4050_Chris;
+   npc          = BAN_1607_Chris;
    nr           = 3;
    condition    = DIA_Chris_HELLO3_Condition;
    information  = DIA_Chris_HELLO3_Info;
@@ -373,7 +373,7 @@ FUNC VOID DIA_Chris_HELLO3_BACK()
 
 INSTANCE DIA_Chris_GoToAbMine (C_INFO)
 {
-   npc          = NON_4050_Chris;
+   npc          = BAN_1607_Chris;
    nr           = 1;
    condition    = DIA_Chris_GoToAbMine_Condition;
    information  = DIA_Chris_GoToAbMine_Info;
