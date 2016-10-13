@@ -572,8 +572,8 @@ FUNC VOID DIA_Will_Ruchy_Info()
 	/*
 	if (KerethOK == true)
 	{
-	NON_3033_Bandyta.aivar[AIV_PARTYMEMBER] = TRUE;
-    Npc_ExchangeRoutine (NON_3033_Bandyta, "FOLLOW");
+	BAN_1608_Kereth.aivar[AIV_PARTYMEMBER] = TRUE;
+    Npc_ExchangeRoutine (BAN_1608_Kereth, "FOLLOW");
 	};
 	if (CalashOK == true)
 	{
@@ -669,8 +669,8 @@ FUNC VOID DIA_Will_PrzystanekZamosc_Info()
 	/*
 	if (KerethOK == true)
 	{
-	NON_3033_Bandyta.aivar[AIV_PARTYMEMBER] = TRUE;
-    Npc_ExchangeRoutine (NON_3033_Bandyta, "FOLLOW");
+	BAN_1608_Kereth.aivar[AIV_PARTYMEMBER] = TRUE;
+    Npc_ExchangeRoutine (BAN_1608_Kereth, "FOLLOW");
 	};
 	if (CalashOK == true)
 	{

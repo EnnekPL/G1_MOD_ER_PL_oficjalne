@@ -4,7 +4,7 @@
 
 INSTANCE DIA_Quentin_EXIT(C_INFO)
 {
-	npc             = ORG_858_Quentin;
+	npc             = BAN_1610_Quentin;
 	nr              = 999;
 	condition	= DIA_Quentin_EXIT_Condition;
 	information	= DIA_Quentin_EXIT_Info;
@@ -34,7 +34,7 @@ FUNC VOID DIA_Quentin_EXIT_Info()
 
 INSTANCE DIA_Quentin_WLADZA (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 1;
    condition    = DIA_Quentin_WLADZA_Condition;
    information  = DIA_Quentin_WLADZA_Info;
@@ -66,7 +66,7 @@ var int log_Quenfight;
 
 INSTANCE DIA_Quentin_KnowsNauka (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 777;
    condition    = DIA_Quentin_KnowsNauka_Condition;
    information  = DIA_Quentin_KnowsNauka_Info;
@@ -100,7 +100,7 @@ FUNC VOID DIA_Quentin_KnowsNauka_Info()
 
 INSTANCE DIA_Quentin_HELPXD (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 10;
    condition    = DIA_Quentin_HELPXD_Condition;
    information  = DIA_Quentin_HELPXD_Info;
@@ -136,7 +136,7 @@ FUNC VOID DIA_Quentin_HELPXD_Info()
 
 INSTANCE DIA_Quentin_DOOBOZU (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 2;
    condition    = DIA_Quentin_DRAX_Condition;
    information  = DIA_Quentin_DRAX_Info;
@@ -181,7 +181,7 @@ FUNC VOID DIA_Quentin_DRAX_Info()
 
 INSTANCE DIA_Quentin_JensIsKiller (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 10;
    condition    = DIA_Quentin_JensIsKiller_Condition;
    information  = DIA_Quentin_JensIsKiller_Info;
@@ -237,7 +237,7 @@ FUNC VOID DIA_Quentin_JensIsKiller_Info()
 
 INSTANCE DIA_Quentin_DOOBOZU (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 7;
    condition    = DIA_Quentin_DOOBOZU_Condition;
    information  = DIA_Quentin_DOOBOZU_Info;
@@ -363,7 +363,7 @@ FUNC VOID DIA_Quentin_DOOBOZU_RAGNIR()
 
 INSTANCE DIA_Quentin_EQ1 (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 8;
    condition    = DIA_Quentin_EQ1_Condition;
    information  = DIA_Quentin_EQ1_Info;
@@ -399,7 +399,7 @@ FUNC VOID DIA_Quentin_EQ1_Info()
 
 INSTANCE DIA_Quentin_EQ2 (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 8;
    condition    = DIA_Quentin_EQ2_Condition;
    information  = DIA_Quentin_EQ2_Info;
@@ -456,7 +456,7 @@ FUNC VOID DIA_Quentin_EQ2_Info()
 
 INSTANCE DIA_Quentin_QUEST4 (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 9;
    condition    = DIA_Quentin_QUEST4_Condition;
    information  = DIA_Quentin_QUEST4_Info;
@@ -497,7 +497,7 @@ FUNC VOID DIA_Quentin_QUEST4_Info()
 
 INSTANCE DIA_Quentin_UKONCZONE (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 12;
    condition    = DIA_Quentin_UKONCZONE_Condition;
    information  = DIA_Quentin_UKONCZONE_Info;
@@ -556,7 +556,7 @@ FUNC VOID DIA_Quentin_UKONCZONE_Info()
 
 INSTANCE DIA_Quentin_POATAKU (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 13;
    condition    = DIA_Quentin_POATAKU_Condition;
    information  = DIA_Quentin_POATAKU_Info;
@@ -625,7 +625,7 @@ FUNC VOID DIA_Quentin_POATAKU_Info()
 
 INSTANCE DIA_Quentin_QUEST5 (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 11;
    condition    = DIA_Quentin_QUEST5_Condition;
    information  = DIA_Quentin_QUEST5_Info;
@@ -662,7 +662,7 @@ FUNC VOID DIA_Quentin_QUEST5_Info()
 
 INSTANCE DIA_Quentin_FindIron (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 1;
    condition    = DIA_Quentin_FindIron_Condition;
    information  = DIA_Quentin_FindIron_Info;
@@ -701,7 +701,7 @@ FUNC VOID DIA_Quentin_FindIron_Info()
 
 INSTANCE DIA_Quentin_SzpeszialQuest (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 1;
    condition    = DIA_Quentin_SzpeszialQuest_Condition;
    information  = DIA_Quentin_SzpeszialQuest_Info;
@@ -744,7 +744,7 @@ FUNC VOID DIA_Quentin_SzpeszialQuest_Info()
 
 INSTANCE DIA_Quentin_HELLORINGS (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 1;
    condition    = DIA_Quentin_HELLORINGS_Condition;
    information  = DIA_Quentin_HELLORINGS_Info;
@@ -792,7 +792,7 @@ FUNC VOID DIA_Quentin_HELLORINGS_Info()
 
 INSTANCE DIA_Quentin_BRACTWO1 (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 14;
    condition    = DIA_Quentin_BRACTWO1_Condition;
    information  = DIA_Quentin_BRACTWO1_Info;
@@ -839,7 +839,7 @@ FUNC VOID DIA_Quentin_BRACTWO1_Info()
 
 INSTANCE DIA_Quentin_GOLDY (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 15;
    condition    = DIA_Quentin_GOLDY_Condition;
    information  = DIA_Quentin_GOLDY_Info;
@@ -892,7 +892,7 @@ if (Npc_HasItems(other, ItMiNugget) >= 2000)
 
 INSTANCE DIA_Quentin_Zdrada (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 1;
    condition    = DIA_Quentin_Zdrada_Condition;
    information  = DIA_Quentin_Zdrada_Info;
@@ -924,7 +924,7 @@ FUNC VOID DIA_Quentin_Zdrada_Info()
 
 INSTANCE DIA_Quentin_OreInMineITD (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 1;
    condition    = DIA_Quentin_OreInMineITD_Condition;
    information  = DIA_Quentin_OreInMineITD_Info;
@@ -975,7 +975,7 @@ FUNC VOID DIA_Quentin_OreInMineITD_Info()
 
 INSTANCE DIA_Quentin_Sprawa (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 1;
    condition    = DIA_Quentin_Sprawa_Condition;
    information  = DIA_Quentin_Sprawa_Info;
@@ -1015,7 +1015,7 @@ FUNC VOID DIA_Quentin_Sprawa_Info()
 
 INSTANCE DIA_Quentin_GadanieZNowicujaszmi (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 1;
    condition    = DIA_Quentin_GadanieZNowicujaszmi_Condition;
    information  = DIA_Quentin_GadanieZNowicujaszmi_Info;
@@ -1050,7 +1050,7 @@ FUNC VOID DIA_Quentin_GadanieZNowicujaszmi_Info()
 
 INSTANCE DIA_Quentin_Sell2 (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 2;
    condition    = DIA_Quentin_Sell2_Condition;
    information  = DIA_Quentin_Sell2_Info;
@@ -1086,7 +1086,7 @@ FUNC VOID DIA_Quentin_Sell2_Info()
 
 INSTANCE DIA_Quentin_Sell3 (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 3;
    condition    = DIA_Quentin_Sell3_Condition;
    information  = DIA_Quentin_Sell3_Info;
@@ -1120,7 +1120,7 @@ FUNC VOID DIA_Quentin_Sell3_Info()
 
 INSTANCE DIA_Quentin_UkonczonoSellAlco (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 4;
    condition    = DIA_Quentin_UkonczonoSellAlco_Condition;
    information  = DIA_Quentin_UkonczonoSellAlco_Info;
@@ -1170,7 +1170,7 @@ FUNC VOID DIA_Quentin_UkonczonoSellAlco_Info()
 
 INSTANCE DIA_Quentin_HELLO112 (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 16;
    condition    = DIA_Quentin_HELLO112_Condition;
    information  = DIA_Quentin_HELLO112_Info;
@@ -1218,7 +1218,7 @@ FUNC VOID DIA_Quentin_HELLO112_Info()
 
 INSTANCE DIA_Quentin_LOSY (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 17;
    condition    = DIA_Quentin_LOSY_Condition;
    information  = DIA_Quentin_LOSY_Info;
@@ -1251,7 +1251,7 @@ FUNC VOID DIA_Quentin_LOSY_Info()
 
 INSTANCE DIA_Quentin_BractwoNews (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 34;
    condition    = DIA_Quentin_BractwoNews_Condition;
    information  = DIA_Quentin_BractwoNews_Info;
@@ -1287,7 +1287,7 @@ FUNC VOID DIA_Quentin_BractwoNews_Info()
 
 INSTANCE DIA_Quentin_HELLO1 (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 18;
    condition    = DIA_Quentin_HELLO1_Condition;
    information  = DIA_Quentin_HELLO1_Info;
@@ -1337,7 +1337,7 @@ FUNC VOID DIA_Quentin_HELLO1_Info()
 
 INSTANCE DIA_Quentin_Kalom2 (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 1;
    condition    = DIA_Quentin_Kalom2_Condition;
    information  = DIA_Quentin_Kalom2_Info;
@@ -1383,7 +1383,7 @@ FUNC VOID DIA_Quentin_Kalom2_Info()
 
 INSTANCE DIA_Quentin_HELLO35 (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 35;
    condition    = DIA_Quentin_HELLO35_Condition;
    information  = DIA_Quentin_HELLO35_Info;
@@ -1438,7 +1438,7 @@ FUNC VOID DIA_Quentin_HELLO35_Info()
 
 INSTANCE DIA_Quentin_DraxInfos (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 1;
    condition    = DIA_Quentin_DraxInfos_Condition;
    information  = DIA_Quentin_DraxInfos_Info;
@@ -1481,7 +1481,7 @@ FUNC VOID DIA_Quentin_DraxInfos_Info()
 
 INSTANCE DIA_Quentin_nextWork22 (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 1;
    condition    = DIA_Quentin_nextWork22_Condition;
    information  = DIA_Quentin_nextWork22_Info;
@@ -1519,7 +1519,7 @@ FUNC VOID DIA_Quentin_nextWork22_Info()
 
 INSTANCE DIA_Quentin_Idea (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 1;
    condition    = DIA_Quentin_Idea_Condition;
    information  = DIA_Quentin_Idea_Info;
@@ -1560,7 +1560,7 @@ FUNC VOID DIA_Quentin_Idea_Info()
 
 INSTANCE DIA_Quentin_QuestOk890976 (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 1;
    condition    = DIA_Quentin_QuestOk890976_Condition;
    information  = DIA_Quentin_QuestOk890976_Info;
@@ -1596,7 +1596,7 @@ FUNC VOID DIA_Quentin_QuestOk890976_Info()
 
 INSTANCE DIA_Quentin_WykonanoXD (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 1;
    condition    = DIA_Quentin_WykonanoXD_Condition;
    information  = DIA_Quentin_WykonanoXD_Info;
@@ -1629,7 +1629,7 @@ FUNC VOID DIA_Quentin_WykonanoXD_Info()
 
     B_GiveXP (XP_WeMustHelpDrax);
 	AI_StopProcessInfos	(self);
-    Npc_ExchangeRoutine (ORG_858_Quentin,"wait");
+    Npc_ExchangeRoutine (BAN_1610_Quentin,"wait");
 	Npc_ExchangeRoutine (ORG_870_Raeuber,"pupil");
 	Npc_ExchangeRoutine (NON_2706_Osko,"atak");
 	Npc_ExchangeRoutine (NON_2705_Rakus,"atak");
@@ -1649,7 +1649,7 @@ FUNC VOID DIA_Quentin_WykonanoXD_Info()
 
 INSTANCE DIA_Quentin_AkcjaUkonczona (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 1;
    condition    = DIA_Quentin_AkcjaUkonczona_Condition;
    information  = DIA_Quentin_AkcjaUkonczona_Info;
@@ -1680,8 +1680,8 @@ FUNC VOID DIA_Quentin_AkcjaUkonczona_Info()
     
     AI_StopProcessInfos	(self);
 	
-	Npc_ExchangeRoutine (ORG_858_Quentin,"wait");
-	ORG_858_Quentin.aivar[AIV_PARTYMEMBER] = TRUE;
+	Npc_ExchangeRoutine (BAN_1610_Quentin,"wait");
+	BAN_1610_Quentin.aivar[AIV_PARTYMEMBER] = TRUE;
 
 	Npc_ExchangeRoutine (NON_2706_Osko,"atak");
 	NON_2706_osko.aivar[AIV_PARTYMEMBER] = TRUE;
@@ -1743,7 +1743,7 @@ FUNC VOID DIA_Quentin_AkcjaUkonczona_Info()
 
 INSTANCE DIA_Quentin_DAEADALL (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 1;
    condition    = DIA_Quentin_DAEADALL_Condition;
    information  = DIA_Quentin_DAEADALL_Info;
@@ -1753,7 +1753,7 @@ INSTANCE DIA_Quentin_DAEADALL (C_INFO)
 
 FUNC INT DIA_Quentin_DAEADALL_Condition()
 {
-    if (Npc_GetDistToWP (ORG_858_Quentin, "QUEN") < 1000) && (Npc_KnowsInfo (hero, DIA_Quentin_AkcjaUkonczona)) && (kapitel == 10)
+    if (Npc_GetDistToWP (BAN_1610_Quentin, "QUEN") < 1000) && (Npc_KnowsInfo (hero, DIA_Quentin_AkcjaUkonczona)) && (kapitel == 10)
     {
     return FALSE;
     };
@@ -1780,7 +1780,7 @@ FUNC VOID DIA_Quentin_DAEADALL_Info()
 
 INSTANCE DIA_Quentin_Plan (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 1;
    condition    = DIA_Quentin_Plan_Condition;
    information  = DIA_Quentin_Plan_Info;
@@ -1881,7 +1881,7 @@ FUNC VOID DIA_Quentin_Plan_Inne()
 
 INSTANCE DIA_Quentin_LetsGo2346567 (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 1;
    condition    = DIA_Quentin_LetsGo2346567_Condition;
    information  = DIA_Quentin_LetsGo2346567_Info;
@@ -1961,7 +1961,7 @@ FUNC VOID DIA_Quentin_LetsGo2346567_Info()
 
 INSTANCE DIA_Quentin_54 (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 1;
    condition    = DIA_Quentin_54_Condition;
    information  = DIA_Quentin_54_Info;
@@ -1997,8 +1997,8 @@ FUNC VOID DIA_Quentin_54_Info()
 	//experience
     B_GiveXP (XP_KillAllgardist);
 	//powrót bandytów do obozu
-	ORG_858_Quentin.aivar[AIV_PARTYMEMBER] = false;
-	Npc_ExchangeRoutine (ORG_858_Quentin,"start");
+	BAN_1610_Quentin.aivar[AIV_PARTYMEMBER] = false;
+	Npc_ExchangeRoutine (BAN_1610_Quentin,"start");
 	BAN_1605_Rocky.aivar[AIV_PARTYMEMBER] = false;
 	Npc_ExchangeRoutine (BAN_1605_Rocky , "start");
 	
@@ -2035,7 +2035,7 @@ FUNC VOID DIA_Quentin_54_Info()
 
 INSTANCE DIA_Quentin_findFriends (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 2;
    condition    = DIA_Quentin_findFriends_Condition;
    information  = DIA_Quentin_findFriends_Info;
@@ -2075,7 +2075,7 @@ FUNC VOID DIA_Quentin_findFriends_Info()
 
 INSTANCE DIA_Quentin_FoundDrax (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 1;
    condition    = DIA_Quentin_FoundDrax_Condition;
    information  = DIA_Quentin_FoundDrax_Info;
@@ -2123,7 +2123,7 @@ FUNC VOID DIA_Quentin_FoundDrax_Info()
 
 INSTANCE DIA_Quentin_iFindDoyle (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 1;
    condition    = DIA_Quentin_iFindDoyle_Condition;
    information  = DIA_Quentin_iFindDoyle_Info;
@@ -2159,7 +2159,7 @@ FUNC VOID DIA_Quentin_iFindDoyle_Info()
 
 INSTANCE DIA_Quentin_PrzejscieDalej (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 2;
    condition    = DIA_Quentin_PrzejscieDalej_Condition;
    information  = DIA_Quentin_PrzejscieDalej_Info;
@@ -2213,7 +2213,7 @@ FUNC VOID DIA_Quentin_PrzejscieDalej_Info()
     //CreateInvItems (self, ItMw_2H_Sword_02, 1);
     //B_GiveInvItems (self, other, ItMw_2H_Sword_02, 1);
 	//exit
-    AI_StopProcessInfos	(ORG_858_Quentin);
+    AI_StopProcessInfos	(BAN_1610_Quentin);
 };
 
 //========================================
@@ -2222,7 +2222,7 @@ FUNC VOID DIA_Quentin_PrzejscieDalej_Info()
 
 INSTANCE DIA_Quentin_MineIsClean (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 1;
    condition    = DIA_Quentin_MineIsClean_Condition;
    information  = DIA_Quentin_MineIsClean_Info;
@@ -2268,11 +2268,11 @@ FUNC VOID DIA_Quentin_MineIsClean_Info()
 	Wld_InsertNpc				(NON_3030_Bandyta,"KOPACZ");	
 	Wld_InsertNpc				(NON_3031_Bandyta,"KOPACZ");
 	Wld_InsertNpc				(NON_3032_Bandyta,"KOPACZ");	
-	Wld_InsertNpc				(NON_3033_Bandyta,"KOPACZ");
+	Wld_InsertNpc				(BAN_1608_Kereth,"KOPACZ");
 	Wld_InsertNpc				(NON_3038_Bandyta,"KOPACZ");	
 	Wld_InsertNpc				(NON_3037_Bandyta,"KOPACZ");	
 	Wld_InsertNpc				(NON_3035_Bandyta,"KOPACZ");//luis
-	//Wld_InsertNpc				(NON_3033_Bandyta,"KOPACZ"); kereth fix
+	//Wld_InsertNpc				(BAN_1608_Kereth,"KOPACZ"); kereth fix
 	Npc_ExchangeRoutine (BAN_1605_Rocky,"start");
 	Npc_ExchangeRoutine (ORG_867_Raeuber,"afterstart");
 	Npc_ExchangeRoutine (BAN_1607_Chris,"start");
@@ -2288,7 +2288,7 @@ FUNC VOID DIA_Quentin_MineIsClean_Info()
 
 INSTANCE DIA_Quentin_GuyWork (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 1;
    condition    = DIA_Quentin_GuyWork_Condition;
    information  = DIA_Quentin_GuyWork_Info;
@@ -2336,7 +2336,7 @@ FUNC VOID DIA_Quentin_GuyWork_Info()
 
 INSTANCE DIA_Quentin_Successasd (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 3;
    condition    = DIA_Quentin_Successasd_Condition;
    information  = DIA_Quentin_Successasd_Info;
@@ -2372,7 +2372,7 @@ FUNC VOID DIA_Quentin_Successasd_Info()
 
 INSTANCE DIA_Quentin_OldMine (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 1;
    condition    = DIA_Quentin_OldMine_Condition;
    information  = DIA_Quentin_OldMine_Info;
@@ -2410,7 +2410,7 @@ FUNC VOID DIA_Quentin_OldMine_Info()
 
 INSTANCE DIA_Quentin_TalkAboutMine (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 1;
    condition    = DIA_Quentin_TalkAboutMine_Condition;
    information  = DIA_Quentin_TalkAboutMine_Info;
@@ -2457,7 +2457,7 @@ FUNC VOID DIA_Quentin_TalkAboutMine_Info()
 
 INSTANCE DIA_Quentin_ZlatwioneXDXD (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 1;
    condition    = DIA_Quentin_ZlatwioneXDXD_Condition;
    information  = DIA_Quentin_ZlatwioneXDXD_Info;
@@ -2495,7 +2495,7 @@ FUNC VOID DIA_Quentin_ZlatwioneXDXD_Info()
 
 INSTANCE DIA_Quentin_KoniecWatkuBandytow (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 1;
    condition    = DIA_Quentin_KoniecWatkuBandytow_Condition;
    information  = DIA_Quentin_KoniecWatkuBandytow_Info;
@@ -2551,7 +2551,7 @@ FUNC VOID DIA_Quentin_KoniecWatkuBandytow_Info()
 
 INSTANCE DIA_Quentin_RozmowaOPiratach (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 1;
    condition    = DIA_Quentin_RozmowaOPiratach_Condition;
    information  = DIA_Quentin_RozmowaOPiratach_Info;
@@ -2600,7 +2600,7 @@ FUNC VOID DIA_Quentin_RozmowaOPiratach_Info()
 
 INSTANCE DIA_Quentin_KordelasJest (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 2;
    condition    = DIA_Quentin_KordelasJest_Condition;
    information  = DIA_Quentin_KordelasJest_Info;
@@ -2650,7 +2650,7 @@ var int przyjaciel_Bandytow;
 
 INSTANCE DIA_Quentin_CO_TY_TU_NAJMENIKU (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 1;
    condition    = DIA_Quentin_CO_TY_TU_NAJMENIKU_Condition;
    information  = DIA_Quentin_CO_TY_TU_NAJMENIKU_Info;
@@ -2715,7 +2715,7 @@ FUNC VOID DIA_Quentin_CO_TY_TU_NAJMENIKU_Info()
 
 INSTANCE DIA_Quentin_NegocjacieNc (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 1;
    condition    = DIA_Quentin_NegocjacieNc_Condition;
    information  = DIA_Quentin_NegocjacieNc_Info;
@@ -2754,11 +2754,11 @@ FUNC VOID DIA_Quentin_NegocjacieNc_Info()
 	Wld_InsertNpc				(NON_3030_Bandyta,"KOPACZ");	
 	Wld_InsertNpc				(NON_3031_Bandyta,"KOPACZ");
 	Wld_InsertNpc				(NON_3032_Bandyta,"KOPACZ");	
-	Wld_InsertNpc				(NON_3033_Bandyta,"KOPACZ");
+	Wld_InsertNpc				(BAN_1608_Kereth,"KOPACZ");
 	Wld_InsertNpc				(NON_3038_Bandyta,"KOPACZ");	
 	Wld_InsertNpc				(NON_3037_Bandyta,"KOPACZ");	
 	Wld_InsertNpc				(NON_3035_Bandyta,"KOPACZ");//luis
-	//Wld_InsertNpc				(NON_3033_Bandyta,"KOPACZ"); kereth fix
+	//Wld_InsertNpc				(BAN_1608_Kereth,"KOPACZ"); kereth fix
 	
 	//zadanie
 	MIS_MineChlopy = LOG_RUNNING;
@@ -2770,7 +2770,7 @@ FUNC VOID DIA_Quentin_NegocjacieNc_Info()
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 // Quentin
-// ORG_858_Quentin
+// BAN_1610_Quentin
 // Skrypt nauki broni jednorêcznej
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -2780,7 +2780,7 @@ FUNC VOID DIA_Quentin_NegocjacieNc_Info()
 
 INSTANCE DIA_Quentin_START_TRAIN (C_INFO)
 {
-	npc			= ORG_858_Quentin;
+	npc			= BAN_1610_Quentin;
 	nr			= 10;
 	condition	= DIA_Quentin_START_TRAIN_Condition;
 	information	= DIA_Quentin_START_TRAIN_Info;
@@ -3485,7 +3485,7 @@ Info_ClearChoices	(DIA_Quentin_START_TRAIN);
 
 INSTANCE DIA_Quentin_OdbityOboz (C_INFO) //WY£¥CZONE
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 4;
    condition    = DIA_Quentin_OdbityOboz_Condition;
    information  = DIA_Quentin_OdbityOboz_Info;
@@ -3527,7 +3527,7 @@ FUNC VOID DIA_Quentin_OdbityOboz_Info()
 
 INSTANCE DIA_Quentin_EmanuelLife (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 3;
    condition    = DIA_Quentin_EmanuelLife_Condition;
    information  = DIA_Quentin_EmanuelLife_Info;
@@ -3566,7 +3566,7 @@ FUNC VOID DIA_Quentin_EmanuelLife_Info()
 
 INSTANCE DIA_Quentin_MamPiczec (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 1;
    condition    = DIA_Quentin_MamPiczec_Condition;
    information  = DIA_Quentin_MamPiczec_Info;
@@ -3594,7 +3594,7 @@ FUNC VOID DIA_Quentin_MamPiczec_Info()
     AI_Output (self, other ,"DIA_Quentin_MamPiczec_03_06"); //Dobra, zostawmy ten temat.
     AI_Output (self, other ,"DIA_Quentin_MamPiczec_03_07"); //ProwadŸ i postaraj siê nas nie pozabijaæ.
     B_LogEntry                     (CH1_Zniewolenie,"Muszê podejœæ jak najbli¿ej Obozu i u¿yæ czaru. Potem zostanie nam ju¿ tylko obserwowaæ i pozbyæ siê tego, co zostanie po tym starciu.");
-    B_ExchangeRoutine (ORG_858_Quentin , "atak");
+    B_ExchangeRoutine (BAN_1610_Quentin , "atak");
     B_ExchangeRoutine (BAN_1603_Martin , "atak");
     B_ExchangeRoutine (BAN_1606_Josh , "atak");
     B_ExchangeRoutine (BAN_1604_Jens , "atak");
@@ -3614,7 +3614,7 @@ FUNC VOID DIA_Quentin_MamPiczec_Info()
 
 INSTANCE DIA_Quentin_UseCZAr (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 2;
    condition    = DIA_Quentin_UseCZAr_Condition;
    information  = DIA_Quentin_UseCZAr_Info;
@@ -3648,7 +3648,7 @@ FUNC VOID DIA_Quentin_UseCZAr_Info()
 
 INSTANCE DIA_Quentin_DedALlQuent (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 2;
    condition    = DIA_Quentin_DedALlQuent_Condition;
    information  = DIA_Quentin_DedALlQuent_Info;
@@ -3705,7 +3705,7 @@ FUNC VOID DIA_Quentin_DedALlQuent_Info()
 
 INSTANCE DIA_Quentin_OtherQuests (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 2;
    condition    = DIA_Quentin_OtherQuests_Condition;
    information  = DIA_Quentin_OtherQuests_Info;
@@ -3744,7 +3744,7 @@ FUNC VOID DIA_Quentin_OtherQuests_Info()
 /*
 INSTANCE DIA_Quentin_POSZUKIWACZE (C_INFO)
 {
-   npc          = ORG_858_Quentin;
+   npc          = BAN_1610_Quentin;
    nr           = 19;
    condition    = DIA_Quentin_POSZUKIWACZE_Condition;
    information  = DIA_Quentin_POSZUKIWACZE_Info;

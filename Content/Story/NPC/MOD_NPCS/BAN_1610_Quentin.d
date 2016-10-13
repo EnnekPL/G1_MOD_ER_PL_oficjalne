@@ -1,4 +1,4 @@
-instance ORG_858_Quentin (Npc_Default)
+instance BAN_1610_Quentin (Npc_Default)
 {
 	//-------- primary data --------
 	

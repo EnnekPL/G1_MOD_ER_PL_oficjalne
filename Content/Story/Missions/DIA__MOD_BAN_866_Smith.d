@@ -2,7 +2,7 @@
 
 instance  Info_Smith_EXIT (C_INFO)
 {
-	npc			= ORG_866_Raeuber;
+	npc			= BAN_1609_Pun;
 	nr			= 999;
 	condition	= Info_Smith_EXIT_Condition;
 	information	= Info_Smith_EXIT_Info;
@@ -33,7 +33,7 @@ FUNC VOID  Info_Smith_EXIT_Info()
 var int log_Smithtrain;
 INSTANCE DIA_Smith_Lehrer (C_INFO)
 {
-	npc				= ORG_866_Raeuber;
+	npc				= BAN_1609_Pun;
 	nr				= 2;
 	condition		= DIA_Smith_Lehrer_Condition;
 	information		= DIA_Smith_Lehrer_Info;
@@ -192,7 +192,7 @@ func void DIA_Smith_Lehrer_Bow_2()
 
 instance  STT_336_Smith_TRADE (C_INFO)
 {
-	npc				= ORG_866_Raeuber;
+	npc				= BAN_1609_Pun;
 	condition		= STT_336_Smith_TRADE_Condition;
 	information		= STT_336_Smith_TRADE_Info;
 	important		= 0;
@@ -230,7 +230,7 @@ FUNC void  STT_336_Smith_TRADE_Info()
 
 INSTANCE DIA_Raeuber_FindSwordAlibi (C_INFO)
 {
-   npc          = ORG_866_Raeuber;
+   npc          = BAN_1609_Pun;
    nr           = 1;
    condition    = DIA_Raeuber_FindSwordAlibi_Condition;
    information  = DIA_Raeuber_FindSwordAlibi_Info;
@@ -272,7 +272,7 @@ FUNC VOID DIA_Raeuber_FindSwordAlibi_Info()
 
 INSTANCE DIA_Raeuber_FIGHT_WITHOUT_ARROWS (C_INFO)
 {
-   npc          = ORG_866_Raeuber;
+   npc          = BAN_1609_Pun;
    nr           = 1;
    condition    = DIA_Raeuber_FIGHT_WITHOUT_ARROWS_Condition;
    information  = DIA_Raeuber_FIGHT_WITHOUT_ARROWS_Info;

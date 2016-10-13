@@ -1,4 +1,4 @@
-instance ORG_866_Raeuber (Npc_Default)
+instance BAN_1609_Pun (Npc_Default)
 {
 	//-------- primary data --------
 	
@@ -8,7 +8,7 @@ instance ORG_866_Raeuber (Npc_Default)
 	level =					22;
 	
 	voice =					6;
-	id =					866;
+	id =					1609;
 
 
 	//-------- abilities --------
@@ -64,33 +64,21 @@ instance ORG_866_Raeuber (Npc_Default)
 	CreateInvItem (self, ItRw_Bow_Long_07);
 	CreateInvItems (self, ItAmArrow, 1000);
 	//-------------Daily Routine-------------
-	daily_routine = Rtn_start_866;
+	daily_routine = Rtn_start_1609;
 	//self.aivar[43] = tarcza_strzelecka_01;
 };
 
-FUNC VOID Rtn_start_866 ()
+FUNC VOID Rtn_start_1609 ()
 {
     TA_PracticeBow		(08,00,14,00,"BN_TRENING2_WSZYSCY");	
     TA_RepairHut		(14,00,15,20,"BN_NUTA_866");
 	TA_PracticeBow		(15,20,20,10,"BN_TRENING2_WSZYSCY");
-	TA_Sleep		(20,10,08,00,"BED_SMITH");
+	TA_Sleep			(20,10,08,00,"BED_SMITH");
 };
 
-FUNC VOID Rtn_OMFull_866 ()
+FUNC VOID Rtn_OMFull_1609 ()
 {
 	TA_PracticeBow		(13,00,14,00,"LOCATION_11_14");	
     TA_PracticeBow		(14,00,13,00,"LOCATION_11_14");
 };
-
-
-
-
-
-
-
-
-
-
-
-
 

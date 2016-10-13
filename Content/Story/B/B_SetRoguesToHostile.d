@@ -1,11 +1,11 @@
 //edit by Nocturn
 func void B_SetRoguesToHostile ()
 {
-	var C_NPC Quentin;	Quentin = Hlp_GetNpc(Org_858_Quentin); Npc_SetTempAttitude(Quentin,ATT_HOSTILE); Npc_SetAttitude(Quentin,ATT_HOSTILE);
+	var C_NPC Quentin;	Quentin = Hlp_GetNpc(BAN_1610_Quentin); Npc_SetTempAttitude(Quentin,ATT_HOSTILE); Npc_SetAttitude(Quentin,ATT_HOSTILE);
 	var C_NPC Rog863;	Rog863	= Hlp_GetNpc(Org_863_Raeuber); Npc_SetTempAttitude(Rog863, ATT_HOSTILE); Npc_SetAttitude(Rog863, ATT_HOSTILE);
 	var C_NPC Rog864;	Rog864	= Hlp_GetNpc(Org_864_Raeuber); Npc_SetTempAttitude(Rog864, ATT_HOSTILE); Npc_SetAttitude(Rog864, ATT_HOSTILE);
 	var C_NPC Rog865;	Rog865	= Hlp_GetNpc(Org_865_Raeuber); Npc_SetTempAttitude(Rog865, ATT_HOSTILE); Npc_SetAttitude(Rog865, ATT_HOSTILE);
-	var C_NPC Rog866;	Rog866	= Hlp_GetNpc(Org_866_Raeuber); Npc_SetTempAttitude(Rog866, ATT_HOSTILE); Npc_SetAttitude(Rog866, ATT_HOSTILE);
+	var C_NPC Rog866;	Rog866	= Hlp_GetNpc(BAN_1609_Pun); Npc_SetTempAttitude(Rog866, ATT_HOSTILE); Npc_SetAttitude(Rog866, ATT_HOSTILE);
 	var C_NPC Rog867;	Rog867	= Hlp_GetNpc(Org_867_Raeuber); Npc_SetTempAttitude(Rog867, ATT_HOSTILE); Npc_SetAttitude(Rog867, ATT_HOSTILE);
 	var C_NPC Rog868;	Rog868	= Hlp_GetNpc(Org_868_Raeuber); Npc_SetTempAttitude(Rog868, ATT_HOSTILE); Npc_SetAttitude(Rog868, ATT_HOSTILE);
 	var C_NPC Rog869;	Rog869	= Hlp_GetNpc(Org_869_Raeuber); Npc_SetTempAttitude(Rog869, ATT_HOSTILE); Npc_SetAttitude(Rog869, ATT_HOSTILE);
@@ -25,11 +25,11 @@ func void B_SetRoguesToHostile ()
 };
 func void B_SetRoguesToFriend ()
 {
-	var C_NPC Quentin;	Quentin = Hlp_GetNpc(Org_858_Quentin); Npc_SetTempAttitude(Quentin,ATT_FRIENDLY); Npc_SetAttitude(Quentin,ATT_FRIENDLY);
+	var C_NPC Quentin;	Quentin = Hlp_GetNpc(BAN_1610_Quentin); Npc_SetTempAttitude(Quentin,ATT_FRIENDLY); Npc_SetAttitude(Quentin,ATT_FRIENDLY);
 	var C_NPC Rog863;	Rog863	= Hlp_GetNpc(Org_863_Raeuber); Npc_SetTempAttitude(Rog863, ATT_FRIENDLY); Npc_SetAttitude(Rog863, ATT_FRIENDLY);
 	var C_NPC Rog864;	Rog864	= Hlp_GetNpc(Org_864_Raeuber); Npc_SetTempAttitude(Rog864, ATT_FRIENDLY); Npc_SetAttitude(Rog864, ATT_FRIENDLY);
 	var C_NPC Rog865;	Rog865	= Hlp_GetNpc(Org_865_Raeuber); Npc_SetTempAttitude(Rog865, ATT_FRIENDLY); Npc_SetAttitude(Rog865, ATT_FRIENDLY);
-	var C_NPC Rog866;	Rog866	= Hlp_GetNpc(Org_866_Raeuber); Npc_SetTempAttitude(Rog866, ATT_FRIENDLY); Npc_SetAttitude(Rog866, ATT_FRIENDLY);
+	var C_NPC Rog866;	Rog866	= Hlp_GetNpc(BAN_1609_Pun); Npc_SetTempAttitude(Rog866, ATT_FRIENDLY); Npc_SetAttitude(Rog866, ATT_FRIENDLY);
 	var C_NPC Rog867;	Rog867	= Hlp_GetNpc(Org_867_Raeuber);   Npc_SetTempAttitude(Rog867, ATT_FRIENDLY); Npc_SetAttitude(Rog867, ATT_FRIENDLY);
 	var C_NPC Rog868;	Rog868	= Hlp_GetNpc(Org_868_Raeuber); Npc_SetTempAttitude(Rog868, ATT_FRIENDLY); Npc_SetAttitude(Rog868, ATT_FRIENDLY);
 	var C_NPC Rog869;	Rog869	= Hlp_GetNpc(Org_869_Raeuber); Npc_SetTempAttitude(Rog869, ATT_FRIENDLY); Npc_SetAttitude(Rog869, ATT_FRIENDLY);
@@ -40,11 +40,11 @@ func void B_SetRoguesToFriend ()
 
 func void B_SetRoguesToNeutral ()
 {
-	var C_NPC Quentin;	Quentin = Hlp_GetNpc(Org_858_Quentin); Npc_SetTempAttitude(Quentin,ATT_NEUTRAL); Npc_SetAttitude(Quentin,ATT_NEUTRAL);
+	var C_NPC Quentin;	Quentin = Hlp_GetNpc(BAN_1610_Quentin); Npc_SetTempAttitude(Quentin,ATT_NEUTRAL); Npc_SetAttitude(Quentin,ATT_NEUTRAL);
 	var C_NPC Rog863;	Rog863	= Hlp_GetNpc(Org_863_Raeuber); Npc_SetTempAttitude(Rog863, ATT_NEUTRAL); Npc_SetAttitude(Rog863, ATT_NEUTRAL);
 	var C_NPC Rog864;	Rog864	= Hlp_GetNpc(Org_864_Raeuber); Npc_SetTempAttitude(Rog864, ATT_NEUTRAL); Npc_SetAttitude(Rog864, ATT_NEUTRAL);
 	var C_NPC Rog865;	Rog865	= Hlp_GetNpc(Org_865_Raeuber); Npc_SetTempAttitude(Rog865, ATT_NEUTRAL); Npc_SetAttitude(Rog865, ATT_NEUTRAL);
-	var C_NPC Rog866;	Rog866	= Hlp_GetNpc(Org_866_Raeuber); Npc_SetTempAttitude(Rog866, ATT_NEUTRAL); Npc_SetAttitude(Rog866, ATT_NEUTRAL);
+	var C_NPC Rog866;	Rog866	= Hlp_GetNpc(BAN_1609_Pun); Npc_SetTempAttitude(Rog866, ATT_NEUTRAL); Npc_SetAttitude(Rog866, ATT_NEUTRAL);
 	var C_NPC Rog867;	Rog867	= Hlp_GetNpc(Org_867_Raeuber);   Npc_SetTempAttitude(Rog867, ATT_NEUTRAL); Npc_SetAttitude(Rog867, ATT_NEUTRAL);
 	var C_NPC Rog868;	Rog868	= Hlp_GetNpc(Org_868_Raeuber); Npc_SetTempAttitude(Rog868, ATT_NEUTRAL); Npc_SetAttitude(Rog868, ATT_NEUTRAL);
 	var C_NPC Rog869;	Rog869	= Hlp_GetNpc(Org_869_Raeuber); Npc_SetTempAttitude(Rog869, ATT_NEUTRAL); Npc_SetAttitude(Rog869, ATT_NEUTRAL);

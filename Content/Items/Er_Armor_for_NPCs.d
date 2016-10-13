@@ -228,7 +228,7 @@ INSTANCE QUENTIN_ARMOR_H(C_Item)
 	wear 					=	WEAR_TORSO;
   	ownerGuild 				= 	GIL_BAU;
 
-	owner					=   ORG_858_Quentin;
+	owner					=   BAN_1610_Quentin;
 	visual 					=	"pancerz_bandyta_h.3DS";
 	visual_change 			=	"Hum_EBRS_ARMOR.asc";
 	visual_skin 			=	3;

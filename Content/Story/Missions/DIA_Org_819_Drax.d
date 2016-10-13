@@ -1289,8 +1289,8 @@ FUNC VOID DIA_Drax_AtakNaSO_Info()
 		Wld_InsertNpc				(GRD_7788_Gardist,"OC1");
 		Wld_InsertNpc				(GRD_7789_Gardist,"OC1");
 		
-    B_ExchangeRoutine (ORG_858_Quentin , "atak");
-	ORG_858_Quentin.aivar[AIV_PARTYMEMBER] = TRUE;
+    B_ExchangeRoutine (BAN_1610_Quentin , "atak");
+	BAN_1610_Quentin.aivar[AIV_PARTYMEMBER] = TRUE;
 	
 	Npc_ExchangeRoutine (NON_2705_Rakus,"burdel");
 	B_ChangeGuild (NON_2705_Rakus,GIL_BAU);

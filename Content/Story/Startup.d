@@ -1388,12 +1388,11 @@ FUNC VOID STARTUP_SUB_SURFACE ()
 	//////////////////////////////////////////////////////////////////
 	
 	//------------Banditenlager-----------------------------------
-	Wld_InsertNpc				(NON_3033_Bandyta,"LOCATION_11_08");
-	Wld_InsertNpc				(ORG_858_Quentin,"LOCATION_11_08");
+	
+	
 	Wld_InsertNpc				(ORG_863_Raeuber,"LOCATION_11_08");
 	Wld_InsertNpc				(ORG_864_Raeuber,"LOCATION_11_08");
 	Wld_InsertNpc				(ORG_865_Raeuber,"LOCATION_11_08");
-	Wld_InsertNpc				(ORG_866_Raeuber,"LOCATION_11_08"); //Smith
 	Wld_InsertNpc				(ORG_867_Raeuber,"LOCATION_11_08");
 	Wld_InsertNpc				(ORG_868_Raeuber,"LOCATION_11_08");
 	Wld_InsertNpc				(ORG_869_Raeuber,"LOCATION_11_08");
@@ -1413,13 +1412,17 @@ FUNC VOID STARTUP_SUB_SURFACE ()
 	
 	//Wld_InsertNpc				(tarcza_strzelecka_01,"TARCZA1");
 	//Wld_InsertNpc				(tarcza_strzelecka_02,"TARCZA2");
-	//---------------nowi----------------------------------------
+	//---------------Nowi----------------------------------------
+	Wld_InsertNpc				(BAN_1601_Briam,"LOCATION_11_08");
 	Wld_InsertNpc				(BAN_1602_Emanuel,"LOCATION_11_08");
 	Wld_InsertNpc				(BAN_1603_Martin,"LOCATION_11_08");	 
-	Wld_InsertNpc				(BAN_1605_Rocky,"LOCATION_11_08");	  
-	Wld_InsertNpc				(BAN_1604_Jens,"LOCATION_11_08");		
+	Wld_InsertNpc				(BAN_1604_Jens,"LOCATION_11_08");	
+	Wld_InsertNpc				(BAN_1605_Rocky,"LOCATION_11_08");	
+	Wld_InsertNpc				(BAN_1608_Kereth,"LOCATION_11_08");
 	Wld_InsertNpc				(BAN_1607_Chris,"LOCATION_11_08");
-	Wld_InsertNpc				(BAN_1601_Briam,"LOCATION_11_08");
+	Wld_InsertNpc				(BAN_1609_Pun,"LOCATION_11_08"); 
+	Wld_InsertNpc				(BAN_1610_Quentin,"LOCATION_11_08");
+	
 	//-------------Einsiedler--------------------------------------
 	Wld_InsertNpc				(Non_1500_Gilbert,"LOCATION_01_07");	//SN: hat eh keinen Dialog
 	Wld_InsertNpc				(NON_7508_Angela,"BURDEL");	//1.24

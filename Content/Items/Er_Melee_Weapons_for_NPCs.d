@@ -67,7 +67,7 @@ INSTANCE Miecz1H3 (C_Item) //Quentin
 	damageTotal			= 	66;
 	damagetype			=	DAM_EDGE;
 	range    			=  	110;		
-	owner 				= 	ORG_858_Quentin;
+	owner 				= 	BAN_1610_Quentin;
 	cond_atr[2]   		= 	ATR_STRENGTH;
 	cond_value[2]  		= 	40;
 	visual 				=	"DB_ItMw_1h_Sword_Broad_Rep_01.3DS";

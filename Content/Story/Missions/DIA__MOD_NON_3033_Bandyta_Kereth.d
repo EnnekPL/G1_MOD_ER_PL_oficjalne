@@ -6,7 +6,7 @@
 
 INSTANCE DIA_Bandyta33_EXIT(C_INFO)
 {
-	npc             	= NON_3033_Bandyta;
+	npc             	= BAN_1608_Kereth;
 	nr              	= 999;
 	condition		= DIA_Bandyta33_EXIT_Condition;
 	information	= DIA_Bandyta33_EXIT_Info;
@@ -31,7 +31,7 @@ FUNC VOID DIA_Bandyta33_EXIT_Info()
 
 INSTANCE DIA_Bandyta_HELLO1 (C_INFO)
 {
-   npc          = NON_3033_Bandyta;
+   npc          = BAN_1608_Kereth;
    nr           = 1;
    condition    = DIA_Bandyta_HELLO1_Condition;
    information  = DIA_Bandyta_HELLO1_Info;
@@ -58,7 +58,7 @@ FUNC VOID DIA_Bandyta_HELLO1_Info()
 
 INSTANCE DIA_Bandyta_Quest (C_INFO)
 {
-   npc          = NON_3033_Bandyta;
+   npc          = BAN_1608_Kereth;
    nr           = 1;
    condition    = DIA_Bandyta_Quest_Condition;
    information  = DIA_Bandyta_Quest_Info;
@@ -100,7 +100,7 @@ FUNC VOID DIA_Bandyta_Quest_Info()
 
 INSTANCE DIA_Bandyta_FindSwordElement (C_INFO)
 {
-   npc          = NON_3033_Bandyta;
+   npc          = BAN_1608_Kereth;
    nr           = 1;
    condition    = DIA_Bandyta_FindSwordElement_Condition;
    information  = DIA_Bandyta_FindSwordElement_Info;
@@ -133,7 +133,7 @@ FUNC VOID DIA_Bandyta_FindSwordElement_Info()
 
 INSTANCE DIA_Bandyta_ItsJens (C_INFO)
 {
-   npc          = NON_3033_Bandyta;
+   npc          = BAN_1608_Kereth;
    nr           = 1;
    condition    = DIA_Bandyta_ItsJens_Condition;
    information  = DIA_Bandyta_ItsJens_Info;
@@ -167,7 +167,7 @@ FUNC VOID DIA_Bandyta_ItsJens_Info()
 
 INSTANCE DIA_Bandyta_TalkWithJens (C_INFO)
 {
-   npc          = NON_3033_Bandyta;
+   npc          = BAN_1608_Kereth;
    nr           = 1;
    condition    = DIA_Bandyta_TalkWithJens_Condition;
    information  = DIA_Bandyta_TalkWithJens_Info;
@@ -203,7 +203,7 @@ FUNC VOID DIA_Bandyta_TalkWithJens_Info()
 
 INSTANCE DIA_Bandyta_TalkWithQuentin (C_INFO)
 {
-   npc          = NON_3033_Bandyta;
+   npc          = BAN_1608_Kereth;
    nr           = 1;
    condition    = DIA_Bandyta_TalkWithQuentin_Condition;
    information  = DIA_Bandyta_TalkWithQuentin_Info;
@@ -261,7 +261,7 @@ FUNC VOID DIA_Bandyta_TalkWithQuentin_Calm ()
 
 INSTANCE DIA_Bandyta_AngryKereth (C_INFO)
 {
-   npc          = NON_3033_Bandyta;
+   npc          = BAN_1608_Kereth;
    nr           = 1;
    condition    = DIA_Bandyta_AngryKereth_Condition;
    information  = DIA_Bandyta_AngryKereth_Info;
@@ -298,7 +298,7 @@ FUNC VOID DIA_Bandyta_AngryKereth_Info()
 
 INSTANCE DIA_Bandyta_Szefu (C_INFO)
 {
-   npc          = NON_3033_Bandyta;
+   npc          = BAN_1608_Kereth;
    nr           = 1;
    condition    = DIA_Bandyta_Szefu_Condition;
    information  = DIA_Bandyta_Szefu_Info;
@@ -326,7 +326,7 @@ FUNC VOID DIA_Bandyta_Szefu_Info()
 
 INSTANCE DIA_Bandyta_Help (C_INFO)
 {
-   npc          = NON_3033_Bandyta;
+   npc          = BAN_1608_Kereth;
    nr           = 2;
    condition    = DIA_Bandyta_Help_Condition;
    information  = DIA_Bandyta_Help_Info;
@@ -365,7 +365,7 @@ FUNC VOID DIA_Bandyta_Help_Info()
 
 INSTANCE DIA_Bandyta_FindKolo (C_INFO)
 {
-   npc          = NON_3033_Bandyta;
+   npc          = BAN_1608_Kereth;
    nr           = 1;
    condition    = DIA_Bandyta_FindKolo_Condition;
    information  = DIA_Bandyta_FindKolo_Info;
@@ -406,7 +406,7 @@ FUNC VOID DIA_Bandyta_FindKolo_Info()
 
 INSTANCE DIA_Bandyta_HELLO2 (C_INFO)
 {
-   npc          = NON_3033_Bandyta;
+   npc          = BAN_1608_Kereth;
    nr           = 2;
    condition    = DIA_Bandyta_HELLO2_Condition;
    information  = DIA_Bandyta_HELLO2_Info;
