@@ -1178,14 +1178,14 @@ FUNC VOID DIA_Raeuber_ZNANY_NAJEMNIK_Info()
     AI_Output (self, other ,"DIA_Raeuber_ZNANY_NAJEMNIK_03_12"); //By³bym ci bardzo wdziêczny, gdybyœ sprawdzi³ co i jak, a w razie czego powiedzia³, ¿e wkrótce wrócê.
     //AI_Output (other, self ,"DIA_Raeuber_ZNANY_NAJEMNIK_15_13"); //Nie mogê w to uwierzyæ! Jesteœ pewien, ¿e nie ¿yj¹?
     //AI_Output (self, other ,"DIA_Raeuber_ZNANY_NAJEMNIK_03_14"); //Nie mam wprawdzie ¿adnych dowodów, ale co innego mog³o ich spotkaæ?
-    MIS_BandyciNiwiadomo = LOG_RUNNING;
+    MIS_BanditsInTroubles = LOG_RUNNING;
     Npc_ExchangeRoutine (ORG_819_Drax, "ded");
 	CreateInvItems (ORG_819_Drax, ItMi_Listdraxa,1);
 	B_KillNpc (ORG_819_Drax);
 	
-    Log_CreateTopic          (CH1_BandyciNiwiadomo, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_BandyciNiwiadomo, LOG_RUNNING);
-    B_LogEntry               (CH1_BandyciNiwiadomo,"Bandyta Doyle poprosi³ mnie, abym sprawdzi³, co dzieje siê w jego Obozie, poniewa¿ on zobowi¹za³ sie pomóc ludziom Torlofa.");
+    Log_CreateTopic          (CH4_BanditsInTroubles, LOG_MISSION);
+    Log_SetTopicStatus       (CH4_BanditsInTroubles, LOG_RUNNING);
+    B_LogEntry               (CH4_BanditsInTroubles,"Bandyta Doyle poprosi³ mnie, abym sprawdzi³, co dzieje siê w jego Obozie, poniewa¿ on zobowi¹za³ sie pomóc ludziom Torlofa.");
     AI_StopProcessInfos	(self);
 };
 
@@ -1222,16 +1222,16 @@ FUNC VOID DIA_Raeuber_BANDYCI_ZYJA_Info()
     AI_Output (self, other ,"DIA_Raeuber_BANDYCI_ZYJA_03_04"); //Mogê ju¿ wracaæ do Obozu. Dziêkujê za wszystko, przyjacielu. Jakbyœ potrzebowa³ kiedyœ pomocy, to daj znak.
 	Npc_ExchangeRoutine (self,"afterstart");
     B_givexp (750);  
-	B_LogEntry                     (CH1_BandyciNiwiadomo,"Wróci³em z poleceniem Quentina do Doyle'a. Natychmiast ruszy³ w drogê.");
-    Log_SetTopicStatus       (CH1_BandyciNiwiadomo, LOG_SUCCESS);
-    MIS_BandyciNiwiadomo = LOG_SUCCESS;
+	B_LogEntry                     (CH4_BanditsInTroubles,"Wróci³em z poleceniem Quentina do Doyle'a. Natychmiast ruszy³ w drogê.");
+    Log_SetTopicStatus       (CH4_BanditsInTroubles, LOG_SUCCESS);
+    MIS_BanditsInTroubles = LOG_SUCCESS;
     }
     else
     {
         AI_Output (self, other ,"DIA_Raeuber_BANDYCI_ZYJA_03_05"); //Móg³bym ju¿ wróciæ do Obozu, ale obieca³em Torlofowi, ¿e mu pomogê. 
         AI_Output (self, other ,"DIA_Raeuber_BANDYCI_ZYJA_03_06"); //Do³¹czysz do nas? Potrzebna nam pomoc.
         AI_Output (other, self ,"DIA_Raeuber_BANDYCI_ZYJA_15_07"); //Jasne.
-		B_LogEntry                     (CH1_BandyciNiwiadomo,"Wróci³em z poleceniem Quentina do Doyle'a. Zanim jednak wróci do Obozu bêdê musia³ pomóc jemu i Torlofowi pozbyæ siê Stra¿ników z doliny.");
+		B_LogEntry                     (CH4_BanditsInTroubles,"Wróci³em z poleceniem Quentina do Doyle'a. Zanim jednak wróci do Obozu bêdê musia³ pomóc jemu i Torlofowi pozbyæ siê Stra¿ników z doliny.");
     };
     AI_StopProcessInfos	(self);
 };
@@ -1253,7 +1253,7 @@ INSTANCE DIA_Raeuber_MOGE_WRACAC (C_INFO)
 FUNC INT DIA_Raeuber_MOGE_WRACAC_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Raeuber_BANDYCI_ZYJA))
-    && (MIS_BandyciNiwiadomo == LOG_RUNNING)
+    && (MIS_BanditsInTroubles == LOG_RUNNING)
     && (MIS_helpSld1 == LOG_SUCCESS)
     {
     return TRUE;
@@ -1267,9 +1267,9 @@ FUNC VOID DIA_Raeuber_MOGE_WRACAC_Info()
     AI_Output (self, other ,"DIA_Raeuber_MOGE_WRACAC_03_02"); //Dziêkujê za wszystko, przyjacielu. Jakbyœ potrzebowa³ kiedyœ pomocy, to daj znak.
 	Npc_ExchangeRoutine (self,"afterstart");
     B_givexp (750);  
-	B_LogEntry               (CH1_BandyciNiwiadomo,"Po rozwi¹zaniu sprawy ze Stra¿nikami Doyle wróci³ do Obozu.");
-    Log_SetTopicStatus       (CH1_BandyciNiwiadomo, LOG_SUCCESS);
-    MIS_BandyciNiwiadomo = LOG_SUCCESS; 
+	B_LogEntry               (CH4_BanditsInTroubles,"Po rozwi¹zaniu sprawy ze Stra¿nikami Doyle wróci³ do Obozu.");
+    Log_SetTopicStatus       (CH4_BanditsInTroubles, LOG_SUCCESS);
+    MIS_BanditsInTroubles = LOG_SUCCESS; 
 	AI_StopProcessInfos	(self);
 };
 

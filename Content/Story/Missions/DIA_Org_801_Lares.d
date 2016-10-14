@@ -364,7 +364,7 @@ FUNC VOID DIA_Lares_PoparcieCzterech_Info()
     AI_Output (self, other ,"DIA_Lares_PoparcieCzterech_03_02"); //S³ysza³em ju¿ o twoich dokonaniach, ch³opcze. Kawa³ z ciebie sukinsyna.
 	AI_Output (self, other ,"DIA_Lares_PoparcieCzterech_03_03"); //Podobno rozwali³eœ ³eb samemu Ry¿owemu Ksiêciu, do tego znalaz³eœ star¹ klingê Wilka. Jestem pod wra¿eniem.
 	Points_NC = Points_NC + 30;
-	B_LogEntry               (CH1_PoparcieNC,"Lares nie mia³ zamiaru dyskutowaæ z zasad¹ poparcia wymyœlon¹ ponoæ przez samego Lee. Jeszcze tylko kilka formalnoœci i zostanê cz³onkiem Nowego Obozu. ");
+	B_LogEntry               (CH1_OpinionInNewCamp,"Lares nie mia³ zamiaru dyskutowaæ z zasad¹ poparcia wymyœlon¹ ponoæ przez samego Lee. Jeszcze tylko kilka formalnoœci i zostanê cz³onkiem Nowego Obozu. ");
 	
 };
 
@@ -526,11 +526,11 @@ FUNC VOID  ORG_801_Lares_Reicht_Info()
 		B_LogEntry               (CH1_AwansJakoKret,"Uda³o mi siê do³¹czyæ do Obozu i awansowaæ na Szkodnika. Lares by³ zadowolony z moich osi¹gniêæ. O innych Obozach mogê ju¿ zapomnieæ.");
 		};
 		
-		if (MIS_PoparcieNC == LOG_RUNNING)
+		if (MIS_OpinionInNewCamp == LOG_RUNNING)
 		{
-		MIS_PoparcieNC = LOG_SUCCESS;
-		Log_SetTopicStatus       (CH1_PoparcieNC, LOG_SUCCESS);
-		B_LogEntry              		 (CH1_PoparcieNC,"Uda³o mi siê do³¹czyæ do Obozu i zostaæ Szkodnikiem. Jarvis okaza³ siê byæ dobrym przyjacielem. Jestem jego d³u¿nikiem.");
+		MIS_OpinionInNewCamp = LOG_SUCCESS;
+		Log_SetTopicStatus       (CH1_OpinionInNewCamp, LOG_SUCCESS);
+		B_LogEntry              		 (CH1_OpinionInNewCamp,"Uda³o mi siê do³¹czyæ do Obozu i zostaæ Szkodnikiem. Jarvis okaza³ siê byæ dobrym przyjacielem. Jestem jego d³u¿nikiem.");
 		};
 		
 		B_LogEntry				(CH1_JoinNC,	"Lares przyj¹³ mnie do swojej bandy. Od dziœ Nowy Obóz bêdzie moim nowym domem.");

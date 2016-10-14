@@ -41,6 +41,9 @@ const string CH1_Obrona_Placu   	  		= "Obrona placu wymian";
 var int MIS_NEW_GOD;
 const string CH2_New_God      				= "Nieznany bóg";
 
+var int MIS_ArtosSafeGuard;
+const string CH3_ArtosSafeGuard      		= "Eskorta Arto";
+
 var int MIS_SnafBag;
 const string CH4_SnafBag 					= "Sakiewka Snafa";
 
@@ -107,6 +110,24 @@ const string CH2_KalomsNewWeed      		= "Przepis na niesamowite ziele";
 //***Nowy Obóz***
 //***Zmienne zadañ*** 
 
+var int MIS_MapForRatford;
+const string CH1_MapForRatford      		= "Mapa dla Ratforda";
+
+var int MIS_OkylQuest;
+const string CH1_OkylQuest      			= "Zadanie Okyla";
+
+var int MIS_AwansJakoKret;
+const string CH1_AwansJakoKret      		= "Œcie¿ka Kreta";
+
+var int MIS_OpinionInNewCamp;
+const string CH1_OpinionInNewCamp     		= "Poparcie czterech Najemników";
+
+var int MIS_BuntZbieraczy;
+const string CH1_BuntZbieraczy      		= "Bunt zbieraczy";
+
+var int MIS_KilnagaWolfa;
+const string CH1_KilnagaWolfa      			= "Ozdobna klinga";
+
 var int MIS_LurkersInHut;
 const string CH1_LurkersInHut    			= "Rybacka chata";
 
@@ -118,6 +139,12 @@ const string CH2_StupidMagican      		= "Szkodnik-magik w Nowym Obozie";
 
 var int MIS_TreasureOldGuard;
 const string CH2_TreasureOldGuard 			= "Skarb starego Stra¿nika";
+
+var int MIS_ThreeLords;
+const string CH4_ThreeLords     			= "Trzej Lordowie";
+
+var int MIS_BanditsInTroubles;
+const string CH4_BanditsInTroubles   		= "Banda Quentina";
 
 //***Kolonia***
 //***Zmienne zadañ***

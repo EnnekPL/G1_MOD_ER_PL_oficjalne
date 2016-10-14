@@ -38,7 +38,7 @@ INSTANCE DIA_Merdarion_Quest (C_INFO)
 
 FUNC INT DIA_Merdarion_Quest_Condition()
 {
-    if (Kapitel >= 4)
+    if (Kapitel >= 4) && ( (Npc_GetTrueGuild(hero) == GIL_SLD) || (Npc_GetTrueGuild(hero) == GIL_KDW) ) 
     {
     return TRUE;
     };
@@ -68,7 +68,7 @@ FUNC VOID DIA_Merdarion_Quest_Info()
     AI_Output (self, other ,"DIA_Merdarion_Quest_03_19"); //WeŸ ze sob¹ te zwoje i mikstury. W ksiêdze znalaz³em te¿ przepis na klucz. Widocznie jeden z nieumar³ych jest zamkniêty. 
 	AI_Output (self, other ,"DIA_Merdarion_Quest_03_20"); //Skryba, który sporz¹dzi³ te notatki mia³ plan zabiæ o¿ywieñców. Niestety, chyba mu siê nie uda³o. 
 	AI_Output (self, other ,"DIA_Merdarion_Quest_03_21"); //Tutejsi Szkodnicy z ³atwoœci¹ odtworzyli ten klucz wed³ug przepisu. Zatrzymaj go.
-    MIS_Trzej_Lordowie = LOG_RUNNING;
+    MIS_ThreeLords = LOG_RUNNING;
 	Wld_InsertNpc				(NONE_DarkLord_Castle,"LORD3");	
 	B_SetPermAttitude			(NONE_DarkLord_Castle,	ATT_HOSTILE);
 	Wld_InsertNpc				(NONE_DarkLord_Monestry,"LORD1"); //ten ma dialog
@@ -76,9 +76,9 @@ FUNC VOID DIA_Merdarion_Quest_Info()
 	B_SetPermAttitude			(NONE_DarkLord_Tower,	ATT_HOSTILE);
 	CreateInvItems (self, It_KeyLord, 1);
     B_GiveInvItems (self, other, It_KeyLord, 1);
-    Log_CreateTopic            (CH1_Trzej_Lordowie, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_Trzej_Lordowie, LOG_RUNNING);
-    B_LogEntry                     (CH1_Trzej_Lordowie,"Merdarion kaza³ mi odnaleŸæ i zlikwidowaæ nieumar³ych rycerzy i nieumar³ego maga. Teodrika znajdê w starej latarni morskiej, Armanda w jaskini przy Górskiej Fortecy, a Mertinosa w starym Klasztorze Zmiennokszta³tnych.");
+    Log_CreateTopic            (CH4_ThreeLords, LOG_MISSION);
+    Log_SetTopicStatus       (CH4_ThreeLords, LOG_RUNNING);
+    B_LogEntry                     (CH4_ThreeLords,"Merdarion kaza³ mi odnaleŸæ i zlikwidowaæ nieumar³ych rycerzy i nieumar³ego maga. Teodrika znajdê w starej latarni morskiej, Armanda w jaskini przy Górskiej Fortecy, a Mertinosa w starym Klasztorze Zmiennokszta³tnych.");
     CreateInvItems (self, ItFo_Potion_Mana_01, 5);
     B_GiveInvItems (self, other, ItFo_Potion_Mana_01, 5);
     CreateInvItems (self, ItFo_Potion_Health_01, 10);
@@ -107,7 +107,7 @@ FUNC INT DIA_Merdarion_SzlachtaPadla_Condition()
     var C_NPC whodie0; 	whodie0 = Hlp_GetNpc(NONE_DarkLord_Castle);
     var C_NPC whodie1; 	whodie1 = Hlp_GetNpc(NONE_DarkLord_Monestry);
     var C_NPC whodie2; 	whodie2 = Hlp_GetNpc(NONE_DarkLord_Tower);
-    if (MIS_Trzej_Lordowie == LOG_RUNNING)
+    if (MIS_ThreeLords == LOG_RUNNING)
     && (Npc_IsDead(whodie0))
     && (Npc_IsDead(whodie1))
     && (Npc_IsDead(whodie2))
@@ -131,9 +131,9 @@ FUNC VOID DIA_Merdarion_SzlachtaPadla_Info()
     B_GiveInvItems (self, other, ItFo_Potion_Health_03, 5);
     CreateInvItems (self, ItFo_Potion_Strength_01, 1);
     B_GiveInvItems (self, other, ItFo_Potion_Strength_01, 1);
-    B_LogEntry                     (CH1_Trzej_Lordowie,"Uda³o mi siê zg³adziæ nieumar³ych Magnatów, uwalniaj¹c ich przy tym od kl¹twy.");
-    Log_SetTopicStatus       (CH1_Trzej_Lordowie, LOG_SUCCESS);
-    MIS_Trzej_Lordowie = LOG_SUCCESS;
+    B_LogEntry                     (CH4_ThreeLords,"Uda³o mi siê zg³adziæ nieumar³ych Magnatów, uwalniaj¹c ich przy tym od kl¹twy.");
+    Log_SetTopicStatus       (CH4_ThreeLords, LOG_SUCCESS);
+    MIS_ThreeLords = LOG_SUCCESS;
 
     B_GiveXP (750);
 };

@@ -795,7 +795,7 @@ INSTANCE DIA_Wolf_ZaparcieNajemnikow (C_INFO)
 
 FUNC INT DIA_Wolf_ZaparcieNajemnikow_Condition()
 {
-	if (MIS_PoparcieNC == LOG_RUNNING)
+	if (MIS_OpinionInNewCamp == LOG_RUNNING)
     && (Npc_GetTrueGuild(hero) == GIL_SFB) 
     {
     return TRUE;

@@ -880,10 +880,10 @@ var int MIS_RockyArmor;
 //********************************************
 // NOWY OBÓZ
 //********************************************
-var int MIS_PoparcieNC;
-var int MIS_BuntZbieraczy;
-var int MIS_KilnagaWolfa;
-var int MIS_OkylQuest;
+
+
+
+
 var int MIS_NC_Mine;
 var int MIS_KillFingers;
 var int MIS_FindPosazekKlina;
@@ -946,18 +946,18 @@ var int MIS_PoszukiwanaAlchemika;
 
 var int MIS_Spike_Pomiot;
 
-var int MIS_EskortaArt;
-var int MIS_GuazyDrena;
-var int MIS_megaSpam;
 
-var int MIS_AwansJakoKret;
+//var int MIS_GuazyDrena;
+//var int MIS_megaSpam;
+
+
 var int MIS_FoodForFlint;
 var int MIS_PropozycjaFlinta;
 var int MIS_FlintaPrzyjecie;
 var int MIS_SayOkylFlintDead;
-var int MIS_MapForRatford;
 
-var int MIS_Trzej_Lordowie;
+
+
 var int MIS_Food_Patter;
 var int MIS_GomezSuperQuest;
 var int MIS_SzpiegoMoroka;
@@ -1009,7 +1009,7 @@ var int MIS_PamietnikiOK;
 var int MIS_SzyfrWKopalni;
 var int MIS_InfoDlaLaresa;
 var int MIS_PomocTorlofowi;
-var int MIS_BandyciNiwiadomo;
+
 var int MIS_PomocQuentinowi;
 var int MIS_PolowanieZBaalem;
 var int MIS_BaalQuest2;

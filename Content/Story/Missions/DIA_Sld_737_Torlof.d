@@ -131,7 +131,7 @@ INSTANCE DIA_Torlof_PoparcieNajemnikow (C_INFO)
 
 FUNC INT DIA_Torlof_PoparcieNajemnikow_Condition()
 {
-	if (MIS_PoparcieNC == LOG_RUNNING)
+	if (MIS_OpinionInNewCamp == LOG_RUNNING)
     && (Npc_GetTrueGuild(hero) == GIL_SFB)    
 	{
     return TRUE;
@@ -165,7 +165,7 @@ INSTANCE DIA_Torlof_YourHardQuest (C_INFO)
 
 FUNC INT DIA_Torlof_YourHardQuest_Condition()
 {
-if (MIS_PoparcieNC == LOG_RUNNING)
+if (MIS_OpinionInNewCamp == LOG_RUNNING)
 && (Npc_GetTrueGuild(hero) == GIL_SFB)   
 && (Npc_KnowsInfo (hero, DIA_Torlof_PoparcieNajemnikow))
     {
@@ -185,7 +185,7 @@ FUNC VOID DIA_Torlof_YourHardQuest_Info()
     AI_Output (self, other ,"DIA_Torlof_YourHardQuest_03_07"); //Szczególnie nie podoba mi siê to, jak wykorzystuj¹ zbieraczy.
     AI_Output (self, other ,"DIA_Torlof_YourHardQuest_03_08"); //Zrób coœ, aby zbieraczom ¿y³o siê lepiej. Gdy us³yszê coœ dobrego o tobie, to ciê poprê.
     AI_Output (self, other ,"DIA_Torlof_YourHardQuest_03_09"); //Mam ju¿ doœæ tych pata³achów. Powodzenia.
-    //B_LogEntry                     (CH1_PoparcieNC,"Podj¹³em siê zadania Torlofa. Mam zrobiæ coœ, by zbieraczom ¿y³o siê lepiej. Mo¿e pogadaæ z którymœ z nich?");
+    //B_LogEntry                     (CH1_OpinionInNewCamp,"Podj¹³em siê zadania Torlofa. Mam zrobiæ coœ, by zbieraczom ¿y³o siê lepiej. Mo¿e pogadaæ z którymœ z nich?");
 	B_LogEntry      (CH1_AwansJakoKret,"Podj¹³em siê zadania Torlofa. Mam zrobiæ coœ, by zbieraczom ¿y³o siê lepiej. Mo¿e pogadaæ z którymœ z nich?");
 };
 
@@ -310,7 +310,7 @@ FUNC VOID DIA_Torlof_WiemOBuncie_Info()
     AI_Output (self, other ,"DIA_Torlof_WiemOBuncie_03_02"); //Dobra robota. Masz moje poparcie.
     //AI_Output (other, self ,"DIA_Torlof_WiemOBuncie_15_03"); //Dziêki. 
 	
-    //B_LogEntry                     (CH1_PoparcieNC,"Torlof by³ bardzo zadowolony z mojej pomocy buntownikom. Uda³o mi siê uzyskaæ jego poparcie.");
+    //B_LogEntry                     (CH1_OpinionInNewCamp,"Torlof by³ bardzo zadowolony z mojej pomocy buntownikom. Uda³o mi siê uzyskaæ jego poparcie.");
 	B_LogEntry     (CH1_AwansJakoKret,"Torlof by³ bardzo zadowolony z mojej pomocy buntownikom. Uda³o mi siê uzyskaæ jego poparcie.");
 
     B_GiveXP (350);

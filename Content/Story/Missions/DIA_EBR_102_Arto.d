@@ -121,7 +121,7 @@ INSTANCE DIA_Arto_Eskorta1 (C_INFO)
 
 FUNC INT DIA_Arto_Eskorta1_Condition()
 {
-    if (Npc_GetTrueGuild (hero ) == GIL_GRD) && (Kapitel <= 3)
+    if (Npc_GetTrueGuild (hero ) == GIL_GRD) && (Kapitel == 3)
     {
     return TRUE;
     };
@@ -137,11 +137,11 @@ FUNC VOID DIA_Arto_Eskorta1_Info()
     AI_Output (self, other ,"DIA_Arto_Eskorta1_03_05"); //Mam sprawdziæ sytuacjê w obozie.
 	AI_Output (self, other ,"DIA_Arto_Eskorta1_03_06"); //Powiedz, gdy bêdziesz gotów.
 	
-    MIS_EskortaArt = LOG_RUNNING;
+    MIS_ArtosSafeGuard = LOG_RUNNING;
 
-    Log_CreateTopic            (CH1_EskortaArt, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_EskortaArt, LOG_RUNNING);
-    B_LogEntry                     (CH1_EskortaArt,"Muszê eskortowaæ Arto do obozu przed Star¹ Kopalni¹. No có¿... Magnat ka¿e, Stra¿nik robi.");
+    Log_CreateTopic            (CH3_ArtosSafeGuard, LOG_MISSION);
+    Log_SetTopicStatus       (CH3_ArtosSafeGuard, LOG_RUNNING);
+    B_LogEntry                     (CH3_ArtosSafeGuard,"Muszê eskortowaæ Arto do obozu przed Star¹ Kopalni¹. No có¿... Magnat ka¿e, Stra¿nik robi.");
 };
 
 //========================================
@@ -215,9 +215,9 @@ FUNC VOID DIA_Arto_Doszlem_Info()
 {
     AI_Output (self, other ,"DIA_Arto_Doszlem_03_01"); //Jesteœmy!
     AI_Output (self, other ,"DIA_Arto_Doszlem_03_02"); //Dobra robota, Stra¿niku!
-    B_LogEntry                     (CH1_EskortaArt,"Odprowadzi³em Arto do obozu. Uda³ siê w kierunku swojego namiotu.");
-    Log_SetTopicStatus       (CH1_EskortaArt, LOG_SUCCESS);
-    MIS_EskortaArt = LOG_SUCCESS;
+    B_LogEntry                     (CH3_ArtosSafeGuard,"Odprowadzi³em Arto do obozu. Uda³ siê w kierunku swojego namiotu.");
+    Log_SetTopicStatus       (CH3_ArtosSafeGuard, LOG_SUCCESS);
+    MIS_ArtosSafeGuard = LOG_SUCCESS;
 	Npc_ExchangeRoutine (self,"kox");
     B_GiveXP (150); //1.25 zrównowa¿one
     AI_Output (self, other ,"DIA_Arto_Doszlem_03_03"); //Je¿eli bêdziesz czegoœ potrzebowaæ, to jestem w swoim namiocie.

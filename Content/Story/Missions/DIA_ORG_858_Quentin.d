@@ -2703,7 +2703,7 @@ FUNC VOID DIA_Quentin_CO_TY_TU_NAJMENIKU_Info()
     AI_Output (self, other ,"DIA_Quentin_CO_TY_TU_NAJMENIKU_03_15"); //Gdybyœ potrzebowa³ ekwipunku, pogadaj z Martinem. 
     AI_Output (other, self ,"DIA_Quentin_CO_TY_TU_NAJMENIKU_15_16"); //Bywaj, Quentinie.
     przyjaciel_Bandytow = true;
-    B_LogEntry                     (CH1_BandyciNiwiadomo,"Uda³em siê do Obozu Bandytów, gdzie spotka³em ich przywódcê - Quentina. Poprosi³ mnie, abym przekaza³ Doyle'owi, ¿e ma siê natychmiast pojawiæ w Obozie.");
+    B_LogEntry                     (CH4_BanditsInTroubles,"Uda³em siê do Obozu Bandytów, gdzie spotka³em ich przywódcê - Quentina. Poprosi³ mnie, abym przekaza³ Doyle'owi, ¿e ma siê natychmiast pojawiæ w Obozie.");
 
     B_GiveXP (500);
     AI_StopProcessInfos	(self);

@@ -40,7 +40,7 @@ INSTANCE DIA_Monestry_HELLO1 (C_INFO)
 
 FUNC INT DIA_Monestry_HELLO1_Condition()
 {
-   // if (MIS_Trzej_lordowie == LOG_RUNNING)
+   // if (MIS_ThreeLords == LOG_RUNNING)
   //  {
     return TRUE;
   //  };

@@ -352,11 +352,11 @@ FUNC VOID DIA_Jarvis_Poparcie_Info()
     AI_Output (other, self ,"DIA_Jarvis_Poparcie_15_01"); //Dobra. Mogê liczyæ na twoje poparcie?
     AI_Output (self, other ,"DIA_Jarvis_Poparcie_03_02"); //Nie tak prêdko. Nie wszystko jest za darmo. Moje poparcie kosztuje 200 bry³ek rudy.
     AI_Output (self, other ,"DIA_Jarvis_Poparcie_03_03"); //Akurat mam problemy finansowe. Tym drobnym datkiem pomo¿esz mi je rozwi¹zaæ.
-    MIS_PoparcieNC = LOG_RUNNING;
+    MIS_OpinionInNewCamp = LOG_RUNNING;
 
-    //Log_CreateTopic            (CH1_PoparcieNC, LOG_MISSION);
-    //Log_SetTopicStatus       (CH1_PoparcieNC, LOG_RUNNING);
-    //B_LogEntry                     (CH1_PoparcieNC,"Jarvis powiedzia³, ¿e pomo¿e mi do³¹czyæ do Obozu, jeœli przyniosê mu 200 bry³ek rudy. Poza tym muszê sobie zjednaæ jeszcze trzech innych.");
+    //Log_CreateTopic            (CH1_OpinionInNewCamp, LOG_MISSION);
+    //Log_SetTopicStatus       (CH1_OpinionInNewCamp, LOG_RUNNING);
+    //B_LogEntry                     (CH1_OpinionInNewCamp,"Jarvis powiedzia³, ¿e pomo¿e mi do³¹czyæ do Obozu, jeœli przyniosê mu 200 bry³ek rudy. Poza tym muszê sobie zjednaæ jeszcze trzech innych.");
 	B_LogEntry     (CH1_AwansJakoKret,"¯eby uzyskaæ poparcie Jarvisa muszê mu po prostu zap³aciæ 200 bry³ek rudy.");
 };
 
@@ -377,7 +377,7 @@ INSTANCE DIA_Jarvis_Ore200Give (C_INFO)
 FUNC INT DIA_Jarvis_Ore200Give_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Jarvis_Poparcie))
-    && (MIS_PoparcieNC == LOG_RUNNING)
+    && (MIS_OpinionInNewCamp == LOG_RUNNING)
     && (Npc_GetTrueGuild(hero) == GIL_SFB)
 	&& (Npc_HasItems(other,itminugget) >= 200)
     {
@@ -391,7 +391,7 @@ FUNC VOID DIA_Jarvis_Ore200Give_Info()
     AI_Output (other, self ,"DIA_Jarvis_Ore200Give_15_01"); //Mam 200 bry³ek rudy.
     AI_Output (self, other ,"DIA_Jarvis_Ore200Give_03_02"); //To œwietnie. Masz ju¿ moje poparcie.
     B_GiveInvItems (other, self, itminugget, 200);
-    //B_LogEntry                     (CH1_PoparcieNC,"Zjedna³em sobie Jarvisa.");
+    //B_LogEntry                     (CH1_OpinionInNewCamp,"Zjedna³em sobie Jarvisa.");
 	B_LogEntry     (CH1_AwansJakoKret,"Wp³aci³em Jarvisowi umówiona iloœæ rudy zdobywaj¹c tym samym jego szacunek.");
 };
 
@@ -412,7 +412,7 @@ INSTANCE DIA_Jarvis_KtoInny (C_INFO)
 FUNC INT DIA_Jarvis_KtoInny_Condition()
 {
     if (Npc_GetTrueGuild(hero) == GIL_SFB)
-    && (MIS_PoparcieNC == LOG_RUNNING)
+    && (MIS_OpinionInNewCamp == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -424,7 +424,7 @@ FUNC VOID DIA_Jarvis_KtoInny_Info()
     AI_Output (other, self ,"DIA_Jarvis_KtoInny_15_01"); //Kto jeszcze mo¿e mnie poprzeæ?
     AI_Output (self, other ,"DIA_Jarvis_KtoInny_03_02"); //Powinieneœ jeszcze pogadaæ z Gornem. Ma tu du¿o do powiedzenia.
     AI_Output (self, other ,"DIA_Jarvis_KtoInny_03_03"); //Poza tym jest jeszcze Wilk i Torlof. Reszta raczej ci nie pomo¿e.
-    //B_LogEntry                     (CH1_PoparcieNC,"Pomoc mogê zyskaæ u Gorna, Torlofa i Wilka.");
+    //B_LogEntry                     (CH1_OpinionInNewCamp,"Pomoc mogê zyskaæ u Gorna, Torlofa i Wilka.");
 	B_LogEntry     (CH1_AwansJakoKret,"Pozostali Najemnicy z którymi powinienem pogadaæ to: Gorn, Torlof i Wilk.");
 };
 
@@ -537,7 +537,7 @@ FUNC INT DIA_Jarvis_LikeIt_Condition()
     && (Npc_KnowsInfo (hero, DIA_Jarvis_TorlofPoprze))
     && (Npc_KnowsInfo (hero, DIA_Jarvis_WilkPoparl))
 	&& (Npc_KnowsInfo (hero, DIA_Jarvis_Ore200Give))
-    && (MIS_PoparcieNC == LOG_RUNNING)
+    && (MIS_OpinionInNewCamp == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -557,7 +557,7 @@ FUNC VOID DIA_Jarvis_LikeIt_Info()
 	self.aivar[AIV_PARTYMEMBER] = FALSE;
 	Npc_ExchangeRoutine(Org_826_Mordrag,"START");
 	
-    //B_LogEntry                     (CH1_PoparcieNC,"Mogê ju¿ porozmawiaæ z Laresem. To przywódca Szkodników. Mam nadziejê, ¿e wszystko siê uda.");
+    //B_LogEntry                     (CH1_OpinionInNewCamp,"Mogê ju¿ porozmawiaæ z Laresem. To przywódca Szkodników. Mam nadziejê, ¿e wszystko siê uda.");
 	B_LogEntry     (CH1_AwansJakoKret,"Zdoby³em poparcie Najemników. Mogê œmia³o wróciæ do Laresa.");
     B_GiveXP (300);
 };

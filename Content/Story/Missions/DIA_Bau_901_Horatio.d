@@ -440,7 +440,7 @@ INSTANCE DIA_Horatio_TorlofQuest (C_INFO)
 FUNC INT DIA_Horatio_TorlofQuest_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Torlof_YourHardQuest))
-    && (MIS_PoparcieNC == LOG_RUNNING)
+    && (MIS_OpinionInNewCamp == LOG_RUNNING)
 	&& ((MIS_BuntZbieraczy != LOG_RUNNING) && (MIS_BuntZbieraczy != LOG_SUCCESS))
     {
     return TRUE;

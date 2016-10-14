@@ -59,10 +59,10 @@ if (MIS_TestOc != LOG_SUCCESS)
 MIS_TestOc = LOG_FAILED;
 Log_SetTopicStatus       (CH1_TestOc, LOG_FAILED);
 };
-if (MIS_PoparcieNC != LOG_SUCCESS)
+if (MIS_OpinionInNewCamp != LOG_SUCCESS)
 {
-MIS_PoparcieNC = LOG_FAILED;
-Log_SetTopicStatus       (CH1_PoparcieNC, LOG_FAILED);
+MIS_OpinionInNewCamp = LOG_FAILED;
+Log_SetTopicStatus       (CH1_OpinionInNewCamp, LOG_FAILED);
 };
 if (MIS_OkylQuest != LOG_SUCCESS)
 {
@@ -130,10 +130,10 @@ if (MIS_OreInOM != LOG_SUCCESS)
 MIS_OreInOM = LOG_FAILED;
 Log_SetTopicStatus       (CH1_OreInOM, LOG_FAILED);
 };
-if (MIS_PoparcieNC != LOG_SUCCESS)
+if (MIS_OpinionInNewCamp != LOG_SUCCESS)
 {
-MIS_PoparcieNC = LOG_FAILED;
-Log_SetTopicStatus       (CH1_PoparcieNC, LOG_FAILED);
+MIS_OpinionInNewCamp = LOG_FAILED;
+Log_SetTopicStatus       (CH1_OpinionInNewCamp, LOG_FAILED);
 };
 if (MIS_OkylQuest != LOG_SUCCESS)
 {
@@ -187,12 +187,12 @@ Log_SetTopicStatus      	 (CH1_JoinNC, LOG_SUCCESS);
 B_LogEntry					 (CH1_JoinNC,"Do³¹czaj¹c do Kretów sta³em siê jednoczeœnie cz³onkiem Nowego Obozu.");
 
 /* Info: To zadanie wystêpuje w póŸniejszym etapie gry. 
-if (MIS_PoparcieNC != LOG_SUCCESS) 
+if (MIS_OpinionInNewCamp != LOG_SUCCESS) 
 {
-MIS_PoparcieNC = LOG_FAILED;
-Log_CreateTopic            (CH1_PoparcieNC, LOG_MISSION);
-Log_SetTopicStatus       (CH1_PoparcieNC, LOG_FAILED);
-B_LogEntry			(CH1_PoparcieNC,"Do³¹czaj¹c do Kretów sta³em siê jednoczeœnie cz³onkiem Nowego Obozu. Nie muszê ju¿ przechodziæ testów Najemników.");
+MIS_OpinionInNewCamp = LOG_FAILED;
+Log_CreateTopic            (CH1_OpinionInNewCamp, LOG_MISSION);
+Log_SetTopicStatus       (CH1_OpinionInNewCamp, LOG_FAILED);
+B_LogEntry			(CH1_OpinionInNewCamp,"Do³¹czaj¹c do Kretów sta³em siê jednoczeœnie cz³onkiem Nowego Obozu. Nie muszê ju¿ przechodziæ testów Najemników.");
 };
 };
 
@@ -335,10 +335,10 @@ if (MIS_TestOc != LOG_SUCCESS)
 MIS_TestOc = LOG_FAILED;
 Log_SetTopicStatus       (CH1_TestOc, LOG_FAILED);
 };
-if (MIS_PoparcieNC != LOG_SUCCESS)
+if (MIS_OpinionInNewCamp != LOG_SUCCESS)
 {
-MIS_PoparcieNC = LOG_FAILED;
-Log_SetTopicStatus       (CH1_PoparcieNC, LOG_FAILED);
+MIS_OpinionInNewCamp = LOG_FAILED;
+Log_SetTopicStatus       (CH1_OpinionInNewCamp, LOG_FAILED);
 };
 if (MIS_OkylQuest != LOG_SUCCESS)
 {

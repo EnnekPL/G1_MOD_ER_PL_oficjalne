@@ -1214,3 +1214,45 @@ FUNC VOID DIA_Cronos_LIST_Info()
     B_GiveXP (50);
     AI_StopProcessInfos	(self);
 };
+
+/*
+// **************************************************
+// 				Spam
+// **************************************************
+
+INSTANCE DIA_Guy_Wrzod (C_INFO)
+{
+	npc				= Vlk_530_Guy;
+	nr				= 2;
+	condition		= DIA_Guy_Wrzod_Condition;
+	information		= DIA_Guy_Wrzod_Info;
+	permanent		= 0;
+	important 		= 1;
+};
+
+FUNC INT DIA_Guy_Wrzod_Condition()
+{	
+	if  (Npc_GetTrueGuild(other) == GIL_GRD)
+	{
+		return 1;
+	};
+};
+
+FUNC VOID DIA_Guy_Wrzod_Info()
+{
+	AI_Output (self, other,"DIA_Guy_Wrzod_15_00"); //Słuchaj. Jest problem i to problem poważny, do cholery!
+	AI_Output (other, self,"DIA_Guy_Wrzod_03_01"); //O co chodzi?
+	AI_Output (self, other,"DIA_Guy_Wrzod_15_02"); //Kojarzysz tego typka, który mieszka w chacie nieopodal Snafa?
+	AI_Output (other, self,"DIA_Guy_Wrzod_03_03"); //Możliwe. Co z nim nie tak poza tym, że jest uciążliwy?
+	AI_Output (self, other,"DIA_Guy_Wrzod_15_04"); //Ten typ co noc grasuje po naszych chatach i... ekhm...
+	AI_Output (other, self,"DIA_Guy_Wrzod_03_05"); //Co? O co ci chodzi?
+	AI_Output (self, other,"DIA_Guy_Wrzod_03_06"); //Po prostu pozbądź się go, bo mam już tego dosyć!
+	AI_Output (other, self,"DIA_Guy_Wrzod_03_07"); //Niczego mu nie udowodnię.
+	AI_Output (self, other,"DIA_Guy_Wrzod_03_08"); //To przyłap go na gorącym uczynku! Robi to codziennie!
+	MIS_megaSpam = LOG_RUNNING;
+	Log_CreateTopic          (CH1_megaSpam, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_megaSpam, LOG_RUNNING);
+    B_LogEntry               (CH1_megaSpam,"Z czymś takim się jeszcze nie spotkałem. Kopacze skarżą się, że Wrzód co noc ich nachodzi. W szczegóły nie wnikałem, jednak wiem jedno: zły Kopacz to niewydajny Kopacz. Jako Strażnik muszę się tym zająć. Najpierw powinienem zgromadzić solidne dowody.");
+};
+
+*/

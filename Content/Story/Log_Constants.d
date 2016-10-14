@@ -277,7 +277,7 @@ const string CH1_KosztemQuentina     	= "Wykorzystaæ Quentina";
 const string CH1_Search_Poslaniec      	= "Zaginiona lista";
 const string CH1_EskortaKopaczy      	= "Eskorta Kopaczy";
 const string CH1_Spike_Pomiot      		= "Problem Spike'a";
-const string CH1_EskortaArt      		= "Eskorta Arto";
+
 const string CH1_FoodForFlint      		= "Prowiant Flinta";
 const string CH1_PropozycjaFlinta      	= "Propozycja Flinta";
 const string CH1_FlintaPrzyjecie      	= "Sposób na Thorusa";
@@ -301,19 +301,19 @@ const string CH1_JimsSword      		= "Sentymentalny miecz";
 //---------------------------------------------------------------------
 //   Nowy Obóz 
 //---------------------------------------------------------------------
-const string CH1_PoparcieNC     		= "Poparcie czterech Najemników";
-const string CH1_BuntZbieraczy      	= "Bunt zbieraczy";
-const string CH1_KilnagaWolfa      		= "Ozdobna klinga";
-const string CH1_OkylQuest      		= "Zadanie Okyla";
+
+
+
+
 const string CH1_NC_Mine      			= "Lee i kopalnia";
 const string CH1_KillFingers      		= "Stra¿nik w karczmie";
 const string CH1_FindPosazekKlina   	= "Poszukiwania pos¹¿ka";
 const string CH1_ZnowuZapierdalam   	= "Kto ukrad³ pos¹¿ek Klina?";
 const string CH1_NekInNC      			= "Droga do Nowego Obozu";
-const string CH1_AwansJakoKret      	= "Œcie¿ka Kreta";
-const string CH1_MapForRatford      	= "Mapa dla Ratforda";
 
-const string CH1_Trzej_Lordowie     	= "Trzej Lordowie";
+
+
+
 const string CH1_ZabijThompsona     	= "Zlecenie Will'a"; 
 const string CH1_KopalniaZlota      	= "Kopalnia z³ota";
 const string CH1_DrogaDoKopalni     	= "Do kopalni z³ota";
@@ -321,7 +321,7 @@ const string CH1_KryjowkaNaKase     	= "Skrytka";
 const string CH1_PamietnikZNieba   		= "Lataj¹cy pamiêtnik";
 const string CH1_InfoDlaLaresa      	= "Ostrzec Bandytów";
 const string CH1_PomocTorlofowi     	= "Na pomoc Torlofowi";
-const string CH1_BandyciNiwiadomo   	= "Banda Quentina";
+
 const string CH1_PomocQuentinowi    	= "Wsparcie dla Quentina";
 
 const string CH1_MagicySzkodnicy    	= "Nieudolni magicy";
@@ -369,8 +369,8 @@ const string CH1_MapaRicka      = "Mapa dla Harka";
 const string CH1_EqAngusa      = "Ekwipunek Steve'a";
 const string CH1_SearhSkarb      = "Poszukiwanie skarbu";
 
-const string CH1_GuazyDrena      = "Kryszta³y dla Drena";
-const string CH1_megaSpam      = "Wrzód chêdo¿y pó³ obozu";
+//const string CH1_GuazyDrena      = "Kryszta³y dla Drena";
+//const string CH1_megaSpam      = "Wrzód chêdo¿y pó³ obozu";
 const string CH1_RekruciLowcow      = "Rekruci do obozu ³owców";
 const string CH1_DostawaLowcow      = "Dostawa ¿ywnoœci";
 const string CH1_Gdzie_hugo      = "£owca Hugo";
