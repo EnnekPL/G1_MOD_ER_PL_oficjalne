@@ -96,8 +96,10 @@ INSTANCE DIA_Shawn_SZEF (C_INFO)
 
 FUNC INT DIA_Shawn_SZEF_Condition()
 {
-	if ((Npc_GetTrueGuild (hero) == GIL_GUR)) {
-    return TRUE; };
+	if (Npc_GetTrueGuild (hero) == GIL_GUR)
+	{
+    return TRUE; 
+	};
 };
 
 FUNC VOID DIA_Shawn_SZEF_Info()
@@ -138,11 +140,11 @@ FUNC VOID DIA_Shawn_QUEST1_Info()
     AI_Output (other, self ,"DIA_Shawn_QUEST1_15_07"); //Gdzie mam zacz¹æ poszukiwania?
     AI_Output (self, other ,"DIA_Shawn_QUEST1_03_08"); //Popytaj ludzi bêd¹cych na placu. Mówi siê, ¿e z³odziej bardzo szybko wybieg³ i wpad³ po drodze na naszych braci.
     AI_Output (self, other ,"DIA_Shawn_QUEST1_03_09"); //Mo¿e ktoœ coœ wie...
-    MIS_UciekinierPC = LOG_RUNNING;
+    MIS_StolenStaff = LOG_RUNNING;
 
-    Log_CreateTopic          (CH1_UciekinierPC, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_UciekinierPC, LOG_RUNNING);
-    B_LogEntry               (CH1_UciekinierPC,"Shawn kaza³ mi znaleŸæ z³odzieja, który w³ama³ siê do œwi¹tyni podczas rytua³u przywo³ania i ukrad³ kostur Y'Beriona. Rabuœ wypad³ ze œwi¹tyni jak oszala³y. Z pewnoœci¹ potr¹ci³ kogoœ na placu. Tam powinienem szukaæ wskazówek.");
+    Log_CreateTopic          (CH3_StolenStaff, LOG_MISSION);
+    Log_SetTopicStatus       (CH3_StolenStaff, LOG_RUNNING);
+    B_LogEntry               (CH3_StolenStaff,"Shawn kaza³ mi znaleŸæ z³odzieja, który w³ama³ siê do œwi¹tyni podczas rytua³u przywo³ania i ukrad³ kostur Y'Beriona. Rabuœ wypad³ ze œwi¹tyni jak oszala³y. Z pewnoœci¹ potr¹ci³ kogoœ na placu. Tam powinienem szukaæ wskazówek.");
 };
 //========================================
 //-----------------> QUEST1_WIN
@@ -160,7 +162,7 @@ INSTANCE DIA_QUEST1_QUEST1_WIN (C_INFO)
 
 FUNC INT DIA_QUEST1_QUEST1_WIN_Condition()
 {
-    if (Npc_HasItems (other, Stab_des_Lichts) >=1) && (MIS_UciekinierPC == LOG_RUNNING)
+    if (Npc_HasItems (other, Stab_des_Lichts) >=1) && (MIS_StolenStaff == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -171,9 +173,9 @@ FUNC VOID DIA_QUEST1_QUEST1_WIN_Info()
 {
     AI_Output (other, self ,"DIA_QUEST1_QUEST1_WIN_15_01"); //Odzyska³em skradziony kostur.
     AI_Output (self, other ,"DIA_QUEST1_QUEST1_WIN_03_02"); //Proszê, daj mi go. Zajmê siê jego przechowaniem.
-    B_LogEntry           (CH1_UciekinierPC,"Odda³em skradziony kostur Shawnowi. On dopilnuje, by broñ zosta³a zabezpieczona razem z cia³em Y'Beriona.");
-    Log_SetTopicStatus   (CH1_UciekinierPC, LOG_SUCCESS);
-    MIS_UciekinierPC = LOG_SUCCESS;
+    B_LogEntry           (CH3_StolenStaff,"Odda³em skradziony kostur Shawnowi. On dopilnuje, by broñ zosta³a zabezpieczona razem z cia³em Y'Beriona.");
+    Log_SetTopicStatus   (CH3_StolenStaff, LOG_SUCCESS);
+    MIS_StolenStaff = LOG_SUCCESS;
 	
     B_GiveInvItems (other, self, Stab_des_Lichts, 1);
 
@@ -196,7 +198,7 @@ INSTANCE DIA_Shawn_QUEST2 (C_INFO)
 
 FUNC INT DIA_Shawn_QUEST2_Condition()
 {
-    if (MIS_UciekinierPC == LOG_SUCCESS)
+    if (MIS_StolenStaff == LOG_SUCCESS)
     {
     return TRUE;
     };
@@ -216,11 +218,11 @@ FUNC VOID DIA_Shawn_QUEST2_Info()
     AI_Output (self, other ,"DIA_Shawn_QUEST2_03_09"); //Po prostu znajdŸ tego cz³owieka i naka¿ mu oddaæ wszystkie b³yskotki Baal Cadarowi.
     AI_Output (other, self ,"DIA_Shawn_QUEST2_15_10"); //Mo¿esz mnie jakoœ naprowadziæ?
     AI_Output (self, other ,"DIA_Shawn_QUEST2_03_11"); //Twoim punktem zaczepienia powinna byæ rozmowa z Talasem. To on poinformowa³ mnie o tym procederze.
-    MIS_HandlarzSteh = LOG_RUNNING;
+    MIS_StrangeResearcher = LOG_RUNNING;
 
-    Log_CreateTopic          (CH1_HandlarzSteh, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_HandlarzSteh, LOG_RUNNING);
-    B_LogEntry               (CH1_HandlarzSteh,"Shawn kaza³ mi odkryæ kto w Obozie prowadzi badania nad bagnem. Wskazówk¹ jest to, ¿e osoba handluje poszukiwanymi przez Y'Beriona przedmiotami.");
+    Log_CreateTopic          (CH3_StrangeResearcher, LOG_MISSION);
+    Log_SetTopicStatus       (CH3_StrangeResearcher, LOG_RUNNING);
+    B_LogEntry               (CH3_StrangeResearcher,"Shawn kaza³ mi odkryæ kto w Obozie prowadzi badania nad bagnem. Wskazówk¹ jest to, ¿e osoba handluje poszukiwanymi przez Y'Beriona przedmiotami.");
 };
 
 //========================================
@@ -239,7 +241,7 @@ INSTANCE DIA_Shawn_QUEST2_WIN (C_INFO)
 
 FUNC INT DIA_Shawn_QUEST2_WIN_Condition()
 {
-    if (MIS_HandlarzSteh == LOG_RUNNING)
+    if (MIS_StrangeResearcher == LOG_RUNNING)
     && (Npc_KnowsInfo (hero, DIA_Steh_QUEST2_YOU))
     {
     return TRUE;
@@ -255,9 +257,9 @@ FUNC VOID DIA_Shawn_QUEST2_WIN_Info()
 	AI_Output (self, other ,"DIA_Shawn_QUEST2_WIN_03_04"); //Mimo to odczuliœmy ju¿ skutki niepos³uszeñstwa Steha.
 	AI_Output (other, self ,"DIA_Shawn_QUEST2_WIN_15_05"); //Co siê sta³o?
     AI_Output (self, other ,"DIA_Shawn_QUEST2_WIN_03_06"); //Porozmawiamy o tym za chwilê. Mistrzu, weŸ tê rudê ze skrzyni Y'Beriona.
-    B_LogEntry               (CH1_HandlarzSteh,"Powiedzia³em Shawnowi o mojej rozmowie ze Stehem. By³ zadowolony, ale jednoczeœnie zaniepokojony. Widocznie sta³o siê coœ z³ego.");
-    Log_SetTopicStatus       (CH1_HandlarzSteh, LOG_SUCCESS);
-    MIS_HandlarzSteh = LOG_SUCCESS;
+    B_LogEntry               (CH3_StrangeResearcher,"Powiedzia³em Shawnowi o mojej rozmowie ze Stehem. By³ zadowolony, ale jednoczeœnie zaniepokojony. Widocznie sta³o siê coœ z³ego.");
+    Log_SetTopicStatus       (CH3_StrangeResearcher, LOG_SUCCESS);
+    MIS_StrangeResearcher = LOG_SUCCESS;
 
     B_GiveXP (120);
     CreateInvItems (self, ItMiNugget, 150);
@@ -281,7 +283,7 @@ INSTANCE DIA_Shawn_QUEST3 (C_INFO)
 
 FUNC INT DIA_Shawn_QUEST3_Condition()
 {
-    if (MIS_HandlarzSteh == LOG_SUCCESS)
+    if (MIS_StrangeResearcher == LOG_SUCCESS)
     {
     return TRUE;
     };
@@ -299,7 +301,7 @@ FUNC VOID DIA_Shawn_QUEST3_Info()
     AI_Output (self, other ,"DIA_Shawn_QUEST3_15_07"); //Drugi przy palisadzie - niedaleko Steha.
     AI_Output (self, other ,"DIA_Shawn_QUEST3_03_08"); //A trzeci na bagnie w pobli¿u chaty drwala.
     AI_Output (other, self ,"DIA_Shawn_QUEST3_15_09"); //W porz¹dku. Biorê siê do roboty.
-    MIS_SeryjneZabojstwa = LOG_RUNNING;
+    MIS_PsionicCSI = LOG_RUNNING;
 	
 	Wld_InsertNpc				(NOV_5011_Martwy_Nowicjusz,"PSI_START");
 	B_KillNPC	(NOV_5011_Martwy_nowicjusz);
@@ -307,10 +309,10 @@ FUNC VOID DIA_Shawn_QUEST3_Info()
 	B_KillNPC	(NOV_5010_Martwy_nowicjusz);
 	Wld_InsertNpc				(NOV_5009_Martwy_nowicjusz,"PSI_START");	
 	B_KillNPC	(NOV_5009_Martwy_nowicjusz);
-    Log_CreateTopic            (CH1_SeryjneZabojstwa, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_SeryjneZabojstwa, LOG_RUNNING);
+    Log_CreateTopic            (CH3_PsionicCSI, LOG_MISSION);
+    Log_SetTopicStatus       (CH3_PsionicCSI, LOG_RUNNING);
 	
-    B_LogEntry                     (CH1_SeryjneZabojstwa,"Ktoœ zabi³ trzech Nowicjuszy z Obozu Bractwa. Mam ustaliæ kim jest zabójca. Cia³a le¿¹ na miejscach zbrodni: za drzewem na którym stoi laboratorium, przy palisadzie (okolice Steha) i na bagnach w pobli¿u chaty drwala.");
+    B_LogEntry                     (CH3_PsionicCSI,"Ktoœ zabi³ trzech Nowicjuszy z Obozu Bractwa. Mam ustaliæ kim jest zabójca. Cia³a le¿¹ na miejscach zbrodni: za drzewem na którym stoi laboratorium, przy palisadzie (okolice Steha) i na bagnach w pobli¿u chaty drwala.");
     AI_StopProcessInfos	(self);
 };
 
@@ -330,7 +332,7 @@ INSTANCE DIA_Shawn_KILLTOOL (C_INFO)
 
 FUNC INT DIA_Shawn_KILLTOOL_Condition()
 {
-    if (MIS_HandlarzSteh == LOG_SUCCESS) && (Npc_HasItems (other, ItMw_SiekieraCSI) >=1) && (Npc_HasItems (other, ItMi_OstrzeCSI) >=1)
+    if (MIS_StrangeResearcher == LOG_SUCCESS) && (Npc_HasItems (other, ItMw_SiekieraCSI) >=1) && (Npc_HasItems (other, ItMi_OstrzeCSI) >=1)
     {
     return TRUE;
     };
@@ -344,7 +346,7 @@ FUNC VOID DIA_Shawn_KILLTOOL_Info()
 	AI_Output (other, self ,"DIA_Shawn_KILLTOOL_15_03"); //To jakieœ ostrza i siekiery.
     AI_Output (self, other ,"DIA_Shawn_KILLTOOL_03_04"); //Siekiery nosi wielu Nowicjuszy. Wykorzystywali je do budowy chat.
 	AI_Output (self, other ,"DIA_Shawn_KILLTOOL_03_05"); //Ale te ostrza s¹ jakieœ dziwne. Wygl¹daj¹ jak z tartaku. Rozmawia³eœ z Hansonem? Mo¿e to on jest zabójc¹?
-    B_LogEntry                     (CH1_SeryjneZabojstwa,"Pokaza³em narzêdzia zbrodni Shawnowi. Powiedzia³ mi, ¿ebym sprawdzi³ Hansona, poniewa¿ tylko on pracuje w tartaku.");
+    B_LogEntry                     (CH3_PsionicCSI,"Pokaza³em narzêdzia zbrodni Shawnowi. Powiedzia³ mi, ¿ebym sprawdzi³ Hansona, poniewa¿ tylko on pracuje w tartaku.");
 };
 
 
@@ -364,7 +366,7 @@ INSTANCE DIA_Shawn_QUEST3_OK (C_INFO)
 
 FUNC INT DIA_Shawn_QUEST3_OK_Condition()
 {
-    if (MIS_SeryjneZabojstwa == LOG_RUNNING)
+    if (MIS_PsionicCSI == LOG_RUNNING)
     && (Npc_KnowsInfo (hero, DIA_Hanson_QUEST2_D))
     {
     return TRUE;
@@ -384,94 +386,14 @@ FUNC VOID DIA_Shawn_QUEST3_OK_Info()
 	AI_Output (other, self ,"DIA_Shawn_QUEST3_OK_15_08"); //Bractwo zaczyna siê rozpadaæ.
 	AI_Output (self, other ,"DIA_Shawn_QUEST3_OK_03_09"); //Spróbujê za³agodziæ sytuacjê. Porozmawiam z pozosta³ymi Guru. Powiem im, ¿eby dostosowali S³owo do nowych warunków.
 	AI_Output (self, other ,"DIA_Shawn_QUEST3_OK_03_10"); //Mistrzu, twoja praca na razie jest zakoñczona. Muszê siê teraz zaj¹æ t¹ spraw¹. 
-    B_LogEntry               (CH1_SeryjneZabojstwa,"Opowiedzia³em Shawnowi o Hansonie. Okazuje siê, ¿e sytuacja w Obozie robi siê coraz mniej ciekawa. Aby zapobiec kolejnym incydentom Shawn porozmawia z pozosta³ymi Guru.");
-    Log_SetTopicStatus       (CH1_SeryjneZabojstwa, LOG_SUCCESS);
-    MIS_SeryjneZabojstwa = LOG_SUCCESS;
+    B_LogEntry               (CH3_PsionicCSI,"Opowiedzia³em Shawnowi o Hansonie. Okazuje siê, ¿e sytuacja w Obozie robi siê coraz mniej ciekawa. Aby zapobiec kolejnym incydentom Shawn porozmawia z pozosta³ymi Guru.");
+    Log_SetTopicStatus       (CH3_PsionicCSI, LOG_SUCCESS);
+    MIS_PsionicCSI = LOG_SUCCESS;
 
     B_GiveXP (300);
 };
 
-////////////////////////////////////////////
-// Czarny Mag - w¹tek nieaktywny
-////////////////////////////////////////////
 
-//========================================
-//-----------------> POSZUKIWACZE
-//========================================
-
-INSTANCE DIA_Shawn_POSZUKIWACZE (C_INFO)
-{
-   npc          = TPL_5004_Shawn;
-   nr           = 8;
-   condition    = DIA_Shawn_POSZUKIWACZE_Condition;
-   information  = DIA_Shawn_POSZUKIWACZE_Info;
-   permanent	= FALSE;
-   description	= "Co z Hansonem?";
-};
-
-FUNC INT DIA_Shawn_POSZUKIWACZE_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Shawn_QUEST3_OK)) && (Npc_KnowsInfo (hero, DIA_Hanson_QUEST2_E)) && (kapitel == 10)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Shawn_POSZUKIWACZE_Info()
-{
-    AI_Output (other, self ,"DIA_Shawn_POSZUKIWACZE_15_01"); //Co z Hansonem?
-    AI_Output (self, other ,"DIA_Shawn_POSZUKIWACZE_03_02"); //Musimy go przes³uchaæ. 
-    AI_Output (self, other ,"DIA_Shawn_POSZUKIWACZE_03_03"); //Nurtuje mnie sk¹d wzi¹³ siê g³os, który kaza³ mu zabiæ Nowicjuszy. 
-    AI_Output (other, self ,"DIA_Shawn_POSZUKIWACZE_15_04"); //Mo¿e Hanson próbuje udawaæ psychopatê, aby nie zostaæ ukaranym?
-    AI_Output (self, other ,"DIA_Shawn_POSZUKIWACZE_03_05"); //To równie¿ ma sens... Ale co je¿eli mówi prawdê? Ktoœ wp³ywowy i niebezpieczny krêci siê w Kolonii.
-    AI_Output (self, other ,"DIA_Shawn_POSZUKIWACZE_03_06"); //Muszê napisaæ list do Cronosa w tej sprawie. 
-	MIS_MroczneBractwo = LOG_RUNNING;
-
-    Log_CreateTopic            (CH1_MroczneBractwo, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_MroczneBractwo, LOG_RUNNING);
-    B_LogEntry                     (CH1_MroczneBractwo,"Shawn obawia siê tego, który rzekomo zleci³ Hansonowi zabójstwo. To coœ mo¿e byæ dla nas zagro¿eniem.");
-
-   // B_GiveXP (150);
-
-};
-
-//========================================
-//-----------------> QUEST4
-//========================================
-
-INSTANCE DIA_Shawn_QUEST4 (C_INFO)
-{
-   npc          = TPL_5004_Shawn;
-   nr           = 9;
-   condition    = DIA_Shawn_QUEST4_Condition;
-   information  = DIA_Shawn_QUEST4_Info;
-   permanent	= FALSE;
-   description	= "Móg³bym zanieœæ twój list.";
-};
-
-FUNC INT DIA_Shawn_QUEST4_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Shawn_POSZUKIWACZE))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Shawn_QUEST4_Info()
-{
-    AI_Output (other, self ,"DIA_Shawn_QUEST4_15_01"); //Móg³bym zanieœæ twój list. W koñcu nie takie rzeczy siê robi³o.
-    AI_Output (self, other ,"DIA_Shawn_QUEST4_03_02"); //Bardzo ci dziêkujê. Œwietny pomys³. Zaczekaj zaraz ci go dam.
-    B_UseFakeScroll ();
-    CreateInvItems (self, ItMi_ListdoCronosa, 1);
-    B_GiveInvItems (self, other, ItMi_ListdoCronosa, 1);
-    MIS_ListDoCronosa = LOG_RUNNING;
-
-    Log_CreateTopic            (CH1_ListDoCronosa, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_ListDoCronosa, LOG_RUNNING);
-    B_LogEntry                     (CH1_ListDoCronosa,"Shawn da³ mi list, który muszê wrêczyæ Cronosowi w Nowym Obozie.");
-};
 //========================================
 //-----------------> HELLO2
 //========================================

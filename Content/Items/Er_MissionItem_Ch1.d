@@ -2370,31 +2370,7 @@ INSTANCE ItMis_TripMap(C_Item)
 					Doc_SetPage 	( nDocID, 0, "MAP_QUEST_TRIP.tga", 	1	); 
 					Doc_Show		( nDocID 	);
 	};
-/****************************************************
-**  	KALOM: DLA HANSONA	   **
-****************************************************/
-INSTANCE ItMis_Drug(C_ITEM)
-{
-	name 				= "Lekarstwo na zarazê";
 
-	mainflag 			= ITEM_KAT_POTIONS;
-	flags 				= ITEM_MISSION;
-
-	value 				= 100;	
-
-
-	visual 				= "ITFO_POTION_STRENGTH_01.3DS";
-	material 			= MAT_GLAS;
-	on_state[0]			= UseDrug;
-	scemeName			= "POTION";
-	description			= name;
-
-	TEXT[0]				= "Efekt: Nieznany";
-};
-func void UseDrug ()
-{
-		Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	300);
-};
 
 /****************************************************
 **  	MORAKH/BESTIA: DROP	   **

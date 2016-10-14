@@ -602,8 +602,8 @@ var int wypierdalajBANDITOS; // true or false - ener to banditos camp
 var int wkurwienieDoyla; // poziom wkurwienia Doyla. Je¿eli osi¹gnie 3 to ten zacznie nas atakowaæ.
 var int ruda; //czy zosta³eœ oszukany przez Patrosa
 var int przejscieSo2;
-var int pomocBasir;
-var int niedobryBasir;
+var int pomocHakan;
+var int niedobryHakan;
 var int NoJointToBanditos; // if true to nikt z nami nie rozmawia
 var int ringsINFOS; 
 var int CHARGE_Hanis;
@@ -839,15 +839,15 @@ var int MIS_GrimOc;
 //********************************************
 // BRACTWO
 //********************************************
-var int MIS_UciekinierPC;
-var int MIS_Tabliczki;
-var int MIS_HandlarzSteh;
+
+
+
 var int MIS_OszukanyHandlarz; var int Nyras_splacil_Talasa; var int Hero_dogadany_Nyras; var int Hero_donosi_na_Nyras; var int ruda_talasa_odzyskana;
-var int MIS_SeryjneZabojstwa;
-var int MIS_ChoryDrwal;
-var int MIS_ListDoCronosa;
+
+
+
 var int MIS_HelpBrothersBra;
-var int MIS_testGuru;
+
 var int MIS_NoweZiele;
 var int MIS_KeyKagan;
 var int MIS_Bractwo_Kopalnia;
@@ -898,15 +898,21 @@ var int MIS_KosztemQuentina;
 // KOLONIA
 //********************************************
 var int MIS_CavalornFuck;
+
+
+var int MIS_Wherevart;
+var int MIS_Wherevart2;
+
+//czarny mag
+var int MIS_blackMage;
+var int MIS_lekiDlaAva;
 var int MIS_WlakaZczarym;
 var int MIS_LowcyPoszukiwaczy;
 var int MIS_MagWGoorach1;
 var int MIS_Cytadelaposzukiwacz;
-var int MIS_lekiDlaAva;
-var int MIS_Wherevart;
-var int MIS_Wherevart2;
+var int MIS_ListDoCronosa;
 
-var int MIS_blackMage;
+
 var int MIS_MapaRicka;
 var int MIS_EqAngusa;
 var int MIS_SearhSkarb;
@@ -937,9 +943,9 @@ var int MIS_EskortaKopaczy;
 
 var int MIS_ZnowuZapierdalam;
 var int MIS_PoszukiwanaAlchemika;
-var int MIS_CorristoSlepper;
+
 var int MIS_Spike_Pomiot;
-//var int MIS_WlakaZczarym;
+
 var int MIS_EskortaArt;
 var int MIS_GuazyDrena;
 var int MIS_megaSpam;
@@ -981,7 +987,7 @@ var int MIS_DziwneKrzyki;
 var int MIS_GoblinyUMysliwych;
 var int MIS_Nieroby;
 var int MIS_PolowanieNaMorakha;
-var int MIS_FindWhiteSkin;
+
 var int MIS_ZabojstwBlizny;
 var int MIS_PamietnikZNieba;
 var int MIS_JosepZniknal;

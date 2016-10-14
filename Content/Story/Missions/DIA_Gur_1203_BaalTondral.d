@@ -407,7 +407,7 @@ FUNC VOID DIA_BaalTondral_GiveMeStaff_Bariera()
 	AI_Output (self, other ,"DIA_BaalTondral_GiveMeStaff_Bariera_03_11"); //Takie niepos³uszeñstwo i sprzeciwianie siê naukom Guru mog¹ szkodliwie wp³yn¹æ na pozosta³ych. 
 	AI_Output (self, other ,"DIA_BaalTondral_GiveMeStaff_Bariera_03_12"); //Zajmij siê tym. Nak³oñ ich do powrotu lub zabij, jeœli nic nie wskórasz.
 	
-	B_LogEntry               (CH1_MagicalCrystals,"Powiedzia³em Baal Tondralowi o naszych planach. Zgodzi³ siê oddaæ kostur, ale muszê zaj¹æ siê najpierw grup¹ Nowicjuszy, którzy uciekli z Bractwa. Mam ich szukaæ na klifie nad Obozem. Jeœli nie uda mi siê nak³oniæ do powrotu, to mam ich zabiæ.");
+	B_LogEntry               (CH4_MagicalCrystals,"Powiedzia³em Baal Tondralowi o naszych planach. Zgodzi³ siê oddaæ kostur, ale muszê zaj¹æ siê najpierw grup¹ Nowicjuszy, którzy uciekli z Bractwa. Mam ich szukaæ na klifie nad Obozem. Jeœli nie uda mi siê nak³oniæ do powrotu, to mam ich zabiæ.");
 	
     Info_ClearChoices		(DIA_BaalTondral_GiveMeStaff);
     AI_StopProcessInfos	(self);
@@ -425,8 +425,8 @@ FUNC VOID DIA_BaalTondral_GiveMeStaff_Weapon()
     AI_Output (self, other ,"DIA_BaalTondral_GiveMeStaff_Weapon_03_02"); //Wspania³¹ broñ? Przeciwko komu? Uturiel chce siê zemœciæ na pozosta³ych Magach? A mo¿e chce walczyæ tym kosturem z orkami?
 	AI_Output (self, other ,"DIA_BaalTondral_GiveMeStaff_Weapon_03_03"); //Nie obchodzi mnie to! Nie przy³o¿ê do tego rêki. OdejdŸ!
 	
-	//Log_SetTopicStatus	(CH1_MagicalCrystals,	LOG_FAILED);
-	B_LogEntry          (CH1_MagicalCrystals,"Sk³ama³em Baal Tndrala. Nie odda mi kostura. Muszê wróciæ i porozmawiaæ z Uturielem.");
+	//Log_SetTopicStatus	(CH4_MagicalCrystals,	LOG_FAILED);
+	B_LogEntry          (CH4_MagicalCrystals,"Sk³ama³em Baal Tndrala. Nie odda mi kostura. Muszê wróciæ i porozmawiaæ z Uturielem.");
 	MIS_MagicalCrystals = LOG_FAILED;
 	
 	Info_ClearChoices		(DIA_BaalTondral_GiveMeStaff);
@@ -439,8 +439,8 @@ FUNC VOID DIA_BaalTondral_GiveMeStaff_Lab()
     AI_Output (self, other ,"DIA_BaalTondral_GiveMeStaff_Lab_03_02"); //Po co mia³by badaæ bezwartoœciowy kostur? 
 	AI_Output (self, other ,"DIA_BaalTondral_GiveMeStaff_Lab_03_03"); //Jakbyœ nie by³ oszustem to wiedzia³byœ, ¿e kilka lat temu opowiedzia³em mu absolutnie wszystko na jego temat. Wynoœ siê!
 	
-	//Log_SetTopicStatus	(CH1_MagicalCrystals,	LOG_FAILED);
-	B_LogEntry          (CH1_MagicalCrystals,"Sk³ama³em Baal Tndrala. Nie odda mi kostura. Muszê wróciæ i porozmawiaæ z Uturielem.");
+	//Log_SetTopicStatus	(CH4_MagicalCrystals,	LOG_FAILED);
+	B_LogEntry          (CH4_MagicalCrystals,"Sk³ama³em Baal Tndrala. Nie odda mi kostura. Muszê wróciæ i porozmawiaæ z Uturielem.");
 	MIS_MagicalCrystals = LOG_FAILED;
 	
 	Info_ClearChoices		(DIA_BaalTondral_GiveMeStaff);
@@ -483,7 +483,7 @@ FUNC void  Gur_1203_BaalTondral_MULTIKILL_Info()
 	AI_Output (other, self,"Gur_1203_BaalTondral_MULTIKILL_Info_15_07"); //Uwa¿asz, ¿e ten plan ma ma³e szanse na powodzenie?
 	AI_Output (self, other,"Gur_1203_BaalTondral_MULTIKILL_Info_02_08"); //Tego nie wiem. Gdyby nie wysz³o, to wiesz gdzie mnie znaleŸæ. 
 	
-	B_LogEntry          (CH1_MagicalCrystals,"Zabi³em Nowicjuszy, którzy uciekli z Obozu. Baal Tondral by³ mi wdziêczny i odda³ kostur bez najmniejszego oporu. Zadziwi³ mnie jednak jego pesymizm. Powiedzia³, ¿e jeœliby nam siê nie uda³o, a ja bym prze¿y³, to mam mu zwróciæ jego pami¹tkê.");
+	B_LogEntry          (CH4_MagicalCrystals,"Zabi³em Nowicjuszy, którzy uciekli z Obozu. Baal Tondral by³ mi wdziêczny i odda³ kostur bez najmniejszego oporu. Zadziwi³ mnie jednak jego pesymizm. Powiedzia³, ¿e jeœliby nam siê nie uda³o, a ja bym prze¿y³, to mam mu zwróciæ jego pami¹tkê.");
 	Gur_1203_BaalTondral_MULTIKILL.permanent = 0;
 	
 	CreateInvItems (self, ItMi_Mod_TondralStaff, 1);
@@ -502,7 +502,7 @@ FUNC void  Gur_1203_BaalTondral_MULTIKILL_Info()
 	AI_Output (other, self,"Gur_1203_BaalTondral_MULTIKILL_Info_15_07"); //Uwa¿asz, ¿e ten plan ma ma³e szanse na powodzenie?
 	AI_Output (self, other,"Gur_1203_BaalTondral_MULTIKILL_Info_02_08"); //Tego nie wiem. Gdyby nie wysz³o, to wiesz gdzie mnie znaleŸæ. 
 	
-	B_LogEntry          (CH1_MagicalCrystals,"Sprowadzi³em Nowicjuszy, którzy uciekli z Obozu. Baal Tondral by³ mi wdziêczny i odda³ kostur bez najmniejszego oporu. Zadziwi³ mnie jednak jego pesymizm. Powiedzia³, ¿e jeœliby nam siê nie uda³o, a ja bym prze¿y³ to mam mu zwróciæ jego pami¹tkê.");
+	B_LogEntry          (CH4_MagicalCrystals,"Sprowadzi³em Nowicjuszy, którzy uciekli z Obozu. Baal Tondral by³ mi wdziêczny i odda³ kostur bez najmniejszego oporu. Zadziwi³ mnie jednak jego pesymizm. Powiedzia³, ¿e jeœliby nam siê nie uda³o, a ja bym prze¿y³ to mam mu zwróciæ jego pami¹tkê.");
 	Gur_1203_BaalTondral_MULTIKILL.permanent = 0;
 	
 	CreateInvItems (self, ItMi_Mod_TondralStaff, 1);

@@ -40,7 +40,7 @@ INSTANCE DIA_Uciekinier_HELLO (C_INFO)
 
 FUNC INT DIA_Uciekinier_HELLO_Condition()
 {
-	if (MIS_UciekinierPC == LOG_RUNNING) {
+	if (MIS_StolenStaff == LOG_RUNNING) {
     return TRUE; };
 };
 
@@ -76,7 +76,7 @@ func void DIA_Uciekinier_HELLO_Litosc ()
 	AI_Output (self, other ,"DIA_Uciekinier_HELLO_Litosc_03_12"); //Chce siê modliæ doY'Beriona, aby przebaczy³ mi mój czyn. 
 	CreateInvItems (self, Stab_des_Lichts, 1);
 	B_GiveInvItems (self, other, Stab_des_Lichts, 1);
-	B_LogEntry     (CH1_UciekinierPC,"Odnalaz³em z³odzieja w opuszczonej chacie na bagnie. Nie wyci¹gn¹³em konsekwencji z postêpku Nowicjusza. W zamian odda³ mi kostur po dobroci. Odby³em z nim te¿ bardzo ciekaw¹ rozmowê.");
+	B_LogEntry     (CH3_StolenStaff,"Odnalaz³em z³odzieja w opuszczonej chacie na bagnie. Nie wyci¹gn¹³em konsekwencji z postêpku Nowicjusza. W zamian odda³ mi kostur po dobroci. Odby³em z nim te¿ bardzo ciekaw¹ rozmowê.");
 	
 	Info_ClearChoices	(DIA_Uciekinier_HELLO);
 	AI_StopProcessInfos	(self);
@@ -92,7 +92,7 @@ func void DIA_Uciekinier_HELLO_Smierc ()
 	AI_Output (self, other ,"DIA_Uciekinier_HELLO_Smierc_03_06"); //Innos nagle ci przebaczy, bo zabi³eœ jakiegoœ z³odziejaszka? Jesteœ ¿a³osny. W tym momencie niczym nie ró¿nisz siê od tych szumowin...
 	AI_Output (other, self ,"DIA_Uciekinier_HELLO_Smierc_15_07"); //Doœæ!
 	CreateInvItems (self, Stab_des_Lichts, 1);
-	B_LogEntry     (CH1_UciekinierPC,"Odnalaz³em z³odzieja w opuszczonej chacie na bagnie. Zas³u¿y³ na najwy¿sz¹ karê za zbezczeszczenie zw³ok Y'Beriona.");
+	B_LogEntry     (CH3_StolenStaff,"Odnalaz³em z³odzieja w opuszczonej chacie na bagnie. Zas³u¿y³ na najwy¿sz¹ karê za zbezczeszczenie zw³ok Y'Beriona.");
 	
 	Info_ClearChoices	(DIA_Uciekinier_HELLO);
 	AI_StopProcessInfos	(self);

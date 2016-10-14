@@ -741,44 +741,7 @@ FUNC void  KDW_604_Cronos_GREET_Info()
 	B_LogEntry (GE_TeacherNC,"Cronos mo¿e mi pomóc w zwiêkszeniu mojej many. Znajdê go przy kracie, nad wielkim kopcem rudy.");
 };
 
-//========================================
-//-----------------> LIST
-//========================================
 
-INSTANCE DIA_Cronos_LIST (C_INFO)
-{
-   npc          = KDW_604_Cronos;
-   nr           = 5;
-   condition    = DIA_Cronos_LIST_Condition;
-   information  = DIA_Cronos_LIST_Info;
-   permanent	= FALSE;
-   description	= "Mam list z Bractwa.";
-};
-
-FUNC INT DIA_Cronos_LIST_Condition()
-{
-    if (Npc_HasItems (other, ItMi_ListdoCronosa) >=1)
-    && (MIS_ListDoCronosa == LOG_RUNNING)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Cronos_LIST_Info()
-{
-    AI_Output (other, self ,"DIA_Cronos_LIST_15_01"); //Mam list z Bractwa.
-    AI_Output (self, other ,"DIA_Cronos_LIST_03_02"); //Jaki list? Nie oczekujemy odpowiedzi.
-    AI_Output (other, self ,"DIA_Cronos_LIST_15_03"); //To list dotycz¹cy podejrzanych opêtañ w Bractwie. Guru potrzebuj¹ waszych porad.
-    AI_Output (self, other ,"DIA_Cronos_LIST_03_04"); //Niepokoi mnie ta wiadomoœæ. Dziêkujê za list. Wkrótce wyœlê kuriera z odpowiedzi¹.
-    B_LogEntry                     (CH1_ListDoCronosa,"Zanios³em list Cronosowi. By³ wyraŸnie zaniepokojony tym, co dzieje siê w Bractwie Œni¹cego.");
-    Log_SetTopicStatus       (CH1_ListDoCronosa, LOG_SUCCESS);
-    MIS_ListDoCronosa = LOG_SUCCESS;
-	B_GiveInvItems (other, self, ItMi_ListdoCronosa, 1);
-	Npc_RemoveInvItems (self, ItMi_ListdoCronosa, 1);
-    B_GiveXP (50);
-    AI_StopProcessInfos	(self);
-};
 
 //========================================
 //-----------------> Ore_Many

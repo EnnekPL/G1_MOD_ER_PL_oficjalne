@@ -1023,9 +1023,9 @@ FUNC INT DIA_Bula_KURWAMACJAPIE_Condition()
 FUNC VOID DIA_Bula_KURWAMACJAPIE_Info()
 {
     AI_Output (self, other ,"DIA_Bula_KURWAMACJAPIE_03_01"); //test !!
-    B_LogEntry                     (CH1_Tabliczki,"Odnalaz³em tabliczki dla Steha.");
-    Log_SetTopicStatus       (CH1_Tabliczki, LOG_SUCCESS);
-    MIS_Tabliczki = LOG_SUCCESS;
+    B_LogEntry                     (CH2_Plates,"Odnalaz³em tabliczki dla Steha.");
+    Log_SetTopicStatus       (CH2_Plates, LOG_SUCCESS);
+    MIS_Plates = LOG_SUCCESS;
 	var int ilosc_tabliczek;
 	ilosc_tabliczek = Npc_hasitems (hero, BlackPlate01);
     B_GiveInvItems (hero,self,BlackPlate01,ilosc_tabliczek);

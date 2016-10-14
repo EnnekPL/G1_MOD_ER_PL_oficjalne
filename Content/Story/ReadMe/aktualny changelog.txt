@@ -34,3 +34,8 @@
 - naprawiony dialog z Felgorem, ¯elazn¹ Garot¹
 - zmiany w wyœwietlaniu doœwiadczenia
 - dodano bonus za pierwsz¹ krew
+- dodano wiêcej ³atwych potworów na starcie gry
+- zwiêkszono statystyki wszystkich spodni (znacznie!)
+- naprawiono b³¹d z mieczem mistrzowskim
+- zmieniona nagroda za zadanie "Toksyczne opary"
+- 

@@ -49,7 +49,7 @@ INSTANCE DIA_NowicjuszSwiadek_QUEST (C_INFO)
 
 FUNC INT DIA_NowicjuszSwiadek_QUEST_Condition()
 {
-	if (MIS_UciekinierPC == LOG_RUNNING)
+	if (MIS_StolenStaff == LOG_RUNNING)
 	{
     return TRUE;
 	};
@@ -59,5 +59,5 @@ FUNC VOID DIA_NowicjuszSwiadek_QUEST_Info()
 {
     AI_Output (self, other ,"DIA_NowicjuszSwiadek_QUEST_03_01"); //Mistrzu, nie wiem czy mogê siê do ciebie odezwaæ, ale s³ysza³em, ¿e szukasz z³odzieja, który ukrad³ kostur Y'Beriona.
     AI_Output (self, other ,"DIA_NowicjuszSwiadek_QUEST_03_02"); //Widzia³em, ¿e uciek³ w stronê bagna. Nie wybieg³ z Obozu. 
-	B_LogEntry     (CH1_UciekinierPC,"Nieznajomy Nowicjusz zaczepi³ mnie na placu i powiedzia³, ¿e widzia³ jak podczas przywo³ania z³odziej ucieka na bagno. Wiem, ¿e na pewno nie uciek³ z Obozu.");
+	B_LogEntry     (CH3_StolenStaff,"Nieznajomy Nowicjusz zaczepi³ mnie na placu i powiedzia³, ¿e widzia³ jak podczas przywo³ania z³odziej ucieka na bagno. Wiem, ¿e na pewno nie uciek³ z Obozu.");
 };

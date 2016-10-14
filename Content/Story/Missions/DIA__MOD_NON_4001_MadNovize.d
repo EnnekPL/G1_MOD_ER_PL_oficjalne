@@ -79,7 +79,7 @@ FUNC VOID DIA_MadNovize_HATE_DIE()
     Npc_SetTarget (NON_4004_MadNovize, other);
     AI_StartState (NON_4004_MadNovize, ZS_ATTACK, 1, "");
 	
-	B_LogEntry               (CH1_MagicalCrystals,"Postanowi³em zabiæ Nowicjuszy uciekinierów. Im mniej takich œwirów jak oni tym lepiej. Nie mia³em zamiaru z nimi negocjowaæ.");
+	B_LogEntry               (CH4_MagicalCrystals,"Postanowi³em zabiæ Nowicjuszy uciekinierów. Im mniej takich œwirów jak oni tym lepiej. Nie mia³em zamiaru z nimi negocjowaæ.");
 };
 
 FUNC VOID DIA_MadNovize_HATE_WHY()
@@ -120,7 +120,7 @@ FUNC VOID DIA_MadNovize_HATE_SOCIAL ()
     Npc_SetTarget (NON_4004_MadNovize, other);
     AI_StartState (NON_4004_MadNovize, ZS_ATTACK, 1, "");
 	
-	B_LogEntry               (CH1_MagicalCrystals,"Próbowa³em nak³oniæ Nowicjuszy do powrotu do Obozu. Ci jednak byli zbyt ambitni i postanowili za³o¿yæ w³asny obóz po czym siê na mnie rzucili. Musia³em dobyæ broni...");
+	B_LogEntry               (CH4_MagicalCrystals,"Próbowa³em nak³oniæ Nowicjuszy do powrotu do Obozu. Ci jednak byli zbyt ambitni i postanowili za³o¿yæ w³asny obóz po czym siê na mnie rzucili. Musia³em dobyæ broni...");
 };
 
 FUNC VOID DIA_MadNovize_HATE_LOSERS ()
@@ -144,7 +144,7 @@ FUNC VOID DIA_MadNovize_HATE_BZDURA ()
 	AI_Output (other, self ,"DIA_MadNovize_HATE_BZDURA_15_05"); //Postarajcie siê prze¿yæ kolejny dzieñ w Kolonii. Powodzenia. 
 	AI_Output (self, other ,"DIA_MadNovize_HATE_BZDURA_03_06"); //Wkrótce wrócimy do Obozu.
 	
-	B_LogEntry               (CH1_MagicalCrystals,"Uda³o mi siê namówiæ Nowicjuszy do powrotu do obozu i zrezygnowaniu ze swoich ambitnych planów. Mogê wróciæ do Baal Tondrala i zabraæ kostur.");
+	B_LogEntry               (CH4_MagicalCrystals,"Uda³o mi siê namówiæ Nowicjuszy do powrotu do obozu i zrezygnowaniu ze swoich ambitnych planów. Mogê wróciæ do Baal Tondrala i zabraæ kostur.");
 	
 	NON_4001_MadNovize.name = "Nowicjusz";
 	NON_4002_MadNovize.name = "Nowicjusz";
@@ -169,7 +169,7 @@ FUNC VOID DIA_MadNovize_HATE_SMART ()
 	CreateInvItems (self, Itminugget,50);
 	B_GiveInvItems (self,hero,Itminugget,50);
 	
-	B_LogEntry               (CH1_MagicalCrystals,"Uda³o mi siê namówiæ Nowicjuszy do powrotu do obozu i zrezygnowaniu ze swoich ambitnych planów. Mogê wróciæ do Baal Tondrala i zabraæ kostur.");
+	B_LogEntry               (CH4_MagicalCrystals,"Uda³o mi siê namówiæ Nowicjuszy do powrotu do obozu i zrezygnowaniu ze swoich ambitnych planów. Mogê wróciæ do Baal Tondrala i zabraæ kostur.");
 	
 	NON_4001_MadNovize.name = "Nowicjusz";
 	NON_4002_MadNovize.name = "Nowicjusz";

@@ -576,7 +576,12 @@ INSTANCE ItWr_Mod_ReceptClarityMixture(C_Item)
 					Doc_PrintLines	( nDocID,  1, "");
 					Doc_Show		( nDocID );
 					
-					ItemUsed_ReceptClarityMixture = true; //var global
+					if (HeroKnows_AlchemyClarityMixture == false)
+					{
+					HeroKnows_AlchemyClarityMixture = true; //var global
+					Log_CreateTopic	(NOTE_AlchemyRecepts,	LOG_NOTE);
+					B_LogEntry		(NOTE_AlchemyRecepts,	"Umiejêtnoœæ sporz¹dzenia mikstury oczyszczenia.");	
+					};
 					/*if (staraKartka == false)
 					{
 					CreateInvItem (hero, ItWr_PrzepisOczyszczenieP2);
@@ -754,4 +759,91 @@ INSTANCE ItMi_FattersInPocket (C_Item)
 	TEXT[1]				= 	"Jarred ukry³ w nim kajdany,";
 	TEXT[1]				= 	"którymi by³ spêtany Felgor.";
 	//TEXT[4]			= 	NAME_Value;	COUNT[4]	= value;
+};
+
+/****************************************************
+******* RECEPTURA NA LEK NA ZARAZÊ
+******* Opis: Ta receptura jest niezbêdna ¿eby przygotowaæ   
+******* lekarstwo dla Hansona. 
+*****************************************************/
+INSTANCE ItMi_RecipeAganistPlague (C_Item)
+{	
+	name 				=	"Receptura: Lek na zarazê";
+
+	mainflag 			=	ITEM_KAT_DOCS;
+	flags 				=	ITEM_MISSION;
+
+	value 				=	0;
+
+	visual 				=	"ItWr_Scroll_01.3DS";
+	material 			=	MAT_LEATHER;  
+	on_state[0]			=   Use_RecipeAganistPlague;
+	scemeName			=	"MAP";
+	description			= 	name;
+	TEXT[1]				= 	"Receptura Cor Kaloma";
+	TEXT[5]				= 	NAME_Value;
+	COUNT[5]			= 	value;
+	
+};
+func void Use_RecipeAganistPlague ()
+{   
+		var int nDocID;
+		
+		nDocID = 	Doc_Create		()			  ;								// DocManager 
+					Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
+					Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
+					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"	   			); 	// -1 -> all pages 
+					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
+					Doc_SetFont 	( nDocID, -1, "font_10_book.TGA"	   			); 	// -1 -> all pages 
+					Doc_PrintLine	( nDocID,  0, ""					);
+					Doc_PrintLine	( nDocID,  0, ""					);
+					Doc_PrintLine	( nDocID,  0, "Lek na zarazê"					);
+					Doc_PrintLine	( nDocID,  0, ""					);
+					Doc_PrintLine	( nDocID,  0, "Sk³adniki:"					);
+					Doc_PrintLine	( nDocID,  0, ""					);
+					Doc_PrintLine	( nDocID,  0, "Liœæ dêbu"					);
+					Doc_PrintLine	( nDocID,  0, "Psianka"					);
+					Doc_PrintLine	( nDocID,  0, "Górski mech"					);
+					Doc_PrintLine	( nDocID,  0, ""					);
+					Doc_PrintLines	( nDocID,  0, "Wszystko gotowaæ przez 10 minut. Powsta³y wywar ostudziæ i podaæ choremu."					);
+					Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
+				
+					Doc_Show		( nDocID );
+					
+	if (HeroKnows_AlchemyAganistPlague == false)
+	{
+	HeroKnows_AlchemyAganistPlague = true;
+	Log_CreateTopic	(NOTE_AlchemyRecepts,	LOG_NOTE);
+	B_LogEntry		(NOTE_AlchemyRecepts,	"Umiejêtnoœæ sporz¹dzenia lekarstwa na zarazê.");	
+	};
+};
+
+/****************************************************
+******* LEKARSTWO NA ZARAZÊ
+******* Opis: Dostajemy je od Joru, albo sami warzymy.
+*****************************************************/
+INSTANCE ItMis_Drug(C_ITEM)
+{
+	name 				= "Lekarstwo na zarazê";
+
+	mainflag 			= ITEM_KAT_POTIONS;
+	flags 				= ITEM_MISSION;
+
+	value 				= 100;	
+
+
+	visual 				= "ITFO_POTION_STRENGTH_01.3DS";
+	material 			= MAT_GLAS;
+	on_state[0]			= UseDrug;
+	scemeName			= "POTION";
+	description			= name;
+
+	TEXT[0]				= "Efekt: Nieznany";
+};
+func void UseDrug ()
+{
+	if !Npc_IsPlayer (self)
+	{
+	Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	300);
+	};
 };

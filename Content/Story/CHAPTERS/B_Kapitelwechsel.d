@@ -63,11 +63,11 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		B_Story_RespawnOW();
 		
 		//script was destroyed
-		/*if (Npc_KnowsInfo (hero, DIA_Basir_WPORZOJEST))
+		/*if (Npc_KnowsInfo (hero, DIA_Hakan_WPORZOJEST))
 		{
-		var C_NPC Basir;
-		Basir = Hlp_GetNpc(NOV_2008_Basir);
-		Mdl_SetVisualBody (Basir,"hum_body_naked0",1, 1,"Hum_Head_Psionic",15, 0,NOV_ARMOR_L);
+		var C_NPC Hakan;
+		Hakan = Hlp_GetNpc(NOV_1375_Hakan);
+		Mdl_SetVisualBody (Hakan,"hum_body_naked0",1, 1,"Hum_Head_Psionic",15, 0,NOV_ARMOR_L);
 		};*/
 		
 		//-------- InExtremo vorbereiten --------
@@ -85,11 +85,11 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		PrintDebugNpc	(PD_MISSION, "---=== DAS DRITTE KAPITEL ===---");
 		
 		//script was destroyed
-		/*if (Npc_KnowsInfo (hero, DIA_Basir_WPORZOJEST))
+		/*if (Npc_KnowsInfo (hero, DIA_Hakan_WPORZOJEST))
 		{
-		//var C_NPC Basir;
-		Basir = Hlp_GetNpc(NOV_2008_Basir);
-		Mdl_SetVisualBody (Basir,"hum_body_naked0",1, 1,"Hum_Head_Psionic",15, 0,NOV_ARMOR_L);
+		//var C_NPC Hakan;
+		Hakan = Hlp_GetNpc(NOV_1375_Hakan);
+		Mdl_SetVisualBody (Hakan,"hum_body_naked0",1, 1,"Hum_Head_Psionic",15, 0,NOV_ARMOR_L);
 		};*/
 		//myœliwi
 		Npc_ExchangeRoutine (NON_5600_Alex,	"lochy");

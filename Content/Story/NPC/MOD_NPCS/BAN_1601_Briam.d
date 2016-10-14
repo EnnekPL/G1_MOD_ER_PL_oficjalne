@@ -38,8 +38,8 @@ Npc_SetTalentSkill (self, NPC_TALENT_BOW,2);
 //----------Ekwipunek----------
 EquipItem		(self, ItMw_1H_Mace_03);
 EquipItem		(self, ItRw_Bow_Long_01);
-CreateInvItems  (self,ItMijoint_1,30);
-CreateInvItems  (self,ItMijoint_3,30);
+
+/*
 CreateInvItems  (self,ItMi_Alchemy_Sulphur_01,100);
 CreateInvItems  (self,ItMi_Alchemy_Quicksilver_01,100);
 CreateInvItems  (self,ItMi_Alchemy_Salt_01,100);
@@ -49,11 +49,11 @@ CreateInvItems  (self,ItMi_Alchemy_Alcohol_01,100);
 CreateInvItems  (self,ItMi_Alchemy_Zucker_01,100);
 CreateInvItems  (self,ItMi_Stuff_Amphore_01,20);
 CreateInvItems  (self,ItMi_Stuff_Pan_01,2);
-CreateInvItems  (self,ItMiFlask,100);
+CreateInvItems  (self,ItMiFlask,100);*/
 //CreateInvItems  (self,AlchemiaTrwaleWzomcnienia,1);
 CreateInvItems  (self,ItWr_AlchemyPermPotions1,1);
 CreateInvItems  (self,ItWr_AlchemySprintPotions,1);
-CreateInvItems	(self, Pr_Wegiel, 30);
+
 
 //----------Handlarz_aivar------
 self.aivar[AIV_NPCISTRADER] = true;

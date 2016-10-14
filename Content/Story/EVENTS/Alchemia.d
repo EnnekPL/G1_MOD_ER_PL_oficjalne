@@ -54,7 +54,7 @@ INSTANCE DIA_PC_Hero_LifePotions (C_INFO)
    condition    = DIA_PC_Hero_LifePotions_Condition;
    information  = DIA_PC_Hero_LifePotions_Info;
    permanent	= true;
-   description	= "Mikstury lecznicze";
+   description	= "(Mikstury lecznicze)";
 };
 
 FUNC INT DIA_PC_Hero_LifePotions_Condition()
@@ -240,7 +240,7 @@ INSTANCE DIA_PC_Hero_ManaPotions (C_INFO)
    condition    = DIA_PC_Hero_ManaPotions_Condition;
    information  = DIA_PC_Hero_ManaPotions_Info;
    permanent	= true;
-   description	= "Mikstury many";
+   description	= "(Mikstury many)";
 };
 
 FUNC INT DIA_PC_Hero_ManaPotions_Condition()
@@ -430,7 +430,7 @@ INSTANCE DIA_PC_Hero_SpecialPotions (C_INFO)
    condition    = DIA_PC_Hero_SpecialPotions_Condition;
    information  = DIA_PC_Hero_SpecialPotions_Info;
    permanent	= true;
-   description	= "Mikstury specjalne";
+   description	= "(Mikstury specjalne)";
 };
 
 FUNC INT DIA_PC_Hero_SpecialPotions_Condition()
@@ -463,9 +463,13 @@ FUNC VOID DIA_PC_Hero_SpecialPotions_Info()
     Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura ¿ycia ", DIA_PC_Hero_SpecialPotions_HP);
     Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura energii", DIA_PC_Hero_SpecialPotions_EN);
 	};
-	if (ItemUsed_ReceptClarityMixture)
+	if (HeroKnows_AlchemyClarityMixture)
 	{
 	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura oczyszczenia ", DIA_PC_Hero_SpecialPotions_GUR);
+	};
+	if (HeroKnows_AlchemyAganistPlague)
+	{
+	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Lekarstwo na zarazê", DIA_PC_Hero_SpecialPotions_PLAGUE);
 	};
 	if (HeroKnows_AlchemyTimedPotions)
 	{
@@ -516,9 +520,13 @@ FUNC VOID DIA_PC_Hero_SpecialPotions_KING()
     Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura ¿ycia ", DIA_PC_Hero_SpecialPotions_HP);
     Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura energii", DIA_PC_Hero_SpecialPotions_EN);
 	};
-	if (ItemUsed_ReceptClarityMixture)
+	if (HeroKnows_AlchemyClarityMixture)
 	{
 	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura oczyszczenia ", DIA_PC_Hero_SpecialPotions_GUR);
+	};
+	if (HeroKnows_AlchemyAganistPlague)
+	{
+	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Lekarstwo na zarazê", DIA_PC_Hero_SpecialPotions_PLAGUE);
 	};
 	if (HeroKnows_AlchemyTimedPotions)
 	{
@@ -568,9 +576,13 @@ FUNC VOID DIA_PC_Hero_SpecialPotions_MAGE()
     Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura ¿ycia ", DIA_PC_Hero_SpecialPotions_HP);
     Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura energii", DIA_PC_Hero_SpecialPotions_EN);
 	};
-	if (ItemUsed_ReceptClarityMixture)
+	if (HeroKnows_AlchemyClarityMixture)
 	{
 	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura oczyszczenia ", DIA_PC_Hero_SpecialPotions_GUR);
+	};
+	if (HeroKnows_AlchemyAganistPlague)
+	{
+	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Lekarstwo na zarazê", DIA_PC_Hero_SpecialPotions_PLAGUE);
 	};
 	if (HeroKnows_AlchemyTimedPotions)
 	{
@@ -619,9 +631,13 @@ FUNC VOID DIA_PC_Hero_SpecialPotions_STRT1()
     Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura ¿ycia ", DIA_PC_Hero_SpecialPotions_HP);
     Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura energii", DIA_PC_Hero_SpecialPotions_EN);
 	};
-	if (ItemUsed_ReceptClarityMixture)
+	if (HeroKnows_AlchemyClarityMixture)
 	{
 	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura oczyszczenia ", DIA_PC_Hero_SpecialPotions_GUR);
+	};
+	if (HeroKnows_AlchemyAganistPlague)
+	{
+	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Lekarstwo na zarazê", DIA_PC_Hero_SpecialPotions_PLAGUE);
 	};
 	if (HeroKnows_AlchemyTimedPotions)
 	{
@@ -670,9 +686,13 @@ FUNC VOID DIA_PC_Hero_SpecialPotions_DEXT1()
     Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura ¿ycia ", DIA_PC_Hero_SpecialPotions_HP);
     Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura energii", DIA_PC_Hero_SpecialPotions_EN);
 	};
-	if (ItemUsed_ReceptClarityMixture)
+	if (HeroKnows_AlchemyClarityMixture)
 	{
 	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura oczyszczenia ", DIA_PC_Hero_SpecialPotions_GUR);
+	};
+	if (HeroKnows_AlchemyAganistPlague)
+	{
+	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Lekarstwo na zarazê", DIA_PC_Hero_SpecialPotions_PLAGUE);
 	};
 	if (HeroKnows_AlchemyTimedPotions)
 	{
@@ -721,9 +741,13 @@ FUNC VOID DIA_PC_Hero_SpecialPotions_MANT1()
     Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura ¿ycia ", DIA_PC_Hero_SpecialPotions_HP);
     Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura energii", DIA_PC_Hero_SpecialPotions_EN);
 	};
-	if (ItemUsed_ReceptClarityMixture)
+	if (HeroKnows_AlchemyClarityMixture)
 	{
 	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura oczyszczenia ", DIA_PC_Hero_SpecialPotions_GUR);
+	};
+	if (HeroKnows_AlchemyAganistPlague)
+	{
+	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Lekarstwo na zarazê", DIA_PC_Hero_SpecialPotions_PLAGUE);
 	};
 	if (HeroKnows_AlchemyTimedPotions)
 	{
@@ -773,9 +797,13 @@ FUNC VOID DIA_PC_Hero_SpecialPotions_MAST1()
     Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura ¿ycia ", DIA_PC_Hero_SpecialPotions_HP);
     Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura energii", DIA_PC_Hero_SpecialPotions_EN);
 	};
-	if (ItemUsed_ReceptClarityMixture)
+	if (HeroKnows_AlchemyClarityMixture)
 	{
 	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura oczyszczenia ", DIA_PC_Hero_SpecialPotions_GUR);
+	};
+	if (HeroKnows_AlchemyAganistPlague)
+	{
+	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Lekarstwo na zarazê", DIA_PC_Hero_SpecialPotions_PLAGUE);
 	};
 	if (HeroKnows_AlchemyTimedPotions)
 	{
@@ -825,9 +853,13 @@ FUNC VOID DIA_PC_Hero_SpecialPotions_HPT1()
     Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura ¿ycia ", DIA_PC_Hero_SpecialPotions_HP);
     Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura energii", DIA_PC_Hero_SpecialPotions_EN);
 	};
-	if (ItemUsed_ReceptClarityMixture)
+	if (HeroKnows_AlchemyClarityMixture)
 	{
 	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura oczyszczenia ", DIA_PC_Hero_SpecialPotions_GUR);
+	};
+	if (HeroKnows_AlchemyAganistPlague)
+	{
+	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Lekarstwo na zarazê", DIA_PC_Hero_SpecialPotions_PLAGUE);
 	};
 	if (HeroKnows_AlchemyTimedPotions)
 	{
@@ -877,9 +909,13 @@ FUNC VOID DIA_PC_Hero_SpecialPotions_STR()
     Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura ¿ycia ", DIA_PC_Hero_SpecialPotions_HP);
     Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura energii", DIA_PC_Hero_SpecialPotions_EN);
 	};
-	if (ItemUsed_ReceptClarityMixture)
+	if (HeroKnows_AlchemyClarityMixture)
 	{
 	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura oczyszczenia ", DIA_PC_Hero_SpecialPotions_GUR);
+	};
+	if (HeroKnows_AlchemyAganistPlague)
+	{
+	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Lekarstwo na zarazê", DIA_PC_Hero_SpecialPotions_PLAGUE);
 	};
 	if (HeroKnows_AlchemyTimedPotions)
 	{
@@ -929,9 +965,13 @@ FUNC VOID DIA_PC_Hero_SpecialPotions_DEX()
     Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura ¿ycia ", DIA_PC_Hero_SpecialPotions_HP);
     Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura energii", DIA_PC_Hero_SpecialPotions_EN);
 	};
-	if (ItemUsed_ReceptClarityMixture)
+	if (HeroKnows_AlchemyClarityMixture)
 	{
 	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura oczyszczenia ", DIA_PC_Hero_SpecialPotions_GUR);
+	};
+	if (HeroKnows_AlchemyAganistPlague)
+	{
+	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Lekarstwo na zarazê", DIA_PC_Hero_SpecialPotions_PLAGUE);
 	};
 	if (HeroKnows_AlchemyTimedPotions)
 	{
@@ -979,9 +1019,13 @@ FUNC VOID DIA_PC_Hero_SpecialPotions_HP()
     Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura ¿ycia ", DIA_PC_Hero_SpecialPotions_HP);
     Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura energii", DIA_PC_Hero_SpecialPotions_EN);
 	};
-	if (ItemUsed_ReceptClarityMixture)
+	if (HeroKnows_AlchemyClarityMixture)
 	{
 	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura oczyszczenia ", DIA_PC_Hero_SpecialPotions_GUR);
+	};
+	if (HeroKnows_AlchemyAganistPlague)
+	{
+	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Lekarstwo na zarazê", DIA_PC_Hero_SpecialPotions_PLAGUE);
 	};
 	if (HeroKnows_AlchemyTimedPotions)
 	{
@@ -1029,9 +1073,13 @@ FUNC VOID DIA_PC_Hero_SpecialPotions_HP()
     Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura ¿ycia ", DIA_PC_Hero_SpecialPotions_HP);
     Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura energii", DIA_PC_Hero_SpecialPotions_EN);
 	};
-	if (ItemUsed_ReceptClarityMixture)
+	if (HeroKnows_AlchemyClarityMixture)
 	{
 	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura oczyszczenia ", DIA_PC_Hero_SpecialPotions_GUR);
+	};
+	if (HeroKnows_AlchemyAganistPlague)
+	{
+	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Lekarstwo na zarazê", DIA_PC_Hero_SpecialPotions_PLAGUE);
 	};
 	if (HeroKnows_AlchemyTimedPotions)
 	{
@@ -1080,9 +1128,13 @@ FUNC VOID DIA_PC_Hero_SpecialPotions_HP()
     Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura ¿ycia ", DIA_PC_Hero_SpecialPotions_HP);
     Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura energii", DIA_PC_Hero_SpecialPotions_EN);
 	};
-	if (ItemUsed_ReceptClarityMixture)
+	if (HeroKnows_AlchemyClarityMixture)
 	{
 	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura oczyszczenia ", DIA_PC_Hero_SpecialPotions_GUR);
+	};
+	if (HeroKnows_AlchemyAganistPlague)
+	{
+	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Lekarstwo na zarazê", DIA_PC_Hero_SpecialPotions_PLAGUE);
 	};
 	if (HeroKnows_AlchemyTimedPotions)
 	{
@@ -1131,9 +1183,13 @@ FUNC VOID DIA_PC_Hero_SpecialPotions_HP()
     Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura ¿ycia ", DIA_PC_Hero_SpecialPotions_HP);
     Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura energii", DIA_PC_Hero_SpecialPotions_EN);
 	};
-	if (ItemUsed_ReceptClarityMixture)
+	if (HeroKnows_AlchemyClarityMixture)
 	{
 	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura oczyszczenia ", DIA_PC_Hero_SpecialPotions_GUR);
+	};
+	if (HeroKnows_AlchemyAganistPlague)
+	{
+	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Lekarstwo na zarazê", DIA_PC_Hero_SpecialPotions_PLAGUE);
 	};
 	if (HeroKnows_AlchemyTimedPotions)
 	{
@@ -1182,9 +1238,13 @@ FUNC VOID DIA_PC_Hero_SpecialPotions_HP()
     Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura ¿ycia ", DIA_PC_Hero_SpecialPotions_HP);
     Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura energii", DIA_PC_Hero_SpecialPotions_EN);
 	};
-	if (ItemUsed_ReceptClarityMixture)
+	if (HeroKnows_AlchemyClarityMixture)
 	{
 	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura oczyszczenia", DIA_PC_Hero_SpecialPotions_GUR);
+	};
+	if (HeroKnows_AlchemyAganistPlague)
+	{
+	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Lekarstwo na zarazê", DIA_PC_Hero_SpecialPotions_PLAGUE);
 	};
 	if (HeroKnows_AlchemyTimedPotions)
 	{
@@ -1311,6 +1371,60 @@ AI_StopProcessInfos	(self);
 	Print ("Uwarzy³eœ miksturê");
 	B_giveXP (10);  */
 
+func void DIA_PC_Hero_SpecialPotions_PLAGUE ()
+{
+if (Npc_HasItems (hero, ItFo_Plants_OrcHerb_02) >=1) && (Npc_HasItems (hero, ItFo_Plants_Nightshadow_01) >=1) && (Npc_HasItems (hero, ItFo_Plants_mountainmoos_01) >=1)
+    {
+	CreateInvItem (hero,ItMis_Drug);
+    Npc_RemoveInvItem (hero, ItFo_Plants_OrcHerb_02);
+    Npc_RemoveInvItems (hero, ItFo_Plants_Nightshadow_01, 1);
+	Npc_RemoveInvItems (hero, ItFo_Plants_mountainmoos_01, 1);
+	Print ("Uwarzy³eœ miksturê");
+	B_giveXP (150);
+	Info_ClearChoices		(DIA_PC_Hero_SpecialPotions);
+    Info_AddChoice		(DIA_PC_Hero_SpecialPotions, DIALOG_BACK, DIA_PC_Hero_SpecialPotions_BACK);
+	if (HeroKnows_AlchemySprintPotions)
+	{
+	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Ma³a mikstura szybkoœci (zêbate ziele, Serafis, woda)", DIA_PC_Hero_SpecialPotions_Q1);
+	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Œrednia mikstura szybkoœci (ciemny grzyb, Serafis, woda)", DIA_PC_Hero_SpecialPotions_Q2);
+	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Du¿a mikstura szybkoœci (zêbate ziele, Serafis, woda)", DIA_PC_Hero_SpecialPotions_Q3);
+	};
+	if (HeroKnows_AlchemyPermPotions1)
+	{
+    Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura si³y ", DIA_PC_Hero_SpecialPotions_STR);
+    Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura zrêcznoœci", DIA_PC_Hero_SpecialPotions_DEX);
+	};
+	if (HeroKnows_AlchemyPermPotions2)
+	{
+    Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura ¿ycia ", DIA_PC_Hero_SpecialPotions_HP);
+    Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura energii", DIA_PC_Hero_SpecialPotions_EN);
+	};
+	if (HeroKnows_AlchemyClarityMixture)
+	{
+	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Mikstura oczyszczenia ", DIA_PC_Hero_SpecialPotions_GUR);
+	};
+	if (HeroKnows_AlchemyAganistPlague)
+	{
+	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Lekarstwo na zarazê", DIA_PC_Hero_SpecialPotions_PLAGUE);
+	};
+	if (HeroKnows_AlchemyTimedPotions)
+	{
+	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Wywar si³y", DIA_PC_Hero_SpecialPotions_STRT1);
+	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Wywar zwinnoœci", DIA_PC_Hero_SpecialPotions_DEXT1); 
+	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Wywar many", DIA_PC_Hero_SpecialPotions_MANT1);
+	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Wywar potêgi", DIA_PC_Hero_SpecialPotions_MAST1);
+	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Wywar ¿ycia", DIA_PC_Hero_SpecialPotions_HPT1);
+	};
+	if (HeroKnows_AlchemyPotionsPower)
+	{
+	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Napój potêgi", DIA_PC_Hero_SpecialPotions_KING);
+	Info_AddChoice		(DIA_PC_Hero_SpecialPotions, "Napój w³adzy", DIA_PC_Hero_SpecialPotions_MAGE); 
+	};
+    } else {
+	Print ("Nie masz sk³adników");
+    AI_StopProcessInfos	(self);         
+   };     
+};
 
 //========================================
 //-----------------> Alcohol
@@ -1323,7 +1437,7 @@ INSTANCE DIA_PC_Hero_Alcohol (C_INFO)
    condition    = DIA_PC_Hero_Alcohol_Condition;
    information  = DIA_PC_Hero_Alcohol_Info;
    permanent	= true;
-   description	= "Destyluj gorza³kê";
+   description	= "(Gorza³ka)";
 };
 
 FUNC INT DIA_PC_Hero_Alcohol_Condition()
@@ -1799,7 +1913,7 @@ INSTANCE DIA_PC_Hero_Trucizny (C_INFO)
    condition    = DIA_PC_Hero_Trucizny_Condition;
    information  = DIA_PC_Hero_Trucizny_Info;
    permanent	= true;
-   description	= "Przygotuj trucizny";
+   description	= "(Trucizny)";
 };
 
 FUNC INT DIA_PC_Hero_Trucizny_Condition()
@@ -1895,7 +2009,7 @@ INSTANCE DIA_PC_Hero_Tyton_Alch (C_INFO)
    condition    = DIA_PC_Hero_Tyton_Alch_Condition;
    information  = DIA_PC_Hero_Tyton_Alch_Info;
    permanent	= true;
-   description	= "Przygotuj tytoñ";
+   description	= "(Tytoñ)";
 };
 
 FUNC INT DIA_PC_Hero_Tyton_Alch_Condition()
@@ -2141,7 +2255,7 @@ INSTANCE DIA_PC_Hero_MocnySpirytus (C_INFO)
    condition    = DIA_PC_Hero_MocnySpirytus_Condition;
    information  = DIA_PC_Hero_MocnySpirytus_Info;
    permanent	= true;
-   description	= "Dodaj cukier do alkoholu Bandytów";
+   description	= "(Dodaj cukier do alkoholu Bandytów)";
 };
 
 FUNC INT DIA_PC_Hero_MocnySpirytus_Condition()

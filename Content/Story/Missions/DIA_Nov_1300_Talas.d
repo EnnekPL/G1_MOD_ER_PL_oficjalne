@@ -517,7 +517,7 @@ INSTANCE DIA_Talas_ABOUT_STEH (C_INFO)
 
 FUNC INT DIA_Talas_ABOUT_STEH_Condition()
 {
-    if (MIS_HandlarzSteh == LOG_RUNNING)
+    if (MIS_StrangeResearcher == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -542,7 +542,7 @@ FUNC VOID DIA_Talas_ABOUT_STEH_Info()
 	AI_Output (self, other ,"DIA_Talas_ABOUT_STEH_03_14"); //Nie! Nie uda ci siê. Zapewne ju¿ wie, ¿e siê na niego czaisz. Kilka dni temu zaprzesta³ handlowaæ i nie odpowiada na proœby Nowicjuszy. 
 	AI_Output (self, other ,"DIA_Talas_ABOUT_STEH_03_15"); //Albo mu siê skoñczy³y b³yskotki, albo nas zwietrzy³. Mam nadziejê, ¿e nie trafi na moj¹ osobê.
 	AI_Output (self, other ,"DIA_Talas_ABOUT_STEH_03_16"); //Jestem bardzo wa¿ny w Obozie...
-	B_LogEntry               (CH1_HandlarzSteh,"Talas opowiedzia³ mi o tym jak przebiega tajemniczy proceder sprzeda¿y artefaktów. Wszystko odbywa siê bez kontaktu z podejrzanym handlarzem. Wiem tylko, ¿e zostawia on swoje towary na podeœcie za chat¹ Nyrasa i odbiera stamt¹d nale¿noœci. Pogadam z okolicznymi mieszkañcami i mo¿e uda mi siê coœ z nich wyci¹gn¹æ.");
+	B_LogEntry               (CH3_StrangeResearcher,"Talas opowiedzia³ mi o tym jak przebiega tajemniczy proceder sprzeda¿y artefaktów. Wszystko odbywa siê bez kontaktu z podejrzanym handlarzem. Wiem tylko, ¿e zostawia on swoje towary na podeœcie za chat¹ Nyrasa i odbiera stamt¹d nale¿noœci. Pogadam z okolicznymi mieszkañcami i mo¿e uda mi siê coœ z nich wyci¹gn¹æ.");
 };
 
 //========================================
@@ -561,7 +561,7 @@ INSTANCE DIA_Talas_ABOUT_KILLER (C_INFO)
 
 FUNC INT DIA_Talas_ABOUT_KILLER_Condition()
 {
-    if (MIS_SeryjneZabojstwa == LOG_RUNNING)
+    if (MIS_PsionicCSI == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -573,7 +573,7 @@ FUNC VOID DIA_Talas_ABOUT_KILLER_Info()
     AI_Output (other, self ,"DIA_Talas_ABOUT_KILLER_15_01"); //Masz jakieœ informacje o zabójstwie jakiego dokonano w okolicy?
     AI_Output (self, other ,"DIA_Talas_ABOUT_KILLER_03_02"); //Nie, dopiero co siê dowiedzia³em. Naprawdê makabryczna sprawa. 
 	AI_Output (other, self ,"DIA_Talas_ABOUT_KILLER_15_03"); //Znasz jakiegoœ zabijakê z okolicy?
-	AI_Output (self, other ,"DIA_Talas_ABOUT_KILLER_03_04"); //Rozmawia³am chwilê z Basirem. Jeœli mia³bym wytypowaæ podejrzanego to powiedzia³bym, ¿e to Harlok. Ma blisko chatê i ponoæ trafi³ do Koloni za morderstwo.
+	AI_Output (self, other ,"DIA_Talas_ABOUT_KILLER_03_04"); //Rozmawia³am chwilê z Hakanem. Jeœli mia³bym wytypowaæ podejrzanego to powiedzia³bym, ¿e to Harlok. Ma blisko chatê i ponoæ trafi³ do Koloni za morderstwo.
 	AI_Output (self, other ,"DIA_Talas_ABOUT_KILLER_03_05"); //Mo¿e przypomnia³y mu siê stare czasy i poczu³ chêæ przelania krwi? Lepiej sprawdŸ jego chatê. Byæ mo¿e znajdziesz tam dowód i bêdziesz móg³ go oskar¿yæ.
-	B_LogEntry               (CH1_SeryjneZabojstwa,"Talas nie wie nic o zabójstwie, ale podejrzewa Harloka. Dowiedzia³em siê, ¿e rozmawia³ ostatnio na ten temat z Basirem.");
+	B_LogEntry               (CH3_PsionicCSI,"Talas nie wie nic o zabójstwie, ale podejrzewa Harloka. Dowiedzia³em siê, ¿e rozmawia³ ostatnio na ten temat z Hakanem.");
 };

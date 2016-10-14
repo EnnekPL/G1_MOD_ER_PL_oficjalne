@@ -1,3 +1,67 @@
+﻿// *Script was make in Easy Dialog Maker (EDM)
+/*
+//========================================
+//-----------------> OPCJA *KONIEC* 
+//========================================
+
+INSTANCE DIA_CorristoOT_EXIT(C_INFO)
+{
+	npc             = KDF_8084_CorristoOT;
+	nr              = 999;
+	condition	= DIA_CorristoOT_EXIT_Condition;
+	information	= DIA_CorristoOT_EXIT_Info;
+	permanent	= TRUE;
+	description     = "Walczmy (Koniec)";
+};
+
+FUNC INT DIA_CorristoOT_EXIT_Condition()
+{
+	return TRUE;
+};
+
+FUNC VOID DIA_CorristoOT_EXIT_Info()
+{
+	AI_StopProcessInfos	(self);
+};
+*/
+/*
+//========================================
+//-----------------> HELLO3
+//========================================
+
+INSTANCE DIA_CorristoOT_HELLO3 (C_INFO)
+{
+   npc          = KDF_8084_CorristoOT;
+   nr           = 3;
+   condition    = DIA_CorristoOT_HELLO3_Condition;
+   information  = DIA_CorristoOT_HELLO3_Info;
+   permanent	= FALSE;
+   description	= "Co dał wam ten kamień?";
+};
+
+FUNC INT DIA_CorristoOT_HELLO3_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_CorristoOT_Evil))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_CorristoOT_HELLO3_Info()
+{
+    AI_Output (other, self ,"DIA_CorristoOT_HELLO3_15_01"); //Co dał wam ten kamień?
+    AI_Output (self, other ,"DIA_CorristoOT_HELLO3_03_02"); //Prowadziłem nad nim badania, aż w końcu udało mi się uwolnić jego moc.
+    AI_Output (self, other ,"DIA_CorristoOT_HELLO3_03_03"); //Poszukiwacze użyli go do przywołania potężnych istot z kuźni Beliara.
+    AI_Output (self, other ,"DIA_CorristoOT_HELLO3_03_04"); //Nigdy nie uda ci się pokonać naszego Pana.
+    AI_Output (self, other ,"DIA_CorristoOT_HELLO3_03_05"); //Zbytnio urósł w siłę.
+    AI_Output (self, other ,"DIA_CorristoOT_HELLO3_03_06"); //Jesteś tylko marnym człowiekiem. Nawet ta magiczna zbroja cię nie ocali.
+	
+    B_LogEntry                     (CH6_CorristoSlepper,"Poszukiwacze wykorzystali kamień do przywołania potężnych istot, które będą chronić Śniącego. Innymi słowy mam kłopoty...");
+
+    B_GiveXP (500);
+};
+*/
 /*
 //========================================
 //-----------------> JarvisKoxSzmaciarzu
@@ -838,5 +902,315 @@ FUNC VOID DIA_Caine_OreWyplata_Info()
     CreateInvItems (self, ItMiNugget, 60);
     B_GiveInvItems (self, other, ItMiNugget, 60);
     pensja2  = wld_getday();
+    AI_StopProcessInfos	(self);
+};
+
+
+
+
+
+//========================================
+//-----------------> LEKI
+//========================================
+
+INSTANCE DIA_CorKalom_LEKI (C_INFO)
+{
+   npc          = GUR_1201_CorKalom;
+   nr           = 1;
+   condition    = DIA_CorKalom_LEKI_Condition;
+   information  = DIA_CorKalom_LEKI_Info;
+   permanent	= FALSE;
+   description	= "Drwal Hanson potrzebuje leku na zarazę.";
+};
+
+FUNC INT DIA_CorKalom_LEKI_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Hanson_QUEST1))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_CorKalom_LEKI_Info()
+{
+    AI_Output (other, self ,"DIA_CorKalom_LEKI_15_01"); //Drwal Hanson potrzebuje leku na zarazę.
+    AI_Output (self, other ,"DIA_CorKalom_LEKI_03_02"); //Zarazę? Gdzie on się tego nabawił?
+    AI_Output (other, self ,"DIA_CorKalom_LEKI_15_03"); //Na bagnie. Ciągle tam przesiaduje. Twierdzi, że jest z nim coraz gorzej.
+    AI_Output (self, other ,"DIA_CorKalom_LEKI_03_04"); //Akurat miałem dla niego pewną robotę... Chwileczkę, muszę poszukać receptury i przyrządzić lekarstwo.
+	B_UseFakeScroll();
+	AI_Output (self, other ,"DIA_CorKalom_LEKI_03_05"); //Tak jak sądziłem. Nie mam składników...
+	AI_Output (other, self ,"DIA_CorKalom_LEKI_15_06"); //Co jest ci potrzebne? Postaram się to przynieść.
+	AI_Output (self, other ,"DIA_CorKalom_LEKI_03_07"); //Liść dębu, psianka i górski mech. Psianki znajdziesz w jaskiniach, górski mech, wiadomo że na wyżynach, a co do liści dębu... szukać pod wysokimi drzewami, choć to nie jest reguła.
+	AI_Output (other, self ,"DIA_CorKalom_LEKI_15_08"); //Rozumiem, postaram się wkrótce wrócić.
+	
+    B_LogEntry                     (CH1_ChoryDrwal,"Cor Kalom już miał się zabrać za przygotowywanie lekarstwa, ale okazało się, że nie ma składników. Mam mu przynieść liść dębu, psiankę i górski mech.");
+};
+
+//========================================
+//-----------------> ingredients
+//========================================
+var int waiting_1201_HansonDrug;
+INSTANCE DIA_CorKalom_ingredients (C_INFO)
+{
+   npc          = GUR_1201_CorKalom;
+   nr           = 1;
+   condition    = DIA_CorKalom_ingredients_Condition;
+   information  = DIA_CorKalom_ingredients_Info;
+   permanent	= FALSE;
+   description	= "Mam dla ciebie składniki na lekarstwo dla Hansona.";
+};
+
+FUNC INT DIA_CorKalom_ingredients_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_CorKalom_LEKI)) && (Npc_HasItems (other, ItFo_Plants_OrcHerb_02) >=1) && (Npc_HasItems (other, ItFo_Plants_Nightshadow_01) >=1) && (Npc_HasItems (other, ItFo_Plants_mountainmoos_01) >=1)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_CorKalom_ingredients_Info()
+{
+    AI_Output (other, self ,"DIA_CorKalom_ingredients_15_01"); //Mam dla ciebie składniki na lekarstwo dla Hansona.
+    AI_Output (self, other ,"DIA_CorKalom_ingredients_03_02"); //Świetnie. Daj mi je. Jutro mikstura będzie gotowa. 
+    AI_Output (other, self ,"DIA_CorKalom_ingredients_15_03"); //Dopiero jutro?
+    AI_Output (self, other ,"DIA_CorKalom_ingredients_03_04"); //Nie jestem w stanie przyspieszyć pewnych naturalnych procesów...
+	waiting_1201_HansonDrug = Wld_GetDay();
+    B_LogEntry                     (CH1_ChoryDrwal,"Zaniosłem Cor Kalomowi składniki, jednak na miksturę muszę czekać do jutra.");
+	B_GiveInvItems (self, other, ItFo_Plants_OrcHerb_02, 1);
+	B_GiveInvItems (self, other, ItFo_Plants_Nightshadow_01, 1);
+	B_GiveInvItems (self, other, ItFo_Plants_mountainmoos_01, 1);
+};
+
+//========================================
+//-----------------> GetDrug
+//========================================
+
+INSTANCE DIA_CorKalom_GetDrug (C_INFO)
+{
+   npc          = GUR_1201_CorKalom;
+   nr           = 1;
+   condition    = DIA_CorKalom_GetDrug_Condition;
+   information  = DIA_CorKalom_GetDrug_Info;
+   permanent	= FALSE;
+   description	= "Czy lek jest już gotowy?";
+};
+
+FUNC INT DIA_CorKalom_GetDrug_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_CorKalom_ingredients)) && (waiting_1201_HansonDrug != Wld_GetDay())
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_CorKalom_GetDrug_Info()
+{
+    AI_Output (other, self ,"DIA_CorKalom_GetDrug_15_01"); //Czy lek jest już gotowy?
+    AI_Output (self, other ,"DIA_CorKalom_GetDrug_03_02"); //Masz, zanieś go Hansownowi.
+	
+	CreateInvItems (self, ItMis_Drug, 1);
+    B_GiveInvItems (self, other, ItMis_Drug, 1);
+	
+    B_LogEntry                     (CH1_ChoryDrwal,"Cor Kalom dał mi przygotowany lek. Muszę go teraz zanieść Hansonowi.");
+};
+
+
+ /*
+//========================================
+//-----------------> Sprawa
+//========================================
+
+INSTANCE DIA_CorAngar_Sprawa (C_INFO) // przecież to zadanie zleca nam Shawn ***FIX***
+{
+   npc          = GUR_1202_CorAngar;
+   nr           = 1;
+   condition    = DIA_CorAngar_Sprawa_Condition;
+   information  = DIA_CorAngar_Sprawa_Info;
+   permanent	= FALSE;
+   Important    = TRUE;
+};
+
+FUNC INT DIA_CorAngar_Sprawa_Condition()
+{
+    if (kapitel == 4)
+
+    && (Npc_KnowsInfo (hero, GUR_1201_CorKalom_JoinPSI))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_CorAngar_Sprawa_Info()
+{
+    AI_Output (self, other ,"DIA_CorAngar_Sprawa_03_01"); //Zaczekaj. Mam dla ciebie zadanie.
+    AI_Output (self, other ,"DIA_CorAngar_Sprawa_03_02"); //Doszły nas wieści ze Starej Kopalni.
+    AI_Output (self, other ,"DIA_CorAngar_Sprawa_03_03"); //Podobno sytuacja w Kolonii jest bardzo zła.
+    AI_Output (other, self ,"DIA_CorAngar_Sprawa_15_04"); //Bynajmniej. Na czym polega moje zadanie?
+    AI_Output (self, other ,"DIA_CorAngar_Sprawa_03_05"); //Udaj się w pobliże Starej Kopalni i sprawdź, czy nasi bracia z kopalni żyją.
+    AI_Output (self, other ,"DIA_CorAngar_Sprawa_03_06"); //Mam nadzieję, że udało im się uciec.
+    AI_Output (self, other ,"DIA_CorAngar_Sprawa_03_07"); //Tylko bądź ostrożny.
+    MIS_HelpBrothersBra  = LOG_RUNNING;
+
+    Log_CreateTopic            (CH1_HelpBrothersBra , LOG_MISSION);
+    Log_SetTopicStatus       (CH1_HelpBrothersBra , LOG_RUNNING);
+    B_LogEntry                     (CH1_HelpBrothersBra ,"Cor Angar kazał mi sprawdzić, co stało się z naszymi braćmi z kopalni.");
+};
+*/
+
+
+//========================================
+//-----------------> QUEST2_E
+//========================================
+
+INSTANCE DIA_Hanson_QUEST2_E (C_INFO)
+{
+   npc          = NOV_5008_Hanson;
+   nr           = 5;
+   condition    = DIA_Hanson_QUEST2_E_Condition;
+   information  = DIA_Hanson_QUEST2_E_Info;
+   permanent	= FALSE;
+   description	= "Masz się zgłosić do świątyni!";
+};
+
+FUNC INT DIA_Hanson_QUEST2_E_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Shawn_QUEST3_OK)) && (kapitel == 10)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Hanson_QUEST2_E_Info()
+{
+    AI_Output (other, self ,"DIA_Hanson_QUEST2_E_15_01"); //Masz się zgłosić do świątyni! Shawn chce z tobą porozmawiać.
+    AI_Output (self, other ,"DIA_Hanson_QUEST2_E_03_02"); //Czy to ma coś wspólnego z tymi zabójstwami? Już idę.
+    B_GiveXP (50);
+	Npc_ExchangeRoutine (NOV_5008_Hanson,"temple");
+    AI_StopProcessInfos	(self);
+};
+
+////////////////////////////////////////////
+// Czarny Mag - wątek nieaktywny
+////////////////////////////////////////////
+
+//========================================
+//-----------------> POSZUKIWACZE
+//========================================
+
+INSTANCE DIA_Shawn_POSZUKIWACZE (C_INFO)
+{
+   npc          = TPL_5004_Shawn;
+   nr           = 8;
+   condition    = DIA_Shawn_POSZUKIWACZE_Condition;
+   information  = DIA_Shawn_POSZUKIWACZE_Info;
+   permanent	= FALSE;
+   description	= "Co z Hansonem?";
+};
+
+FUNC INT DIA_Shawn_POSZUKIWACZE_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Shawn_QUEST3_OK)) && (Npc_KnowsInfo (hero, DIA_Hanson_QUEST2_E)) && (kapitel == 10)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Shawn_POSZUKIWACZE_Info()
+{
+    AI_Output (other, self ,"DIA_Shawn_POSZUKIWACZE_15_01"); //Co z Hansonem?
+    AI_Output (self, other ,"DIA_Shawn_POSZUKIWACZE_03_02"); //Musimy go przesłuchać. 
+    AI_Output (self, other ,"DIA_Shawn_POSZUKIWACZE_03_03"); //Nurtuje mnie skąd wziął się głos, który kazał mu zabić Nowicjuszy. 
+    AI_Output (other, self ,"DIA_Shawn_POSZUKIWACZE_15_04"); //Może Hanson próbuje udawać psychopatę, aby nie zostać ukaranym?
+    AI_Output (self, other ,"DIA_Shawn_POSZUKIWACZE_03_05"); //To również ma sens... Ale co jeżeli mówi prawdę? Ktoś wpływowy i niebezpieczny kręci się w Kolonii.
+    AI_Output (self, other ,"DIA_Shawn_POSZUKIWACZE_03_06"); //Muszę napisać list do Cronosa w tej sprawie. 
+	MIS_MroczneBractwo = LOG_RUNNING;
+
+    Log_CreateTopic            (CH1_MroczneBractwo, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_MroczneBractwo, LOG_RUNNING);
+    B_LogEntry                     (CH1_MroczneBractwo,"Shawn obawia się tego, który rzekomo zlecił Hansonowi zabójstwo. To coś może być dla nas zagrożeniem.");
+
+   // B_GiveXP (150);
+
+};
+
+//========================================
+//-----------------> QUEST4
+//========================================
+
+INSTANCE DIA_Shawn_QUEST4 (C_INFO)
+{
+   npc          = TPL_5004_Shawn;
+   nr           = 9;
+   condition    = DIA_Shawn_QUEST4_Condition;
+   information  = DIA_Shawn_QUEST4_Info;
+   permanent	= FALSE;
+   description	= "Mógłbym zanieść twój list.";
+};
+
+FUNC INT DIA_Shawn_QUEST4_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Shawn_POSZUKIWACZE))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Shawn_QUEST4_Info()
+{
+    AI_Output (other, self ,"DIA_Shawn_QUEST4_15_01"); //Mógłbym zanieść twój list. W końcu nie takie rzeczy się robiło.
+    AI_Output (self, other ,"DIA_Shawn_QUEST4_03_02"); //Bardzo ci dziękuję. Świetny pomysł. Zaczekaj zaraz ci go dam.
+    B_UseFakeScroll ();
+    CreateInvItems (self, ItMi_ListdoCronosa, 1);
+    B_GiveInvItems (self, other, ItMi_ListdoCronosa, 1);
+    MIS_ListDoCronosa = LOG_RUNNING;
+
+    Log_CreateTopic            (CH1_ListDoCronosa, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_ListDoCronosa, LOG_RUNNING);
+    B_LogEntry                     (CH1_ListDoCronosa,"Shawn dał mi list, który muszę wręczyć Cronosowi w Nowym Obozie.");
+};
+
+//========================================
+//-----------------> LIST
+//========================================
+
+INSTANCE DIA_Cronos_LIST (C_INFO)
+{
+   npc          = KDW_604_Cronos;
+   nr           = 5;
+   condition    = DIA_Cronos_LIST_Condition;
+   information  = DIA_Cronos_LIST_Info;
+   permanent	= FALSE;
+   description	= "Mam list z Bractwa.";
+};
+
+FUNC INT DIA_Cronos_LIST_Condition()
+{
+    if (Npc_HasItems (other, ItMi_ListdoCronosa) >=1)
+    && (MIS_ListDoCronosa == LOG_RUNNING)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Cronos_LIST_Info()
+{
+    AI_Output (other, self ,"DIA_Cronos_LIST_15_01"); //Mam list z Bractwa.
+    AI_Output (self, other ,"DIA_Cronos_LIST_03_02"); //Jaki list? Nie oczekujemy odpowiedzi.
+    AI_Output (other, self ,"DIA_Cronos_LIST_15_03"); //To list dotyczący podejrzanych opętań w Bractwie. Guru potrzebują waszych porad.
+    AI_Output (self, other ,"DIA_Cronos_LIST_03_04"); //Niepokoi mnie ta wiadomość. Dziękuję za list. Wkrótce wyślę kuriera z odpowiedzią.
+    B_LogEntry                     (CH1_ListDoCronosa,"Zaniosłem list Cronosowi. Był wyraźnie zaniepokojony tym, co dzieje się w Bractwie Śniącego.");
+    Log_SetTopicStatus       (CH1_ListDoCronosa, LOG_SUCCESS);
+    MIS_ListDoCronosa = LOG_SUCCESS;
+	B_GiveInvItems (other, self, ItMi_ListdoCronosa, 1);
+	Npc_RemoveInvItems (self, ItMi_ListdoCronosa, 1);
+    B_GiveXP (50);
     AI_StopProcessInfos	(self);
 };

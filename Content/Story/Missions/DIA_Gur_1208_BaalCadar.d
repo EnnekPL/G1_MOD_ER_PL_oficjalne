@@ -660,7 +660,7 @@ FUNC void  Gur_1208_BaalCadar_BOOK_Info()
 		AI_Output (other, self,"Gur_1208_BaalCadar_BOOK_Info_15_02"); //W³aœnie przychodzê w jej sprawie. Ile bêdzie mnie ona kosztowaæ, mistrzu Baal Cadarze? 
 		AI_Output (self, other,"Gur_1208_BaalCadar_BOOK_Info_02_03"); //Odkupi³em j¹ od Maga Wody Merdariona. Powiedzia³, ¿e przyniós³ mu j¹ jakiœ Najemnik. 
 		AI_Output (self, other,"Gur_1208_BaalCadar_BOOK_Info_02_04"); //Myœlê, ¿e 400 bry³ek rudy to uczciwa cena w zamian za jej niezwykle interesuj¹c¹ zawartoœæ. 
-		B_LogEntry               (CH1_testGuru,"Baal Cadar chce za ksi¹¿kê 400 bry³ek rudy. Chyba bêdê zmuszony zap³aciæ, jeœli naprawdê chcê poznaæ jej tajemnicê.");
+		B_LogEntry               (CH3_TestGuru,"Baal Cadar chce za ksi¹¿kê 400 bry³ek rudy. Chyba bêdê zmuszony zap³aciæ, jeœli naprawdê chcê poznaæ jej tajemnicê.");
 };
 
 /*------------------------------------------------------------------------
@@ -700,7 +700,7 @@ FUNC void  Gur_1208_BaalCadar_BUY_Info()
 		CreateInvItems (self, ItWr_Mod_ReceptClarityMixture, 1);
 		B_GiveInvItems (self, other, ItWr_Mod_ReceptClarityMixture, 1);
 		
-		B_LogEntry               (CH1_testGuru,"Odkupi³em ksiêgê od Guru. Co ciekawe Baal Cadar opowiedzia³ mi co nieco o miksturze. Okazuje siê, ¿e wiêkszoœæ jej sk³adników to niezwykle rzadkie unikaty, których znalezienie w Kolonii graniczy z cudem. Na szczêœcie zaoferowa³ mi swoj¹ pomoc. Muszê przeczytaæ notatki i z nim porozmawiaæ.");
+		B_LogEntry               (CH3_TestGuru,"Odkupi³em ksiêgê od Guru. Co ciekawe Baal Cadar opowiedzia³ mi co nieco o miksturze. Okazuje siê, ¿e wiêkszoœæ jej sk³adników to niezwykle rzadkie unikaty, których znalezienie w Kolonii graniczy z cudem. Na szczêœcie zaoferowa³ mi swoj¹ pomoc. Muszê przeczytaæ notatki i z nim porozmawiaæ.");
 };
 
 //========================================
@@ -719,8 +719,8 @@ INSTANCE DIA_BaalCadar_ReadAboutClarity (C_INFO)
 
 FUNC INT DIA_BaalCadar_ReadAboutClarity_Condition()
 {
-    if (MIS_testGuru == LOG_RUNNING)
-    && (ItemUsed_ReceptClarityMixture == true)
+    if (MIS_TestGuru == LOG_RUNNING)
+    && (HeroKnows_AlchemyClarityMixture == true)
     {
     return TRUE;
     };
@@ -748,7 +748,7 @@ FUNC VOID DIA_BaalCadar_ReadAboutClarity_WolfBerrys()
     AI_Output (self, other ,"DIA_BaalCadar_ReadAboutClarity_WolfBerrys_03_04"); //A wiêc idŸ w to samo miejsce po czym udaj siê dalej wzd³u¿ klifu. IdŸ po prostu obok lasu.
     AI_Output (self, other ,"DIA_BaalCadar_ReadAboutClarity_WolfBerrys_03_05"); //Gdy ju¿ przejdziesz na drug¹ stronê, powinieneœ spotkaæ Nowicjusza, którego wys³a³em wczeœniej na poszukiwania. 
     AI_Output (self, other ,"DIA_BaalCadar_ReadAboutClarity_WolfBerrys_03_06"); //Skorzystaj z jego pomocy. Razem na pewno coœ znajdziecie. 
-    B_LogEntry                     (CH1_testGuru,"Wilczych jagód powinienem szukaæ na wy¿ynie nad Bractwem, po drugiej stronie klifu. Baal Cadar wys³a³ w tamte strony Nowicjusza, który mi pomo¿e. ");
+    B_LogEntry                     (CH3_TestGuru,"Wilczych jagód powinienem szukaæ na wy¿ynie nad Bractwem, po drugiej stronie klifu. Baal Cadar wys³a³ w tamte strony Nowicjusza, który mi pomo¿e. ");
 	
 	Npc_ExchangeRoutine	(NOV_1322_Novize,"wolfberrys");
 	Wld_InsertNpc		(Beast_Cliff,"OW_MIS_CREATURE_WOLFBERRYS");
@@ -763,7 +763,7 @@ FUNC VOID DIA_BaalCadar_ReadAboutClarity_Sage()
     AI_Output (other, self ,"DIA_BaalCadar_ReadAboutClarity_Sage_15_05"); //A wiêc powinienem szukaæ w jakimœ odludnym miejscu? Tam gdzie od lat nie krêcili siê ¿adni zbieracze ani alchemicy?
     AI_Output (self, other ,"DIA_BaalCadar_ReadAboutClarity_Sage_03_06"); //Jedynym takim miejscem s¹ Ziemie Orków. Od czasów wojny ludzie siê tam nie zapuszczaj¹. 
     AI_Output (self, other ,"DIA_BaalCadar_ReadAboutClarity_Sage_03_07"); //Orkowie raczej nie korzystaj¹ z tych zió³, wiêc w³aœnie tam powinieneœ szukaæ.
-    B_LogEntry                     (CH1_testGuru,"Sza³wii mam szukaæ na Ziemiach Orków. Nie doœæ, ¿e jest tam niebezpiecznie to nie wiem od jakiego miejsca zacz¹æ. Chyba bêdê musia³ przeczesaæ ka¿d¹ polankê. ");
+    B_LogEntry                     (CH3_TestGuru,"Sza³wii mam szukaæ na Ziemiach Orków. Nie doœæ, ¿e jest tam niebezpiecznie to nie wiem od jakiego miejsca zacz¹æ. Chyba bêdê musia³ przeczesaæ ka¿d¹ polankê. ");
 	
 	Wld_InsertNpc		(Beast_OrcTower,"OW_ORC_LOOKOUT_2_02");
 };
@@ -775,7 +775,7 @@ FUNC VOID DIA_BaalCadar_ReadAboutClarity_LightMushroom()
     AI_Output (self, other ,"DIA_BaalCadar_ReadAboutClarity_LightMushroom_03_03"); //Mówiê o okolicach starej Cytadeli. Wys³a³em tam jednego ze Stra¿ników Œwi¹tynnych. Skorzystaj z jego pomocy.
 	//AI_Output (self, other ,"DIA_BaalCadar_ReadAboutClarity_LightMushroom_03_04"); //Stra¿nik nazywa siê Gor Na Ran. Na pewno ju¿ go znasz.
 	
-    B_LogEntry                     (CH1_testGuru,"Przy starej Cytadeli mam szukaæ œwietlistego grzyba. Guru wys³a³ tam na poszukiwania Stra¿nika Œwi¹tynnego, który mo¿e mi pomóc."); 
+    B_LogEntry                     (CH3_TestGuru,"Przy starej Cytadeli mam szukaæ œwietlistego grzyba. Guru wys³a³ tam na poszukiwania Stra¿nika Œwi¹tynnego, który mo¿e mi pomóc."); 
 	
 	Npc_ExchangeRoutine	(TPL_1408_Templer,"ligthmushroom");
 	TPL_1408_Templer.flags = 2;
@@ -823,7 +823,7 @@ FUNC VOID DIA_BaalCadar_AllIngredients_Info()
     AI_Output (self, other ,"DIA_BaalCadar_AllIngredients_03_11"); //Uwa¿aj na siebie. Œni¹cy nie jest zwyczajnym demonem. To potê¿na istota. Pamiêtaj o tym. 
     AI_Output (self, other ,"DIA_BaalCadar_AllIngredients_03_12"); //Lepiej idŸ ju¿ przygotowywaæ miksturê. Najlepiej skorzystaj ze sto³u alchemicznego w chacie Kaloma.
 	
-	B_LogEntry                     (CH1_testGuru,"Baal Cadar twierdzi, ¿e magiczne bestie, które spotka³em zosta³y zes³ane przez samego Œni¹cego. Demon nie chce dopuœciæ, abym posiad³ czêœæ jego mocy. ");
+	B_LogEntry                     (CH3_TestGuru,"Baal Cadar twierdzi, ¿e magiczne bestie, które spotka³em zosta³y zes³ane przez samego Œni¹cego. Demon nie chce dopuœciæ, abym posiad³ czêœæ jego mocy. ");
 	 
     AI_StopProcessInfos	(self);
 	

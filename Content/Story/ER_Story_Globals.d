@@ -56,11 +56,29 @@ const string CH1_ParvezInTroubles 			= "Parvez w tarapatach";
 var int MIS_MessengerRecall;
 const string CH2_MessengerRecall 			= "Przywo³anie pos³añca Œni¹cego";
 
+var int MIS_Plates;
+const string CH2_Plates 			 		= "Tabliczki dla Steha";
+
+var int MIS_TestGuru;
+const string CH3_TestGuru    		 		= "Zostaæ Guru";
+
 var int MIS_SellElixer;
 const string CH3_SellElixer    		 		= "Sprzeda¿ eliksirów";
 
+var int MIS_StolenStaff;
+const string CH3_StolenStaff    			= "Ukradzione artefakty";
+
+var int MIS_StrangeResearcher;
+const string CH3_StrangeResearcher     	 	= "Badacz bagien";
+
+var int MIS_PsionicCSI;
+const string CH3_PsionicCSI    				= "Seria zabójstw w Bractwie";
+
 var int MIS_ToxicFumes;
 const string CH4_ToxicFumes 				= "Truj¹ce opary";
+
+var int MIS_SickHakan;
+const string CH4_SickHakan      	 		= "Chory kucharz";
 
 var int MIS_GoldMedallion;
 const string CH4_GoldMedallion 				= "Z³oty medalion";
@@ -104,8 +122,8 @@ const string CH2_TreasureOldGuard 			= "Skarb starego Stra¿nika";
 //***Kolonia***
 //***Zmienne zadañ***
 
-var int MIS_MagicalCrystals;
-const string CH1_MagicalCrystals      		= "Szturm na Barierê";
+var int MIS_FindWhiteSkin;
+const string CH1_FindWhiteSkin   			= "Bia³y wilk";
 
 var int MIS_GhostsOldStories;
 const string Ch1_GhostsOldStories 			= "Piêtno przesz³oœci";
@@ -125,9 +143,17 @@ const string CH2_SickHunter     			= "Chory myœliwy";
 var int MIS_CorristoEvil;
 const string CH4_CorristoEvil      			= "Ucieczka Corristo";
 
+var int MIS_MagicalCrystals;
+const string CH4_MagicalCrystals      		= "Szturm na Barierê";
+
 const string CH1_HelpJesse 					= "Przys³uga za przys³ugê";
 
 const string CH1_KdWCourier 				= "Kurier Magów Wody";
+
+//***Œwi¹tynia Œni¹cego***
+//***Zmienne zadañ***
+var int MIS_CorristoSlepper;
+const string CH6_CorristoSlepper      		= "Czarny mag Corristo";
 
 //***Nauka***
 //***Logi***
@@ -159,7 +185,6 @@ var int Day_InnosShrine;
 
 //***Pomocnicze***
 //***Przedmioty***
-var int ItemUsed_ReceptClarityMixture; 	//ItWr_Mod_ReceptClarityMixture | Chapter 4
 var int ItemUsed_FingersSecretBook; 	//Poszukiwania R¹czki | Chapter 2
 var int ItemUsed_CraigsMapKeySpawn;		//ItMi_CraigsMap
 var int ItemUsed_LetterFromStudent;		//ItMis_LetterFromStudent
@@ -172,6 +197,8 @@ var int HeroKnows_AlchemySprintPotions; //mikstury szybkoœci
 var int HeroKnows_AlchemyTimedPotions; //wywary tymczasowe
 var int HeroKnows_AlchemyPotionsPower; //wywary potêgi
 var int HeroKnows_AlchemyFullRegenarate; //pe³nie
+var int HeroKnows_AlchemyAganistPlague; //lekarstwo na zarazê
+var int HeroKnows_AlchemyClarityMixture; //mikstura oczyszczenia
 var int empty_var;
 
 //***Pomocnicze***

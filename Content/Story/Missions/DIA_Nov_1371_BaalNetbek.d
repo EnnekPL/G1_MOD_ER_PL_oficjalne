@@ -119,5 +119,5 @@ FUNC void  Nov_1371_BaalNetbek_QUEST_Info()
 	AI_Output (other, self,"Nov_1371_BaalNetbek_QUEST_Info_15_09"); //...
 	AI_Output (other, self,"Nov_1371_BaalNetbek_QUEST_Info_15_10"); //Co siê sta³o dalej?! Handlarz! Pamiêtasz?
 	AI_Output (self, other,"Nov_1371_BaalNetbek_QUEST_Info_03_11"); //No próbowa³em oderwaæ ten mech... Gdy ponownie siê rozejrza³em, zobaczy³em tylko sylwetkê biegn¹c¹ w stronê tartaku. 
-	B_LogEntry               (CH1_HandlarzSteh,"Baal Netbek podobno widzia³ wieczorem Nowicjusza, który krêci³ siê w okolicach chaty Nyrasa. Nie wiem co by³o póŸniej, ale Nowicjusz oddali³ siê w stronê tartaku. Czy¿by to Hanson? ");
+	B_LogEntry               (CH3_StrangeResearcher,"Baal Netbek podobno widzia³ wieczorem Nowicjusza, który krêci³ siê w okolicach chaty Nyrasa. Nie wiem co by³o póŸniej, ale Nowicjusz oddali³ siê w stronê tartaku. Czy¿by to Hanson? ");
 	};  

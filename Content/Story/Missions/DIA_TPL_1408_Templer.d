@@ -54,7 +54,7 @@ FUNC VOID DIA_Templer_Citadel_Info()
     AI_Output (self, other ,"DIA_Templer_Citadel_03_05"); //Zapewne zosta³o tu przyzwane przez magiczne moce. 
     AI_Output (other, self ,"DIA_Templer_Citadel_15_06"); //Wszystkiego dowiemy siê, gdy ta bestia przestanie dychaæ.
     AI_Output (self, other ,"DIA_Templer_Citadel_03_07"); //A wiêc bêdê kroczy³ tu¿ za tob¹.
-    B_LogEntry                     (CH1_testGuru,"Na szczycie Cytadeli spotka³em Stra¿nika Œwi¹tynnego. W tutejszej okolicy grasuje nieznana mi bestia. Stra¿nik uwa¿a, ¿e zosta³a przyzwana magiczne. Byæ mo¿e jej zabicie da nam jakieœ wskazówki. I tak nie moglibyœmy zacz¹æ poszukiwañ dopóki to coœ siê tu czai. ");
+    B_LogEntry                     (CH3_TestGuru,"Na szczycie Cytadeli spotka³em Stra¿nika Œwi¹tynnego. W tutejszej okolicy grasuje nieznana mi bestia. Stra¿nik uwa¿a, ¿e zosta³a przyzwana magiczne. Byæ mo¿e jej zabicie da nam jakieœ wskazówki. I tak nie moglibyœmy zacz¹æ poszukiwañ dopóki to coœ siê tu czai. ");
     Npc_ExchangeRoutine (self, "FOLLOW");
     AI_StopProcessInfos	(self);
 };

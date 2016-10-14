@@ -836,7 +836,7 @@ FUNC VOID UnEquip_1H_10()
 	if Npc_IsPlayer (self)
 	{ 
 		//B_AddFightSkill (self, NPC_TALENT_1H, - Waffenbonus_10);
-		Npc_SetTalentValue(hero, NPC_TALENT_1H, Npc_GetTalentValue(hero, NPC_TALENT_1H)-2);
+		Npc_SetTalentValue(hero, NPC_TALENT_1H, Npc_GetTalentValue(hero, NPC_TALENT_1H)-5);
 	};
 };
 const string NAME_ADDON_BONUS_1H = "Premia do trafieñ krytycznych";

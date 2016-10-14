@@ -338,14 +338,29 @@ FUNC VOID DIA_BaalOrun_ToxicFumesOff_Info()
     AI_Output (self, other ,"DIA_BaalOrun_ToxicFumesOff_03_04"); //Ach, pamiêtam. Wizja Y'Beriona i ekspedycja Baal Lukora.
     AI_Output (other, self ,"DIA_BaalOrun_ToxicFumesOff_15_05"); //Palone zw³oki orków wydziela³y truj¹ce gazy, które unosi³y siê i sp³ywamy z powietrzem nad bagna.
     AI_Output (self, other ,"DIA_BaalOrun_ToxicFumesOff_03_06"); //Dobrze, ¿e problem zosta³ za¿egnany. Wkrótce powinniœmy doleczyæ ostatnich chorych. Oto obiecana nagroda. 
-    CreateInvItems (self, ItMiNugget, 500);
-    B_GiveInvItems (self, other, ItMiNugget, 500);
+	
+	if (Npc_GetTrueGuild(hero) == GIL_NOV) || (Npc_GetTrueGuild(hero) == GIL_TPL) || (Npc_GetTrueGuild(hero) == GIL_GUR)
+	{
+	AI_Output (self, other ,"DIA_BaalOrun_ToxicFumesOff_03_07"); //Zanim pójdziesz chcia³bym ciê prosiæ o jeszcze jedn¹ rzecz. Robiê to tylko dlatego, ¿e jesteœ cz³onkiem naszej spo³ecznoœci.
+	AI_Output (self, other ,"DIA_BaalOrun_ToxicFumesOff_03_08"); //Na zarazê cierpi wa¿ny dla nas Nowicjusz - Hakan. Jest tutaj jedynym kucharzem i jego praca ma du¿e znaczenie.
+	AI_Output (self, other ,"DIA_BaalOrun_ToxicFumesOff_03_09"); //Pomimo zarazy wci¹¿ pracuje i obawiam siê, ¿e mo¿e nie wytrzymaæ choroby.
+	AI_Output (self, other ,"DIA_BaalOrun_ToxicFumesOff_03_10"); //Chcia³bym, ¿ebyœ siê do niego uda³ i mu pomóg³.
+	
+	MIS_SickHakan = LOG_RUNNING;
+
+    Log_CreateTopic          (CH4_SickHakan, LOG_MISSION);
+    Log_SetTopicStatus       (CH4_SickHakan, LOG_RUNNING);
+    B_LogEntry               (CH4_SickHakan,"Baal Orun poprosi³ mnie, abym pomóg³ kucharzowi Hakanowi. Jego praca jest bardzo wa¿na dla Guru.");
+	};
+	
+    CreateInvItems (self, ItFo_PotionTime_Master_01, 1);
+    B_GiveInvItems (self, other, ItFo_PotionTime_Master_01, 1);
     AI_StopProcessInfos	(self);
 	
 	B_LogEntry               (CH4_ToxicFumes,"Powiedzia³em Baal Orunowi o tym, ¿e pozby³em siê orkowych szamanów odprawiaj¹cych obrzêdy.");
     Log_SetTopicStatus       (CH4_ToxicFumes, LOG_SUCCESS);
     MIS_ToxicFumes = LOG_SUCCESS;
 
-    B_GiveXP (600);
+    B_GiveXP (XP_ToxicFumes);
 };
 

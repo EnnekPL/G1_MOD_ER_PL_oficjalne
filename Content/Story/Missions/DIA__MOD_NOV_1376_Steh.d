@@ -7,7 +7,7 @@
 
 INSTANCE DIA_Steh_EXIT(C_INFO)
 {
-	npc             = NOV_5006_Steh;
+	npc             = NOV_1376_Steh;
 	nr              = 999;
 	condition	= DIA_Steh_EXIT_Condition;
 	information	= DIA_Steh_EXIT_Info;
@@ -31,7 +31,7 @@ FUNC VOID DIA_Steh_EXIT_Info()
 
 INSTANCE DIA_Steh_HELLO (C_INFO)
 {
-   npc          = NOV_5006_Steh;
+   npc          = NOV_1376_Steh;
    nr           = 1;
    condition    = DIA_Steh_HELLO_Condition;
    information  = DIA_Steh_HELLO_Info;
@@ -60,7 +60,7 @@ FUNC VOID DIA_Steh_HELLO_Info()
 
 INSTANCE DIA_Steh_HANDEL (C_INFO)
 {
-   npc          = NOV_5006_Steh;
+   npc          = NOV_1376_Steh;
    nr           = 600;
    condition    = DIA_Steh_HANDEL_Condition;
    information  = DIA_Steh_HANDEL_Info;
@@ -90,7 +90,7 @@ var int steh_badania;
 
 INSTANCE DIA_Steh_QUEST_BADANIA (C_INFO)
 {
-   npc          = NOV_5006_Steh;
+   npc          = NOV_1376_Steh;
    nr           = 3;
    condition    = DIA_Steh_QUEST_BADANIA_Condition;
    information  = DIA_Steh_QUEST_BADANIA_Info;
@@ -110,7 +110,7 @@ FUNC INT DIA_Steh_QUEST_BADANIA_Condition()
 FUNC VOID DIA_Steh_QUEST_BADANIA_Info()
 {
     AI_Output (other, self ,"DIA_Steh_QUEST_BADANIA_15_01"); //Jak twoje badania?
-    AI_Output (self, other ,"DIA_Steh_QUEST_BADANIA_03_02"); //Nie jest Ÿle. Odkry³em, ¿e na tych terenach mieszka³a prastara cywilizacja.
+    AI_Output (self, other ,"DIA_Steh_QUEST_BADANIA_03_02"); //Dokona³em pewnych postêpów. Odkry³em, ¿e na tych terenach mieszka³a prastara cywilizacja.
     AI_Output (self, other ,"DIA_Steh_QUEST_BADANIA_03_03"); //Niestety, moje badania na razie stoj¹.
     AI_Output (other, self ,"DIA_Steh_QUEST_BADANIA_15_04"); //Dlaczego?
     AI_Output (self, other ,"DIA_Steh_QUEST_BADANIA_03_05"); //Otó¿ dawni mieszkañcy tych terenów do spisywania swojej historii u¿ywali kamiennych tabliczek.
@@ -128,11 +128,11 @@ FUNC VOID DIA_Steh_QUEST_BADANIA_Info()
     AI_Output (self, other ,"DIA_Steh_QUEST_BADANIA_03_10"); //300 bry³ek rudy i tabliczkê, dziêki której lepiej wykorzystasz swoj¹ si³ê.
     AI_Output (other, self ,"DIA_Steh_QUEST_BADANIA_15_11"); //Dobrze. Odszukam te twoje tabliczki.
     AI_Output (self, other ,"DIA_Steh_QUEST_BADANIA_03_12"); //Patrz uwa¿nie. Mog¹ byæ ukryte w bagnie. Piêæ powinno wystarczyæ.
-    MIS_Tabliczki = LOG_RUNNING;
+    MIS_Plates = LOG_RUNNING;
 
-    Log_CreateTopic          (CH1_Tabliczki, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_Tabliczki, LOG_RUNNING);
-    B_LogEntry               (CH1_Tabliczki,"Steh kaza³ mi odnaleŸæ na bagnie kilka kamiennych tabliczek. S¹ czarne i mog¹ znajdowaæ siê w bagnie.");
+    Log_CreateTopic          (CH2_Plates, LOG_MISSION);
+    Log_SetTopicStatus       (CH2_Plates, LOG_RUNNING);
+    B_LogEntry               (CH2_Plates,"Steh kaza³ mi odnaleŸæ na bagnie kilka kamiennych tabliczek. S¹ czarne i mog¹ znajdowaæ siê w bagnie.");
 	//DIA_Steh_QUEST_BADANIA.permanent = false;
 	steh_badania = true;
     };
@@ -144,7 +144,7 @@ FUNC VOID DIA_Steh_QUEST_BADANIA_Info()
 
 INSTANCE DIA_Steh_QUEST_TABLICE (C_INFO)
 {
-   npc          = NOV_5006_Steh;
+   npc          = NOV_1376_Steh;
    nr           = 4;
    condition    = DIA_Steh_QUEST_TABLICE_Condition;
    information  = DIA_Steh_QUEST_TABLICE_Info;
@@ -155,7 +155,7 @@ INSTANCE DIA_Steh_QUEST_TABLICE (C_INFO)
 FUNC INT DIA_Steh_QUEST_TABLICE_Condition()
 {
     if (Npc_HasItems (other, BlackPlate01) >=5)
-    && (MIS_Tabliczki == LOG_RUNNING)
+    && (MIS_Plates == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -168,9 +168,9 @@ FUNC VOID DIA_Steh_QUEST_TABLICE_Info()
     AI_Output (self, other ,"DIA_Steh_QUEST_TABLICE_03_02"); //Naprawdê je znalaz³eœ?! Bardzo ci dziêkujê.
     AI_Output (self, other ,"DIA_Steh_QUEST_TABLICE_03_03"); //To z pewnoœci¹ przyspieszy moje badania.
     AI_Output (self, other ,"DIA_Steh_QUEST_TABLICE_03_04"); //Oto twoja nagroda.
-    B_LogEntry                     (CH1_Tabliczki,"Odnalaz³em tabliczki dla Steha.");
-    Log_SetTopicStatus       (CH1_Tabliczki, LOG_SUCCESS);
-    MIS_Tabliczki = LOG_SUCCESS;
+    B_LogEntry                     (CH2_Plates,"Odnalaz³em tabliczki dla Steha.");
+    Log_SetTopicStatus       (CH2_Plates, LOG_SUCCESS);
+    MIS_Plates = LOG_SUCCESS;
 	var int ilosc_tabliczek;
 	ilosc_tabliczek = Npc_hasitems (hero, BlackPlate01);
     B_GiveInvItems (hero,self,BlackPlate01,ilosc_tabliczek);
@@ -187,7 +187,7 @@ FUNC VOID DIA_Steh_QUEST_TABLICE_Info()
 
 INSTANCE DIA_Steh_QUEST2_YOU (C_INFO)
 {
-   npc          = NOV_5006_Steh;
+   npc          = NOV_1376_Steh;
    nr           = 5;
    condition    = DIA_Steh_QUEST2_YOU_Condition;
    information  = DIA_Steh_QUEST2_YOU_Info;
@@ -198,7 +198,7 @@ INSTANCE DIA_Steh_QUEST2_YOU (C_INFO)
 FUNC INT DIA_Steh_QUEST2_YOU_Condition()
 {
     if (Npc_KnowsInfo (hero, Nov_1371_BaalNetbek_QUEST))
-    && (MIS_HandlarzSteh == LOG_RUNNING)
+    && (MIS_StrangeResearcher == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -229,7 +229,7 @@ FUNC VOID DIA_Steh_QUEST2_YOU_LIE ()
 	AI_Output (other, self ,"DIA_Steh_QUEST2_YOU_LIE_15_08"); //Zanieœ wszystkie artefakty, które masz przy sobie do Shawna, a potem oddaj siê pracy na rzecz wspólnoty.
 	AI_Output (other, self ,"DIA_Steh_QUEST2_YOU_LIE_15_09"); //A i zapamiêtaj: nigdy nie lekcewa¿ zakazów narzuconych przez Guru!
 	AI_Output (self, other ,"DIA_Steh_QUEST2_YOU_LIE_03_10"); //Dziêkujê za drug¹ szansê!
-	B_LogEntry     (CH1_HandlarzSteh,"Nowicjuszem, który sprzedaje artefakty jest niejaki Steh, krêc¹cy siê przy palisadzie chroni¹cej Obóz przed b³otnymi wê¿ami. Rozmawia³em z nim i musia³em posun¹æ siê do k³amstwa, ¿eby dobrowolnie odda³ wszystkie artefakty, a przy tym nie opuœci³ Obozu.");
+	B_LogEntry     (CH3_StrangeResearcher,"Nowicjuszem, który sprzedaje artefakty jest niejaki Steh, krêc¹cy siê przy palisadzie chroni¹cej Obóz przed b³otnymi wê¿ami. Rozmawia³em z nim i musia³em posun¹æ siê do k³amstwa, ¿eby dobrowolnie odda³ wszystkie artefakty, a przy tym nie opuœci³ Obozu.");
 	Info_ClearChoices	(DIA_Steh_QUEST2_YOU);
 };
 
@@ -244,7 +244,7 @@ FUNC VOID DIA_Steh_QUEST2_YOU_TRUE ()
 	AI_Output (other, self ,"DIA_Steh_QUEST2_YOU_TRUE_15_07"); //Sprzedaj¹c te artefakty nieodpowiednim osobom, powa¿nie szkodzisz ca³emu Bractwu. Przemyœl to. 
 	AI_Output (self, other ,"DIA_Steh_QUEST2_YOU_TRUE_03_08"); //No dobrze. Oddam wszystkie artefakty do œwi¹tyni, a póŸniej odejdê. Wybacz, Mistrzu, ale g³êboko wierzy³em w Œni¹cego.
 	AI_Output (self, other ,"DIA_Steh_QUEST2_YOU_TRUE_03_09"); //Teraz... teraz to wszystko nie ma dla mnie sensu...
-	B_LogEntry     (CH1_HandlarzSteh,"Nowicjuszem, który sprzedaje artefakty jest niejaki Steh, krêc¹cy siê przy palisadzie chroni¹cej Obóz przed b³otnymi wê¿ami. Rozmawia³em z nim i postanowi³em powiedzieæ mu prawdê. Prawda o Œni¹cym bardzo go zabola³a. Postanowi³ jednak, ¿e odda wszystkie artefakty zanim odejdzie z Obozu.");
+	B_LogEntry     (CH3_StrangeResearcher,"Nowicjuszem, który sprzedaje artefakty jest niejaki Steh, krêc¹cy siê przy palisadzie chroni¹cej Obóz przed b³otnymi wê¿ami. Rozmawia³em z nim i postanowi³em powiedzieæ mu prawdê. Prawda o Œni¹cym bardzo go zabola³a. Postanowi³ jednak, ¿e odda wszystkie artefakty zanim odejdzie z Obozu.");
 	Info_ClearChoices	(DIA_Steh_QUEST2_YOU);
 	Npc_ExchangeRoutine(self,"tot");
 };

@@ -93,10 +93,10 @@ INSTANCE DIA_Mil_HELLO3 (C_INFO)
 
 FUNC INT DIA_Mil_HELLO3_Condition()
 {
-if (Kapitel < 4) 
-{
+	if (Kapitel < 4) 
+	{
     return TRUE;
-};
+	};
 };
 FUNC VOID DIA_Mil_HELLO3_Info()
 {

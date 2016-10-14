@@ -23,7 +23,7 @@ func VOID STARTUP_SUB_PSICAMP ()
 	Wld_InsertNpc				(NOV_2007_Patros,"PSI_START");
 	//Wld_InsertNpc				(NON_2234_Medrzec,"PSI_START"); nope, nope, scalone with Uturiel
 	Wld_InsertNpc				(TPL_3928_GorNaLin,"PSI_START");
-	Wld_InsertNpc				(NOV_2008_Basir,"PSI_START");
+	Wld_InsertNpc				(NOV_1375_Hakan,"PSI_START");
 	Wld_InsertNpc				(NOV_5008_Hanson,"PSI_START");
 	Wld_InsertNpc				(TPL_1490_GorNaTokas,"PSI_START");
 	//Lukor quest
@@ -155,7 +155,7 @@ func VOID STARTUP_SUB_PSICAMP ()
 	//--------------------Admin------------------------------------------------------------
 	Wld_InsertNpc				(TPL_5004_Shawn,"PSI_START");
 	//-------------------Bagno-------------------------------------------------
-	Wld_InsertNpc				(NOV_5006_Steh,"PSI_START");
+	Wld_InsertNpc				(NOV_1376_Steh,"PSI_START");
 	Wld_InsertNpc				(NOV_5005_Uciekinier,"PSI_START");
 	//---------------Lester---------------------------------------------------------------
 	Wld_InsertNpc				(PC_Psionic,"PSI_START");			//Am Start: Haupttorplatz, Smalltalk mit BaalNamib.

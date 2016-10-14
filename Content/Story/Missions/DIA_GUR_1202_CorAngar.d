@@ -1432,48 +1432,6 @@ FUNC VOID Info_CorAngar_TELEPORT_Info()
 	//-------- Spieler wird losgeschickt --------
 	B_Story_SentToNC	();
 };
- /*
-//========================================
-//-----------------> Sprawa
-//========================================
-
-INSTANCE DIA_CorAngar_Sprawa (C_INFO) // przecie¿ to zadanie zleca nam Shawn ***FIX***
-{
-   npc          = GUR_1202_CorAngar;
-   nr           = 1;
-   condition    = DIA_CorAngar_Sprawa_Condition;
-   information  = DIA_CorAngar_Sprawa_Info;
-   permanent	= FALSE;
-   Important    = TRUE;
-};
-
-FUNC INT DIA_CorAngar_Sprawa_Condition()
-{
-    if (kapitel == 4)
-
-    && (Npc_KnowsInfo (hero, GUR_1201_CorKalom_JoinPSI))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_CorAngar_Sprawa_Info()
-{
-    AI_Output (self, other ,"DIA_CorAngar_Sprawa_03_01"); //Zaczekaj. Mam dla ciebie zadanie.
-    AI_Output (self, other ,"DIA_CorAngar_Sprawa_03_02"); //Dosz³y nas wieœci ze Starej Kopalni.
-    AI_Output (self, other ,"DIA_CorAngar_Sprawa_03_03"); //Podobno sytuacja w Kolonii jest bardzo z³a.
-    AI_Output (other, self ,"DIA_CorAngar_Sprawa_15_04"); //Bynajmniej. Na czym polega moje zadanie?
-    AI_Output (self, other ,"DIA_CorAngar_Sprawa_03_05"); //Udaj siê w pobli¿e Starej Kopalni i sprawdŸ, czy nasi bracia z kopalni ¿yj¹.
-    AI_Output (self, other ,"DIA_CorAngar_Sprawa_03_06"); //Mam nadziejê, ¿e uda³o im siê uciec.
-    AI_Output (self, other ,"DIA_CorAngar_Sprawa_03_07"); //Tylko b¹dŸ ostro¿ny.
-    MIS_HelpBrothersBra  = LOG_RUNNING;
-
-    Log_CreateTopic            (CH1_HelpBrothersBra , LOG_MISSION);
-    Log_SetTopicStatus       (CH1_HelpBrothersBra , LOG_RUNNING);
-    B_LogEntry                     (CH1_HelpBrothersBra ,"Cor Angar kaza³ mi sprawdziæ, co sta³o siê z naszymi braæmi z kopalni.");
-};
-*/
 
 //========================================
 //-----------------> KopalniaClear
@@ -1512,7 +1470,6 @@ FUNC VOID DIA_CorAngar_KopalniaClear_Info()
     B_GiveInvItems (self, other, ItMiNugget, 500);
     B_GiveXP (500);
 };
-
 
 //========================================
 //-----------------> GuruMomPlese
@@ -1558,11 +1515,11 @@ FUNC VOID DIA_CorAngar_GuruMomPlese_Info()
 	AI_Output (other, self ,"DIA_CorAngar_GuruMomPlese_15_15"); //CO?!
 	AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_16"); //Baal Cadar jest w posiadaniu pewniej tajemniczej ksiêgi. Od kilku dni próbuje j¹ sprzedaæ. Czyta³em jej fragmenty. Nale¿a³a do jakiegoœ alchemika.
 	AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_17"); //Odkup j¹ od niego i przeczytaj. Wewn¹trz znajduje siê przepis na miksturê lecz¹c¹ umys³. Uwarz j¹, a uznam, ¿e jesteœ gotów.
-    MIS_testGuru = LOG_RUNNING;
+    MIS_TestGuru = LOG_RUNNING;
 
-    Log_CreateTopic          (CH1_testGuru, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_testGuru, LOG_RUNNING);
-    B_LogEntry               (CH1_testGuru,"Aby zostaæ Guru muszê przygotowaæ specjaln¹ miksturê. Przepis znajdê w ksiêdze, któr¹ chce sprzedaæ Baal Cadar.");
+    Log_CreateTopic          (CH3_TestGuru, LOG_MISSION);
+    Log_SetTopicStatus       (CH3_TestGuru, LOG_RUNNING);
+    B_LogEntry               (CH3_TestGuru,"Aby zostaæ Guru muszê przygotowaæ specjaln¹ miksturê. Przepis znajdê w ksiêdze, któr¹ chce sprzedaæ Baal Cadar.");
     AI_StopProcessInfos	(self);
 };
 //========================================
@@ -1604,9 +1561,9 @@ FUNC VOID DIA_CorAngar_Mixtura156_Info()
 	CreateInvItems (self, ItMw_2H_Staff_GuruMage_03, 1);
     B_GiveInvItems (self, other, ItMw_2H_Staff_GuruMage_03, 1);
 	AI_EquipBestArmor	(hero); 
-    B_LogEntry                     (CH1_testGuru,"Uda³o mi siê. Zosta³em Guru w Obozie Bractwa. Mam zastêpowaæ Cor Kaloma. Moim asystentem jest Shawn, by³y pomocnik Y'Beriona. Od niego dowiem siê, co mam do zrobienia...");
-    Log_SetTopicStatus       (CH1_testGuru, LOG_SUCCESS);
-    MIS_testGuru = LOG_SUCCESS;
+    B_LogEntry                     (CH3_TestGuru,"Uda³o mi siê. Zosta³em Guru w Obozie Bractwa. Mam zastêpowaæ Cor Kaloma. Moim asystentem jest Shawn, by³y pomocnik Y'Beriona. Od niego dowiem siê, co mam do zrobienia...");
+    Log_SetTopicStatus       (CH3_TestGuru, LOG_SUCCESS);
+    MIS_TestGuru = LOG_SUCCESS;
 	Npc_SetTrueGuild (hero,GIL_GUR);
 	HeroJoinToPSI ();
     B_GiveXP (2000);

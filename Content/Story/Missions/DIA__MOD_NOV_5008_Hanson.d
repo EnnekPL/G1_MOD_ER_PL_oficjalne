@@ -1,5 +1,3 @@
-//poprawione i sprawdzone - Nocturn
-
 //========================================
 //-----------------> OPCJA *KONIEC* 
 //========================================
@@ -8,10 +6,10 @@ INSTANCE DIA_Hanson_EXIT(C_INFO)
 {
 	npc             = NOV_5008_Hanson;
 	nr              = 999;
-	condition	= DIA_Hanson_EXIT_Condition;
-	information	= DIA_Hanson_EXIT_Info;
-	permanent	= TRUE;
-	description     = DIALOG_ENDE;
+	condition		= DIA_Hanson_EXIT_Condition;
+	information		= DIA_Hanson_EXIT_Info;
+	permanent		= TRUE;
+	description  	= DIALOG_ENDE;
 };
 
 FUNC INT DIA_Hanson_EXIT_Condition()
@@ -85,87 +83,6 @@ FUNC VOID DIA_Hanson_PRACA_Info()
     AI_Output (self, other ,"DIA_Hanson_PRACA_03_06"); //Nie mam dok¹d...
 };
 
-///////////////////////////////////////////////
-// ZADANIE
-///////////////////////////////////////////////
-
-//========================================
-//-----------------> QUEST1
-//========================================
-
-INSTANCE DIA_Hanson_QUEST1 (C_INFO)
-{
-   npc          = NOV_5008_Hanson;
-   nr           = 3;
-   condition    = DIA_Hanson_QUEST1_Condition;
-   information  = DIA_Hanson_QUEST1_Info;
-   permanent	= FALSE;
-   description	= "Lepiej siê ju¿ czujesz?";
-};
-
-FUNC INT DIA_Hanson_QUEST1_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Hanson_PRACA)) 
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Hanson_QUEST1_Info()
-{
-    AI_Output (other, self ,"DIA_Hanson_QUEST1_15_01"); //Lepiej siê ju¿ czujesz?
-    AI_Output (self, other ,"DIA_Hanson_QUEST1_03_02"); //Raczej nie. Chyba z³apa³a mnie zaraza. Bez specjalnego lekarstwa d³ugo nie poci¹gnê. 
-	AI_Output (other, self ,"DIA_Hanson_QUEST1_15_03"); //Spróbujê ci pomóc. Gdzie mogê znaleŸæ lekarstwo?
-	AI_Output (self, other ,"DIA_Hanson_QUEST1_03_04"); //Poproœ o nie Cor Kaloma. Postaraj siê to zrobiæ w miarê szybko. 
-	
-    MIS_ChoryDrwal = LOG_RUNNING;
-
-    Log_CreateTopic          (CH1_ChoryDrwal, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_ChoryDrwal, LOG_RUNNING);
-    B_LogEntry               (CH1_ChoryDrwal,"Hanson, drwal z Bractwa, umiera na zarazê. Muszê porozmawiaæ z Cor Kalomem na temat lekarstwa dla niego.");
-    AI_StopProcessInfos	(self);
-};
-
-//========================================
-//-----------------> LEKI
-//========================================
-
-INSTANCE DIA_Hanson_LEKI (C_INFO)
-{
-   npc          = NOV_5008_Hanson;
-   nr           = 4;
-   condition    = DIA_Hanson_LEKI_Condition;
-   information  = DIA_Hanson_LEKI_Info;
-   permanent	= FALSE;
-   description	= "Mam dla ciebie lek!";
-};
-
-FUNC INT DIA_Hanson_LEKI_Condition()
-{
-    if (MIS_ChoryDrwal == LOG_RUNNING)
-    && (Npc_HasItems (other, ItMis_Drug) >=1)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Hanson_LEKI_Info()
-{
-    AI_Output (other, self ,"DIA_Hanson_LEKI_15_01"); //Mam twoje lek!
-    AI_Output (self, other ,"DIA_Hanson_LEKI_15_02"); //Cholera, czemu to tyle trwa³o?!
-	AI_Output (other, self ,"DIA_Hanson_LEKI_15_03"); //Mistrz Cor Kalom nie mia³ sk³adników. Musia³em je odszukaæ. Poza tym przygotowywanie mikstury trwa³o ca³¹ noc.
-	AI_Output (self, other ,"DIA_Hanson_LEKI_15_04"); //Oh, nie wiedzia³em. Dziêkujê ci.
-	
-    B_LogEntry               (CH1_ChoryDrwal,"Odda³em lekarstwo Hansonowi. Mam nadziejê, ¿e jego stan siê poprawi. ");
-    Log_SetTopicStatus       (CH1_ChoryDrwal, LOG_SUCCESS);
-    MIS_ChoryDrwal = LOG_SUCCESS;
-    B_GiveInvItems (other, self, ItMis_Drug, 1);
-
-    B_GiveXP (50);
-};
-
 ////////////////////////////////////////////
 // TAJEMNICZY HANDLARZ
 ////////////////////////////////////////////
@@ -201,7 +118,7 @@ FUNC VOID DIA_Hanson_STEH_Info()
 	AI_Output (self, other ,"DIA_Hanson_STEH_03_05"); //Nie mam sobie nic do zarzucenia! Mo¿esz przeszukaæ mnie i moj¹ chatê. Nie mam nic do ukrycia! 
 	AI_Output (self, other ,"DIA_Hanson_STEH_03_06"); //Lepiej zainteresuj siê tym cz³owiekiem, który od kilku dni przesiaduje przy palisadzie, a normalnym ludziom daj spokój.
 	AI_Output (other, self ,"DIA_Hanson_STEH_15_07"); //Sprawdzê to, ale jeœli k³amiesz to wrócê. 
-	B_LogEntry     (CH1_HandlarzSteh,"Rozmawia³em z Hansonem na temat handlu. Wszystkiego siê wypiera. Twierdzi, ¿e Baal Netbek siê pomyli³ i powinienem poszukaæ Nowicjusza, który krêci siê przy palisadzie. ");
+	B_LogEntry     (CH3_StrangeResearcher,"Rozmawia³em z Hansonem na temat handlu. Wszystkiego siê wypiera. Twierdzi, ¿e Baal Netbek siê pomyli³ i powinienem poszukaæ Nowicjusza, który krêci siê przy palisadzie. ");
 };
 
 //////////////////////////////////////////////
@@ -224,7 +141,7 @@ INSTANCE DIA_Hanson_QUEST2_D (C_INFO)
 
 FUNC INT DIA_Hanson_QUEST2_D_Condition()
 {
-    if (MIS_SeryjneZabojstwa == LOG_RUNNING)
+    if (MIS_PsionicCSI == LOG_RUNNING)
     && (Npc_HasItems (other, ItMw_SiekieraCSI) >=1)
     && (Npc_HasItems (other, ItMi_OstrzeCSI) >=1)
     {
@@ -260,7 +177,7 @@ FUNC VOID DIA_Hanson_QUEST2_D_FREE ()
 	AI_Output (other, self ,"DIA_Hanson_QUEST2_D_FREE_15_03"); //OdejdŸ. Opuœæ Obóz.
 	AI_Output (self, other ,"DIA_Hanson_QUEST2_D_FREE_03_04"); //Dlaczego to robisz?
 	AI_Output (other, self ,"DIA_Hanson_QUEST2_D_FREE_15_05"); //A powiedz mi czym ró¿ni³bym siê od ciebie, gdybym ciê zabi³.
-	B_LogEntry                     (CH1_SeryjneZabojstwa,"Morderc¹ okaza³ siê Hanson, który przyzna³ siê do dokonania zabójstw. Kaza³em mu opuœciæ Obóz.");
+	B_LogEntry                     (CH3_PsionicCSI,"Morderc¹ okaza³ siê Hanson, który przyzna³ siê do dokonania zabójstw. Kaza³em mu opuœciæ Obóz.");
 	Info_ClearChoices	(DIA_Hanson_QUEST2_D);
 	Npc_ExchangeRoutine(self,"tot");
 	AI_StopProcessInfos (self);
@@ -275,37 +192,5 @@ FUNC VOID DIA_Hanson_QUEST2_D_KILL ()
 	Npc_SetPermAttitude (self, ATT_HOSTILE);
     Npc_SetTarget (self,other);
     AI_StartState (self,ZS_ATTACK,1,"");
-	B_LogEntry                     (CH1_SeryjneZabojstwa,"Morderc¹ okaza³ siê Hanson, który przyzna³ siê do dokonania zabójstw. Stan¹³em z nim do walki.");
-};
-
-//========================================
-//-----------------> QUEST2_E
-//========================================
-
-INSTANCE DIA_Hanson_QUEST2_E (C_INFO)
-{
-   npc          = NOV_5008_Hanson;
-   nr           = 5;
-   condition    = DIA_Hanson_QUEST2_E_Condition;
-   information  = DIA_Hanson_QUEST2_E_Info;
-   permanent	= FALSE;
-   description	= "Masz siê zg³osiæ do œwi¹tyni!";
-};
-
-FUNC INT DIA_Hanson_QUEST2_E_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Shawn_QUEST3_OK)) && (kapitel == 10)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Hanson_QUEST2_E_Info()
-{
-    AI_Output (other, self ,"DIA_Hanson_QUEST2_E_15_01"); //Masz siê zg³osiæ do œwi¹tyni! Shawn chce z tob¹ porozmawiaæ.
-    AI_Output (self, other ,"DIA_Hanson_QUEST2_E_03_02"); //Czy to ma coœ wspólnego z tymi zabójstwami? Ju¿ idê.
-    B_GiveXP (50);
-	Npc_ExchangeRoutine (NOV_5008_Hanson,"temple");
-    AI_StopProcessInfos	(self);
+	B_LogEntry                     (CH3_PsionicCSI,"Morderc¹ okaza³ siê Hanson, który przyzna³ siê do dokonania zabójstw. Stan¹³em z nim do walki.");
 };

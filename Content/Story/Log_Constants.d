@@ -236,15 +236,15 @@ const string	CH6_Sleeper				=	"Przebudzenie Œni¹cego";
 const string CH1_Bractwo_Kopalnia    	= "Wsparcie Nowego Obozu";
 const string CH1_PSIcampWORK     	 	= "Szpieg na bagnie";
 const string CH1_HelpBrothersBra     	= "Bracia z kopalni";
-const string CH1_testGuru    		 	= "Zostaæ Guru";
+
 const string CH1_NoweZiele    		 	= "Nowe, mocne ziele";
 const string CH1_KeyKagan   	     	= "Klucz Baal Kagana"; 
-const string CH1_UciekinierPC    		= "Ukradzione artefakty";
-const string CH1_Tabliczki 			 	= "Tabliczki dla Steha";
-const string CH1_HandlarzSteh     	 	= "Badacz bagien";
+
+
+
 const string CH1_OszukanyHandlarz    	= "Oszukany handlarz";
-const string CH1_SeryjneZabojstwa    	= "Seria zabójstw w Bractwie";
-const string CH1_ChoryDrwal      	 	= "Chory drwal";
+
+
 const string CH1_ListDoCronosa   	 	= "Poselstwo z Bractwa";
 
 const string CH1_PoszukiwanaAlchemika 	= "Poszukiwania alchemika";
@@ -368,7 +368,7 @@ const string CH1_NowyVart      = "Pomocnik Cavalorna";
 const string CH1_MapaRicka      = "Mapa dla Harka";
 const string CH1_EqAngusa      = "Ekwipunek Steve'a";
 const string CH1_SearhSkarb      = "Poszukiwanie skarbu";
-const string CH1_CorristoSlepper      = "Czarny mag Corristo";
+
 const string CH1_GuazyDrena      = "Kryszta³y dla Drena";
 const string CH1_megaSpam      = "Wrzód chêdo¿y pó³ obozu";
 const string CH1_RekruciLowcow      = "Rekruci do obozu ³owców";
@@ -389,10 +389,10 @@ const string CH1_ZieleClawa      			 	= "Ziele dla Clawa";
 const string CH1_PracaUMysliwych      		 = "Praca w obozie myœliwych";
 const string CH1_KradziezUMysliwych      	 = "Tajemnicza kradzie¿";
 const string CH1_DziwneKrzyki      			 	= "Dziwne krzyki";
-const string CH1_GoblinyUMysliwych     	 	= "Uci¹¿liwe gobliny";
+const string CH1_GoblinyUMysliwych     	 		= "Uci¹¿liwe gobliny";
 const string CH1_Nieroby   					 	= "Nieroby";
 const string CH1_PolowanieNaMorakha  			= "Polowanie z Olivierem";
-const string CH1_FindWhiteSkin   				= "Bia³y wilk";
+
 const string CH1_ZabojstwBlizny  		     	= "Blizna na sumieniu";
 const string CH1_JosepZniknal    			 	= "Josep znikn¹³";
 const string CH1_DziwnyJosep    		     	= "Dziwne zachowania";

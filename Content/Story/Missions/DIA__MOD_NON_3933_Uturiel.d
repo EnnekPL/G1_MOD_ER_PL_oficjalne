@@ -152,9 +152,9 @@ FUNC VOID DIA_Uturiel_HelpMe_Info()
     AI_Output (self, other ,"DIA_Uturiel_HelpMe_03_05"); //Powodzenia. I uwa¿aj na siebie. W tej okolicy czai siê pe³no niebezpiecznych potworów. 
     MIS_MagicalCrystals = LOG_RUNNING;
 
-    Log_CreateTopic          	 (CH1_MagicalCrystals, LOG_MISSION);
-    Log_SetTopicStatus      	 (CH1_MagicalCrystals, LOG_RUNNING);
-    B_LogEntry              		 (CH1_MagicalCrystals,"Trzynasty Mag Ognia Uturiel ma pomys³ jak sforsowaæ Barierê przy u¿yciu kryszta³ów kumuluj¹cych magiczn¹ moc. Takie kryszta³y czêsto spotyka siê w jaskiniach. Muszê przynieœæ mu przynajmniej trzy fragmenty, aby wybra³ najlepszy spoœród nich. Nie wiem czy ten plan ma jakiekolwiek szanse powodzenia, ale warto spróbowaæ.");
+    Log_CreateTopic          	 (CH4_MagicalCrystals, LOG_MISSION);
+    Log_SetTopicStatus      	 (CH4_MagicalCrystals, LOG_RUNNING);
+    B_LogEntry              	 (CH4_MagicalCrystals,"Trzynasty Mag Ognia Uturiel ma pomys³ jak sforsowaæ Barierê przy u¿yciu kryszta³ów kumuluj¹cych magiczn¹ moc. Takie kryszta³y czêsto spotyka siê w jaskiniach. Muszê przynieœæ mu przynajmniej trzy fragmenty, aby wybra³ najlepszy spoœród nich. Nie wiem czy ten plan ma jakiekolwiek szanse powodzenia, ale warto spróbowaæ.");
 	
 	uturiel_dia_help = true;
 	}
@@ -203,7 +203,7 @@ FUNC void  NON_3933_Uturiel_CRYSTAL_Info()
 	
 	B_GiveInvItems (hero,self,BlueCrystal,3);
 	B_GiveXP (200);
-	B_LogEntry               (CH1_MagicalCrystals,"Odnalaz³em trzy magiczne kryszta³y i odda³em je Uturielowi. Mag potrzebuje teraz kostura, w którym osadzi najlepszy spoœród nich.");
+	B_LogEntry               (CH4_MagicalCrystals,"Odnalaz³em trzy magiczne kryszta³y i odda³em je Uturielowi. Mag potrzebuje teraz kostura, w którym osadzi najlepszy spoœród nich.");
 };
 
 FUNC VOID NON_3933_Uturiel_CRYSTAL_Wyjac ()
@@ -223,7 +223,7 @@ FUNC VOID NON_3933_Uturiel_CRYSTAL_New ()
 	AI_Output (self, other,"NON_3933_Uturiel_CRYSTAL_New_02_06"); //Mimo to myœlê, ¿e warto spróbowaæ. Udaj siê na bagno, odszukaj tego cz³owieka i przekonaj go, aby odda³ ci kostur. 
 	AI_Output (self, other,"NON_3933_Uturiel_CRYSTAL_New_02_07"); //Powo³aj siê na znajomoœæ ze mn¹. Ja w tym czasie zajmê siê naszymi b³yskotkami. Powodzenia.
 	
-	B_LogEntry               (CH1_MagicalCrystals,"Uturiel opowiedzia³ mi o swojej dawnej znajomoœci z niejakim Tondralem z Bractwa. Ostatnio, gdy siê widzieli, ten cz³owiek by³ w posiadaniu pustego kostura. Akurat taki jest nam teraz potrzebny, wiêc muszê udaæ siê do Bractwa i go zdobyæ.");
+	B_LogEntry               (CH4_MagicalCrystals,"Uturiel opowiedzia³ mi o swojej dawnej znajomoœci z niejakim Tondralem z Bractwa. Ostatnio, gdy siê widzieli, ten cz³owiek by³ w posiadaniu pustego kostura. Akurat taki jest nam teraz potrzebny, wiêc muszê udaæ siê do Bractwa i go zdobyæ.");
 	
 	Info_ClearChoices 	(NON_3933_Uturiel_CRYSTAL);
 	AI_StopProcessInfos (self);
@@ -266,7 +266,7 @@ FUNC VOID DIA_Uturiel_TondralStaff_Info()
 	AI_Output (self, other ,"DIA_Uturiel_TondralStaff_02_09"); //Z oczywistych przyczyn prze³êcz bêdziemy musieli omin¹æ. Na pewno roi siê tam od ludzi króla.
 	AI_Output (self, other ,"DIA_Uturiel_TondralStaff_02_10"); //Ale o tym póŸniej. Teraz mamy inne sprawy na g³owie. Do zobaczenia za wie¿¹. 
 	
-	B_LogEntry               (CH1_MagicalCrystals,"Przynios³em Uturielowi kostur nale¿¹cy do Baal Tondrala. Podczas mojej nieobecnoœci mag wybra³ najlepszy kryszta³ i kaza³ mi siê z nim spotkaæ przy jeziorku za wie¿¹ Xardasa. Ciekawe co z tego wyjdzie.");
+	B_LogEntry               (CH4_MagicalCrystals,"Przynios³em Uturielowi kostur nale¿¹cy do Baal Tondrala. Podczas mojej nieobecnoœci mag wybra³ najlepszy kryszta³ i kaza³ mi siê z nim spotkaæ przy jeziorku za wie¿¹ Xardasa. Ciekawe co z tego wyjdzie.");
 	
 	Npc_ExchangeRoutine			(self,"experiment"); 
 	B_GiveInvItems (other, self, ItMi_Mod_TondralStaff,1);
@@ -303,8 +303,8 @@ FUNC VOID DIA_Uturiel_EXPERIMENT_Info()
     AI_Output (other, self ,"DIA_Uturiel_EXPERIMENT_15_02"); //Czyñ honory. Bêdê obserwowa³ z daleka.
 	
 	
-    B_LogEntry              		 (CH1_MagicalCrystals,"Moje obawy by³y s³uszne. Podczas próby przedarcia siê przez Magiczn¹ Barierê Uturiel zosta³ pora¿ony, a kryszta³ rozpad³ siê w drzazgi. ");
-    Log_SetTopicStatus     	 (CH1_MagicalCrystals, LOG_SUCCESS);
+    B_LogEntry              		 (CH4_MagicalCrystals,"Moje obawy by³y s³uszne. Podczas próby przedarcia siê przez Magiczn¹ Barierê Uturiel zosta³ pora¿ony, a kryszta³ rozpad³ siê w drzazgi. ");
+    Log_SetTopicStatus     	 (CH4_MagicalCrystals, LOG_SUCCESS);
     MIS_MagicalCrystals = LOG_SUCCESS;
 
     B_GiveXP (350);	
@@ -368,7 +368,7 @@ FUNC VOID DIA_Uturiel_MissionFail_Info()
     AI_Output (self, other ,"DIA_Uturiel_MissionFail_03_01"); //Widzê, ¿e nie masz ze sob¹ kostura.
     AI_Output (other, self ,"DIA_Uturiel_MissionFail_15_02"); //Nie wszystko posz³o po mojej myœli. 
     AI_Output (self, other ,"DIA_Uturiel_MissionFail_03_03"); //OdejdŸ. Wolê siê sam wszystkim zaj¹æ. Nic mi z twojej pomocy.
-    B_LogEntry                     (CH1_MagicalCrystals,"Uturiel bardzo siê zdenerwowa³ tym, ¿e nie uda³o mi siê zdobyæ kostura Baal Tondrala. Powiedzia³, ¿e nie chce mojej pomocy. ");
-    Log_SetTopicStatus       (CH1_MagicalCrystals, LOG_FAILED);
+    B_LogEntry                     (CH4_MagicalCrystals,"Uturiel bardzo siê zdenerwowa³ tym, ¿e nie uda³o mi siê zdobyæ kostura Baal Tondrala. Powiedzia³, ¿e nie chce mojej pomocy. ");
+    Log_SetTopicStatus       (CH4_MagicalCrystals, LOG_FAILED);
     AI_StopProcessInfos	(self);
 };
