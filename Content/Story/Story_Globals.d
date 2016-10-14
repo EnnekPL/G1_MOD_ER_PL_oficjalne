@@ -871,8 +871,7 @@ var int MIS_FindFriends;
 var int dupa;
 var int MIS_MineChlopy;
 var int MIS_NoweKola;
-var int MIS_SellAlco;
-var int MIS_Dostawy;
+
 
 var int MIS_NoweZiele3BAU; //usuniête
 var int MIS_PolowanieZDoylem;

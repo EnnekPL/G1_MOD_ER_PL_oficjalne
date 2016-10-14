@@ -344,8 +344,7 @@ const string CH1_JaskiniaBandytow      	= "Dostawa z Nowego Obozu";
 const string CH1_Rozpierdol2      		= "Transport do kopalni";
 const string CH1_AtakNaOC      			= "Plany Draxa";
 const string CH1_NoweKola     			= "2 ko³a zêbate";
-const string CH1_SellAlco      			= "Sprzeda¿ alkoholu";
-const string CH1_Dostawy      			= "Dostawy alkoholu";
+
 
 const string CH1_NoweZiele3BAU      	= "Kupiec na ziele";
 const string CH1_PolowanieZDoylem      	= "Polowanie z Doylem";

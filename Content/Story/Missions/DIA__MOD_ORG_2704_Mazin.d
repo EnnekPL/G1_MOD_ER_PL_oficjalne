@@ -24,81 +24,6 @@ FUNC VOID DIA_Mazin_EXIT_Info()
 	AI_StopProcessInfos	(self);
 };
 
-//========================================
-//-----------------> SkupAlkoholu
-//========================================
-
-INSTANCE DIA_Mazin_SkupAlkoholu (C_INFO)
-{
-   npc          = ORG_2704_Mazin;
-   nr           = 1;
-   condition    = DIA_Mazin_SkupAlkoholu_Condition;
-   information  = DIA_Mazin_SkupAlkoholu_Info;
-   permanent	= FALSE;
-   description	= "Chcesz kupowaæ alkohol od Bandytów?";
-};
-
-FUNC INT DIA_Mazin_SkupAlkoholu_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Quentin_Sprawa))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Mazin_SkupAlkoholu_Info()
-{
-    AI_Output (other, self ,"DIA_Mazin_SkupAlkoholu_15_01"); //Chcesz kupowaæ alkohol od Bandytów?
-    AI_Output (self, other ,"DIA_Mazin_SkupAlkoholu_03_02"); //Co? Nie tak g³oœno.
-    AI_Output (self, other ,"DIA_Mazin_SkupAlkoholu_03_03"); //A za ile?
-    AI_Output (other, self ,"DIA_Mazin_SkupAlkoholu_15_04"); //Jakieœ 15 bry³ek rudy za butelkê.
-    AI_Output (other, self ,"DIA_Mazin_SkupAlkoholu_15_05"); //Najlepsza jakoœæ!
-    AI_Output (self, other ,"DIA_Mazin_SkupAlkoholu_03_06"); //Jasna cholera, Szkodniki z groty za Obozem zdzieraj¹ ze mnie 20 bry³ek za butelkê.
-    AI_Output (other, self ,"DIA_Mazin_SkupAlkoholu_15_07"); //Wiêc kupuj od nas.
-    AI_Output (self, other ,"DIA_Mazin_SkupAlkoholu_03_08"); //Przecie¿ te zbiry urw¹ mi g³owê.
-    AI_Output (other, self ,"DIA_Mazin_SkupAlkoholu_15_09"); //Mam siê ich pozbyæ?
-    AI_Output (self, other ,"DIA_Mazin_SkupAlkoholu_03_10"); //Je¿eli chcesz ¿ebym coœ od was kupi³, to tak.
-    B_LogEntry                     (CH1_SellAlco,"Szkodniki z groty przy Nowym Obozie maj¹ monopol na handel alkoholem niemal w ca³ym Obozie. Pora siê ich pozbyæ.");
-    AI_StopProcessInfos	(self);
-};
-
-//========================================
-//-----------------> DelteOrg
-//========================================
-
-INSTANCE DIA_Mazin_DelteOrg (C_INFO)
-{
-   npc          = ORG_2704_Mazin;
-   nr           = 1;
-   condition    = DIA_Mazin_DelteOrg_Condition;
-   information  = DIA_Mazin_DelteOrg_Info;
-   permanent	= FALSE;
-   description	= "Pozby³em siê twoich k³opotów.";
-};
-
-FUNC INT DIA_Mazin_DelteOrg_Condition()
-{
-    if (Npc_IsDead(ORG_860_Renyu))
-    && (Npc_IsDead(ORG_862_Jacko))
-    && (Npc_KnowsInfo (hero, DIA_Mazin_SkupAlkoholu))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Mazin_DelteOrg_Info()
-{
-    AI_Output (other, self ,"DIA_Mazin_DelteOrg_15_01"); //Pozby³em siê twoich k³opotów.
-    AI_Output (self, other ,"DIA_Mazin_DelteOrg_03_02"); //To œwietnie.
-    AI_Output (self, other ,"DIA_Mazin_DelteOrg_03_03"); //Ale uwa¿aj teraz chodz¹c po Obozie. Mieszacze mieli wielu przyjació³.
-    AI_Output (self, other ,"DIA_Mazin_DelteOrg_03_04"); //Kupiê wasz alkohol. Mo¿esz to przekazaæ Quentinowi.
-    B_LogEntry                     (CH1_SellAlco,"Pozby³em siê Szkodników z jaskini. Zyska³em kolejnego kupca.");
-
-    B_GiveXP (250);
-    AI_StopProcessInfos	(self);
-};
 
 //========================================
 //-----------------> Mazin2
@@ -162,41 +87,6 @@ FUNC VOID DIA_Mazin_Trade_Info()
     AI_Output (self, other ,"DIA_Mazin_Trade_03_02"); //To zap³aæ.
 };
 
-//========================================
-//-----------------> Dostawczak
-//========================================
-
-INSTANCE DIA_Mazin_Dostawczak (C_INFO)
-{
-   npc          = ORG_2704_Mazin;
-   nr           = 1;
-   condition    = DIA_Mazin_Dostawczak_Condition;
-   information  = DIA_Mazin_Dostawczak_Info;
-   permanent	= FALSE;
-   description	= "Mam dostawê.";
-};
-
-FUNC INT DIA_Mazin_Dostawczak_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Bandyta_Dostwy))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Mazin_Dostawczak_Info()
-{
-    AI_Output (other, self ,"DIA_Mazin_Dostawczak_15_01"); //Mam dostawê.
-    AI_Output (self, other ,"DIA_Mazin_Dostawczak_03_02"); //Genialnie. Daj mi to.
-    AI_Output (self, other ,"DIA_Mazin_Dostawczak_03_03"); //Kto przyjdzie nastêpnym razem?
-    AI_Output (other, self ,"DIA_Mazin_Dostawczak_15_04"); //Nie wiem. Kogoœ siê przyœle.
-    B_GiveInvItems (other, self, ItMi_Alchemy_Alcohol_01, 10);
-    B_LogEntry                     (CH1_Dostawy,"Mazin otrzyma³ swoj¹ dostawê.");
-
-    B_GiveXP (50);
-    AI_StopProcessInfos	(self);
-};
 
 //========================================
 //-----------------> HELLO1
@@ -356,7 +246,7 @@ FUNC VOID DIA_Mazin_ALCO_Info()
         AI_Output (self, other ,"DIA_Mazin_ALCO_03_02"); //Ostatnio bra³ go od Szkodników w jaskini. 
 if (Npc_IsDead(ORG_860_Renyu)) && (Npc_IsDead(ORG_861_Killian)) && (Npc_IsDead(ORG_862_Jacko))
 {
-        if (Npc_KnowsInfo (hero, DIA_Mazin_DelteOrg))
+       /* if (Npc_KnowsInfo (hero, DIA_Mazin_DelteOrg))
         {
             AI_Output (other, self ,"DIA_Mazin_ALCO_15_03"); //Przecie¿ sam kaza³eœ mi siê pozbyæ mieszaczy! K³amiesz.
             AI_Output (other, self ,"DIA_Mazin_ALCO_15_04"); //Nie próbuj ze mn¹ pogrywaæ.
@@ -366,8 +256,9 @@ if (Npc_IsDead(ORG_860_Renyu)) && (Npc_IsDead(ORG_861_Killian)) && (Npc_IsDead(O
             B_LogEntry                     (CH1_ZginalLIN,"Mazin uleg³ emocjom i odwa¿y³ siê mnie zaatakowaæ. Z pewnoœci¹ ma coœ do ukrycia.");
             Npc_SetTarget (self, other);
             AI_StartState (self, ZS_ATTACK, 1, "");
-        }
-        else if (Kalom_DrugMonopol == LOG_SUCCESS) || ((Kalom_DrugMonopol == LOG_RUNNING) && (Npc_IsDead(ORG_860_Renyu)) && (Npc_IsDead(ORG_861_Killian)) && (Npc_IsDead(ORG_862_Jacko)))
+        }*/
+        //else 
+		if (Kalom_DrugMonopol == LOG_SUCCESS) || ((Kalom_DrugMonopol == LOG_RUNNING) && (Npc_IsDead(ORG_860_Renyu)) && (Npc_IsDead(ORG_861_Killian)) && (Npc_IsDead(ORG_862_Jacko)))
         {
             AI_Output (other, self ,"DIA_Mazin_ALCO_15_07"); //Mieszacze nie ¿yj¹ ju¿ od dawna.
             AI_Output (self, other ,"DIA_Mazin_ALCO_03_08"); //Co? Jjj... jak to?

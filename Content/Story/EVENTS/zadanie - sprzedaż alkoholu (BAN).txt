@@ -1,0 +1,802 @@
+//========================================
+//-----------------> Sprawa
+//========================================
+
+INSTANCE DIA_Quentin_Sprawa (C_INFO)
+{
+   npc          = BAN_1610_Quentin;
+   nr           = 1;
+   condition    = DIA_Quentin_Sprawa_Condition;
+   information  = DIA_Quentin_Sprawa_Info;
+   permanent	= FALSE;
+   Important    = TRUE;
+};
+
+FUNC INT DIA_Quentin_Sprawa_Condition()
+{
+    if (Kapitel == 2)
+    && (Npc_GetTrueGuild(other) == GIL_BAU)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Quentin_Sprawa_Info()
+{
+    AI_Output (self, other ,"DIA_Quentin_Sprawa_03_01"); //Hej! Mam dla ciebie robotê.
+    AI_Output (other, self ,"DIA_Quentin_Sprawa_15_02"); //O co chodzi?
+    AI_Output (self, other ,"DIA_Quentin_Sprawa_03_03"); //Pomyœla³em, ¿e mo¿na by trochê dorobiæ na boku.
+    AI_Output (other, self ,"DIA_Quentin_Sprawa_15_04"); //Co masz na myœli?
+    AI_Output (self, other ,"DIA_Quentin_Sprawa_03_05"); //Chcê sprzedawaæ alkohol wyrabiany przez Briama do innych obozów.
+    AI_Output (self, other ,"DIA_Quentin_Sprawa_03_06"); //Pogadaj z karczmarzami, Nowicjuszami wyrabiaj¹cymi wino i namów ich do zakupu.
+    AI_Output (other, self ,"DIA_Quentin_Sprawa_15_07"); //Zobaczê co da siê zrobiæ.
+    MIS_SellAlco = LOG_RUNNING;
+
+    Log_CreateTopic          (CH1_SellAlco, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_SellAlco, LOG_RUNNING);
+    B_LogEntry               (CH1_SellAlco,"Quentin kaza³ mi namówiæ karczmarzy i Nowicjuszy ze wszystkich trzech obozów do zakupu naszego alkoholu.");
+};
+
+//========================================
+//-----------------> GadanieZNowicujaszmi
+//========================================
+
+INSTANCE DIA_Quentin_GadanieZNowicujaszmi (C_INFO)
+{
+   npc          = BAN_1610_Quentin;
+   nr           = 1;
+   condition    = DIA_Quentin_GadanieZNowicujaszmi_Condition;
+   information  = DIA_Quentin_GadanieZNowicujaszmi_Info;
+   permanent	= FALSE;
+   description	= "Przekona³em Nowicjuszy.";
+};
+
+FUNC INT DIA_Quentin_GadanieZNowicujaszmi_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Ghoran_Sprobuj))
+    && (MIS_SellAlco == LOG_RUNNING)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Quentin_GadanieZNowicujaszmi_Info()
+{
+    AI_Output (other, self ,"DIA_Quentin_GadanieZNowicujaszmi_15_01"); //Przekona³em Nowicjuszy.
+    AI_Output (self, other ,"DIA_Quentin_GadanieZNowicujaszmi_03_02"); //To chyba nie by³o zbyt trudne?
+    AI_Output (self, other ,"DIA_Quentin_GadanieZNowicujaszmi_03_03"); //S¹ strasznie naiwni.
+    AI_Output (other, self ,"DIA_Quentin_GadanieZNowicujaszmi_15_04"); //No nie powiedzia³bym.
+    AI_Output (self, other ,"DIA_Quentin_GadanieZNowicujaszmi_03_05"); //W ka¿dym razie oto twoja zap³ata.
+    CreateInvItems (self, ItMiNugget, 50);
+    B_GiveInvItems (self, other, ItMiNugget, 50);
+};
+
+//========================================
+//-----------------> Sell2
+//========================================
+
+INSTANCE DIA_Quentin_Sell2 (C_INFO)
+{
+   npc          = BAN_1610_Quentin;
+   nr           = 2;
+   condition    = DIA_Quentin_Sell2_Condition;
+   information  = DIA_Quentin_Sell2_Info;
+   permanent	= FALSE;
+   description	= "Mazin z Nowego Obozu kupi nasz alkohol.";
+};
+
+FUNC INT DIA_Quentin_Sell2_Condition()
+{
+    if (MIS_SellAlco == LOG_RUNNING)
+    && (Npc_KnowsInfo (hero, DIA_Mazin_DelteOrg))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Quentin_Sell2_Info()
+{
+    AI_Output (other, self ,"DIA_Quentin_Sell2_15_01"); //Mazin z Nowego Obozu kupi nasz alkohol.
+    AI_Output (self, other ,"DIA_Quentin_Sell2_03_02"); //Pozby³eœ siê monopolistów z groty za Obozem?
+    AI_Output (self, other ,"DIA_Quentin_Sell2_03_03"); //Jestem pod wra¿eniem.
+    AI_Output (other, self ,"DIA_Quentin_Sell2_15_04"); //Sk¹d o nich wiesz?
+    AI_Output (self, other ,"DIA_Quentin_Sell2_03_05"); //Wiem du¿o rzeczy o Szkodnikach. I nie tylko o nich...
+    CreateInvItems (self, ItMiNugget, 50);
+    B_GiveInvItems (self, other, ItMiNugget, 50);
+   // AI_StopProcessInfos	(self); ***fix po chuj
+};
+
+//========================================
+//-----------------> Sell3
+//========================================
+
+INSTANCE DIA_Quentin_Sell3 (C_INFO)
+{
+   npc          = BAN_1610_Quentin;
+   nr           = 3;
+   condition    = DIA_Quentin_Sell3_Condition;
+   information  = DIA_Quentin_Sell3_Info;
+   permanent	= FALSE;
+   description	= "Co do karczmy w Starym Obozie...";
+};
+
+FUNC INT DIA_Quentin_Sell3_Condition()
+{
+    if (MIS_SellAlco == LOG_RUNNING)
+    && (Npc_KnowsInfo (hero, DIA_Karczmarz_Wpierdol))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Quentin_Sell3_Info()
+{
+    AI_Output (other, self ,"DIA_Quentin_Sell3_15_01"); //Co do karczmy w Starym Obozie...
+    AI_Output (other, self ,"DIA_Quentin_Sell3_15_02"); //Za³atwi³em to!
+    AI_Output (self, other ,"DIA_Quentin_Sell3_03_03"); //Dobra robota!
+    CreateInvItems (self, ItMiNugget, 50);
+    B_GiveInvItems (self, other, ItMiNugget, 50);
+  //  AI_StopProcessInfos	(self);
+};
+
+//========================================
+//-----------------> UkonczonoSellAlco
+//========================================
+
+INSTANCE DIA_Quentin_UkonczonoSellAlco (C_INFO)
+{
+   npc          = BAN_1610_Quentin;
+   nr           = 4;
+   condition    = DIA_Quentin_UkonczonoSellAlco_Condition;
+   information  = DIA_Quentin_UkonczonoSellAlco_Info;
+   permanent	= FALSE;
+   Important    = TRUE;
+};
+
+FUNC INT DIA_Quentin_UkonczonoSellAlco_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Quentin_Sell3))
+    && (Npc_KnowsInfo (hero, DIA_Quentin_Sell2))
+    && (Npc_KnowsInfo (hero, DIA_Quentin_GadanieZNowicujaszmi))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Quentin_UkonczonoSellAlco_Info()
+{
+    AI_Output (self, other ,"DIA_Quentin_UkonczonoSellAlco_03_01"); //Rozmawia³eœ ju¿ chyba ze wszystkimi.
+    AI_Output (self, other ,"DIA_Quentin_UkonczonoSellAlco_03_02"); //Dobra robota! Teraz pozostaje czekaæ, a¿ zyski zaczn¹ nap³ywaæ do naszych kieszeni.
+	
+	if devmode_dostawyalkoholu == true
+	{
+    AI_Output (other, self ,"DIA_Quentin_UkonczonoSellAlco_15_03"); //Co teraz?
+    AI_Output (self, other ,"DIA_Quentin_UkonczonoSellAlco_03_04"); //IdŸ do Briama. On da ci dostawy, które masz zanieœæ do obozów.
+	//Teraz bêdê musia³ dostarczyæ alkohol do wyznaczonych osób.
+	};
+	
+    B_LogEntry               (CH1_SellAlco,"Rozmawia³em ze wszystkimi istotnymi kupcami.");
+    Log_SetTopicStatus       (CH1_SellAlco, LOG_SUCCESS);
+    MIS_SellAlco = LOG_SUCCESS;
+
+    B_GiveXP (XP_SellAlco);
+};
+
+
+//========================================
+//-----------------> SkupAlkoholu
+//========================================
+
+INSTANCE DIA_Mazin_SkupAlkoholu (C_INFO)
+{
+   npc          = ORG_2704_Mazin;
+   nr           = 1;
+   condition    = DIA_Mazin_SkupAlkoholu_Condition;
+   information  = DIA_Mazin_SkupAlkoholu_Info;
+   permanent	= FALSE;
+   description	= "Chcesz kupowaæ alkohol od Bandytów?";
+};
+
+FUNC INT DIA_Mazin_SkupAlkoholu_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Quentin_Sprawa))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Mazin_SkupAlkoholu_Info()
+{
+    AI_Output (other, self ,"DIA_Mazin_SkupAlkoholu_15_01"); //Chcesz kupowaæ alkohol od Bandytów?
+    AI_Output (self, other ,"DIA_Mazin_SkupAlkoholu_03_02"); //Co? Nie tak g³oœno.
+    AI_Output (self, other ,"DIA_Mazin_SkupAlkoholu_03_03"); //A za ile?
+    AI_Output (other, self ,"DIA_Mazin_SkupAlkoholu_15_04"); //Jakieœ 15 bry³ek rudy za butelkê.
+    AI_Output (other, self ,"DIA_Mazin_SkupAlkoholu_15_05"); //Najlepsza jakoœæ!
+    AI_Output (self, other ,"DIA_Mazin_SkupAlkoholu_03_06"); //Jasna cholera, Szkodniki z groty za Obozem zdzieraj¹ ze mnie 20 bry³ek za butelkê.
+    AI_Output (other, self ,"DIA_Mazin_SkupAlkoholu_15_07"); //Wiêc kupuj od nas.
+    AI_Output (self, other ,"DIA_Mazin_SkupAlkoholu_03_08"); //Przecie¿ te zbiry urw¹ mi g³owê.
+    AI_Output (other, self ,"DIA_Mazin_SkupAlkoholu_15_09"); //Mam siê ich pozbyæ?
+    AI_Output (self, other ,"DIA_Mazin_SkupAlkoholu_03_10"); //Je¿eli chcesz ¿ebym coœ od was kupi³, to tak.
+    B_LogEntry                     (CH1_SellAlco,"Szkodniki z groty przy Nowym Obozie maj¹ monopol na handel alkoholem niemal w ca³ym Obozie. Pora siê ich pozbyæ.");
+    AI_StopProcessInfos	(self);
+};
+
+//========================================
+//-----------------> DelteOrg
+//========================================
+
+INSTANCE DIA_Mazin_DelteOrg (C_INFO)
+{
+   npc          = ORG_2704_Mazin;
+   nr           = 1;
+   condition    = DIA_Mazin_DelteOrg_Condition;
+   information  = DIA_Mazin_DelteOrg_Info;
+   permanent	= FALSE;
+   description	= "Pozby³em siê twoich k³opotów.";
+};
+
+FUNC INT DIA_Mazin_DelteOrg_Condition()
+{
+    if (Npc_IsDead(ORG_860_Renyu))
+    && (Npc_IsDead(ORG_862_Jacko))
+    && (Npc_KnowsInfo (hero, DIA_Mazin_SkupAlkoholu))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Mazin_DelteOrg_Info()
+{
+    AI_Output (other, self ,"DIA_Mazin_DelteOrg_15_01"); //Pozby³em siê twoich k³opotów.
+    AI_Output (self, other ,"DIA_Mazin_DelteOrg_03_02"); //To œwietnie.
+    AI_Output (self, other ,"DIA_Mazin_DelteOrg_03_03"); //Ale uwa¿aj teraz chodz¹c po Obozie. Mieszacze mieli wielu przyjació³.
+    AI_Output (self, other ,"DIA_Mazin_DelteOrg_03_04"); //Kupiê wasz alkohol. Mo¿esz to przekazaæ Quentinowi.
+    B_LogEntry                     (CH1_SellAlco,"Pozby³em siê Szkodników z jaskini. Zyska³em kolejnego kupca.");
+
+    B_GiveXP (250);
+    AI_StopProcessInfos	(self);
+};
+
+
+//========================================
+//-----------------> SellAlcoBan
+//========================================
+
+INSTANCE DIA_Karczmarz_SellAlcoBan (C_INFO)
+{
+   npc          = GRD_2036_Karczmarz;
+   nr           = 1;
+   condition    = DIA_Karczmarz_SellAlcoBan_Condition;
+   information  = DIA_Karczmarz_SellAlcoBan_Info;
+   permanent	= FALSE;
+   description	= "Chcesz kupiæ alkohol w niez³ej cenie?";
+};
+
+FUNC INT DIA_Karczmarz_SellAlcoBan_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Quentin_Sprawa))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Karczmarz_SellAlcoBan_Info()
+{
+    AI_Output (other, self ,"DIA_Karczmarz_SellAlcoBan_15_01"); //Chcesz kupiæ alkohol w niez³ej cenie?
+    AI_Output (self, other ,"DIA_Karczmarz_SellAlcoBan_03_02"); //Co? Od was?!
+    AI_Output (self, other ,"DIA_Karczmarz_SellAlcoBan_03_03"); //Nigdy! 
+    AI_Output (self, other ,"DIA_Karczmarz_SellAlcoBan_03_04"); //Mamy solidne dostawy z Nowego Obozu. Tylko trochê drogie.
+    AI_Output (other, self ,"DIA_Karczmarz_SellAlcoBan_15_05"); //Mogê ci zaoferowaæ tañszy, a tej samej jakoœci. Na pewno siê nie zdecydujesz?
+    AI_Output (self, other ,"DIA_Karczmarz_SellAlcoBan_03_06"); //Powiedzia³em, ¿e nie! OdejdŸ, zbirze!
+    B_LogEntry                     (CH1_SellAlco,"Karczmarz ze Starego Obozu mimo op³acalnoœci mojej oferty by³ bardzo opryskliwy. Chyba muszê nauczyæ go dobrych manier.");
+    AI_StopProcessInfos	(self);
+};
+
+//========================================
+//-----------------> RyjKmiocie
+//========================================
+
+INSTANCE DIA_Karczmarz_RyjKmiocie (C_INFO)
+{
+   npc          = GRD_2036_Karczmarz;
+   nr           = 2;
+   condition    = DIA_Karczmarz_RyjKmiocie_Condition;
+   information  = DIA_Karczmarz_RyjKmiocie_Info;
+   permanent	= FALSE;
+   description	= "Ty chyba chcesz dostaæ w mordê.";
+};
+
+FUNC INT DIA_Karczmarz_RyjKmiocie_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Karczmarz_SellAlcoBan))
+    && (MIS_SellAlco == LOG_RUNNING)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Karczmarz_RyjKmiocie_Info()
+{
+    AI_Output (other, self ,"DIA_Karczmarz_RyjKmiocie_15_01"); //Ty chyba chcesz dostaæ w mordê.
+    AI_Output (self, other ,"DIA_Karczmarz_RyjKmiocie_03_02"); //No dawaj!
+	//CreateInvItems (self, ItFo_Potion_Health_03, 5);
+	/*Npc_RemoveInvItems (self, ItMiNugget,300);
+	Npc_RemoveInvItems  (self,ItMiNugget,300);
+	Npc_RemoveInvItems  (self,ItLsTorch,10);
+	Npc_RemoveInvItems  (self,ItMi_Stuff_Pipe_01,10);
+	Npc_RemoveInvItems  (self,ItMi_Stuff_Cup_01,10);
+	Npc_RemoveInvItems  (self,ItMi_Alchemy_Salt_01,3);
+	Npc_RemoveInvItems  (self,ItFoApple,15);
+	Npc_RemoveInvItems  (self,ItFoLoaf,15);
+	Npc_RemoveInvItems  (self,ItFoMutton,15);
+	Npc_RemoveInvItems  (self,ItForice,15);
+	Npc_RemoveInvItems  (self,ItFo_Potion_Water_01,15);
+	Npc_RemoveInvItems  (self,ItFoBeer,15);
+	Npc_RemoveInvItems  (self,ItFoWine,15);
+	Npc_RemoveInvItems  (self,ItFoBooze,15);*/
+    AI_StopProcessInfos	(self);
+    Npc_SetTarget (self,other);
+    AI_StartState (self,ZS_ATTACK,1,"");
+};
+
+//========================================
+//-----------------> Wpierdol
+//========================================
+
+INSTANCE DIA_Karczmarz_Wpierdol (C_INFO)
+{
+   npc          = GRD_2036_Karczmarz;
+   nr           = 3;
+   condition    = DIA_Karczmarz_Wpierdol_Condition;
+   information  = DIA_Karczmarz_Wpierdol_Info;
+   permanent	= FALSE;
+   description	= "G³owa boli?";
+};
+
+FUNC INT DIA_Karczmarz_Wpierdol_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Karczmarz_RyjKmiocie))
+    && (GRD_2036_Karczmarz.aivar[AIV_WASDEFEATEDBYSC])
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Karczmarz_Wpierdol_Info()
+{
+    AI_Output (other, self ,"DIA_Karczmarz_Wpierdol_15_01"); //G³owa boli?
+    AI_Output (self, other ,"DIA_Karczmarz_Wpierdol_03_02"); //Bardzo.
+    AI_Output (other, self ,"DIA_Karczmarz_Wpierdol_15_03"); //Kupisz alkohol taniej?
+    AI_Output (self, other ,"DIA_Karczmarz_Wpierdol_03_04"); //Dobra, ju¿ dobra. Kupiê, tylko jak Thorus siê dowie...
+    AI_Output (self, other ,"DIA_Karczmarz_Wpierdol_03_05"); //Masz dopilnowaæ, ¿eby siê nie dowiedzia³.
+    B_LogEntry                     (CH1_SellAlco,"Uda³o mi siê przekonaæ karczmarza z zawalonej wie¿y do kupowania alkoholu od Bandytów.");
+	CreateInvItems (self, ItFo_Potion_Health_03, 5); 
+    B_GiveXP (100);
+    AI_StopProcessInfos	(self);
+};
+
+//========================================
+//-----------------> DostwaOC
+//========================================
+
+INSTANCE DIA_Karczmarz_DostwaOC (C_INFO)
+{
+   npc          = GRD_2036_Karczmarz;
+   nr           = 1;
+   condition    = DIA_Karczmarz_DostwaOC_Condition;
+   information  = DIA_Karczmarz_DostwaOC_Info;
+   permanent	= FALSE;
+   description	= "Mam dla ciebie pierwsz¹ dostawê.";
+};
+
+FUNC INT DIA_Karczmarz_DostwaOC_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Bandyta_Dostwy))
+    && (Npc_KnowsInfo (hero, DIA_Karczmarz_Wpierdol))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Karczmarz_DostwaOC_Info()
+{
+    AI_Output (other, self ,"DIA_Karczmarz_DostwaOC_15_01"); //Mam dla ciebie pierwsz¹ dostawê.
+    AI_Output (self, other ,"DIA_Karczmarz_DostwaOC_03_02"); //Myœla³em, ¿e nie wrócisz no, ale có¿. Daj mi to! I pamiêtaj: Thorus o niczym nie wie.
+    B_LogEntry                     (CH1_Dostawy,"Stary Obóz - towar dostarczony.");
+
+
+    B_GiveXP (50);
+
+    B_GiveInvItems (other, self, ItMi_Alchemy_Alcohol_01, 10);
+    AI_StopProcessInfos	(self);
+};
+
+
+//========================================
+//-----------------> Dostawczak
+//========================================
+
+INSTANCE DIA_Mazin_Dostawczak (C_INFO)
+{
+   npc          = ORG_2704_Mazin;
+   nr           = 1;
+   condition    = DIA_Mazin_Dostawczak_Condition;
+   information  = DIA_Mazin_Dostawczak_Info;
+   permanent	= FALSE;
+   description	= "Mam dostawê.";
+};
+
+FUNC INT DIA_Mazin_Dostawczak_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Bandyta_Dostwy))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Mazin_Dostawczak_Info()
+{
+    AI_Output (other, self ,"DIA_Mazin_Dostawczak_15_01"); //Mam dostawê.
+    AI_Output (self, other ,"DIA_Mazin_Dostawczak_03_02"); //Genialnie. Daj mi to.
+    AI_Output (self, other ,"DIA_Mazin_Dostawczak_03_03"); //Kto przyjdzie nastêpnym razem?
+    AI_Output (other, self ,"DIA_Mazin_Dostawczak_15_04"); //Nie wiem. Kogoœ siê przyœle.
+    B_GiveInvItems (other, self, ItMi_Alchemy_Alcohol_01, 10);
+    B_LogEntry                     (CH1_Dostawy,"Mazin otrzyma³ swoj¹ dostawê.");
+
+    B_GiveXP (50);
+    AI_StopProcessInfos	(self);
+};
+
+
+///////////////////////////////////////////////
+// ZADANIE Z ALKOHOLEM OD BANDYTÓW
+///////////////////////////////////////////////
+
+//========================================
+//-----------------> AlcoSell
+//========================================
+
+INSTANCE DIA_Ghoran_AlcoSell (C_INFO)
+{
+   npc          = NOV_9001_Ghoran;
+   nr           = 2;
+   condition    = DIA_Ghoran_AlcoSell_Condition;
+   information  = DIA_Ghoran_AlcoSell_Info;
+   permanent	= FALSE;
+   description	= "Kupicie alkohol od Bandytów?";
+};
+
+FUNC INT DIA_Ghoran_AlcoSell_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Quentin_Sprawa))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Ghoran_AlcoSell_Info()
+{
+    AI_Output (other, self ,"DIA_Ghoran_AlcoSell_15_01"); //Kupicie alkohol od Bandytów?
+    AI_Output (self, other ,"DIA_Ghoran_AlcoSell_03_02"); //Za ile?
+    AI_Output (other, self ,"DIA_Ghoran_AlcoSell_15_03"); //No nie wiem. 15 bry³ek rudy za butelkê? Naprawdê warto!
+    AI_Output (self, other ,"DIA_Ghoran_AlcoSell_03_04"); //Szkodnicy chc¹ od nas 20 bry³ek rudy.
+    AI_Output (self, other ,"DIA_Ghoran_AlcoSell_03_05"); //Teoretycznie op³aca nam siê to, jednak nie jestem pewien waszych intencji.
+    AI_Output (self, other ,"DIA_Ghoran_AlcoSell_03_06"); //Przypuszczam, ¿e chcecie sprzedaæ nam jakieœ œwiñstwo.
+    AI_Output (other, self ,"DIA_Ghoran_AlcoSell_15_07"); //Ten alkohol jest taki sam, jak ten oferowany przez Szkodników. Powiedzia³bym nawet, ¿e jest lepszy.
+    AI_Output (self, other ,"DIA_Ghoran_AlcoSell_03_08"); //No nie wiem. Udowodnij mi, ¿e wasz jest lepszy.
+    AI_Output (self, other ,"DIA_Ghoran_AlcoSell_03_09"); //Wtedy siê zastanowiê.
+    B_LogEntry                     (CH1_SellAlco,"Ghoran nie jest przekonany do naszego produktu. Mam udowodniæ, ¿e jest lepszy od tego oferowanego przez Szkodników. Muszê z nim pokombinowaæ na stole alchemicznym. ");
+	GhoranTalk = true;
+};
+
+
+
+//========================================
+//-----------------> Sprobuj
+//========================================
+//edit by Nocturn
+
+INSTANCE DIA_Ghoran_Sprobuj (C_INFO)
+{
+   npc          = NOV_9001_Ghoran;
+   nr           = 1;
+   condition    = DIA_Ghoran_Sprobuj_Condition;
+   information  = DIA_Ghoran_Sprobuj_Info;
+   permanent	= FALSE;
+   description	= "Sam spróbuj.";
+};
+
+FUNC INT DIA_Ghoran_Sprobuj_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Ghoran_AlcoSell)) && (Npc_HasItems (other, ItMi_Alchemy_Alcohol_02) >=1)
+    && (MIS_SellAlco == LOG_RUNNING)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Ghoran_Sprobuj_Info()
+{
+    AI_Output (other, self ,"DIA_Ghoran_Sprobuj_15_01"); //Sam spróbuj.
+	B_GiveInvItems (hero,self,ItMi_Alchemy_Alcohol_02,1);
+	CreateInvItem (self,itfowine);
+	AI_UseItem	(self,ItFoWine);
+    AI_Output (self, other ,"DIA_Ghoran_Sprobuj_03_02"); //Hmmm. Ten alkohol jest naprawdê dobry. Lepszy od tego, który do tej pory kupowaliœmy.
+    AI_Output (self, other ,"DIA_Ghoran_Sprobuj_03_03"); //Myœlê, ¿e mo¿emy go wykorzystaæ do produkcji specjalnych nalewek.
+    AI_Output (self, other ,"DIA_Ghoran_Sprobuj_03_04"); //Nowicjusze i Guru z pewnoœci¹ skusz¹ siê na nasz nowy towar. 
+    AI_Output (self, other ,"DIA_Ghoran_Sprobuj_03_05"); //Chcê tego wiêcej.
+    AI_Output (other, self ,"DIA_Ghoran_Sprobuj_15_06"); //Wiedzia³em, ¿e ci siê spodoba.
+    B_LogEntry                     (CH1_SellAlco,"Ghoram by³ bardzo zadowolony z naszego alkoholu. Myœlê, ¿e przekona³em go t¹ ma³¹ przeróbk¹.");
+
+    B_GiveXP (200);
+    AI_StopProcessInfos	(self);
+};
+
+//========================================
+//-----------------> FirstDostawa
+//========================================
+
+INSTANCE DIA_Ghoran_FirstDostawa (C_INFO)
+{
+   npc          = NOV_9001_Ghoran;
+   nr           = 1;
+   condition    = DIA_Ghoran_FirstDostawa_Condition;
+   information  = DIA_Ghoran_FirstDostawa_Info;
+   permanent	= FALSE;
+   description	= "Przynios³em pierwsz¹ dostawê.";
+};
+
+FUNC INT DIA_Ghoran_FirstDostawa_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Bandyta_Dostwy))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Ghoran_FirstDostawa_Info()
+{
+    AI_Output (other, self ,"DIA_Ghoran_FirstDostawa_15_01"); //Przynios³em pierwsz¹ dostawê.
+    AI_Output (self, other ,"DIA_Ghoran_FirstDostawa_03_02"); //Dobra, dawaj.
+    B_LogEntry                     (CH1_Dostawy,"Bractwo - alkohol dostarczony.");
+
+    B_GiveXP (50);
+    B_GiveInvItems (other, self, ItMi_Alchemy_Alcohol_01, 10);
+    AI_StopProcessInfos	(self);
+};
+
+//========================================
+//-----------------> MocnySpirytus
+//========================================
+
+INSTANCE DIA_PC_Hero_MocnySpirytus (C_INFO)
+{
+   npc          = PC_Hero;
+   nr           = 989;
+   condition    = DIA_PC_Hero_MocnySpirytus_Condition;
+   information  = DIA_PC_Hero_MocnySpirytus_Info;
+   permanent	= true;
+   description	= "(Dodaj cukier do alkoholu Bandytów)";
+};
+
+FUNC INT DIA_PC_Hero_MocnySpirytus_Condition()
+{
+	if (monolog == Alchemia)
+	&& (Npc_GetTalentSkill(hero, NPC_TALENT_FIREMASTER) >= 1)  
+	 && (Npc_HasItems (hero, ItMi_Alchemy_Alcohol_01) >=1)
+	 && (GhoranTalk == true)
+	{
+    return TRUE;
+    };
+};
+
+func void DIA_PC_Hero_MocnySpirytus_Info ()
+{
+ if (Npc_HasItems (hero, ItMi_Alchemy_Alcohol_01) >=1)  && (Npc_HasItems (hero, ItMi_Alchemy_Zucker_01) >=1) 
+    {
+	CreateInvItem (hero,ItMi_Alchemy_Alcohol_02);
+    Npc_RemoveInvItems (hero, ItMi_Alchemy_Alcohol_01, 1);
+	Npc_RemoveInvItems (hero, ItMi_Alchemy_Zucker_01,1);
+	Print ("Ulepszy³eœ alkohol!");
+    } else {
+	Print ("Nie masz sk³adników!");
+    AI_StopProcessInfos	(self);   
+};
+};
+
+//========================================
+//-----------------> Dostwy
+//========================================
+
+INSTANCE DIA_Bandyta_Dostwy (C_INFO)
+{
+   npc          = BAN_1601_Briam;
+   nr           = 1;
+   condition    = DIA_Bandyta_Dostwy_Condition;
+   information  = DIA_Bandyta_Dostwy_Info;
+   permanent	= FALSE;
+   description	= "Przyszed³em po dostawy.";
+};
+
+FUNC INT DIA_Bandyta_Dostwy_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Quentin_UkonczonoSellAlco)) && (devmode_dostawyalkoholu == true)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Bandyta_Dostwy_Info()
+{
+    AI_Output (other, self ,"DIA_Bandyta_Dostwy_15_01"); //Przyszed³em po dostawy.
+    AI_Output (self, other ,"DIA_Bandyta_Dostwy_03_02"); //Roznieœ to osobom, z którymi siê dogada³eœ.
+    MIS_Dostawy = LOG_RUNNING;
+
+    Log_CreateTopic          (CH1_Dostawy, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_Dostawy, LOG_RUNNING);
+    B_LogEntry                     (CH1_Dostawy,"Briam kaza³ mi roznieœæ dostawy alkoholu do obozów. Alkohol ma trafiæ do karczmarzy, z którymi wczeœniej nawi¹za³em wspó³pracê. ");
+    if (Npc_KnowsInfo (hero, DIA_Karczmarz_Wpierdol))
+    {
+    CreateInvItems (self, ItMi_Alchemy_Alcohol_01, 30);
+    B_GiveInvItems (self, other, ItMi_Alchemy_Alcohol_01, 30);
+	}
+	else
+	{
+	CreateInvItems (self, ItMi_Alchemy_Alcohol_01, 20);
+    B_GiveInvItems (self, other, ItMi_Alchemy_Alcohol_01, 20);
+	};
+    AI_Output (self, other ,"DIA_Bandyta_Dostwy_03_03"); //Po dziesiêæ flaszek dla ka¿dego karczmarza. 
+    AI_StopProcessInfos	(self);
+};
+
+var int dostawa1;//NO
+var int dostawa2;//PSI
+var int dostawa3;//SO
+
+//========================================
+//-----------------> DostawaNO
+//========================================
+
+INSTANCE DIA_Bandyta_DostawaNO (C_INFO)
+{
+   npc          = BAN_1601_Briam;
+   nr           = 1;
+   condition    = DIA_Bandyta_DostawaNO_Condition;
+   information  = DIA_Bandyta_DostawaNO_Info;
+   permanent	= FALSE;
+   description	= "Dostarczy³em towar Mazinowi.";
+};
+
+FUNC INT DIA_Bandyta_DostawaNO_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Mazin_Dostawczak)) && (MIS_Dostawy = LOG_RUNNING)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Bandyta_DostawaNO_Info()
+{
+    AI_Output (other, self ,"DIA_Bandyta_DostawaNO_15_01"); //Dostarczy³em towar Mazinowi.
+    AI_Output (self, other ,"DIA_Bandyta_DostawaNO_03_02"); //Dobra robota.
+	dostawa1 = 1;
+};
+
+//========================================
+//-----------------> DostawaPSI
+//========================================
+
+INSTANCE DIA_Bandyta_DostawaPSI (C_INFO)
+{
+   npc          = BAN_1601_Briam;
+   nr           = 1;
+   condition    = DIA_Bandyta_DostawaPSI_Condition;
+   information  = DIA_Bandyta_DostawaPSI_Info;
+   permanent	= FALSE;
+   description	= "Ghoran otrzyma³ alkohol.";
+};
+
+FUNC INT DIA_Bandyta_DostawaPSI_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Ghoran_FirstDostawa)) && (MIS_Dostawy = LOG_RUNNING)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Bandyta_DostawaPSI_Info()
+{
+    AI_Output (other, self ,"DIA_Bandyta_DostawaPSI_15_01"); //Ghoran otrzyma³ alkohol.
+    AI_Output (self, other ,"DIA_Bandyta_DostawaNO_03_02"); //Dobra robota.
+	dostawa2 = 1;
+};
+
+//========================================
+//-----------------> DostawaSO
+//========================================
+
+INSTANCE DIA_Bandyta_DostawaSO (C_INFO)
+{
+   npc          = BAN_1601_Briam;
+   nr           = 1;
+   condition    = DIA_Bandyta_DostawaSO_Condition;
+   information  = DIA_Bandyta_DostawaSO_Info;
+   permanent	= FALSE;
+   description	= "Karczmarz ze Starego Obozu otrzyma³ dostawê.";
+};
+
+FUNC INT DIA_Bandyta_DostawaSO_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Karczmarz_DostwaOC)) && (MIS_Dostawy = LOG_RUNNING)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Bandyta_DostawaSO_Info()
+{
+    AI_Output (other, self ,"DIA_Bandyta_DostawaSO_15_01"); //Karczmarz ze Starego Obozu otrzyma³ dostawê.
+    AI_Output (self, other ,"DIA_Bandyta_DostawaNO_03_02"); //Dobra robota.
+	dostawa3 = 1;
+};
+
+//========================================
+//-----------------> DostawaALL
+//========================================
+
+INSTANCE DIA_Bandyta_DostawaALL (C_INFO)
+{
+   npc          = BAN_1601_Briam;
+   nr           = 1;
+   condition    = DIA_Bandyta_DostawaALL_Condition;
+   information  = DIA_Bandyta_DostawaALL_Info;
+   permanent	= FALSE;
+   description	= "Uda³o mi siê zanieœæ wszystkim karczmarzom alkohol.";
+};
+
+FUNC INT DIA_Bandyta_DostawaALL_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Bandyta_DostawaNO)) && (Npc_KnowsInfo (hero, DIA_Bandyta_DostawaSO)) && (Npc_KnowsInfo (hero, DIA_Bandyta_DostawaPSI))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Bandyta_DostawaALL_Info()
+{
+    AI_Output (other, self ,"DIA_Bandyta_DostawaALL_15_01"); //Uda³o mi siê zanieœæ wszystkim karczmarzom alkohol.
+    AI_Output (self, other ,"DIA_Bandyta_DostawaALL_15_02"); //No, to teraz masz trochê wolnego. WeŸ te piwka w nagrodê.
+		
+	B_LogEntry    (CH1_Dostawy,"Zanios³em wszystkim dostawy alkoholu. Moja robota dobieg³a koñca.");
+	Log_SetTopicStatus       (CH1_Dostawy, LOG_SUCCESS);
+	MIS_Dostawy = LOG_SUCCESS;
+	B_GiveXP (150);
+	CreateInvItems		(self, ItFo_OM_Beer_01,6);
+	B_GiveInvItems      (self, hero, ItFo_OM_Beer_01,6);
+};
+
+const string CH1_SellAlco      			= "Sprzeda¿ alkoholu";
+const string CH1_Dostawy      			= "Dostawy alkoholu";
+
+var int MIS_SellAlco;
+var int MIS_Dostawy;
