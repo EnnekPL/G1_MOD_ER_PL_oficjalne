@@ -161,44 +161,6 @@ FUNC void  GRD_271_ULBERT_DRUNK_Info()
 
 	B_LogEntry		(CH2_StorageShed,	"Poczêstowany trunkiem Ulbert powiedzia³ mi, ¿e zgubi³ gdzieœ klucz do skrzyñ. Ponoæ jeden z Kopaczy imieniem Aleph mia³ z tym coœ wspólnego!");
 };  
-//========================================
-//-----------------> BLACKORE
-//========================================
-
-INSTANCE DIA_ULBERT_BLACKORE (C_INFO)
-{
-   npc          = GRD_271_ULBERT;
-   nr           = 1;
-   condition    = DIA_ULBERT_BLACKORE_Condition;
-   information  = DIA_ULBERT_BLACKORE_Info;
-   permanent	= FALSE;
-   description	= "Wiesz coœ o czarnej rudzie?";
-};
-
-FUNC INT DIA_ULBERT_BLACKORE_Condition()
-{
-    if (Npc_KnowsInfo (hero, GRD_271_ULBERT_DRINK))
-    && (kapitel == 10)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_ULBERT_BLACKORE_Info()
-{
-    AI_Output (other, self ,"DIA_ULBERT_BLACKORE_15_01"); //Wiesz coœ o czarnej rudzie?
-    AI_Output (self, other ,"DIA_ULBERT_BLACKORE_03_02"); //Co? Sk¹d o niej wiesz?
-    AI_Output (self, other ,"DIA_ULBERT_BLACKORE_03_03"); //Niewa¿ne. Ruda jest przechowywana w tym sk³adowisku.
-    AI_Output (self, other ,"DIA_ULBERT_BLACKORE_03_04"); //Ale i tak siê do niej nie dostaniesz.
-    AI_Output (other, self ,"DIA_ULBERT_BLACKORE_15_05"); //Niby dlaczego?
-    AI_Output (self, other ,"DIA_ULBERT_BLACKORE_03_06"); //Klucz do skrzyni ukryty jest w innym sk³adowisku.
-    AI_Output (self, other ,"DIA_ULBERT_BLACKORE_03_07"); //NieŸle to Ian wymyœli³. He he...
-    B_LogEntry                     (CH1_AlternativBanditoSCamp,"Klucz do skrzyni z czarn¹ rud¹ ukryty jest w innym sk³adowisku w Starej Kopalni.");
-
-    B_GiveXP (100);
-};
-
 
 // ***************** Infos *****************************
 instance  GRD_271_ULBERT_LOCK (C_INFO)
@@ -213,7 +175,7 @@ instance  GRD_271_ULBERT_LOCK (C_INFO)
 
 FUNC int  GRD_271_ULBERT_LOCK_Condition()
 {
-	if ( Npc_KnowsInfo (hero ,GRD_271_ULBERT_DRUNK)) ||  ( Npc_KnowsInfo (hero ,DIA_ULBERT_BLACKORE))
+	if ( Npc_KnowsInfo (hero ,GRD_271_ULBERT_DRUNK)) //||  ( Npc_KnowsInfo (hero ,DIA_ULBERT_BLACKORE))
 	{
 		return 1;
 	};

@@ -711,7 +711,7 @@ INSTANCE DIA_Claw_MocPotions (C_INFO)
 FUNC INT DIA_Claw_MocPotions_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Olivier_HELLO3))
-    && (MIS_PolowanieNaMorakha == LOG_RUNNING)
+    && (MIS_MorakhHunting == LOG_RUNNING)
     {
     return TRUE;
     };

@@ -1,4 +1,4 @@
-instance ORG_819_Drax (Npc_Default)
+instance BAN_1614_Drax (Npc_Default)
 {
 	//-------- primary data --------
 	
@@ -8,7 +8,7 @@ instance ORG_819_Drax (Npc_Default)
 	level =							35;
 	
 	voice =							6;
-	id =							819;
+	id =							1614;
 
 	//-------- abilities --------
 
@@ -57,36 +57,36 @@ instance ORG_819_Drax (Npc_Default)
 	
 	//-------------Daily Routine-------------
 
-	daily_routine = Rtn_Start_819;
+	daily_routine = Rtn_Start_1614;
 
 };
 
-FUNC VOID Rtn_Start_819 ()
+FUNC VOID Rtn_Start_1614 ()
 {
 	TA_Smalltalk (00,00,23,00,"OW_PATH_1_5_B");
 	TA_Smalltalk (23,00,00,00,"OW_PATH_1_5_B");
 };
-FUNC VOID Rtn_camp_819 ()
+FUNC VOID Rtn_camp_1614 ()
 {
 	TA_GuidePC (06,00,14,00,"OW_PATH_188");
 	TA_GuidePC (14,00,06,00,"OW_PATH_188");
 };
-FUNC VOID Rtn_atak1_819 ()
+FUNC VOID Rtn_atak1_1614 ()
 {
 	TA_GuidePC (06,00,14,00,"SPAWN_GRD3");
 	TA_GuidePC (14,00,06,00,"SPAWN_GRD3");
 };
-FUNC VOID Rtn_atak2_819 ()
+FUNC VOID Rtn_atak2_1614 ()
 {
 	TA_GuidePC (06,00,14,00,"SPAWN_GRD999");
 	TA_GuidePC (14,00,06,00,"SPAWN_GRD999");
 };
-FUNC VOID Rtn_atak3_819 ()
+FUNC VOID Rtn_atak3_1614 ()
 {
 	TA_GuidePC (06,00,14,00,"MAM_WAS_KURDE");
 	TA_GuidePC (14,00,06,00,"MAM_WAS_KURDE");
 };
- FUNC VOID Rtn_ded_819 ()
+ FUNC VOID Rtn_ded_1614 ()
 {
 	TA_Smalltalk (00,00,23,00,"OW_PATH_250");
 	TA_Smalltalk (23,00,00,00,"OW_PATH_250");

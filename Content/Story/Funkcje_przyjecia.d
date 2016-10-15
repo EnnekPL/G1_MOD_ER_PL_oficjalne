@@ -213,15 +213,15 @@ if (Thorus_MordragKo != LOG_SUCCESS)
 Log_SetTopicStatus       (CH1_MordragKO, LOG_FAILED);
 B_LogEntry					 (CH1_MordragKO,"To zadanie nie jest dla mnie. Zosta³em Szkodnikiem");
 };
-if (MordragProblemOC != LOG_SUCCESS)
+if (MIS_SpysProblems != LOG_SUCCESS)
 {
-MordragProblemOC = LOG_FAILED;
-Log_SetTopicStatus       (CH1_MordragProblemOC, LOG_FAILED);
+MIS_SpysProblems = LOG_FAILED;
+Log_SetTopicStatus       (CH1_SpysProblems, LOG_FAILED);
 };
-if (BANMordragRaport != LOG_SUCCESS)
+if (MIS_NewsFromSpy != LOG_SUCCESS)
 {
-BANMordragRaport = LOG_FAILED;
-Log_SetTopicStatus       (CH1_BANMordragRaport, LOG_FAILED);
+MIS_NewsFromSpy = LOG_FAILED;
+Log_SetTopicStatus       (CH1_NewsFromSpy, LOG_FAILED);
 };
 Log_SetTopicStatus       (CH1_JoinOC, LOG_FAILED);
 B_LogEntry				 (CH1_JoinOC,"Zosta³em Szkodnikiem. Do³¹czenie do Starego Obozu to nie jest dobry pomys³.");

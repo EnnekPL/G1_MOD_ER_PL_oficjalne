@@ -384,8 +384,8 @@ FUNC VOID DIA_Torlof_Atack789_Info()
 	AI_StopProcessInfos	(self);
 	Sld_737_Torlof.aivar[AIV_PARTYMEMBER] = TRUE;
     Npc_ExchangeRoutine (Sld_737_Torlof,"atak");
-	ORG_867_Raeuber.aivar[AIV_PARTYMEMBER] = TRUE;
-	Npc_ExchangeRoutine (ORG_867_Raeuber,"pomoc");
+	BAN_1613_Doyle.aivar[AIV_PARTYMEMBER] = TRUE;
+	Npc_ExchangeRoutine (BAN_1613_Doyle,"pomoc");
 	SLD_702_Soeldner.aivar[AIV_PARTYMEMBER] = TRUE;
 	Npc_ExchangeRoutine (SLD_702_Soeldner,"atak"); 
 	SLD_703_Soeldner.aivar[AIV_PARTYMEMBER] = TRUE;
@@ -447,8 +447,8 @@ FUNC VOID DIA_Torlof_SuccesS_Info()
 	Npc_ExchangeRoutine (SLD_707_Soeldner,"obrona"); 
 	Npc_ExchangeRoutine (SLD_737_Torlof,"obrona"); 
 	Npc_ExchangeRoutine (SLD_732_Soeldner,"obrona"); 
-	ORG_867_Raeuber.aivar[AIV_PARTYMEMBER] = FALSE;
-	Npc_ExchangeRoutine (ORG_867_Raeuber,"wojna");
+	BAN_1613_Doyle.aivar[AIV_PARTYMEMBER] = FALSE;
+	Npc_ExchangeRoutine (BAN_1613_Doyle,"wojna");
     B_GiveXP (200);
     AI_StopProcessInfos	(self);
 };

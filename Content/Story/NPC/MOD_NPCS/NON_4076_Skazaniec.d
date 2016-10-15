@@ -1,4 +1,4 @@
-instance NON_7046_Skaza (Npc_Default)
+instance NON_7046_Skazaniec (Npc_Default)
 {
 	//-------- primary data --------
 	

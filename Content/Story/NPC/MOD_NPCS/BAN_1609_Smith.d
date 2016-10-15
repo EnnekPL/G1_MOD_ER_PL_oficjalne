@@ -1,4 +1,4 @@
-instance BAN_1609_Pun (Npc_Default)
+instance BAN_1609_Smith (Npc_Default)
 {
 	//-------- primary data --------
 	

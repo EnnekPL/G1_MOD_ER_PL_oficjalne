@@ -8,6 +8,14 @@
 //***Stary Obóz***
 //***Zmienne zadañ***
 
+const string CH1_Bulit 				 		= "Chrzest Wody";
+
+var int MIS_Bodyguard;
+const string CH1_Bodyguard     	 			= "Ochroniarz handlarza"; 
+
+var int MIS_WheresNek;
+const string CH1_WheresNek     		 		= "Gdzie jest Nek, do cholery?";
+
 var int MIS_FirstQuest;
 const string Ch1_FirstQuest 				= "Kwatermistrz z placu wymian";
 
@@ -86,26 +94,53 @@ const string CH4_SickHakan      	 		= "Chory kucharz";
 var int MIS_GoldMedallion;
 const string CH4_GoldMedallion 				= "Z³oty medalion";
 
+var int MIS_PsiAbadonedMine;
+const string CH4_PsiAbadonedMine    		= "Wsparcie Nowego Obozu";
+
 //***Obóz Bandytów***
 //***Zmienne zadañ***
+
+var int MIS_BanditCave;
+const string CH1_BanditCave      			= "Dostawa z Nowego Obozu";
+
+var int Palisada;
+const string CH1_Palisada      				= "Naprawa palisady";
+
+var int MIS_OreInOM; 
+const string CH1_OreInOM      				= "Ruda z kopalni";
 
 var int MIS_DestroyedGrave;
 const string CH1_DestroyedGrave	    		= "Zniszczony grób";
 
-var int MIS_SupportFromOrcHunters;
-const string CH1_SupportFromOrcHunters      = "Pomoc ³owców orków";
+var int MIS_NewsFromSpy;
+const string CH1_NewsFromSpy    			= "Wieœci od Skazy";
 
-var int BANMordragRaport;
-const string CH1_BANMordragRaport    		= "Wieœci od Skazy";
-
-var int MordragProblemOC;
-const string CH1_MordragProblemOC    		= "Problemy Skazy";
+var int MIS_SpysProblems;
+const string CH1_SpysProblems    			= "Problemy Skazy";
 
 var int MIS_DraxTest;
 const string CH1_DraxTest      				= "Test Draxa";
 
+var int MIS_PSIcampWORK;
+const string CH1_PSIcampWORK     	 		= "Szpieg na bagnie";
+
 var int MIS_KalomsNewWeed;
 const string CH2_KalomsNewWeed      		= "Przepis na niesamowite ziele";
+
+var int MIS_HuntingWithDoyle;
+const string CH3_HuntingWithDoyle      		= "Polowanie z Doylem";
+
+var int MIS_SearchKalom;
+const string CH3_SearchKalom      			= "Poszukiwania Kaloma";
+
+var int MIS_SupportFromOrcHunters;
+const string CH4_SupportFromOrcHunters      = "Pomoc ³owców orków";
+
+var int MIS_QuentinsCutlass;
+const string CH4_QuentinsCutlass      		= "Kordelas dla Quentina";
+
+var int MIS_RockyArmor;
+const string CH1_RockyArmor      			= "Nowy pancerz dla Bandyty";
 
 //***Nowy Obóz***
 //***Zmienne zadañ*** 
@@ -148,6 +183,32 @@ const string CH4_BanditsInTroubles   		= "Banda Quentina";
 
 //***Kolonia***
 //***Zmienne zadañ***
+var int MIS_FoodForFlint;
+const string CH1_FoodForFlint      			= "Prowiant Flinta";
+
+var int MIS_SzponyTopielca;
+const string CH1_SzponyTopielca      		= "Wyj¹tkowe trofeum";
+
+var int MIS_JobInHuntersCamp;
+const string CH1_JobInHuntersCamp      		= "Praca w obozie myœliwych";
+
+var int MIS_TheftInHuntersCamp;
+const string CH1_TheftInHuntersCamp      	= "Tajemnicza kradzie¿";
+
+var int MIS_StrangeVoices;
+const string CH1_StrangeVoices      		= "Dziwne krzyki";
+
+var int MIS_OnerousGobbos;
+const string CH1_OnerousGobbos     	 		= "Uci¹¿liwe gobliny";
+
+var int MIS_Nieroby;
+const string CH1_Nieroby   					= "Nieroby";
+
+var int MIS_MorakhHunting;
+const string CH1_MorakhHunting  			= "Polowanie z Olivierem";
+
+var int MIS_SprawaFirna;
+const string CH1_SprawaFirna     			= "Sprawa Firna";
 
 var int MIS_FindWhiteSkin;
 const string CH1_FindWhiteSkin   			= "Bia³y wilk";
@@ -167,15 +228,40 @@ const string CH1_GrimAmulet 				= "Amulet Magnatów";
 var int MIS_SickHunter;
 const string CH2_SickHunter     			= "Chory myœliwy";
 
+var int MIS_NewBloodForOrcHunters;
+const string CH3_NewBloodForOrcHunters      = "Rekruci do obozu ³owców";
+
+var int MIS_Aidan_Quest;
+const string CH3_Aidan_Quest      			= "Proœba Aidana";
+
 var int MIS_CorristoEvil;
 const string CH4_CorristoEvil      			= "Ucieczka Corristo";
 
 var int MIS_MagicalCrystals;
 const string CH4_MagicalCrystals      		= "Szturm na Barierê";
 
+var int MIS_FoodForHunters;
+const string CH5_FoodForHunters      		= "Dostawa ¿ywnoœci";
+
 const string CH1_HelpJesse 					= "Przys³uga za przys³ugê";
 
 const string CH1_KdWCourier 				= "Kurier Magów Wody";
+
+//***Opuszczona kopalnia***
+//***Zmienne zadañ***
+
+var int MIS_PickaxesForGuy;
+const string CH4_PickaxesForGuy      		= "Dostawa kilofów";
+
+var int MIS_OldNotes;
+const string CH4_OldNotes      				= "Stare pamiêtniki";
+	
+var int MIS_HardChest;
+const string CH4_HardChest      			= "Szyfr";
+
+//***Stara Kopalnia***
+//***Zmienne zadañ***
+
 
 //***Œwi¹tynia Œni¹cego***
 //***Zmienne zadañ***
@@ -202,6 +288,9 @@ var int Choice_BergsRing;//TRUE pomagam, FALSE nie pomagam
 var int QuestFromOkyl;
 var int QuestFromOrik;
 var int HeroKnowCipherSellElixier;
+var int Drake_pojedynek; //OreInOM
+var int amulet_sprzedany; //OreInOM
+var int hero_explore_aidanquestcave;
 
 //***Pomocnicze***
 //***Wld_GetDay***

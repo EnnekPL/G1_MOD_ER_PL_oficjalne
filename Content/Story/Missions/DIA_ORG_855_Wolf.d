@@ -906,7 +906,7 @@ FUNC VOID DIA_Wolf_DOSTAWA_LOWCOW_UPS_ZAGINELO()
     AI_Output (self, other ,"DIA_Wolf_DOSTAWA_LOWCOW_UPS_ZAGINELO_03_02"); //Ha ha ha! Tylko wróæ w tym miesi¹cu, bo ³owcy nie wytrzymaj¹ d³ugo bez jedzenia.
     AI_Output (other, self ,"DIA_Wolf_DOSTAWA_LOWCOW_UPS_ZAGINELO_15_03"); //Z pewnoœci¹ coœ sobie przyrz¹dz¹.
     AI_Output (self, other ,"DIA_Wolf_DOSTAWA_LOWCOW_UPS_ZAGINELO_03_04"); //Ha! Z pewnoœci¹ orka.
-    B_LogEntry                     (CH1_DostawaLowcow,"W moim ekwipunku jest niez³y ba³agan. Gdzie ja podzia³em te 400 bry³ek rudy. Hmmm...");
+    B_LogEntry                     (CH5_FoodForHunters,"W moim ekwipunku jest niez³y ba³agan. Gdzie ja podzia³em te 400 bry³ek rudy. Hmmm...");
     Info_ClearChoices		(DIA_Wolf_DOSTAWA_LOWCOW);
     AI_StopProcessInfos	(self);
 };
@@ -922,7 +922,7 @@ FUNC VOID DIA_Wolf_DOSTAWA_LOWCOW_TARGUJ_SIE()
         AI_Output (other, self ,"DIA_Wolf_DOSTAWA_LOWCOW_TARGUJ_SIE_15_04"); //Co konkretnie mam zrobiæ?
         AI_Output (self, other ,"DIA_Wolf_DOSTAWA_LOWCOW_TARGUJ_SIE_03_05"); //Butch... Kojarzysz typa? Nie zap³aci³ mi za ciê¿k¹ zbrojê. Odzyskaj moj¹ rudê.
         AI_Output (other, self ,"DIA_Wolf_DOSTAWA_LOWCOW_TARGUJ_SIE_15_06"); //W porz¹dku. 
-        B_LogEntry                     (CH1_DostawaLowcow,"Wilk spuœci³ mi cenê o 50 bry³ek, bo odnalaz³em kiedyœ jego klingê. Jeœli chcê, ¿eby Wilk spuœci³ mi cenê o kolejne bry³ki to muszê namówiæ Butcha do oddania d³ugu za ciê¿k¹ zbrojê Szkodnika. ");
+        B_LogEntry                     (CH5_FoodForHunters,"Wilk spuœci³ mi cenê o 50 bry³ek, bo odnalaz³em kiedyœ jego klingê. Jeœli chcê, ¿eby Wilk spuœci³ mi cenê o kolejne bry³ki to muszê namówiæ Butcha do oddania d³ugu za ciê¿k¹ zbrojê Szkodnika. ");
 		pancerz_bustera = true;
 		oplata_wolfa = oplata_wolfa - 50;
     }
@@ -932,7 +932,7 @@ FUNC VOID DIA_Wolf_DOSTAWA_LOWCOW_TARGUJ_SIE()
         AI_Output (other, self ,"DIA_Wolf_DOSTAWA_LOWCOW_TARGUJ_SIE_15_08"); //Co konkretnie mam zrobiæ?
         AI_Output (self, other ,"DIA_Wolf_DOSTAWA_LOWCOW_TARGUJ_SIE_03_09"); //Butch... Kojarzysz typa? Nie zap³aci³ mi za ciê¿k¹ zbrojê. Odzyskaj moj¹ rudê.
         AI_Output (other, self ,"DIA_Wolf_DOSTAWA_LOWCOW_TARGUJ_SIE_15_10"); //Spróbujê.
-		B_LogEntry                     (CH1_DostawaLowcow,"Jeœli chcê, ¿eby Wilk spuœci³ mi cenê o kolejne bry³ki to muszê namówiæ Butcha do oddania d³ugu za ciê¿k¹ zbrojê Szkodnika. ");
+		B_LogEntry                     (CH5_FoodForHunters,"Jeœli chcê, ¿eby Wilk spuœci³ mi cenê o kolejne bry³ki to muszê namówiæ Butcha do oddania d³ugu za ciê¿k¹ zbrojê Szkodnika. ");
 		pancerz_bustera = true;
     };
     Info_ClearChoices		(DIA_Wolf_DOSTAWA_LOWCOW);
@@ -948,7 +948,7 @@ FUNC VOID DIA_Wolf_DOSTAWA_LOWCOW_DAWAJ()
     B_GiveInvItems (self, other, foodlowcow, 1);
     Info_ClearChoices		(DIA_Wolf_DOSTAWA_LOWCOW);
     AI_StopProcessInfos	(self);
-    B_LogEntry                     (CH1_DostawaLowcow,"Bez ¿adnych ceregieli odebra³em dostawê. ");
+    B_LogEntry                     (CH5_FoodForHunters,"Bez ¿adnych ceregieli odebra³em dostawê. ");
 
     B_GiveXP (150);
 };
@@ -984,7 +984,7 @@ FUNC VOID DIA_Wolf_ZAPLATA_PANCERZ_Info()
     AI_Output (other, self ,"DIA_Wolf_ZAPLATA_PANCERZ_15_01"); //Mam rudê za pancerz.
     AI_Output (self, other ,"DIA_Wolf_ZAPLATA_PANCERZ_03_02"); //Dobrze. Dawaj. Obni¿ê cenê o 100 bry³ek rudy. 
     B_GiveInvItems (other, self, ItMiNugget, 1500);
-    B_LogEntry                     (CH1_DostawaLowcow,"Odnios³em rudê Wilkowi. Obni¿y³ cenê o 100 bry³ek.");
+    B_LogEntry                     (CH5_FoodForHunters,"Odnios³em rudê Wilkowi. Obni¿y³ cenê o 100 bry³ek.");
 
     B_GiveXP (100);
 	oplata_wolfa = oplata_wolfa - 100;
@@ -1008,7 +1008,7 @@ INSTANCE DIA_Wolf_ODBIEZR_DOSTAWE (C_INFO)
 FUNC INT DIA_Wolf_ODBIEZR_DOSTAWE_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Wolf_ZAPLATA_PANCERZ))
-    && (MIS_DostawaLowcow == LOG_RUNNING)
+    && (MIS_FoodForHunters == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -1030,7 +1030,7 @@ FUNC VOID DIA_Wolf_ODBIEZR_DOSTAWE_Info()
             B_GiveInvItems (other, self, ItMiNugget, 250);
             CreateInvItems (self, foodlowcow, 1);
             B_GiveInvItems (self, other, foodlowcow, 1);
-            B_LogEntry                     (CH1_DostawaLowcow,"Za dostawê musia³em zap³aciæ 250 bry³ek rudy. Reszta jest moja. Mogê wreszcie wróciæ do obozu ³owców. ");
+            B_LogEntry                     (CH5_FoodForHunters,"Za dostawê musia³em zap³aciæ 250 bry³ek rudy. Reszta jest moja. Mogê wreszcie wróciæ do obozu ³owców. ");
 
             B_GiveXP (250);
         }
@@ -1046,7 +1046,7 @@ else
     if (Npc_HasItems (hero, ItMiNugget)>=300)
     {
         AI_Output (self, other ,"DIA_Wolf_ODBIEZR_DOSTAWE_03_08"); //Widzê, ¿e masz te 300 bry³ek rudy. Dawaj i koñczmy te wymianê.
-        B_LogEntry                     (CH1_DostawaLowcow,"Za dostawê musia³em zap³aciæ 300 bry³ek rudy. Reszta jest moja. Mogê wreszcie wróciæ do obozu ³owców. ");
+        B_LogEntry                     (CH5_FoodForHunters,"Za dostawê musia³em zap³aciæ 300 bry³ek rudy. Reszta jest moja. Mogê wreszcie wróciæ do obozu ³owców. ");
 
         B_GiveXP (200);
         CreateInvItems (self, foodlowcow, 1);
@@ -1094,7 +1094,7 @@ FUNC VOID DIA_Wolf_RUDA_DRUGI_RAZ_Info()
     B_GiveInvItems (other, self, ItMiNugget, 300);
     CreateInvItems (self, foodlowcow, 1);
     B_GiveInvItems (self, other, foodlowcow, 1);
-    B_LogEntry                     (CH1_DostawaLowcow,"Za dostawê musia³em zap³aciæ 250 bry³ek rudy. Reszta jest moja. Mogê wreszcie wróciæ do obozu ³owców. ");
+    B_LogEntry                     (CH5_FoodForHunters,"Za dostawê musia³em zap³aciæ 250 bry³ek rudy. Reszta jest moja. Mogê wreszcie wróciæ do obozu ³owców. ");
 
     B_GiveXP (270);
     AI_StopProcessInfos	(self);
@@ -1131,7 +1131,7 @@ FUNC VOID DIA_Wolf_300_BRYLEK_ZAPLATY_Info()
     CreateInvItems (self, foodlowcow, 1);
     B_GiveInvItems (self, other, foodlowcow, 1);
     B_GiveInvItems (other, self, ItMiNugget, 300);
-    B_LogEntry                     (CH1_DostawaLowcow,"Za dostawê musia³em zap³aciæ 300 bry³ek rudy. Reszta jest moja. Mogê wreszcie wróciæ do obozu ³owców. ");
+    B_LogEntry                     (CH5_FoodForHunters,"Za dostawê musia³em zap³aciæ 300 bry³ek rudy. Reszta jest moja. Mogê wreszcie wróciæ do obozu ³owców. ");
 
     B_GiveXP (190);
     AI_StopProcessInfos	(self);

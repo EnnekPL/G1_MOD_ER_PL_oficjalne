@@ -1,0 +1,201 @@
+//========================================
+//-----------------> Help
+//========================================
+
+INSTANCE DIA_Bandyta_Help (C_INFO)
+{
+   npc          = BAN_1608_Kereth;
+   nr           = 2;
+   condition    = DIA_Bandyta_Help_Condition;
+   information  = DIA_Bandyta_Help_Info;
+   permanent	= FALSE;
+   description	= "Mogę jakoś pomóc?";
+};
+
+FUNC INT DIA_Bandyta_Help_Condition()
+{
+    return TRUE;
+};
+
+FUNC VOID DIA_Bandyta_Help_Info()
+{
+    AI_Output (other, self ,"DIA_Bandyta_Help_15_01"); //Mogę jakoś pomóc?
+    AI_Output (self, other ,"DIA_Bandyta_Help_03_02"); //Oczywiście. Kręcisz się tu i tam. 
+    AI_Output (self, other ,"DIA_Bandyta_Help_03_03"); //Załatw nam dwa koła zębate. Tylko takie duże.
+    AI_Output (other, self ,"DIA_Bandyta_Help_15_04"); //Gdzie je znajdę?
+    AI_Output (self, other ,"DIA_Bandyta_Help_03_05"); //Będziesz musiał poprosić jakiegoś rzemieślnika, żeby ci je wyrobił.
+    AI_Output (self, other ,"DIA_Bandyta_Help_03_06"); //Powiedz, że chcesz koło z ząbkiem na dwa palce.
+    AI_Output (other, self ,"DIA_Bandyta_Help_15_07"); //Po co wam te koła zębate?
+    AI_Output (self, other ,"DIA_Bandyta_Help_03_08"); //Chcemy naprawić stare machiny stojące w kopalni.
+    AI_Output (self, other ,"DIA_Bandyta_Help_03_09"); //To znacznie przyspieszyłoby wydobycie.
+    MIS_NoweKola = LOG_RUNNING;
+	CreateInvItems (Org_843_Sharky, BigGear, 1);
+    Log_CreateTopic            (CH1_NoweKola, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_NoweKola, LOG_RUNNING);
+    B_LogEntry                     (CH1_NoweKola,"Kereth kazał przynieść sobie dwa duże koła zębate.");
+};
+
+
+
+//========================================
+//-----------------> FindKolo
+//========================================
+
+INSTANCE DIA_Bandyta_FindKolo (C_INFO)
+{
+   npc          = BAN_1608_Kereth;
+   nr           = 1;
+   condition    = DIA_Bandyta_FindKolo_Condition;
+   information  = DIA_Bandyta_FindKolo_Info;
+   permanent	= FALSE;
+   description	= "Mam koła.";
+};
+
+FUNC INT DIA_Bandyta_FindKolo_Condition()
+{
+    if (Npc_HasItems (other, BigGear) >=2)
+    && (Npc_KnowsInfo (hero, DIA_Bandyta_Help))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Bandyta_FindKolo_Info()
+{
+    AI_Output (other, self ,"DIA_Bandyta_FindKolo_15_01"); //Mam koła.
+    AI_Output (self, other ,"DIA_Bandyta_FindKolo_03_02"); //Dobra, daj mi je.
+    AI_Output (self, other ,"DIA_Bandyta_FindKolo_03_03"); //Oto twoja ruda.
+    B_GiveInvItems (other, self, BigGear, 2);
+    CreateInvItems (self, ItMiNugget, 30);
+    B_GiveInvItems (self, other, ItMiNugget, 30);
+    B_LogEntry                     (CH1_NoweKola,"Zaniosłem koła Kerethowi. Maszyny w kopalni mogą wrócić do pracy.");
+    Log_SetTopicStatus       (CH1_NoweKola, LOG_SUCCESS);
+    MIS_NoweKola = LOG_SUCCESS;
+
+    B_GiveXP (300);
+    AI_StopProcessInfos	(self);
+};
+*/
+
+
+//========================================
+//-----------------> Okregi
+//========================================
+
+INSTANCE DIA_Jens_Okregi (C_INFO)
+{
+   npc          = BAN_1604_Jens;
+   nr           = 1;
+   condition    = DIA_Jens_Okregi_Condition;
+   information  = DIA_Jens_Okregi_Info;
+   permanent	= FALSE;
+   description	= "Potrzebuję kół zębatych.";
+};
+
+FUNC INT DIA_Jens_Okregi_Condition()
+{
+    if (MIS_NoweKola == LOG_RUNNING)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Jens_Okregi_Info()
+{
+    AI_Output (other, self ,"DIA_Jens_Okregi_15_01"); //Potrzebuję kół zębatych.
+    AI_Output (other, self ,"DIA_Jens_Okregi_15_02"); //Najlepiej takich z ząbkiem na dwa palce.
+    AI_Output (self, other ,"DIA_Jens_Okregi_03_03"); //Akurat miałem jedno na stanie.
+    AI_Output (other, self ,"DIA_Jens_Okregi_15_04"); //Potrzebne mi są dwa.
+    AI_Output (self, other ,"DIA_Jens_Okregi_03_05"); //Niestety, musisz pogadać z kimś innym.
+    B_LogEntry                     (CH1_NoweKola,"Jens dał mi tylko jedno koło zębate. Reszty muszę szukać gdzieś indziej.");
+
+    B_GiveXP (60);
+    CreateInvItems (self, BigGear, 1);
+    B_GiveInvItems (self, other, BigGear, 1);
+    AI_StopProcessInfos	(self);
+};
+
+
+//========================================
+//-----------------> KoloZebate
+//========================================
+
+INSTANCE DIA_cavalorn_KoloZebate (C_INFO)
+{
+   npc          = STT_336_cavalorn;
+   nr           = 1;
+   condition    = DIA_cavalorn_KoloZebate_Condition;
+   information  = DIA_cavalorn_KoloZebate_Info;
+   permanent	= FALSE;
+   description	= "Mógłbyś dla mnie zrobić koło zębate?";
+};
+
+FUNC INT DIA_cavalorn_KoloZebate_Condition()
+{
+    if (MIS_NoweKola == LOG_RUNNING)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_cavalorn_KoloZebate_Info()
+{
+    AI_Output (other, self ,"DIA_cavalorn_KoloZebate_15_01"); //Mógłbyś dla mnie zrobić koło zębate?
+    AI_Output (self, other ,"DIA_cavalorn_KoloZebate_03_02"); //Oczywiście. 
+    AI_Output (self, other ,"DIA_cavalorn_KoloZebate_03_03"); //Za każde koło chcę 10 bryłek rudy.
+    B_LogEntry                     (CH1_NoweKola,"Cavalorn ma własny warsztat i może mi wyrobić różne przedmioty.");
+};
+
+
+//========================================
+//-----------------> CreateItem
+//========================================
+
+INSTANCE DIA_cavalorn_CreateItem (C_INFO)
+{
+   npc          = STT_336_cavalorn;
+   nr           = 2;
+   condition    = DIA_cavalorn_CreateItem_Condition;
+   information  = DIA_cavalorn_CreateItem_Info;
+   permanent	= TRUE;
+   description	= "Wytwórz dla mnie...";
+};
+
+FUNC INT DIA_cavalorn_CreateItem_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_cavalorn_KoloZebate))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_cavalorn_CreateItem_Info()
+{
+    AI_Output (other, self ,"DIA_cavalorn_CreateItem_15_01"); //Wytwórz dla mnie...
+
+    Info_ClearChoices		(DIA_cavalorn_CreateItem);
+    Info_AddChoice		(DIA_cavalorn_CreateItem, "Duże koło zębate (15 bryłek rudy)", DIA_cavalorn_CreateItem_Gear1);
+    Info_AddChoice		(DIA_cavalorn_CreateItem, DIALOG_BACK, DIA_cavalorn_CreateItem_BACK);
+};
+
+FUNC VOID DIA_cavalorn_CreateItem_Gear1()
+{
+    AI_Output (other, self ,"DIA_cavalorn_CreateItem_Gear1_15_01"); //Duże koło zębate.
+    if (Npc_HasItems (hero, ItMiNugget)>=15)
+    {
+    CreateInvItems (self, BigGear, 1);
+    B_GiveInvItems (self, other, BigGear, 1);
+    B_GiveInvItems (other, self, ItMiNugget, 15);
+    AI_Output (self, other ,"DIA_cavalorn_CreateItem_Gear1_03_02"); //Już się robi.
+    }
+    else
+    {
+     AI_Output (self, other ,"DIA_cavalorn_CreateItem_Gear1_03_03"); //Nie masz tyle rudy!
+    };
+};
+
+const string CH1_NoweKola     			= "2 koła zębate";

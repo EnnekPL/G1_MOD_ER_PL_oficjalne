@@ -284,7 +284,7 @@ FUNC VOID DIA_Sly_FAIL_SIPACZE_Info()
         AI_Output (self, other ,"DIA_Sly_FAIL_SIPACZE_03_05"); //Pos³uchaj. Dam ci drug¹ szansê. Jesteœ tu nowy. Wpad³eœ w z³e towarzystwo. Rozumiem to.
         AI_Output (self, other ,"DIA_Sly_FAIL_SIPACZE_03_06"); //IdŸ do Œwistaka i powiedz mu o planach Mordraga. Potem pogadamy znowu.
     };
-	B_LogEntry      	(CH1_BANMordragRaport,"Cholera. Przepad³o! Mog³em lepiej przygotowaæ siê do walki z siepaczami Z³ego. Teraz mam nó¿ na gardle. Albo przy³¹czê siê do Starego Obozu i zrobiê co Cienie mi ka¿¹, albo bêdê musia³ szukaæ innego sposobu na przy³¹czenie siê do Bandytów. Je¿eli nawet chcia³bym teraz zaatakowaæ siepaczy, to muszê pamiêtaæ, ¿e s¹ mieszkañcami Obozu. Inni Stra¿nicy natychmiast im pomog¹. Nawet gdybym da³ sobie radê, to zabójstwo w bia³y dzieñ nie jest za dobrym pomys³em.");  
+	B_LogEntry      	(CH1_NewsFromSpy,"Cholera. Przepad³o! Mog³em lepiej przygotowaæ siê do walki z siepaczami Z³ego. Teraz mam nó¿ na gardle. Albo przy³¹czê siê do Starego Obozu i zrobiê co Cienie mi ka¿¹, albo bêdê musia³ szukaæ innego sposobu na przy³¹czenie siê do Bandytów. Je¿eli nawet chcia³bym teraz zaatakowaæ siepaczy, to muszê pamiêtaæ, ¿e s¹ mieszkañcami Obozu. Inni Stra¿nicy natychmiast im pomog¹. Nawet gdybym da³ sobie radê, to zabójstwo w bia³y dzieñ nie jest za dobrym pomys³em.");  
 	AI_StopProcessInfos	(self);
 };
 

@@ -697,6 +697,47 @@ FUNC VOID DIA_Dexter_ReadBook_Info()
 	
 	Npc_ExchangeRoutine (self,"start");
 };
+
+//////////////////////////////////////////////
+//	Zadanie: Nowe ziele
+//////////////////////////////////////////////
+
+//========================================
+//-----------------> NovizeJoints
+//========================================
+
+INSTANCE DIA_Dexter_NovizeJoints (C_INFO)
+{
+   npc          = STT_329_Dexter;
+   nr           = 1;
+   condition    = DIA_Dexter_NovizeJoints_Condition;
+   information  = DIA_Dexter_NovizeJoints_Info;
+   permanent	= FALSE;
+   description	= "Nowicjusze z Bractwa maj¹ na sprzeda¿ ca³kiem nowe ziele.";
+};
+
+FUNC INT DIA_Dexter_NovizeJoints_Condition()
+{
+    if (MIS_NoweZiele == LOG_RUNNING)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Dexter_NovizeJoints_Info()
+{
+    AI_Output (other, self ,"DIA_Dexter_NovizeJoints_15_01"); //Nowicjusze z Bractwa maj¹ na sprzeda¿ ca³kiem nowe ziele.
+    AI_Output (self, other ,"DIA_Dexter_NovizeJoints_03_02"); //Doprawdy? Nowicjusze? Czy Guru wiedz¹ o tym zielu.
+    AI_Output (other, self ,"DIA_Dexter_NovizeJoints_15_03"); //Có¿...
+    AI_Output (self, other ,"DIA_Dexter_NovizeJoints_03_04"); //Tak myœla³em. Wspó³pracujê z wysoko po³o¿onymi i szanowanymi cz³onkami Bractwa. Baal Parvez i Baal Taran ci¹gle patrz¹ mi na rêce. 
+    AI_Output (self, other ,"DIA_Dexter_NovizeJoints_03_05"); //Nie mam zamiaru ryzykowaæ moich dobrych kontaktów...
+
+    B_LogEntry                     (CH1_NoweZiele,"Dexter nie jest zainteresowany naszym towarem. Œciœle wspó³pracuje z innymi Nowicjuszami.");
+
+    AI_StopProcessInfos	(self);
+};
+
 //========================================
 //-----------------> Kapitel4_dialog
 //========================================

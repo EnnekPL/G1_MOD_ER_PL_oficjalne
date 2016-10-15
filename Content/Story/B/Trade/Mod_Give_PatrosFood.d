@@ -1,7 +1,7 @@
 func void b_givepatrosfoodch1()
 {
 	var C_Npc npc;
-	npc = Hlp_GetNpc(nov_2007_patros);
+	npc = Hlp_GetNpc(NOV_1377_Starkad);
 	CreateInvItems(npc,itfochessesoup,10);
 //	CreateInvItems(npc,itat_cookcrawlerqueen,10);
 	CreateInvItems(npc,jajosca1,10);
@@ -26,7 +26,7 @@ func void b_givepatrosfoodch1()
 func void b_givepatrosfoodch2()
 {
 	var C_Npc npc;
-	npc = Hlp_GetNpc(nov_2007_patros);
+	npc = Hlp_GetNpc(NOV_1377_Starkad);
 	CreateInvItems(npc,itfochessesoup,10);
 //	CreateInvItems(npc,itat_cookcrawlerqueen,10);
 	CreateInvItems(npc,jajosca1,10);
@@ -51,7 +51,7 @@ func void b_givepatrosfoodch2()
 func void b_givepatrosfoodch3()
 {
 	var C_Npc npc;
-	npc = Hlp_GetNpc(nov_2007_patros);
+	npc = Hlp_GetNpc(NOV_1377_Starkad);
 	CreateInvItems(npc,itfochessesoup,10);
 	CreateInvItems(npc,itat_cookcrawlerqueen,10);
 	CreateInvItems(npc,jajosca1,10);
@@ -76,7 +76,7 @@ func void b_givepatrosfoodch3()
 func void b_givepatrosfoodch4()
 {
 	var C_Npc npc;
-	npc = Hlp_GetNpc(nov_2007_patros);
+	npc = Hlp_GetNpc(NOV_1377_Starkad);
 	CreateInvItems(npc,itfochessesoup,10);
 	CreateInvItems(npc,itat_cookcrawlerqueen,10);
 	CreateInvItems(npc,jajosca1,10);
@@ -103,7 +103,7 @@ func void b_givepatrosfoodch4()
 func void b_givepatrosfoodch5()
 {
 	var C_Npc npc;
-	npc = Hlp_GetNpc(nov_2007_patros);
+	npc = Hlp_GetNpc(NOV_1377_Starkad);
 	CreateInvItems(npc,itfochessesoup,10);
 	CreateInvItems(npc,itat_cookcrawlerqueen,10);
 	CreateInvItems(npc,jajosca1,10);

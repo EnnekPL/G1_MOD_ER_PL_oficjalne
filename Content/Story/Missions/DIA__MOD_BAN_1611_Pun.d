@@ -4,7 +4,7 @@
 
 INSTANCE DIA_RaeuberKowal_EXIT(C_INFO)
 {
-	npc             = ORG_870_Raeuber;
+	npc             = BAN_1611_Pun;
 	nr              = 999;
 	condition	= DIA_RaeuberKowal_EXIT_Condition;
 	information	= DIA_Raeuberkowal_EXIT_Info;
@@ -34,7 +34,7 @@ FUNC VOID DIA_RaeuberKowal_EXIT_Info()
 
 INSTANCE DIA_Raeuber_HELLO1 (C_INFO)
 {
-   npc          = ORG_870_Raeuber;
+   npc          = BAN_1611_Pun;
    nr           = 1;
    condition    = DIA_Raeuber_HELLO1_Condition;
    information  = DIA_Raeuber_HELLO1_Info;
@@ -60,7 +60,7 @@ FUNC VOID DIA_Raeuber_HELLO1_Info()
 
 INSTANCE DIA_Raeuber_HELLO2 (C_INFO)
 {
-   npc          = ORG_870_Raeuber;
+   npc          = BAN_1611_Pun;
    nr           = 2;
    condition    = DIA_Raeuber_HELLO2_Condition;
    information  = DIA_Raeuber_HELLO2_Info;
@@ -95,7 +95,7 @@ FUNC VOID DIA_Raeuber_HELLO2_Info()
 
 INSTANCE DIA_Raeuber_HELLO3 (C_INFO)
 {
-   npc          = ORG_870_Raeuber;
+   npc          = BAN_1611_Pun;
    nr           = 3;
    condition    = DIA_Raeuber_HELLO3_Condition;
    information  = DIA_Raeuber_HELLO3_Info;
@@ -142,7 +142,7 @@ FUNC VOID DIA_Raeuber_HELLO3_Info()
 
 INSTANCE DIA_Raeuber_SwordElement (C_INFO)
 {
-   npc          = ORG_870_Raeuber;
+   npc          = BAN_1611_Pun;
    nr           = 1;
    condition    = DIA_Raeuber_SwordElement_Condition;
    information  = DIA_Raeuber_SwordElement_Info;
@@ -174,7 +174,7 @@ FUNC VOID DIA_Raeuber_SwordElement_Info()
 
 INSTANCE DIA_Raeuber_RAYAN (C_INFO)
 {
-   npc          = ORG_870_Raeuber;
+   npc          = BAN_1611_Pun;
    nr           = 2;
    condition    = DIA_Raeuber_RAYAN_Condition;
    information  = DIA_Raeuber_RAYAN_Info;
@@ -210,7 +210,7 @@ FUNC VOID DIA_Raeuber_RAYAN_Info()
 //**** PRAWDOPODOBNIE NIEAKTUALNE***
 INSTANCE DIA_Raeuber_VERY_IMPORTATN (C_INFO)
 {
-   npc          = ORG_870_Raeuber;
+   npc          = BAN_1611_Pun;
    nr           = 1;
    condition    = DIA_Raeuber_VERY_IMPORTATN_Condition;
    information  = DIA_Raeuber_VERY_IMPORTATN_Info;
@@ -293,7 +293,7 @@ FUNC VOID DIA_Raeuber_VERY_IMPORTATN_TARGUJ_SIE()
 
 INSTANCE DIA_Pun_CanYouForgeWeapon (C_INFO)
 {
-   npc          = ORG_870_Raeuber;
+   npc          = BAN_1611_Pun;
    nr           = 1;
    condition    = DIA_Pun_CanYouForgeWeapon_Condition;
    information  = DIA_Pun_CanYouForgeWeapon_Info;
@@ -326,7 +326,7 @@ FUNC VOID DIA_Pun_CanYouForgeWeapon_Info()
 
 INSTANCE DIA_Pun_ForgeWeapon (C_INFO)
 {
-   npc          = ORG_870_Raeuber;
+   npc          = BAN_1611_Pun;
    nr           = 1;
    condition    = DIA_Pun_ForgeWeapon_Condition;
    information  = DIA_Pun_ForgeWeapon_Info;

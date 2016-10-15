@@ -138,6 +138,33 @@ FUNC VOID DIA_Rakus_BuyOrchunterArmor_Info()
 };
 
 //========================================
+//-----------------> WeNeedHelp
+//========================================
+
+INSTANCE DIA_Rakus_WeNeedHelp (C_INFO)
+{
+   npc          = NON_2705_Rakus;
+   nr           = 1;
+   condition    = DIA_Rakus_WeNeedHelp_Condition;
+   information  = DIA_Rakus_WeNeedHelp_Info;
+   permanent	= FALSE;
+   important	= TRUE;
+};
+
+FUNC INT DIA_Rakus_WeNeedHelp_Condition()
+{
+	if (kapitel >= 5)
+	{
+    return TRUE;
+	};
+};
+
+FUNC VOID DIA_Rakus_WeNeedHelp_Info()
+{
+    AI_Output (self, other ,"DIA_Rakus_WeNeedHelp_03_01"); //Nie szukasz mo¿e pracy? Przyda³aby nam siê pomoc.
+};
+
+//========================================
 //-----------------> QUEST1_RAKUS
 //========================================
 
@@ -148,26 +175,29 @@ INSTANCE DIA_Rakus_QUEST1_RAKUS (C_INFO)
    condition    = DIA_Rakus_QUEST1_RAKUS_Condition;
    information  = DIA_Rakus_QUEST1_RAKUS_Info;
    permanent	= FALSE;
-   description	= "Szukam pracy.";
+   description	= "W czym rzecz?";
 };
 
 FUNC INT DIA_Rakus_QUEST1_RAKUS_Condition()
 {
+	if (Npc_KnowsInfo (hero, DIA_Rakus_WeNeedHelp))
+	{
     return TRUE;
+	};
 };
 
 FUNC VOID DIA_Rakus_QUEST1_RAKUS_Info()
 {
-    AI_Output (other, self ,"DIA_Rakus_QUEST1_RAKUS_15_01"); //Szukam pracy.
-    AI_Output (self, other ,"DIA_Rakus_QUEST1_RAKUS_03_02"); //Jest jedna rzecz dla cz³owieka z zewn¹trz.
-    AI_Output (other, self ,"DIA_Rakus_QUEST1_RAKUS_15_03"); //Co konkretnie?
+    AI_Output (other, self ,"DIA_Rakus_QUEST1_RAKUS_15_01"); //W czym rzecz?
+    AI_Output (self, other ,"DIA_Rakus_QUEST1_RAKUS_03_02"); //To sprawa dla kogoœ z zewn¹trz.
+    AI_Output (other, self ,"DIA_Rakus_QUEST1_RAKUS_15_03"); //O co konkretnie chodzi?
     AI_Output (self, other ,"DIA_Rakus_QUEST1_RAKUS_03_04"); //Musisz odebraæ dostawê ¿ywnoœci od Wilka. To Najemnik mieszkaj¹cy w Nowym Obozie.
     AI_Output (self, other ,"DIA_Rakus_QUEST1_RAKUS_03_05"); //Masz tu 400 bry³ek rudy jako zap³atê dla Wilka. Myœlê, ¿e mo¿na siê z nim potargowaæ.
-    MIS_DostawaLowcow = LOG_RUNNING;
+    MIS_FoodForHunters = LOG_RUNNING;
 
-    Log_CreateTopic            (CH1_DostawaLowcow, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_DostawaLowcow, LOG_RUNNING);
-    B_LogEntry                     (CH1_DostawaLowcow,"Rakus zleci³ mi przyniesienie dostawy ¿ywnoœci od Wilka. Mogê siê z nim potargowaæ. ");
+    Log_CreateTopic            (CH5_FoodForHunters, LOG_MISSION);
+    Log_SetTopicStatus       (CH5_FoodForHunters, LOG_RUNNING);
+    B_LogEntry                     (CH5_FoodForHunters,"Rakus zleci³ mi przyniesienie dostawy ¿ywnoœci od Wilka. Mogê siê z nim potargowaæ. ");
 
     CreateInvItems (self, ItMiNugget, 400);
     B_GiveInvItems (self, other, ItMiNugget, 400);
@@ -192,7 +222,7 @@ FUNC INT DIA_Rakus_DOSTAWA_Q1_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Wolf_DOSTAWA_LOWCOW))
     && (Npc_HasItems (other, foodlowcow) >=1)
-    && (MIS_DostawaLowcow == LOG_RUNNING)
+    && (MIS_FoodForHunters == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -211,9 +241,9 @@ FUNC VOID DIA_Rakus_DOSTAWA_Q1_Info()
     AI_Output (other, self ,"DIA_Rakus_DOSTAWA_Q1_15_08"); //Chcesz powiedzieæ, ¿e próbowa³eœ? 
     AI_Output (self, other ,"DIA_Rakus_DOSTAWA_Q1_03_09"); //Ech...
 	AI_Output (other, self ,"DIA_Rakus_DOSTAWA_Q1_15_10"); //Mog³em nie pytaæ...
-    B_LogEntry                     (CH1_DostawaLowcow,"Rakus otrzyma³ dostawê. Zadanie wykonane. ");
-    Log_SetTopicStatus       (CH1_DostawaLowcow, LOG_SUCCESS);
-    MIS_DostawaLowcow = LOG_SUCCESS;
+    B_LogEntry                     (CH5_FoodForHunters,"Rakus otrzyma³ dostawê. Zadanie wykonane. ");
+    Log_SetTopicStatus       (CH5_FoodForHunters, LOG_SUCCESS);
+    MIS_FoodForHunters = LOG_SUCCESS;
 	B_GiveInvItems (other, self, foodlowcow, 1);
     B_GiveXP (300);
     AI_StopProcessInfos	(self);

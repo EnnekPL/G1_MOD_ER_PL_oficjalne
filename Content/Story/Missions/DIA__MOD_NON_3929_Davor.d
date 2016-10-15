@@ -413,7 +413,7 @@ INSTANCE DIA_Davor_OBOZ (C_INFO)
 
 FUNC INT DIA_Davor_OBOZ_Condition()
 {
-    if (MIS_RekruciLowcow == LOG_RUNNING) && (Npc_KnowsInfo (hero, DIA_Davor_HELLO1))
+    if (MIS_NewBloodForOrcHunters == LOG_RUNNING) && (Npc_KnowsInfo (hero, DIA_Davor_HELLO1))
     {
     return TRUE;
     };
@@ -429,7 +429,7 @@ FUNC VOID DIA_Davor_OBOZ_Info()
     AI_Output (other, self ,"DIA_Davor_OBOZ_15_05"); //Jak mo¿na zgubiæ ³uk?
     AI_Output (self, other ,"DIA_Davor_OBOZ_03_06"); //Zwyczajnie. Pewnie zsun¹³ mi siê z ramienia. 
     AI_Output (self, other ,"DIA_Davor_OBOZ_03_07"); //Móg³byœ go poszukaæ?
-    B_LogEntry                     (CH1_RekruciLowcow,"Davor uda siê do obozu ³owców orków, je¿eli znajdê jego ³uk. Powinien byæ gdzieœ w okolicy.");
+    B_LogEntry                     (CH3_NewBloodForOrcHunters,"Davor uda siê do obozu ³owców orków, je¿eli znajdê jego ³uk. Powinien byæ gdzieœ w okolicy.");
 };
 
 //========================================
@@ -461,14 +461,14 @@ FUNC VOID DIA_Davor_FIND_BOW_Info()
     AI_Output (other, self ,"DIA_Davor_FIND_BOW_15_01"); //Mam twój ³uk.
     AI_Output (self, other ,"DIA_Davor_FIND_BOW_03_02"); //Œwietnie. Pewnie by³ gdzieœ w okolicy.
     AI_Output (self, other ,"DIA_Davor_FIND_BOW_03_03"); //Teraz mogê iœæ do obozu ³owców orków.
-    if (MIS_RekruciLowcow == LOG_RUNNING)
+    if (MIS_NewBloodForOrcHunters == LOG_RUNNING)
     {
         AI_Output (other, self ,"DIA_Davor_FIND_BOW_15_04"); //Powodzenia w polowaniu na orków.
         AI_Output (self, other ,"DIA_Davor_FIND_BOW_03_05"); //Dziêki. Trzymaj siê.
         Npc_ExchangeRoutine (self, "lowcy");
 		B_GiveInvItems      (hero, self, It_DavorsBow, 1);//fix
         AI_StopProcessInfos	(self);
-        B_LogEntry                     (CH1_RekruciLowcow,"Znalaz³em ³uk Davora. Myœliwy uda³ siê do obozu ³owców. ");
+        B_LogEntry                     (CH3_NewBloodForOrcHunters,"Znalaz³em ³uk Davora. Myœliwy uda³ siê do obozu ³owców. ");
 
         B_GiveXP (200);
     }

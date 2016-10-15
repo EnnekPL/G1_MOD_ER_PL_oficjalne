@@ -356,7 +356,7 @@ INSTANCE DIA_Whistler_WYPAD (C_INFO)
 
 FUNC INT DIA_Whistler_WYPAD_Condition()
 {
-    if (MordragProblemOC == LOG_RUNNING)
+    if (MIS_SpysProblems == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -446,15 +446,15 @@ FUNC VOID DIA_Whistler_Zdrada_Info()
     B_LogEntry                     (CH1_KosztemQuentina,"Wyda³em Mordraga w rêce Œwistaka. Kaza³ mi pogadaæ ze Z³ym. Razem mamy siê zaj¹æ Mordragiem podczas, gdy Œwistak zajmie siê moj¹ opini¹ w Obozie.");
 
     B_GiveXP (100);
-	MordragProblemOC = LOG_FAILED;
+	MIS_SpysProblems = LOG_FAILED;
 	PrintScreen	("Anulowano zadanie: Problemy Mordraga! ", 1,-1,"font_new_10_red.tga",2);	
-    Log_SetTopicStatus       (CH1_MordragProblemOC, LOG_FAILED);
-    B_LogEntry 	(CH1_MordragProblemOC,"Wyda³em Mordraga. Zostanê Cieniem.");
+    Log_SetTopicStatus       (CH1_SpysProblems, LOG_FAILED);
+    B_LogEntry 	(CH1_SpysProblems,"Wyda³em Mordraga. Zostanê Cieniem.");
 	
-	BANMordragRaport = LOG_FAILED;
+	MIS_NewsFromSpy = LOG_FAILED;
 	PrintScreen	("Anulowano zadanie: Raport od Mordraga! ", 1,-1,"font_new_10_red.tga",2);	
-	Log_SetTopicStatus       (CH1_BANMordragRaport, LOG_FAILED);
-	B_LogEntry      	(CH1_BANMordragRaport,"Porzuci³em Bandytów. Stary Obóz wydaje siê byæ lepszym miejscem dla mnie.");
+	Log_SetTopicStatus       (CH1_NewsFromSpy, LOG_FAILED);
+	B_LogEntry      	(CH1_NewsFromSpy,"Porzuci³em Bandytów. Stary Obóz wydaje siê byæ lepszym miejscem dla mnie.");
 	
 	BANDITOS_CAMP = LOG_FAILED;
 	PrintScreen	("Anulowano zadanie: Przyjêcie do Obozu Bandytów! ", 1,-1,"font_new_10_red.tga",2);	

@@ -1,4 +1,4 @@
-instance ORG_867_Raeuber (Npc_Default)
+instance BAN_1613_Doyle (Npc_Default)
 {
 	//-------- primary data --------
 	
@@ -9,7 +9,7 @@ instance ORG_867_Raeuber (Npc_Default)
 
 	
 	voice =					13;
-	id =					867;
+	id =					1613;
 
 
 	//-------- abilities --------
@@ -56,57 +56,57 @@ instance ORG_867_Raeuber (Npc_Default)
 	CreateInvItems (self, ItAmArrow, 20);
 
 	//-------------Daily Routine-------------
-	daily_routine = Rtn_start_867;
+	daily_routine = Rtn_start_1613;
 	};
 
-FUNC VOID Rtn_start_867 () //zanim zagada do bohatera
+FUNC VOID Rtn_start_1613 () //zanim zagada do bohatera
 {
     TA_Guard		(13,00,14,00,"LOCATION_11_02");	
     TA_Guard		(14,00,13,00,"LOCATION_11_02");
 };
-FUNC VOID Rtn_afterstart_867 () //jak już zagada
+FUNC VOID Rtn_afterstart_1613 () //jak już zagada
 {
     TA_Guard		(06,00,19,00,"LOCATION_11_02");	
     TA_RepairHut		(19,00,19,30,"BN_NAPRAWA_CH1");
 	TA_Smalltalk		(19,30,21,00,"LOCATION_11_07");
 	TA_Sleep		(21,00,06,00,"BN_SEN_DOYLE");
 };
-FUNC VOID Rtn_lasek_867 ()
+FUNC VOID Rtn_lasek_1613 ()
 {
 	TA_GuidePC		(13,00,14,00,"SPAWN_OW_SNAPPER_WOOD05_05");	
     TA_GuidePC		(14,00,13,00,"SPAWN_OW_SNAPPER_WOOD05_05");
 };
-FUNC VOID Rtn_OMFull_867 ()
+FUNC VOID Rtn_OMFull_1613 ()
 {
 	TA_Guard		(13,00,14,00,"LOCATION_11_02");	
     TA_Guard		(14,00,13,00,"LOCATION_11_02");
 };
-FUNC VOID Rtn_FAJRANT_867 ()
+FUNC VOID Rtn_FAJRANT_1613 ()
 {
 	TA_Stand		(06,00,12,00,"LOCATION_11_06");	
     TA_Stand		(12,00,06,00,"LOCATION_11_06");
 };
-FUNC VOID Rtn_atak1_867 ()
+FUNC VOID Rtn_atak1_1613 ()
 {
 	TA_GuidePC		(13,00,14,00,"PLAC3");	
     TA_GuidePC		(14,00,13,00,"PLAC3");
 };
-FUNC VOID Rtn_zwial_867 ()
+FUNC VOID Rtn_zwial_1613 ()
 {
     TA_Smalltalk		(13,00,14,00,"TALK1");	
     TA_Smalltalk		(14,00,13,00,"TALK2");
 };
-FUNC VOID Rtn_wojna_867 ()
+FUNC VOID Rtn_wojna_1613 ()
 {
     TA_Guard		(13,00,14,00,"OW_PATH_53");	
     TA_Guard		(14,00,13,00,"OW_PATH_53");
 };
-FUNC VOID Rtn_pomoc_867 ()
+FUNC VOID Rtn_pomoc_1613 ()
 {
     TA_FollowPC		(13,00,14,00,"OW_PATH_53");	
     TA_FollowPC		(14,00,13,00,"OW_PATH_53");
 };
-FUNC VOID Rtn_kopalnia_867 ()
+FUNC VOID Rtn_kopalnia_1613 ()
 {
     TA_Stand_Ignorance		(13,00,14,00,"CAMP02");	
     TA_Stand_Ignorance		(14,00,13,00,"CAMP02");

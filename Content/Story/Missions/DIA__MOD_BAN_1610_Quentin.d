@@ -649,11 +649,11 @@ FUNC VOID DIA_Quentin_QUEST5_Info()
     AI_Output (self, other ,"DIA_Quentin_QUEST5_03_03"); //Ostatnio wys³aliœmy kilku Bandytów po dostawê z Nowego Obozu, jednak do dziœ nie wrócili.
     AI_Output (self, other ,"DIA_Quentin_QUEST5_03_04"); //Przypuszczam, ¿e schowali siê w jakiejœ jaskini z towarem i ani myœl¹ wracaæ.
     AI_Output (self, other ,"DIA_Quentin_QUEST5_03_05"); //ZnajdŸ ich i przynieœ stal, która nieœli. By³o tego ze 30 prêtów. 
-    MIS_JaskiniaBandytow = LOG_RUNNING;
+    MIS_BanditCave = LOG_RUNNING;
 
-    Log_CreateTopic          (CH1_JaskiniaBandytow, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_JaskiniaBandytow, LOG_RUNNING);
-    B_LogEntry               (CH1_JaskiniaBandytow,"Quentin kaza³ mi znaleŸæ Bandytów, którzy mieli przynieœæ dostawê stali z Nowego Obozu.");
+    Log_CreateTopic          (CH1_BanditCave, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_BanditCave, LOG_RUNNING);
+    B_LogEntry               (CH1_BanditCave,"Quentin kaza³ mi znaleŸæ Bandytów, którzy mieli przynieœæ dostawê stali z Nowego Obozu.");
 };
 
 //========================================
@@ -672,7 +672,7 @@ INSTANCE DIA_Quentin_FindIron (C_INFO)
 
 FUNC INT DIA_Quentin_FindIron_Condition()
 {
-    if (Npc_HasItems (other, ItQt_IronPack) >=1) && (MIS_JaskiniaBandytow == LOG_RUNNING)
+    if (Npc_HasItems (other, ItQt_IronPack) >=1) && (MIS_BanditCave == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -688,9 +688,9 @@ FUNC VOID DIA_Quentin_FindIron_Info()
     AI_Output (self, other ,"DIA_Quentin_FindIron_03_05"); //Dobra robota.
     B_GiveInvItems (other, self, ItQt_IronPack, 1);
 	
-    B_LogEntry               (CH1_JaskiniaBandytow,"Znalezion¹ w skrzyni stal przynios³em Quentinowi.");
-    Log_SetTopicStatus       (CH1_JaskiniaBandytow, LOG_SUCCESS);
-    MIS_JaskiniaBandytow = LOG_SUCCESS;
+    B_LogEntry               (CH1_BanditCave,"Znalezion¹ w skrzyni stal przynios³em Quentinowi.");
+    Log_SetTopicStatus       (CH1_BanditCave, LOG_SUCCESS);
+    MIS_BanditCave = LOG_SUCCESS;
 
     B_GiveXP (XP_DostawaDoNO);
 };
@@ -918,51 +918,6 @@ FUNC VOID DIA_Quentin_Zdrada_Info()
     AI_StopProcessInfos	(self);
 };
 
-//========================================
-//-----------------> OreInMineITD
-//========================================
-
-INSTANCE DIA_Quentin_OreInMineITD (C_INFO)
-{
-   npc          = BAN_1610_Quentin;
-   nr           = 1;
-   condition    = DIA_Quentin_OreInMineITD_Condition;
-   information  = DIA_Quentin_OreInMineITD_Info;
-   permanent	= FALSE;
-   description	= "Mam coœ cennego dla ciebie.";
-};
-
-FUNC INT DIA_Quentin_OreInMineITD_Condition()
-{
-    if (MIS_AlternativBanditoSCamp == LOG_RUNNING)
-    && (Npc_HasItems (other, ItMiNugget2) >=1)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Quentin_OreInMineITD_Info()
-{
-    AI_Output (other, self ,"DIA_Quentin_OreInMineITD_15_01"); //Mam coœ cennego dla ciebie.
-    AI_Output (self, other ,"DIA_Quentin_OreInMineITD_03_02"); //Kim jesteœ, ¿e masz czelnoœæ tak tu wchodziæ?!
-    AI_Output (other, self ,"DIA_Quentin_OreInMineITD_15_03"); //To nie jest teraz wa¿ne.
-    AI_Output (other, self ,"DIA_Quentin_OreInMineITD_15_04"); //Chcê zostaæ jednym z was.
-    AI_Output (other, self ,"DIA_Quentin_OreInMineITD_15_05"); //Przynios³em dla ciebie czarn¹ rudê ze Starej Kopalni.
-    AI_Output (self, other ,"DIA_Quentin_OreInMineITD_03_06"); //Co przynios³eœ?!
-    AI_Output (other, self ,"DIA_Quentin_OreInMineITD_15_07"); //Czarn¹ rudê. 
-    AI_Output (self, other ,"DIA_Quentin_OreInMineITD_03_08"); //Cholera! Jesteœ piekielnie sprytny.
-    AI_Output (self, other ,"DIA_Quentin_OreInMineITD_03_09"); //Jak j¹ zdoby³eœ?
-    AI_Output (other, self ,"DIA_Quentin_OreInMineITD_15_10"); //Trochê popyta³em, trochê pochodzi³em.
-    AI_Output (self, other ,"DIA_Quentin_OreInMineITD_03_11"); //Z pewnoœci¹ przyda nam siê ktoœ taki jak ty.
-    B_LogEntry                     (CH1_AlternativBanditoSCamp,"Quentin by³ bardzo zadowolony z mojego osi¹gniêcia. Mogê ju¿ zostaæ Bandyt¹.");
-    Log_SetTopicStatus       (CH1_AlternativBanditoSCamp, LOG_SUCCESS);
-    MIS_AlternativBanditoSCamp = LOG_SUCCESS;
-
-    B_GiveXP (500);
-    B_GiveInvItems (other, self, ItMiNugget2, 1);
-};
-
 ///////////////////////////////////////////////////////////////////////////////////////////
 // Quentin
 // Rozdzia³ 2
@@ -1137,11 +1092,11 @@ FUNC VOID DIA_Quentin_HELLO1_Info()
     AI_Output (self, other ,"DIA_Quentin_HELLO1_03_16"); //Kalom jest dla nas zagro¿eniem. Mo¿e œci¹gn¹æ na nas wszystkich zgubê.
     //AI_Output (other, self ,"DIA_Quentin_HELLO1_15_17"); //Pójdê do tych ³owców orków.
 	//log
-    MIS_LowcyOrkow = LOG_RUNNING;
+    MIS_SearchKalom = LOG_RUNNING;
 
-    Log_CreateTopic         (CH1_LowcyOrkow, LOG_MISSION);
-    Log_SetTopicStatus      (CH1_LowcyOrkow, LOG_RUNNING);
-    B_LogEntry              (CH1_LowcyOrkow,"Cor Kalom uciek³ z Bractwa. Quentin uwa¿a, ¿e to niebezpieczny cz³owiek. Muszê udaæ siê do obozu ³owców orków i wypytaæ o to czy nie widzieli gdzieœ tego œwira.");
+    Log_CreateTopic         (CH3_SearchKalom, LOG_MISSION);
+    Log_SetTopicStatus      (CH3_SearchKalom, LOG_RUNNING);
+    B_LogEntry              (CH3_SearchKalom,"Cor Kalom uciek³ z Bractwa. Quentin uwa¿a, ¿e to niebezpieczny cz³owiek. Muszê udaæ siê do obozu ³owców orków i wypytaæ o to czy nie widzieli gdzieœ tego œwira.");
 };
 
 //========================================
@@ -1174,9 +1129,9 @@ FUNC VOID DIA_Quentin_Kalom2_Info()
     AI_Output (self, other ,"DIA_Quentin_Kalom2_03_03"); //Cholera, co ten œwir mo¿e planowaæ?
     AI_Output (self, other ,"DIA_Quentin_Kalom2_03_04"); //Có¿... Pozostaje nam tylko mieæ nadziejê, ¿e orkowie zrobi¹ z nim porz¹dek zanim zrobi coœ g³upiego.
 	//log
-    B_LogEntry                     (CH1_LowcyOrkow,"Powiedzia³em Quentinowi, ¿e ³owcy orków widzieli Kaloma, który prawdopodobnie uda³ siê na ziemie orków. Pozostaje nam mieæ nadziejê, ¿e szalony Guru nie zrobi nic g³upiego.");
-    Log_SetTopicStatus       (CH1_LowcyOrkow, LOG_SUCCESS);
-    MIS_LowcyOrkow = LOG_SUCCESS;
+    B_LogEntry                     (CH3_SearchKalom,"Powiedzia³em Quentinowi, ¿e ³owcy orków widzieli Kaloma, który prawdopodobnie uda³ siê na ziemie orków. Pozostaje nam mieæ nadziejê, ¿e szalony Guru nie zrobi nic g³upiego.");
+    Log_SetTopicStatus       (CH3_SearchKalom, LOG_SUCCESS);
+    MIS_SearchKalom = LOG_SUCCESS;
 	//experience
     B_GiveXP (XP_AboutKalom);
 	//prize
@@ -1358,9 +1313,9 @@ FUNC VOID DIA_Quentin_Idea_Info()
     AI_Output (self, other ,"DIA_Quentin_Idea_03_05"); //IdŸ do nich i poproœ o kilku wojowników. Powo³aj siê na moj¹ znajomoœæ z Wilsonem.
 	//quest log
     MIS_SupportFromOrcHunters = LOG_RUNNING;
-    Log_CreateTopic      (CH1_SupportFromOrcHunters, LOG_MISSION);
-    Log_SetTopicStatus   (CH1_SupportFromOrcHunters, LOG_RUNNING);
-    B_LogEntry           (CH1_SupportFromOrcHunters,"Mam odnaleŸæ obóz ³owców orków. Ich szef podobno zna³ siê z Quentinem, dlatego ten teraz liczy na jego pomoc. Obozu mam szukaæ w jaskini bêd¹cej czêœci¹ œciany skalnej oddzielaj¹cej Stary Obóz od Ziem Orków.");
+    Log_CreateTopic      (CH4_SupportFromOrcHunters, LOG_MISSION);
+    Log_SetTopicStatus   (CH4_SupportFromOrcHunters, LOG_RUNNING);
+    B_LogEntry           (CH4_SupportFromOrcHunters,"Mam odnaleŸæ obóz ³owców orków. Ich szef podobno zna³ siê z Quentinem, dlatego ten teraz liczy na jego pomoc. Obozu mam szukaæ w jaskini bêd¹cej czêœci¹ œciany skalnej oddzielaj¹cej Stary Obóz od Ziem Orków.");
 	B_LogEntry           (CH1_RozwalaUBnadytow,"Ju¿ mia³em braæ siê do roboty, gdy nagle ponownie zaczepi³ mnie Quentin. Poprosi³ o odnalezienie obozu ³owców orków i poproszenie ich o pomoc. Obozu mam szukaæ w jaskini bêd¹cej czêœci¹ œciany skalnej oddzielaj¹cej Stary Obóz od Ziem Orków.");
 	//exit
     AI_StopProcessInfos	(self);
@@ -1395,9 +1350,9 @@ FUNC VOID DIA_Quentin_QuestOk890976_Info()
     AI_Output (other, self ,"DIA_Quentin_QuestOk890976_15_01"); //Dwóch ludzi Wilsona ju¿ tu idzie. S¹ to Rakus i Osko, jedni z najlepszych ³owców orków.
     AI_Output (self, other ,"DIA_Quentin_QuestOk890976_03_02"); //To nie tak Ÿle. Wiêksza grupa mog³a by wzbudziæ zamieszanie.
 	//log
-    B_LogEntry               (CH1_SupportFromOrcHunters,"Powiedzia³em Quentinowi, ¿e uda³o mi siê przekonaæ Wilsona, aby przys³a³ nam kilku ludzi do pomocy. Nasze si³y teraz znacznie wzrosn¹.");
+    B_LogEntry               (CH4_SupportFromOrcHunters,"Powiedzia³em Quentinowi, ¿e uda³o mi siê przekonaæ Wilsona, aby przys³a³ nam kilku ludzi do pomocy. Nasze si³y teraz znacznie wzrosn¹.");
 	B_LogEntry               (CH1_RozwalaUBnadytow,"Wilson przyœle do obozu dwóch swoich najlepszych wojowników. Powiedzia³em o tym szefowi.");
-    Log_SetTopicStatus       (CH1_SupportFromOrcHunters, LOG_SUCCESS);
+    Log_SetTopicStatus       (CH4_SupportFromOrcHunters, LOG_SUCCESS);
     MIS_SupportFromOrcHunters = LOG_SUCCESS;
 	//experience
     B_GiveXP (XP_HelpHunters);
@@ -1443,7 +1398,7 @@ FUNC VOID DIA_Quentin_WykonanoXD_Info()
     B_GiveXP (XP_WeMustHelpDrax);
 	AI_StopProcessInfos	(self);
     Npc_ExchangeRoutine (BAN_1610_Quentin,"wait");
-	Npc_ExchangeRoutine (ORG_870_Raeuber,"pupil");
+	Npc_ExchangeRoutine (BAN_1611_Pun,"pupil");
 	Npc_ExchangeRoutine (NON_2706_Osko,"atak");
 	Npc_ExchangeRoutine (NON_2705_Rakus,"atak");
 	
@@ -1501,10 +1456,10 @@ FUNC VOID DIA_Quentin_AkcjaUkonczona_Info()
 	Npc_ExchangeRoutine (NON_2705_Rakus,"atak");
 	NON_2705_Rakus.aivar[AIV_PARTYMEMBER] = TRUE;
 
-	Npc_ExchangeRoutine (ORG_870_Raeuber,"pupil");
-	ORG_870_Raeuber.aivar[AIV_PARTYMEMBER] = TRUE;
+	Npc_ExchangeRoutine (BAN_1611_Pun,"pupil");
+	BAN_1611_Pun.aivar[AIV_PARTYMEMBER] = TRUE;
 	
-	Npc_ExchangeRoutine (ORG_867_Raeuber,"zwial");//Doyle ucieka do Nowego Obozu
+	Npc_ExchangeRoutine (BAN_1613_Doyle,"zwial");//Doyle ucieka do Nowego Obozu
 	
 	Npc_ExchangeRoutine (BAN_1605_Rocky,"ucieczka");//Rocky ucieczka przed obóz
 	Npc_RemoveInvItem (BAN_1605_Rocky, BAU_ARMOR_H);//usuniêcie pancerza
@@ -1515,7 +1470,7 @@ FUNC VOID DIA_Quentin_AkcjaUkonczona_Info()
 	//Npc_ExchangeRoutine (NON_2703_MYSLIWY,"atak"); 
 	//Npc_ExchangeRoutine (NON_2702_SZEFU,"czekanie");
 	//Npc_ExchangeRoutine (ORG_864_Raeuber,"pupil");
-	//Npc_ExchangeRoutine (ORG_870_Raeuber,"pupil");
+	//Npc_ExchangeRoutine (BAN_1611_Pun,"pupil");
 	//Npc_ExchangeRoutine (ORG_869_Raeuber,"pupil");
 	//Npc_ExchangeRoutine (BAN_1603_Martin,"start");
 	//Npc_ExchangeRoutine (BAN_1604_Jens,"start");
@@ -1727,7 +1682,7 @@ FUNC VOID DIA_Quentin_LetsGo2346567_Info()
     self.aivar[AIV_PARTYMEMBER] = TRUE;
     Npc_ExchangeRoutine (self,"atak");
 
-	B_KillNpc (ORG_819_Drax);
+	B_KillNpc (BAN_1614_Drax);
 	
 	Npc_ExchangeRoutine (BAN_1605_Rocky , "odb");
 	BAN_1605_Rocky.aivar[AIV_PARTYMEMBER] = TRUE;
@@ -1741,8 +1696,8 @@ FUNC VOID DIA_Quentin_LetsGo2346567_Info()
 	NON_2706_osko.guild = GIL_BAU;
 	
 	//pun
-	ORG_870_Raeuber.aivar[AIV_PARTYMEMBER] = TRUE;
-	Npc_ExchangeRoutine (ORG_870_Raeuber,"help");
+	BAN_1611_Pun.aivar[AIV_PARTYMEMBER] = TRUE;
+	Npc_ExchangeRoutine (BAN_1611_Pun,"help");
 	
 	//ci dwaj chyba stoj¹ tam gdzie Ratford i Drax i nie brali udzia³u w walce
 	ORG_864_Raeuber.aivar[AIV_PARTYMEMBER] = TRUE;
@@ -1817,8 +1772,8 @@ FUNC VOID DIA_Quentin_54_Info()
 	
 	ORG_864_Raeuber.aivar[AIV_PARTYMEMBER] = false;
 	Npc_ExchangeRoutine (ORG_864_Raeuber,"start");
-	ORG_870_Raeuber.aivar[AIV_PARTYMEMBER] = false;
-	Npc_ExchangeRoutine (ORG_870_Raeuber,"start");
+	BAN_1611_Pun.aivar[AIV_PARTYMEMBER] = false;
+	Npc_ExchangeRoutine (BAN_1611_Pun,"start");
 	ORG_869_Raeuber.aivar[AIV_PARTYMEMBER] = false;
 	Npc_ExchangeRoutine (ORG_869_Raeuber,"start");
 	
@@ -2084,10 +2039,10 @@ FUNC VOID DIA_Quentin_MineIsClean_Info()
 	Wld_InsertNpc				(BAN_1608_Kereth,"KOPACZ");
 	Wld_InsertNpc				(NON_3038_Bandyta,"KOPACZ");	
 	Wld_InsertNpc				(NON_3037_Bandyta,"KOPACZ");	
-	Wld_InsertNpc				(NON_3035_Bandyta,"KOPACZ");//luis
+	Wld_InsertNpc				(BAN_1615_Luis,"KOPACZ");//luis
 	//Wld_InsertNpc				(BAN_1608_Kereth,"KOPACZ"); kereth fix
 	Npc_ExchangeRoutine (BAN_1605_Rocky,"start");
-	Npc_ExchangeRoutine (ORG_867_Raeuber,"afterstart");
+	Npc_ExchangeRoutine (BAN_1613_Doyle,"afterstart");
 	Npc_ExchangeRoutine (BAN_1607_Chris,"start");
     B_GiveXP (XP_ClearAbMine);
 	
@@ -2399,11 +2354,11 @@ FUNC VOID DIA_Quentin_RozmowaOPiratach_Info()
     AI_Output (self, other ,"DIA_Quentin_RozmowaOPiratach_03_14"); //By³bym ci bardzo wdziêczny.
     AI_Output (self, other ,"DIA_Quentin_RozmowaOPiratach_03_15"); //Oczywiœcie wynagrodzê ciê rud¹.
     AI_Output (other, self ,"DIA_Quentin_RozmowaOPiratach_15_16"); //No dobrze. Pogadam z tymi piratami.
-    MIS_KordelasQuentina = LOG_RUNNING;
+    MIS_QuentinsCutlass = LOG_RUNNING;
 
-    Log_CreateTopic            (CH1_KordelasQuentina, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_KordelasQuentina, LOG_RUNNING);
-    B_LogEntry                     (CH1_KordelasQuentina,"Quentin w m³odoœci by³ piratem. Gdy zobaczy³ mój piracki strój, wróci³y w nim stare wspomnienia. Mam udaæ siê do piratów i spróbowaæ zdobyæ kordelas.");
+    Log_CreateTopic            (CH4_QuentinsCutlass, LOG_MISSION);
+    Log_SetTopicStatus       (CH4_QuentinsCutlass, LOG_RUNNING);
+    B_LogEntry                     (CH4_QuentinsCutlass,"Quentin w m³odoœci by³ piratem. Gdy zobaczy³ mój piracki strój, wróci³y w nim stare wspomnienia. Mam udaæ siê do piratów i spróbowaæ zdobyæ kordelas.");
     AI_StopProcessInfos	(self);
 };
 
@@ -2436,9 +2391,9 @@ FUNC VOID DIA_Quentin_KordelasJest_Info()
     AI_Output (other, self ,"DIA_Quentin_KordelasJest_15_01"); //Mam kordelas.
     AI_Output (self, other ,"DIA_Quentin_KordelasJest_03_02"); //Poka¿ mi go!
     AI_LookForItem (self,Kordelas);
-    B_LogEntry                     (CH1_KordelasQuentina,"Quentin by³ bardzo zadowolony z nowej broni.");
-    Log_SetTopicStatus       (CH1_KordelasQuentina, LOG_SUCCESS);
-    MIS_KordelasQuentina = LOG_SUCCESS;
+    B_LogEntry                     (CH4_QuentinsCutlass,"Quentin by³ bardzo zadowolony z nowej broni.");
+    Log_SetTopicStatus       (CH4_QuentinsCutlass, LOG_SUCCESS);
+    MIS_QuentinsCutlass = LOG_SUCCESS;
 
     B_GiveXP (200);
     AI_Output (self, other ,"DIA_Quentin_KordelasJest_03_03"); //Wspania³e ostrze.
@@ -2570,7 +2525,7 @@ FUNC VOID DIA_Quentin_NegocjacieNc_Info()
 	Wld_InsertNpc				(BAN_1608_Kereth,"KOPACZ");
 	Wld_InsertNpc				(NON_3038_Bandyta,"KOPACZ");	
 	Wld_InsertNpc				(NON_3037_Bandyta,"KOPACZ");	
-	Wld_InsertNpc				(NON_3035_Bandyta,"KOPACZ");//luis
+	Wld_InsertNpc				(BAN_1615_Luis,"KOPACZ");//luis
 	//Wld_InsertNpc				(BAN_1608_Kereth,"KOPACZ"); kereth fix
 	
 	//zadanie
@@ -3415,9 +3370,9 @@ FUNC VOID DIA_Quentin_MamPiczec_Info()
     Npc_ExchangeRoutine (NON_2705_Rakus,"burdel");
     Npc_ExchangeRoutine (NON_2703_MYSLIWY,"burdel");  
 	//***FIX****
-	Npc_ExchangeRoutine (ORG_819_Drax, "ded");
-	CreateInvItems (ORG_819_Drax, ItMi_Listdraxa,1);
-	B_KillNpc (ORG_819_Drax);
+	Npc_ExchangeRoutine (BAN_1614_Drax, "ded");
+	CreateInvItems (BAN_1614_Drax, ItMi_Listdraxa,1);
+	B_KillNpc (BAN_1614_Drax);
 	AI_StopProcessInfos	(self);
 };
 
@@ -3510,46 +3465,6 @@ FUNC VOID DIA_Quentin_DedALlQuent_Info()
 	AI_EquipBestArmor	(hero); 
     AI_StopProcessInfos	(self);
 };
-
-/*
-//========================================
-//-----------------> OtherQuests
-//========================================
-
-INSTANCE DIA_Quentin_OtherQuests (C_INFO)
-{
-   npc          = BAN_1610_Quentin;
-   nr           = 2;
-   condition    = DIA_Quentin_OtherQuests_Condition;
-   information  = DIA_Quentin_OtherQuests_Info;
-   permanent	= FALSE;
-   description	= "Masz dla mnie jakieœ inne zadanie?";
-};
-
-FUNC INT DIA_Quentin_OtherQuests_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Quentin_MineIsClean))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Quentin_OtherQuests_Info()
-{
-    AI_Output (other, self ,"DIA_Quentin_OtherQuests_15_01"); //Masz dla mnie jakieœ inne zadanie?
-    AI_Output (self, other ,"DIA_Quentin_OtherQuests_03_02"); //Oczywiœcie. Podczas naszej ostatniej akcji rzuci³ mi siê w oczy pewien obiekt.
-    AI_Output (self, other ,"DIA_Quentin_OtherQuests_03_03"); //Mianowice magazyn na wzgórzu za Starym Obozem.
-    AI_Output (self, other ,"DIA_Quentin_OtherQuests_03_04"); //Powinniœmy coœ z tym zrobiæ.
-    AI_Output (other, self ,"DIA_Quentin_OtherQuests_15_05"); //Rozmumiem. Postaram siê coœ zdzia³aæ.
-    MIS_MagazynBroni = LOG_RUNNING;
-
-    Log_CreateTopic            (CH1_MagazynBroni, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_MagazynBroni, LOG_RUNNING);
-    B_LogEntry                     (CH1_MagazynBroni,"Mam udaæ siê do magazynu broni na wzgórzu za Starym Obozem i siê go pozbyæ.");
-};
-*/
-
 
 //========================================
 //-----------------> POSZUKIWACZE

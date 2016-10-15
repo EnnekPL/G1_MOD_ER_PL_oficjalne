@@ -27,7 +27,7 @@ var int devmode_dostawyalkoholu;
 // *************************
 var int Calash_gototavern;
 var int Shrat_gototavern;
-var int hero_explore_aidanquestcave;
+
 var int hero_knows_RatfordKiller;
 var int Gravo_doniosl_Thorusowi;
 var int Trip_wykryty;
@@ -582,7 +582,7 @@ var int DostawaEmanuela;
 var int HandelEmanuela;
 var int BANDITOS_RINGS;
 var int MartinLevel;
-var int Palisada;
+
 //**********OPUSZCZONE KOPALNIA************* CH4
 var int HeroMaArtefakt; //zmienna odpowiada za dialog zwi¹zany z wyjœciem z opuszczonej kopalni, wyszliœmy z kamieniem czy bez?  
 var int listLearn;
@@ -829,7 +829,7 @@ var int MIS_TrutkaOM;
 var int MIS_MiksturaTrujacaOM;
 var int MIS_RudaJoelowiOM;
 var int MIS_MineEnter;
-var int MIS_OchroniarzOM;
+
 var int MIS_Kopacz;
 var int MIS_OMWytrychy;
 var int MIS_ActionOM;
@@ -846,21 +846,21 @@ var int MIS_OszukanyHandlarz; var int Nyras_splacil_Talasa; var int Hero_dogadan
 
 
 
-var int MIS_HelpBrothersBra;
+var int MIS_HelpBrothersBra;//z³e
 
 var int MIS_NoweZiele;
 var int MIS_KeyKagan;
-var int MIS_Bractwo_Kopalnia;
+
 //********************************************
 // BANDYCI
 //********************************************
-var int MIS_OreInOM; var int Drake_pojedynek;  var int amulet_sprzedany;
+
 var int MIS_Rozpierdol1;
-var int MIS_JaskiniaBandytow;
+
 var int MIS_Rozpierdol2;
 var int MIS_AtakNaOC;
-var int MIS_PSIcampWORK;
-var int MIS_LowcyOrkow;
+
+
 var int MIS_Poszukiwacze;
 var int MIS_RozwalaUBnadytow;
 
@@ -874,8 +874,8 @@ var int MIS_NoweKola;
 
 
 var int MIS_NoweZiele3BAU; //usuniête
-var int MIS_PolowanieZDoylem;
-var int MIS_RockyArmor;
+
+
 //********************************************
 // NOWY OBÓZ
 //********************************************
@@ -890,7 +890,7 @@ var int MIS_PathToFreeMine;
 //********************************************
 // STARY OBÓZ
 //********************************************
-var int MIS_WheresNek;
+
 var int MIS_HandDed;
 var int MIS_KosztemQuentina;
 //********************************************
@@ -934,7 +934,7 @@ var int MIS_Odstraszeni;
 
 
 var int MIS_NekInNC;
-var int MIS_KordelasQuentina;
+
 
 var int MIS_Search_Poslaniec;
 var int MIS_AlternativBanditoSCamp;
@@ -950,7 +950,7 @@ var int MIS_Spike_Pomiot;
 //var int MIS_megaSpam;
 
 
-var int MIS_FoodForFlint;
+
 var int MIS_PropozycjaFlinta;
 var int MIS_FlintaPrzyjecie;
 var int MIS_SayOkylFlintDead;
@@ -968,24 +968,23 @@ var int MIS_OpiniaOSO;
 var int MIS_WpierdolNaArenie;
 var int MIS_FightWithScar;
 var int MIS_MagnackiePi4erscienie;
-var int MIS_SprawaFirna;
 
 var int MIS_UCieczkaShrata;
 var int MIS_PorwanieAlexa;
 var int MIS_ZabijThompsona;
 var int MIS_KopalniaZlota;
 var int MIS_PolowanieNaTrola;
-var int MIS_NieSpelnionaZemsta;
+var int MIS_NieSpelnionaZemsta;//usuniête
 var int MIS_DrogaDoKopalni;
 var int MIS_KryjowkaNaKase;
-var int MIS_MroczneBractwo;
+var int MIS_MroczneBractwo;//usuniête
 var int MIS_ZieleClawa;
-var int MIS_PracaUMysliwych;
-var int MIS_KradziezUMysliwych;
-var int MIS_DziwneKrzyki;
-var int MIS_GoblinyUMysliwych;
-var int MIS_Nieroby;
-var int MIS_PolowanieNaMorakha;
+
+
+
+
+
+
 
 var int MIS_ZabojstwBlizny;
 var int MIS_PamietnikZNieba;
@@ -995,7 +994,7 @@ var int MIS_WalkiBractwo;
 
 var int MIS_MagicySzkodnicy;
 var int MIS_RannyWojownik;
-var int MIS_SzponyTopielca;
+
 var int MIS_JimsSword;
 
 var int MIS_Cpuny;
@@ -1003,9 +1002,7 @@ var int MIS_4Friends;
 var int MIS_GoldSword_Bartholo;
 var int MIS_guyhut;
 	var int guysay_about_hut;
-var int MIS_EqKopalnia;
-var int MIS_PamietnikiOK;
-var int MIS_SzyfrWKopalni;
+
 var int MIS_InfoDlaLaresa;
 var int MIS_PomocTorlofowi;
 
@@ -1013,8 +1010,8 @@ var int MIS_PomocQuentinowi;
 var int MIS_PolowanieZBaalem;
 var int MIS_BaalQuest2;
 var int MIS_ZginalLIN;
-var int MIS_RekruciLowcow;
-var int MIS_DostawaLowcow;
+
+
 var int MIS_Fire_Novize;
 var int MIS_Magazyny_OC;
 var int MIS_Gdzie_hugo;
@@ -1030,7 +1027,7 @@ var int MIS_Stan_gerarda;
 var int MIS_ObronaWK;
 var int MIS_Upadek_Gomeza;
 
-var int MIS_Aidan_Quest;
+
 var int MIS_CourierFireMage;
 var int MIS_FoodForOldMine;
 var int MIS_NewLocationForPirates;

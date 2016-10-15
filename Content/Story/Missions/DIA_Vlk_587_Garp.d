@@ -88,36 +88,7 @@ FUNC VOID DIA_Garp_DOSTAWA_Info()
 
 };
 
-//========================================
-//-----------------> AkcjaRun
-//========================================
 
-INSTANCE DIA_Garp_AkcjaRun (C_INFO)
-{
-   npc          = Vlk_587_Garp;
-   nr           = 1;
-   condition    = DIA_Garp_AkcjaRun_Condition;
-   information  = DIA_Garp_AkcjaRun_Info;
-   permanent	= FALSE;
-   Important    = TRUE;
-};
-
-FUNC INT DIA_Garp_AkcjaRun_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_ULBERT_BLACKORE))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Garp_AkcjaRun_Info()
-{
-    AI_Output (self, other ,"DIA_Garp_AkcjaRun_03_01"); //Ej! B¹dŸ cicho.
-    AI_Output (self, other ,"DIA_Garp_AkcjaRun_03_02"); //Planujemy pewn¹ operacjê. Chcesz siê przy³¹czyæ?
-    AI_Output (self, other ,"DIA_Garp_AkcjaRun_03_03"); //Wygl¹dasz, jakbyœ chcia³ dostaæ siê do sk³adowiska na dnie kopalni. To jak bêdzie?
-    //AI_StopProcessInfos	(self);
-};
 
 
 //========================================
@@ -136,7 +107,7 @@ INSTANCE DIA_Garp_AKSZYN (C_INFO)
 
 FUNC INT DIA_Garp_AKSZYN_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Garp_DOSTAWA)) || (Npc_KnowsInfo (hero, DIA_Garp_AkcjaRun))
+    if (Npc_KnowsInfo (hero, DIA_Garp_DOSTAWA)) //|| (Npc_KnowsInfo (hero, DIA_Garp_AkcjaRun))
     {
     return TRUE;
     };

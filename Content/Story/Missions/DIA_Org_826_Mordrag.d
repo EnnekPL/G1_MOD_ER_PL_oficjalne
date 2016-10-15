@@ -249,12 +249,12 @@ FUNC VOID  Org_826_Mordrag_GotoNewcamp_Info()
  	 B_LogEntry                     (CH1_Problem_ZLY,"Wybra³em siê z Mordragiem do Nowego Obozu porzucaj¹c jego problemy z Cieniami.");
 	Log_SetTopicStatus       (CH1_Problem_ZLY, LOG_FAILED);
 	};*/
-	/*if MordragProblemOC == LOG_RUNNING
+	/*if MIS_SpysProblems == LOG_RUNNING
 	{
-	 MordragProblemOC= LOG_FAILED;
+	 MIS_SpysProblems= LOG_FAILED;
 	PrintScreen	("Anulowano zadanie: Problemy Mordraga! ", 1,48,"font_new_10_red.tga",2);	
-	 B_LogEntry                     (CH1_MordragProblemOC,"Wybra³em siê z Mordragiem do Nowego Obozu porzucaj¹c jego problemy z Cieniami.");
-	Log_SetTopicStatus       (CH1_MordragProblemOC, LOG_FAILED);
+	 B_LogEntry                     (CH1_SpysProblems,"Wybra³em siê z Mordragiem do Nowego Obozu porzucaj¹c jego problemy z Cieniami.");
+	Log_SetTopicStatus       (CH1_SpysProblems, LOG_FAILED);
 	};*/
 	Mordrag_GotoNC_Day = Wld_GetDay();
 	
@@ -652,7 +652,7 @@ FUNC INT DIA_Mordrag_GOOOO_Condition()
 FUNC VOID DIA_Mordrag_GOOOO_Info()
 {
     
-    B_LogEntry                     (CH1_MordragProblemOC,"Na pocz¹tek powinienem pogadaæ z Bartholo. Tylko jak ja siê dostanê do zamku...");
+    B_LogEntry                     (CH1_SpysProblems,"Na pocz¹tek powinienem pogadaæ z Bartholo. Tylko jak ja siê dostanê do zamku...");
 };
 */
 /*
@@ -673,7 +673,7 @@ INSTANCE DIA_Mordrag_POPSUTE_DO_RESZTY (C_INFO)
 FUNC INT DIA_Mordrag_POPSUTE_DO_RESZTY_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Sly_FAIL_SIPACZE))
-    && (BANMordragRaport == LOG_RUNNING)
+    && (MIS_NewsFromSpy == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -688,15 +688,15 @@ FUNC VOID DIA_Mordrag_POPSUTE_DO_RESZTY_Info()
     AI_Output (self, other ,"DIA_Mordrag_POPSUTE_DO_RESZTY_03_04"); //Mam to w dupie. Ja na pewno ci ju¿ nie pomogê.
     Npc_ExchangeRoutine (self, "START");
     AI_StopProcessInfos	(self);
-	MordragProblemOC = LOG_FAILED;
+	MIS_SpysProblems = LOG_FAILED;
 	PrintScreen	("Anulowano zadanie: Problemy Mordraga! ", 1,-1,"font_new_10_red.tga",2);	
-    Log_SetTopicStatus       (CH1_MordragProblemOC, LOG_FAILED);
-    B_LogEntry  	(CH1_MordragProblemOC,"Niestety nie uda³o mi siê rozwi¹zaæ problemów Mordraga. Doprowadzi³em do tego, ¿e musia³ uciekaæ z Obozu.");
+    Log_SetTopicStatus       (CH1_SpysProblems, LOG_FAILED);
+    B_LogEntry  	(CH1_SpysProblems,"Niestety nie uda³o mi siê rozwi¹zaæ problemów Mordraga. Doprowadzi³em do tego, ¿e musia³ uciekaæ z Obozu.");
 	
-	BANMordragRaport = LOG_FAILED;
+	MIS_NewsFromSpy = LOG_FAILED;
 	PrintScreen	("Anulowano zadanie: Raport od Mordraga! ", 1,-1,"font_new_10_red.tga",2);	
-	Log_SetTopicStatus       (CH1_BANMordragRaport, LOG_FAILED);
-	B_LogEntry      	(CH1_BANMordragRaport,"Mordrag uciek³. Quentin nie dostanie raportu. Wszystko przepad³o.");
+	Log_SetTopicStatus       (CH1_NewsFromSpy, LOG_FAILED);
+	B_LogEntry      	(CH1_NewsFromSpy,"Mordrag uciek³. Quentin nie dostanie raportu. Wszystko przepad³o.");
 	
 	BANDITOS_CAMP = LOG_FAILED;
 	PrintScreen	("Anulowano zadanie: Przyjêcie do Obozu Bandytów! ", 1,-1,"font_new_10_red.tga",2);	

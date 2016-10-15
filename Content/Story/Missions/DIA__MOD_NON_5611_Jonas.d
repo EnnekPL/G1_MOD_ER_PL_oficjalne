@@ -270,7 +270,7 @@ INSTANCE DIA_Jonas_Halasy (C_INFO)
 
 FUNC INT DIA_Jonas_Halasy_Condition()
 {
-    if (MIS_PolowanieNaMorakha == LOG_SUCCESS)
+    if (MIS_MorakhHunting == LOG_SUCCESS)
     && (MIS_Nieroby == LOG_RUNNING)
     {
     return TRUE;

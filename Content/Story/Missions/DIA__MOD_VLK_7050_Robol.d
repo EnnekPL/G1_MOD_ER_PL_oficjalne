@@ -71,7 +71,7 @@ INSTANCE DIA_Robol_HELLO1 (C_INFO)
 
 FUNC INT DIA_Robol_HELLO1_Condition()
 {
-    if (MIS_PracaUMysliwych == LOG_RUNNING)
+    if (MIS_JobInHuntersCamp == LOG_RUNNING)
     && (Npc_KnowsInfo (hero, DIA_Firn_Palisada))
     {
     return TRUE;

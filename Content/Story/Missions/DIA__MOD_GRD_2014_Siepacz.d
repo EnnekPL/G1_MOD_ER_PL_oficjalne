@@ -39,7 +39,7 @@ INSTANCE DIA_Siepacz_WYPROWADZ (C_INFO)
 
 FUNC INT DIA_Siepacz_WYPROWADZ_Condition()
 {
-	if (MordragProblemOC == LOG_RUNNING)
+	if (MIS_SpysProblems == LOG_RUNNING)
 	&& ((Npc_KnowsInfo (hero, DIA_Tippler_NEK_DED)) ||  (Npc_KnowsInfo (hero, DIA_Kyle_DOPUKI)))
     {
     return TRUE;
@@ -71,7 +71,7 @@ INSTANCE DIA_Siepacz_ATAK (C_INFO)
 
 FUNC INT DIA_Siepacz_ATAK_Condition()
 {
-	if (MordragProblemOC == LOG_RUNNING) && (Npc_KnowsInfo (hero, DIA_Siepacz_WYPROWADZ))
+	if (MIS_SpysProblems == LOG_RUNNING) && (Npc_KnowsInfo (hero, DIA_Siepacz_WYPROWADZ))
 	&& ((Npc_KnowsInfo (hero, DIA_Tippler_NEK_DED)) ||  (Npc_KnowsInfo (hero, DIA_Kyle_DOPUKI)))
     {
     return TRUE;

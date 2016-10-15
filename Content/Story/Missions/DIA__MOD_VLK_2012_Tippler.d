@@ -101,7 +101,7 @@ INSTANCE DIA_Tippler_NEK_DED (C_INFO)
 
 FUNC INT DIA_Tippler_NEK_DED_Condition()
 {
-    if (MordragProblemOC == LOG_RUNNING)
+    if (MIS_SpysProblems == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -138,7 +138,7 @@ FUNC VOID DIA_Tippler_NEK_DED_Info()
 	AI_Output (self, other ,"DIA_Tippler_NEK_DED_03_23"); //Nastêpnego dnia udawaliœmy, ¿e nic siê nie sta³o. Zw³aszcza, ¿e Z³y wynaj¹³ dwóch groŸnych Cieni. Chodzili ko³o nas i wpatrywali siê wrogo. 
 	AI_Output (self, other ,"DIA_Tippler_NEK_DED_03_24"); //WyraŸnie zrozumieliœmy przekaz. Postanowiliœmy nic nie mówiæ.
 	AI_Output (self, other ,"DIA_Tippler_NEK_DED_03_25"); //Zrób coœ, ¿eby nie byli ju¿ dla nas groŸni, a powiem o wszystkim Thorusowi. 
-    B_LogEntry                     (CH1_MordragProblemOC,"Tippler wie o zabójstwie Neka. Opowiedzia³ mi ca³¹ historiê. Poœwiadczy to u Thorusa, jeœli pozbêdê siê siepaczy Z³ego."); 
+    B_LogEntry                     (CH1_SpysProblems,"Tippler wie o zabójstwie Neka. Opowiedzia³ mi ca³¹ historiê. Poœwiadczy to u Thorusa, jeœli pozbêdê siê siepaczy Z³ego."); 
     HeroKnowsSlyKillNek = true;
 };
 
@@ -159,7 +159,7 @@ INSTANCE DIA_Tippler_OKQUEST (C_INFO)
 FUNC INT DIA_Tippler_OKQUEST_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Tippler_NEK_DED))
-    && (MordragProblemOC == LOG_RUNNING)
+    && (MIS_SpysProblems == LOG_RUNNING)
 	&& (Npc_IsDead(GRD_2014_Siepacz))
     && (Npc_IsDead(GRD_2013_Siepacz))
 
@@ -175,7 +175,7 @@ FUNC VOID DIA_Tippler_OKQUEST_Info()
     AI_Output (self, other ,"DIA_Tippler_OKQUEST_03_02"); //Wszyscy nie ¿yj¹? 
     AI_Output (other, self ,"DIA_Tippler_OKQUEST_15_03"); //Tak, jesteœcie bezpieczni.
     AI_Output (self, other ,"DIA_Tippler_OKQUEST_03_04"); //Œwietnie! Mo¿esz ju¿ iœæ do Thorusa.
-    B_LogEntry                     (CH1_MordragproblemOC,"Uda³o mi siê przekonaæ Tipplera do zeznañ.");
+    B_LogEntry                     (CH1_SpysProblems,"Uda³o mi siê przekonaæ Tipplera do zeznañ.");
 };
 
 //========================================

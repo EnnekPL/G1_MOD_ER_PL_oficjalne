@@ -406,11 +406,11 @@ FUNC VOID DIA_Firn_ThiefInCamp_Info()
     AI_Output (other, self ,"DIA_Firn_ThiefInCamp_15_20"); //Dziwi mnie, ¿e sam nie postanowi³eœ sprawdziæ...
     AI_Output (self, other ,"DIA_Firn_ThiefInCamp_03_21"); //Magnus ci¹gle gada coœ o jakimœ duchu. A je¿eli to jakaœ sztuczka tych przeklêtych istot? Nigdy nic nie wiadomo.
     AI_Output (other, self ,"DIA_Firn_ThiefInCamp_15_22"); //Rozejrzê siê tam.
-    MIS_DziwneKrzyki = LOG_RUNNING;
+    MIS_StrangeVoices = LOG_RUNNING;
 
-    Log_CreateTopic            (CH1_DziwneKrzyki, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_DziwneKrzyki, LOG_RUNNING);
-    B_LogEntry                     (CH1_DziwneKrzyki,"Kilka nocy temu Firn opuœci³ swój posterunek i uda³ siê na przechadzkê po Kolonii. Przy œcianie skalnej us³ysza³ kobiecy krzyk. Przyznam, ¿e ta sprawa nie daje mi spokoju. ");
+    Log_CreateTopic            (CH1_StrangeVoices, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_StrangeVoices, LOG_RUNNING);
+    B_LogEntry                     (CH1_StrangeVoices,"Kilka nocy temu Firn opuœci³ swój posterunek i uda³ siê na przechadzkê po Kolonii. Przy œcianie skalnej us³ysza³ kobiecy krzyk. Przyznam, ¿e ta sprawa nie daje mi spokoju. ");
 
     B_GiveXP (150);
 };
@@ -433,7 +433,7 @@ INSTANCE DIA_Firn_Palisada (C_INFO)
 
 FUNC INT DIA_Firn_Palisada_Condition()
 {
-    if (MIS_PracaUMysliwych == LOG_RUNNING)
+    if (MIS_JobInHuntersCamp == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -451,7 +451,7 @@ FUNC VOID DIA_Firn_Palisada_Info()
     AI_Output (other, self ,"DIA_Firn_Palisada_15_07"); //GwoŸdzie? Gdzie je znajdê?
     AI_Output (self, other ,"DIA_Firn_Palisada_03_08"); //W Starym Obozie. Poszukaj w okolicy zawalonej wie¿y. Podobno Gomez nakaza³ j¹ odbudowaæ.
     AI_Output (self, other ,"DIA_Firn_Palisada_03_09"); //Bêdzie nam potrzebne 30 sztuk.
-    B_LogEntry                     (CH1_PracaUMysliwych,"¯eby naprawiæ palisadê potrzebujemy 30 gwoŸdzi. Muszê ich szukaæ w Starym Obozie. ");
+    B_LogEntry                     (CH1_JobInHuntersCamp,"¯eby naprawiæ palisadê potrzebujemy 30 gwoŸdzi. Muszê ich szukaæ w Starym Obozie. ");
 };
 
 //========================================
@@ -484,7 +484,7 @@ FUNC VOID DIA_Firn_Gwozdzie_Info()
     AI_Output (self, other ,"DIA_Firn_Gwozdzie_03_02"); //Dobra. Mo¿esz braæ siê do pracy.
     AI_Output (other, self ,"DIA_Firn_Gwozdzie_15_03"); //Co?
     AI_Output (self, other ,"DIA_Firn_Gwozdzie_03_04"); //No, do roboty!
-    B_LogEntry                     (CH1_PracaUMysliwych,"Mam SAM naprawiæ palisadê. No dobra. To dla mnie nie pierwszyzna. ");
+    B_LogEntry                     (CH1_JobInHuntersCamp,"Mam SAM naprawiæ palisadê. No dobra. To dla mnie nie pierwszyzna. ");
 Palisada_Mysliwych = false;
     B_GiveXP (150);
     AI_StopProcessInfos	(self);
@@ -521,7 +521,7 @@ FUNC VOID DIA_Firn_palisadaSkonczone_Info()
     AI_Output (self, other ,"DIA_Firn_palisadaSkonczone_03_04"); //No dobrze. Wynagrodzê ci to. Mo¿esz sobie wzi¹æ tê rudê. 
     CreateInvItems (self, ItMiNugget, 50);
     B_GiveInvItems (self, other, ItMiNugget, 50);
-    B_LogEntry                     (CH1_PracaUMysliwych,"Naprawi³em zniszczony wa³. Otrzyma³em 50 bry³ek rudy w nagrodê. ");
+    B_LogEntry                     (CH1_JobInHuntersCamp,"Naprawi³em zniszczony wa³. Otrzyma³em 50 bry³ek rudy w nagrodê. ");
 
     B_GiveXP (100);
 };
@@ -543,7 +543,7 @@ INSTANCE DIA_Firn_StaryZaruchal (C_INFO)
 FUNC INT DIA_Firn_StaryZaruchal_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Gilbert_Kobieta))
-    && (MIS_DziwneKrzyki == LOG_RUNNING)
+    && (MIS_StrangeVoices == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -559,9 +559,9 @@ FUNC VOID DIA_Firn_StaryZaruchal_Info()
     AI_Output (self, other ,"DIA_Firn_StaryZaruchal_03_05"); //Cholera. Naprawdê jest tam jakaœ kobieta?
     AI_Output (other, self ,"DIA_Firn_StaryZaruchal_15_06"); //Tak.
      AI_Output (self, other ,"DIA_Firn_StaryZaruchal_03_07"); //Nie do wiary. Staruszek nieŸle siê ustawi³.
-        B_LogEntry                     (CH1_DziwneKrzyki,"Przyczyn¹ rubasznych krzyków by³ banita ze Starego Obozu i by³a niewolnica Gomeza. Firn nieŸle siê zdziwi³. ");
-        Log_SetTopicStatus       (CH1_DziwneKrzyki, LOG_SUCCESS);
-        MIS_DziwneKrzyki = LOG_SUCCESS;
+        B_LogEntry                     (CH1_StrangeVoices,"Przyczyn¹ rubasznych krzyków by³ banita ze Starego Obozu i by³a niewolnica Gomeza. Firn nieŸle siê zdziwi³. ");
+        Log_SetTopicStatus       (CH1_StrangeVoices, LOG_SUCCESS);
+        MIS_StrangeVoices = LOG_SUCCESS;
 
         B_GiveXP (250);
         if (Npc_KnowsInfo (hero, DIA_Gilbert_HELLO2)) && (BaalTondral_GetNewGuy == LOG_SUCCESS)

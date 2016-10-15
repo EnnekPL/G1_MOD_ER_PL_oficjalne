@@ -1313,11 +1313,11 @@ func void UselisaDed ()
 					B_KillNpc			(ORG_859_Aidan);
 					B_KillNpc			(GRD_7008_Tukash);
 					B_KillNpc			(ORG_2704_Mazin);
-					B_KillNpc			(NOV_5008_Hanson);
+					B_KillNpc			(NOV_1378_Hanson);
 				    CreateInvItems (ORG_859_Aidan, ItFo_Plants_mountainmoos_01, 3);	
 					CreateInvItems (GRD_7008_Tukash, ItFo_Plants_mountainmoos_01, 3);	
 					CreateInvItems (ORG_2704_Mazin, ItFo_Plants_mountainmoos_01, 3);	
-					CreateInvItems (NOV_5008_Hanson, ItFo_Plants_mountainmoos_01, 3);
+					CreateInvItems (NOV_1378_Hanson, ItFo_Plants_mountainmoos_01, 3);
 					listLearn = true;
 		
 };

@@ -249,11 +249,11 @@ FUNC VOID DIA_Soeldner_LARES_Info()
 	AI_Output (self, other ,"DIA_Soeldner_LARES_03_04"); //Aha. Jest jeszcze jedna sprawa. 
 	AI_Output (self, other ,"DIA_Soeldner_LARES_03_05"); //W Obozie by³ kurier z Bractwa. Powiedzia³, ¿e Cor Angar kaza³ ci wspomóc nas w obecnej sytuacji. 
 	AI_Output (self, other ,"DIA_Soeldner_LARES_03_06"); //Prawdopodobnie wszystko wyjaœni siê, gdy pogadasz z Laresem i zastosujesz siê do jego instrukcji.  
-	 MIS_Bractwo_Kopalnia = LOG_RUNNING;
+	 MIS_PsiAbadonedMine = LOG_RUNNING;
 
-        Log_CreateTopic            (CH1_Bractwo_Kopalnia, LOG_MISSION);
-        Log_SetTopicStatus       (CH1_Bractwo_Kopalnia, LOG_RUNNING);
-        B_LogEntry                     (CH1_Bractwo_Kopalnia,"Cor Angar poprzez kuriera przys³a³ mi nowe wytyczne. Mam trzymaæ siê planów Nowego Obozu i ich wspieraæ. Wszystko wydaje siê popl¹tane przez obecn¹ sytuacjê w Kolonii. Magowie Wody myœl¹ o obalaniu Bariery, gdy tymczasem Najemnicy tocz¹ wojnê ze Starym Obozem. Muszê pomóc obu gildiom i czekaæ na rozwój wydarzeñ. Najlepiej pójdê od razu do Laresa. Z penwoœci¹ ma dla mnie wa¿ne zadanie.");
+        Log_CreateTopic            (CH4_PsiAbadonedMine, LOG_MISSION);
+        Log_SetTopicStatus       (CH4_PsiAbadonedMine, LOG_RUNNING);
+        B_LogEntry                     (CH4_PsiAbadonedMine,"Cor Angar poprzez kuriera przys³a³ mi nowe wytyczne. Mam trzymaæ siê planów Nowego Obozu i ich wspieraæ. Wszystko wydaje siê popl¹tane przez obecn¹ sytuacjê w Kolonii. Magowie Wody myœl¹ o obalaniu Bariery, gdy tymczasem Najemnicy tocz¹ wojnê ze Starym Obozem. Muszê pomóc obu gildiom i czekaæ na rozwój wydarzeñ. Najlepiej pójdê od razu do Laresa. Z penwoœci¹ ma dla mnie wa¿ne zadanie.");
 	};
     AI_StopProcessInfos	(self);
 };

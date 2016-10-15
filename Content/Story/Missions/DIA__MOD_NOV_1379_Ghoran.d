@@ -4,7 +4,7 @@
 
 INSTANCE DIA_Ghoran_EXIT(C_INFO)
 {
-	npc             = NOV_9001_Ghoran;
+	npc             = NOV_1379_Ghoran;
 	nr              = 999;
 	condition		= DIA_Ghoran_EXIT_Condition;
 	information		= DIA_Ghoran_EXIT_Info;
@@ -28,7 +28,7 @@ FUNC VOID DIA_Ghoran_EXIT_Info()
 
 INSTANCE DIA_Ghoran_WhoYou2 (C_INFO)
 {
-   npc          = NOV_9001_Ghoran;
+   npc          = NOV_1379_Ghoran;
    nr           = 1;
    condition    = DIA_Ghoran_WhoYou2_Condition;
    information  = DIA_Ghoran_WhoYou2_Info;
@@ -59,7 +59,7 @@ FUNC VOID DIA_Ghoran_WhoYou2_Info()
 
 INSTANCE DIA_Ghoran_Handel (C_INFO)
 {
-   npc          = NOV_9001_Ghoran;
+   npc          = NOV_1379_Ghoran;
    nr           = 3;
    condition    = DIA_Ghoran_Handel_Condition;
    information  = DIA_Ghoran_Handel_Info;
@@ -88,7 +88,7 @@ FUNC VOID DIA_Ghoran_Handel_Info()
 
 INSTANCE DIA_Ghoran_AboutYou (C_INFO)
 {
-   npc          = NOV_9001_Ghoran;
+   npc          = NOV_1379_Ghoran;
    nr           = 1;
    condition    = DIA_Ghoran_AboutYou_Condition;
    information  = DIA_Ghoran_AboutYou_Info;
@@ -121,7 +121,7 @@ FUNC VOID DIA_Ghoran_AboutYou_Info()
 
 INSTANCE DIA_Ghoran_Plants (C_INFO)
 {
-   npc          = NOV_9001_Ghoran;
+   npc          = NOV_1379_Ghoran;
    nr           = 1;
    condition    = DIA_Ghoran_Plants_Condition;
    information  = DIA_Ghoran_Plants_Info;
@@ -154,7 +154,7 @@ FUNC VOID DIA_Ghoran_Plants_Info()
 
 INSTANCE DIA_Ghoran_Margunios (C_INFO)
 {
-   npc          = NOV_9001_Ghoran;
+   npc          = NOV_1379_Ghoran;
    nr           = 1;
    condition    = DIA_Ghoran_Margunios_Condition;
    information  = DIA_Ghoran_Margunios_Info;
@@ -192,7 +192,7 @@ FUNC VOID DIA_Ghoran_Margunios_Info()
 
 INSTANCE DIA_Ghoran_VineQuest (C_INFO)
 {
-   npc          = NOV_9001_Ghoran;
+   npc          = NOV_1379_Ghoran;
    nr           = 1;
    condition    = DIA_Ghoran_VineQuest_Condition;
    information  = DIA_Ghoran_VineQuest_Info;
@@ -238,7 +238,7 @@ FUNC VOID DIA_Ghoran_VineQuest_Info()
 
 INSTANCE DIA_Ghoran_AbelIsWorker (C_INFO)
 {
-   npc          = NOV_9001_Ghoran;
+   npc          = NOV_1379_Ghoran;
    nr           = 1;
    condition    = DIA_Ghoran_AbelIsWorker_Condition;
    information  = DIA_Ghoran_AbelIsWorker_Info;

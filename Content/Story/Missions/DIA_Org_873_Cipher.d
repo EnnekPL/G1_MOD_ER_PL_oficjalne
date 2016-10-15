@@ -250,38 +250,44 @@ FUNC VOID DIA_Cipher_WhoSellElixier_Info()
     AI_StopProcessInfos	(self);
 };
 
+//////////////////////////////////////////////
+//	Zadanie: Nowe ziele
+//////////////////////////////////////////////
+
 //========================================
-//-----------------> BanditJoints
+//-----------------> NovizeJoints
 //========================================
 
-INSTANCE DIA_Cipher_BanditJoints (C_INFO)
+INSTANCE DIA_Cipher_NovizeJoints (C_INFO)
 {
    npc          = Org_873_Cipher;
    nr           = 1;
-   condition    = DIA_Cipher_BanditJoints_Condition;
-   information  = DIA_Cipher_BanditJoints_Info;
+   condition    = DIA_Cipher_NovizeJoints_Condition;
+   information  = DIA_Cipher_NovizeJoints_Info;
    permanent	= FALSE;
-   description	= "Bandyci maj¹ na sprzeda¿ zupe³nie nowy rodzaj ziela.";
+   description	= "Nowicjusze z Bractwa maj¹ na sprzeda¿ ca³kiem nowe ziele.";
 };
 
-FUNC INT DIA_Cipher_BanditJoints_Condition()
+FUNC INT DIA_Cipher_NovizeJoints_Condition()
 {
-    if (MIS_NoweZiele3BAU == LOG_RUNNING) && ( Cipher_Trade == TRUE)
+    if (MIS_NoweZiele == LOG_RUNNING) && ( Cipher_Trade == TRUE)
     {
     return TRUE;
     };
 };
 
 
-FUNC VOID DIA_Cipher_BanditJoints_Info()
+FUNC VOID DIA_Cipher_NovizeJoints_Info()
 {
-    AI_Output (other, self ,"DIA_Cipher_BanditJoints_15_01"); //Bandyci maj¹ na sprzeda¿ zupe³nie nowy rodzaj ziela.
-    AI_Output (self, other ,"DIA_Cipher_BanditJoints_03_02"); //Doprawdy?
-    AI_Output (other, self ,"DIA_Cipher_BanditJoints_15_03"); //Nie chcia³byœ mo¿e wejœæ w trwa³y uk³ad?
-    AI_Output (self, other ,"DIA_Cipher_BanditJoints_03_04"); //Nie... Nie chcê ¿adnego bandyckiego gówna. Briam to niez³y krêtacz.
-    AI_Output (other, self ,"DIA_Cipher_BanditJoints_15_05"); //Mam wra¿enie, ¿e bardziej chodzi ci o samego Briama ni¿ o ziele.
-    AI_Output (self, other ,"DIA_Cipher_BanditJoints_03_06"); //W rzeczy samej. Nie robie interesów z takimi ludŸmi. Szukaj w Starym Obozie. Mo¿e tam trafisz na jakiegoœ kretyna...
-    B_LogEntry                     (CH1_NoweZiele3BAU,"Cipher ma z Briamem na pieñku. Nie jest zainteresowany ofert¹ trwa³ej wspó³pracy.");
+    AI_Output (other, self ,"DIA_Cipher_NovizeJoints_15_01"); //Nowicjusze z Bractwa maj¹ na sprzeda¿ ca³kiem nowe ziele.
+    AI_Output (self, other ,"DIA_Cipher_NovizeJoints_03_02"); //Doprawdy?
+    AI_Output (other, self ,"DIA_Cipher_NovizeJoints_15_03"); //Nie chcia³byœ mo¿e wejœæ w trwa³y uk³ad? 
+    AI_Output (self, other ,"DIA_Cipher_NovizeJoints_03_04"); //Masz jakieœ próbki tego ziela? Domyœlam siê, ¿e Guru o niczym nie wiedz¹.
+    AI_Output (other, self ,"DIA_Cipher_NovizeJoints_15_05"); //W rzeczy samej. Oto próbka.
+	B_GiveInvItems (hero,self, MegaJoint,1);
+	AI_UseItem (self, MegaJoint);
+    AI_Output (self, other ,"DIA_Cipher_NovizeJoints_03_06"); //O cholera, ma niez³ego kopa... Przeka¿ temu, kto ciê przys³a³, ¿e dobijemy targu.
+    B_LogEntry                     (CH1_NoweZiele,"Cipher po spróbowaniu jednego skrêta od razu przysta³ na uk³ad. ");
 
     AI_StopProcessInfos	(self);
 };

@@ -6,7 +6,7 @@
 
 INSTANCE DIA_Uciekinier_EXIT(C_INFO)
 {
-	npc             = NOV_5005_Uciekinier;
+	npc             = NOV_1380_ArtfiactsThief;
 	nr              = 999;
 	condition	= DIA_Uciekinier_EXIT_Condition;
 	information	= DIA_Uciekinier_EXIT_Info;
@@ -30,7 +30,7 @@ FUNC VOID DIA_Uciekinier_EXIT_Info()
 
 INSTANCE DIA_Uciekinier_HELLO (C_INFO)
 {
-   npc          = NOV_5005_Uciekinier;
+   npc          = NOV_1380_ArtfiactsThief;
    nr           = 1;
    condition    = DIA_Uciekinier_HELLO_Condition;
    information  = DIA_Uciekinier_HELLO_Info;

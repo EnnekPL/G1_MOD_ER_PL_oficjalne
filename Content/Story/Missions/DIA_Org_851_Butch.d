@@ -184,7 +184,7 @@ FUNC VOID DIA_Butch_CzasZaplaty_DOGADAJMY_SIE()
 	
 	AI_StopProcessInfos	(self);
 	
-    B_LogEntry                     (CH1_DostawaLowcow,"Je¿eli chce, aby Butch odda³ d³ug po dobroci, muszê pozbyæ siê Baala Isidro z Nowego Obozu.");
+    B_LogEntry                     (CH5_FoodForHunters,"Je¿eli chce, aby Butch odda³ d³ug po dobroci, muszê pozbyæ siê Baala Isidro z Nowego Obozu.");
 	
 	Butch_Choice = Butch_TakeQuest;
 };
@@ -218,7 +218,7 @@ FUNC VOID DIA_Butch_ISIDRO_Info()
     AI_Output (self, other ,"DIA_Butch_ISIDRO_03_02"); //Dobra robota. Masz tê rudê. Ciê¿ko mi siê z ni¹ rozstaæ, ale có¿.
     AI_Output (self, other ,"DIA_Butch_ISIDRO_03_03"); //Aha! Jak us³yszê, ¿e mój d³ug nie jest sp³acony... to siê jeszcze spotkamy. 
 	
-    B_LogEntry                     (CH1_DostawaLowcow,"Dosta³em zap³atê za pancerz od Butcha. Powinienem ju¿ wróciæ do Wilka.");
+    B_LogEntry                     (CH5_FoodForHunters,"Dosta³em zap³atê za pancerz od Butcha. Powinienem ju¿ wróciæ do Wilka.");
 
     B_GiveXP (100);
     CreateInvItems (self, ItMiNugget, 1500);
@@ -261,7 +261,7 @@ FUNC VOID DIA_Butch_BUSTER_LOSE_Info()
     CreateInvItems (self, ItMiNugget, 1500);
     B_GiveInvItems (self, other, ItMiNugget, 1500);
 	
-	B_LogEntry                     (CH1_DostawaLowcow,"Si³¹ odzyska³em rudê od Butcha. Powinienem ju¿ wróciæ do Wilka.");
+	B_LogEntry                     (CH5_FoodForHunters,"Si³¹ odzyska³em rudê od Butcha. Powinienem ju¿ wróciæ do Wilka.");
 	
 	AI_StopProcessInfos	(self);
 };

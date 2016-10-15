@@ -47,36 +47,40 @@ FUNC INT DIA_Novize_Quest123_Condition()
 
 FUNC VOID DIA_Novize_Quest123_Info()
 {
-    AI_Output (self, other ,"DIA_Novize_Quest123_03_01"); //Hej! Zaczekaj!
+    AI_Output (self, other ,"DIA_Novize_Quest123_03_01"); //Hej, ty. Wygl¹dasz na kogoœ, kto chcia³by sobie dorobiæ.
     AI_Output (other, self ,"DIA_Novize_Quest123_15_02"); //O co chodzi?
     AI_Output (self, other ,"DIA_Novize_Quest123_03_03"); //Pomo¿esz nam.
     AI_Output (other, self ,"DIA_Novize_Quest123_15_04"); //Niby w czym?
-    AI_Output (self, other ,"DIA_Novize_Quest123_03_05"); //Opracowaliœmy w³aœnie nowe ziele.
-    AI_Output (self, other ,"DIA_Novize_Quest123_03_06"); //Jest bardzo mocne. Z pewnoœci¹ sporo mo¿na na tym zarobiæ.
-    AI_Output (self, other ,"DIA_Novize_Quest123_03_07"); //Podzielimy siê z tob¹ zyskami, je¿eli za³atwisz nam handlarzy.
-    MIS_NoweZiele = LOG_RUNNING;
-    CreateInvItems (self, MegaJoint, 4);
-    B_GiveInvItems (self, other, MegaJoint, 4);		
-	Log_CreateTopic            (CH1_NoweZiele, LOG_MISSION);
+    AI_Output (self, other ,"DIA_Novize_Quest123_03_05"); //Trochê eksperymentowaliœmy i uda³o nam siê stworzyæ nowy rodzaj skrêta. Jest bardzo mocny, a wcale nie zu¿ywamy wiêcej bagiennego ziela do jego produkcji.
+    AI_Output (self, other ,"DIA_Novize_Quest123_03_06"); //Z pewnoœci¹ sporo mo¿na na tym zarobiæ. Podzielimy siê z tob¹ zyskami, je¿eli za³atwisz nam handlarza.
+	AI_Output (other, self ,"DIA_Novize_Quest123_15_07"); //Czy wynik waszego eksperymentu nie powinien czasem trafiæ do Cor Kaloma?
+	AI_Output (self, other ,"DIA_Novize_Quest123_03_08"); //Chcesz na nas donieœæ? Mistrz Kalom nie musi o niczym wiedzieæ.
+	AI_Output (self, other ,"DIA_Novize_Quest123_03_09"); //Masz tu cztery "próbki". Tylko nie wypal wszystkiego. Zostaw coœ dla naszego przysz³ego wspólnika.
+	
+	CreateInvItems (self, MegaJoint, 4);
+    B_GiveInvItems (self, other, MegaJoint, 4);
+	
+    MIS_NoweZiele = LOG_RUNNING;	
+	Log_CreateTopic          (CH1_NoweZiele, LOG_MISSION);
     Log_SetTopicStatus       (CH1_NoweZiele, LOG_RUNNING);
-    B_LogEntry                     (CH1_NoweZiele,"Nowicjusz Davson opracowa³ now¹ odmianê ziela. Uwa¿a, ¿e mo¿na na niej sporo zarobiæ. Podzieli siê ze mn¹ zyskami, je¿eli znajdê jakichœ kupców na jego towar.");
+    B_LogEntry               (CH1_NoweZiele,"Nowicjusz Davson opracowa³ nowy rodzaj skrêta. Uwa¿a, ¿e mo¿na na nim sporo zarobiæ. Podzieli siê ze mn¹ zyskami, je¿eli znajdê jakiegoœ kupca na jego towar.");
 };
 
 //========================================
-//-----------------> KUPCy
+//-----------------> Kupcy
 //========================================
 
-INSTANCE DIA_Novize_KUPCy (C_INFO)
+INSTANCE DIA_Novize_Kupcy (C_INFO)
 {
    npc          = NOV_1324_Novize;
    nr           = 2;
-   condition    = DIA_Novize_KUPCy_Condition;
-   information  = DIA_Novize_KUPCy_Info;
+   condition    = DIA_Novize_Kupcy_Condition;
+   information  = DIA_Novize_Kupcy_Info;
    permanent	= FALSE;
    description	= "Gdzie niby mia³bym znaleŸæ kupców?";
 };
 
-FUNC INT DIA_Novize_KUPCy_Condition()
+FUNC INT DIA_Novize_Kupcy_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Novize_Quest123))
     {
@@ -85,30 +89,73 @@ FUNC INT DIA_Novize_KUPCy_Condition()
 };
 
 
-FUNC VOID DIA_Novize_KUPCy_Info()
+FUNC VOID DIA_Novize_Kupcy_Info()
 {
-    AI_Output (other, self ,"DIA_Novize_KUPCy_15_01"); //Gdzie niby mia³bym znaleŸæ kupców?
-    AI_Output (self, other ,"DIA_Novize_KUPCy_03_02"); //Hmmm. Najwiêkszy skup jest w Nowym Obozie. Mo¿e spróbuj tam.
-    AI_Output (self, other ,"DIA_Novize_KUPCy_03_03"); //Mo¿e dogadasz siê z jakimœ Baalem.
-    AI_Output (self, other ,"DIA_Novize_KUPCy_03_04"); //Spróbuj mu udowodniæ, ¿e nasz towar warto sprzedaæ.
-    B_LogEntry                     (CH1_NoweZiele,"Najlepiej przekonaæ kogoœ w Nowym Obozie do handlu zielem.");
+    AI_Output (other, self ,"DIA_Novize_Kupcy_15_01"); //Gdzie niby mia³bym znaleŸæ kupców?
+    AI_Output (self, other ,"DIA_Novize_Kupcy_03_02"); //Hmmm... Najwiêkszy skup jest w Nowym Obozie. Powinieneœ tam zajrzeæ.
+    AI_Output (self, other ,"DIA_Novize_Kupcy_03_03"); //Mo¿e dogadasz siê z jakimœ Baalem. Spróbuj mu udowodniæ, ¿e nasz towar warto sprzedaæ.
+	AI_Output (self, other ,"DIA_Novize_Kupcy_03_04"); //Mo¿esz te¿ poszukaæ w Starym Obozie.
+    AI_Output (self, other ,"DIA_Novize_Kupcy_03_04"); //Tylko pamiêtaj o dyskrecji. 
+	
+    B_LogEntry                     (CH1_NoweZiele,"Davson stwierdzi³, ¿e najlepiej przekonaæ kogoœ w Nowym Obozie. Powinienem pogadaæ z którymœ z tamtych handlarzy.");
 };
 
 //========================================
-//-----------------> Ifindkupiec
+//-----------------> Dealer_Cipher
 //========================================
 
-INSTANCE DIA_Novize_Ifindkupiec (C_INFO)
+INSTANCE DIA_Novize_Dealer_Cipher (C_INFO)
 {
    npc          = NOV_1324_Novize;
    nr           = 1;
-   condition    = DIA_Novize_Ifindkupiec_Condition;
-   information  = DIA_Novize_Ifindkupiec_Info;
+   condition    = DIA_Novize_Dealer_Cipher_Condition;
+   information  = DIA_Novize_Dealer_Cipher_Info;
    permanent	= FALSE;
    description	= "Znalaz³em kupca.";
 };
 
-FUNC INT DIA_Novize_Ifindkupiec_Condition()
+FUNC INT DIA_Novize_Dealer_Cipher_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Cipher_NovizeJoints))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Novize_Dealer_Cipher_Info()
+{
+    AI_Output (other, self ,"DIA_Novize_Dealer_Cipher_15_01"); //Znalaz³em kupca.
+    AI_Output (self, other ,"DIA_Novize_Dealer_Cipher_03_02"); //Kto to taki?
+    AI_Output (other, self ,"DIA_Novize_Dealer_Cipher_15_03"); //Niejaki Cipher, Szkodnik z Nowego Obozu. Ma spore doœwiadczenie.
+    AI_Output (self, other ,"DIA_Novize_Dealer_Cipher_03_04"); //Gdzieœ ju¿ s³ysza³em to imiê. Mam wra¿enie, ¿e wspomina³ o nim Balor...
+    AI_Output (self, other ,"DIA_Novize_Dealer_Cipher_03_05"); //Dobra robota. Wkrótce wyœlê do niego pierwsz¹ dostawê.
+    AI_Output (other, self ,"DIA_Novize_Dealer_Cipher_15_06"); //W porz¹dku. Szukajcie go w karczmie na jeziorze. 
+    AI_Output (self, other ,"DIA_Novize_Dealer_Cipher_03_07"); //Bêdê siê z tob¹ dzieli³ zyskami raz w tygodniu.
+    B_LogEntry               (CH1_NoweZiele,"Przekaza³em mojemu zleceniodawcy informacjê o Szkodniku, imieniem Cipher. Davson dotrzyma³ swojej czêœci umowy i obieca³, ¿e bêdzie mi raz w tygodniu wyp³aca³ czêœæ zysków.");
+    Log_SetTopicStatus       (CH1_NoweZiele, LOG_SUCCESS);
+    MIS_NoweZiele = LOG_SUCCESS;
+
+    B_GiveXP (180);
+    AI_StopProcessInfos	(self);
+};
+
+
+//========================================
+//-----------------> Dealer_Kagan
+//========================================
+
+INSTANCE DIA_Novize_Dealer_Kagan (C_INFO)
+{
+   npc          = NOV_1324_Novize;
+   nr           = 1;
+   condition    = DIA_Novize_Dealer_Kagan_Condition;
+   information  = DIA_Novize_Dealer_Kagan_Info;
+   permanent	= FALSE;
+   description	= "Znalaz³em kupca.";
+};
+
+FUNC INT DIA_Novize_Dealer_Kagan_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_BaalKagan_SkrzynaPelna))
     {
@@ -117,24 +164,24 @@ FUNC INT DIA_Novize_Ifindkupiec_Condition()
 };
 
 
-FUNC VOID DIA_Novize_Ifindkupiec_Info()
+FUNC VOID DIA_Novize_Dealer_Kagan_Info()
 {
-    AI_Output (other, self ,"DIA_Novize_Ifindkupiec_15_01"); //Znalaz³em kupca.
-    AI_Output (self, other ,"DIA_Novize_Ifindkupiec_03_02"); //Kto to taki?
-    AI_Output (other, self ,"DIA_Novize_Ifindkupiec_15_03"); //To Baal Kagan, handlarz zielem z Nowego Obozu.
-    AI_Output (self, other ,"DIA_Novize_Ifindkupiec_03_04"); //Czym go przekupi³eœ?
-    AI_Output (self, other ,"DIA_Novize_Ifindkupiec_03_05"); //Wiele razy probowaliœmy mu sprzedaæ nasze ziele.
-    AI_Output (other, self ,"DIA_Novize_Ifindkupiec_15_06"); //Podmieni³em ziele z jego skrzyni na nasze.
-    AI_Output (other, self ,"DIA_Novize_Ifindkupiec_15_07"); //Przez przypadek wypali³ i by³ zachwycony.
-    AI_Output (other, self ,"DIA_Novize_Ifindkupiec_15_08"); //Bêdzie nam p³aci³ 35 bry³ek rudy za sztukê.
-    AI_Output (self, other ,"DIA_Novize_Ifindkupiec_03_09"); //Œwietna robota. Zg³aszaj siê tu codziennie po swoj¹ dzia³kê.
-    B_LogEntry                     (CH1_NoweZiele,"Davson wielce siê uradowa³, gdy us³ysza³, ¿e znalaz³em kupca na jego ziele. Mogê codziennie przychodziæ po moj¹ dzia³kê.");
+    AI_Output (other, self ,"DIA_Novize_Dealer_Kagan_15_01"); //Znalaz³em kupca.
+    AI_Output (self, other ,"DIA_Novize_Dealer_Kagan_03_02"); //Kto to taki?
+    AI_Output (other, self ,"DIA_Novize_Dealer_Kagan_15_03"); //To Baal Kagan, handlarz zielem z Nowego Obozu.
+    AI_Output (self, other ,"DIA_Novize_Dealer_Kagan_03_04"); //Czym go przekupi³eœ? Wiele razy probowaliœmy mu sprzedaæ nasze ziele. Bezskutecznie.
+    AI_Output (other, self ,"DIA_Novize_Dealer_Kagan_15_05"); //Podmieni³em ziele z jego skrzyni na nasze. Przez przypadek je wypali³ i by³ zachwycony.
+    AI_Output (other, self ,"DIA_Novize_Dealer_Kagan_15_06"); //Bêdzie nam p³aci³ 35 bry³ek rudy za sztukê.
+    AI_Output (self, other ,"DIA_Novize_Dealer_Kagan_03_07"); //Œwietna robota. Bêdê siê z tob¹ dzieli³ zyskami raz w tygodniu.
+    B_LogEntry                     (CH1_NoweZiele,"Davson wielce siê uradowa³, gdy us³ysza³, ¿e znalaz³em kupca na jego skrêty. Raz w tygodniu mam siê zg³aszaæ po moj¹ dzia³kê.");
     Log_SetTopicStatus       (CH1_NoweZiele, LOG_SUCCESS);
     MIS_NoweZiele = LOG_SUCCESS;
 
-    B_GiveXP (300);
+    B_GiveXP (190);
     AI_StopProcessInfos	(self);
+	day = wld_getday();
 };
+
 
 //========================================
 //-----------------> KasaKasa
@@ -152,8 +199,8 @@ INSTANCE DIA_Novize_KasaKasa (C_INFO)
 
 FUNC INT DIA_Novize_KasaKasa_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Novize_Ifindkupiec))
-    && (day != wld_getday())
+    if (MIS_NoweZiele == LOG_SUCCESS)
+    && (Wld_GetDay () - day >= 7)
     {
     return TRUE;
     };
@@ -162,17 +209,31 @@ FUNC INT DIA_Novize_KasaKasa_Condition()
 
 FUNC VOID DIA_Novize_KasaKasa_Info()
 {
-    AI_Output (other, self ,"DIA_Novize_KasaKasa_15_01"); //Przyszed³em po moj¹ dzia³kê.
-    AI_Output (self, other ,"DIA_Novize_KasaKasa_03_02"); //Proszê bardzo!
-    CreateInvItems (self, ItMiNugget, 40);
-    B_GiveInvItems (self, other, ItMiNugget, 40);
-    CreateInvItems (self, MegaJoint, 2);
-    B_GiveInvItems (self, other, MegaJoint, 2);
+	var int lucky; lucky = Hlp_Random(150);
+    AI_Output (other, self ,"DIA_Novize_KasaKasa_15_01"); //Przyszed³em po moj¹ dzia³kê. Ile uda³o ci siê zarobiæ?
+	if (kapitel < 4)
+	{
+    AI_Output (self, other ,"DIA_Novize_KasaKasa_03_02"); //Oto twoja dola po przeliczeniach. Proszê bardzo! Pamiêtaj, ¿e nie zawsze udaje siê du¿o zarobiæ.
+	
+    CreateInvItems (self, ItMiNugget, lucky);
+    B_GiveInvItems (self, other, ItMiNugget, lucky);
+    //CreateInvItems (self, MegaJoint, 2);
+    //B_GiveInvItems (self, other, MegaJoint, 2);
     day = wld_getday();
-    AI_StopProcessInfos	(self);
+    
+	}
+	else
+	{
+	AI_Output (self, other ,"DIA_Novize_KasaKasa_03_03"); //Nic ju¿ raczej nie dostaniesz. Wstrzyma³em dzia³alnoœæ. 
+	AI_Output (self, other ,"DIA_Novize_KasaKasa_03_04"); //To co siê dzieje w kolonii nie sprzyja interesom, sam wiesz. 
+	AI_Output (self, other ,"DIA_Novize_KasaKasa_03_05"); //Ma³o kto, chce siê wybieraæ w podró¿ na drug¹ czêœæ kolonii, ¿eby dostarczyæ skrêty.
+	AI_Output (self, other ,"DIA_Novize_KasaKasa_03_06"); //Wszêdzie krêc¹ siê ci mordercy ze Starego Obozu.
+	AI_Output (other, self ,"DIA_Novize_KasaKasa_15_07"); //No có¿, mi³o by³o...
+	AI_Output (self, other ,"DIA_Novize_KasaKasa_03_08"); //Dok³adnie, ale ju¿ po wszystkim.
+	};
+	
+	AI_StopProcessInfos	(self);
 };
-
-
 
 //========================================
 //-----------------> HELLO1

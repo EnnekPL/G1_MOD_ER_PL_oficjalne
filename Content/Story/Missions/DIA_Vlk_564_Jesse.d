@@ -230,7 +230,7 @@ INSTANCE DIA_Jesse_NEK (C_INFO)
 
 FUNC INT DIA_Jesse_NEK_Condition()
 {
-    if (MordragProblemOC == LOG_RUNNING)
+    if (MIS_SpysProblems == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -251,7 +251,7 @@ FUNC VOID DIA_Jesse_NEK_Info()
     AI_Output (self, other ,"DIA_Jesse_NEK_03_10"); //Poza mn¹ tylko Kyle i Tippler. Mo¿e oni ci opowiedz¹ jak to by³o. Ja nie mam zamiaru. Przynajmniej do czasu, a¿ tych dwóch nie przestanie czyhaæ na moje ¿ycie. 
     AI_Output (self, other ,"DIA_Jesse_NEK_03_11"); //Poza tym Kyle chyba woli siedzieæ cicho. Ca³a ta sytuacja by³a doœæ dwuznaczna.
     AI_Output (other, self ,"DIA_Jesse_NEK_15_12"); //Lepiej trzymaj ju¿ jêzyk za zêbami. 
-    B_LogEntry                     (CH1_MordragProblemOC,"Kopacze s¹ zastraszani przez Z³ego. Wynaj¹³ siepaczy, aby terroryzowali okolicê. Poza Jesse o zabójstwie wiedz¹ tak¿e Tippler i Kyle.");
+    B_LogEntry                     (CH1_SpysProblems,"Kopacze s¹ zastraszani przez Z³ego. Wynaj¹³ siepaczy, aby terroryzowali okolicê. Poza Jesse o zabójstwie wiedz¹ tak¿e Tippler i Kyle.");
 	HeroKnowsSlyKillNek = true;
 };
 //========================================
@@ -271,7 +271,7 @@ INSTANCE DIA_Jesse_OKKKKKKK (C_INFO)
 FUNC INT DIA_Jesse_OKKKKKKK_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Jesse_NEK))
-    && (MordragProblemOC == LOG_RUNNING)
+    && (MIS_SpysProblems == LOG_RUNNING)
 	&& (Npc_IsDead(GRD_2014_Siepacz))
     && (Npc_IsDead(GRD_2013_Siepacz))
     {
@@ -287,7 +287,7 @@ FUNC VOID DIA_Jesse_OKKKKKKK_Info()
     AI_Output (self, other ,"DIA_Jesse_OKKKKKKK_03_03"); //Zaczynam siê ciebie baæ. Nie wiem, czy ci pomogê.
     AI_Output (other, self ,"DIA_Jesse_OKKKKKKK_15_04"); //Ostatnio œpiewa³eœ inaczej. 
     AI_Output (self, other ,"DIA_Jesse_OKKKKKKK_03_05"); //Dobra, dobra. Pójdê do Thorusa.
-    B_LogEntry                     (CH1_MordragProblemOC,"Jesse potwierdzi zabójstwo Neka Thorusowi.");
+    B_LogEntry                     (CH1_SpysProblems,"Jesse potwierdzi zabójstwo Neka Thorusowi.");
     AI_StopProcessInfos	(self);
 };
 

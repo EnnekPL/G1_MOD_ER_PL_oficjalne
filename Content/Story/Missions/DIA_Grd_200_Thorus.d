@@ -2063,7 +2063,7 @@ INSTANCE DIA_THORUS_DEDLIGO (C_INFO)
 
 FUNC INT DIA_THORUS_DEDLIGO_Condition()
 {
-    if (MordragProblemOC == LOG_RUNNING)
+    if (MIS_SpysProblems == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -2081,7 +2081,7 @@ FUNC VOID DIA_THORUS_DEDLIGO_Info()
     AI_Output (other, self ,"DIA_THORUS_DEDLIGO_15_07"); //W dupie?
     AI_Output (self, other ,"DIA_THORUS_DEDLIGO_03_08"); //Dok³adnie. Mam doœæ tego z³odzieja i tego, ¿e wszystko uchodzi mu na sucho.
     AI_Output (self, other ,"DIA_THORUS_DEDLIGO_03_09"); //ZnajdŸ mi prawdziwe dowody lub co najmniej trzech œwiadków i wtedy przyjdŸ.
-    B_LogEntry                     (CH1_MordragproblemOC,"Thorus nie wierzy w s³owa Skazy. Muszê znaleŸæ œwiadków lub jakieœ dowody.");
+    B_LogEntry                     (CH1_SpysProblems,"Thorus nie wierzy w s³owa Skazy. Muszê znaleŸæ œwiadków lub jakieœ dowody.");
 };
 //========================================
 //-----------------> ICHTROJE
@@ -2100,7 +2100,7 @@ INSTANCE DIA_THORUS_ICHTROJE (C_INFO)
 FUNC INT DIA_THORUS_ICHTROJE_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_THORUS_DEDLIGO))
-    && (MordragProblemOC == LOG_RUNNING)
+    && (MIS_SpysProblems == LOG_RUNNING)
     && (Npc_KnowsInfo (hero, DIA_Jesse_OKKKKKKK))
     && (Npc_KnowsInfo (hero, DIA_Tippler_OKQUEST))
     && (Npc_KnowsInfo (hero, DIA_Kyle_ZABICI))
@@ -2128,7 +2128,7 @@ FUNC VOID DIA_THORUS_ICHTROJE_Info()
     AI_Output (other, self ,"DIA_THORUS_ICHTROJE_15_12"); //Porozmawiajmy o moim wynagrodzeniu.
     AI_Output (self, other ,"DIA_THORUS_ICHTROJE_03_13"); //Zapomnij. Nic ci nie kaza³em.
     AI_Output (other, self ,"DIA_THORUS_ICHTROJE_15_14"); //Szkoda. To ja ju¿ sobie pójdê.
-    B_LogEntry                     (CH1_MordragProblemOC,"Gdy Thorus dowiedzia³ siê o machlojkach Z³ego, natychmiast rozkaza³ zamkn¹æ go w lochach. Skaza bêdzie bardzo zadowolony z takiego obrotu spraw.");
+    B_LogEntry                     (CH1_SpysProblems,"Gdy Thorus dowiedzia³ siê o machlojkach Z³ego, natychmiast rozkaza³ zamkn¹æ go w lochach. Skaza bêdzie bardzo zadowolony z takiego obrotu spraw.");
 	
 	AI_Teleport                    (STT_315_Sly,"SLY_CELL"); 
 	Npc_ExchangeRoutine (STT_315_Sly, "paka"); 
@@ -2190,7 +2190,7 @@ FUNC VOID DIA_THORUS_QuestGRD1_Info()
 	AI_Output (self, other ,"DIA_THORUS_QuestGRD1_03_16"); //Dziœ mieli zostaæ zrzuceni nowi skazañcy. Je¿eli spotkasz kogoœ na placu wymian, zadbaj, aby przyszed³ do Obozu.
     MIS_Odstraszeni = LOG_RUNNING;
 	B_ExchangeRoutine	(GRD_203_Bullit, "meka");	
-	Wld_InsertNpc				(NON_7046_Skaza,"OC1");	
+	Wld_InsertNpc				(NON_7046_Skazaniec,"OC1");	
     Log_CreateTopic            (CH1_Odstraszeni, LOG_MISSION);
     Log_SetTopicStatus       (CH1_Odstraszeni, LOG_RUNNING);
     B_LogEntry                     (CH1_Odstraszeni,"Thorus kaza³ mi odkryæ, który z jego ludzi odstrasza nowych skazañców. Jestem pewien, ¿e to wina Bullita. Muszê tylko znaleŸæ na niego jakieœ dowody. Dziœ na plac wymian maj¹ zostaæ zrzuceni nowi skazañcy. Je¿eli kogoœ tam spotkam mam zadbaæ, aby przyby³ do Starego Obozu. ");

@@ -199,7 +199,7 @@ INSTANCE DIA_Bartholo_WTF2 (C_INFO)
 
 FUNC INT DIA_Bartholo_WTF2_Condition()
 {
-    if (MordragProblemOC == LOG_RUNNING)
+    if (MIS_SpysProblems == LOG_RUNNING)
     && (gadaninaBartholo==true)
     {
     return TRUE;
@@ -236,7 +236,7 @@ FUNC VOID DIA_Bartholo_WTF2_HELP()
     AI_Output (self, other ,"DIA_Bartholo_WTF2_HELP_03_07"); //Uparty jesteœ... bo tam kilka pucharów, amulet, ruda i pewien cenny pierœcieñ. Zale¿y mi g³ównie na pierœcieniu. 
     AI_Output (other, self ,"DIA_Bartholo_WTF2_HELP_15_08"); //To bardzo wa¿na rzecz. Tyle powinno mi wystarczyæ. No, nie bêdê ci ju¿ zawraca³ g³owy. Do zobaczenia.
 	
-    B_LogEntry              (CH1_MordragProblemOC,"Bartholo wyjawi³ mi, ¿e poza rud¹ i kosztownoœciami, ³upem by³y tak¿e niezwykle cenny pierœcieñ i mniej wa¿ny amulet.");
+    B_LogEntry              (CH1_SpysProblems,"Bartholo wyjawi³ mi, ¿e poza rud¹ i kosztownoœciami, ³upem by³y tak¿e niezwykle cenny pierœcieñ i mniej wa¿ny amulet.");
 	Info_ClearChoices		(DIA_Bartholo_WTF2);
 	szukam_dowodow=true;
 	Npc_ExchangeRoutine (self,"start");
@@ -260,7 +260,7 @@ INSTANCE DIA_Bartholo_DOWODY (C_INFO)
 FUNC INT DIA_Bartholo_DOWODY_Condition()
 {
     if (szukam_dowodow == true)
-    && (MordragProblemOC == LOG_RUNNING)
+    && (MIS_SpysProblems == LOG_RUNNING)
     && (Npc_HasItems (other, EBR_Ring1) >=1)
     && (Npc_HasItems (other, ItWr_PamietnikSwistaka) >=1)  
 	{
@@ -278,7 +278,7 @@ FUNC VOID DIA_Bartholo_DOWODY_Info()
     B_UseFakeScroll ();
     AI_Output (self, other ,"DIA_Bartholo_DOWODY_03_05"); //Co za sukinsyn! Ju¿ ja go dorwê i zrobiê z nim porz¹dek!
     AI_Output (self, other ,"DIA_Bartholo_DOWODY_03_06"); //A teraz dawaj mi ten pierœcieñ. Resztê œmieci mo¿esz sobie zatrzymaæ jako nagrodê. Znaj moj¹ szczodroœæ, m³okosie. 
-    B_LogEntry                     (CH1_MordragProblemOC,"Bartholo wydawa³ siê byæ zadowolony z odzyskania ³upów. Zabra³ mi pierœcieñ i notatki Œwistaka.");
+    B_LogEntry                     (CH1_SpysProblems,"Bartholo wydawa³ siê byæ zadowolony z odzyskania ³upów. Zabra³ mi pierœcieñ i notatki Œwistaka.");
     B_GiveXP (300);
     Npc_ExchangeRoutine (self,"start");
 	B_GiveInvItems (hero, EBR_106_Bartholo, EBR_Ring1, 1);

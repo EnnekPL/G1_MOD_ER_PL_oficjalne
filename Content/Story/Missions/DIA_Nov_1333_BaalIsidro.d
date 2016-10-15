@@ -405,7 +405,7 @@ FUNC VOID DIA_BaalIsidro_NAPASC_Info()
     AI_Output (other, self ,"DIA_BaalIsidro_NAPASC_15_05"); //Lepiej zmiataj z Obozu.
     AI_Output (self, other ,"DIA_BaalIsidro_NAPASC_03_06"); //Dobry pomys³. Dziêki za ostrze¿enie. £ap parê bry³ek. Jakbyœ mnie szuka³, to bêdê w jaskini za Obozem.
     Npc_ExchangeRoutine (self, "cave");
-    B_LogEntry                     (CH1_DostawaLowcow,"Zastraszenie Isidro to pestka. Mogê wróciæ do Butcha.");
+    B_LogEntry                     (CH5_FoodForHunters,"Zastraszenie Isidro to pestka. Mogê wróciæ do Butcha.");
 
     B_GiveXP (100);
     AI_StopProcessInfos	(self);

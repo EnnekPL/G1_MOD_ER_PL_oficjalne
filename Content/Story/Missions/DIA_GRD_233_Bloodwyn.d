@@ -494,7 +494,7 @@ INSTANCE DIA_Bloodwyn_UKLAD (C_INFO)
 
 FUNC INT DIA_Bloodwyn_UKLAD_Condition()
 {
-    if (MordragProblemOC == LOG_RUNNING)
+    if (MIS_SpysProblems == LOG_RUNNING)
     && (Npc_KnowsInfo (hero, DIA_Tippler_NEK_DED))
     {
     return TRUE;
@@ -522,7 +522,7 @@ FUNC VOID DIA_Bloodwyn_UKLAD_30B()
     AI_Output (self, other ,"DIA_Bloodwyn_UKLAD_30B_03_04"); //Zwariowa³eœ? Z³y zap³aci³ mi znacznie wiêcej.
     AI_Output (self, other ,"DIA_Bloodwyn_UKLAD_30B_03_05"); //Powiem mu o tym zajœciu.
     Info_ClearChoices		(DIA_Bloodwyn_UKLAD);
-    B_LogEntry                     (CH1_MordragProblemOC,"Bloodwyn odrzuci³ moj¹ ofertê. Có¿, 30 bry³ek rudy to faktycznie niezbyt wiele. Chyba powinienem zaproponowaæ wiêcej...");
+    B_LogEntry                     (CH1_SpysProblems,"Bloodwyn odrzuci³ moj¹ ofertê. Có¿, 30 bry³ek rudy to faktycznie niezbyt wiele. Chyba powinienem zaproponowaæ wiêcej...");
     Npc_SetPermAttitude (STT_315_Sly, ATT_HOSTILE);
 	replyC = true; 
     AI_StopProcessInfos	(self);
@@ -536,7 +536,7 @@ if (Npc_HasItems (hero, ItMiNugget)>=50)
     AI_Output (self, other ,"DIA_Bloodwyn_UKLAD_50B_03_02"); //I co mam z tym zrobiæ?
     AI_Output (other, self ,"DIA_Bloodwyn_UKLAD_50B_15_03"); //WeŸ i nie pomagaj Z³emu. Rozumiemy siê?
     AI_Output (self, other ,"DIA_Bloodwyn_UKLAD_50B_03_04"); //Trochê ma³o... Niech ci bêdzie.
-    B_LogEntry                     (CH1_MordragProblemOC,"Bloodwyn pomóg³ mi za 50 bry³ek rudy.");
+    B_LogEntry                     (CH1_SpysProblems,"Bloodwyn pomóg³ mi za 50 bry³ek rudy.");
     B_GiveXP (125);
 	przekupiony = true;
     B_GiveInvItems (other, self, ItMiNugget, 50);
@@ -562,7 +562,7 @@ FUNC VOID DIA_Bloodwyn_UKLAD_100B()
     AI_Output (other, self ,"DIA_Bloodwyn_UKLAD_100B_15_04"); //Pomo¿esz mi czy nie?
     AI_Output (self, other ,"DIA_Bloodwyn_UKLAD_100B_03_05"); //Dobra. IdŸ ju¿.
     B_GiveInvItems (other, self, ItMiNugget, 100);
-    B_LogEntry                     (CH1_MordragProblemOC,"Przekupi³em Bloodwyna 100 bry³kami rudy. Cholera, ale drogo...");
+    B_LogEntry                     (CH1_SpysProblems,"Przekupi³em Bloodwyna 100 bry³kami rudy. Cholera, ale drogo...");
     B_GiveXP (50);
 	przekupiony = true;
     Info_ClearChoices		(DIA_Bloodwyn_UKLAD);
@@ -618,7 +618,7 @@ FUNC VOID DIA_Bloodwyn_ZGODA_Info()
     AI_Output (self, other ,"DIA_Bloodwyn_ZGODA_03_05"); //300 bry³ek rudy.
     AI_Output (other, self ,"DIA_Bloodwyn_ZGODA_15_06"); //Ile?!
     AI_Output (self, other ,"DIA_Bloodwyn_ZGODA_03_07"); //PrzyjdŸ, gdy bêdziesz mia³ rudê.
-    B_LogEntry                     (CH1_MordragProblemOC,"Za 300 bry³ek rudy Bloodwyn bêdzie znów skory do rozmowy.");
+    B_LogEntry                     (CH1_SpysProblems,"Za 300 bry³ek rudy Bloodwyn bêdzie znów skory do rozmowy.");
 };
 
 //========================================
@@ -651,7 +651,7 @@ FUNC VOID DIA_Bloodwyn_REPLYC_Info()
     AI_Output (self, other ,"DIA_Bloodwyn_REPLYC_03_02"); //Dobra. Tyle wystarczy.
     AI_Output (other, self ,"DIA_Bloodwyn_REPLYC_15_03"); //Czyli pomo¿esz mi?
     AI_Output (self, other ,"DIA_Bloodwyn_REPLYC_03_04"); //Tak, idŸ ju¿.
-    B_LogEntry                     (CH1_MordragProblemOC,"Zap³aci³em Bloodwynowi za zerwanie umowy ze Z³ym.");
+    B_LogEntry                     (CH1_SpysProblems,"Zap³aci³em Bloodwynowi za zerwanie umowy ze Z³ym.");
 	B_GiveInvItems (other, self, ItMiNugget, 300);
    Npc_SetPermAttitude (STT_315_Sly, ATT_NEUTRAL);
 };

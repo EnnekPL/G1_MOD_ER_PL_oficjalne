@@ -92,7 +92,7 @@ INSTANCE Miecz1H4 (C_Item) //Doyle
 	damageTotal			= 	60;
 	damagetype			=	DAM_EDGE;
 	range    			=  	110;		
-	owner 				= 	ORG_867_Raeuber;
+	owner 				= 	BAN_1613_Doyle;
 	cond_atr[2]   		= 	ATR_STRENGTH;
 	cond_value[2]  		= 	40;
 	visual 				=	"DB_ItMw_1h_Sword_Broad_Rep_02.3DS";

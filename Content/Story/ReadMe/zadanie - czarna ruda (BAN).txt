@@ -1,0 +1,113 @@
+﻿//========================================
+//-----------------> AkcjaRun
+//========================================
+
+INSTANCE DIA_Garp_AkcjaRun (C_INFO)
+{
+   npc          = Vlk_587_Garp;
+   nr           = 1;
+   condition    = DIA_Garp_AkcjaRun_Condition;
+   information  = DIA_Garp_AkcjaRun_Info;
+   permanent	= FALSE;
+   Important    = TRUE;
+};
+
+FUNC INT DIA_Garp_AkcjaRun_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_ULBERT_BLACKORE))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Garp_AkcjaRun_Info()
+{
+    AI_Output (self, other ,"DIA_Garp_AkcjaRun_03_01"); //Ej! Bądź cicho.
+    AI_Output (self, other ,"DIA_Garp_AkcjaRun_03_02"); //Planujemy pewną operację. Chcesz się przyłączyć?
+    AI_Output (self, other ,"DIA_Garp_AkcjaRun_03_03"); //Wyglądasz, jakbyś chciał dostać się do składowiska na dnie kopalni. To jak będzie?
+    //AI_StopProcessInfos	(self);
+};
+const string CH1_AlternativBanditoSCamp = "Sposób Skazy";
+//========================================
+//-----------------> BLACKORE
+//========================================
+
+INSTANCE DIA_ULBERT_BLACKORE (C_INFO)
+{
+   npc          = GRD_271_ULBERT;
+   nr           = 1;
+   condition    = DIA_ULBERT_BLACKORE_Condition;
+   information  = DIA_ULBERT_BLACKORE_Info;
+   permanent	= FALSE;
+   description	= "Wiesz coś o czarnej rudzie?";
+};
+
+FUNC INT DIA_ULBERT_BLACKORE_Condition()
+{
+    if (Npc_KnowsInfo (hero, GRD_271_ULBERT_DRINK))
+    && (kapitel == 10)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_ULBERT_BLACKORE_Info()
+{
+    AI_Output (other, self ,"DIA_ULBERT_BLACKORE_15_01"); //Wiesz coś o czarnej rudzie?
+    AI_Output (self, other ,"DIA_ULBERT_BLACKORE_03_02"); //Co? Skąd o niej wiesz?
+    AI_Output (self, other ,"DIA_ULBERT_BLACKORE_03_03"); //Nieważne. Ruda jest przechowywana w tym składowisku.
+    AI_Output (self, other ,"DIA_ULBERT_BLACKORE_03_04"); //Ale i tak się do niej nie dostaniesz.
+    AI_Output (other, self ,"DIA_ULBERT_BLACKORE_15_05"); //Niby dlaczego?
+    AI_Output (self, other ,"DIA_ULBERT_BLACKORE_03_06"); //Klucz do skrzyni ukryty jest w innym składowisku.
+    AI_Output (self, other ,"DIA_ULBERT_BLACKORE_03_07"); //Nieźle to Ian wymyślił. He he...
+    B_LogEntry                     (CH1_AlternativBanditoSCamp,"Klucz do skrzyni z czarną rudą ukryty jest w innym składowisku w Starej Kopalni.");
+
+    B_GiveXP (100);
+};
+
+//========================================
+//-----------------> OreInMineITD
+//========================================
+
+INSTANCE DIA_Quentin_OreInMineITD (C_INFO)
+{
+   npc          = BAN_1610_Quentin;
+   nr           = 1;
+   condition    = DIA_Quentin_OreInMineITD_Condition;
+   information  = DIA_Quentin_OreInMineITD_Info;
+   permanent	= FALSE;
+   description	= "Mam coś cennego dla ciebie.";
+};
+
+FUNC INT DIA_Quentin_OreInMineITD_Condition()
+{
+    if (MIS_AlternativBanditoSCamp == LOG_RUNNING)
+    && (Npc_HasItems (other, ItMiNugget2) >=1)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Quentin_OreInMineITD_Info()
+{
+    AI_Output (other, self ,"DIA_Quentin_OreInMineITD_15_01"); //Mam coś cennego dla ciebie.
+    AI_Output (self, other ,"DIA_Quentin_OreInMineITD_03_02"); //Kim jesteś, że masz czelność tak tu wchodzić?!
+    AI_Output (other, self ,"DIA_Quentin_OreInMineITD_15_03"); //To nie jest teraz ważne.
+    AI_Output (other, self ,"DIA_Quentin_OreInMineITD_15_04"); //Chcę zostać jednym z was.
+    AI_Output (other, self ,"DIA_Quentin_OreInMineITD_15_05"); //Przyniosłem dla ciebie czarną rudę ze Starej Kopalni.
+    AI_Output (self, other ,"DIA_Quentin_OreInMineITD_03_06"); //Co przyniosłeś?!
+    AI_Output (other, self ,"DIA_Quentin_OreInMineITD_15_07"); //Czarną rudę. 
+    AI_Output (self, other ,"DIA_Quentin_OreInMineITD_03_08"); //Cholera! Jesteś piekielnie sprytny.
+    AI_Output (self, other ,"DIA_Quentin_OreInMineITD_03_09"); //Jak ją zdobyłeś?
+    AI_Output (other, self ,"DIA_Quentin_OreInMineITD_15_10"); //Trochę popytałem, trochę pochodziłem.
+    AI_Output (self, other ,"DIA_Quentin_OreInMineITD_03_11"); //Z pewnością przyda nam się ktoś taki jak ty.
+    B_LogEntry                     (CH1_AlternativBanditoSCamp,"Quentin był bardzo zadowolony z mojego osiągnięcia. Mogę już zostać Bandytą.");
+    Log_SetTopicStatus       (CH1_AlternativBanditoSCamp, LOG_SUCCESS);
+    MIS_AlternativBanditoSCamp = LOG_SUCCESS;
+
+    B_GiveXP (500);
+    B_GiveInvItems (other, self, ItMiNugget2, 1);
+};

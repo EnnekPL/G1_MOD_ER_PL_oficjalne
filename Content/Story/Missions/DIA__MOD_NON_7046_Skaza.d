@@ -5,7 +5,7 @@
 
 INSTANCE DIA_Skaza46_EXIT(C_INFO)
 {
-	npc             = NON_7046_Skaza;
+	npc             = NON_7046_Skazaniec;
 	nr              = 999;
 	condition	= DIA_Skaza46_EXIT_Condition;
 	information	= DIA_Skaza46_EXIT_Info;
@@ -29,7 +29,7 @@ FUNC VOID DIA_Skaza46_EXIT_Info()
 
 INSTANCE DIA_Skaza_HELLO1 (C_INFO)
 {
-   npc          = NON_7046_Skaza;
+   npc          = NON_7046_Skazaniec;
    nr           = 1;
    condition    = DIA_Skaza_HELLO1_Condition;
    information  = DIA_Skaza_HELLO1_Info;
@@ -67,7 +67,7 @@ FUNC VOID DIA_Skaza_HELLO1_FAILED ()
 	AI_Output (self, other ,"DIA_Skaza_HELLO1_FAILED_03_02"); //Równie dobrze mo¿esz mnie zabiæ! No, proszê, zrób to! Poka¿ jacy jesteœcie mi³osierni! 
 	AI_Output (self, other ,"DIA_Skaza_HELLO1_FAILED_03_03"); //Mam doœæ tego przeklêtego miejsca! Sam sobie poradzê!
 	//rutyna ¿e idzie do Obozu Bractwa
-	Npc_ExchangeRoutine	(NON_7046_Skaza, "bractwo");
+	Npc_ExchangeRoutine	(NON_7046_Skazaniec, "bractwo");
 	MIS_Odstraszeni = LOG_FAILED;
     Log_SetTopicStatus       (CH1_Odstraszeni, LOG_FAILED);
     B_LogEntry               (CH1_Odstraszeni,"GroŸby wobec nowego skazañca nie by³y zbyt dobrym pomys³em. Poszed³ w swoj¹ stronê. Thorus nie bêdzie zadowolony, a ja nie bêdê mia³ kogoœ, kto potwierdzi, ¿e za wszystkim stoi Bullit.");
@@ -105,7 +105,7 @@ FUNC VOID DIA_Skaza_HELLO1_PAY_BULLIT ()
 	AI_Output (other, self ,"DIA_Skaza_HELLO1_PAY_BULLIT_15_01"); //To Bullit i jego powitanie. Radzê ci p³aciæ reszcie Stra¿ników za ochronê.
 	AI_Output (self, other ,"DIA_Skaza_HELLO1_PAY_BULLIT_03_02"); //Ha ha! Wiedzia³em, ¿e to co mówisz to tylko propaganda! Wszyscy w tym zawszonym Obozie s¹ tacy sami!
 	AI_Output (self, other ,"DIA_Skaza_HELLO1_PAY_BULLIT_03_03"); //Poradzê sobie bez was!
-	Npc_ExchangeRoutine	(NON_7046_Skaza, "bractwo");
+	Npc_ExchangeRoutine	(NON_7046_Skazaniec, "bractwo");
 	MIS_Odstraszeni = LOG_FAILED;
     Log_SetTopicStatus       (CH1_Odstraszeni, LOG_FAILED);
     B_LogEntry               (CH1_Odstraszeni,"Porównywanie wiêkszoœci Stra¿ników do Bullita by³o nierozs¹dne. Skazaniec postanowi³ wybraæ inny obóz. ");
@@ -119,7 +119,7 @@ FUNC VOID DIA_Skaza_HELLO1_MONEY ()
 	AI_Output (other, self ,"DIA_Skaza_HELLO1_MONEY_15_02"); //Postaæ Bullita jest ¿ywym dowodem na to, ¿e w Starym Obozie dominuje kolesiostwo i przekupstwa. 
 	AI_Output (self, other ,"DIA_Skaza_HELLO1_MONEY_03_03"); //Wiedzia³em, ¿e ten Obóz nie jest dla mnie. Spadam st¹d!
 	AI_Output (other, self ,"DIA_Skaza_HELLO1_MONEY_15_04"); //Zaczekaj! Nie chcia³em ciê zniechêciæ. Po prostu mówiê jak jest.
-	Npc_ExchangeRoutine	(NON_7046_Skaza, "bractwo");
+	Npc_ExchangeRoutine	(NON_7046_Skazaniec, "bractwo");
 	MIS_Odstraszeni = LOG_FAILED;
     Log_SetTopicStatus       (CH1_Odstraszeni, LOG_FAILED);
     B_LogEntry               (CH1_Odstraszeni,"Mówienie ambitnemu skazañcowi o braku mo¿liwoœci awansu w Starym Obozie nie by³ zbyt rozs¹dny. Nie mia³em z³ych chêci, ale goœæ nie chcia³ ju¿ ze mn¹ rozmawiaæ.");
@@ -150,7 +150,7 @@ FUNC VOID DIA_Skaza_HELLO1_SMARTGOMEZ ()
 	AI_Output (other, self ,"DIA_Skaza_HELLO1_SMARTGOMEZ_15_07"); //Jak ju¿ bêdziesz w Obozie, to z pewnoœci¹ spotkasz zwierzchnika Stra¿ników, nazywa siê Thorus. 
 	AI_Output (other, self ,"DIA_Skaza_HELLO1_SMARTGOMEZ_15_08"); //Powiedz mu, ¿e Bullit ciê pobi³, a ja ci pomog³em. Tego sukinsyna powinna spotkaæ sprawiedliwoœæ.
 	AI_Output (self, other ,"DIA_Skaza_HELLO1_SMARTGOMEZ_03_09"); //Tak zrobiê. 
-	Npc_ExchangeRoutine	(NON_7046_Skaza, "camp");
+	Npc_ExchangeRoutine	(NON_7046_Skazaniec, "camp");
 	B_GiveXP (200);
 	MIS_Odstraszeni = LOG_SUCCESS;
     Log_SetTopicStatus       (CH1_Odstraszeni, LOG_SUCCESS);
@@ -166,7 +166,7 @@ FUNC VOID DIA_Skaza_HELLO1_KING ()
 	AI_Output (other, self ,"DIA_Skaza_HELLO1_KING_15_03"); //Je¿eli Kopacze bêd¹ wydajnie pracowaæ, a Bandyci w koñcu zostan¹ wybici do nogi, czeka nas dobrobyt i spokojne ¿ycie. 
 	AI_Output (self, other ,"DIA_Skaza_HELLO1_KING_03_04"); //Niezbyt mnie tym przekona³eœ. Mo¿e ¿ycie w waszym Obozie nie jest z³e, ale chcê to jeszcze przemyœleæ. Do zobaczenia. 
 	AI_Output (other, self ,"DIA_Skaza_HELLO1_KING_15_05"); //Zaczekaj chwilê!
-	Npc_ExchangeRoutine	(NON_7046_Skaza, "bractwo");
+	Npc_ExchangeRoutine	(NON_7046_Skazaniec, "bractwo");
 	MIS_Odstraszeni = LOG_FAILED;
     Log_SetTopicStatus       (CH1_Odstraszeni, LOG_FAILED);
     B_LogEntry               (CH1_Odstraszeni,"Nie uda³o mi siê przekonaæ skazañca do przy³¹czenia siê do Starego Obozu. Chyba powiedzia³em coœ nie tak. ");

@@ -284,9 +284,9 @@ FUNC VOID DIA_Gerard_TROFEUM_Info()
     AI_Output (other, self ,"DIA_Gerard_TROFEUM_15_06"); //Rozumiem, dziêki za informacje.
     MIS_SzponyTopielca = LOG_RUNNING;
 
-    Log_CreateTopic            (CH1_SzponyTopielca, LOG_MISSION);
+    Log_CreateTopic          (CH1_SzponyTopielca, LOG_MISSION);
     Log_SetTopicStatus       (CH1_SzponyTopielca, LOG_RUNNING);
-    B_LogEntry                     (CH1_SzponyTopielca,"Gerard wspomnia³ o kupcu z Khorinis, który móg³by byæ zainteresowany pazurami topielca z Nowego Obozu. Chyba powinienem porozmawiaæ z Magnatami.");
+    B_LogEntry               (CH1_SzponyTopielca,"Gerard wspomnia³ o kupcu z Khorinis, który móg³by byæ zainteresowany pazurami topielca z Nowego Obozu. Chyba powinienem porozmawiaæ z Magnatami.");
 };
 
 //========================================
@@ -350,7 +350,7 @@ INSTANCE DIA_Gerard_LOWCA_ORKOW (C_INFO)
 FUNC INT DIA_Gerard_LOWCA_ORKOW_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_SZEFU_ROBOTA))
-    && (MIS_RekruciLowcow == LOG_RUNNING)
+    && (MIS_NewBloodForOrcHunters == LOG_RUNNING)
 	&& (Npc_KnowsInfo (hero, DIA_Gerard_HELLO1))
     {
     return TRUE;
@@ -376,7 +376,7 @@ FUNC VOID DIA_Gerard_LOWCA_ORKOW_Info()
         AI_Output (self, other ,"DIA_Gerard_LOWCA_ORKOW_03_08"); //No dobra. To gdzie jest ten obóz?
         AI_Output (other, self ,"DIA_Gerard_LOWCA_ORKOW_15_09"); //Przy przejœciu na ziemie orków. We wnêce skalnej. 
 		AI_Output (self, other ,"DIA_Gerard_LOWCA_ORKOW_03_10"); //Wkrótce siê tam zjawiê. Muszê siê przygotowaæ, zebraæ moje rzeczy z obozowiska...
-	B_LogEntry                     (CH1_RekruciLowcow,"Gerard to dobra osoba do obozu ³owców orków. To twardy cz³owiek. D³ugo wytrzyma³ bez lekarstwa. Z pewnoœci¹ da sobie radê z orkami. ");
+	B_LogEntry                     (CH3_NewBloodForOrcHunters,"Gerard to dobra osoba do obozu ³owców orków. To twardy cz³owiek. D³ugo wytrzyma³ bez lekarstwa. Z pewnoœci¹ da sobie radê z orkami. ");
 	gerard_proba = false;
     B_GiveXP (200);
     Npc_ExchangeRoutine (self, "camp");
@@ -417,7 +417,7 @@ FUNC VOID DIA_Gerard_GOTO_ORCS_Info()
     AI_Output (self, other ,"DIA_Gerard_GOTO_ORCS_03_02"); //Naprawdê siê cieszê. Tu na górze powietrze jest ciê¿kie. 
 	AI_Output (self, other ,"DIA_Gerard_GOTO_ORCS_03_03"); //Nied³ugo wyruszê. Wkrótce pojawiê siê w obozie. 
     Npc_ExchangeRoutine (NON_3900_Gerard, "camp");//fix
-    B_LogEntry                     (CH1_RekruciLowcow,"Gerard to dobra osoba do obozu ³owców orków. To twardy cz³owiek. D³ugo wytrzyma³ bez lekarstwa. Z pewnoœci¹ da sobie radê z orkami. ");
+    B_LogEntry                     (CH3_NewBloodForOrcHunters,"Gerard to dobra osoba do obozu ³owców orków. To twardy cz³owiek. D³ugo wytrzyma³ bez lekarstwa. Z pewnoœci¹ da sobie radê z orkami. ");
 	gerard_lowca = true;
     B_GiveXP (200);
     AI_StopProcessInfos	(self);

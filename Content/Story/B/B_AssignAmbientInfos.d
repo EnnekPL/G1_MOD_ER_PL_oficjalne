@@ -146,16 +146,16 @@ B_AssignAmbientInfos_Tpl_13(amb_self);
 				B_AssignAmbientInfos_Sld_11(amb_self);
 			};
 		};
-			if (Hlp_GetInstanceID(self)==Hlp_GetInstanceID(ORG_874_Raeuber)) || (Hlp_GetInstanceID(self)==Hlp_GetInstanceID(ORG_869_Raeuber)) || (Hlp_GetInstanceID(self)==Hlp_GetInstanceID(ORG_867_Raeuber)) || (Hlp_GetInstanceID(self)==Hlp_GetInstanceID(ORG_865_Raeuber))
+			if (Hlp_GetInstanceID(self)==Hlp_GetInstanceID(ORG_874_Raeuber)) || (Hlp_GetInstanceID(self)==Hlp_GetInstanceID(ORG_869_Raeuber)) || (Hlp_GetInstanceID(self)==Hlp_GetInstanceID(BAN_1613_Doyle)) || (Hlp_GetInstanceID(self)==Hlp_GetInstanceID(ORG_865_Raeuber))
 			|| (Hlp_GetInstanceID(self)==Hlp_GetInstanceID(ORG_864_Raeuber)) // (amb_self.voice == 13)
 			{
 				B_AssignAmbientInfos_Bau_13(amb_self);
 			}
-			else if (Hlp_GetInstanceID(self)==Hlp_GetInstanceID(ORG_870_Raeuber)) || (Hlp_GetInstanceID(self)==Hlp_GetInstanceID(ORG_871_Raeuber))//(amb_self.voice == 7)
+			else if (Hlp_GetInstanceID(self)==Hlp_GetInstanceID(BAN_1611_Pun)) || (Hlp_GetInstanceID(self)==Hlp_GetInstanceID(ORG_871_Raeuber))//(amb_self.voice == 7)
 			{
 				B_AssignAmbientInfos_Bau_7(amb_self);
 			}
-			else if (Hlp_GetInstanceID(self)==Hlp_GetInstanceID(ORG_868_Raeuber)) || (Hlp_GetInstanceID(self)==Hlp_GetInstanceID(BAN_1609_Pun)) || (Hlp_GetInstanceID(self)==Hlp_GetInstanceID(ORG_863_Raeuber))//(amb_self.voice == 9)
+			else if (Hlp_GetInstanceID(self)==Hlp_GetInstanceID(ORG_868_Raeuber)) || (Hlp_GetInstanceID(self)==Hlp_GetInstanceID(BAN_1609_Smith)) || (Hlp_GetInstanceID(self)==Hlp_GetInstanceID(ORG_863_Raeuber))//(amb_self.voice == 9)
 			{
 				B_AssignAmbientInfos_Bau_7(amb_self);
 			};	

@@ -189,9 +189,9 @@ func void DIA_Bula_DevMode7 ()
 	AI_Output (other, self ,"DIA_Bandyta_DostawaALL_15_01"); //Uda³o mi siê zanieœæ wszystkim karczmarzom alkohol.
     AI_Output (self, other ,"DIA_Bandyta_DostawaALL_15_02"); //No, to teraz masz trochê wolnego.
 		
-	B_LogEntry    (CH1_Dostawy,"Zanios³em wszystkim dostawy alkoholu.");
-	Log_SetTopicStatus       (CH1_Dostawy, LOG_SUCCESS);
-	MIS_Dostawy = LOG_SUCCESS;
+	//B_LogEntry    (CH1_Dostawy,"Zanios³em wszystkim dostawy alkoholu.");
+	//Log_SetTopicStatus       (CH1_Dostawy, LOG_SUCCESS);
+	//MIS_Dostawy = LOG_SUCCESS;
 	B_GiveXP (150);
 	
 	Wld_PlayEffect("SPAWN_GOLEM",hero,self, 0, 0, 0, TRUE);
@@ -650,9 +650,9 @@ FUNC VOID DIA_Bula_Questy_Rozpierdol11()
 FUNC VOID DIA_Bula_Questy_jaksinaBandytow()
 {
     AI_Output (other, self ,"DIA_Bula_Questy_jaksinaBandytow_15_01"); //Wykonaj "Dostawa do Nowego Obozu"
-    B_LogEntry                     (CH1_JaskiniaBandytow,"Wykonano");
-    Log_SetTopicStatus       (CH1_JaskiniaBandytow, LOG_SUCCESS);
-    MIS_JaskiniaBandytow = LOG_SUCCESS;
+    B_LogEntry                     (CH1_BanditCave,"Wykonano");
+    Log_SetTopicStatus       (CH1_BanditCave, LOG_SUCCESS);
+    MIS_BanditCave = LOG_SUCCESS;
 
     B_GiveXP (1000);
 };
@@ -680,8 +680,8 @@ FUNC VOID DIA_Bula_Questy_rozwalaakldjad()
 FUNC VOID DIA_Bula_Questy_pomoclowcow2()
 {
     AI_Output (other, self ,"DIA_Bula_Questy_pomoclowcow2_15_01"); //Wykonaj "Pomoc £owców orków"
-    B_LogEntry                     (CH1_SupportFromOrcHunters,"Wykonano");
-    Log_SetTopicStatus       (CH1_SupportFromOrcHunters, LOG_SUCCESS);
+    B_LogEntry                     (CH4_SupportFromOrcHunters,"Wykonano");
+    Log_SetTopicStatus       (CH4_SupportFromOrcHunters, LOG_SUCCESS);
     MIS_SupportFromOrcHunters = LOG_SUCCESS;
 
     B_GiveXP (1000);
@@ -899,8 +899,8 @@ FUNC VOID DIA_Bula_Funkcje_Rozpierdol11()
 FUNC VOID DIA_Bula_Funkcje_jaksinaBandytow()
 {
     AI_Output (other, self ,"DIA_Bula_Funkcje_jaksinaBandytow_15_01"); //Startuj funkcjê!
-	ORG_867_Raeuber.aivar[AIV_PARTYMEMBER] = TRUE;
-    Npc_ExchangeRoutine (ORG_867_Raeuber,"atak1");
+	BAN_1613_Doyle.aivar[AIV_PARTYMEMBER] = TRUE;
+    Npc_ExchangeRoutine (BAN_1613_Doyle,"atak1");
 	Npc_ExchangeRoutine (GRD_2001_Stra¿nik,"bijacz");
 	Npc_ExchangeRoutine (GRD_2002_Stra¿nik,"bijacz");
 	B_ChangeGuild    (GRD_2005_Stra¿nik,GIL_DMB);
@@ -928,10 +928,10 @@ FUNC VOID DIA_Bula_Funkcje_transport()
  	 B_LogEntry                     (CH1_Problem_ZLY,"Wybra³em siê z Mordragiem do Nowego Obozu porzucaj¹c jego problemy z Cieniami.");
 	Log_SetTopicStatus       (CH1_Problem_ZLY, LOG_FAILED);
 
-	MordragProblemOC = LOG_FAILED;
+	MIS_SpysProblems = LOG_FAILED;
 	PrintScreen	("Anulowano zadanie: Problemy Mordraga! ", 1,48,"font_new_10_red.tga",2);	
-	 B_LogEntry                     (CH1_MordragProblemOC,"Wybra³em siê z Mordragiem do Nowego Obozu porzucaj¹c jego problemy z Cieniami.");
-	Log_SetTopicStatus       (CH1_MordragProblemOC, LOG_FAILED);
+	 B_LogEntry                     (CH1_SpysProblems,"Wybra³em siê z Mordragiem do Nowego Obozu porzucaj¹c jego problemy z Cieniami.");
+	Log_SetTopicStatus       (CH1_SpysProblems, LOG_FAILED);
 };
 
 FUNC VOID DIA_Bula_Funkcje_rozwalaakldjad()
@@ -943,7 +943,7 @@ FUNC VOID DIA_Bula_Funkcje_rozwalaakldjad()
 	Npc_ExchangeRoutine (ORG_807_Organisator,"przydupas");
 	Npc_ExchangeRoutine (ORG_828_Bruce,"handel");
 	B_SetPermAttitude	(GRD_7008_Tukash,	ATT_FRIENDLY);
- B_LogEntry                     (CH1_OchroniarzOM,"Tukash postanowi³, ¿e od razu zaatakujemy przeciwników.");
+ B_LogEntry                     (CH1_Bodyguard,"Tukash postanowi³, ¿e od razu zaatakujemy przeciwników.");
 
 	Npc_SetPermAttitude (ORG_810_Organisator, ATT_ANGRY);
 	Npc_SetPermAttitude (ORG_807_Organisator, ATT_ANGRY);

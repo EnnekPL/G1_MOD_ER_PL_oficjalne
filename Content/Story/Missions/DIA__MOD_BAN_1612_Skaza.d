@@ -6,7 +6,7 @@
 
 INSTANCE DIA_Skaza_EXIT(C_INFO)
 {
-	npc             = NON_3034_Bandyta;
+	npc             = BAN_1612_Skaza;
 	nr              = 999;
 	condition	= DIA_Skaza_EXIT_Condition;
 	information	= DIA_Skaza_EXIT_Info;
@@ -36,7 +36,7 @@ FUNC VOID DIA_Skaza_EXIT_Info()
 
 INSTANCE DIA_Bandyta_SpyHelp (C_INFO)
 {
-   npc          = NON_3034_Bandyta;
+   npc          = BAN_1612_Skaza;
    nr           = 1;
    condition    = DIA_Bandyta_SpyHelp_Condition;
    information  = DIA_Bandyta_SpyHelp_Info;
@@ -71,7 +71,7 @@ FUNC VOID DIA_Bandyta_SpyHelp_Info()
 
 INSTANCE DIA_Bandyta_SpyHelp_NearCamp (C_INFO)
 {
-   npc          = NON_3034_Bandyta;
+   npc          = BAN_1612_Skaza;
    nr           = 2;
    condition    = DIA_Bandyta_SpyHelp_NearCamp_Condition;
    information  = DIA_Bandyta_SpyHelp_NearCamp_Info;
@@ -169,7 +169,7 @@ FUNC VOID DIA_Bandyta_SpyHelp_NearCamp_DRAX_WORK()
 
 INSTANCE DIA_Bandyta_BuddlerEQ (C_INFO)
 {
-   npc          = NON_3034_Bandyta;
+   npc          = BAN_1612_Skaza;
    nr           = 3;
    condition    = DIA_Bandyta_BuddlerEQ_Condition;
    information  = DIA_Bandyta_BuddlerEQ_Info;
@@ -213,7 +213,7 @@ FUNC VOID DIA_Bandyta_BuddlerEQ_Info()
 
 INSTANCE DIA_Bandyta_HELLO5 (C_INFO)
 {
-   npc          = NON_3034_Bandyta;
+   npc          = BAN_1612_Skaza;
    nr           = 5;
    condition    = DIA_Bandyta_HELLO5_Condition;
    information  = DIA_Bandyta_HELLO5_Info;
@@ -244,7 +244,7 @@ FUNC VOID DIA_Bandyta_HELLO5_Info()
 
 INSTANCE DIA_Bandyta_HELLO4 (C_INFO)
 {
-   npc          = NON_3034_Bandyta;
+   npc          = BAN_1612_Skaza;
    nr           = 4;
    condition    = DIA_Bandyta_HELLO4_Condition;
    information  = DIA_Bandyta_HELLO4_Info;
@@ -282,7 +282,7 @@ FUNC VOID DIA_Bandyta_HELLO4_Info()
 
 INSTANCE DIA_Skaza_RAPORT (C_INFO)
 {
-   npc          = NON_3034_Bandyta;
+   npc          = BAN_1612_Skaza;
    nr           = 5;
    condition    = DIA_Skaza_RAPORT_Condition;
    information  = DIA_Skaza_RAPORT_Info;
@@ -324,12 +324,12 @@ FUNC VOID DIA_Skaza_RAPORT_Info()
     AI_Output (self, other ,"DIA_Skaza_GOOOO_03_04"); //Dogadaj siê z jak¹œ wp³ywow¹ osob¹ w Obozie. Mo¿e ktoœ ci pomo¿e?
 	AI_Output (self, other ,"DIA_Skaza_GOOOO_03_05"); //Poci¹gnij te¿ za jêzyk Kopaczy mieszkaj¹cych w okolicach chaty Z³ego. 
 	
-    B_LogEntry                     (CH1_BANMordragRaport,"Zanim dostanê raport, muszê pomóc Skazie z jego k³opotami w obozie.");
+    B_LogEntry                     (CH1_NewsFromSpy,"Zanim dostanê raport, muszê pomóc Skazie z jego k³opotami w obozie.");
 	
-    MordragProblemOC = LOG_RUNNING;
-    Log_CreateTopic          (CH1_MordragProblemOC, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_MordragProblemOC, LOG_RUNNING);
-    B_LogEntry               (CH1_MordragProblemOC,"Skaza kaza³ mi znaleŸæ dowody na to, ¿e Z³y zabi³ Neka, a Œwistak okrad³ Magnatów. Kopacze mieszkaj¹cy w pobli¿u chaty Z³ego powinni wiedzieæ coœ wiêcej o zabójstwie. O kradzie¿y natomiast dowiem siê od Bartholo, jednak muszê jakoœ za³atwiæ sobie spotkanie z tym Magnatem.");
+    MIS_SpysProblems = LOG_RUNNING;
+    Log_CreateTopic          (CH1_SpysProblems, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_SpysProblems, LOG_RUNNING);
+    B_LogEntry               (CH1_SpysProblems,"Skaza kaza³ mi znaleŸæ dowody na to, ¿e Z³y zabi³ Neka, a Œwistak okrad³ Magnatów. Kopacze mieszkaj¹cy w pobli¿u chaty Z³ego powinni wiedzieæ coœ wiêcej o zabójstwie. O kradzie¿y natomiast dowiem siê od Bartholo, jednak muszê jakoœ za³atwiæ sobie spotkanie z tym Magnatem.");
 };
 
 //========================================
@@ -338,7 +338,7 @@ FUNC VOID DIA_Skaza_RAPORT_Info()
 
 INSTANCE DIA_Skaza_PART1 (C_INFO)
 {
-   npc          = NON_3034_Bandyta;
+   npc          = BAN_1612_Skaza;
    nr           = 8;
    condition    = DIA_Skaza_PART1_Condition;
    information  = DIA_Skaza_PART1_Info;
@@ -370,7 +370,7 @@ FUNC VOID DIA_Skaza_PART1_Info()
 
 INSTANCE DIA_Skaza_PART2 (C_INFO)
 {
-   npc          = NON_3034_Bandyta;
+   npc          = BAN_1612_Skaza;
    nr           = 9;
    condition    = DIA_Skaza_PART2_Condition;
    information  = DIA_Skaza_PART2_Info;
@@ -381,7 +381,7 @@ INSTANCE DIA_Skaza_PART2 (C_INFO)
 FUNC INT DIA_Skaza_PART2_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_THORUS_ICHTROJE))
-    && (MordragProblemOC == LOG_RUNNING)    
+    && (MIS_SpysProblems == LOG_RUNNING)    
     {
     return TRUE;
     };
@@ -405,7 +405,7 @@ FUNC VOID DIA_Skaza_PART2_Info()
 
 INSTANCE DIA_Skaza_LIFEBANDITOS (C_INFO)
 {
-   npc          = NON_3034_Bandyta;
+   npc          = BAN_1612_Skaza;
    nr           = 10;
    condition    = DIA_Skaza_LIFEBANDITOS_Condition;
    information  = DIA_Skaza_LIFEBANDITOS_Info;
@@ -444,7 +444,7 @@ FUNC VOID DIA_Skaza_LIFEBANDITOS_Info()
 
 INSTANCE DIA_Skaza_ALLWORKSOK (C_INFO)
 {
-   npc          = NON_3034_Bandyta;
+   npc          = BAN_1612_Skaza;
    nr           = 11;
    condition    = DIA_Skaza_ALLWORKSOK_Condition;
    information  = DIA_Skaza_ALLWORKSOK_Info;
@@ -456,7 +456,7 @@ FUNC INT DIA_Skaza_ALLWORKSOK_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Skaza_PART2))
     && (Npc_KnowsInfo (hero, DIA_Skaza_PART1))
-    && (MordragProblemOC == LOG_RUNNING)  
+    && (MIS_SpysProblems == LOG_RUNNING)  
     {
     return TRUE;
     };
@@ -477,11 +477,11 @@ FUNC VOID DIA_Skaza_ALLWORKSOK_Info()
     AI_Output (other, self ,"DIA_Skaza_ALLWORKSOK_15_09"); //Tak.
     AI_Output (self, other ,"DIA_Skaza_ALLWORKSOK_03_10"); //Dobra, teraz ju¿ idŸ do Draxa.
 	
-    B_LogEntry                     (CH1_MordragProblemOC,"Rozwi¹za³em problemy Skazy w Obozie za co otrzyma³em raport, który mogê wreszcie zanieœæ Draxowi.");
-	Log_SetTopicStatus       (CH1_MordragProblemOC, LOG_SUCCESS);
-	MordragProblemOC = LOG_SUCCESS;
+    B_LogEntry                     (CH1_SpysProblems,"Rozwi¹za³em problemy Skazy w Obozie za co otrzyma³em raport, który mogê wreszcie zanieœæ Draxowi.");
+	Log_SetTopicStatus       (CH1_SpysProblems, LOG_SUCCESS);
+	MIS_SpysProblems = LOG_SUCCESS;
 	
-	 B_LogEntry                     (CH1_BANMordragRaport,"Skaza powiedzia³, ¿e Bractwo zawar³o umowê z Gomezem. Stary Obóz w zamian za du¿e iloœci ziela ma pomagaæ w kopalni Stra¿nikom Œwi¹tynnym. Ci z kolei szukaj¹ czegoœ w Starej Kopalni.");
+	 B_LogEntry                     (CH1_NewsFromSpy,"Skaza powiedzia³, ¿e Bractwo zawar³o umowê z Gomezem. Stary Obóz w zamian za du¿e iloœci ziela ma pomagaæ w kopalni Stra¿nikom Œwi¹tynnym. Ci z kolei szukaj¹ czegoœ w Starej Kopalni.");
 	}
 	else
 	{
@@ -491,13 +491,13 @@ FUNC VOID DIA_Skaza_ALLWORKSOK_Info()
 	AI_Output (self, other ,"DIA_Skaza_ALLWORKSOK_03_12"); //Dziwi mnie tylko, ¿e jesteœ cz³onkiem Starego Obozu, a postanowi³eœ mi pomóc. Naprawdê nie wiem, dlaczego to zrobi³eœ.
 	AI_Output (self, other ,"DIA_Skaza_ALLWORKSOK_03_13"); //Mo¿e jesteœ g³upcem? Albo masz w tym jakiœ ukryty cel? Wiesz co, lepiej ju¿ idŸ. 
 	};
-	B_LogEntry               (CH1_MordragProblemOC,"Pomog³em Skazie z jego problemami, jednak nie przekaza³ mi raportu, poniewa¿ do³¹czy³em do innej gildii.");
-	Log_SetTopicStatus       (CH1_MordragProblemOC, LOG_SUCCESS);
-	MordragProblemOC = LOG_SUCCESS;
+	B_LogEntry               (CH1_SpysProblems,"Pomog³em Skazie z jego problemami, jednak nie przekaza³ mi raportu, poniewa¿ do³¹czy³em do innej gildii.");
+	Log_SetTopicStatus       (CH1_SpysProblems, LOG_SUCCESS);
+	MIS_SpysProblems = LOG_SUCCESS;
 	
-	BANMordragRaport = LOG_FAILED;
-	Log_SetTopicStatus       (CH1_BANMordragRaport, LOG_FAILED);
-	B_LogEntry      	(CH1_BANMordragRaport,"Do³¹czy³em do innego Obozu, wiêc to zadanie jest ju¿ dla mnie bez sensu.");
+	MIS_NewsFromSpy = LOG_FAILED;
+	Log_SetTopicStatus       (CH1_NewsFromSpy, LOG_FAILED);
+	B_LogEntry      	(CH1_NewsFromSpy,"Do³¹czy³em do innego Obozu, wiêc to zadanie jest ju¿ dla mnie bez sensu.");
 	B_Givexp (100);
 	};
 };

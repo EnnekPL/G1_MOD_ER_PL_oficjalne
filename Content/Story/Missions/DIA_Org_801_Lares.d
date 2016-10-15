@@ -562,7 +562,7 @@ FUNC VOID  ORG_801_Lares_Reicht_Info()
 		Log_SetTopicStatus	(CH1_BringList,	LOG_FAILED);
 		Log_SetTopicStatus	(CH1_MordragKO,	LOG_FAILED);
 		Log_SetTopicStatus	(CH1_BANDITOS_CAMP,	LOG_FAILED);
-		Log_SetTopicStatus	(CH1_BANMordragRaport,	LOG_FAILED);
+		Log_SetTopicStatus	(CH1_NewsFromSpy,	LOG_FAILED);
 		Log_SetTopicStatus	(CH1_OreInOM,	LOG_FAILED);
 		*/
 	}
@@ -806,7 +806,7 @@ FUNC VOID DIA_Lares_DRAX_CH4_Info()
         MIS_InfoDlaLaresa = LOG_SUCCESS;
 		
 		B_Story_SoldiersValleyDefense ();
-		Npc_ExchangeRoutine (ORG_867_Raeuber,"zwial");
+		Npc_ExchangeRoutine (BAN_1613_Doyle,"zwial");
 	
 
 	
@@ -824,9 +824,9 @@ FUNC VOID DIA_Lares_DRAX_CH4_Info()
     AI_Output (self, other ,"DIA_Lares_DRAX_CH4_03_08"); //Dziêki, m³ody.  
     };
 	
-	if MIS_Bractwo_Kopalnia == log_running
+	if MIS_PsiAbadonedMine == log_running
 	{
-	B_LogEntry                     (CH1_Bractwo_Kopalnia,"Spotka³em siê z Laresem. Stosunki pomiêdzy obozami pogarszaj¹ siê. Muszê stosowaæ siê do instrukcji Szkodnika, aby pomóc naszym przyjacio³om w innych obozach.");
+	B_LogEntry                     (CH4_PsiAbadonedMine,"Spotka³em siê z Laresem. Stosunki pomiêdzy obozami pogarszaj¹ siê. Muszê stosowaæ siê do instrukcji Szkodnika, aby pomóc naszym przyjacio³om w innych obozach.");
 	};
 	
     AI_StopProcessInfos	(self);
@@ -871,7 +871,7 @@ FUNC VOID DIA_Lares_SYTUACJA_W_OB_Info()
     Log_SetTopicStatus       (CH1_InfoDlaLaresa, LOG_SUCCESS);
     MIS_InfoDlaLaresa = LOG_SUCCESS;
 	B_Story_SoldiersValleyDefense ();
-	Npc_ExchangeRoutine (ORG_867_Raeuber,"zwial");
+	Npc_ExchangeRoutine (BAN_1613_Doyle,"zwial");
 	B_GiveXP (670);
 		
 		MIS_PomocTorlofowi = LOG_RUNNING;
@@ -920,9 +920,9 @@ FUNC VOID DIA_Lares_POMOC_TORLOFOWI_Info()
     MIS_PomocTorlofowi  = LOG_SUCCESS;
 	
 	//zadanie - wpis dla cz³onków bractwa
-	if MIS_Bractwo_Kopalnia == log_running
+	if MIS_PsiAbadonedMine == log_running
 	{
-	B_LogEntry                     (CH1_Bractwo_Kopalnia,"Pomog³em Najemnikowi Torlofowi pozbyæ siê Stra¿ników Gomeza z doliny. Jednak moje zadanie jeszcze siê nie koñczy. Muszê porozmawiaæ z samym Lee.");
+	B_LogEntry                     (CH4_PsiAbadonedMine,"Pomog³em Najemnikowi Torlofowi pozbyæ siê Stra¿ników Gomeza z doliny. Jednak moje zadanie jeszcze siê nie koñczy. Muszê porozmawiaæ z samym Lee.");
 	};
 	
 	//exp [500]

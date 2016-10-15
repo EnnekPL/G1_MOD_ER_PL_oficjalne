@@ -173,7 +173,7 @@ FUNC VOID DIA_SZEFU_Quest12_Info()
     AI_Output (self, other ,"DIA_SZEFU_Quest12_03_07"); //Nigdzie nie jest ju¿ bezpiecznie. 
     AI_Output (self, other ,"DIA_SZEFU_Quest12_03_08"); //Dobra, wyœlê wam moich dwóch najlepszych ludzi. Tyle musi wam wystarczyæ.
 	AI_Output (self, other ,"DIA_SZEFU_Quest12_03_09"); //Pójd¹ Rakus i Osko. 
-    B_LogEntry                     (CH1_SupportFromOrcHunters,"Rozmawia³em z Wilsonem. £owca orków dobrze pamiêta Quetnina. Zgodzi³ siê wys³aæ dwóch swoich ludzi do naszego Obozu.");
+    B_LogEntry                     (CH4_SupportFromOrcHunters,"Rozmawia³em z Wilsonem. £owca orków dobrze pamiêta Quetnina. Zgodzi³ siê wys³aæ dwóch swoich ludzi do naszego Obozu.");
 
     B_GiveXP (200);
    // B_LogEntry                     (CH1_CavalornFuck,"Przez przypadek rozwi¹za³em problem Cavalorna z ³owcami orków.");
@@ -216,7 +216,7 @@ FUNC VOID DIA_SZEFU_SectTeam_Info()
     AI_Output (self, other ,"DIA_SZEFU_SectTeam_03_04"); //Szli w kierunku orkowego miasta.
     AI_Output (self, other ,"DIA_SZEFU_SectTeam_03_05"); //Zatrzymali siê na kilka dni przy bagnie i rozbili tam ma³y obóz. 
     AI_Output (self, other ,"DIA_SZEFU_SectTeam_03_06"); //Jednak pewnej nocy wszystko zniknê³o.
-    B_LogEntry                     (CH1_LowcyOrkow,"Wilson widzia³ kilku Stra¿ników Œwi¹tynnych id¹cych w kierunku orkowego miasta. Ma³o prawdopodobne, ¿ebym ich znalaz³. ");
+    B_LogEntry                     (CH3_SearchKalom,"Wilson widzia³ kilku Stra¿ników Œwi¹tynnych id¹cych w kierunku orkowego miasta. Ma³o prawdopodobne, ¿ebym ich znalaz³. ");
     B_GiveXP (150);
 };
 
@@ -281,7 +281,7 @@ INSTANCE DIA_SZEFU_ROBOTA (C_INFO)
 FUNC INT DIA_SZEFU_ROBOTA_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_SZEFU_HELLO))
-    && (kapitel <= 3)
+    && (kapitel == 3)
     {
     return TRUE;
     };
@@ -290,15 +290,15 @@ FUNC INT DIA_SZEFU_ROBOTA_Condition()
 
 FUNC VOID DIA_SZEFU_ROBOTA_Info()
 {
-    AI_Output (self, other ,"DIA_SZEFU_ROBOTA_03_01"); //Jak ju¿ tu jesteœ, to mam dla ciebie ma³e zadanie.
+    AI_Output (self, other ,"DIA_SZEFU_ROBOTA_03_01"); //Widzê ciê ju¿ tu któryœ raz. Œmiem za³o¿yæ, ¿e jeszcze trochê po¿yjesz. Mam wiêc dla ciebie zadanie.
     AI_Output (other, self ,"DIA_SZEFU_ROBOTA_15_02"); //Jakie?
     AI_Output (self, other ,"DIA_SZEFU_ROBOTA_03_03"); //£azisz to tu, to tam. Rozejrzyj siê za jakimiœ dodatkowymi ludŸmi. Ostatnio jeden z naszych skoñczy³ z orkowym toporem w dupie.
     AI_Output (other, self ,"DIA_SZEFU_ROBOTA_15_04"); //Rozumiem. Popytam.
-    MIS_RekruciLowcow = LOG_RUNNING;
+    MIS_NewBloodForOrcHunters = LOG_RUNNING;
 
-    Log_CreateTopic         (CH1_RekruciLowcow, LOG_MISSION);
-    Log_SetTopicStatus      (CH1_RekruciLowcow, LOG_RUNNING);
-    B_LogEntry              (CH1_RekruciLowcow,"Wilson poleci³ mi znaleŸæ jakichœ rekrutów do ich obozu. Có¿, muszê rozmawiaæ z ludŸmi.");
+    Log_CreateTopic         (CH3_NewBloodForOrcHunters, LOG_MISSION);
+    Log_SetTopicStatus      (CH3_NewBloodForOrcHunters, LOG_RUNNING);
+    B_LogEntry              (CH3_NewBloodForOrcHunters,"Wilson poleci³ mi znaleŸæ jakichœ rekrutów do ich obozu. Có¿, muszê rozmawiaæ z ludŸmi.");
     AI_StopProcessInfos	(self);
 };
 /*
@@ -323,7 +323,7 @@ INSTANCE DIA_SZEFU_WERB_GESTAH (C_INFO)
 FUNC INT DIA_SZEFU_WERB_GESTAH_Condition()
 {
     if (gestah_lowca == true)
-    && (MIS_RekruciLowcow == LOG_RUNNING)
+    && (MIS_NewBloodForOrcHunters == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -393,7 +393,7 @@ INSTANCE DIA_SZEFU_DAVOR (C_INFO)
 FUNC INT DIA_SZEFU_DAVOR_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Davor_FIND_BOW))
-    && (MIS_RekruciLowcow == LOG_RUNNING)
+    && (MIS_NewBloodForOrcHunters == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -430,7 +430,7 @@ FUNC INT DIA_SZEFU_SUCCESS_QUEST_REKRUT_Condition()
     if (Npc_KnowsInfo (hero, DIA_SZEFU_DAVOR))
     && (Npc_KnowsInfo (hero, DIA_SZEFU_WERB_GERARD))
     && (Npc_KnowsInfo (hero, DIA_SZEFU_WERB_GESTAH))
-    && (MIS_RekruciLowcow == LOG_RUNNING)
+    && (MIS_NewBloodForOrcHunters == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -443,9 +443,9 @@ FUNC VOID DIA_SZEFU_SUCCESS_QUEST_REKRUT_Info()
     AI_Output (self, other ,"DIA_SZEFU_SUCCESS_QUEST_REKRUT_03_02"); //Spisa³eœ siê rewelacyjnie. Bêd¹ z ciebie ludzie.
     //CreateInvItems (self, ItMiNugget, 100);
     //B_GiveInvItems (self, other, ItMiNugget, 100);
-    B_LogEntry                     (CH1_RekruciLowcow,"Zrekrutowa³em do obozu trzech œwietnych ludzi. Wilson jest mi bardzo wdziêczny. ");
-    Log_SetTopicStatus       (CH1_RekruciLowcow, LOG_SUCCESS);
-    MIS_RekruciLowcow = LOG_SUCCESS;
+    B_LogEntry                     (CH3_NewBloodForOrcHunters,"Zrekrutowa³em do obozu trzech œwietnych ludzi. Wilson jest mi bardzo wdziêczny. ");
+    Log_SetTopicStatus       (CH3_NewBloodForOrcHunters, LOG_SUCCESS);
+    MIS_NewBloodForOrcHunters = LOG_SUCCESS;
 
     B_GiveXP (400);
 };

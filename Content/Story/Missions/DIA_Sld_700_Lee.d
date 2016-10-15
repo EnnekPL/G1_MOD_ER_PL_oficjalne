@@ -1525,9 +1525,9 @@ FUNC VOID DIA_Lee_KOPALNIA_QUENTINA_Info()
     AI_StopProcessInfos	(self);
 	
 	//zadanie - wpis dla cz³onków bractwa
-	if MIS_Bractwo_Kopalnia == log_running
+	if MIS_PsiAbadonedMine == log_running
 	{
-	B_LogEntry                     (CH1_Bractwo_Kopalnia,"Po rozmowie z Lee okaza³o siê, ¿e Nowy Obóz chce pomóc Bandytom odbiæ Opuszczon¹ Kopalniê. Mam siê tam udaæ i odszukaæ zaprzyjaŸnionych Najemników. Lee przestrzeg³ mnie, ¿e Kopalnia jest przeklêta od lat. Szykuje siê nie lada wyzwanie. ");
+	B_LogEntry                     (CH4_PsiAbadonedMine,"Po rozmowie z Lee okaza³o siê, ¿e Nowy Obóz chce pomóc Bandytom odbiæ Opuszczon¹ Kopalniê. Mam siê tam udaæ i odszukaæ zaprzyjaŸnionych Najemników. Lee przestrzeg³ mnie, ¿e Kopalnia jest przeklêta od lat. Szykuje siê nie lada wyzwanie. ");
 	};
 };
 
@@ -1642,11 +1642,11 @@ FUNC VOID DIA_lee_PertractacjieDD_Info()
     B_LogEntry                     (CH1_NC_Mine,"Nowy Obóz dogada³ siê z Quentinem. Mamy zapewnione nowe Ÿród³o rudy ma³ym kosztem.");
     Log_SetTopicStatus       (CH1_NC_Mine, LOG_SUCCESS);
     MIS_NC_Mine = LOG_SUCCESS;
-	if MIS_Bractwo_Kopalnia == log_running
+	if MIS_PsiAbadonedMine == log_running
 	{
-	Log_SetTopicStatus       (CH1_Bractwo_Kopalnia, LOG_SUCCESS);
-    MIS_Bractwo_Kopalnia = LOG_SUCCESS;
-	B_LogEntry                     (CH1_Bractwo_Kopalnia,"Najemnicy zyskali dostêp do Opuszczonej Kopalni, a Gomez zosta³ os³abiony. Tymczasowo uspokoi³em sytuacjê, ale wci¹¿ muszê byæ czujny. Wypada³oby w miêdzyczasie zanieœæ raport Cor Angarowi. Z pewnoœci¹ mnie jakoœ wynagrodzi.");
+	Log_SetTopicStatus       (CH4_PsiAbadonedMine, LOG_SUCCESS);
+    MIS_PsiAbadonedMine = LOG_SUCCESS;
+	B_LogEntry                     (CH4_PsiAbadonedMine,"Najemnicy zyskali dostêp do Opuszczonej Kopalni, a Gomez zosta³ os³abiony. Tymczasowo uspokoi³em sytuacjê, ale wci¹¿ muszê byæ czujny. Wypada³oby w miêdzyczasie zanieœæ raport Cor Angarowi. Z pewnoœci¹ mnie jakoœ wynagrodzi.");
 	};
     B_GiveXP (300);
 };

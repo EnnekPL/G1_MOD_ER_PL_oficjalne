@@ -4,7 +4,7 @@
 
 INSTANCE DIA_RaeuberDoyle_EXIT(C_INFO)
 {
-	npc             = ORG_867_Raeuber;
+	npc             = BAN_1613_Doyle;
 	nr              = 999;
 	condition		= DIA_RaeuberDoyle_EXIT_Condition;
 	information		= DIA_RaeuberDoyle_EXIT_Info;
@@ -34,7 +34,7 @@ FUNC VOID DIA_RaeuberDoyle_EXIT_Info()
 
 INSTANCE DIA_Raeuber_STAN (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 1;
    condition    = DIA_Raeuber_STAN_Condition;
    information  = DIA_Raeuber_STAN_Info;
@@ -79,7 +79,7 @@ FUNC VOID DIA_Raeuber_STAN_Info()
 
 INSTANCE DIA_Raeuber_WYPAD (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 1;
    condition    = DIA_Raeuber_WYPAD_Condition;
    information  = DIA_Raeuber_WYPAD_Info;
@@ -140,7 +140,7 @@ FUNC VOID DIA_Raeuber_WYPAD_Info()
 
 INSTANCE DIA_Raeuber_WYPIERDALAJ (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 2;
    condition    = DIA_Raeuber_WYPIERDALAJ_Condition;
    information  = DIA_Raeuber_WYPIERDALAJ_Info;
@@ -196,7 +196,7 @@ FUNC VOID DIA_Raeuber_WYPIERDALAJ_Info()
 
 INSTANCE DIA_Raeuber_Przejebane (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 1;
    condition    = DIA_Raeuber_Przejebane_Condition;
    information  = DIA_Raeuber_Przejebane_Info;
@@ -228,7 +228,7 @@ FUNC VOID DIA_Raeuber_Przejebane_Info()
 
 INSTANCE DIA_Raeuber_HelloNoGRD (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 1;
    condition    = DIA_Raeuber_HelloNoGRD_Condition;
    information  = DIA_Raeuber_HelloNoGRD_Info;
@@ -262,7 +262,7 @@ FUNC VOID DIA_Raeuber_HelloNoGRD_Info()
 
 INSTANCE DIA_Raeuber_OhGURU (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 2;
    condition    = DIA_Raeuber_OhGURU_Condition;
    information  = DIA_Raeuber_OhGURU_Info;
@@ -292,7 +292,7 @@ FUNC VOID DIA_Raeuber_OhGURU_Info()
 
 INSTANCE DIA_Raeuber_OhKDW (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 3;
    condition    = DIA_Raeuber_OhKDW_Condition;
    information  = DIA_Raeuber_OhKDW_Info;
@@ -331,7 +331,7 @@ var int robotaPALISADA;
 
 INSTANCE DIA_Raeuber_WORK (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 3;
    condition    = DIA_Raeuber_WORK_Condition;
    information  = DIA_Raeuber_WORK_Info;
@@ -393,7 +393,7 @@ FUNC VOID DIA_Raeuber_WORK_NIE()
 
 INSTANCE DIA_Raeuber_END_WORK (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 4;
    condition    = DIA_Raeuber_END_WORK_Condition;
    information  = DIA_Raeuber_END_WORK_Info;
@@ -441,7 +441,7 @@ var int payforteleport_to_banditcamp;
 
 INSTANCE DIA_Raeuber_TELEPORT (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 1;
    condition    = DIA_Raeuber_TELEPORT_Condition;
    information  = DIA_Raeuber_TELEPORT_Info;
@@ -489,7 +489,7 @@ FUNC VOID DIA_Raeuber_TELEPORT_Info()
 
 INSTANCE DIA_Raeuber_BUYTELEPORT (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 1;
    condition    = DIA_Raeuber_BUYTELEPORT_Condition;
    information  = DIA_Raeuber_BUYTELEPORT_Info;
@@ -532,7 +532,7 @@ FUNC VOID DIA_Raeuber_BUYTELEPORT_Info()
 
 INSTANCE DIA_Raeuber_NAPASC (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 5;
    condition    = DIA_Raeuber_NAPASC_Condition;
    information  = DIA_Raeuber_NAPASC_Info;
@@ -629,7 +629,7 @@ FUNC VOID DIA_Raeuber_NAPASC_WAIT()
 
 INSTANCE DIA_Raeuber_UWAGA (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 6;
    condition    = DIA_Raeuber_UWAGA_Condition;
    information  = DIA_Raeuber_UWAGA_Info;
@@ -662,7 +662,7 @@ FUNC VOID DIA_Raeuber_UWAGA_Info()
 
 INSTANCE DIA_Raeuber_PIERWSZY_POSTERUNEK (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 6;
    condition    = DIA_Raeuber_PIERWSZY_POSTERUNEK_Condition;
    information  = DIA_Raeuber_PIERWSZY_POSTERUNEK_Info;
@@ -694,7 +694,7 @@ FUNC VOID DIA_Raeuber_PIERWSZY_POSTERUNEK_Info()
 
 INSTANCE DIA_Raeuber_DRUGI_POSTERUNEK (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 6;
    condition    = DIA_Raeuber_DRUGI_POSTERUNEK_Condition;
    information  = DIA_Raeuber_DRUGI_POSTERUNEK_Info;
@@ -726,7 +726,7 @@ FUNC VOID DIA_Raeuber_DRUGI_POSTERUNEK_Info()
 
 INSTANCE DIA_Raeuber_SPADAMY (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 7;
    condition    = DIA_Raeuber_SPADAMY_Condition;
    information  = DIA_Raeuber_SPADAMY_Info;
@@ -769,7 +769,7 @@ FUNC VOID DIA_Raeuber_SPADAMY_Info()
 
 INSTANCE DIA_Raeuber_RayansDie (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 1;
    condition    = DIA_Raeuber_RayansDie_Condition;
    information  = DIA_Raeuber_RayansDie_Info;
@@ -814,7 +814,7 @@ FUNC VOID DIA_Raeuber_RayansDie_Info()
 
 INSTANCE DIA_Raeuber_PolowanieNaZebacze (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 1;
    condition    = DIA_Raeuber_PolowanieNaZebacze_Condition;
    information  = DIA_Raeuber_PolowanieNaZebacze_Info;
@@ -847,11 +847,11 @@ FUNC VOID DIA_Raeuber_PolowanieNaZebacze_Go()
 {
     AI_Output (other, self ,"DIA_Raeuber_PolowanieNaZebacze_Go_15_01"); //Idziemy!
     AI_Output (self, other ,"DIA_Raeuber_PolowanieNaZebacze_Go_03_02"); //Dobra. Zg³oœ siê jak bêdziesz gotów.
-    MIS_PolowanieZDoylem = LOG_RUNNING;
+    MIS_HuntingWithDoyle = LOG_RUNNING;
 
-    Log_CreateTopic            (CH1_PolowanieZDoylem, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_PolowanieZDoylem, LOG_RUNNING);
-    B_LogEntry                     (CH1_PolowanieZDoylem,"Doyle zaproponowa³ mi wspólne polowanie na zêbacze.");
+    Log_CreateTopic            (CH3_HuntingWithDoyle, LOG_MISSION);
+    Log_SetTopicStatus       (CH3_HuntingWithDoyle, LOG_RUNNING);
+    B_LogEntry                     (CH3_HuntingWithDoyle,"Doyle zaproponowa³ mi wspólne polowanie na zêbacze.");
     Info_ClearChoices		(DIA_Raeuber_PolowanieNaZebacze);
     AI_StopProcessInfos	(self);
 };
@@ -869,7 +869,7 @@ FUNC VOID DIA_Raeuber_PolowanieNaZebacze_NotTime()
 
 INSTANCE DIA_Raeuber_Letsgo256 (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 2;
    condition    = DIA_Raeuber_Letsgo256_Condition;
    information  = DIA_Raeuber_Letsgo256_Info;
@@ -879,7 +879,7 @@ INSTANCE DIA_Raeuber_Letsgo256 (C_INFO)
 
 FUNC INT DIA_Raeuber_Letsgo256_Condition()
 {
-    if (MIS_PolowanieZDoylem == LOG_RUNNING)
+    if (MIS_HuntingWithDoyle == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -902,7 +902,7 @@ FUNC VOID DIA_Raeuber_Letsgo256_Info()
 
 INSTANCE DIA_Raeuber_Bezpiecznie (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 3;
    condition    = DIA_Raeuber_Bezpiecznie_Condition;
    information  = DIA_Raeuber_Bezpiecznie_Info;
@@ -926,9 +926,9 @@ FUNC VOID DIA_Raeuber_Bezpiecznie_Info()
     AI_Output (self, other ,"DIA_Raeuber_Bezpiecznie_03_01"); //Wreszcie pozbyliœmy siê tych cholernych zêbaczy,
     AI_Output (self, other ,"DIA_Raeuber_Bezpiecznie_03_02"); //W jaskini poza trupami wêdrowców chyba nic nie ma.
     AI_Output (self, other ,"DIA_Raeuber_Bezpiecznie_03_03"); //Ja wracam do Obozu. B¹dŸ ostro¿ny.
-    B_LogEntry                     (CH1_PolowanieZDoylem,"Wybiliœmy zêbacze z jaskini. Mogê wracaæ do Obozu.");
-    Log_SetTopicStatus       (CH1_PolowanieZDoylem, LOG_SUCCESS);
-    MIS_PolowanieZDoylem = LOG_SUCCESS;
+    B_LogEntry                     (CH3_HuntingWithDoyle,"Wybiliœmy zêbacze z jaskini. Mogê wracaæ do Obozu.");
+    Log_SetTopicStatus       (CH3_HuntingWithDoyle, LOG_SUCCESS);
+    MIS_HuntingWithDoyle = LOG_SUCCESS;
 
     B_GiveXP (500);
     AI_StopProcessInfos	(self);
@@ -956,7 +956,7 @@ zmodyfikowane styczeñ 2015
 
 INSTANCE DIA_Raeuber_OSTRZEGAM (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 2;
    condition    = DIA_Raeuber_OSTRZEGAM_Condition;
    information  = DIA_Raeuber_OSTRZEGAM_Info;
@@ -995,7 +995,7 @@ FUNC VOID DIA_Raeuber_OSTRZEGAM_Info()
 
 INSTANCE DIA_Raeuber_czegoTuKapitel4 (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 1;
    condition    = DIA_Raeuber_czegoTuKapitel4_Condition;
    information  = DIA_Raeuber_czegoTuKapitel4_Info;
@@ -1030,7 +1030,7 @@ FUNC VOID DIA_Raeuber_czegoTuKapitel4_Info()
 
 INSTANCE DIA_Raeuber_Corobisz (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 1;
    condition    = DIA_Raeuber_Corobisz_Condition;
    information  = DIA_Raeuber_Corobisz_Info;
@@ -1069,7 +1069,7 @@ FUNC VOID DIA_Raeuber_Corobisz_Info()
 
 INSTANCE DIA_Raeuber_FindFriend2 (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 2;
    condition    = DIA_Raeuber_FindFriend2_Condition;
    information  = DIA_Raeuber_FindFriend2_Info;
@@ -1112,7 +1112,7 @@ FUNC VOID DIA_Raeuber_FindFriend2_Info()
 
 INSTANCE DIA_Raeuber_backtoCamp (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 1;
    condition    = DIA_Raeuber_backtoCamp_Condition;
    information  = DIA_Raeuber_backtoCamp_Info;
@@ -1145,7 +1145,7 @@ FUNC VOID DIA_Raeuber_backtoCamp_Info()
 
 INSTANCE DIA_Raeuber_ZNANY_NAJEMNIK (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 1;
    condition    = DIA_Raeuber_ZNANY_NAJEMNIK_Condition;
    information  = DIA_Raeuber_ZNANY_NAJEMNIK_Info;
@@ -1179,9 +1179,9 @@ FUNC VOID DIA_Raeuber_ZNANY_NAJEMNIK_Info()
     //AI_Output (other, self ,"DIA_Raeuber_ZNANY_NAJEMNIK_15_13"); //Nie mogê w to uwierzyæ! Jesteœ pewien, ¿e nie ¿yj¹?
     //AI_Output (self, other ,"DIA_Raeuber_ZNANY_NAJEMNIK_03_14"); //Nie mam wprawdzie ¿adnych dowodów, ale co innego mog³o ich spotkaæ?
     MIS_BanditsInTroubles = LOG_RUNNING;
-    Npc_ExchangeRoutine (ORG_819_Drax, "ded");
-	CreateInvItems (ORG_819_Drax, ItMi_Listdraxa,1);
-	B_KillNpc (ORG_819_Drax);
+    Npc_ExchangeRoutine (BAN_1614_Drax, "ded");
+	CreateInvItems (BAN_1614_Drax, ItMi_Listdraxa,1);
+	B_KillNpc (BAN_1614_Drax);
 	
     Log_CreateTopic          (CH4_BanditsInTroubles, LOG_MISSION);
     Log_SetTopicStatus       (CH4_BanditsInTroubles, LOG_RUNNING);
@@ -1195,7 +1195,7 @@ FUNC VOID DIA_Raeuber_ZNANY_NAJEMNIK_Info()
 
 INSTANCE DIA_Raeuber_BANDYCI_ZYJA (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 1;
    condition    = DIA_Raeuber_BANDYCI_ZYJA_Condition;
    information  = DIA_Raeuber_BANDYCI_ZYJA_Info;
@@ -1242,7 +1242,7 @@ FUNC VOID DIA_Raeuber_BANDYCI_ZYJA_Info()
 
 INSTANCE DIA_Raeuber_MOGE_WRACAC (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 2;
    condition    = DIA_Raeuber_MOGE_WRACAC_Condition;
    information  = DIA_Raeuber_MOGE_WRACAC_Info;
@@ -1285,7 +1285,7 @@ FUNC VOID DIA_Raeuber_MOGE_WRACAC_Info()
 
 INSTANCE DIA_Raeuber_GoL (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 1;
    condition    = DIA_Raeuber_GoL_Condition;
    information  = DIA_Raeuber_GoL_Info;
@@ -1323,7 +1323,7 @@ FUNC VOID DIA_Raeuber_GoL_Info()
 
 INSTANCE DIA_Raeuber_Ready (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 1;
    condition    = DIA_Raeuber_Ready_Condition;
    information  = DIA_Raeuber_Ready_Info;
@@ -1372,7 +1372,7 @@ FUNC VOID DIA_Raeuber_Ready_Info()
 
 INSTANCE DIA_Raeuber_BackToHome (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 2;
    condition    = DIA_Raeuber_BackToHome_Condition;
    information  = DIA_Raeuber_BackToHome_Info;
@@ -1406,7 +1406,7 @@ FUNC VOID DIA_Raeuber_BackToHome_Info()
 
 INSTANCE DIA_Raeuber_Spiepszam (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 1;
    condition    = DIA_Raeuber_Spiepszam_Condition;
    information  = DIA_Raeuber_Spiepszam_Info;
@@ -1444,7 +1444,7 @@ FUNC VOID DIA_Raeuber_Spiepszam_Info()
 
 INSTANCE DIA_Raeuber_NoNareszcie (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 1;
    condition    = DIA_Raeuber_NoNareszcie_Condition;
    information  = DIA_Raeuber_NoNareszcie_Info;
@@ -1509,7 +1509,7 @@ FUNC VOID DIA_Raeuber_NoNareszcie_Info()
 
 INSTANCE DIA_Raeuber_MamKamien (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 1;
    condition    = DIA_Raeuber_MamKamien_Condition;
    information  = DIA_Raeuber_MamKamien_Info;
@@ -1545,7 +1545,7 @@ HeroMaArtefakt = false;
 
 INSTANCE DIA_Raeuber_PowrotzKopalni (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 1;
    condition    = DIA_Raeuber_PowrotzKopalni_Condition;
    information  = DIA_Raeuber_PowrotzKopalni_Info;
@@ -1576,7 +1576,7 @@ FUNC VOID DIA_Raeuber_PowrotzKopalni_Info()
 
 INSTANCE DIA_Raeuber_PiratArmorDoyle (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 1;
    condition    = DIA_Raeuber_PiratArmorDoyle_Condition;
    information  = DIA_Raeuber_PiratArmorDoyle_Info;
@@ -1612,7 +1612,7 @@ FUNC VOID DIA_Raeuber_PiratArmorDoyle_Info()
 /*
 INSTANCE DIA_Raeuber_POSZ (C_INFO)
 {
-   npc          = ORG_867_Raeuber;
+   npc          = BAN_1613_Doyle;
    nr           = 1;
    condition    = DIA_Raeuber_POSZ_Condition;
    information  = DIA_Raeuber_POSZ_Info;
@@ -1646,7 +1646,7 @@ var int log_Doylefight;/*
 //-------------------------------------------------------------------------
 instance  BAU_867_Doyle_ZWEIHAND1 (C_INFO)
 {
-	npc				= ORG_867_Raeuber;
+	npc				= BAN_1613_Doyle;
 	condition		= BAU_867_Doyle_ZWEIHAND1_Condition;
 	information		= BAU_867_Doyle_ZWEIHAND1_Info;
 	important		= 0;
@@ -1698,7 +1698,7 @@ FUNC void  BAU_867_Doyle_ZWEIHAND1_Info()
 //-------------------------------------------------------------------------
 instance  BAU_867_Doyle_ZWEIHAND2 (C_INFO)
 {
-	npc				= ORG_867_Raeuber;
+	npc				= BAN_1613_Doyle;
 	condition		= BAU_867_Doyle_ZWEIHAND2_Condition;
 	information		= BAU_867_Doyle_ZWEIHAND2_Info;
 	important		= 0;
@@ -1744,7 +1744,7 @@ FUNC void  BAU_867_Doyle_ZWEIHAND2_Info()
 //---------------------------------------------------------------
 instance  ORG_867_Doyle_TEACH_2H (C_INFO)
 {
-	npc				= ORG_867_Raeuber;
+	npc				= BAN_1613_Doyle;
 	condition		= ORG_867_Doyle_TEACH_2H_Condition;
 	information		= ORG_867_Doyle_TEACH_2H_Info;
 	permanent		= 0;
@@ -1774,7 +1774,7 @@ FUNC void  ORG_867_Doyle_TEACH_2H_Info()
 //---------------------------------------------------------------
 instance  ORG_867_Doyle_TEACH_2H_START (C_INFO)
 {
-	npc				= ORG_867_Raeuber;
+	npc				= BAN_1613_Doyle;
 	condition		= ORG_867_Doyle_TEACH_2H_START_Condition;
 	information		= ORG_867_Doyle_TEACH_2H_START_Info;
 	permanent		= 1;

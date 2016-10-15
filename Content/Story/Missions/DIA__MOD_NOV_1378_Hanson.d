@@ -4,7 +4,7 @@
 
 INSTANCE DIA_Hanson_EXIT(C_INFO)
 {
-	npc             = NOV_5008_Hanson;
+	npc             = NOV_1378_Hanson;
 	nr              = 999;
 	condition		= DIA_Hanson_EXIT_Condition;
 	information		= DIA_Hanson_EXIT_Info;
@@ -32,7 +32,7 @@ FUNC VOID DIA_Hanson_EXIT_Info()
 
 INSTANCE DIA_Hanson_WHO (C_INFO)
 {
-   npc          = NOV_5008_Hanson;
+   npc          = NOV_1378_Hanson;
    nr           = 1;
    condition    = DIA_Hanson_WHO_Condition;
    information  = DIA_Hanson_WHO_Info;
@@ -60,7 +60,7 @@ FUNC VOID DIA_Hanson_WHO_Info()
 
 INSTANCE DIA_Hanson_PRACA (C_INFO)
 {
-   npc          = NOV_5008_Hanson;
+   npc          = NOV_1378_Hanson;
    nr           = 2;
    condition    = DIA_Hanson_PRACA_Condition;
    information  = DIA_Hanson_PRACA_Info;
@@ -93,7 +93,7 @@ FUNC VOID DIA_Hanson_PRACA_Info()
 
 INSTANCE DIA_Hanson_STEH (C_INFO)
 {
-   npc          = NOV_5008_Hanson;
+   npc          = NOV_1378_Hanson;
    nr           = 1;
    condition    = DIA_Hanson_STEH_Condition;
    information  = DIA_Hanson_STEH_Info;
@@ -131,7 +131,7 @@ FUNC VOID DIA_Hanson_STEH_Info()
 
 INSTANCE DIA_Hanson_QUEST2_D (C_INFO)
 {
-   npc          = NOV_5008_Hanson;
+   npc          = NOV_1378_Hanson;
    nr           = 5;
    condition    = DIA_Hanson_QUEST2_D_Condition;
    information  = DIA_Hanson_QUEST2_D_Info;

@@ -123,7 +123,7 @@ FUNC VOID DIA_Kyle_DOPUKI_Info()
 	AI_Output (self, other ,"DIA_Kyle_DOPUKI_03_09"); //Uwierz mi, ¿e to, ¿e przez moj¹ chatê przelatuje wiêcej sukinsynów ni¿ przez portow¹ dziwkê jeszcze nie kwalifikuje mnie do zostania samobójc¹.
     AI_Output (other, self ,"DIA_Kyle_DOPUKI_15_10"); //Postaram siê coœ zrobiæ z ludŸmi Z³ego. Liczê, ¿e wtedy mi pomo¿esz. 
     AI_Output (self, other ,"DIA_Kyle_DOPUKI_15_11"); //Byæ mo¿e...
-    B_LogEntry                     (CH1_MordragProblemOC,"Kyle potwierdzi zabójstwo tylko, gdy pozbêdê siê siepaczy Z³ego.");
+    B_LogEntry                     (CH1_SpysProblems,"Kyle potwierdzi zabójstwo tylko, gdy pozbêdê siê siepaczy Z³ego.");
 	HeroKnowsSlyKillNek = true;
 };
 
@@ -145,7 +145,7 @@ FUNC INT DIA_Kyle_ZABICI_Condition()
 {
     if (Npc_IsDead(GRD_2014_Siepacz))
     && (Npc_IsDead(GRD_2013_Siepacz))
-    && (MordragProblemOC == LOG_RUNNING)
+    && (MIS_SpysProblems == LOG_RUNNING)
     && (Npc_KnowsInfo (hero, DIA_Kyle_DOPUKI))
     {
     return TRUE;
@@ -159,7 +159,7 @@ FUNC VOID DIA_Kyle_ZABICI_Info()
     AI_Output (self, other ,"DIA_Kyle_ZABICI_03_02"); //Naprawdê nie ¿yj¹?
     AI_Output (other, self ,"DIA_Kyle_ZABICI_15_03"); //Mo¿na rzec, ¿e w¹chaj¹ kwiatki od spodu.
     AI_Output (self, other ,"DIA_Kyle_ZABICI_03_04"); //Nie do wiary. Mo¿esz liczyæ na moj¹ pomoc.
-    B_LogEntry                     (CH1_MordragproblemOC,"Kyle doniesie na Z³ego do Thorusa.");
+    B_LogEntry                     (CH1_SpysProblems,"Kyle doniesie na Z³ego do Thorusa.");
 };
 
 

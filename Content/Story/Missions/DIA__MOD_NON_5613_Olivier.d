@@ -118,12 +118,12 @@ FUNC VOID DIA_Olivier_HELLO3_Info()
     AI_Output (self, other ,"DIA_Olivier_HELLO3_03_07"); //Przygotuj siê dobrze przed walk¹. Ten zwierzak to ze 400 kilogramów miêsa. 
     AI_Output (self, other ,"DIA_Olivier_HELLO3_03_08"); //Pogadaj z Clawem. Przydadz¹ siê mikstury czasowo zwiêkszaj¹ce si³ê.
     AI_Output (other, self ,"DIA_Olivier_HELLO3_15_09"); //Wrócê, gdy bêdê gotowy.
-    MIS_PolowanieNaMorakha = LOG_RUNNING;
+    MIS_MorakhHunting = LOG_RUNNING;
 
 
-    Log_CreateTopic            (CH1_PolowanieNaMorakha, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_PolowanieNaMorakha, LOG_RUNNING);
-    B_LogEntry                     (CH1_PolowanieNaMorakha,"Muszê pomóc Olivierowi zapolowaæ na Bestiê. Powinienem siê uprzednio dobrze przygotowaæ do walki. Pomóc mi w tym mo¿e Claw.");
+    Log_CreateTopic            (CH1_MorakhHunting, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_MorakhHunting, LOG_RUNNING);
+    B_LogEntry                     (CH1_MorakhHunting,"Muszê pomóc Olivierowi zapolowaæ na Bestiê. Powinienem siê uprzednio dobrze przygotowaæ do walki. Pomóc mi w tym mo¿e Claw.");
 };
 
 //========================================
@@ -142,7 +142,7 @@ INSTANCE DIA_Olivier_HELLO4 (C_INFO)
 
 FUNC INT DIA_Olivier_HELLO4_Condition()
 {
-    if (MIS_PolowanieNaMorakha == LOG_RUNNING)
+    if (MIS_MorakhHunting == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -224,9 +224,9 @@ FUNC VOID DIA_Olivier_HELLO6_Info()
     AI_Output (other, self ,"DIA_Olivier_HELLO6_15_02"); //Nie ukrywam, ¿e ten potwór jest obrzydliwy.
     AI_Output (self, other ,"DIA_Olivier_HELLO6_03_03"); //Najwa¿niejsze, ¿e to œcierwo ju¿ nigdy nam nie zagrozi.
     AI_Output (self, other ,"DIA_Olivier_HELLO6_03_04"); //Zabierz jego pazury. Pewnie s¹ sporo warte.
-    B_LogEntry                     (CH1_PolowanieNaMorakha,"Olivier nie zmyœla³. W okolicy naprawdê grasowa³ paskudny stwór. Na szczêœcie uda³o nam siê go wspólnie pokonaæ.");
-    Log_SetTopicStatus       (CH1_PolowanieNaMorakha, LOG_SUCCESS);
-    MIS_PolowanieNaMorakha = LOG_SUCCESS;
+    B_LogEntry                     (CH1_MorakhHunting,"Olivier nie zmyœla³. W okolicy naprawdê grasowa³ paskudny stwór. Na szczêœcie uda³o nam siê go wspólnie pokonaæ.");
+    Log_SetTopicStatus       (CH1_MorakhHunting, LOG_SUCCESS);
+    MIS_MorakhHunting = LOG_SUCCESS;
 	self.aivar[AIV_PARTYMEMBER] = FALSE;
     B_GiveXP (300);
     Npc_ExchangeRoutine (self, "work");

@@ -191,7 +191,7 @@ FUNC VOID DIA_Gestath_LOWCA_EXPERIENCE()
     AI_Output (self, other ,"DIA_Gestath_LOWCA_EXPERIENCE_03_09"); //Ach, ju¿ wiem o czym mówisz. Wkrótce siê tam wybiorê.
 
     Npc_ExchangeRoutine (self, "hunters");//fix
-    B_LogEntry                     (CH1_RekruciLowcow,"Przekona³em Gestatha, ¿e obóz ³owców orków to jego miejsce. Mogê pogadaæ z Wilsonem. ");
+    B_LogEntry                     (CH3_NewBloodForOrcHunters,"Przekona³em Gestatha, ¿e obóz ³owców orków to jego miejsce. Mogê pogadaæ z Wilsonem. ");
 	gestah_lowca = true;
     B_GiveXP (250);
     Info_ClearChoices		(DIA_Gestath_LOWCA);

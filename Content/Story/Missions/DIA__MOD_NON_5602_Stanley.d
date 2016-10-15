@@ -565,7 +565,7 @@ INSTANCE DIA_Stanley_Arrows (C_INFO)
 
 FUNC INT DIA_Stanley_Arrows_Condition()
 {
-    if (MIS_PracaUMysliwych == LOG_RUNNING)
+    if (MIS_JobInHuntersCamp == LOG_RUNNING)
     && (Npc_HasItems (other, ItAmArrow) >=50)
     {
     return TRUE;
@@ -580,7 +580,7 @@ FUNC VOID DIA_Stanley_Arrows_Info()
     AI_Output (other, self ,"DIA_Stanley_Arrows_15_03"); //Otrzyma³em zadanie od Alexa.
     AI_Output (self, other ,"DIA_Stanley_Arrows_03_04"); //Rozumiem. Dziêki za pomoc.
     B_GiveInvItems (other, self, ItAmArrow, 50);
-    B_LogEntry                     (CH1_PracaUMysliwych,"Stanley otrzyma³ swoje 50 strza³. ");
+    B_LogEntry                     (CH1_JobInHuntersCamp,"Stanley otrzyma³ swoje 50 strza³. ");
 
     B_GiveXP (100);
     AI_StopProcessInfos	(self);
@@ -704,7 +704,7 @@ INSTANCE DIA_Stanley_POLOWANIE_IMPORTANT (C_INFO)
 FUNC INT DIA_Stanley_POLOWANIE_IMPORTANT_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Firn_StaryZaruchal))
-    && (MIS_KradziezUMysliwych == LOG_RUNNING)
+    && (MIS_TheftInHuntersCamp == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -717,11 +717,11 @@ FUNC VOID DIA_Stanley_POLOWANIE_IMPORTANT_Info()
     AI_Output (self, other ,"DIA_Stanley_POLOWANIE_IMPORTANT_03_02"); //Idziesz ze mn¹ na polowanie. Musimy siê pozbyæ goblinów z okolicy. 
     AI_Output (other, self ,"DIA_Stanley_POLOWANIE_IMPORTANT_15_03"); //No dobra.
     AI_Output (self, other ,"DIA_Stanley_POLOWANIE_IMPORTANT_03_04"); //Zaprowadzê ciê. Powiedz, gdy bêdziesz gotowy.
-    MIS_GoblinyUMysliwych = LOG_RUNNING;
+    MIS_OnerousGobbos = LOG_RUNNING;
 
-    Log_CreateTopic            (CH1_GoblinyUMysliwych, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_GoblinyUMysliwych, LOG_RUNNING);
-    B_LogEntry                     (CH1_GoblinyUMysliwych,"Gobliny mieszkaj¹ce w okolicy obozu myœliwych sta³y siê niewyobra¿alnie uci¹¿liwe. Razem ze Stanleyem mamy zredukowaæ ich liczbê. ");
+    Log_CreateTopic            (CH1_OnerousGobbos, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_OnerousGobbos, LOG_RUNNING);
+    B_LogEntry                     (CH1_OnerousGobbos,"Gobliny mieszkaj¹ce w okolicy obozu myœliwych sta³y siê niewyobra¿alnie uci¹¿liwe. Razem ze Stanleyem mamy zredukowaæ ich liczbê. ");
 };
 
 //========================================
@@ -788,9 +788,9 @@ FUNC VOID DIA_Stanley_UkonczoneGobliny_Info()
     AI_Output (self, other ,"DIA_Stanley_UkonczoneGobliny_03_01"); //No i jesteœmy. 
     AI_Output (other, self ,"DIA_Stanley_UkonczoneGobliny_15_02"); //Pozbyliœmy siê trochê tego cholerstwa.
     AI_Output (self, other ,"DIA_Stanley_UkonczoneGobliny_03_03"); //Dobra robota. Ja wracam do obozu. Jak chcesz, to mo¿esz tu chwilê powêszyæ. 
-    B_LogEntry                     (CH1_GoblinyUMysliwych,"Dotarliœmy do jaskini goblinów zabijaj¹c czêœæ po drodze. Chyba warto przeszukaæ jaskiniê. ");
-    Log_SetTopicStatus       (CH1_GoblinyUMysliwych, LOG_SUCCESS);
-    MIS_GoblinyUMysliwych = LOG_SUCCESS;
+    B_LogEntry                     (CH1_OnerousGobbos,"Dotarliœmy do jaskini goblinów zabijaj¹c czêœæ po drodze. Chyba warto przeszukaæ jaskiniê. ");
+    Log_SetTopicStatus       (CH1_OnerousGobbos, LOG_SUCCESS);
+    MIS_OnerousGobbos = LOG_SUCCESS;
 	var C_NPC Stanley	; Stanley 	= Hlp_GetNpc (NON_5602_Stanley	);
 	Stanley.Npctype = NPCTYPE_MAIN;
 	Stanley.flags 	= 0;

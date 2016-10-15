@@ -298,7 +298,7 @@ INSTANCE DIA_Jens_TalkWithSmith (C_INFO)
 
 FUNC INT DIA_Jens_TalkWithSmith_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Raeuber_FindSwordAlibi))
+    if (Npc_KnowsInfo (hero, DIA_Smith_FindSwordAlibi))
     {
     return TRUE;
     };
@@ -416,43 +416,6 @@ FUNC VOID DIA_Jens_Idziesz_Info()
     AI_StopProcessInfos	(self);
 };
 
-//========================================
-//-----------------> Okregi
-//========================================
-
-INSTANCE DIA_Jens_Okregi (C_INFO)
-{
-   npc          = BAN_1604_Jens;
-   nr           = 1;
-   condition    = DIA_Jens_Okregi_Condition;
-   information  = DIA_Jens_Okregi_Info;
-   permanent	= FALSE;
-   description	= "Potrzebujê kó³ zêbatych.";
-};
-
-FUNC INT DIA_Jens_Okregi_Condition()
-{
-    if (MIS_NoweKola == LOG_RUNNING)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Jens_Okregi_Info()
-{
-    AI_Output (other, self ,"DIA_Jens_Okregi_15_01"); //Potrzebujê kó³ zêbatych.
-    AI_Output (other, self ,"DIA_Jens_Okregi_15_02"); //Najlepiej takich z z¹bkiem na dwa palce.
-    AI_Output (self, other ,"DIA_Jens_Okregi_03_03"); //Akurat mia³em jedno na stanie.
-    AI_Output (other, self ,"DIA_Jens_Okregi_15_04"); //Potrzebne mi s¹ dwa.
-    AI_Output (self, other ,"DIA_Jens_Okregi_03_05"); //Niestety, musisz pogadaæ z kimœ innym.
-    B_LogEntry                     (CH1_NoweKola,"Jens da³ mi tylko jedno ko³o zêbate. Reszty muszê szukaæ gdzieœ indziej.");
-
-    B_GiveXP (60);
-    CreateInvItems (self, BigGear, 1);
-    B_GiveInvItems (self, other, BigGear, 1);
-    AI_StopProcessInfos	(self);
-};
 
 //========================================
 //-----------------> HeavyArmor

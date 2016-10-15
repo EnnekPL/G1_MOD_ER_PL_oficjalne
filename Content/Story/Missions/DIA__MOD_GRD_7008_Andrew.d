@@ -235,11 +235,11 @@ func void DIA_Andrew_QUEST_OFC ()
 	AI_Output (other, self ,"DIA_Andrew_QUEST_OFC_15_01"); //Jasne, powinniœmy sobie pomagaæ.
 	AI_Output (self, other ,"DIA_Andrew_QUEST_OFC_03_02"); //I takiej odpowiedzi oczekiwa³em! Powiedz, gdy bêdziesz gotów.
 	
-	MIS_OchroniarzOM = LOG_RUNNING;
+	MIS_Bodyguard = LOG_RUNNING;
 
-    Log_CreateTopic            	(CH1_OchroniarzOM, LOG_MISSION);
-    Log_SetTopicStatus       	(CH1_OchroniarzOM, LOG_RUNNING);
-    B_LogEntry                  (CH1_OchroniarzOM,"Andrew ma niema³e k³opoty z paserem z Nowego Obozu. Handlarz z obozu przed kopalni¹ jest winny Szkodnikowi 250 bry³ek rudy. Mam iœæ z nim i chroniæ go, podczas gdyby jego kontrahent nie by³ zbyt skory do negocjacji.");
+    Log_CreateTopic            	(CH1_Bodyguard, LOG_MISSION);
+    Log_SetTopicStatus       	(CH1_Bodyguard, LOG_RUNNING);
+    B_LogEntry                  (CH1_Bodyguard,"Andrew ma niema³e k³opoty z paserem z Nowego Obozu. Handlarz z obozu przed kopalni¹ jest winny Szkodnikowi 250 bry³ek rudy. Mam iœæ z nim i chroniæ go, podczas gdyby jego kontrahent nie by³ zbyt skory do negocjacji.");
 	Info_ClearChoices 	(DIA_Andrew_QUEST);
 };
     
@@ -259,7 +259,7 @@ INSTANCE DIA_Andrew_LETSGONNAHATE (C_INFO)
 
 FUNC INT DIA_Andrew_LETSGONNAHATE_Condition()
 {
-    if  (MIS_OchroniarzOM == LOG_RUNNING) && (kapitel < 4)
+    if  (MIS_Bodyguard == LOG_RUNNING) && (kapitel < 4)
     {
     return TRUE;
     };
@@ -324,7 +324,7 @@ FUNC VOID DIA_Andrew_HELLO7_Info()
 	AI_Output (self, other ,"DIA_Andrew_HELLO7_03_03"); //Jest tam gdzieœ Sharky? Nie widzê go. Czy¿by nas oszuka³?
     AI_Output (other, self ,"DIA_Andrew_HELLO7_15_04"); //A co z negocjacjami?
     AI_Output (self, other ,"DIA_Andrew_HELLO7_03_05"); //Sharky nawet siê nie zjawi³, a ci durnie raczej nie s¹ sk³onni do negocjacji.
-    B_LogEntry                     (CH1_OchroniarzOM,"Sharky nie pojawi³ siê na moœcie. Zamiast niego sta³o tam trzech osi³ków. Andrew postanowi³, ¿e od razu zaatakujemy przeciwników. Muszê uwa¿aæ na Alvaro. Ponoæ to silny Najemnik z Nowego Obozu.");
+    B_LogEntry                     (CH1_Bodyguard,"Sharky nie pojawi³ siê na moœcie. Zamiast niego sta³o tam trzech osi³ków. Andrew postanowi³, ¿e od razu zaatakujemy przeciwników. Muszê uwa¿aæ na Alvaro. Ponoæ to silny Najemnik z Nowego Obozu.");
 	Npc_ExchangeRoutine (GRD_7008_Tukash,"atak2");
 	AI_StopProcessInfos	(self);
 };
@@ -360,7 +360,7 @@ FUNC VOID DIA_Andrew_Wygrana_Info()
     AI_Output (self, other ,"DIA_Andrew_Wygrana_03_01"); //Dobra robota. Te gnidy nie ¿yj¹!
     AI_Output (other, self ,"DIA_Andrew_Wygrana_15_02"); //Co robimy dalej?
     AI_Output (self, other ,"DIA_Andrew_Wygrana_03_03"); //Musimy poszukaæ Sharky'ego. ProwadŸ.
-    B_LogEntry                     (CH1_OchroniarzOM,"Pokonaliœmy zbirów, teraz musimy odnaleŸæ Sharky'ego, który wed³ug Andrewa na pewno zaczai³ siê w okolicy.");
+    B_LogEntry                     (CH1_Bodyguard,"Pokonaliœmy zbirów, teraz musimy odnaleŸæ Sharky'ego, który wed³ug Andrewa na pewno zaczai³ siê w okolicy.");
 	Npc_ExchangeRoutine (GRD_7008_Tukash,"follow");
     AI_StopProcessInfos	(GRD_7008_Tukash);
 }; 
@@ -395,9 +395,9 @@ FUNC VOID DIA_Andrew_FindSharky_Info()
 	AI_Output (self, other ,"DIA_Andrew_FindSharky_03_02"); //Jestem ci bardzo wdziêczny. WeŸ w nagrodê te spodnie.
     AI_Output (other, self ,"DIA_Andrew_FindSharky_15_03"); //Nastêpnym razem rób interesy z kimœ ze Starego Obozu.
     AI_Output (self, other ,"DIA_Andrew_FindSharky_03_04"); //Bêdê pamiêta³, jeszcze raz dziêki.
-    B_LogEntry                     (CH1_OchroniarzOM,"Sharky darowa³ Andrewowi wszystkie d³ugi, bo ba³ siê, ¿e zrobimy z nim to, co on chcia³ zrobiæ z nami. Wszystko wróci³o do normy, a moje zlecenie skoñczone.");
-    Log_SetTopicStatus       (CH1_OchroniarzOM, LOG_SUCCESS);
-    MIS_OchroniarzOM = LOG_SUCCESS;
+    B_LogEntry                     (CH1_Bodyguard,"Sharky darowa³ Andrewowi wszystkie d³ugi, bo ba³ siê, ¿e zrobimy z nim to, co on chcia³ zrobiæ z nami. Wszystko wróci³o do normy, a moje zlecenie skoñczone.");
+    Log_SetTopicStatus       (CH1_Bodyguard, LOG_SUCCESS);
+    MIS_Bodyguard = LOG_SUCCESS;
     B_GiveXP (200);
 	CreateInvItem (self,VLK_ARMOR_M);
 	B_GiveInvItems (self, other, VLK_ARMOR_M, 1);

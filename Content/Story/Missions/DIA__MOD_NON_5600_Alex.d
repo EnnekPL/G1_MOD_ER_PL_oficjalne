@@ -195,11 +195,11 @@ FUNC VOID DIA_Alex_Armor_Info()
         AI_Output (self, other ,"DIA_Alex_Armor_03_08"); //Najpierw weŸ to miêso i usma¿ je porz¹dnie na patelni. Ja nie mam na to czasu. Pamiêtaj, ¿eby mi je potem odnieœæ!
         AI_Output (self, other ,"DIA_Alex_Armor_03_09"); //Gdy ju¿ to zrobisz, pogadaj z Firnem. Trzeba naprawiæ palisadê w obozie.
         AI_Output (self, other ,"DIA_Alex_Armor_03_10"); //Na koniec pomo¿esz Stanleyowi uzupe³niæ ekwipunek. Z tego co mi wiadomo, potrzebne mu jest 50 strza³. 
-        MIS_PracaUMysliwych = LOG_RUNNING;
+        MIS_JobInHuntersCamp = LOG_RUNNING;
 		meat_oddane = false;
-        Log_CreateTopic          (CH1_PracaUMysliwych, LOG_MISSION);
-        Log_SetTopicStatus       (CH1_PracaUMysliwych, LOG_RUNNING);
-        B_LogEntry               (CH1_PracaUMysliwych,"Je¿eli chcê dostaæ ubranie myœliwego, bêdê musia³ na nie zapracowaæ. Mam usma¿yæ miêso i odnieœæ je do Alexa, naprawiæ palisadê razem z Firnem i przynieœæ Stanleyowi 50 strza³. ");
+        Log_CreateTopic          (CH1_JobInHuntersCamp, LOG_MISSION);
+        Log_SetTopicStatus       (CH1_JobInHuntersCamp, LOG_RUNNING);
+        B_LogEntry               (CH1_JobInHuntersCamp,"Je¿eli chcê dostaæ ubranie myœliwego, bêdê musia³ na nie zapracowaæ. Mam usma¿yæ miêso i odnieœæ je do Alexa, naprawiæ palisadê razem z Firnem i przynieœæ Stanleyowi 50 strza³. ");
         CreateInvItems (self, ItFoMuttonRaw, 30);
         B_GiveInvItems (self, other, ItFoMuttonRaw, 30);
     };
@@ -223,7 +223,7 @@ INSTANCE DIA_Alex_Mutton (C_INFO)
 FUNC INT DIA_Alex_Mutton_Condition()
 {
     if (meat_oddane == false)
-    && (MIS_PracaUMysliwych == LOG_RUNNING)
+    && (MIS_JobInHuntersCamp == LOG_RUNNING)
     && (Npc_HasItems (other, ItFoMutton) >=30)
     {
     return TRUE;
@@ -235,7 +235,7 @@ FUNC VOID DIA_Alex_Mutton_Info()
 {
     AI_Output (other, self ,"DIA_Alex_Mutton_15_01"); //Mam 30 sztuk sma¿onego miêsa. 
     AI_Output (self, other ,"DIA_Alex_Mutton_03_02"); //Dobra robota. Uwielbiam sma¿one miêso. 
-    B_LogEntry                     (CH1_PracaUMysliwych,"Alex otrzyma³ swoje miêso. ");
+    B_LogEntry                     (CH1_JobInHuntersCamp,"Alex otrzyma³ swoje miêso. ");
 	meat_oddane = true;
     B_GiveXP (25);
     B_GiveInvItems (other, self, ItFoMutton, 30);
@@ -261,7 +261,7 @@ FUNC INT DIA_Alex_RobotaENDE_Condition()
     if (Npc_KnowsInfo (hero, DIA_Firn_palisadaSkonczone))
     && (Npc_KnowsInfo (hero, DIA_Stanley_Arrows))
     && (Npc_KnowsInfo (hero, DIA_Alex_Mutton))
-    && (MIS_PracaUMysliwych == LOG_RUNNING)
+    && (MIS_JobInHuntersCamp == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -272,9 +272,9 @@ FUNC VOID DIA_Alex_RobotaENDE_Info()
 {
     AI_Output (other, self ,"DIA_Alex_RobotaENDE_15_01"); //Zrobi³em co kaza³eœ.
     AI_Output (self, other ,"DIA_Alex_RobotaENDE_03_02"); //Dobra robota! Obóz wreszcie wygl¹da jak trzeba. Teraz mogê ci sprzedaæ ubranie za 300 bry³ek rudy.
-    B_LogEntry                     (CH1_PracaUMysliwych,"Zadania zosta³y wykonane. Wreszcie mogê kupiæ nowy pancerz za niewielk¹ cenê. ");
-    Log_SetTopicStatus       (CH1_PracaUMysliwych, LOG_SUCCESS);
-    MIS_PracaUMysliwych = LOG_SUCCESS;
+    B_LogEntry                     (CH1_JobInHuntersCamp,"Zadania zosta³y wykonane. Wreszcie mogê kupiæ nowy pancerz za niewielk¹ cenê. ");
+    Log_SetTopicStatus       (CH1_JobInHuntersCamp, LOG_SUCCESS);
+    MIS_JobInHuntersCamp = LOG_SUCCESS;
     B_GiveXP (200);
 };
 
@@ -295,7 +295,7 @@ INSTANCE DIA_Alex_GiveSArmor (C_INFO)
 
 FUNC INT DIA_Alex_GiveSArmor_Condition()
 {
-    if (MIS_PracaUMysliwych == LOG_SUCCESS)
+    if (MIS_JobInHuntersCamp == LOG_SUCCESS)
     {
     return TRUE;
     };
@@ -341,7 +341,7 @@ INSTANCE DIA_Alex_SrongArmor (C_INFO)
 
 FUNC INT DIA_Alex_SrongArmor_Condition()
 {
-    if (MIS_PracaUMysliwych == LOG_SUCCESS) && (kapitel >= 2)
+    if (MIS_JobInHuntersCamp == LOG_SUCCESS) && (kapitel >= 2)
     {
     return TRUE;
     };
@@ -356,11 +356,11 @@ FUNC VOID DIA_Alex_SrongArmor_Info()
     AI_Output (self, other ,"DIA_Alex_SrongArmor_03_04"); //Ostatnio z obozu zginê³y cenne b³yskotki. Mój puchar i pierœcieñ Clawa. 
     AI_Output (self, other ,"DIA_Alex_SrongArmor_03_05"); //Nie podoba mi siê to. Czy¿by w obozie by³ zdrajca?
     AI_Output (other, self ,"DIA_Alex_SrongArmor_15_06"); //Postaram siê to ustaliæ.
-    MIS_KradziezUMysliwych = LOG_RUNNING;
+    MIS_TheftInHuntersCamp = LOG_RUNNING;
 	
-    Log_CreateTopic          (CH1_KradziezUMysliwych, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_KradziezUMysliwych, LOG_RUNNING);
-    B_LogEntry               (CH1_KradziezUMysliwych,"Ostatniej nocy z obozu myœliwych zaginê³y dwa cenne przedmioty: puchar Alexa i pierœcieñ myœliwego Clawa. Nie wiadomo kto stoi za kradzie¿¹. ");
+    Log_CreateTopic          (CH1_TheftInHuntersCamp, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_TheftInHuntersCamp, LOG_RUNNING);
+    B_LogEntry               (CH1_TheftInHuntersCamp,"Ostatniej nocy z obozu myœliwych zaginê³y dwa cenne przedmioty: puchar Alexa i pierœcieñ myœliwego Clawa. Nie wiadomo kto stoi za kradzie¿¹. ");
 };
 
 //========================================
@@ -381,7 +381,7 @@ FUNC INT DIA_Alex_CenneItemy_Condition()
 {
     if (Npc_HasItems (other, AlexCup) >=1)
    // && (Npc_HasItems (other, ClawsRing) >=1)
-    && (MIS_KradziezUMysliwych == LOG_RUNNING)
+    && (MIS_TheftInHuntersCamp == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -396,9 +396,9 @@ FUNC VOID DIA_Alex_CenneItemy_Info()
     AI_Output (self, other ,"DIA_Alex_CenneItemy_03_04"); //Jak to mo¿liwe, ¿e te bestyjki zakrad³y siê do obozu?
     AI_Output (other, self ,"DIA_Alex_CenneItemy_15_05"); //Firn jest tylko cz³owiekiem. Mo¿liwe, ¿e przysn¹³. 
     AI_Output (self, other ,"DIA_Alex_CenneItemy_03_06"); //Hmm... No dobrze. W nagrodê sprzedam ci zbrojê myœliwego za 1300 bry³ek rudy. 
-    B_LogEntry                     (CH1_KradziezUMysliwych,"Zagadka rozwi¹zana. Przedmioty zosta³y skradzione przez gobliny z jaskini przy obozie. ");
-    Log_SetTopicStatus       (CH1_KradziezUMysliwych, LOG_SUCCESS);
-    MIS_KradziezUMysliwych = LOG_SUCCESS;
+    B_LogEntry                     (CH1_TheftInHuntersCamp,"Zagadka rozwi¹zana. Przedmioty zosta³y skradzione przez gobliny z jaskini przy obozie. ");
+    Log_SetTopicStatus       (CH1_TheftInHuntersCamp, LOG_SUCCESS);
+    MIS_TheftInHuntersCamp = LOG_SUCCESS;
 	B_GiveInvItems (hero, self, AlexCup, 1);
     B_GiveXP (400);
 };
@@ -419,7 +419,7 @@ INSTANCE DIA_Alex_GivMeHArmor (C_INFO)
 
 FUNC INT DIA_Alex_GivMeHArmor_Condition()
 {
-    if (MIS_KradziezUMysliwych == LOG_SUCCESS) && (zbroja_mysliwego_buy == false)
+    if (MIS_TheftInHuntersCamp == LOG_SUCCESS) && (zbroja_mysliwego_buy == false)
     {
     return TRUE;
     };

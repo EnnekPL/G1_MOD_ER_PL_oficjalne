@@ -290,7 +290,7 @@ INSTANCE DIA_Gravo_BARTHOLO (C_INFO)
 
 FUNC INT DIA_Gravo_BARTHOLO_Condition()
 {
-    if ((MordragProblemOC == LOG_RUNNING) && (Npc_KnowsInfo(hero, DIA_Gravo_Hallo))) && (gadaninaBartholo == false)
+    if ((MIS_SpysProblems == LOG_RUNNING) && (Npc_KnowsInfo(hero, DIA_Gravo_Hallo))) && (gadaninaBartholo == false)
     {
     return TRUE;
     };
@@ -308,8 +308,8 @@ FUNC VOID DIA_Gravo_BARTHOLO_Info()
     AI_Output (other, self ,"DIA_Gravo_BARTHOLO_15_04"); //Mam sprawê, ale nie powinno ciê to obchodziæ.
     AI_Output (self, other ,"DIA_Gravo_BARTHOLO_03_05"); //Dobrze, ju¿ dobrze. Pomogê ci za 50 bry³ek rudy. Masz tyle?
 	
-	B_LogEntry                     (CH1_MordragProblemOC,"Za 50 bry³ek rudy Gravo zdradzi mi co zrobiæ, aby spotkaæ siê z Bartholo."); 
-   // B_LogEntry                     (CH1_MordragProblemOC,"Za 50 bry³ek rudy Gravo za³atwi mi spotkanie z Bartholo.");
+	B_LogEntry                     (CH1_SpysProblems,"Za 50 bry³ek rudy Gravo zdradzi mi co zrobiæ, aby spotkaæ siê z Bartholo."); 
+   // B_LogEntry                     (CH1_SpysProblems,"Za 50 bry³ek rudy Gravo za³atwi mi spotkanie z Bartholo.");
 	GravoToBartholo_First = true;
 	}
 	else

@@ -2,22 +2,22 @@
 //						 EXIT 
 // **************************************************
 
-instance  Org_819_Drax_Exit (C_INFO)
+instance  BAN_1614_Drax_Exit (C_INFO)
 {
-	npc			= Org_819_Drax;
+	npc			= BAN_1614_Drax;
 	nr			= 999;
-	condition	= Org_819_Drax_Exit_Condition;
-	information	= Org_819_Drax_Exit_Info;
+	condition	= BAN_1614_Drax_Exit_Condition;
+	information	= BAN_1614_Drax_Exit_Info;
 	permanent	= 1;
 	description = DIALOG_ENDE;
 };                       
 
-FUNC int  Org_819_Drax_Exit_Condition()
+FUNC int  BAN_1614_Drax_Exit_Condition()
 {
 	return 1;
 };
 
-FUNC VOID  Org_819_Drax_Exit_Info()
+FUNC VOID  BAN_1614_Drax_Exit_Info()
 {
 	AI_StopProcessInfos	(self);
 };
@@ -34,7 +34,7 @@ FUNC VOID  Org_819_Drax_Exit_Info()
 
 INSTANCE DIA_Drax_AboutRatford (C_INFO)
 {
-   npc          = Org_819_Drax;
+   npc          = BAN_1614_Drax;
    nr           = 1;
    condition    = DIA_Drax_AboutRatford_Condition;
    information  = DIA_Drax_AboutRatford_Info;
@@ -78,29 +78,29 @@ FUNC VOID DIA_Drax_AboutRatford_Info()
 //					 Ihr jagt hier...
 // **************************************************
 
-instance  Org_819_Drax_HuntHere (C_INFO)
+instance  BAN_1614_Drax_HuntHere (C_INFO)
 {
-	npc			= Org_819_Drax;
+	npc			= BAN_1614_Drax;
 	nr			= 1;
-	condition	= Org_819_Drax_HuntHere_Condition;
-	information	= Org_819_Drax_HuntHere_Info;
+	condition	= BAN_1614_Drax_HuntHere_Condition;
+	information	= BAN_1614_Drax_HuntHere_Info;
 	permanent	= 0;
 	description = "Widzê, ¿e jesteœ myœliwym.";
 };                       
 
-FUNC int  Org_819_Drax_HuntHere_Condition()
+FUNC int  BAN_1614_Drax_HuntHere_Condition()
 {
 	return 1;
 };
 
-FUNC VOID  Org_819_Drax_HuntHere_Info()
+FUNC VOID  BAN_1614_Drax_HuntHere_Info()
 {
-	AI_Output (other, self,"Org_819_Drax_HuntHere_15_00"); //Widzê, ¿e jesteœ myœliwym.
-	AI_Output (self, other,"Org_819_Drax_HuntHere_06_01"); //Na to wygl¹da... Czego chcesz?
-	AI_Output (other, self,"Org_819_Drax_HuntHere_15_02"); //Móg³byœ nauczyæ mnie polowaæ?
-	AI_Output (self, other,"Org_819_Drax_HuntHere_06_03"); //Parê sztuczek móg³bym ci pokazaæ, ale to bêdzie kosztowaæ.
-	AI_Output (other, self,"Org_819_Drax_HuntHere_15_04"); //Ile dok³adnie?
-	AI_Output (self, other,"Org_819_Drax_HuntHere_06_05"); //Na pocz¹tek wystarczy ³yk dobrego piwa, potem zobaczymy.
+	AI_Output (other, self,"BAN_1614_Drax_HuntHere_15_00"); //Widzê, ¿e jesteœ myœliwym.
+	AI_Output (self, other,"BAN_1614_Drax_HuntHere_06_01"); //Na to wygl¹da... Czego chcesz?
+	AI_Output (other, self,"BAN_1614_Drax_HuntHere_15_02"); //Móg³byœ nauczyæ mnie polowaæ?
+	AI_Output (self, other,"BAN_1614_Drax_HuntHere_06_03"); //Parê sztuczek móg³bym ci pokazaæ, ale to bêdzie kosztowaæ.
+	AI_Output (other, self,"BAN_1614_Drax_HuntHere_15_04"); //Ile dok³adnie?
+	AI_Output (self, other,"BAN_1614_Drax_HuntHere_06_05"); //Na pocz¹tek wystarczy ³yk dobrego piwa, potem zobaczymy.
 };
 
 // **************************************************
@@ -110,48 +110,48 @@ FUNC VOID  Org_819_Drax_HuntHere_Info()
 	var int drax_Lehrer_frei;
 // **************************************************
 
-instance  Org_819_Drax_Scavenger (C_INFO)
+instance  BAN_1614_Drax_Scavenger (C_INFO)
 {
-	npc			= Org_819_Drax;
+	npc			= BAN_1614_Drax;
 	nr			= 1;
-	condition	= Org_819_Drax_Scavenger_Condition;
-	information	= Org_819_Drax_Scavenger_Info;
+	condition	= BAN_1614_Drax_Scavenger_Condition;
+	information	= BAN_1614_Drax_Scavenger_Info;
 	permanent	= 1;
 	description = "Proszê, oto piwo. Teraz opowiedz mi o polowaniu.";
 };                       
 
-FUNC int  Org_819_Drax_Scavenger_Condition()
+FUNC int  BAN_1614_Drax_Scavenger_Condition()
 {
-	if ( Npc_KnowsInfo(hero,Org_819_Drax_HuntHere) && (drax_bierbekommen==FALSE) )
+	if ( Npc_KnowsInfo(hero,BAN_1614_Drax_HuntHere) && (drax_bierbekommen==FALSE) )
 	{
 		return 1;
 	};
 };
 
-FUNC VOID  Org_819_Drax_Scavenger_Info()
+FUNC VOID  BAN_1614_Drax_Scavenger_Info()
 {
 	if (Npc_HasItems(other,itfobeer)>0)
 	{
 		B_GiveInvItems	(other, self, itfobeer,1);
 	
-		AI_Output	(other, self,"Org_819_Drax_Scavenger_15_00"); //Proszê, oto piwo. Teraz opowiedz mi o polowaniu.
+		AI_Output	(other, self,"BAN_1614_Drax_Scavenger_15_00"); //Proszê, oto piwo. Teraz opowiedz mi o polowaniu.
 		if ( C_BodystateContains(self, BS_SIT) )
 		{
 			AI_StandUp		(self);
 			AI_TurnToNpc	(self, hero);
 		};
 		AI_UseItem	(self,	ItFobeer);
-		AI_Output	(self, other,"Org_819_Drax_Scavenger_06_01"); //Œcierwojady - tak nazywamy te wielkie ptaszyska - nale¿y atakowaæ jeden po drugim. Na szczêœcie ³atwo odci¹gn¹æ jednego osobnika od reszty stada.
-		AI_Output	(self, other,"Org_819_Drax_Scavenger_06_02"); //Jeœli podejdziesz do nich zbyt blisko, zaczn¹ siê denerwowaæ, a¿ wreszcie rzuc¹ siê w twoj¹ stronê. Lepiej, ¿ebyœ w tej chwili mia³ broñ w pogotowiu.
-		AI_Output	(self, other,"Org_819_Drax_Scavenger_06_03"); //Jeœli uda ci siê trafiæ œcierwojada zanim on dziobnie ciebie, jak najszybciej wyprowadŸ kolejne uderzenie. Przy odrobinie szczêœcia uda ci siê go pokonaæ bez zadraœniêcia.
-		AI_Output	(self, other,"Org_819_Drax_Scavenger_06_04"); //A jeœli ON dziobnie ciê pierwszy... Có¿, lepiej, ¿eby nie dziobn¹³.
+		AI_Output	(self, other,"BAN_1614_Drax_Scavenger_06_01"); //Œcierwojady - tak nazywamy te wielkie ptaszyska - nale¿y atakowaæ jeden po drugim. Na szczêœcie ³atwo odci¹gn¹æ jednego osobnika od reszty stada.
+		AI_Output	(self, other,"BAN_1614_Drax_Scavenger_06_02"); //Jeœli podejdziesz do nich zbyt blisko, zaczn¹ siê denerwowaæ, a¿ wreszcie rzuc¹ siê w twoj¹ stronê. Lepiej, ¿ebyœ w tej chwili mia³ broñ w pogotowiu.
+		AI_Output	(self, other,"BAN_1614_Drax_Scavenger_06_03"); //Jeœli uda ci siê trafiæ œcierwojada zanim on dziobnie ciebie, jak najszybciej wyprowadŸ kolejne uderzenie. Przy odrobinie szczêœcia uda ci siê go pokonaæ bez zadraœniêcia.
+		AI_Output	(self, other,"BAN_1614_Drax_Scavenger_06_04"); //A jeœli ON dziobnie ciê pierwszy... Có¿, lepiej, ¿eby nie dziobn¹³.
 		drax_bierbekommen = TRUE;
 	}
 	else
 	{
-		AI_Output (other, self,"Org_819_Drax_Scavenger_KEIN_BIER_15_00"); //Nie mam piwa.
-		AI_Output (self, other,"Org_819_Drax_Scavenger_KEIN_BIER_06_01"); //To poszukaj! To najlepsza rada, jak¹ otrzymasz ode mnie za darmo. A skoro ju¿ bêdziesz szuka³, znajdŸ dla mnie jeszcze parê bry³ek rudy.
-		AI_Output (self, other,"Org_819_Drax_Scavenger_KEIN_BIER_06_02"); //Mogê ci wiele opowiedzieæ o ró¿nych zwierzakach, ale to ciê bêdzie kosztowa³o.
+		AI_Output (other, self,"BAN_1614_Drax_Scavenger_KEIN_BIER_15_00"); //Nie mam piwa.
+		AI_Output (self, other,"BAN_1614_Drax_Scavenger_KEIN_BIER_06_01"); //To poszukaj! To najlepsza rada, jak¹ otrzymasz ode mnie za darmo. A skoro ju¿ bêdziesz szuka³, znajdŸ dla mnie jeszcze parê bry³ek rudy.
+		AI_Output (self, other,"BAN_1614_Drax_Scavenger_KEIN_BIER_06_02"); //Mogê ci wiele opowiedzieæ o ró¿nych zwierzakach, ale to ciê bêdzie kosztowa³o.
 	};	
 	drax_Lehrer_frei = TRUE;
 	
@@ -163,17 +163,17 @@ FUNC VOID  Org_819_Drax_Scavenger_Info()
 //				Animaltrophies
 // **************************************************
 
-instance  Org_819_Drax_Creatures (C_INFO)
+instance  BAN_1614_Drax_Creatures (C_INFO)
 {
-	npc			= Org_819_Drax;
+	npc			= BAN_1614_Drax;
 	nr			= 1;
-	condition	= Org_819_Drax_Creatures_Condition;
-	information	= Org_819_Drax_Creatures_Info;
+	condition	= BAN_1614_Drax_Creatures_Condition;
+	information	= BAN_1614_Drax_Creatures_Info;
 	permanent	= 1;
 	description = "Czego jeszcze mo¿esz mnie nauczyæ?";
 };                       
 
-FUNC int  Org_819_Drax_Creatures_Condition()
+FUNC int  BAN_1614_Drax_Creatures_Condition()
 {
 	if ( Drax_Lehrer_frei == TRUE )
 	&& ( (Knows_GetTeeth == FALSE)||(Knows_GetFur == FALSE)||(Knows_GetClaws == FALSE)||(Knows_GetHide == FALSE) )
@@ -182,59 +182,59 @@ FUNC int  Org_819_Drax_Creatures_Condition()
 	};
 };
 
-FUNC VOID  Org_819_Drax_Creatures_Info()
+FUNC VOID  BAN_1614_Drax_Creatures_Info()
 {
-	AI_Output (other, self,"Org_819_Drax_Creatures_15_00"); //Czego jeszcze mo¿esz mnie nauczyæ?
+	AI_Output (other, self,"BAN_1614_Drax_Creatures_15_00"); //Czego jeszcze mo¿esz mnie nauczyæ?
 	
 	if ( (Knows_GetTeeth == FALSE)||(Knows_GetFur == FALSE)||(Knows_GetClaws == FALSE)||(Knows_GetHide == FALSE) )
 	{
-		AI_Output (self, other,"Org_819_Drax_Creatures_06_01"); //Wielu rzeczy, ale g³upie piwo nie wystarczy.
-		AI_Output (self, other,"Org_819_Drax_Creatures_06_02"); //Wprawny ³owca potrafi zdobyæ k³y, pazury i skórê zwierzyny. Nie jest to ³atwe, ale doœæ op³acalne.
-		AI_Output (self, other,"Org_819_Drax_Creatures_06_03"); //W ka¿dym razie ka¿dy kupiec chêtnie je od ciebie odkupi.
+		AI_Output (self, other,"BAN_1614_Drax_Creatures_06_01"); //Wielu rzeczy, ale g³upie piwo nie wystarczy.
+		AI_Output (self, other,"BAN_1614_Drax_Creatures_06_02"); //Wprawny ³owca potrafi zdobyæ k³y, pazury i skórê zwierzyny. Nie jest to ³atwe, ale doœæ op³acalne.
+		AI_Output (self, other,"BAN_1614_Drax_Creatures_06_03"); //W ka¿dym razie ka¿dy kupiec chêtnie je od ciebie odkupi.
 		
-		Info_ClearChoices(Org_819_Drax_Creatures);
-		Info_AddChoice   (Org_819_Drax_Creatures, DIALOG_BACK 													,Org_819_Drax_Creatures_BACK);
-		Info_AddChoice   (Org_819_Drax_Creatures, "Du¿o ¿¹dasz za swoje us³ugi." 				,Org_819_Drax_Creatures_PrettyMuch);
+		Info_ClearChoices(BAN_1614_Drax_Creatures);
+		Info_AddChoice   (BAN_1614_Drax_Creatures, DIALOG_BACK 													,BAN_1614_Drax_Creatures_BACK);
+		Info_AddChoice   (BAN_1614_Drax_Creatures, "Du¿o ¿¹dasz za swoje us³ugi." 				,BAN_1614_Drax_Creatures_PrettyMuch);
 		if (Knows_GetTeeth == FALSE)
 		{
-			Info_AddChoice   (Org_819_Drax_Creatures, "Usuwanie k³ów (koszt: 1 punkt umiejêtnoœci, 50 bry³ek rudy)" 		,Org_819_Drax_Creatures_Zahn);
+			Info_AddChoice   (BAN_1614_Drax_Creatures, "Usuwanie k³ów (koszt: 1 punkt umiejêtnoœci, 50 bry³ek rudy)" 		,BAN_1614_Drax_Creatures_Zahn);
 		};
 		if (Knows_GetFur == FALSE)
 		{
-			Info_AddChoice	 (Org_819_Drax_Creatures, "Œci¹ganie futer (koszt: 1 punkt umiejêtnoœci, 100 bry³ek rudy)"		,Org_819_Drax_Creatures_Fell);
+			Info_AddChoice	 (BAN_1614_Drax_Creatures, "Œci¹ganie futer (koszt: 1 punkt umiejêtnoœci, 100 bry³ek rudy)"		,BAN_1614_Drax_Creatures_Fell);
 		};
 		if (Knows_GetClaws == FALSE)
 		{
-			Info_AddChoice	 (Org_819_Drax_Creatures, "Usuwanie pazurów (koszt: 1 punkt umiejêtnoœci, 50 bry³ek rudy)" 	,Org_819_Drax_Creatures_Kralle);
+			Info_AddChoice	 (BAN_1614_Drax_Creatures, "Usuwanie pazurów (koszt: 1 punkt umiejêtnoœci, 50 bry³ek rudy)" 	,BAN_1614_Drax_Creatures_Kralle);
 		};
 		if (Knows_GetHide == FALSE)
 		{
-			Info_AddChoice	 (Org_819_Drax_Creatures, "Skórowanie gadów (koszt: 1 punkt umiejêtnoœci, 100 bry³ek rudy)"	,Org_819_Drax_Creatures_Haut);
+			Info_AddChoice	 (BAN_1614_Drax_Creatures, "Skórowanie gadów (koszt: 1 punkt umiejêtnoœci, 100 bry³ek rudy)"	,BAN_1614_Drax_Creatures_Haut);
 		};
 	}
 	else
 	{
-		AI_Output (self, other,"Org_819_Drax_Creatures_TaughtAll_06_00"); //Powiedzia³em ci ju¿ wszystko co wiem.
+		AI_Output (self, other,"BAN_1614_Drax_Creatures_TaughtAll_06_00"); //Powiedzia³em ci ju¿ wszystko co wiem.
 	};
 };
 
-func void Org_819_Drax_Creatures_BACK()
+func void BAN_1614_Drax_Creatures_BACK()
 {
-	Info_ClearChoices(Org_819_Drax_Creatures);
+	Info_ClearChoices(BAN_1614_Drax_Creatures);
 };
 
-func void Org_819_Drax_Creatures_PrettyMuch()
+func void BAN_1614_Drax_Creatures_PrettyMuch()
 {
-	AI_Output (other, self,"Org_819_Drax_Creatures_PrettyMuch_15_00"); //Du¿o ¿¹dasz za swoje us³ugi.
-	AI_Output (self, other,"Org_819_Drax_Creatures_PrettyMuch_06_01"); //Byæ mo¿e, ale wiedza, któr¹ mogê ci przekazaæ pozwoli ci szybko odzyskaæ zainwestowan¹ kwotê.
-	AI_Output (self, other,"Org_819_Drax_Creatures_PrettyMuch_06_02"); //Wszystkie zwierzêta, które zabijesz nie wiedz¹c jak je oprawiæ, po prostu zgnij¹.
-	AI_Output (self, other,"Org_819_Drax_Creatures_PrettyMuch_06_03"); //A to najzwyklejsze marnotrawstwo. Za ich skórê móg³byœ zarobiæ sporo pieniêdzy.
-	AI_Output (self, other,"Org_819_Drax_Creatures_PrettyMuch_06_04"); //Na twoim miejscu spróbowa³bym mo¿liwie szybko posi¹œæ te umiejêtnoœci.
+	AI_Output (other, self,"BAN_1614_Drax_Creatures_PrettyMuch_15_00"); //Du¿o ¿¹dasz za swoje us³ugi.
+	AI_Output (self, other,"BAN_1614_Drax_Creatures_PrettyMuch_06_01"); //Byæ mo¿e, ale wiedza, któr¹ mogê ci przekazaæ pozwoli ci szybko odzyskaæ zainwestowan¹ kwotê.
+	AI_Output (self, other,"BAN_1614_Drax_Creatures_PrettyMuch_06_02"); //Wszystkie zwierzêta, które zabijesz nie wiedz¹c jak je oprawiæ, po prostu zgnij¹.
+	AI_Output (self, other,"BAN_1614_Drax_Creatures_PrettyMuch_06_03"); //A to najzwyklejsze marnotrawstwo. Za ich skórê móg³byœ zarobiæ sporo pieniêdzy.
+	AI_Output (self, other,"BAN_1614_Drax_Creatures_PrettyMuch_06_04"); //Na twoim miejscu spróbowa³bym mo¿liwie szybko posi¹œæ te umiejêtnoœci.
 };
 
-func void Org_819_Drax_Creatures_Zahn()
+func void BAN_1614_Drax_Creatures_Zahn()
 {
-	AI_Output (other, self,"Org_819_Drax_Creatures_Zahn_15_00"); //Jak mogê zdobyæ k³y upolowanej zwierzyny?
+	AI_Output (other, self,"BAN_1614_Drax_Creatures_Zahn_15_00"); //Jak mogê zdobyæ k³y upolowanej zwierzyny?
 	
 	if (Npc_HasItems(other,itminugget)>=50)
 	{
@@ -246,8 +246,8 @@ func void Org_819_Drax_Creatures_Zahn()
 			
 			PrintScreen	("Nowa umiejêtnoœæ: Zdobywanie k³ów", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 					
-			AI_Output (self, other,"Org_819_Drax_Creatures_Zahn_06_01"); //Przede wszystkim musisz uwa¿aæ, ¿eby k³y nie popêka³y podczas wyci¹gania. W tym celu wbij nó¿ w pobli¿u œrodka zêba i delikatnie go podwa¿aj.
-			AI_Output (self, other,"Org_819_Drax_Creatures_Zahn_06_02"); //Warto zabieraæ k³y wilków, cieniostworów i zêbaczy
+			AI_Output (self, other,"BAN_1614_Drax_Creatures_Zahn_06_01"); //Przede wszystkim musisz uwa¿aæ, ¿eby k³y nie popêka³y podczas wyci¹gania. W tym celu wbij nó¿ w pobli¿u œrodka zêba i delikatnie go podwa¿aj.
+			AI_Output (self, other,"BAN_1614_Drax_Creatures_Zahn_06_02"); //Warto zabieraæ k³y wilków, cieniostworów i zêbaczy
 			
 			Knows_GetTeeth = TRUE;
 			Log_CreateTopic (GE_AnimalTrophies,LOG_NOTE);
@@ -255,19 +255,19 @@ func void Org_819_Drax_Creatures_Zahn()
 		}
 		else
 		{
-			AI_Output (self, other,"Org_819_Drax_Creatures_KEINE_LP_06_00"); //Musisz najpierw zdobyæ trochê wiêcej doœwiadczenia. Inaczej moja wiedza bêdzie bezu¿yteczna.
+			AI_Output (self, other,"BAN_1614_Drax_Creatures_KEINE_LP_06_00"); //Musisz najpierw zdobyæ trochê wiêcej doœwiadczenia. Inaczej moja wiedza bêdzie bezu¿yteczna.
 			PrintScreen	("Za ma³o punktów umiejêtnoœci!", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 		};
 	}
 	else
 	{
-		AI_Output (self, other,"Org_819_Drax_Creatures_KEIN_ERZ_06_00"); //Najpierw chcê zobaczyæ trochê rudy. W tej Kolonii nic nie ma za darmo!
+		AI_Output (self, other,"BAN_1614_Drax_Creatures_KEIN_ERZ_06_00"); //Najpierw chcê zobaczyæ trochê rudy. W tej Kolonii nic nie ma za darmo!
 	};
 };
 
-func void Org_819_Drax_Creatures_Fell()
+func void BAN_1614_Drax_Creatures_Fell()
 {
-	AI_Output (other, self,"Org_819_Drax_Creatures_Fell_15_00"); //Jak mogê zdobyæ skóry upolowanej zwierzyny? 
+	AI_Output (other, self,"BAN_1614_Drax_Creatures_Fell_15_00"); //Jak mogê zdobyæ skóry upolowanej zwierzyny? 
 	
 	if (Npc_HasItems(other,itminugget)>=100)
 	{
@@ -279,8 +279,8 @@ func void Org_819_Drax_Creatures_Fell()
 			
 			PrintScreen	("Nowa umiejêtnoœæ: Œci¹ganie futer", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 		
-			AI_Output (self, other,"Org_819_Drax_Creatures_Fell_06_01"); //Zaczynaj skórowanie od zadu, przesuwaj¹c siê stopniowo ku g³owie. Spróbuj kilka razy. To nie jest takie trudne, a futra potrafi¹ byæ bardzo cenne!
-			AI_Output (self, other,"Org_819_Drax_Creatures_Fell_06_02"); //Futra wilków i cieniostworów mo¿na wykorzystaæ do szycia odzie¿y. Badaj¹c futro zabitego zwierza ³atwo ocenisz, czy nadaje siê do dalszego wykorzystania.
+			AI_Output (self, other,"BAN_1614_Drax_Creatures_Fell_06_01"); //Zaczynaj skórowanie od zadu, przesuwaj¹c siê stopniowo ku g³owie. Spróbuj kilka razy. To nie jest takie trudne, a futra potrafi¹ byæ bardzo cenne!
+			AI_Output (self, other,"BAN_1614_Drax_Creatures_Fell_06_02"); //Futra wilków i cieniostworów mo¿na wykorzystaæ do szycia odzie¿y. Badaj¹c futro zabitego zwierza ³atwo ocenisz, czy nadaje siê do dalszego wykorzystania.
 			
 			Knows_GetFur = TRUE;
 			Log_CreateTopic (GE_AnimalTrophies,LOG_NOTE);
@@ -288,17 +288,17 @@ func void Org_819_Drax_Creatures_Fell()
 		}
 		else
 		{
-			AI_Output (self, other,"Org_819_Drax_Creatures_KEINE_LP_06_01"); //Musisz najpierw zdobyæ trochê wiêcej doœwiadczenia. Inaczej moja wiedza bêdzie bezu¿yteczna.
+			AI_Output (self, other,"BAN_1614_Drax_Creatures_KEINE_LP_06_01"); //Musisz najpierw zdobyæ trochê wiêcej doœwiadczenia. Inaczej moja wiedza bêdzie bezu¿yteczna.
 			PrintScreen	("Za ma³o punktów umiejêtnoœci!", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 		};
 	}
 	else
 	{
-		AI_Output (self, other,"Org_819_Drax_Creatures_KEIN_ERZ_06_01"); //Najpierw chcê zobaczyæ trochê rudy. W tej Kolonii nic nie ma za darmo!
+		AI_Output (self, other,"BAN_1614_Drax_Creatures_KEIN_ERZ_06_01"); //Najpierw chcê zobaczyæ trochê rudy. W tej Kolonii nic nie ma za darmo!
 	};
 };
 
-func void Org_819_Drax_Creatures_Kralle()
+func void BAN_1614_Drax_Creatures_Kralle()
 {
 	if (Npc_HasItems(other,itminugget)>=50)
 	{
@@ -310,9 +310,9 @@ func void Org_819_Drax_Creatures_Kralle()
 			
 			PrintScreen	("Nowa umiejêtnoœæ: Zdobywanie pazurów", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 			
-			AI_Output (other, self,"Org_819_Drax_Creatures_Kralle_15_00"); //Poka¿ mi jak zdobyæ pazury upolowanej zwierzyny.  
-			AI_Output (self, other,"Org_819_Drax_Creatures_Kralle_06_01"); //Prawdê mówi¹c to dziecinnie proste, trzeba tylko znaæ odpowiedni¹ metodê. Wygnij pazury do przodu - nigdy do ty³u! I pod ¿adnym pozorem nie próbuj ich wyci¹gaæ!
-			AI_Output (self, other,"Org_819_Drax_Creatures_Kralle_06_02"); //Najlepiej pozyskiwaæ pazury jaszczurów. Od tej pory bêdziesz wiedzia³, które zwierzêta dostarczaj¹ dobrych pazurów.
+			AI_Output (other, self,"BAN_1614_Drax_Creatures_Kralle_15_00"); //Poka¿ mi jak zdobyæ pazury upolowanej zwierzyny.  
+			AI_Output (self, other,"BAN_1614_Drax_Creatures_Kralle_06_01"); //Prawdê mówi¹c to dziecinnie proste, trzeba tylko znaæ odpowiedni¹ metodê. Wygnij pazury do przodu - nigdy do ty³u! I pod ¿adnym pozorem nie próbuj ich wyci¹gaæ!
+			AI_Output (self, other,"BAN_1614_Drax_Creatures_Kralle_06_02"); //Najlepiej pozyskiwaæ pazury jaszczurów. Od tej pory bêdziesz wiedzia³, które zwierzêta dostarczaj¹ dobrych pazurów.
 			
 			Knows_GetClaws = TRUE;
 			Log_CreateTopic (GE_AnimalTrophies,LOG_NOTE);
@@ -320,17 +320,17 @@ func void Org_819_Drax_Creatures_Kralle()
 		}
 		else
 		{
-			AI_Output (self, other,"Org_819_Drax_Creatures_KEINE_LP_06_02"); //Musisz najpierw zdobyæ trochê wiêcej doœwiadczenia. Inaczej moja wiedza bêdzie bezu¿yteczna.
+			AI_Output (self, other,"BAN_1614_Drax_Creatures_KEINE_LP_06_02"); //Musisz najpierw zdobyæ trochê wiêcej doœwiadczenia. Inaczej moja wiedza bêdzie bezu¿yteczna.
 			PrintScreen	("Za ma³o punktów umiejêtnoœci!", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 		};
 	}
 	else
 	{
-		AI_Output (self, other,"Org_819_Drax_Creatures_KEIN_ERZ_06_02"); //Najpierw chcê zobaczyæ trochê rudy. W tej Kolonii nic nie ma za darmo!
+		AI_Output (self, other,"BAN_1614_Drax_Creatures_KEIN_ERZ_06_02"); //Najpierw chcê zobaczyæ trochê rudy. W tej Kolonii nic nie ma za darmo!
 	};
 };
 
-func void Org_819_Drax_Creatures_Haut()
+func void BAN_1614_Drax_Creatures_Haut()
 {
 	if (Npc_HasItems(other,itminugget)>=100)
 	{
@@ -342,9 +342,9 @@ func void Org_819_Drax_Creatures_Haut()
 			
 			PrintScreen	("Nowa umiejêtnoœæ: Skórowanie jaszczurów", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 				
-			AI_Output (other, self,"Org_819_Drax_Creatures_Haut_15_00"); //Na co powinienem zwracaæ uwagê zdzieraj¹c skórê z gadów?
-			AI_Output (self, other,"Org_819_Drax_Creatures_Haut_06_01"); //Skóry topielców i bagiennych wê¿y s¹ szczególnie cenne.
-			AI_Output (self, other,"Org_819_Drax_Creatures_Haut_06_02"); //Jeœli przetniesz skórê na bokach, powinna sama odejœæ od miêsa. Myœlê, ¿e od tej pory poradzisz ju¿ sobie ze skórowaniem gadów.
+			AI_Output (other, self,"BAN_1614_Drax_Creatures_Haut_15_00"); //Na co powinienem zwracaæ uwagê zdzieraj¹c skórê z gadów?
+			AI_Output (self, other,"BAN_1614_Drax_Creatures_Haut_06_01"); //Skóry topielców i bagiennych wê¿y s¹ szczególnie cenne.
+			AI_Output (self, other,"BAN_1614_Drax_Creatures_Haut_06_02"); //Jeœli przetniesz skórê na bokach, powinna sama odejœæ od miêsa. Myœlê, ¿e od tej pory poradzisz ju¿ sobie ze skórowaniem gadów.
 				
 			Knows_GetHide = TRUE;
 			
@@ -353,13 +353,13 @@ func void Org_819_Drax_Creatures_Haut()
 		}
 		else
 		{
-			AI_Output (self, other,"Org_819_Drax_Creatures_KEINE_LP_06_03"); //Musisz najpierw zdobyæ trochê wiêcej doœwiadczenia. Inaczej moja wiedza bêdzie bezu¿yteczna.
+			AI_Output (self, other,"BAN_1614_Drax_Creatures_KEINE_LP_06_03"); //Musisz najpierw zdobyæ trochê wiêcej doœwiadczenia. Inaczej moja wiedza bêdzie bezu¿yteczna.
 			PrintScreen	("Za ma³o punktów umiejêtnoœci!", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 		};
 	}
 	else
 	{
-		AI_Output (self, other,"Org_819_Drax_Creatures_KEIN_ERZ_06_03"); //Najpierw chcê zobaczyæ trochê rudy. W tej Kolonii nic nie ma za darmo!
+		AI_Output (self, other,"BAN_1614_Drax_Creatures_KEIN_ERZ_06_03"); //Najpierw chcê zobaczyæ trochê rudy. W tej Kolonii nic nie ma za darmo!
 	};
 };
 
@@ -375,7 +375,7 @@ func void Org_819_Drax_Creatures_Haut()
 
 INSTANCE DIA_Drax_BANDITOS_CAMP (C_INFO)
 {
-   npc          = Org_819_Drax;
+   npc          = BAN_1614_Drax;
    nr           = 2;
    condition    = DIA_Drax_BANDITOS_CAMP_Condition;
    information  = DIA_Drax_BANDITOS_CAMP_Info;
@@ -403,7 +403,7 @@ var int Drax_choice;
 
 INSTANCE DIA_Drax_O_BANDYTACH (C_INFO)
 {
-   npc          = Org_819_Drax;
+   npc          = BAN_1614_Drax;
    nr           = 3;
    condition    = DIA_Drax_O_BANDYTACH_Condition;
    information  = DIA_Drax_O_BANDYTACH_Info;
@@ -466,7 +466,7 @@ func void DIA_Drax_O_BANDYTACH_ZEMSTA ()
 
 INSTANCE DIA_Drax_PRZYJECIE (C_INFO)
 {
-   npc          = Org_819_Drax;
+   npc          = BAN_1614_Drax;
    nr           = 4;
    condition    = DIA_Drax_PRZYJECIE_Condition;
    information  = DIA_Drax_PRZYJECIE_Info;
@@ -551,7 +551,7 @@ func void DIA_Drax_PRZYJECIE_LOSE ()
 
 INSTANCE DIA_Drax_BANDYCI_STOSUNKI (C_INFO)
 {
-   npc          = ORG_819_Drax;
+   npc          = BAN_1614_Drax;
    nr           = 5;
    condition    = DIA_Drax_BANDYCI_STOSUNKI_Condition;
    information  = DIA_Drax_BANDYCI_STOSUNKI_Info;
@@ -588,7 +588,7 @@ FUNC VOID DIA_Drax_BANDYCI_STOSUNKI_Info()
 
 INSTANCE DIA_Drax_DraxTest_Succes (C_INFO)
 {
-   npc          = Org_819_Drax;
+   npc          = BAN_1614_Drax;
    nr           = 1;
    condition    = DIA_Drax_DraxTest_Succes_Condition;
    information  = DIA_Drax_DraxTest_Succes_Info;
@@ -649,7 +649,7 @@ FUNC VOID DIA_Drax_DraxTest_Succes_Info()
 
 INSTANCE DIA_Drax_WORKFLOW (C_INFO)
 {
-   npc          = Org_819_Drax;
+   npc          = BAN_1614_Drax;
    nr           = 3;
    condition    = DIA_Drax_WORKFLOW_Condition;
    information  = DIA_Drax_WORKFLOW_Info;
@@ -673,11 +673,11 @@ FUNC VOID DIA_Drax_WORKFLOW_Info()
     AI_Output (self, other ,"DIA_Drax_WORKFLOW_03_03"); //Musisz odebraæ od niego raport zawieraj¹cy wa¿ne informacje. Najpewniej dostaniesz go w formie ustnej. Postaraj siê zapamiêtaæ.
     AI_Output (other, self ,"DIA_Drax_WORKFLOW_15_04"); //Tylko tyle?
     AI_Output (self, other ,"DIA_Drax_WORKFLOW_03_05"); //To nie bêdzie takie proste. Skaza ma jakieœ k³opoty. Opowiada³ mi o nich przy ostatniej rozmowie. Pomó¿ mu z nich wyskoczyæ. Jasne?
-    BANMordragRaport = LOG_RUNNING;
+    MIS_NewsFromSpy = LOG_RUNNING;
 
-    Log_CreateTopic          (CH1_BANMordragRaport, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_BANMordragRaport, LOG_RUNNING);
-    B_LogEntry               (CH1_BANMordragRaport,"Drax kaza³ mi przynieœæ raport od Skazy, którego znajdê w Starym Obozie... Przy okazji muszê pomóc Bandycie z jego k³opotami. Jeszcze nie wiem, co mnie czeka."); //fix 1210
+    Log_CreateTopic          (CH1_NewsFromSpy, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_NewsFromSpy, LOG_RUNNING);
+    B_LogEntry               (CH1_NewsFromSpy,"Drax kaza³ mi przynieœæ raport od Skazy, którego znajdê w Starym Obozie... Przy okazji muszê pomóc Bandycie z jego k³opotami. Jeszcze nie wiem, co mnie czeka."); //fix 1210
 };
 
 //========================================
@@ -686,7 +686,7 @@ FUNC VOID DIA_Drax_WORKFLOW_Info()
 
 INSTANCE DIA_Drax_RAPORT (C_INFO)
 {
-   npc          = Org_819_Drax;
+   npc          = BAN_1614_Drax;
    nr           = 4;
    condition    = DIA_Drax_RAPORT_Condition;
    information  = DIA_Drax_RAPORT_Info;
@@ -696,7 +696,7 @@ INSTANCE DIA_Drax_RAPORT (C_INFO)
 
 FUNC INT DIA_Drax_RAPORT_Condition()
 {
-    if (BANMordragRaport == LOG_RUNNING)
+    if (MIS_NewsFromSpy == LOG_RUNNING)
     && (Npc_KnowsInfo (hero, DIA_Skaza_ALLWORKSOK))
 	&& (Npc_GetTrueGuild(other) == GIL_NONE)
     {
@@ -719,9 +719,9 @@ FUNC VOID DIA_Drax_RAPORT_Info()
 	AI_Output (self, other ,"DIA_Drax_RAPORT_03_12"); //Niech ci bêdzie. Dosta³em to za dwie skóry wilków. 
     CreateInvItems (self, ItMiNugget, 50);
     B_GiveInvItems (self, other, ItMiNugget, 50);
-    B_LogEntry               (CH1_BANMordragRaport,"Przekaza³em raport Draxowi tym samym wykonuj¹c moje pierwsze powa¿ne zlecenie. Jestem coraz bli¿ej wejœcia w szeregi Bandytów.");
-    Log_SetTopicStatus       (CH1_BANMordragRaport, LOG_SUCCESS);
-    BANMordragRaport = LOG_SUCCESS;
+    B_LogEntry               (CH1_NewsFromSpy,"Przekaza³em raport Draxowi tym samym wykonuj¹c moje pierwsze powa¿ne zlecenie. Jestem coraz bli¿ej wejœcia w szeregi Bandytów.");
+    Log_SetTopicStatus       (CH1_NewsFromSpy, LOG_SUCCESS);
+    MIS_NewsFromSpy = LOG_SUCCESS;
     B_GiveXP (XP_MordragRaport);
 };
 
@@ -731,7 +731,7 @@ FUNC VOID DIA_Drax_RAPORT_Info()
 
 INSTANCE DIA_Drax_DOKOPALNI (C_INFO)
 {
-   npc          = Org_819_Drax;
+   npc          = BAN_1614_Drax;
    nr           = 5;
    condition    = DIA_Drax_DOKOPALNI_Condition;
    information  = DIA_Drax_DOKOPALNI_Info;
@@ -741,7 +741,7 @@ INSTANCE DIA_Drax_DOKOPALNI (C_INFO)
 
 FUNC INT DIA_Drax_DOKOPALNI_Condition()
 {
-    if (BANMordragRaport == LOG_SUCCESS)
+    if (MIS_NewsFromSpy == LOG_SUCCESS)
     && (Npc_GetTrueGuild (hero) == GIL_NONE)
 	&& (kapitel == 1)
     {
@@ -773,7 +773,7 @@ FUNC VOID DIA_Drax_DOKOPALNI_Info()
 
 INSTANCE DIA_Drax_ENDEDD (C_INFO)
 {
-   npc          = Org_819_Drax;
+   npc          = BAN_1614_Drax;
    nr           = 6;
    condition    = DIA_Drax_ENDEDD_Condition;
    information  = DIA_Drax_ENDEDD_Info;
@@ -830,7 +830,7 @@ FUNC VOID DIA_Drax_ENDEDD_Info()
 
 INSTANCE DIA_Drax_DOOBOZU (C_INFO)
 {
-   npc          = Org_819_Drax;
+   npc          = BAN_1614_Drax;
    nr           = 7;
    condition    = DIA_Drax_DOOBOZU_Condition;
    information  = DIA_Drax_DOOBOZU_Info;
@@ -860,7 +860,7 @@ FUNC VOID DIA_Drax_DOOBOZU_Info()
 
 INSTANCE DIA_Drax_JustGetGuild (C_INFO)
 {
-   npc          = Org_819_Drax;
+   npc          = BAN_1614_Drax;
    nr           = 7;
    condition    = DIA_Drax_JustGetGuild_Condition;
    information  = DIA_Drax_JustGetGuild_Info;
@@ -918,7 +918,7 @@ FUNC VOID DIA_Drax_JustGetGuild_Info()
 
 INSTANCE DIA_Drax_GOTO_BANDITOS (C_INFO)
 {
-   npc          = Org_819_Drax;
+   npc          = BAN_1614_Drax;
    nr           = 6;
    condition    = DIA_Drax_GOTO_BANDITOS_Condition;
    information  = DIA_Drax_GOTO_BANDITOS_Info;
@@ -956,7 +956,7 @@ FUNC VOID DIA_Drax_GOTO_BANDITOS_Info() //fix nazwy z du¿ej 1.4
 
 INSTANCE DIA_Drax_CAMPGO (C_INFO)
 {
-	npc          = Org_819_Drax;
+	npc          = BAN_1614_Drax;
 	nr           = 7;
 	condition    = DIA_Drax_CAMPGO_Condition;
 	information  = DIA_Drax_CAMPGO_Info;
@@ -999,7 +999,7 @@ FUNC VOID DIA_Drax_CAMPGO_Info()
 
 INSTANCE DIA_Drax_ZIOLA (C_INFO)
 {
-   npc          = ORG_819_Drax;
+   npc          = BAN_1614_Drax;
    nr           = 8;
    condition    = DIA_Drax_ZIOLA_Condition;
    information  = DIA_Drax_ZIOLA_Info;
@@ -1048,7 +1048,7 @@ FUNC VOID DIA_Drax_ZIOLA_Info()
 
 INSTANCE DIA_Drax_Ded (C_INFO)
 {
-   npc          = Org_819_Drax;
+   npc          = BAN_1614_Drax;
    nr           = 1;
    condition    = DIA_Drax_Ded_Condition;
    information  = DIA_Drax_Ded_Info;
@@ -1110,7 +1110,7 @@ FUNC VOID DIA_Drax_Ded_Info()
 
 INSTANCE DIA_Drax_WTFCH4 (C_INFO)
 {
-   npc          = Org_819_Drax;
+   npc          = BAN_1614_Drax;
    nr           = 2;
    condition    = DIA_Drax_WTFCH4_Condition;
    information  = DIA_Drax_WTFCH4_Info;
@@ -1172,7 +1172,7 @@ FUNC VOID DIA_Drax_WTFCH4_NO()
 
 INSTANCE DIA_Drax_QUENTINInfosHelp (C_INFO)
 {
-   npc          = Org_819_Drax;
+   npc          = BAN_1614_Drax;
    nr           = 1;
    condition    = DIA_Drax_QUENTINInfosHelp_Condition;
    information  = DIA_Drax_QUENTINInfosHelp_Info;
@@ -1205,7 +1205,7 @@ FUNC VOID DIA_Drax_QUENTINInfosHelp_Info()
 
 INSTANCE DIA_Drax_EndPrzygotowan (C_INFO)
 {
-   npc          = Org_819_Drax;
+   npc          = BAN_1614_Drax;
    nr           = 1;
    condition    = DIA_Drax_EndPrzygotowan_Condition;
    information  = DIA_Drax_EndPrzygotowan_Info;
@@ -1246,7 +1246,7 @@ FUNC VOID DIA_Drax_EndPrzygotowan_Info()
 
 INSTANCE DIA_Drax_AtakNaSO (C_INFO)
 {
-   npc          = Org_819_Drax;
+   npc          = BAN_1614_Drax;
    nr           = 1;
    condition    = DIA_Drax_AtakNaSO_Condition;
    information  = DIA_Drax_AtakNaSO_Info;
@@ -1268,10 +1268,10 @@ FUNC VOID DIA_Drax_AtakNaSO_Info()
     AI_Output (other, self ,"DIA_Drax_AtakNaSO_15_01"); //Mo¿emy zaczynaæ!
     AI_Output (self, other ,"DIA_Drax_AtakNaSO_03_02"); //Pora wzi¹æ siê za te gnidy! ChodŸcie za mn¹!
 	
-	Org_819_Drax.aivar[AIV_PARTYMEMBER] = TRUE;
-	Org_819_Drax.flags = 2;
-    Npc_ExchangeRoutine (Org_819_Drax,"atak1");
-	AI_StopProcessInfos	(Org_819_Drax);
+	BAN_1614_Drax.aivar[AIV_PARTYMEMBER] = TRUE;
+	BAN_1614_Drax.flags = 2;
+    Npc_ExchangeRoutine (BAN_1614_Drax,"atak1");
+	AI_StopProcessInfos	(BAN_1614_Drax);
 	
 		//------------ Rozproszenie stra¿ników --------------------------------------
 		Npc_ExchangeRoutine (Grd_237_Gardist,"atak");
@@ -1302,8 +1302,8 @@ FUNC VOID DIA_Drax_AtakNaSO_Info()
 	NON_2706_osko.guild = GIL_BAU;
 	NON_2706_osko.aivar[AIV_PARTYMEMBER] = TRUE;
 	
-	Npc_ExchangeRoutine (ORG_870_Raeuber,"help");
-	ORG_870_Raeuber.aivar[AIV_PARTYMEMBER] = TRUE;
+	Npc_ExchangeRoutine (BAN_1611_Pun,"help");
+	BAN_1611_Pun.aivar[AIV_PARTYMEMBER] = TRUE;
 	
     //B_ExchangeRoutine (BAN_1603_Martin , "atak");
     //B_ExchangeRoutine (BAN_1606_Josh , "atak");
@@ -1320,7 +1320,7 @@ FUNC VOID DIA_Drax_AtakNaSO_Info()
 
 INSTANCE DIA_Drax_PierwszyOboz (C_INFO)
 {
-   npc          = Org_819_Drax;
+   npc          = BAN_1614_Drax;
    nr           = 6;
    condition    = DIA_Drax_PierwszyOboz_Condition;
    information  = DIA_Drax_PierwszyOboz_Info;
@@ -1352,7 +1352,7 @@ FUNC VOID DIA_Drax_PierwszyOboz_Info()
 
 INSTANCE DIA_Drax_Pokanoani1 (C_INFO)
 {
-   npc          = Org_819_Drax;
+   npc          = BAN_1614_Drax;
    nr           = 7;
    condition    = DIA_Drax_Pokanoani1_Condition;
    information  = DIA_Drax_Pokanoani1_Info;
@@ -1389,7 +1389,7 @@ FUNC VOID DIA_Drax_Pokanoani1_Info()
 
 INSTANCE DIA_Drax_Atak2 (C_INFO)
 {
-   npc          = Org_819_Drax;
+   npc          = BAN_1614_Drax;
    nr           = 8;
    condition    = DIA_Drax_Atak2_Condition;
    information  = DIA_Drax_Atak2_Info;
@@ -1421,7 +1421,7 @@ FUNC VOID DIA_Drax_Atak2_Info()
 
 INSTANCE DIA_Drax_pokonani2 (C_INFO)
 {
-   npc          = Org_819_Drax;
+   npc          = BAN_1614_Drax;
    nr           = 9;
    condition    = DIA_Drax_pokonani2_Condition;
    information  = DIA_Drax_pokonani2_Info;
@@ -1461,7 +1461,7 @@ FUNC VOID DIA_Drax_pokonani2_Info()
 
 INSTANCE DIA_Drax_Atak3_XD (C_INFO)
 {
-   npc          = Org_819_Drax;
+   npc          = BAN_1614_Drax;
    nr           = 15;
    condition    = DIA_Drax_Atak3_XD_Condition;
    information  = DIA_Drax_Atak3_XD_Info;
@@ -1491,7 +1491,7 @@ FUNC VOID DIA_Drax_Atak3_XD_Info()
 
 INSTANCE DIA_Drax_Pokonani3 (C_INFO)
 {
-   npc          = Org_819_Drax;
+   npc          = BAN_1614_Drax;
    nr           = 16;
    condition    = DIA_Drax_Pokonani3_Condition;
    information  = DIA_Drax_Pokonani3_Info;
@@ -1528,9 +1528,9 @@ FUNC VOID DIA_Drax_Pokonani3_Info()
     MIS_AtakNaSO = LOG_SUCCESS;
 
     B_GiveXP (1000);
-	Org_819_Drax.flags = 0;
-	Npc_ExchangeRoutine (ORG_819_Drax, "ded");
-	CreateInvItems 		(ORG_819_Drax, ItMi_Listdraxa,1);
+	BAN_1614_Drax.flags = 0;
+	Npc_ExchangeRoutine (BAN_1614_Drax, "ded");
+	CreateInvItems 		(BAN_1614_Drax, ItMi_Listdraxa,1);
     AI_StopProcessInfos	(self);
     //Npc_ExchangeRoutine (self, "START");
 	

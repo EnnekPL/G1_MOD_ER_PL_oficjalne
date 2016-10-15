@@ -1,4 +1,4 @@
-instance ORG_870_Raeuber (Npc_Default)
+instance BAN_1611_Pun (Npc_Default)
 {
 	//-------- primary data --------
 	
@@ -8,7 +8,7 @@ instance ORG_870_Raeuber (Npc_Default)
 	level =					35;
 	
 	voice =					7;
-	id =					870;
+	id =					1611;
 
 
 	//-------- abilities --------
@@ -55,12 +55,12 @@ instance ORG_870_Raeuber (Npc_Default)
 	CreateInvItems (self, ItAmArrow, 20);
 
 	//-------------Daily Routine-------------
-	daily_routine = Rtn_start_870;
+	daily_routine = Rtn_start_1611;
 	
 	//------------ //MISSIONs-------------------
 };
 
-FUNC VOID Rtn_start_870 ()
+FUNC VOID Rtn_start_1611 ()
 {
   TA_Stand		(22,00,23,00,"STAND_MAG");
   TA_Sleep		(23,00,08,00,"BED_KOWAL");
@@ -165,19 +165,19 @@ FUNC VOID Rtn_start_870 ()
 	TA_Smith_Anvil	(21,50,22,00,"BANDYCI_KUZNIA");
 };
 //ważna postać! pozostałe rutyny trzeba sprawdzić !!!
-FUNC VOID Rtn_pupil_870 ()
+FUNC VOID Rtn_pupil_1611 ()
 {
 	TA_SitAround		(13,00,14,00,"BIJACZ1");	
     TA_SitAround		(14,00,13,00,"BIJACZ1");
 };
 
-FUNC VOID Rtn_help_870 () 
+FUNC VOID Rtn_help_1611 () 
 {
 	TA_FollowPC		(13,00,14,00,"LOCATION_11_12");	
     TA_FollowPC		(14,00,13,00,"LOCATION_11_12");
 };
 
-FUNC VOID Rtn_OrcAssault_870 () 
+FUNC VOID Rtn_OrcAssault_1611 () 
 {
 	TA_SitAround		(13,00,14,00,"LOCATION_11_12");	
     TA_SitAround		(14,00,13,00,"LOCATION_11_12");

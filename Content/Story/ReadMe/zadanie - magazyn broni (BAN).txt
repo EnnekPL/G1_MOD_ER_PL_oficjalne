@@ -1,0 +1,40 @@
+/*
+//========================================
+//-----------------> OtherQuests
+//========================================
+
+INSTANCE DIA_Quentin_OtherQuests (C_INFO)
+{
+   npc          = BAN_1610_Quentin;
+   nr           = 2;
+   condition    = DIA_Quentin_OtherQuests_Condition;
+   information  = DIA_Quentin_OtherQuests_Info;
+   permanent	= FALSE;
+   description	= "Masz dla mnie jakieś inne zadanie?";
+};
+
+FUNC INT DIA_Quentin_OtherQuests_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Quentin_MineIsClean))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Quentin_OtherQuests_Info()
+{
+    AI_Output (other, self ,"DIA_Quentin_OtherQuests_15_01"); //Masz dla mnie jakieś inne zadanie?
+    AI_Output (self, other ,"DIA_Quentin_OtherQuests_03_02"); //Oczywiście. Podczas naszej ostatniej akcji rzucił mi się w oczy pewien obiekt.
+    AI_Output (self, other ,"DIA_Quentin_OtherQuests_03_03"); //Mianowice magazyn na wzgórzu za Starym Obozem.
+    AI_Output (self, other ,"DIA_Quentin_OtherQuests_03_04"); //Powinniśmy coś z tym zrobić.
+    AI_Output (other, self ,"DIA_Quentin_OtherQuests_15_05"); //Rozmumiem. Postaram się coś zdziałać.
+    MIS_MagazynBroni = LOG_RUNNING;
+
+    Log_CreateTopic            (CH1_MagazynBroni, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_MagazynBroni, LOG_RUNNING);
+    B_LogEntry                     (CH1_MagazynBroni,"Mam udać się do magazynu broni na wzgórzu za Starym Obozem i się go pozbyć.");
+};
+*/
+
+const string CH1_MagazynBroni      		= "Magazyn broni";

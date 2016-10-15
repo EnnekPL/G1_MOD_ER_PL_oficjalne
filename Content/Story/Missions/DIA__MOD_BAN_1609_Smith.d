@@ -2,7 +2,7 @@
 
 instance  Info_Smith_EXIT (C_INFO)
 {
-	npc			= BAN_1609_Pun;
+	npc			= BAN_1609_Smith;
 	nr			= 999;
 	condition	= Info_Smith_EXIT_Condition;
 	information	= Info_Smith_EXIT_Info;
@@ -33,7 +33,7 @@ FUNC VOID  Info_Smith_EXIT_Info()
 var int log_Smithtrain;
 INSTANCE DIA_Smith_Lehrer (C_INFO)
 {
-	npc				= BAN_1609_Pun;
+	npc				= BAN_1609_Smith;
 	nr				= 2;
 	condition		= DIA_Smith_Lehrer_Condition;
 	information		= DIA_Smith_Lehrer_Info;
@@ -190,24 +190,24 @@ func void DIA_Smith_Lehrer_Bow_2()
 						TRADE						
 ------------------------------------------------------------------------*/
 
-instance  STT_336_Smith_TRADE (C_INFO)
+instance  BAN_1609_Smith_TRADE (C_INFO)
 {
-	npc				= BAN_1609_Pun;
-	condition		= STT_336_Smith_TRADE_Condition;
-	information		= STT_336_Smith_TRADE_Info;
+	npc				= BAN_1609_Smith;
+	condition		= BAN_1609_Smith_TRADE_Condition;
+	information		= BAN_1609_Smith_TRADE_Info;
 	important		= 0;
 	permanent		= 1;
 	description		= "Chcê kupiæ ³uk."; 
 	trade 			= 1;
 };
 
-FUNC int  STT_336_Smith_TRADE_Condition()
+FUNC int  BAN_1609_Smith_TRADE_Condition()
 {	
 		return TRUE;
 };
-FUNC void  STT_336_Smith_TRADE_Info()
+FUNC void  BAN_1609_Smith_TRADE_Info()
 {
-	AI_Output (other, self,"STT_336_Smith_TRADE_Info_15_01"); //Chcê kupiæ ³uk.
+	AI_Output (other, self,"BAN_1609_Smith_TRADE_Info_15_01"); //Chcê kupiæ ³uk.
 	var int wpis_Smithtrader;
 	if wpis_Smithtrader == false
 	{
@@ -228,17 +228,17 @@ FUNC void  STT_336_Smith_TRADE_Info()
 //-----------------> FindSwordAlibi
 //========================================
 
-INSTANCE DIA_Raeuber_FindSwordAlibi (C_INFO)
+INSTANCE DIA_Smith_FindSwordAlibi (C_INFO)
 {
-   npc          = BAN_1609_Pun;
+   npc          = BAN_1609_Smith;
    nr           = 1;
-   condition    = DIA_Raeuber_FindSwordAlibi_Condition;
-   information  = DIA_Raeuber_FindSwordAlibi_Info;
+   condition    = DIA_Smith_FindSwordAlibi_Condition;
+   information  = DIA_Smith_FindSwordAlibi_Info;
    permanent	= FALSE;
    description	= "Podobno Jens chcia³, abyœ pomóg³ mu odnaleŸæ miecz.";
 };
 
-FUNC INT DIA_Raeuber_FindSwordAlibi_Condition()
+FUNC INT DIA_Smith_FindSwordAlibi_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Jens_DoyleAboutJens))
     {
@@ -247,14 +247,14 @@ FUNC INT DIA_Raeuber_FindSwordAlibi_Condition()
 };
 
 
-FUNC VOID DIA_Raeuber_FindSwordAlibi_Info()
+FUNC VOID DIA_Smith_FindSwordAlibi_Info()
 {
-    AI_Output (other, self ,"DIA_Raeuber_FindSwordAlibi_15_01"); //Podobno Jens chcia³, abyœ pomóg³ mu odnaleŸæ miecz.
-    AI_Output (self, other ,"DIA_Raeuber_FindSwordAlibi_03_02"); //Tak, tak by³o. Czy to jakiœ problem?
-    AI_Output (other, self ,"DIA_Raeuber_FindSwordAlibi_15_03"); //Nie, ale Jens ma do ciebie pewn¹ proœbê. Chce, abyœ powiedzia³ to samo Quentinowi.
-    AI_Output (self, other ,"DIA_Raeuber_FindSwordAlibi_03_04"); //Nie ma sprawy. Móg³bym wiedzieæ tylko po co?
-    AI_Output (other, self ,"DIA_Raeuber_FindSwordAlibi_15_05"); //Kereth chce wrobiæ Jensa w zabójstwo Rayana.
-    AI_Output (self, other ,"DIA_Raeuber_FindSwordAlibi_03_06"); //Ten sukinsyn wiecznie coœ kombinuje. Ju¿ któryœ raz próbuje pozbyæ siê Jensa. Ja na jego miejscu ju¿ dawno spuœci³bym mu ³omot.
+    AI_Output (other, self ,"DIA_Smith_FindSwordAlibi_15_01"); //Podobno Jens chcia³, abyœ pomóg³ mu odnaleŸæ miecz.
+    AI_Output (self, other ,"DIA_Smith_FindSwordAlibi_03_02"); //Tak, tak by³o. Czy to jakiœ problem?
+    AI_Output (other, self ,"DIA_Smith_FindSwordAlibi_15_03"); //Nie, ale Jens ma do ciebie pewn¹ proœbê. Chce, abyœ powiedzia³ to samo Quentinowi.
+    AI_Output (self, other ,"DIA_Smith_FindSwordAlibi_03_04"); //Nie ma sprawy. Móg³bym wiedzieæ tylko po co?
+    AI_Output (other, self ,"DIA_Smith_FindSwordAlibi_15_05"); //Kereth chce wrobiæ Jensa w zabójstwo Rayana.
+    AI_Output (self, other ,"DIA_Smith_FindSwordAlibi_03_06"); //Ten sukinsyn wiecznie coœ kombinuje. Ju¿ któryœ raz próbuje pozbyæ siê Jensa. Ja na jego miejscu ju¿ dawno spuœci³bym mu ³omot.
 	
 	B_LogEntry                     (CH1_DestroyedGrave,"Smith poœwiadczy za Jensa. Powiedzia³ mi nawet, ¿e to nie pierwszy raz kiedy Kereth próbuje siê pozbyæ rymarza z Obozu. Dobrze, ¿e nie da³em siê nabraæ.");
 };
@@ -272,7 +272,7 @@ FUNC VOID DIA_Raeuber_FindSwordAlibi_Info()
 
 INSTANCE DIA_Raeuber_FIGHT_WITHOUT_ARROWS (C_INFO)
 {
-   npc          = BAN_1609_Pun;
+   npc          = BAN_1609_Smith;
    nr           = 1;
    condition    = DIA_Raeuber_FIGHT_WITHOUT_ARROWS_Condition;
    information  = DIA_Raeuber_FIGHT_WITHOUT_ARROWS_Info;

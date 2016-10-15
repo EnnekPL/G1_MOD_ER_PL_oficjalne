@@ -20,11 +20,11 @@ func VOID STARTUP_SUB_PSICAMP ()
 	Wld_InsertNpc				(Tpl_1400_GorNaBar,"PSI_START");	
 	Wld_InsertNpc				(Tpl_1401_GorNaKosh,"PSI_START");	
 	//-----------EDYCJA ROZSZERZONA----------------------------
-	Wld_InsertNpc				(NOV_2007_Patros,"PSI_START");
+	Wld_InsertNpc				(NOV_1377_Starkad,"PSI_START");
 	//Wld_InsertNpc				(NON_2234_Medrzec,"PSI_START"); nope, nope, scalone with Uturiel
 	Wld_InsertNpc				(TPL_3928_GorNaLin,"PSI_START");
 	Wld_InsertNpc				(NOV_1375_Hakan,"PSI_START");
-	Wld_InsertNpc				(NOV_5008_Hanson,"PSI_START");
+	Wld_InsertNpc				(NOV_1378_Hanson,"PSI_START");
 	Wld_InsertNpc				(TPL_1490_GorNaTokas,"PSI_START");
 	//Lukor quest
 	Wld_InsertNpc				(NON_3926_Hersztgrupy,"CAVE_BANDIT_2");
@@ -47,7 +47,7 @@ func VOID STARTUP_SUB_PSICAMP ()
 	Wld_InsertNpc				(GUR_1213_BaalLukor_world,"PSI_START"); //er
 	Wld_InsertNpc				(TPL_3927_GorBoba, "PSI_START" );
 	//-----------------WINNICA-------------------------------------
-	Wld_InsertNpc				(NOV_9001_Ghoran,"PSI_START");
+	Wld_InsertNpc				(NOV_1379_Ghoran,"PSI_START");
 	Wld_InsertNpc				(NOV_5077_Nowicjusz,"PSI_START");
 	Wld_InsertNpc				(NOV_5078_Nowicjusz,"PSI_START");
 	Wld_InsertNpc				(NOV_5080_Nowicjusz,"PSI_START");
@@ -156,7 +156,7 @@ func VOID STARTUP_SUB_PSICAMP ()
 	Wld_InsertNpc				(TPL_5004_Shawn,"PSI_START");
 	//-------------------Bagno-------------------------------------------------
 	Wld_InsertNpc				(NOV_1376_Steh,"PSI_START");
-	Wld_InsertNpc				(NOV_5005_Uciekinier,"PSI_START");
+	Wld_InsertNpc				(NOV_1380_ArtfiactsThief,"PSI_START");
 	//---------------Lester---------------------------------------------------------------
 	Wld_InsertNpc				(PC_Psionic,"PSI_START");			//Am Start: Haupttorplatz, Smalltalk mit BaalNamib.
 	//-------------Lagerfremde-----------------------------------
@@ -831,7 +831,7 @@ FUNC VOID STARTUP_SUB_OLDCAMP ()
 	Wld_InsertNpc				(GRD_2036_Karczmarz,"OC1");
 	Wld_InsertNpc				(GRD_3934_berg,"OC1");
 	Wld_InsertNpc				(NON_2037_Samuel,"OC1");
-	Wld_InsertNpc				(NON_3034_Bandyta,"OC1");
+	Wld_InsertNpc				(BAN_1612_Skaza,"OC1");
 	
 	
 //	Wld_InsertNpc				(Grd_210_Scatty,"OC1"); lol? 2 razy?
@@ -1306,7 +1306,7 @@ FUNC VOID STARTUP_SUB_SURFACE ()
 
 	//--------Jäger zum Austauschplatz------------------------------------------
 	Wld_InsertNpc				(ORG_818_Ratford,"OC1");
-	Wld_InsertNpc				(ORG_819_Drax,"OC1");
+	Wld_InsertNpc				(BAN_1614_Drax,"OC1");
 	//----------Jäger auf Weg zu NC---------------------------------------------
 	Wld_InsertNpc				(STT_336_Cavalorn,"OW_SAWHUT_GREENGOBBO_SPAWN");
 	Wld_InsertNpc				(NON_3071_Vart,"OW_SAWHUT_GREENGOBBO_SPAWN");
@@ -1393,10 +1393,10 @@ FUNC VOID STARTUP_SUB_SURFACE ()
 	Wld_InsertNpc				(ORG_863_Raeuber,"LOCATION_11_08");
 	Wld_InsertNpc				(ORG_864_Raeuber,"LOCATION_11_08");
 	Wld_InsertNpc				(ORG_865_Raeuber,"LOCATION_11_08");
-	Wld_InsertNpc				(ORG_867_Raeuber,"LOCATION_11_08");
+	Wld_InsertNpc				(BAN_1613_Doyle,"LOCATION_11_08");
 	Wld_InsertNpc				(ORG_868_Raeuber,"LOCATION_11_08");
 	Wld_InsertNpc				(ORG_869_Raeuber,"LOCATION_11_08");
-	Wld_InsertNpc				(ORG_870_Raeuber,"LOCATION_11_08");
+	Wld_InsertNpc				(BAN_1611_Pun,"LOCATION_11_08");
 	Wld_InsertNpc				(ORG_871_Raeuber,"LOCATION_11_08");
 	Wld_InsertNpc				(ORG_874_Raeuber,"LOCATION_11_08");
 	
@@ -1420,7 +1420,7 @@ FUNC VOID STARTUP_SUB_SURFACE ()
 	Wld_InsertNpc				(BAN_1605_Rocky,"LOCATION_11_08");	
 	Wld_InsertNpc				(BAN_1608_Kereth,"LOCATION_11_08");
 	Wld_InsertNpc				(BAN_1607_Chris,"LOCATION_11_08");
-	Wld_InsertNpc				(BAN_1609_Pun,"LOCATION_11_08"); 
+	Wld_InsertNpc				(BAN_1609_Smith,"LOCATION_11_08"); 
 	Wld_InsertNpc				(BAN_1610_Quentin,"LOCATION_11_08");
 	
 	//-------------Einsiedler--------------------------------------

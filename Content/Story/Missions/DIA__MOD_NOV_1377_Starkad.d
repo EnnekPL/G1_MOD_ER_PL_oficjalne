@@ -4,7 +4,7 @@
 
 INSTANCE DIA_Patros_EXIT(C_INFO)
 {
-	npc         = NOV_2007_Patros;
+	npc         = NOV_1377_Starkad;
 	nr          = 999;
 	condition	= DIA_Patros_EXIT_Condition;
 	information	= DIA_Patros_EXIT_Info;
@@ -28,7 +28,7 @@ FUNC VOID DIA_Patros_EXIT_Info()
 
 INSTANCE DIA_Patros_HELLO (C_INFO)
 {
-   npc          = NOV_2007_Patros;
+   npc          = NOV_1377_Starkad;
    nr           = 1;
    condition    = DIA_Patros_HELLO_Condition;
    information  = DIA_Patros_HELLO_Info;
@@ -54,7 +54,7 @@ FUNC VOID DIA_Patros_HELLO_Info()
 
 INSTANCE DIA_Patros_TRADE (C_INFO)
 {
-   npc          = NOV_2007_Patros;
+   npc          = NOV_1377_Starkad;
    nr           = 2;
    condition    = DIA_Patros_TRADE_Condition;
    information  = DIA_Patros_TRADE_Info;
@@ -86,7 +86,7 @@ var int prize_Starkad_loans;
 
 INSTANCE DIA_Patros_QUEST1_POMOC (C_INFO)
 {
-   npc          = NOV_2007_Patros;
+   npc          = NOV_1377_Starkad;
    nr           = 3;
    condition    = DIA_Patros_QUEST1_POMOC_Condition;
    information  = DIA_Patros_QUEST1_POMOC_Info;
@@ -159,7 +159,7 @@ func void DIA_Patros_QUEST1_POMOC_100 ()
 
 INSTANCE DIA_Patros_QUEST1_OK (C_INFO)
 {
-   npc          = NOV_2007_Patros;
+   npc          = NOV_1377_Starkad;
    nr           = 4;
    condition    = DIA_Patros_QUEST1_OK_Condition;
    information  = DIA_Patros_QUEST1_OK_Info;
@@ -204,7 +204,7 @@ FUNC VOID DIA_Patros_QUEST1_OK_Info()
 
 INSTANCE DIA_Patros_Dostawa (C_INFO)
 {
-   npc          = NOV_2007_Patros;
+   npc          = NOV_1377_Starkad;
    nr           = 3;
    condition    = DIA_Patros_Dostawa_Condition;
    information  = DIA_Patros_Dostawa_Info;
@@ -255,7 +255,7 @@ FUNC VOID DIA_Patros_Dostawa_Info()
 
 INSTANCE DIA_Patros_LifeIDsa (C_INFO)
 {
-   npc          = NOV_2007_Patros;
+   npc          = NOV_1377_Starkad;
    nr           = 1;
    condition    = DIA_Patros_LifeIDsa_Condition;
    information  = DIA_Patros_LifeIDsa_Info;
@@ -305,7 +305,7 @@ FUNC VOID DIA_Patros_LifeIDsa_Info()
 
 INSTANCE DIA_Patros_PLOTY (C_INFO)
 {
-   npc          = NOV_2007_Patros;
+   npc          = NOV_1377_Starkad;
    nr           = 1;
    condition    = DIA_Patros_PLOTY_Condition;
    information  = DIA_Patros_PLOTY_Info;

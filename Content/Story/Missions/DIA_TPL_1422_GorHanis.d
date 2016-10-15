@@ -558,9 +558,9 @@ FUNC VOID DIA_GorHanis_Basdasdasd_Info()
         AI_Output (self, other ,"DIA_GorHanis_Basdasdasd_03_14"); //WeŸ tê rudê jako wynagrodzenie.
         CreateInvItems (self, ItMiNugget, 300);
         B_GiveInvItems (self, other, ItMiNugget, 300);
-    B_LogEntry                     (CH1_Bractwo_Kopalnia,"Zdobywaj¹c artefakt, oczyœci³em kopalniê z o¿ywieñców. Cor Angar bêdzie ze mnie bardzo zadowolony.");
-    Log_SetTopicStatus       (CH1_Bractwo_Kopalnia, LOG_SUCCESS);
-    MIS_Bractwo_Kopalnia = LOG_SUCCESS;
+    B_LogEntry                     (CH4_PsiAbadonedMine,"Zdobywaj¹c artefakt, oczyœci³em kopalniê z o¿ywieñców. Cor Angar bêdzie ze mnie bardzo zadowolony.");
+    Log_SetTopicStatus       (CH4_PsiAbadonedMine, LOG_SUCCESS);
+    MIS_PsiAbadonedMine = LOG_SUCCESS;
 
     B_GiveXP (500);
     }
@@ -571,11 +571,11 @@ FUNC VOID DIA_GorHanis_Basdasdasd_Info()
         AI_Output (self, other ,"DIA_GorHanis_Basdasdasd_03_17"); //To polecenie samego Cor Angara.
         AI_Output (other, self ,"DIA_GorHanis_Basdasdasd_15_18"); //Z tego co mi wiadomo, to wy to mieliœcie zrobiæ.
         AI_Output (self, other ,"DIA_GorHanis_Basdasdasd_03_19"); //Proszê, bardzo mi na tym zale¿y.
-        MIS_Bractwo_Kopalnia = LOG_RUNNING;
+        MIS_PsiAbadonedMine = LOG_RUNNING;
 
-        Log_CreateTopic            (CH1_Bractwo_Kopalnia, LOG_MISSION);
-        Log_SetTopicStatus       (CH1_Bractwo_Kopalnia, LOG_RUNNING);
-        B_LogEntry                     (CH1_Bractwo_Kopalnia,"Gor Hanis w imieniu Cor Angara zleci³ mi odnalezienie artefaktu z kopalni. W ten sposób powstrzymam rozprzestrzenianie siê o¿ywieñców.");
+        Log_CreateTopic            (CH4_PsiAbadonedMine, LOG_MISSION);
+        Log_SetTopicStatus       (CH4_PsiAbadonedMine, LOG_RUNNING);
+        B_LogEntry                     (CH4_PsiAbadonedMine,"Gor Hanis w imieniu Cor Angara zleci³ mi odnalezienie artefaktu z kopalni. W ten sposób powstrzymam rozprzestrzenianie siê o¿ywieñców.");
     };
 
     AI_StopProcessInfos	(self);
@@ -596,7 +596,7 @@ INSTANCE DIA_GorHanis_Guaz (C_INFO)
 
 FUNC INT DIA_GorHanis_Guaz_Condition()
 {
-    if (MIS_Bractwo_Kopalnia == LOG_RUNNING)
+    if (MIS_PsiAbadonedMine == LOG_RUNNING)
     && (Npc_HasItems (other, Focus_Corristo) >=1)
     {
     return TRUE;
@@ -611,9 +611,9 @@ FUNC VOID DIA_GorHanis_Guaz_Info()
     AI_Output (other, self ,"DIA_GorHanis_Guaz_15_03"); //Tak.
     AI_Output (self, other ,"DIA_GorHanis_Guaz_03_04"); //WeŸ go ze sob¹. Nam siê nie przyda.
     AI_Output (self, other ,"DIA_GorHanis_Guaz_03_05"); //Zostaniemy tu na stra¿y kopalni, a ty idŸ do Angara.
-    B_LogEntry                     (CH1_Bractwo_Kopalnia,"Zdobywaj¹c artefakt, oczyœci³em kopalniê z o¿ywieñców. Cor Angar bêdzie ze mnie bardzo zadowolony.");
-    Log_SetTopicStatus       (CH1_Bractwo_Kopalnia, LOG_SUCCESS);
-    MIS_Bractwo_Kopalnia = LOG_SUCCESS;
+    B_LogEntry                     (CH4_PsiAbadonedMine,"Zdobywaj¹c artefakt, oczyœci³em kopalniê z o¿ywieñców. Cor Angar bêdzie ze mnie bardzo zadowolony.");
+    Log_SetTopicStatus       (CH4_PsiAbadonedMine, LOG_SUCCESS);
+    MIS_PsiAbadonedMine = LOG_SUCCESS;
    B_GiveXP (500);  
   AI_StopProcessInfos	(self);
 };

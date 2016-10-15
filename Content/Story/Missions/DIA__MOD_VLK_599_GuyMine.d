@@ -88,11 +88,11 @@ FUNC VOID DIA_GuyMine_Sprzety_Info()
     AI_Output (other, self ,"DIA_GuyMine_Sprzety_15_01"); //Jakich sprzêtów potrzebujecie?
     AI_Output (self, other ,"DIA_GuyMine_Sprzety_03_02"); //Przede wszystkim kilofów. To, co tu mamy jest po prostu ¿a³osne. Wszystko krzywe, po³amane lub inaczej zniszczone.
     AI_Output (self, other ,"DIA_GuyMine_Sprzety_03_03"); //IdŸ do jakiegoœ kowala, albo sam siê weŸ za robotê. Nie mamy tu niestety kuŸni. 
-    MIS_EqKopalnia = LOG_RUNNING;
+    MIS_PickaxesForGuy = LOG_RUNNING;
 
-    Log_CreateTopic            (CH1_EqKopalnia, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_EqKopalnia, LOG_RUNNING);
-    B_LogEntry                     (CH1_EqKopalnia,"Guy potrzebuje kilofów do kopalni. Przynajmniej 10 sztuk. ");
+    Log_CreateTopic            (CH4_PickaxesForGuy, LOG_MISSION);
+    Log_SetTopicStatus       (CH4_PickaxesForGuy, LOG_RUNNING);
+    B_LogEntry                     (CH4_PickaxesForGuy,"Guy potrzebuje kilofów do kopalni. Przynajmniej 10 sztuk. ");
     AI_Output (self, other ,"DIA_GuyMine_Sprzety_03_04"); //Przynieœ chocia¿ z 10 tych kilofów. 
 };
 
@@ -125,9 +125,9 @@ FUNC VOID DIA_GuyMine_GiveAxes_Info()
     AI_Output (other, self ,"DIA_GuyMine_GiveAxes_15_01"); //Mam kilofy. 
     AI_Output (self, other ,"DIA_GuyMine_GiveAxes_03_02"); //Œwietnie. Wreszcie bêdziemy mieli czym pracowaæ.
     B_GiveInvItems (other, self, ItMwPickaxe, 10);
-    B_LogEntry                     (CH1_EqKopalnia,"");
-    Log_SetTopicStatus       (CH1_EqKopalnia, LOG_SUCCESS);
-    MIS_EqKopalnia = LOG_SUCCESS;
+    B_LogEntry                     (CH4_PickaxesForGuy,"");
+    Log_SetTopicStatus       (CH4_PickaxesForGuy, LOG_SUCCESS);
+    MIS_PickaxesForGuy = LOG_SUCCESS;
 
     B_GiveXP (200);
 };
@@ -189,11 +189,11 @@ FUNC VOID DIA_GuyMine_Pamietniki_Info()
     AI_Output (self, other ,"DIA_GuyMine_Pamietniki_03_04"); //Znalaz³em w kopalni kartê starego pamiêtnika. Myœlê, ¿e w okolicy jest wiêcej stron. 
     AI_Output (self, other ,"DIA_GuyMine_Pamietniki_03_05"); //Gdybyœ tak je znalaz³, dowiedzielibyœmy siê czegoœ wiêcej o tym, co tu zasz³o.
     AI_Output (self, other ,"DIA_GuyMine_Pamietniki_03_06"); //Dobrze. Rozejrzê siê. 
-    MIS_PamietnikiOK = LOG_RUNNING;
+    MIS_OldNotes = LOG_RUNNING;
 
-    Log_CreateTopic            (CH1_PamietnikiOK, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_PamietnikiOK, LOG_RUNNING);
-    B_LogEntry                     (CH1_PamietnikiOK,"Guy poprosi³ mnie o odnalezienie kartek z pamiêtników Kopaczy. Wiedza w nich zawarta mog³aby siê nam przydaæ. ");
+    Log_CreateTopic            (CH4_OldNotes, LOG_MISSION);
+    Log_SetTopicStatus       (CH4_OldNotes, LOG_RUNNING);
+    B_LogEntry                     (CH4_OldNotes,"Guy poprosi³ mnie o odnalezienie kartek z pamiêtników Kopaczy. Wiedza w nich zawarta mog³aby siê nam przydaæ. ");
     AI_StopProcessInfos	(self);
 };
 //========================================
@@ -236,8 +236,8 @@ FUNC VOID DIA_GuyMine_OdnalezionyPamietnik_Info()
     B_GiveInvItems (other, self, ItMis_PamietnikGrimesa2, 1);
     B_GiveInvItems (other, self, ItMis_PamietnikGrimesa3, 1);
     B_GiveInvItems (other, self, ItMis_PamietnikGrimesa4, 1);
-    Log_SetTopicStatus       (CH1_PamietnikiOK, LOG_SUCCESS);
-    MIS_PamietnikiOK = LOG_SUCCESS;
+    Log_SetTopicStatus       (CH4_OldNotes, LOG_SUCCESS);
+    MIS_OldNotes = LOG_SUCCESS;
 
     B_GiveXP (300);
     AI_StopProcessInfos	(self);
@@ -259,7 +259,7 @@ INSTANCE DIA_GuyMine_REJESTR (C_INFO)
 FUNC INT DIA_GuyMine_REJESTR_Condition()
 {
     if (Npc_HasItems (other, ItWr_RejestrWydobycia) >=1)
-    && (Npc_KnowsInfo (hero, DIA_Bandyta_ZAKONCZONE))
+    && (Npc_KnowsInfo (hero, DIA_Luis_ZAKONCZONE))
     {
     return TRUE;
     };

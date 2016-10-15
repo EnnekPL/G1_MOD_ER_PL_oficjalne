@@ -1449,7 +1449,7 @@ INSTANCE DIA_CorAngar_KopalniaClear (C_INFO)
 
 FUNC INT DIA_CorAngar_KopalniaClear_Condition()
 {
-    if (MIS_Bractwo_Kopalnia == LOG_SUCCESS)
+    if (MIS_PsiAbadonedMine == LOG_SUCCESS)
     {
     return TRUE;
     };
@@ -1634,7 +1634,7 @@ INSTANCE DIA_CorAngar_Bractwo_Kopalnia_Finish (C_INFO)
 
 FUNC INT DIA_CorAngar_Bractwo_Kopalnia_Finish_Condition()
 {
-    if (MIS_Bractwo_Kopalnia == LOG_SUCCESS)
+    if (MIS_PsiAbadonedMine == LOG_SUCCESS)
     {
     return TRUE;
     };

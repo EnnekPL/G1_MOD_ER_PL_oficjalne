@@ -572,7 +572,7 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		//----------------Ratford-----------------------
 		B_KillNpc			(ORG_818_Ratford);
 		Npc_ExchangeRoutine (ORG_864_Raeuber,"pupil");
-		Npc_ExchangeRoutine (ORG_870_Raeuber,"pupil");
+		Npc_ExchangeRoutine (BAN_1611_Pun,"pupil");
 		Npc_ExchangeRoutine (ORG_869_Raeuber,"pupil");
 		
 		//---------------Cavalorn-------------------------
