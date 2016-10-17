@@ -432,13 +432,14 @@ FUNC VOID DIA_Fletcher_HelloIHelYou_Info()
     AI_Output (self, other ,"DIA_Fletcher_HelloIHelYou_03_02"); //To zale¿y.
     AI_Output (self, other ,"DIA_Fletcher_HelloIHelYou_03_03"); //Dasz radê znaleŸæ kogoœ na moje miejsce?
     AI_Output (other, self ,"DIA_Fletcher_HelloIHelYou_15_04"); //Popytaæ nie zaszkodzi.
-    MIS_NewGRDfromArene = LOG_RUNNING;
-
-    Log_CreateTopic            (CH1_NewGRDfromArene, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_NewGRDfromArene, LOG_RUNNING);
-    B_LogEntry                     (CH1_NewGRDfromArene,"Fletcher poprosi³ mnie, abym poszuka³ dla niego zastêpstwa.");
+	AI_Output (self, other ,"DIA_Fletcher_HelloIHelYou_03_05"); //W sumie to mo¿e móg³bym siê z kimœ zamieniæ albo coœ w tym stylu.
     
-    AI_Output (self, other ,"DIA_Fletcher_HelloIHelYou_03_05"); //W sumie to mo¿e móg³bym siê z kimœ zamieniæ albo coœ w tym stylu.
+	MIS_FletchersReplacement = LOG_RUNNING;
+
+    Log_CreateTopic          (CH1_FletchersReplacement, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_FletchersReplacement, LOG_RUNNING);
+    B_LogEntry               (CH1_FletchersReplacement,"Fletcher poprosi³ mnie, abym poszuka³ dla niego zastêpstwa.");
+        
     AI_StopProcessInfos	(self);
 };
 
@@ -473,11 +474,12 @@ FUNC VOID DIA_Fletcher_Trip_Info()
     AI_Output (other, self ,"DIA_Fletcher_Trip_15_04"); //Do tego zbiera³ wyp³atê.
     AI_Output (self, other ,"DIA_Fletcher_Trip_03_05"); //He he. Sprytny jest. Mój cz³owiek.
     AI_Output (self, other ,"DIA_Fletcher_Trip_03_06"); //Myœlê, ¿e sobie tutaj poradzi.
-    B_LogEntry                     (CH1_NewGRDfromArene,"Przyprowadzi³em Tripa do Fletchera. Fletcher mo¿e ju¿ spokojnie iœæ do zamku.");
-    Log_SetTopicStatus       (CH1_NewGRDfromArene, LOG_SUCCESS);
-    MIS_NewGRDfromArene = LOG_SUCCESS;
+	
+    B_LogEntry               (CH1_FletchersReplacement,"Przyprowadzi³em Tripa do Fletchera. Fletcher mo¿e ju¿ spokojnie iœæ do zamku.");
+    Log_SetTopicStatus       (CH1_FletchersReplacement, LOG_SUCCESS);
+    MIS_FletchersReplacement = LOG_SUCCESS;
 
-    B_GiveXP (250);
+    B_GiveXP (100);
 
     Npc_ExchangeRoutine (self,"zamek");
     AI_StopProcessInfos	(self);

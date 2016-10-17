@@ -127,7 +127,7 @@ FUNC VOID DIA_Glen_NeedOre_Info()
     AI_Output (other, self ,"DIA_Glen_NeedOre_15_04"); //Chcia³bym trochê siê wzbogaciæ...
     AI_Output (self, other ,"DIA_Glen_NeedOre_03_05"); //To ³ap za kilof i zacznij kopaæ. W koñcu po to tu jesteœ. Dlaczego siê tak spieszysz?
     AI_Output (other, self ,"DIA_Glen_NeedOre_15_08"); //Sk¹d ty siê urwa³eœ? Ruda na szybko zawsze jest potrzebna. To jak? Mo¿esz mi pomóc?
-    AI_Output (self, other ,"DIA_Glen_NeedOre_03_09"); //Mogê daæ ci dziesieæ bry³ek rudy w zamian za dostarczenie tych wytrychów Garpowi.
+    AI_Output (self, other ,"DIA_Glen_NeedOre_03_09"); //Mogê daæ ci dziesiêæ bry³ek rudy w zamian za dostarczenie tych wytrychów Garpowi.
     AI_Output (self, other ,"DIA_Glen_NeedOre_03_10"); //Wiêkszoœæ czasu spêdza na dnie kopalni. Mo¿liwe, ¿e on te¿ bêdzie mia³ dla ciebie jakieœ zadanie. Jednak nie licz na wysokie wynagrodzenie.
 	AI_Output (self, other ,"DIA_Glen_NeedOre_03_11"); //Wszyscy tutaj s¹ biedni, a ty nie wygl¹dasz na kogoœ, kto zas³uguje na specjalne traktowanie. 
     AI_Output (self, other ,"DIA_Glen_NeedOre_03_12"); //Mo¿esz pogadaæ te¿ ze Snipesem. Lubi robiæ sobie jaja ze Stra¿ników i chêtnie p³aci pomocnikom.
@@ -163,11 +163,11 @@ FUNC VOID DIA_Glen_GetPickLocks_Info()
 	
     CreateInvItems (self, ItKeLockpick, 20);
     B_GiveInvItems (self, other, ItKeLockpick, 20);
-    MIS_OMWytrychy = LOG_RUNNING;
+    MIS_SmallDelivery = LOG_RUNNING;
 
-    Log_CreateTopic          (CH1_OMWytrychy, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_OMWytrychy, LOG_RUNNING);
-    B_LogEntry               (CH1_OMWytrychy,"Glen kaza³ mi zanieœæ 20 wytrychów Garpowi. Znajdê go na dnie Kopalni.");
+    Log_CreateTopic          (CH1_SmallDelivery, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_SmallDelivery, LOG_RUNNING);
+    B_LogEntry               (CH1_SmallDelivery,"Glen kaza³ mi zanieœæ 20 wytrychów Garpowi. Znajdê go na dnie Kopalni.");
 };
 
 //========================================

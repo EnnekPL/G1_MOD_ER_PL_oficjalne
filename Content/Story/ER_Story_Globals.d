@@ -10,11 +10,26 @@
 
 const string CH1_Bulit 				 		= "Chrzest Wody";
 
+var int MIS_GrimAmulet;
+const string CH1_GrimAmulet 				= "Amulet Magnatów";
+
+var int MIS_HanisAsTeacher;
+const string CH1_HanisAsTeacher      		= "Nauka za pojedynek";
+
+var int MIS_guyhut;
+const string CH1_guyhut      				= "Chata Kyle'a";
+
+var int MIS_JimsSword;
+const string CH1_JimsSword      			= "Sentymentalny miecz";
+
 var int MIS_Bodyguard;
 const string CH1_Bodyguard     	 			= "Ochroniarz handlarza"; 
 
 var int MIS_WheresNek;
 const string CH1_WheresNek     		 		= "Gdzie jest Nek, do cholery?";
+
+var int MIS_FletchersReplacement;
+const string CH1_FletchersReplacement     	= "Zastêpstwo dla Fletchera"; 
 
 var int MIS_FirstQuest;
 const string Ch1_FirstQuest 				= "Kwatermistrz z placu wymian";
@@ -43,8 +58,11 @@ const string CH1_WhoeverPoursSand 			= "Kto komu piasek sypie";
 var int MIS_ZlecenieJima;
 const string CH1_ZlecenieJima 				= "Zbezczeszczone o³tarze";
 
-var int MIS_Obrona_Placu;
-const string CH1_Obrona_Placu   	  		= "Obrona placu wymian";
+var int MIS_ReplacePointDefense;
+const string CH2_ReplacePointDefense   	  	= "Obrona placu wymian";
+
+var int MIS_GoldSword_Bartholo;
+const string CH2_GoldSword_Bartholo			= "Z³oty miecz";
 
 var int MIS_NEW_GOD;
 const string CH2_New_God      				= "Nieznany bóg";
@@ -52,11 +70,22 @@ const string CH2_New_God      				= "Nieznany bóg";
 var int MIS_ArtosSafeGuard;
 const string CH3_ArtosSafeGuard      		= "Eskorta Arto";
 
+var int MIS_MissedList;
+const string CH3_MissedList      			= "Zaginiona lista";
+
+var int MIS_QuestForHeavyArmor;
+const string CH3_QuestForHeavyArmor 			= "Sytuacja w dolinie";
+
 var int MIS_SnafBag;
 const string CH4_SnafBag 					= "Sakiewka Snafa";
 
 //***Bractwo Œni¹cego***
 //***Zmienne zadañ***
+var int MIS_HuntingWithLukor;
+const string CH1_HuntingWithLukor      		= "Agresywne wilki";
+
+var int MIS_LukorsAmulet;
+const string CH1_LukorsAmulet     			= "Zrabowany amulet";
 
 var int MIS_GhoransVine;
 const string CH1_GhoransVine	      		= "Obozowy margunios";
@@ -64,8 +93,20 @@ const string CH1_GhoransVine	      		= "Obozowy margunios";
 var int MIS_ParvezInTroubles;
 const string CH1_ParvezInTroubles 			= "Parvez w tarapatach";
 
+var int MIS_NewWeed;
+const string CH1_NewWeed    		 		= "Nowe, mocne ziele";
+
+var int MIS_CheatedMerchant; 
+const string CH1_CheatedMerchant    		= "Oszukany handlarz";
+
 var int MIS_MessengerRecall;
 const string CH2_MessengerRecall 			= "Przywo³anie pos³añca Œni¹cego";
+
+var int MIS_MissedSpy;
+const string CH2_MissedSpy      			= "Zaginiony szpieg Gor Na Lin";
+
+var int MIS_OldAlchemist;
+const string CH2_OldAlchemist 				= "Poszukiwania alchemika";
 
 var int MIS_Plates;
 const string CH2_Plates 			 		= "Tabliczki dla Steha";
@@ -96,6 +137,9 @@ const string CH4_GoldMedallion 				= "Z³oty medalion";
 
 var int MIS_PsiAbadonedMine;
 const string CH4_PsiAbadonedMine    		= "Wsparcie Nowego Obozu";
+
+var int MIS_BanditNeedPsionicHelp;
+const string CH4_BanditNeedPsionicHelp 		= "Co siê dzieje u Bandytów?";
 
 //***Obóz Bandytów***
 //***Zmienne zadañ***
@@ -169,6 +213,9 @@ const string CH1_LurkersInHut    			= "Rybacka chata";
 var int MIS_Scams;
 const string CH1_Scams     					= "Przekrêty";
 
+var int MIS_KeyKagan;
+const string CH1_KeyKagan   	     		= "Klucz Baal Kagana"; 
+
 var int MIS_StupidMagican;
 const string CH2_StupidMagican      		= "Szkodnik-magik w Nowym Obozie";
 
@@ -183,6 +230,9 @@ const string CH4_BanditsInTroubles   		= "Banda Quentina";
 
 //***Kolonia***
 //***Zmienne zadañ***
+var int MIS_PathToFreeMine;
+const string CH1_PathToFreeMine				= "Droga do Wolnej Kopalni";
+
 var int MIS_FoodForFlint;
 const string CH1_FoodForFlint      			= "Prowiant Flinta";
 
@@ -216,14 +266,17 @@ const string CH1_FindWhiteSkin   			= "Bia³y wilk";
 var int MIS_GhostsOldStories;
 const string Ch1_GhostsOldStories 			= "Piêtno przesz³oœci";
 
+var int MIS_Food_Patter;
+const string CH1_Food_Patter      			= "Jedzenie do obozu Moroka";
+
 var int MIS_Women;
 const string CH1_Women 						= "Tajemnicza kobieta";
 
 var int MIS_Massage;
 const string CH1_Massage 					= "List do Magów Ognia";
 
-var int MIS_GrimAmulet;
-const string CH1_GrimAmulet 				= "Amulet Magnatów";
+var int MIS_RannyWojownik;
+const string CH1_RannyWojownik      		= "Ranny wojownik";
 
 var int MIS_SickHunter;
 const string CH2_SickHunter     			= "Chory myœliwy";
@@ -261,7 +314,14 @@ const string CH4_HardChest      			= "Szyfr";
 
 //***Stara Kopalnia***
 //***Zmienne zadañ***
+var int MIS_SmallDelivery;
+const string CH1_SmallDelivery      	 	= "Paczka wytrychów";
 
+var int MIS_ActionOM;
+const string CH1_ActionOM    		 		= "Magazyn w Starej Kopalni";
+
+var int MIS_TrollGroundHunting;
+const string CH1_TrollGroundHunting      	= "Ziemny troll w kopalni";
 
 //***Œwi¹tynia Œni¹cego***
 //***Zmienne zadañ***
@@ -291,6 +351,8 @@ var int HeroKnowCipherSellElixier;
 var int Drake_pojedynek; //OreInOM
 var int amulet_sprzedany; //OreInOM
 var int hero_explore_aidanquestcave;
+var int Nyras_splacil_Talasa; var int Hero_dogadany_Nyras; var int Hero_donosi_na_Nyras; var int ruda_talasa_odzyskana; //oszukany handlarz
+var int guysay_about_hut;
 
 //***Pomocnicze***
 //***Wld_GetDay***

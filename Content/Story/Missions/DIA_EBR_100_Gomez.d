@@ -227,7 +227,7 @@ func void DIA_Gomez_Hello_Kontakte()
 	Info_AddChoice		(DIA_Gomez_Hello,"Z Laresem."	,DIA_Gomez_Hello_Kontakte_Lares);
 	};
 	//Info_AddChoice		(DIA_Gomez_Hello,"Zu Lee."	,DIA_Gomez_Hello_Kontakte_Lee);
-	if ( (MIS_PolowanieZBaalem == LOG_SUCCESS) || (Npc_KnowsInfo (hero, DIA_BaalOrun_FirstTalk)) || (Npc_KnowsInfo (hero, DIA_BaalCadar_SleepSpell))  || (BaalTondral_GetNewGuy == LOG_SUCCESS) || (Npc_KnowsInfo (hero, DIA_BaalNamib_FirstTalk)) ) 
+	if ( (MIS_HuntingWithLukor == LOG_SUCCESS) || (Npc_KnowsInfo (hero, DIA_BaalOrun_FirstTalk)) || (Npc_KnowsInfo (hero, DIA_BaalCadar_SleepSpell))  || (BaalTondral_GetNewGuy == LOG_SUCCESS) || (Npc_KnowsInfo (hero, DIA_BaalNamib_FirstTalk)) ) 
 	{
 	Info_AddChoice		(DIA_Gomez_Hello,"Z kilkoma Baalami w Obozie Bractwa."	,DIA_Gomez_Hello_Kontakte_Baals);
 	};
@@ -438,18 +438,16 @@ FUNC INT DIA_Gomez_MagnatQuest_Condition()
 
 FUNC VOID DIA_Gomez_MagnatQuest_Info()
 {
-    AI_Output (self, other ,"DIA_Gomez_MagnatQuest_03_01"); //Stra¿niku, podejdŸ tutaj!
-    AI_Output (self, other ,"DIA_Gomez_MagnatQuest_03_02"); //Mam dla ciebie specjalne zadanie.
-    AI_Output (other, self ,"DIA_Gomez_MagnatQuest_15_03"); //O co chodzi?
-    AI_Output (self, other ,"DIA_Gomez_MagnatQuest_03_04"); //Morok, mój zaufany cz³owiek, otrzyma³ specjalne zadanie.
-    AI_Output (self, other ,"DIA_Gomez_MagnatQuest_03_05"); //Wraz z towarzyszami mia³ zbadaæ ma³¹ œwi¹tyniê w dolinie.
-    AI_Output (self, other ,"DIA_Gomez_MagnatQuest_03_06"); //Jednak od kilku dni nie mamy ¿adnych wieœci.
-    AI_Output (self, other ,"DIA_Gomez_MagnatQuest_03_07"); //Widocznie sobie nie radz¹. IdŸ tam i spróbuj im pomóc.
-    MIS_GomezSuperQuest = LOG_RUNNING;
+    AI_Output (self, other ,"DIA_Gomez_MagnatQuest_03_01"); //Stra¿niku, podejdŸ tutaj! Mam dla ciebie specjalne zadanie.
+    AI_Output (self, other ,"DIA_Gomez_MagnatQuest_03_02"); //Morok, mój zaufany cz³owiek, otrzyma³ specjalne zadanie.
+    AI_Output (self, other ,"DIA_Gomez_MagnatQuest_03_03"); //Wraz z towarzyszami mia³ zbadaæ ma³¹ œwi¹tyniê w dolinie nieopodal obozu.
+    AI_Output (self, other ,"DIA_Gomez_MagnatQuest_03_04"); //Od kilku dni nie ma od nich ¿adnych wieœci. Widocznie sobie nie radz¹.
+    AI_Output (self, other ,"DIA_Gomez_MagnatQuest_03_05"); //IdŸ tam i spróbuj im pomóc.
+    MIS_QuestForHeavyArmor = LOG_RUNNING;
 
-    Log_CreateTopic            (CH1_GomezSuperQuest, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_GomezSuperQuest, LOG_RUNNING);
-    B_LogEntry                     (CH1_GomezSuperQuest,"Gomez kaza³ mi iœæ do Stra¿nika Moroka i sprawdziæ, jak wygl¹da sytuacja zwi¹zana z ma³¹ œwi¹tyni¹ w dolinie.");
+    Log_CreateTopic          (CH3_QuestForHeavyArmor, LOG_MISSION);
+    Log_SetTopicStatus       (CH3_QuestForHeavyArmor, LOG_RUNNING);
+    B_LogEntry               (CH3_QuestForHeavyArmor,"Gomez kaza³ mi iœæ do Stra¿nika Moroka i sprawdziæ, jak wygl¹da sytuacja zwi¹zana z ma³¹ œwi¹tyni¹ w dolinie.");
 };
 
 //========================================
@@ -463,13 +461,13 @@ INSTANCE DIA_Gomez_SuperQuestSuccess (C_INFO)
    condition    = DIA_Gomez_SuperQuestSuccess_Condition;
    information  = DIA_Gomez_SuperQuestSuccess_Info;
    permanent	= FALSE;
-   description	= "Oczyœciliœmy œwi¹tyniê.";
+   description	= "By³em w dolinie. Orkowie z miejsca kultu zostali wyeliminowani.";
 };
 
 FUNC INT DIA_Gomez_SuperQuestSuccess_Condition()
 {
     if (MIS_RzopierdolInTemple == LOG_SUCCESS)
-    && (MIS_GomezSuperQuest == LOG_RUNNING)
+    && (MIS_QuestForHeavyArmor == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -478,21 +476,18 @@ FUNC INT DIA_Gomez_SuperQuestSuccess_Condition()
 
 FUNC VOID DIA_Gomez_SuperQuestSuccess_Info()
 {
-    AI_Output (other, self ,"DIA_Gomez_SuperQuestSuccess_15_01"); //Oczyœciliœmy œwi¹tyniê.
-    AI_Output (self, other ,"DIA_Gomez_SuperQuestSuccess_03_02"); //Naprawdê wam siê to uda³o?
-    AI_Output (self, other ,"DIA_Gomez_SuperQuestSuccess_03_03"); //Rewelacyjnie. O twoich dokonaniach mówi ju¿ ca³y Obóz.
-    AI_Output (self, other ,"DIA_Gomez_SuperQuestSuccess_03_04"); //Jesteœ tu od niedawna, a nieŸle sobie radzisz. Umiesz sobie poradziæ, ch³opcze.
-    AI_Output (self, other ,"DIA_Gomez_SuperQuestSuccess_03_05"); //Myœlê, ¿e zas³u¿y³eœ na jak¹œ nagrodê. 
-    AI_Output (self, other ,"DIA_Gomez_SuperQuestSuccess_03_06"); //WeŸ tê skromn¹ czêœæ rudy z ostatniego wydobycia. Nale¿y ci siê. 
-    AI_Output (self, other ,"DIA_Gomez_SuperQuestSuccess_03_07"); //Mo¿esz tak¿e iœæ do kowala Stone'a i poprosiæ go o ciê¿ki pancerz. 
-    AI_Output (self, other ,"DIA_Gomez_SuperQuestSuccess_03_08"); //Nie powinien sprawiaæ k³opotów. Ruda, któr¹ otrzyma³eœ powinna pokryæ wiêkszoœæ kosztów.
-    B_LogEntry                     (CH1_GomezSuperQuest,"Gomez by³ bardzo zadowolony z moich poczynañ w œwi¹tyni. W nagrodê otrzyma³em 1500 bry³ek rudy oraz zgodê na zakup ciê¿kiej zbroi Stra¿nika.");
-    Log_SetTopicStatus       (CH1_GomezSuperQuest, LOG_SUCCESS);
-    MIS_GomezSuperQuest = LOG_SUCCESS;
+    AI_Output (other, self ,"DIA_Gomez_SuperQuestSuccess_15_01"); //By³em w dolinie. Orkowie ze œwi¹tyni zostali wyeliminowani.
+    AI_Output (self, other ,"DIA_Gomez_SuperQuestSuccess_03_02"); //Doskonale. Wiem, ¿e mia³eœ w tym swój udzia³. 
+    AI_Output (self, other ,"DIA_Gomez_SuperQuestSuccess_03_03"); //Widzê, ¿e dobrze sobie radzisz. Zas³u¿y³eœ wiêc na lepszy pancerz. 
+    AI_Output (self, other ,"DIA_Gomez_SuperQuestSuccess_03_04"); //Tylko nie liczni mog¹ go nosiæ. IdŸ do Stone'a i poproœ go o ciê¿k¹ zbrojê. 
+    AI_Output (self, other ,"DIA_Gomez_SuperQuestSuccess_03_05"); //Oczywiœcie bêdziesz mu musia³ za ni¹ zap³aciæ, ale to ju¿ nie moja sprawa. 
+    AI_Output (self, other ,"DIA_Gomez_SuperQuestSuccess_03_06"); //Mo¿esz odejœæ.
+    B_LogEntry               (CH3_QuestForHeavyArmor,"Gomez by³ bardzo zadowolony z moich poczynañ w orkowych ruinach. Pozowli³ mi nawet na zakup ciê¿kiej zbroi Stra¿nika. Od teraz jestem ju¿ chyba kimœ wa¿nym w obozie.");
+    Log_SetTopicStatus       (CH3_QuestForHeavyArmor, LOG_SUCCESS);
+    MIS_QuestForHeavyArmor = LOG_SUCCESS;
 	HeroCanBuy_GRDHARMOR = true; 
-    B_GiveXP (857);
-    CreateInvItems (self, ItMiNugget, 800);
-    B_GiveInvItems (self, other, ItMiNugget, 800);
+    B_GiveXP (575);
+
     AI_StopProcessInfos	(self);
 };
 

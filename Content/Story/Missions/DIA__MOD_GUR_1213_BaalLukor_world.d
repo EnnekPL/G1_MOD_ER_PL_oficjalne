@@ -87,11 +87,11 @@ FUNC VOID DIA_BaalLukor_world_HELLO2_Info()
     AI_Output (other, self ,"DIA_BaalLukor_world_HELLO2_15_04"); //Wasza magia jest skuteczna przeciw ludziom, ale czy przeciw zwierzêtom te¿?
     AI_Output (self, other ,"DIA_BaalLukor_world_HELLO2_03_05"); //Trafna uwaga. Jednak ja korzystam z miecza. Bra³em lekcje u Cor Angara. To jak, idziesz?
 
-	MIS_PolowanieZBaalem = LOG_RUNNING;
+	MIS_HuntingWithLukor = LOG_RUNNING;
 
-    Log_CreateTopic            (CH1_PolowanieZBaalem, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_PolowanieZBaalem, LOG_RUNNING);
-	B_LogEntry                     (CH1_PolowanieZBaalem,"Baal Lukor zaproponowa³ mi polowanie na wilki grasuj¹ce w pobli¿u Obozu. Dziwne, ¿e to on chce siê tym zaj¹æ. To raczej robota dla Stra¿ników Œwi¹tynnych.");
+    Log_CreateTopic            (CH1_HuntingWithLukor, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_HuntingWithLukor, LOG_RUNNING);
+	B_LogEntry                     (CH1_HuntingWithLukor,"Baal Lukor zaproponowa³ mi polowanie na wilki grasuj¹ce w pobli¿u Obozu. Dziwne, ¿e to on chce siê tym zaj¹æ. To raczej robota dla Stra¿ników Œwi¹tynnych.");
 	
     Info_ClearChoices		(DIA_BaalLukor_world_HELLO2);
     Info_AddChoice		(DIA_BaalLukor_world_HELLO2, "Jasne!", DIA_BaalLukor_world_HELLO2_JASNE);
@@ -105,7 +105,7 @@ FUNC VOID DIA_BaalLukor_world_HELLO2_JASNE()
     
 
     
-	B_LogEntry                     (CH1_PolowanieZBaalem,"Zgodzi³em siê pomóc. Mam daæ sygna³, gdy bêdê gotowy do drogi.");
+	B_LogEntry                     (CH1_HuntingWithLukor,"Zgodzi³em siê pomóc. Mam daæ sygna³, gdy bêdê gotowy do drogi.");
 	
     Info_ClearChoices		(DIA_BaalLukor_world_HELLO2);
 };
@@ -114,9 +114,9 @@ FUNC VOID DIA_BaalLukor_world_HELLO2_NIE()
 {
     AI_Output (other, self ,"DIA_BaalLukor_world_HELLO2_NIE_15_01"); //Nie mam czasu na wilki!
     AI_Output (self, other ,"DIA_BaalLukor_world_HELLO2_NIE_03_02"); //Jak chcesz.
-    B_LogEntry                     (CH1_PolowanieZBaalem,"Nie chcia³em zapolowaæ z Baal Lukorem na wilki.");
-    Log_SetTopicStatus       (CH1_PolowanieZBaalem, LOG_FAILED);
-    MIS_PolowanieZBaalem = LOG_FAILED;
+    B_LogEntry                     (CH1_HuntingWithLukor,"Nie chcia³em zapolowaæ z Baal Lukorem na wilki.");
+    Log_SetTopicStatus       (CH1_HuntingWithLukor, LOG_FAILED);
+    MIS_HuntingWithLukor = LOG_FAILED;
     Info_ClearChoices		(DIA_BaalLukor_world_HELLO2);
     AI_StopProcessInfos	(self);
 };
@@ -137,7 +137,7 @@ INSTANCE DIA_BaalLukor_world_HELLO3 (C_INFO)
 
 FUNC INT DIA_BaalLukor_world_HELLO3_Condition()
 {
-    if (MIS_PolowanieZBaalem == LOG_RUNNING)
+    if (MIS_HuntingWithLukor == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -204,21 +204,21 @@ FUNC VOID DIA_BaalLukor_world_HELLO4_CHODXMY()
 {
     AI_Output (other, self ,"DIA_BaalLukor_world_HELLO4_CHODXMY_15_01"); //Oczywiœcie! ProwadŸ.
     AI_Output (self, other ,"DIA_BaalLukor_world_HELLO4_CHODXMY_03_02"); //A wiêc za mn¹!
-    B_LogEntry                     (CH1_PolowanieZBaalem,"Pozbyliœmy siê wilków. Teraz Lukor zaproponowa³ wyeliminowanie bandytów z jaskini i odnalezienie amuletu.");
+    B_LogEntry                     (CH1_HuntingWithLukor,"Pozbyliœmy siê wilków. Teraz Lukor zaproponowa³ wyeliminowanie bandytów z jaskini i odnalezienie amuletu.");
 
     B_GiveXP (200);
     Npc_ExchangeRoutine (GUR_1213_BaalLukor_world, "guide2");
 	Info_ClearChoices		(DIA_BaalLukor_world_HELLO4);
-	    B_LogEntry                     (CH1_PolowanieZBaalem,"Wilki krêc¹ce siê w pobli¿u œcie¿ki s¹ ju¿ przesz³oœci¹.");
-    Log_SetTopicStatus       (CH1_PolowanieZBaalem, LOG_SUCCESS);
-    MIS_PolowanieZBaalem = LOG_SUCCESS;
+	    B_LogEntry                     (CH1_HuntingWithLukor,"Wilki krêc¹ce siê w pobli¿u œcie¿ki s¹ ju¿ przesz³oœci¹.");
+    Log_SetTopicStatus       (CH1_HuntingWithLukor, LOG_SUCCESS);
+    MIS_HuntingWithLukor = LOG_SUCCESS;
 
     
-    MIS_BaalQuest2 = LOG_RUNNING;
+    MIS_LukorsAmulet = LOG_RUNNING;
 
-    Log_CreateTopic            (CH1_BaalQuest2, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_BaalQuest2, LOG_RUNNING);
-    B_LogEntry                     (CH1_BaalQuest2,"Baal Lukor poprosi³ mnie, abym pomóg³ mu pozbyæ siê rabusiów, którzy ukradli jego amulet.");
+    Log_CreateTopic            (CH1_LukorsAmulet, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_LukorsAmulet, LOG_RUNNING);
+    B_LogEntry                     (CH1_LukorsAmulet,"Baal Lukor poprosi³ mnie, abym pomóg³ mu pozbyæ siê rabusiów, którzy ukradli jego amulet.");
 
     AI_StopProcessInfos	(self);
 	
@@ -235,9 +235,9 @@ FUNC VOID DIA_BaalLukor_world_HELLO4_NIENIE()
 	B_SetPermAttitude	(GUR_1213_BaalLukor_world,	ATT_NEUTRAL);
 	GUR_1213_BaalLukor_world.aivar[AIV_PARTYMEMBER] = false;
     Npc_ExchangeRoutine (self, "START");
-	    B_LogEntry                     (CH1_PolowanieZBaalem,"Wilki krêc¹ce siê w pobli¿u œcie¿ki s¹ ju¿ przesz³oœci¹.");
-    Log_SetTopicStatus       (CH1_PolowanieZBaalem, LOG_SUCCESS);
-    MIS_PolowanieZBaalem = LOG_SUCCESS;
+	    B_LogEntry                     (CH1_HuntingWithLukor,"Wilki krêc¹ce siê w pobli¿u œcie¿ki s¹ ju¿ przesz³oœci¹.");
+    Log_SetTopicStatus       (CH1_HuntingWithLukor, LOG_SUCCESS);
+    MIS_HuntingWithLukor = LOG_SUCCESS;
 
     B_GiveXP (150);
 
@@ -248,14 +248,14 @@ FUNC VOID DIA_BaalLukor_world_HELLO4_MAM_JUZ()
     AI_Output (other, self ,"DIA_BaalLukor_world_HELLO4_MAM_JUZ_15_01"); //Ju¿ pozby³em siê tych bandytów. Mam amulet.
     AI_Output (self, other ,"DIA_BaalLukor_world_HELLO4_MAM_JUZ_03_02"); //Doprawdy?! To wspaniale! 
     AI_Output (other, self ,"DIA_BaalLukor_world_HELLO4_MAM_JUZ_15_03"); //Proszê, weŸ go.
-	    B_LogEntry                     (CH1_PolowanieZBaalem,"Wilki krêc¹ce siê w pobli¿u œcie¿ki s¹ ju¿ przesz³oœci¹.");
-    Log_SetTopicStatus       (CH1_PolowanieZBaalem, LOG_SUCCESS);
-    MIS_PolowanieZBaalem = LOG_SUCCESS;
+	    B_LogEntry                     (CH1_HuntingWithLukor,"Wilki krêc¹ce siê w pobli¿u œcie¿ki s¹ ju¿ przesz³oœci¹.");
+    Log_SetTopicStatus       (CH1_HuntingWithLukor, LOG_SUCCESS);
+    MIS_HuntingWithLukor = LOG_SUCCESS;
 
 
-    B_LogEntry                     (CH1_BaalQuest2,"Baal Lukor poprosi³ mnie, abym pomóg³ mu pozbyæ siê rabusiów, którzy ukradli jego amulet. Na szczêœcie ju¿ wczeœniej pozby³em siê bandytów i znalaz³em skradziony przedmiot.");
-    Log_SetTopicStatus       (CH1_BaalQuest2, LOG_SUCCESS);
-    MIS_BaalQuest2 = LOG_SUCCESS;
+    B_LogEntry                     (CH1_LukorsAmulet,"Baal Lukor poprosi³ mnie, abym pomóg³ mu pozbyæ siê rabusiów, którzy ukradli jego amulet. Na szczêœcie ju¿ wczeœniej pozby³em siê bandytów i znalaz³em skradziony przedmiot.");
+    Log_SetTopicStatus       (CH1_LukorsAmulet, LOG_SUCCESS);
+    MIS_LukorsAmulet = LOG_SUCCESS;
 
     B_GiveXP (300);
     B_GiveInvItems (other, self, lukor_amulet, 1);
@@ -291,7 +291,7 @@ INSTANCE DIA_BaalLukor_world_POKONANI_NOWICJUSZE (C_INFO)
 FUNC INT DIA_BaalLukor_world_POKONANI_NOWICJUSZE_Condition()
 {
     var C_NPC whodie0; 	whodie0 = Hlp_GetNpc(NON_3926_Hersztgrupy);
-    if (MIS_BaalQuest2 == LOG_RUNNING)
+    if (MIS_LukorsAmulet == LOG_RUNNING)
     && (Npc_IsDead(whodie0))
 	&& (Npc_GetDistToWP (self, "CAVE_BANDIT_1") < 1000)
     {
@@ -304,7 +304,7 @@ FUNC VOID DIA_BaalLukor_world_POKONANI_NOWICJUSZE_Info()
 {
     AI_Output (self, other ,"DIA_BaalLukor_world_POKONANI_NOWICJUSZE_03_01"); //Dobrze radzisz sobie z broni¹. To siê chwali.
     AI_Output (self, other ,"DIA_BaalLukor_world_POKONANI_NOWICJUSZE_03_02"); //ZnajdŸ teraz mój amulet. Resztê ³upów mo¿esz zatrzymaæ. 
-    B_LogEntry                     (CH1_BaalQuest2,"Muszê teraz znaleŸæ amulet gdzieœ wœród cia³.");
+    B_LogEntry                     (CH1_LukorsAmulet,"Muszê teraz znaleŸæ amulet gdzieœ wœród cia³.");
 
     B_GiveXP (150);
     AI_StopProcessInfos	(self);
@@ -339,9 +339,9 @@ FUNC VOID DIA_BaalLukor_world_AMULET_Info()
     AI_Output (other, self ,"DIA_BaalLukor_world_AMULET_15_01"); //Mam amulet.
     AI_Output (self, other ,"DIA_BaalLukor_world_AMULET_03_02"); //Dobra robota. Dziêkujê ci za pomoc. 
     AI_Output (self, other ,"DIA_BaalLukor_world_AMULET_03_03"); //WeŸ tê rudê jako nagrodê. Szepnê te¿ o tobie dobre s³owo Kalomowi. 
-    B_LogEntry                     (CH1_BaalQuest2,"Znalaz³em amulet. Baal Lukor by³ bardzo zadowolony.");
-    Log_SetTopicStatus       (CH1_BaalQuest2, LOG_SUCCESS);
-    MIS_BaalQuest2 = LOG_SUCCESS;
+    B_LogEntry                     (CH1_LukorsAmulet,"Znalaz³em amulet. Baal Lukor by³ bardzo zadowolony.");
+    Log_SetTopicStatus       (CH1_LukorsAmulet, LOG_SUCCESS);
+    MIS_LukorsAmulet = LOG_SUCCESS;
 B_GiveInvItems (hero, self, lukor_amulet, 1);
     B_GiveXP (50);
 	B_SetPermAttitude	(GUR_1213_BaalLukor_world,	ATT_NEUTRAL);
@@ -366,7 +366,7 @@ INSTANCE DIA_BaalLukor_world_ZADANIE (C_INFO)
 
 FUNC INT DIA_BaalLukor_world_ZADANIE_Condition()
 {
-    if (kapitel == 2)
+    if (kapitel == 2) && (Npc_GetTrueGuild(other) == GIL_TPL)
     {
     return TRUE;
     };
@@ -396,6 +396,7 @@ FUNC INT DIA_BaalLukor_world_QUEST2_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_BaalLukor_world_ZADANIE))
     && (kapitel == 2)
+	&& (Npc_GetTrueGuild(other) == GIL_TPL)
     {
     return TRUE;
     };
@@ -408,11 +409,11 @@ FUNC VOID DIA_BaalLukor_world_QUEST2_Info()
     AI_Output (self, other ,"DIA_BaalLukor_world_QUEST2_03_02"); //Kilka tygodni temu wys³a³em Gor Na Lina do Nowego Obozu. Mia³ szpiegowaæ ludzi Laresa.
     AI_Output (self, other ,"DIA_BaalLukor_world_QUEST2_03_03"); //Podejrzewam, ¿e jego siepacze podkradaj¹ naszym wys³annikom ziele.
     AI_Output (self, other ,"DIA_BaalLukor_world_QUEST2_03_04"); //Od d³u¿szego czasu nie mam od niego ¿adnych wieœci. Mo¿esz go poszukaæ?
-    MIS_ZginalLIN = LOG_RUNNING;
+    MIS_MissedSpy = LOG_RUNNING;
 
-    Log_CreateTopic            (CH1_ZginalLIN, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_ZginalLIN, LOG_RUNNING);
-    B_LogEntry                     (CH1_ZginalLIN,"Baal Lukor wys³a³ do Nowego Obozu Stra¿nika Œwi¹tynnego imieniem Gor Na Lin. Stra¿nik mia³ szpiegowaæ ludzi Laresa, jednak od d³u¿szego czasu nie ma od niego ¿adnych wieœci.");
+    Log_CreateTopic            (CH2_MissedSpy, LOG_MISSION);
+    Log_SetTopicStatus       (CH2_MissedSpy, LOG_RUNNING);
+    B_LogEntry                     (CH2_MissedSpy,"Baal Lukor wys³a³ do Nowego Obozu Stra¿nika Œwi¹tynnego imieniem Gor Na Lin. Stra¿nik mia³ szpiegowaæ ludzi Laresa, jednak od d³u¿szego czasu nie ma od niego ¿adnych wieœci.");
     AI_StopProcessInfos	(self);
 };
 
@@ -433,7 +434,7 @@ INSTANCE DIA_BaalLukor_world_LIN_DED (C_INFO)
 
 FUNC INT DIA_BaalLukor_world_LIN_DED_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_BaalLukor_world_QUEST2)) && (Npc_IsDead(TPL_3928_GorNaLin)) && (MIS_ZginalLIN == LOG_RUNNING)
+    if (Npc_KnowsInfo (hero, DIA_BaalLukor_world_QUEST2)) && (Npc_IsDead(TPL_3928_GorNaLin)) && (MIS_MissedSpy == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -453,9 +454,9 @@ FUNC VOID DIA_BaalLukor_world_LIN_DED_Info()
     AI_Output (self, other ,"DIA_BaalLukor_world_LIN_DED_03_09"); //To smutna wiadomoœæ, jednak dziêkujê za twoje starania. Masz tu skromn¹ zap³atê.
     CreateInvItems (self, ItMiNugget, 50);
     B_GiveInvItems (self, other, ItMiNugget, 50);
-	Log_SetTopicStatus       (CH1_ZginalLIN, LOG_FAILED);
-    MIS_ZginalLIN = LOG_FAILED;
-    B_LogEntry                     (CH1_ZginalLIN,"Powiedzia³em Baal Lukorowi, ¿e Gor Na Lin nie ¿yje i nie uda³o mi siê go uratowaæ.");
+	Log_SetTopicStatus       (CH2_MissedSpy, LOG_FAILED);
+    MIS_MissedSpy = LOG_FAILED;
+    B_LogEntry                     (CH2_MissedSpy,"Powiedzia³em Baal Lukorowi, ¿e Gor Na Lin nie ¿yje i nie uda³o mi siê go uratowaæ.");
 };
 
 //========================================
@@ -475,7 +476,7 @@ INSTANCE DIA_BaalLukor_world_QUEST_END (C_INFO)
 FUNC INT DIA_BaalLukor_world_QUEST_END_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_HELLO2_POWROT_DONE))
-	&& (MIS_ZginalLIN == LOG_RUNNING) 
+	&& (MIS_MissedSpy == LOG_RUNNING) 
     {
     return TRUE;
     };
@@ -491,9 +492,9 @@ FUNC VOID DIA_BaalLukor_world_QUEST_END_Info()
     AI_Output (other, self ,"DIA_BaalLukor_world_QUEST_END_15_05"); //Da³ mi ju¿ to do zrozumienia.
     AI_Output (self, other ,"DIA_BaalLukor_world_QUEST_END_03_06"); //Có¿... Bêdê musia³ nad nim trochê popracowaæ.
     AI_Output (self, other ,"DIA_BaalLukor_world_QUEST_END_03_07"); //A wracaj¹c do ciebie... To nie by³o ³atwe zadanie. WeŸ te rudê i wywary jako nagrodê.
-	Log_SetTopicStatus       (CH1_ZginalLIN, LOG_SUCCESS);
-    MIS_ZginalLIN = LOG_SUCCESS;
-    B_LogEntry                     (CH1_ZginalLIN,"Baal Lukor by³ bardzo zadowolony z powrotu Gor Na Lina, jednak zaskoczy³o go jego zachowanie. Na szczêœcie to nie jest mój problem.");
+	Log_SetTopicStatus       (CH2_MissedSpy, LOG_SUCCESS);
+    MIS_MissedSpy = LOG_SUCCESS;
+    B_LogEntry                     (CH2_MissedSpy,"Baal Lukor by³ bardzo zadowolony z powrotu Gor Na Lina, jednak zaskoczy³o go jego zachowanie. Na szczêœcie to nie jest mój problem.");
 
     B_GiveXP (400);
     CreateInvItems (self, ItMiNugget, 300);

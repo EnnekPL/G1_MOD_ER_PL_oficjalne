@@ -51,9 +51,9 @@ FUNC VOID DIA_Bruce_ANGRY_Info()
 {
     AI_Output (self, other ,"DIA_Bruce_ANGRY_03_01"); //Skoñczyliœmy ju¿ zabawê z twoim kole¿k¹. Pora na ciebie.
     AI_Output (self, other ,"DIA_Bruce_ANGRY_03_02"); //Braæ go, ch³opcy!
-    B_LogEntry                     (CH1_ZginalLIN,"Gor Na Lin nie ¿yje. Zabili go Bruce i jego ludzie. Przegrywaj¹c walkê z Mazinem, po³o¿y³em to zadanie...");
-    Log_SetTopicStatus       (CH1_ZginalLIN, LOG_FAILED);
-    MIS_ZginalLIN = LOG_FAILED;
+    B_LogEntry                     (CH2_MissedSpy,"Gor Na Lin nie ¿yje. Zabili go Bruce i jego ludzie. Przegrywaj¹c walkê z Mazinem, po³o¿y³em to zadanie...");
+    Log_SetTopicStatus       (CH2_MissedSpy, LOG_FAILED);
+    MIS_MissedSpy = LOG_FAILED;
     AI_StopProcessInfos	(self);
     Npc_SetTarget (self, other);
     AI_StartState (self, ZS_ATTACK, 1, "");

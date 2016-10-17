@@ -40,7 +40,7 @@ INSTANCE DIA_GorNaLin_HELLO1 (C_INFO)
 
 FUNC INT DIA_GorNaLin_HELLO1_Condition()
 {
-    if (MIS_ZginalLIN == LOG_RUNNING)
+    if (MIS_MissedSpy == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -51,7 +51,7 @@ FUNC VOID DIA_GorNaLin_HELLO1_Info()
 {
     AI_Output (self, other ,"DIA_GorNaLin_HELLO1_03_01"); //(kompletnie pijany) Hej! hyp... Masz mo¿e... hip... troszeczkê... wódeczki?
     AI_Output (self, other ,"DIA_GorNaLin_HELLO1_03_02"); //Napi³bym siê... hik... czegoœ mocniejszego.
-    B_LogEntry                     (CH1_ZginalLIN,"W karczmie w Nowym Obozie spotka³em Gor Na Lina, a raczej resztki cz³owieka, jakim by³. By³y Stra¿nik Œwi¹tynny najwyraŸniej sprzeda³ swoj¹ zbrojê, ¿eby zarobiæ na alkohol. Zastanawia mnie, dlaczego goœæ tak siê rozpi³. Muszê popytaæ okolicznych pijaków.");
+    B_LogEntry                     (CH2_MissedSpy,"W karczmie w Nowym Obozie spotka³em Gor Na Lina, a raczej resztki cz³owieka, jakim by³. By³y Stra¿nik Œwi¹tynny najwyraŸniej sprzeda³ swoj¹ zbrojê, ¿eby zarobiæ na alkohol. Zastanawia mnie, dlaczego goœæ tak siê rozpi³. Muszê popytaæ okolicznych pijaków.");
 };
 
 //========================================
@@ -123,7 +123,7 @@ FUNC VOID DIA_HELLO2_BRACTWO_Info()
     AI_Output (self, other ,"DIA_HELLO2_BRACTWO_03_08"); //Co... co chcesz zrobiæ?
     AI_DrawWeapon (other);
 	AI_Output (other, self ,"DIA_HELLO2_BRACTWO_15_09"); //Nauczê ciê rozs¹dku si³¹.
-    B_LogEntry                     (CH1_ZginalLIN,"Szlag mnie trafia, gdy mam rozmawiaæ z Linem. Ten cz³owiek straci³ rozum. Chyba muszê mu go przywróciæ si³¹, bo innego wyjœcia nie widzê.");
+    B_LogEntry                     (CH2_MissedSpy,"Szlag mnie trafia, gdy mam rozmawiaæ z Linem. Ten cz³owiek straci³ rozum. Chyba muszê mu go przywróciæ si³¹, bo innego wyjœcia nie widzê.");
     AI_StopProcessInfos	(self);
 };
 
@@ -166,7 +166,7 @@ FUNC VOID DIA_HELLO2_POBITY_Info()
     AI_Output (self, other ,"DIA_HELLO2_POBITY_03_08"); //Ou... Nie dobrze mi...
     AI_Output (other, self ,"DIA_HELLO2_POBITY_15_09"); //Tylko spróbuj! Ustatkuj swój ¿o³¹dek, a ja poszukam jakiegoœ banda¿a. Mikstura w tym momencie to nie za dobry pomys³.
     AI_Output (self, other ,"DIA_HELLO2_POBITY_03_10"); //Umm... Szybko! 
-    B_LogEntry                     (CH1_ZginalLIN,"Chyba troszkê za mocno potraktowa³em Gor Na Lina. Muszê szybko znaleŸæ jakiœ banda¿, bo ten krwotok nie wygl¹da ciekawie. ");
+    B_LogEntry                     (CH2_MissedSpy,"Chyba troszkê za mocno potraktowa³em Gor Na Lina. Muszê szybko znaleŸæ jakiœ banda¿, bo ten krwotok nie wygl¹da ciekawie. ");
 
     B_GiveXP (100);
 };
@@ -214,7 +214,7 @@ FUNC VOID DIA_HELLO2_RANA_Info()
     AI_Output (other, self ,"DIA_HELLO2_RANA_15_06"); //ChodŸ za mn¹.
     AI_Output (self, other ,"DIA_HELLO2_RANA_03_07"); //Ech... No dobrze. ProwadŸ.
     Npc_ExchangeRoutine (self, "FOLLOW");
-    B_LogEntry                     (CH1_ZginalLIN,"Zatamowa³em krwotok. Przy okazji Stra¿nik Œwi¹tynny nieco wytrzeŸwia³ i bez problemów za mn¹ poszed³ do Obozu. Teraz muszê pilnowaæ, ¿eby prze¿y³.");
+    B_LogEntry                     (CH2_MissedSpy,"Zatamowa³em krwotok. Przy okazji Stra¿nik Œwi¹tynny nieco wytrzeŸwia³ i bez problemów za mn¹ poszed³ do Obozu. Teraz muszê pilnowaæ, ¿eby prze¿y³.");
 
     B_GiveXP (150);
     AI_StopProcessInfos	(self);
@@ -255,7 +255,7 @@ FUNC VOID DIA_HELLO2_POWROT_DONE_Info()
     AI_Output (other, self ,"DIA_HELLO2_POWROT_DONE_15_05"); //Twoje dzieciñstwo nie mia³o miejsca trzy tygodnie temu. I nie, to nie jest Ardea, tylko œmierdz¹cy obóz Bractwa.
     AI_Output (self, other ,"DIA_HELLO2_POWROT_DONE_03_06"); //K³amiesz. Idê szukaæ mojego ojca! Na pewno gdzieœ tu jest.
     AI_Output (other, self ,"DIA_HELLO2_POWROT_DONE_15_07"); //Tak... Nazywa siê Lukor. IdŸ do niego...
-    B_LogEntry                     (CH1_ZginalLIN,"Doprowadzi³em Gor Na Lina do Bractwa. Ca³kiem mu odbi³o. Musze pogadaæ z Baal Lukorem.");
+    B_LogEntry                     (CH2_MissedSpy,"Doprowadzi³em Gor Na Lina do Bractwa. Ca³kiem mu odbi³o. Musze pogadaæ z Baal Lukorem.");
 
     B_GiveXP (200);
     AI_StopProcessInfos	(self);

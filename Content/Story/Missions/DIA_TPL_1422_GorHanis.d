@@ -259,12 +259,12 @@ FUNC VOID DIA_GorHanis_WarriorTeach_Info()
     AI_Output (self, other ,"DIA_GorHanis_WarriorTeach_03_08"); //Œni¹cy przygarnia sieroty, a nie bije ich.
     AI_Output (other, self ,"DIA_GorHanis_WarriorTeach_15_09"); //Co? Nie jestem sierot¹.
     AI_Output (self, other ,"DIA_GorHanis_WarriorTeach_03_10"); //IdŸ do swoich zajêæ.
-    MIS_WpierdolNaArenie = LOG_RUNNING;
+    MIS_HanisAsTeacher = LOG_RUNNING;
 Log_CreateTopic   	(GE_TeacherOC,LOG_NOTE);
 	B_LogEntry			(GE_TeacherOC,"Gor Hanis nauczy mnie wytrzyma³oœci na ró¿ne rodzaje obra¿eñ.");
-    Log_CreateTopic            (CH1_WpierdolNaArenie, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_WpierdolNaArenie, LOG_RUNNING);
-    B_LogEntry                     (CH1_WpierdolNaArenie,"Gor Hanis nauczy mnie nowych umiejêtnoœci, gdy pokonam któregoœ z wojowników na arenie.");
+    Log_CreateTopic            (CH1_HanisAsTeacher, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_HanisAsTeacher, LOG_RUNNING);
+    B_LogEntry                     (CH1_HanisAsTeacher,"Gor Hanis nauczy mnie nowych umiejêtnoœci, gdy pokonam któregoœ z wojowników na arenie.");
     AI_StopProcessInfos	(self);
 };
 
@@ -285,7 +285,7 @@ INSTANCE DIA_GorHanis_IFightWith (C_INFO)
 FUNC INT DIA_GorHanis_IFightWith_Condition()
 {
     if ((Grd_251_Kirgo.aivar[AIV_WASDEFEATEDBYSC] == TRUE) || (Sld_729_Kharim.aivar[AIV_WASDEFEATEDBYSC] == TRUE))
-	&& (MIS_WpierdolNaArenie == LOG_RUNNING)
+	&& (MIS_HanisAsTeacher == LOG_RUNNING)
     && (Kapitel < 4)
     {
     return TRUE;
@@ -300,22 +300,22 @@ FUNC VOID DIA_GorHanis_IFightWith_Info()
     {
         AI_Output (self, other ,"DIA_GorHanis_IFightWith_03_02"); //Masz racjê. Kirgo dosta³ niez³y wycisk.
         AI_Output (self, other ,"DIA_GorHanis_IFightWith_03_03"); //Dobra robota. Nauczê ciê tego co wiem.
-		 B_LogEntry                     (CH1_WpierdolNaArenie,"Gor Hanis bêdzie mnie uczy³.");
-        Log_SetTopicStatus       (CH1_WpierdolNaArenie, LOG_SUCCESS);
-        MIS_WpierdolNaArenie = LOG_SUCCESS;
+		 B_LogEntry                     (CH1_HanisAsTeacher,"Uda³o mi siê pokonaæ Kirgo, wiêc Gor Hanis bêdzie mnie uczy³.");
+        Log_SetTopicStatus       (CH1_HanisAsTeacher, LOG_SUCCESS);
+        MIS_HanisAsTeacher = LOG_SUCCESS;
 
-        B_GiveXP (200);
+        B_GiveXP (50);
     }
     else if (Sld_729_Kharim.aivar[AIV_WASDEFEATEDBYSC] == TRUE)
     {
         AI_Output (self, other ,"DIA_GorHanis_IFightWith_03_04"); //Pokaza³eœ Kharimowi, gdzie jego miejsce.
         AI_Output (other, self ,"DIA_GorHanis_IFightWith_15_05"); //Czy to znaczy, ¿e bêdziesz mnie uczy³?
         AI_Output (self, other ,"DIA_GorHanis_IFightWith_03_06"); //Tak.
-        B_LogEntry                     (CH1_WpierdolNaArenie,"Gor Hanis bêdzie mnie uczy³.");
-        Log_SetTopicStatus       (CH1_WpierdolNaArenie, LOG_SUCCESS);
-        MIS_WpierdolNaArenie = LOG_SUCCESS;
+        B_LogEntry                     (CH1_HanisAsTeacher,"Uda³o mi siê pokonaæ Kharima, wiêc Gor Hanis bêdzie mnie uczy³.");
+        Log_SetTopicStatus       (CH1_HanisAsTeacher, LOG_SUCCESS);
+        MIS_HanisAsTeacher = LOG_SUCCESS;
 
-        B_GiveXP (200);
+        B_GiveXP (75);
     };
     AI_StopProcessInfos	(self);
 };
@@ -337,7 +337,7 @@ INSTANCE DIA_GorHanis_HanisTeach (C_INFO)
 
 FUNC INT DIA_GorHanis_HanisTeach_Condition()
 {
-    if (MIS_WpierdolNaArenie == LOG_SUCCESS)
+    if (MIS_HanisAsTeacher == LOG_SUCCESS)
     {
     return TRUE;
     };

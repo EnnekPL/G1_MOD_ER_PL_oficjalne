@@ -270,7 +270,7 @@ INSTANCE DIA_Cipher_NovizeJoints (C_INFO)
 
 FUNC INT DIA_Cipher_NovizeJoints_Condition()
 {
-    if (MIS_NoweZiele == LOG_RUNNING) && ( Cipher_Trade == TRUE)
+    if (MIS_NewWeed == LOG_RUNNING) && ( Cipher_Trade == TRUE)
     {
     return TRUE;
     };
@@ -287,7 +287,7 @@ FUNC VOID DIA_Cipher_NovizeJoints_Info()
 	B_GiveInvItems (hero,self, MegaJoint,1);
 	AI_UseItem (self, MegaJoint);
     AI_Output (self, other ,"DIA_Cipher_NovizeJoints_03_06"); //O cholera, ma niez³ego kopa... Przeka¿ temu, kto ciê przys³a³, ¿e dobijemy targu.
-    B_LogEntry                     (CH1_NoweZiele,"Cipher po spróbowaniu jednego skrêta od razu przysta³ na uk³ad. ");
+    B_LogEntry                     (CH1_NewWeed,"Cipher po spróbowaniu jednego skrêta od razu przysta³ na uk³ad. ");
 
     AI_StopProcessInfos	(self);
 };

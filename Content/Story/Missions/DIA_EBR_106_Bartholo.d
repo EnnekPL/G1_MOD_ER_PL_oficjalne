@@ -537,9 +537,9 @@ FUNC VOID DIA_Bartholo_GOLDSWORD_Info()
     AI_Output (self, other ,"DIA_Bartholo_GOLDSWORD_03_09"); //Ha ha! Trzymam ciê za s³owo.
     MIS_GoldSword_Bartholo = LOG_RUNNING;
 
-    Log_CreateTopic            (CH1_GoldSword_Bartholo, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_GoldSword_Bartholo, LOG_RUNNING);
-    B_LogEntry                     (CH1_GoldSword_Bartholo,"Bartholo opowiedzia³ mi o wojowniku, który posiada³ z³oty miecz. Podobno w³aœciciel przez swoj¹ bezmyœlnoœæ zosta³ zabity przez zêbacze. Muszê poszukaæ tych bestii w okolicy Starego Obozu. Mo¿e miecz wci¹¿ gdzieœ le¿y.");
+    Log_CreateTopic            (CH2_GoldSword_Bartholo, LOG_MISSION);
+    Log_SetTopicStatus       (CH2_GoldSword_Bartholo, LOG_RUNNING);
+    B_LogEntry                     (CH2_GoldSword_Bartholo,"Bartholo opowiedzia³ mi o wojowniku, który posiada³ z³oty miecz. Podobno w³aœciciel przez swoj¹ bezmyœlnoœæ zosta³ zabity przez zêbacze. Muszê poszukaæ tych bestii w okolicy Starego Obozu. Mo¿e miecz wci¹¿ gdzieœ le¿y.");
     AI_StopProcessInfos	(self);
 };
 
@@ -583,8 +583,8 @@ FUNC VOID DIA_Bartholo_GIVE_GOLD_SWORD_Info()
     CreateInvItems (self, ItFo_Potion_Health_02, 2);
     B_GiveInvItems (self, other, ItFo_Potion_Health_02, 2);
 	B_GiveInvItems (other, self, GoldenSword, 1);
-    B_LogEntry                     (CH1_GoldSword_Bartholo,"Znalaz³em miecz i odda³em go Bartholo. Po co mi coœ takiego w ekwipunku...");
-    Log_SetTopicStatus       (CH1_GoldSword_Bartholo, LOG_SUCCESS);
+    B_LogEntry                     (CH2_GoldSword_Bartholo,"Znalaz³em miecz i odda³em go Bartholo. Po co mi coœ takiego w ekwipunku...");
+    Log_SetTopicStatus       (CH2_GoldSword_Bartholo, LOG_SUCCESS);
     MIS_GoldSword_Bartholo = LOG_SUCCESS;
 
     B_GiveXP (350);

@@ -53,7 +53,7 @@ FUNC VOID DIA_GorNaToth_IdonDebt_Info()
 	AI_Output			(self, other,"DIA_GorNaToth_IdonDebt_11_03"); //Widzê, ¿e by³a tu niez³a popijawa podczas mojej nieobecnoœci. WeŸ tê rudê. Stra¿ników spotka zas³u¿ona kara podczas treningów. 
 	CreateInvItems (self,itminugget, 150);
 	B_GiveinvItems (self,other,itminugget,150);
-	B_LogEntry (CH1_OszukanyHandlarz,"Gor Na Toth zwróci³ mi rudê i obieca³, ¿e ukarze Gor Na Idona. ");
+	B_LogEntry (CH1_CheatedMerchant,"Gor Na Toth zwróci³ mi rudê i obieca³, ¿e ukarze Gor Na Idona. ");
 	AI_StopProcessInfos	(self);
 };
 

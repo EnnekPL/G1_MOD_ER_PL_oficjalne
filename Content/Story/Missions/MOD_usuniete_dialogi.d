@@ -146,7 +146,7 @@ FUNC VOID DIA_BaalKagan_KupiszKurwo_Info()
     AI_Output (self, other ,"DIA_BaalKagan_KupiszKurwo_03_02"); //Jednak wykrad³eœ recepturê Nowicjuszom.
     AI_Output (self, other ,"DIA_BaalKagan_KupiszKurwo_03_03"); //Wiedzia³em, ¿e tak bêdzie.
     AI_Output (self, other ,"DIA_BaalKagan_KupiszKurwo_03_04"); //Nie chcê mieæ z tob¹ nic wspólnego.
-    B_LogEntry                     (CH1_NoweZiele3BAU,"Baal Kagan jest wœciek³y za to co zrobi³em. No có¿. Znajdê innego kupca.");
+    B_LogEntry                     (CH1_NewWeed3BAU,"Baal Kagan jest wœciek³y za to co zrobi³em. No có¿. Znajdê innego kupca.");
     AI_StopProcessInfos	(self);
 };
 
@@ -180,11 +180,11 @@ FUNC VOID DIA_Bandyta_Pensja_Info()
     AI_Output (self, other ,"DIA_Bandyta_Pensja_03_02"); //Chwila, chwila. Najpierw musisz znaleŸæ kupca na ziele. Dopiero wtedy bêdziemy mogli myœleæ o zyskach.
     AI_Output (self, other ,"DIA_Bandyta_Pensja_03_03"); //To musi byæ ktoœ, kto ma du¿y utarg. Popytaj handlarzy, a mo¿e ktoœ ci wpadnie w rêce. 
     AI_Output (self, other ,"DIA_Bandyta_Pensja_03_04"); //Daruj sobie wycieczkê do Sekty. To z góry skazane na pora¿kê.
-    MIS_NoweZiele3BAU = LOG_RUNNING;
+    MIS_NewWeed3BAU = LOG_RUNNING;
 
-    Log_CreateTopic          (CH1_NoweZiele3BAU, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_NoweZiele3BAU, LOG_RUNNING);
-    B_LogEntry               (CH1_NoweZiele3BAU,"Okazuje siê, ¿e receptura, któr¹ przynios³em nie wystarczy do osi¹gniêcia zysków. Aby zarabiaæ na zielu, musimy mieæ je komu sprzedaæ. Mam znaleŸæ jakiegoœ kupca na nasz towar. Briam od razu odradzi³ mi udanie siê do obozu Bractwa Œni¹cego. Powinienem zapytaæ w Nowym lub Starym Obozie. ");
+    Log_CreateTopic          (CH1_NewWeed3BAU, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_NewWeed3BAU, LOG_RUNNING);
+    B_LogEntry               (CH1_NewWeed3BAU,"Okazuje siê, ¿e receptura, któr¹ przynios³em nie wystarczy do osi¹gniêcia zysków. Aby zarabiaæ na zielu, musimy mieæ je komu sprzedaæ. Mam znaleŸæ jakiegoœ kupca na nasz towar. Briam od razu odradzi³ mi udanie siê do obozu Bractwa Œni¹cego. Powinienem zapytaæ w Nowym lub Starym Obozie. ");
     AI_StopProcessInfos	(self);
 };
 
@@ -205,7 +205,7 @@ INSTANCE DIA_Bandyta_KupiecSS (C_INFO)
 FUNC INT DIA_Bandyta_KupiecSS_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Dexter_MocneZiele2))
-    && (MIS_NoweZiele3BAU == LOG_RUNNING)
+    && (MIS_NewWeed3BAU == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -218,9 +218,9 @@ FUNC VOID DIA_Bandyta_KupiecSS_Info()
     AI_Output (other, self ,"DIA_Bandyta_KupiecSS_15_02"); //Du¿o handluje z Nowicjuszami. Zna siê na zielu.
     AI_Output (self, other ,"DIA_Bandyta_KupiecSS_03_03"); //Dobra robota. Zabieram siê za produkcjê.
     AI_Output (self, other ,"DIA_Bandyta_KupiecSS_03_04"); //Kwestie wyp³aty reguluj z Jensem. To nie moja sprawa.
-    B_LogEntry                     (CH1_NoweZiele3BAU,"Zg³osi³em Braimowi, ¿e bêdziemy teraz wspó³pracowaæ z Dexterem. Po wyp³atê mogê zg³aszaæ siê do Jensa.");
-    Log_SetTopicStatus       (CH1_NoweZiele3BAU, LOG_SUCCESS);
-    MIS_NoweZiele3BAU = LOG_SUCCESS;
+    B_LogEntry                     (CH1_NewWeed3BAU,"Zg³osi³em Braimowi, ¿e bêdziemy teraz wspó³pracowaæ z Dexterem. Po wyp³atê mogê zg³aszaæ siê do Jensa.");
+    Log_SetTopicStatus       (CH1_NewWeed3BAU, LOG_SUCCESS);
+    MIS_NewWeed3BAU = LOG_SUCCESS;
 	//experience
     B_GiveXP (200);
 };
@@ -264,7 +264,7 @@ FUNC VOID DIA_Dexter_MocneZiele2_Info()
     AI_Output (self, other ,"DIA_Dexter_MocneZiele2_03_12"); //Jesteœ pewien, ¿e mi siê zwróci?
     AI_Output (other, self ,"DIA_Dexter_MocneZiele2_15_13"); //Oczywiœcie. Zawsze mo¿esz podnieœæ cenê. 
     AI_Output (self, other ,"DIA_Dexter_MocneZiele2_03_14"); //W takim razie czekam na dostawy, ale jeœli coœ krêcisz, to ciê za³atwiê!
-    B_LogEntry                     (CH1_NoweZiele3BAU,"Negocjacje z Dexterem to czysta przyjemnoœæ. Od razu przysta³ na moj¹ propozycjê.");
+    B_LogEntry                     (CH1_NewWeed3BAU,"Negocjacje z Dexterem to czysta przyjemnoœæ. Od razu przysta³ na moj¹ propozycjê.");
 
     B_GiveXP (200);
     AI_StopProcessInfos	(self);

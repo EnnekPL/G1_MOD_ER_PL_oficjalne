@@ -104,7 +104,7 @@ INSTANCE DIA_Darrion_ORE (C_INFO)
 
 FUNC INT DIA_Darrion_ORE_Condition()
 {
-    if (MIS_OszukanyHandlarz == LOG_RUNNING)
+    if (MIS_CheatedMerchant == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -130,7 +130,7 @@ func void DIA_Darrion_ORE_JEZYK ()
 {
 	AI_Output (other, self ,"DIA_Darrion_ORE_JEZYK_15_01"); //Daj mi jêzyk topielca. 
 	AI_Output (self, other ,"DIA_Darrion_ORE_JEZYK_03_02"); //Naprawdê nie po¿a³ujesz. 
-	B_LogEntry     (CH1_OszukanyHandlarz,"Zamiast rudy wzi¹³em od Darriona ca³kiem przyzwoity miecz. Rudê bêdê musia³ oddaæ z w³asnej kieszeni.");//fix 1210
+	B_LogEntry     (CH1_CheatedMerchant,"Zamiast rudy wzi¹³em od Darriona ca³kiem przyzwoity miecz. Rudê bêdê musia³ oddaæ z w³asnej kieszeni.");//fix 1210
 	CreateInvItems (self, ItMw_1H_Sword_Short_03, 1);
     B_GiveInvItems (self, other, ItMw_1H_Sword_Short_03, 1);
 	Info_ClearChoices	(DIA_Darrion_ORE);
@@ -140,7 +140,7 @@ func void DIA_Darrion_ORE_DZIDA ()
 {
 	AI_Output (other, self ,"DIA_Darrion_ORE_DZIDA_15_01"); //Daj mi tê laskê.
 	AI_Output (self, other ,"DIA_Darrion_ORE_DZIDA_03_02"); //To dobry wybór. Jest dro¿sza i wytrzymalsza.
-	B_LogEntry     (CH1_OszukanyHandlarz,"Zamiast rudy wzi¹³em od Darriona ca³kiem fajny kawa³ek kija. Ciekawe jak siê nim walczy... Rudê bêdê musia³ oddaæ z w³asnej kieszeni.");//fix 1210
+	B_LogEntry     (CH1_CheatedMerchant,"Zamiast rudy wzi¹³em od Darriona ca³kiem fajny kawa³ek kija. Ciekawe jak siê nim walczy... Rudê bêdê musia³ oddaæ z w³asnej kieszeni.");//fix 1210
 	CreateInvItems (self, ItMw_2H_Staff_02, 1);
     B_GiveInvItems (self, other, ItMw_2H_Staff_02, 1);
 	Info_ClearChoices	(DIA_Darrion_ORE);
@@ -150,7 +150,7 @@ func void DIA_Darrion_ORE_MONEY ()
 {
 	AI_Output (other, self ,"DIA_Darrion_ORE_MONEY_15_01"); //Koniec gierek! Dawaj rudê!
 	AI_Output (self, other ,"DIA_Darrion_ORE_MONEY_03_02"); //Naprawdê nie móg³byœ za mnie za³o¿yæ? No có¿. Znowu bêdê musia³ po¿yczyæ...
-	B_LogEntry     (CH1_OszukanyHandlarz,"Za¿¹da³em od Darriona rudy. Nie mam zamiaru za niego zak³adaæ.");//fix 1210
+	B_LogEntry     (CH1_CheatedMerchant,"Za¿¹da³em od Darriona rudy. Nie mam zamiaru za niego zak³adaæ.");//fix 1210
 	CreateInvItems (self, ItMiNugget, 50);
     B_GiveInvItems (self, other, ItMiNugget, 50);
 	Info_ClearChoices	(DIA_Darrion_ORE);

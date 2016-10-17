@@ -831,8 +831,8 @@ var int MIS_RudaJoelowiOM;
 var int MIS_MineEnter;
 
 var int MIS_Kopacz;
-var int MIS_OMWytrychy;
-var int MIS_ActionOM;
+
+
 var int MIS_AwansCien;
 var int MIS_TestOc;
 var int MIS_GrimOc;
@@ -842,14 +842,14 @@ var int MIS_GrimOc;
 
 
 
-var int MIS_OszukanyHandlarz; var int Nyras_splacil_Talasa; var int Hero_dogadany_Nyras; var int Hero_donosi_na_Nyras; var int ruda_talasa_odzyskana;
 
 
 
-var int MIS_HelpBrothersBra;//z³e
 
-var int MIS_NoweZiele;
-var int MIS_KeyKagan;
+
+
+
+
 
 //********************************************
 // BANDYCI
@@ -873,7 +873,7 @@ var int MIS_MineChlopy;
 var int MIS_NoweKola;
 
 
-var int MIS_NoweZiele3BAU; //usuniête
+var int MIS_NewWeed3BAU; //usuniête
 
 
 //********************************************
@@ -886,7 +886,7 @@ var int MIS_NoweZiele3BAU; //usuniête
 var int MIS_NC_Mine;
 var int MIS_KillFingers;
 var int MIS_FindPosazekKlina;
-var int MIS_PathToFreeMine;
+
 //********************************************
 // STARY OBÓZ
 //********************************************
@@ -926,7 +926,7 @@ var int MIS_OdbijanieOpKop;
 var int MIS_MagazynBroni;
 
 var int MIS_NowyVart;
-var int MIS_NewGRDfromArene;
+
 var int MIS_SytucajaWOM;
 
 var int MIS_Odstraszeni;
@@ -936,12 +936,12 @@ var int MIS_Odstraszeni;
 var int MIS_NekInNC;
 
 
-var int MIS_Search_Poslaniec;
+
 var int MIS_AlternativBanditoSCamp;
 var int MIS_EskortaKopaczy;
 
 var int MIS_ZnowuZapierdalam;
-var int MIS_PoszukiwanaAlchemika;
+
 
 var int MIS_Spike_Pomiot;
 
@@ -949,7 +949,7 @@ var int MIS_Spike_Pomiot;
 //var int MIS_GuazyDrena;
 //var int MIS_megaSpam;
 
-
+var int MIS_HelpBrothersBra;//z³e
 
 var int MIS_PropozycjaFlinta;
 var int MIS_FlintaPrzyjecie;
@@ -957,15 +957,15 @@ var int MIS_SayOkylFlintDead;
 
 
 
-var int MIS_Food_Patter;
-var int MIS_GomezSuperQuest;
+
+
 var int MIS_SzpiegoMoroka;
 var int MIS_ZbrojaTemplera;
 var int MIS_FireMage_Help;
 var int MIS_RzopierdolInTemple;
 var int MIS_MagnatTrololo;
 var int MIS_OpiniaOSO;
-var int MIS_WpierdolNaArenie;
+
 var int MIS_FightWithScar;
 var int MIS_MagnackiePi4erscienie;
 
@@ -973,7 +973,7 @@ var int MIS_UCieczkaShrata;
 var int MIS_PorwanieAlexa;
 var int MIS_ZabijThompsona;
 var int MIS_KopalniaZlota;
-var int MIS_PolowanieNaTrola;
+
 var int MIS_NieSpelnionaZemsta;//usuniête
 var int MIS_DrogaDoKopalni;
 var int MIS_KryjowkaNaKase;
@@ -993,23 +993,21 @@ var int MIS_DziwnyJosep;
 var int MIS_WalkiBractwo;
 
 var int MIS_MagicySzkodnicy;
-var int MIS_RannyWojownik;
 
-var int MIS_JimsSword;
+
 
 var int MIS_Cpuny;
 var int MIS_4Friends;
-var int MIS_GoldSword_Bartholo;
-var int MIS_guyhut;
-	var int guysay_about_hut;
+
+
 
 var int MIS_InfoDlaLaresa;
 var int MIS_PomocTorlofowi;
 
 var int MIS_PomocQuentinowi;
-var int MIS_PolowanieZBaalem;
-var int MIS_BaalQuest2;
-var int MIS_ZginalLIN;
+
+
+
 
 
 var int MIS_Fire_Novize;
@@ -1017,7 +1015,7 @@ var int MIS_Magazyny_OC;
 var int MIS_Gdzie_hugo;
 var int mis_firenovize;
 var int MIS_Do_lowcow;
-var int MIS_Watek_Bandytow_BRACTWO;
+
 var int MIS_Damarok_Zadla;
 
 var int MIS_Wielki_troll;

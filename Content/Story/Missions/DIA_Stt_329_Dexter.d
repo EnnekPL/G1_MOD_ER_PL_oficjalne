@@ -718,7 +718,7 @@ INSTANCE DIA_Dexter_NovizeJoints (C_INFO)
 
 FUNC INT DIA_Dexter_NovizeJoints_Condition()
 {
-    if (MIS_NoweZiele == LOG_RUNNING)
+    if (MIS_NewWeed == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -733,7 +733,7 @@ FUNC VOID DIA_Dexter_NovizeJoints_Info()
     AI_Output (self, other ,"DIA_Dexter_NovizeJoints_03_04"); //Tak myœla³em. Wspó³pracujê z wysoko po³o¿onymi i szanowanymi cz³onkami Bractwa. Baal Parvez i Baal Taran ci¹gle patrz¹ mi na rêce. 
     AI_Output (self, other ,"DIA_Dexter_NovizeJoints_03_05"); //Nie mam zamiaru ryzykowaæ moich dobrych kontaktów...
 
-    B_LogEntry                     (CH1_NoweZiele,"Dexter nie jest zainteresowany naszym towarem. Œciœle wspó³pracuje z innymi Nowicjuszami.");
+    B_LogEntry                     (CH1_NewWeed,"Dexter nie jest zainteresowany naszym towarem. Œciœle wspó³pracuje z innymi Nowicjuszami.");
 
     AI_StopProcessInfos	(self);
 };

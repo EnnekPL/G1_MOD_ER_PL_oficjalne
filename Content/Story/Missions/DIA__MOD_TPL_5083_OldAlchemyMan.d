@@ -103,7 +103,7 @@ INSTANCE DIA_OldAlchemyMan_GURUS (C_INFO)
 
 FUNC INT DIA_OldAlchemyMan_GURUS_Condition()
 {
-    if (MIS_PoszukiwanaAlchemika == LOG_RUNNING)
+    if (MIS_OldAlchemist == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -154,7 +154,7 @@ FUNC VOID DIA_OldAlchemyMan_HELLO4_Info()
 	AI_Output (self, other ,"DIA_OldAlchemyMan_HELLO4_03_11"); //Prawdopodobnie jednak siê myli³em. Spotka³a mnie za to najgorsza kara. Wkrótce umrê. 
 	AI_Output (other, self ,"DIA_OldAlchemyMan_HELLO4_03_12"); //Mo¿e mogê ci jakoœ pomóc? 
 	AI_Output (self, other ,"DIA_OldAlchemyMan_HELLO4_03_13"); //Nie, ch³opcze. Orkowy topór rozci¹³ mi skórê na lewej rêce. Wda³o siê zaka¿enie. Nic ju¿ nie mo¿na zrobiæ.
-    B_LogEntry                     (CH1_PoszukiwanaAlchemika,"Prawie martwy alchemik ostatnimi si³ami wyszepta³ mi, ¿e œwietliste punkty na bagnie to czary - potê¿ne kamienie natchniêto magiczn¹ moc¹.");
+    B_LogEntry                     (CH2_OldAlchemist,"Prawie martwy alchemik ostatnimi si³ami wyszepta³ mi, ¿e œwietliste punkty na bagnie to czary - potê¿ne kamienie natchniêto magiczn¹ moc¹.");
 	B_givexp (150);
 };
 

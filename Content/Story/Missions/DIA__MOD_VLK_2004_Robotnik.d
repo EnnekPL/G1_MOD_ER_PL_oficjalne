@@ -337,7 +337,7 @@ INSTANCE DIA_Robotnik_OBRONA_2 (C_INFO)
 
 FUNC INT DIA_Robotnik_OBRONA_2_Condition()
 {
-if (MIS_Obrona_Placu == LOG_RUNNING) {
+if (MIS_ReplacePointDefense == LOG_RUNNING) {
     return TRUE; };
 };
 

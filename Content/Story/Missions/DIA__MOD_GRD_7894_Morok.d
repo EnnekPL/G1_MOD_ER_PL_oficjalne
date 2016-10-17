@@ -106,7 +106,7 @@ INSTANCE DIA_Morok_GomezSendMe (C_INFO)
 
 FUNC INT DIA_Morok_GomezSendMe_Condition()
 {
-    if (MIS_GomezSuperQuest == LOG_RUNNING)
+    if (MIS_QuestForHeavyArmor == LOG_RUNNING)
     {
     return TRUE;
     };

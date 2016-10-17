@@ -130,11 +130,11 @@ FUNC VOID DIA_Calash_HelpAndMission_Pomoge()
     AI_Output (other, self ,"DIA_Calash_HelpAndMission_Pomoge_15_01"); //Niech bêdzie. Pomogê ci. 
     AI_Output (self, other ,"DIA_Calash_HelpAndMission_Pomoge_03_02"); //Œwietnie. Tak jak mówi³em, mo¿esz iœæ do Starego Obozu siê poduczyæ. No chyba, ¿e nie potrzebujesz. 
     AI_Output (self, other ,"DIA_Calash_HelpAndMission_Pomoge_03_03"); //Wróæ, gdy bêdziesz gotowy. Tylko niech ci to nie zajmie ca³ego ¿ycia!
-    MIS_PolowanieNaTrola = LOG_RUNNING;
+    MIS_TrollGroundHunting = LOG_RUNNING;
 
-    Log_CreateTopic            (CH1_PolowanieNaTrola, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_PolowanieNaTrola, LOG_RUNNING);
-    B_LogEntry                     (CH1_PolowanieNaTrola,"Mam pomóc Calashowi w upolowaniu ziemnego trolla. Myœliwy zaproponowa³ mi, ¿e da mi kilka zwojów z czarami ognia, na które ziemne trolle s¹ bardzo wra¿liwe.");
+    Log_CreateTopic            (CH1_TrollGroundHunting, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_TrollGroundHunting, LOG_RUNNING);
+    B_LogEntry                     (CH1_TrollGroundHunting,"Mam pomóc Calashowi w upolowaniu ziemnego trolla. Myœliwy zaproponowa³ mi, ¿e da mi kilka zwojów z czarami ognia, na które ziemne trolle s¹ bardzo wra¿liwe.");
     Info_ClearChoices		(DIA_Calash_HelpAndMission);
     AI_StopProcessInfos	(self);
 };
@@ -163,7 +163,7 @@ INSTANCE DIA_Calash_QuestStart (C_INFO)
 
 FUNC INT DIA_Calash_QuestStart_Condition()
 {
-    if (MIS_PolowanieNaTrola == LOG_RUNNING)
+    if (MIS_TrollGroundHunting == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -223,9 +223,9 @@ FUNC VOID DIA_Calash_Win_Info()
     B_GiveInvItems (self, other, ItMiNugget, 100);
     CreateInvItems (self, ItAt_Swampshark_01, 1);
     B_GiveInvItems (self, other, ItAt_Swampshark_01, 1);
-    B_LogEntry                     (CH1_PolowanieNaTrola,"Troll zosta³ upolowany. W nagrodê otrzyma³em skórê wê¿a b³otnego i trochê rudy. ");
-    Log_SetTopicStatus       (CH1_PolowanieNaTrola, LOG_SUCCESS);
-    MIS_PolowanieNaTrola = LOG_SUCCESS;
+    B_LogEntry                     (CH1_TrollGroundHunting,"Troll zosta³ upolowany. W nagrodê otrzyma³em skórê wê¿a b³otnego i trochê rudy. ");
+    Log_SetTopicStatus       (CH1_TrollGroundHunting, LOG_SUCCESS);
+    MIS_TrollGroundHunting = LOG_SUCCESS;
 	self.aivar[AIV_PARTYMEMBER] = FALSE;
 	Npc_ExchangeRoutine (self, "start");
     B_GiveXP (250);
@@ -258,7 +258,7 @@ FUNC INT DIA_Calash_GoldMine_Condition()
 FUNC VOID DIA_Calash_GoldMine_Info()
 {
     AI_Output (other, self ,"DIA_Calash_GoldMine_15_01"); //Poszukujê kogoœ do ochrony kopalni z³ota.
-    if (MIS_PolowanieNaTrola == LOG_RUNNING)
+    if (MIS_TrollGroundHunting == LOG_RUNNING)
     {
         AI_Output (self, other ,"DIA_Calash_GoldMine_03_02"); //Jeszcze nie pozbyliœmy siê trolla ziemnego, a ty ju¿ szukasz nastêpnej roboty.
         AI_Output (other, self ,"DIA_Calash_GoldMine_15_03"); //No dobra. To weŸmy siê najpierw za tego trolla, a potem ci wszystko wyjaœniê.

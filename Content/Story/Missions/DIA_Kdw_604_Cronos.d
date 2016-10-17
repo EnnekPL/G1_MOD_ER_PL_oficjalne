@@ -1320,7 +1320,7 @@ INSTANCE DIA_Cronos_HERBATKA (C_INFO)
 
 FUNC INT DIA_Cronos_HERBATKA_Condition()
 {
-    if (herbatka_crnonos == true) && (MIS_ZginalLIN == LOG_RUNNING)
+    if (herbatka_crnonos == true) && (MIS_MissedSpy == LOG_RUNNING)
     {
     return TRUE;
     };

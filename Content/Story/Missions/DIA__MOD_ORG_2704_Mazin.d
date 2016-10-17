@@ -143,7 +143,7 @@ INSTANCE DIA_Mazin_GOR_NA_LIN (C_INFO)
 FUNC INT DIA_Mazin_GOR_NA_LIN_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_GorNaLin_HELLO1))
-    && (MIS_zginalLIN == LOG_RUNNING)
+    && (MIS_MissedSpy == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -158,7 +158,7 @@ FUNC VOID DIA_Mazin_GOR_NA_LIN_Info()
     AI_Output (self, other ,"DIA_Mazin_GOR_NA_LIN_03_04"); //170 bry³ek rudy. Oto cena tej informacji.
     AI_Output (other, self ,"DIA_Mazin_GOR_NA_LIN_15_05"); //Czemu tak drogo?
     AI_Output (self, other ,"DIA_Mazin_GOR_NA_LIN_03_06"); //Sporo ryzykujê. Taka sytuacja jest komuœ wp³ywowemu na rêkê. 
-    B_LogEntry                     (CH1_ZginalLIN,"Mazin za 170 bry³ek rudy sprzeda mi informacjê o tym co siê dzia³o z Gor Na Linem przez ostatnie tygodnie. ");
+    B_LogEntry                     (CH2_MissedSpy,"Mazin za 170 bry³ek rudy sprzeda mi informacjê o tym co siê dzia³o z Gor Na Linem przez ostatnie tygodnie. ");
 };
 
 //========================================
@@ -178,7 +178,7 @@ INSTANCE DIA_Mazin_BUY_INFO (C_INFO)
 FUNC INT DIA_Mazin_BUY_INFO_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Mazin_GOR_NA_LIN))
-    && (MIS_zginalLIN == LOG_RUNNING)
+    && (MIS_MissedSpy == LOG_RUNNING)
     && (Npc_HasItems (hero, ItMiNugget)>=170)
     {
     return TRUE;
@@ -206,7 +206,7 @@ FUNC VOID DIA_Mazin_BUY_INFO_Info()
     AI_Output (other, self ,"DIA_Mazin_BUY_INFO_15_16"); //Przecie¿ goœæ jest nieŸle spity. Sk¹d bierze alkohol?
     AI_Output (self, other ,"DIA_Mazin_BUY_INFO_03_17"); //To ciê bêdzie kosztowaæ dodatkowe 50 bry³ek. 
     AI_Output (other, self ,"DIA_Mazin_BUY_INFO_15_18"); //No jasne...
-	B_LogEntry                     (CH1_ZginalLIN,"Kupi³em informacjê o Gor Na Linie od Mazina. Okazuje siê, ¿e Gor Na Lin za bardzo spoufali³ siê z ludŸmi Laresa. Szkodniki zabra³y mu pancerz i pewnie resztê ekwipunku. Stra¿nik zacz¹³ piæ samotnie. Niestety za informacjê sk¹d bierze alkohol bêdê musia³ dop³aciæ. ");
+	B_LogEntry                     (CH2_MissedSpy,"Kupi³em informacjê o Gor Na Linie od Mazina. Okazuje siê, ¿e Gor Na Lin za bardzo spoufali³ siê z ludŸmi Laresa. Szkodniki zabra³y mu pancerz i pewnie resztê ekwipunku. Stra¿nik zacz¹³ piæ samotnie. Niestety za informacjê sk¹d bierze alkohol bêdê musia³ dop³aciæ. ");
 	B_GiveInvItems (hero, self, ItMiNugget, 170);
     B_GiveXP (270);
 };
@@ -228,7 +228,7 @@ INSTANCE DIA_Mazin_ALCO (C_INFO)
 FUNC INT DIA_Mazin_ALCO_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Mazin_BUY_INFO))
-    && (MIS_zginalLIN == LOG_RUNNING)
+    && (MIS_MissedSpy == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -253,7 +253,7 @@ if (Npc_IsDead(ORG_860_Renyu)) && (Npc_IsDead(ORG_861_Killian)) && (Npc_IsDead(O
             AI_Output (other, self ,"DIA_Mazin_ALCO_15_05"); //Kto sprzedaje alkohol Gor Na Linowi?! Przecie¿ ci zap³aci³em.
             AI_Output (self, other ,"DIA_Mazin_ALCO_03_06"); //Cholera. Jesteœ zbyt ciekawski.
 			AI_StopProcessInfos	(self);
-            B_LogEntry                     (CH1_ZginalLIN,"Mazin uleg³ emocjom i odwa¿y³ siê mnie zaatakowaæ. Z pewnoœci¹ ma coœ do ukrycia.");
+            B_LogEntry                     (CH2_MissedSpy,"Mazin uleg³ emocjom i odwa¿y³ siê mnie zaatakowaæ. Z pewnoœci¹ ma coœ do ukrycia.");
             Npc_SetTarget (self, other);
             AI_StartState (self, ZS_ATTACK, 1, "");
         }*/
@@ -267,7 +267,7 @@ if (Npc_IsDead(ORG_860_Renyu)) && (Npc_IsDead(ORG_861_Killian)) && (Npc_IsDead(O
             AI_Output (self, other ,"DIA_Mazin_ALCO_03_11"); //Nie bêdziesz mi grozi³! To ty zabi³eœ mieszaczy! To ty! Dla tych skurwysynów z bagien. 
             AI_Output (self, other ,"DIA_Mazin_ALCO_03_12"); //Zaraz poznasz moj¹ stal.
             AI_StopProcessInfos	(self);
-            B_LogEntry                     (CH1_ZginalLIN,"Mazin uleg³ emocjom i odwa¿y³ siê mnie zaatakowaæ. Z pewnoœci¹ ma coœ do ukrycia.");
+            B_LogEntry                     (CH2_MissedSpy,"Mazin uleg³ emocjom i odwa¿y³ siê mnie zaatakowaæ. Z pewnoœci¹ ma coœ do ukrycia.");
             Npc_SetTarget (self, other);
             AI_StartState (self, ZS_ATTACK, 1, "");
         };
@@ -277,7 +277,7 @@ if (Npc_IsDead(ORG_860_Renyu)) && (Npc_IsDead(ORG_861_Killian)) && (Npc_IsDead(O
         AI_Output (self, other ,"DIA_Mazin_ALCO_03_15"); //Jeszcze jedno: Cronos sprzeda ci herbatkê, która pomaga na kaca. 
         AI_Output (self, other ,"DIA_Mazin_ALCO_03_16"); //Daj j¹ temu ca³emu Stra¿nikowi Œwi¹tynnemu i bierz go st¹d. 
         AI_Output (self, other ,"DIA_Mazin_ALCO_03_17"); //Tylko nie rób scen w karczmie. Poczekaj, a¿ pójdzie do jaskini. Potem z nim gadaj. 
-        B_LogEntry                     (CH1_ZginalLIN,"Jak siê okazuje Gor Na Lin noc¹ chodzi po trunki do jaskini mieszaczy. Muszê udaremniæ jego nocne popijawy, bo nied³ugo nie bêdzie czego ratowaæ. Cronos ma na sprzeda¿ herbatkê lecz¹c¹ objawy zatrucia alkoholowego. ");
+        B_LogEntry                     (CH2_MissedSpy,"Jak siê okazuje Gor Na Lin noc¹ chodzi po trunki do jaskini mieszaczy. Muszê udaremniæ jego nocne popijawy, bo nied³ugo nie bêdzie czego ratowaæ. Cronos ma na sprzeda¿ herbatkê lecz¹c¹ objawy zatrucia alkoholowego. ");
 		herbatka_crnonos = true;
 		Npc_ExchangeRoutine (TPL_3928_GorNaLin,"pijus");
         B_GiveXP (200);
@@ -327,7 +327,7 @@ FUNC VOID DIA_Mazin_PRZEGRAL_WALKE_Info()
     AI_Output (self, other ,"DIA_Mazin_PRZEGRAL_WALKE_03_05"); //Dobra! To pomys³ Bruce'a. 
     AI_Output (self, other ,"DIA_Mazin_PRZEGRAL_WALKE_03_06"); //Daj mi ju¿ spokój. Cronos sprzeda ci specyfik, który ocuci tego twojego kolegê. 
     AI_Output (self, other ,"DIA_Mazin_PRZEGRAL_WALKE_03_07"); //Bierz go w cholerê.
-    B_LogEntry                     (CH1_ZginalLIN,"To Mazin dawa³ wódkê Linowi, ¿eby podtrzymaæ jego na³óg. Za wszystkim stoi Bruce, który zniszczy³ Gor Na Lina ot tak - dla zabawy. Cronos ma na sprzeda¿ herbatkê lecz¹c¹ objawy zatrucia alkoholowego. ");
+    B_LogEntry                     (CH2_MissedSpy,"To Mazin dawa³ wódkê Linowi, ¿eby podtrzymaæ jego na³óg. Za wszystkim stoi Bruce, który zniszczy³ Gor Na Lina ot tak - dla zabawy. Cronos ma na sprzeda¿ herbatkê lecz¹c¹ objawy zatrucia alkoholowego. ");
 	herbatka_crnonos = true;
     B_GiveXP (250);
 };
@@ -360,7 +360,7 @@ FUNC INT DIA_Mazin_HELLO3_Condition()
 FUNC VOID DIA_Mazin_HELLO3_Info()
 {
     AI_Output (self, other ,"DIA_Mazin_HELLO3_03_01"); //Przegra³eœ! Jesteœ frajerem. Nie masz ju¿ ¿ycia w tym Obozie.
-    B_LogEntry                     (CH1_ZginalLIN,"Przegra³em walkê z Mazinem. Szkodnik czuje siê teraz zbyt pewnie. Skopa³em sprawê po ca³ej linii.");
+    B_LogEntry                     (CH2_MissedSpy,"Przegra³em walkê z Mazinem. Szkodnik czuje siê teraz zbyt pewnie. Skopa³em sprawê po ca³ej linii.");
 	Npc_ExchangeRoutine (ORG_828_Bruce, "karczma");
 	//przydaliby siê ludzie Bruce'a
 	B_KillNPC (TPL_3928_GorNaLin);

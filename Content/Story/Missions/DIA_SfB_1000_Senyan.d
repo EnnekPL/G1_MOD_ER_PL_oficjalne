@@ -105,7 +105,7 @@ FUNC VOID DIA_Senyan_GOR_NA_LIN_Info()
 {
     AI_Output (other, self ,"DIA_Senyan_GOR_NA_LIN_15_01"); //Powiesz mi coœ o Gor Na Linie?
     AI_Output (self, other ,"DIA_Senyan_GOR_NA_LIN_03_02"); //A co mnie on obchodzi? Daj mi spokój. Chcê siê napiæ.
-    B_LogEntry                     (CH1_ZginalLIN,"Senyan raczej nie jest chêtny do rozmowy. Mo¿e uda mi siê go jakoœ przekonaæ.");
+    B_LogEntry                     (CH2_MissedSpy,"Senyan raczej nie jest chêtny do rozmowy. Mo¿e uda mi siê go jakoœ przekonaæ.");
 };
 
 
@@ -126,7 +126,7 @@ INSTANCE DIA_Senyan_ALCO (C_INFO)
 FUNC INT DIA_Senyan_ALCO_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Senyan_GOR_NA_LIN))
-    && (MIS_zginalLIN == LOG_RUNNING)
+    && (MIS_MissedSpy == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -272,7 +272,7 @@ FUNC VOID DIA_Senyan_ALCO_PIWO()
     AI_Output (self, other ,"DIA_Senyan_ALCO_PIWO_03_24"); //Zarzyga³ mu pó³ pod³ogi skurwiel... hip... ma szczêœcie, ¿e mu zostaæ pozwoli³, ale bêcki niez³e zebra³.
     AI_Output (other, self ,"DIA_Senyan_ALCO_PIWO_15_25"); //Dziêki za informacje.
     AI_Output (self, other ,"DIA_Senyan_ALCO_PIWO_03_26"); //Dziêki za piwko, przyjacielu. 
-	B_LogEntry                     (CH1_ZginalLIN,"Z trudem uda³o mi siê wyci¹gn¹æ informacje od pijanego jak bela Senyana.  Okazuje siê, ¿e Gor Na Lin za bardzo spoufali³ siê z ludŸmi Laresa. Szkodniki zabra³y mu pancerz i pewnie resztê ekwipunku. Stra¿nik zacz¹³ piæ samotnie. Niestety kret nie wie, sk¹d Lin bierze alkohol. Coœ wiêcej ma mi powiedzieæ Mazin. ");
+	B_LogEntry                     (CH2_MissedSpy,"Z trudem uda³o mi siê wyci¹gn¹æ informacje od pijanego jak bela Senyana.  Okazuje siê, ¿e Gor Na Lin za bardzo spoufali³ siê z ludŸmi Laresa. Szkodniki zabra³y mu pancerz i pewnie resztê ekwipunku. Stra¿nik zacz¹³ piæ samotnie. Niestety kret nie wie, sk¹d Lin bierze alkohol. Coœ wiêcej ma mi powiedzieæ Mazin. ");
 	DIA_Senyan_ALCO.permanent = 0;
 	b_givexp (75);
 	Info_ClearChoices		(DIA_Senyan_ALCO);
@@ -347,7 +347,7 @@ if upojenie_senyan >= 4
 
     AI_Output (other, self ,"DIA_Senyan_ALCO_PIWO_15_25"); //Dziêki za informacje.
     AI_Output (self, other ,"DIA_Senyan_ALCO_PIWO_03_26"); //Dziêki za nale...naleœniki... Nie, nie. Dziêki za nalewki... hip...
-	    B_LogEntry                     (CH1_ZginalLIN,"Z trudem uda³o mi siê wyci¹gn¹æ informacje od pijanego jak bela Senyana. Okazuje siê, ¿e Gor Na Lin za bardzo spoufali³ siê z ludŸmi Laresa. Szkodniki zabra³y mu pancerz i pewnie resztê ekwipunku. Stra¿nik zacz¹³ piæ samotnie. Niestety Kret nie wie, sk¹d Lin bierze alkohol. Coœ wiêcej ma mi powiedzieæ Mazin. ");
+	    B_LogEntry                     (CH2_MissedSpy,"Z trudem uda³o mi siê wyci¹gn¹æ informacje od pijanego jak bela Senyana. Okazuje siê, ¿e Gor Na Lin za bardzo spoufali³ siê z ludŸmi Laresa. Szkodniki zabra³y mu pancerz i pewnie resztê ekwipunku. Stra¿nik zacz¹³ piæ samotnie. Niestety Kret nie wie, sk¹d Lin bierze alkohol. Coœ wiêcej ma mi powiedzieæ Mazin. ");
 DIA_Senyan_ALCO.permanent = 0;
     B_GiveXP (100);
 	    Info_ClearChoices		(DIA_Senyan_ALCO);
@@ -394,7 +394,7 @@ FUNC VOID DIA_Senyan_ALCO_CIOS()
 
     AI_Output (other, self ,"DIA_Senyan_ALCO_CIOS_15_25"); //Dziêki za informacje.
     AI_Output (self, other ,"DIA_Senyan_ALCO_CIOS_03_26"); //Dziêki za wódeczkê brachu. 
-	    B_LogEntry                     (CH1_ZginalLIN,"Z trudem uda³o mi siê wyci¹gn¹æ informacje od pijanego jak bela Senyana.  Okazuje siê, ¿e Gor Na Lin za bardzo spoufali³ siê z ludŸmi Laresa. Szkodniki zabra³y mu pancerz i pewnie resztê ekwipunku. Stra¿nik zacz¹³ piæ samotnie. Niestety kret nie wie, sk¹d Lin bierze alkohol. Coœ wiêcej ma mi powiedzieæ Mazin. ");
+	    B_LogEntry                     (CH2_MissedSpy,"Z trudem uda³o mi siê wyci¹gn¹æ informacje od pijanego jak bela Senyana.  Okazuje siê, ¿e Gor Na Lin za bardzo spoufali³ siê z ludŸmi Laresa. Szkodniki zabra³y mu pancerz i pewnie resztê ekwipunku. Stra¿nik zacz¹³ piæ samotnie. Niestety kret nie wie, sk¹d Lin bierze alkohol. Coœ wiêcej ma mi powiedzieæ Mazin. ");
 DIA_Senyan_ALCO.permanent = 0;
     B_GiveXP (150);
     Info_ClearChoices		(DIA_Senyan_ALCO);

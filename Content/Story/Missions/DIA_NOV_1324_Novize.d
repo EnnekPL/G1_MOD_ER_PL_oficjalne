@@ -60,10 +60,10 @@ FUNC VOID DIA_Novize_Quest123_Info()
 	CreateInvItems (self, MegaJoint, 4);
     B_GiveInvItems (self, other, MegaJoint, 4);
 	
-    MIS_NoweZiele = LOG_RUNNING;	
-	Log_CreateTopic          (CH1_NoweZiele, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_NoweZiele, LOG_RUNNING);
-    B_LogEntry               (CH1_NoweZiele,"Nowicjusz Davson opracowa³ nowy rodzaj skrêta. Uwa¿a, ¿e mo¿na na nim sporo zarobiæ. Podzieli siê ze mn¹ zyskami, je¿eli znajdê jakiegoœ kupca na jego towar.");
+    MIS_NewWeed = LOG_RUNNING;	
+	Log_CreateTopic          (CH1_NewWeed, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_NewWeed, LOG_RUNNING);
+    B_LogEntry               (CH1_NewWeed,"Nowicjusz Davson opracowa³ nowy rodzaj skrêta. Uwa¿a, ¿e mo¿na na nim sporo zarobiæ. Podzieli siê ze mn¹ zyskami, je¿eli znajdê jakiegoœ kupca na jego towar.");
 };
 
 //========================================
@@ -97,7 +97,7 @@ FUNC VOID DIA_Novize_Kupcy_Info()
 	AI_Output (self, other ,"DIA_Novize_Kupcy_03_04"); //Mo¿esz te¿ poszukaæ w Starym Obozie.
     AI_Output (self, other ,"DIA_Novize_Kupcy_03_04"); //Tylko pamiêtaj o dyskrecji. 
 	
-    B_LogEntry                     (CH1_NoweZiele,"Davson stwierdzi³, ¿e najlepiej przekonaæ kogoœ w Nowym Obozie. Powinienem pogadaæ z którymœ z tamtych handlarzy.");
+    B_LogEntry                     (CH1_NewWeed,"Davson stwierdzi³, ¿e najlepiej przekonaæ kogoœ w Nowym Obozie. Powinienem pogadaæ z którymœ z tamtych handlarzy.");
 };
 
 //========================================
@@ -132,9 +132,9 @@ FUNC VOID DIA_Novize_Dealer_Cipher_Info()
     AI_Output (self, other ,"DIA_Novize_Dealer_Cipher_03_05"); //Dobra robota. Wkrótce wyœlê do niego pierwsz¹ dostawê.
     AI_Output (other, self ,"DIA_Novize_Dealer_Cipher_15_06"); //W porz¹dku. Szukajcie go w karczmie na jeziorze. 
     AI_Output (self, other ,"DIA_Novize_Dealer_Cipher_03_07"); //Bêdê siê z tob¹ dzieli³ zyskami raz w tygodniu.
-    B_LogEntry               (CH1_NoweZiele,"Przekaza³em mojemu zleceniodawcy informacjê o Szkodniku, imieniem Cipher. Davson dotrzyma³ swojej czêœci umowy i obieca³, ¿e bêdzie mi raz w tygodniu wyp³aca³ czêœæ zysków.");
-    Log_SetTopicStatus       (CH1_NoweZiele, LOG_SUCCESS);
-    MIS_NoweZiele = LOG_SUCCESS;
+    B_LogEntry               (CH1_NewWeed,"Przekaza³em mojemu zleceniodawcy informacjê o Szkodniku, imieniem Cipher. Davson dotrzyma³ swojej czêœci umowy i obieca³, ¿e bêdzie mi raz w tygodniu wyp³aca³ czêœæ zysków.");
+    Log_SetTopicStatus       (CH1_NewWeed, LOG_SUCCESS);
+    MIS_NewWeed = LOG_SUCCESS;
 
     B_GiveXP (180);
     AI_StopProcessInfos	(self);
@@ -173,9 +173,9 @@ FUNC VOID DIA_Novize_Dealer_Kagan_Info()
     AI_Output (other, self ,"DIA_Novize_Dealer_Kagan_15_05"); //Podmieni³em ziele z jego skrzyni na nasze. Przez przypadek je wypali³ i by³ zachwycony.
     AI_Output (other, self ,"DIA_Novize_Dealer_Kagan_15_06"); //Bêdzie nam p³aci³ 35 bry³ek rudy za sztukê.
     AI_Output (self, other ,"DIA_Novize_Dealer_Kagan_03_07"); //Œwietna robota. Bêdê siê z tob¹ dzieli³ zyskami raz w tygodniu.
-    B_LogEntry                     (CH1_NoweZiele,"Davson wielce siê uradowa³, gdy us³ysza³, ¿e znalaz³em kupca na jego skrêty. Raz w tygodniu mam siê zg³aszaæ po moj¹ dzia³kê.");
-    Log_SetTopicStatus       (CH1_NoweZiele, LOG_SUCCESS);
-    MIS_NoweZiele = LOG_SUCCESS;
+    B_LogEntry                     (CH1_NewWeed,"Davson wielce siê uradowa³, gdy us³ysza³, ¿e znalaz³em kupca na jego skrêty. Raz w tygodniu mam siê zg³aszaæ po moj¹ dzia³kê.");
+    Log_SetTopicStatus       (CH1_NewWeed, LOG_SUCCESS);
+    MIS_NewWeed = LOG_SUCCESS;
 
     B_GiveXP (190);
     AI_StopProcessInfos	(self);
@@ -199,7 +199,7 @@ INSTANCE DIA_Novize_KasaKasa (C_INFO)
 
 FUNC INT DIA_Novize_KasaKasa_Condition()
 {
-    if (MIS_NoweZiele == LOG_SUCCESS)
+    if (MIS_NewWeed == LOG_SUCCESS)
     && (Wld_GetDay () - day >= 7)
     {
     return TRUE;
@@ -347,7 +347,7 @@ INSTANCE DIA_CorKalom_Kapus1 (C_INFO)
 
 FUNC INT DIA_CorKalom_Kapus1_Condition()
 {
-    if (MIS_NoweZiele == LOG_RUNNING)
+    if (MIS_NewWeed == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -366,9 +366,9 @@ FUNC VOID DIA_CorKalom_Kapus1_Info()
 	Npc_ExchangeRoutine (NOV_1324_Novize,"wino");
 	Npc_ExchangeRoutine (NOV_1323_Novize,"work");
 
-    B_LogEntry                     (CH1_NoweZiele,"Poinformowa³em Cor Kaloma o nielegalnej produkcji ziela przez Davsona. Takie dzia³ania nie powinny mieæ racji bytu.");
-    Log_SetTopicStatus       (CH1_NoweZiele, LOG_FAILED);
-    MIS_NoweZiele = LOG_FAILED;
+    B_LogEntry                     (CH1_NewWeed,"Poinformowa³em Cor Kaloma o nielegalnej produkcji ziela przez Davsona. Takie dzia³ania nie powinny mieæ racji bytu.");
+    Log_SetTopicStatus       (CH1_NewWeed, LOG_FAILED);
+    MIS_NewWeed = LOG_FAILED;
 	PrintScreen	("Anulowano zadanie: Nowe, mocne ziele! ", 1,-1,"font_new_10_red.tga",2);	
 	
     B_GiveXP (50);

@@ -227,7 +227,7 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		B_SetPermAttitude	(banditS2,	ATT_HOSTILE);
 		//////////////////////////////////////////////////////////
 		
-		if (MIS_ZginalLIN == LOG_SUCCESS)
+		if (MIS_MissedSpy == LOG_SUCCESS)
 		{
 		B_ExchangeRoutine (TPL_3928_GorNaLin,"gardist");
 		//idzie pilnowaæ bramy do Obozu

@@ -393,60 +393,6 @@ FUNC VOID DIA_Shawn_QUEST3_OK_Info()
     B_GiveXP (300);
 };
 
-
-//========================================
-//-----------------> HELLO2
-//========================================
-
-INSTANCE DIA_Shawn_HELLO2 (C_INFO)
-{
-   npc          = TPL_5004_Shawn;
-   nr           = 2;
-   condition    = DIA_Shawn_HELLO2_Condition;
-   information  = DIA_Shawn_HELLO2_Info;
-   permanent	= FALSE;
-   description	= "Czyta³em notatki alchemika.";
-};
-
-FUNC INT DIA_Shawn_HELLO2_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Shawn_QuestsBractwo2))
-    && (czytane_NotatkiAlchemika == true)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Shawn_HELLO2_Info()
-{
-    AI_Output (other, self ,"DIA_Shawn_HELLO2_15_01"); //Czyta³em notatki alchemika.
-    AI_Output (other, self ,"DIA_Shawn_HELLO2_15_02"); //Uda³ siê w kierunku Cmentarzyska Orków. 
-    AI_Output (self, other ,"DIA_Shawn_HELLO2_03_03"); //Nawet nie myœl o tym, ¿eby tam pójœæ.
-    AI_Output (self, other ,"DIA_Shawn_HELLO2_03_04"); //To zbyt niebezpieczne.
-    AI_Output (self, other ,"DIA_Shawn_HELLO2_03_05"); //Nasz badacz w koñcu wróci.
-    AI_Output (self, other ,"DIA_Shawn_HELLO2_03_06"); //Masz przy sobie jego notatki?
-    if (Npc_HasItems (other, NotatkiAlchemika) >=1)
-    {
-        AI_Output (other, self ,"DIA_Shawn_HELLO2_15_07"); //Tak. WeŸ je.
-        AI_Output (self, other ,"DIA_Shawn_HELLO2_03_08"); //Dziêkujê.
-        CreateInvItems (self, ItMiNugget, 50);
-        B_GiveInvItems (self, other, ItMiNugget, 50);
-        B_GiveInvItems (other, self, NotatkiAlchemika, 1);
-        B_LogEntry                     (CH1_PoszukiwanaAlchemika,"Odda³em Shawnowi notatki, które znalaz³em na bagnie. Najpewniej nale¿a³y do alchemika.");
-
-        B_GiveXP (200);
-    }
-    else
-    {
-        AI_Output (other, self ,"DIA_Shawn_HELLO2_15_09"); //Nie.
-        AI_Output (self, other ,"DIA_Shawn_HELLO2_03_10"); //Mo¿esz ju¿ iœæ.
-    };
-    B_LogEntry                     (CH1_PoszukiwanaAlchemika,"Rzomawia³em z Shawnem o moim znalezisku z bagna. Notaki alchemika wykaza³y, ¿e uda³ siê on na Cmentarzysko Orków. Nie mam zamiaru tam iœæ w najbli¿yszm czasie.");
-    AI_StopProcessInfos	(self);
-};
-
-
 //========================================
 //-----------------> QuestsBractwo2
 //========================================
@@ -473,16 +419,65 @@ FUNC INT DIA_Shawn_QuestsBractwo2_Condition()
 FUNC VOID DIA_Shawn_QuestsBractwo2_Info()
 {
     AI_Output (other, self ,"DIA_Shawn_QuestsBractwo2_15_01"); //Czy Bractwo ma dla mnie jakieœ zlecenia?
-    AI_Output (self, other ,"DIA_Shawn_QuestsBractwo2_03_02"); //Oczywiœcie, ¿e tak!
-    AI_Output (self, other ,"DIA_Shawn_QuestsBractwo2_03_03"); //Zgin¹³ nasz badacz. Dosyæ stary, brodaty mê¿czyzna.
-    AI_Output (self, other ,"DIA_Shawn_QuestsBractwo2_03_04"); //By³ alchemikiem. Kilka dni temu Y'Berion zleci³ mu zbadanie dziwnych miejsc na bagnie.
-    AI_Output (self, other ,"DIA_Shawn_QuestsBractwo2_03_05"); //Jednak do tej pory nie wróci³.
-    AI_Output (self, other ,"DIA_Shawn_QuestsBractwo2_03_06"); //Spróbuj go odnaleŸæ.
-    MIS_PoszukiwanaAlchemika = LOG_RUNNING;
+    AI_Output (self, other ,"DIA_Shawn_QuestsBractwo2_03_02"); //Na pewno coœ siê znajdzie. 
+    AI_Output (self, other ,"DIA_Shawn_QuestsBractwo2_03_03"); //Ostatnio zgin¹³ nasz badacz. Dosyæ stary, brodaty mê¿czyzna. Wykonywa³ pewne zlecenie dla Y'Beriona.
+    AI_Output (self, other ,"DIA_Shawn_QuestsBractwo2_03_04"); //By³ te¿ naszym drugim alchemikiem. Kilka dni temu wyruszy³ na bagna, jednak do tej pory nie wróci³. 
+    AI_Output (self, other ,"DIA_Shawn_QuestsBractwo2_03_05"); //Nosi³ pancerz Stra¿nika Œwi¹tynnego.  To powinno ci pomóc go odnaleŸæ. 
+    AI_Output (self, other ,"DIA_Shawn_QuestsBractwo2_03_06"); //B¹dŸ ostro¿ny i unikaj b³otnych wê¿y. 
+    MIS_OldAlchemist = LOG_RUNNING;
 	
-    Log_CreateTopic            (CH1_PoszukiwanaAlchemika, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_PoszukiwanaAlchemika, LOG_RUNNING);
-    B_LogEntry                     (CH1_PoszukiwanaAlchemika,"Shawn kaza³ mi odnaleŸæ starego alchemika, który przeprowadza³ dla Bractwa badania nad bagnem.");
+    Log_CreateTopic          (CH2_OldAlchemist, LOG_MISSION);
+    Log_SetTopicStatus       (CH2_OldAlchemist, LOG_RUNNING);
+    B_LogEntry               (CH2_OldAlchemist,"Shawn kaza³ mi odnaleŸæ starego alchemika, który przeprowadza³ dla Bractwa badania nad bagnem. Mê¿czyzna by³ brodaty i nosi³ pancerz Stra¿nika Œwi¹tynnego.");
+    AI_StopProcessInfos	(self);
+};
+
+//========================================
+//-----------------> HELLO2
+//========================================
+
+INSTANCE DIA_Shawn_HELLO2 (C_INFO)
+{
+   npc          = TPL_5004_Shawn;
+   nr           = 2;
+   condition    = DIA_Shawn_HELLO2_Condition;
+   information  = DIA_Shawn_HELLO2_Info;
+   permanent	= FALSE;
+   description	= "Czyta³em notatki alchemika.";
+};
+
+FUNC INT DIA_Shawn_HELLO2_Condition()
+{
+    if (MIS_OldAlchemist == LOG_RUNNING)
+    && (czytane_NotatkiAlchemika == true)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Shawn_HELLO2_Info()
+{
+    AI_Output (other, self ,"DIA_Shawn_HELLO2_15_01"); //Czyta³em notatki alchemika. Wynika z nich, ¿e uda³ siê w kierunku Cmentarzyska Orków. 
+    AI_Output (self, other ,"DIA_Shawn_HELLO2_03_02"); //Nawet nie myœl o tym, ¿eby tam pójœæ. To zbyt niebezpieczne. Nasz badacz w koñcu wróci.
+    AI_Output (self, other ,"DIA_Shawn_HELLO2_03_03"); //Masz przy sobie jego notatki?
+    if (Npc_HasItems (other, NotatkiAlchemika) >=1)
+    {
+        AI_Output (other, self ,"DIA_Shawn_HELLO2_15_04"); //Tak. WeŸ je.
+        AI_Output (self, other ,"DIA_Shawn_HELLO2_03_05"); //Dziêkujê.
+        CreateInvItems (self, ItMiNugget, 50);
+        B_GiveInvItems (self, other, ItMiNugget, 50);
+        B_GiveInvItems (other, self, NotatkiAlchemika, 1);
+        B_LogEntry                     (CH2_OldAlchemist,"Odda³em Shawnowi notatki, które znalaz³em na bagnie. Najpewniej nale¿a³y do alchemika.");
+
+        B_GiveXP (200);
+    }
+    else
+    {
+        AI_Output (other, self ,"DIA_Shawn_HELLO2_15_06"); //Nie.
+        AI_Output (self, other ,"DIA_Shawn_HELLO2_03_07"); //Mo¿esz ju¿ iœæ.
+    };
+    B_LogEntry                     (CH2_OldAlchemist,"Rozmawia³em z Shawnem o moim znalezisku z bagna. Notatki alchemika wykaza³y, ¿e uda³ siê on na Cmentarzysko Orków. Nie mam zamiaru tam iœæ w najbli¿szym czasie.");
     AI_StopProcessInfos	(self);
 };
 
@@ -503,6 +498,7 @@ INSTANCE DIA_Shawn_TalkAboutStones (C_INFO)
 FUNC INT DIA_Shawn_TalkAboutStones_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_OldAlchemyMan_HELLO1))
+	&& (MIS_OldAlchemist == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -523,26 +519,26 @@ FUNC VOID DIA_Shawn_TalkAboutStones_Info()
         AI_Output (self, other ,"DIA_Shawn_TalkAboutStones_03_08"); //Gdybyœmy mogli panowaæ nad ich moc¹, moglibyœmy zrobiæ wiele dobrego.
         AI_Output (self, other ,"DIA_Shawn_TalkAboutStones_03_09"); //Dziêkujê ci za tw¹ odwagê i poœwiêcenie.
         AI_Output (self, other ,"DIA_Shawn_TalkAboutStones_03_10"); //WeŸ to jako zap³atê.
-        B_LogEntry                     (CH1_PoszukiwanaAlchemika,"Shawn by³ zadowolony, gdy pozna³ wyniki badañ alchemika. Szkoda, ¿e on sam nie móg³ o nich opowiedzieæ.");
-        Log_SetTopicStatus       (CH1_PoszukiwanaAlchemika, LOG_SUCCESS);
-        MIS_PoszukiwanaAlchemika = LOG_SUCCESS;
+        B_LogEntry               (CH2_OldAlchemist,"Shawn by³ zadowolony, gdy pozna³ wyniki badañ alchemika. Szkoda, ¿e on sam nie móg³ mu o nich opowiedzieæ.");
+        Log_SetTopicStatus       (CH2_OldAlchemist, LOG_SUCCESS);
+        MIS_OldAlchemist = LOG_SUCCESS;
 
-        B_GiveXP (450);
+        B_GiveXP (400);
     }
     else
     {
         AI_Output (other, self ,"DIA_Shawn_TalkAboutStones_15_11"); //Niestety nie.
-        AI_Output (other, self ,"DIA_Shawn_TalkAboutStones_15_12"); //Zmar³ przed wczeœnie.
-        AI_Output (self, other ,"DIA_Shawn_TalkAboutStones_03_13"); //Trudno.
-        B_LogEntry                     (CH1_PoszukiwanaAlchemika,"Niestety nie uzyska³em kluczowych informacji od alchemika.");
-        Log_SetTopicStatus       (CH1_PoszukiwanaAlchemika, LOG_FAILED);
-        MIS_PoszukiwanaAlchemika = LOG_FAILED;
-		PrintScreen	("Anulowano zadanie: Poszukiwania alchemika! ", 1,-1,"font_new_10_red.tga",2);	
+        AI_Output (other, self ,"DIA_Shawn_TalkAboutStones_15_12"); //Zmar³ przedwczeœnie.
+        AI_Output (self, other ,"DIA_Shawn_TalkAboutStones_03_13"); //Trudno...
+        B_LogEntry                     (CH2_OldAlchemist,"Niestety nie uzyska³em kluczowych informacji od alchemika.");
+        Log_SetTopicStatus       (CH2_OldAlchemist, LOG_FAILED);
+        MIS_OldAlchemist = LOG_FAILED;
+		//PrintScreen	("Anulowano zadanie: Poszukiwania alchemika! ", 1,-1,"font_new_10_red.tga",2);	
 
         B_GiveXP (200);
     };
-    CreateInvItems (self, ItMiNugget, 260);
-    B_GiveInvItems (self, other, ItMiNugget, 260);
+    CreateInvItems (self, ItMiNugget, 75);
+    B_GiveInvItems (self, other, ItMiNugget, 75);
     AI_StopProcessInfos	(self);
 };
 
@@ -813,23 +809,23 @@ FUNC VOID DIA_Shawn_BAN_THREAD_Info()
             AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_16"); //Dlatego musisz wesprzeæ naszych braci z Nowego Obozu.
 			second_d_shawn = false;
 			go_help_torlof = true;
-			B_LogEntry                     (CH1_Watek_Bandytow_BRACTWO,"Od Shawna nie dowiedzia³em siê nic nowego. Sytuacja w Kolonii jest kiepska. Moim zadaniem by³o wsparcie Bandytów w ich dzia³aniach. Uprzedzi³em polecenie Shawna i ju¿ to zrobi³em. Teraz muszê iœæ do Nowego Obozu i pomóc Najemnikom w walce ze Stra¿nikami.");
+			B_LogEntry                     (CH4_BanditNeedPsionicHelp,"Od Shawna nie dowiedzia³em siê nic nowego. Sytuacja w Kolonii jest kiepska. Moim zadaniem by³o wsparcie Bandytów w ich dzia³aniach. Uprzedzi³em polecenie Shawna i ju¿ to zrobi³em. Teraz muszê iœæ do Nowego Obozu i pomóc Najemnikom w walce ze Stra¿nikami.");
         }
         else
         {
             AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_17"); //No dobrze. Pójdê z nim pogadaæ.
 			second_d_shawn = true;
-			B_LogEntry                     (CH1_Watek_Bandytow_BRACTWO,"Shawn martwi siê sytuacj¹ w Kolonii. Muszê pogadaæ z Bandyt¹ Draxem, który ponoæ planuje jakiœ atak na patrole Gomeza.");
+			B_LogEntry                     (CH4_BanditNeedPsionicHelp,"Shawn martwi siê sytuacj¹ w Kolonii. Muszê pogadaæ z Bandyt¹ Draxem, który ponoæ planuje jakiœ atak na patrole Gomeza.");
    go_help_torlof = false;
         };
     }
     else
     {
-        AI_Output (other, self ,"DIA_Shawn_BAN_THREAD_15_18"); //Przeteleportowa³em siê tutaj najszybciej jak siê da. Mo¿esz mi krótko streœciæ co siê dzieje?
+        AI_Output (other, self ,"DIA_Shawn_BAN_THREAD_15_18"); //Dosta³em siê tutaj najszybciej jak siê da. Mo¿esz mi krótko streœciæ co siê dzieje?
         AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_19"); //Otó¿ Stara Kopalnia uleg³a zalaniu przez podziemn¹ rzekê. Gomez oszala³ i kaza³ swoim Stra¿nikom atakowaæ kogo popadnie.
         AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_20"); //Ponoæ Bandyci planuj¹ to ukróciæ. Musisz porozmawiaæ z niejakim Draxem. Goœæ ponoæ zajmuje siê t¹ wypraw¹.
         AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_21"); //Gdy to zrobisz, wróæ zdaæ mi raport.
-		B_LogEntry                     (CH1_Watek_Bandytow_BRACTWO,"Shawn martwi siê sytuacj¹ w Kolonii. Muszê pogadaæ z Bandyt¹ Draxem, który ponoæ planuje jakiœ atak na patrole Gomeza.");
+		B_LogEntry                     (CH4_BanditNeedPsionicHelp,"Shawn martwi siê sytuacj¹ w Kolonii. Muszê pogadaæ z Bandyt¹ Draxem, który ponoæ planuje jakiœ atak na patrole Gomeza.");
    second_d_shawn = true;
    go_help_torlof = false;
     };
@@ -870,9 +866,9 @@ FUNC VOID DIA_Shawn_DRAX_IMPORTANT_Info()
     AI_Output (other, self ,"DIA_Shawn_DRAX_IMPORTANT_15_07"); //Dlaczego?
     AI_Output (self, other ,"DIA_Shawn_DRAX_IMPORTANT_03_08"); //Stra¿nicy staj¹ siê coraz wiêkszym zagro¿eniem równie¿ dla naszego Obozu. 
     AI_Output (self, other ,"DIA_Shawn_DRAX_IMPORTANT_03_09"); //Dlatego musisz wesprzeæ naszych braci z Nowego Obozu.
-    B_LogEntry                     (CH1_Watek_Bandytow_BRACTWO,"Muszê udaæ siê w kierunku Nowego Obozu i pomóc Najemnikom w walce ze Stra¿nikami. ");
+    B_LogEntry                     (CH4_BanditNeedPsionicHelp,"Muszê udaæ siê w kierunku Nowego Obozu i pomóc Najemnikom w walce ze Stra¿nikami. ");
 
-    B_GiveXP (150);
+    B_GiveXP (300);
     AI_StopProcessInfos	(self);
 };
 
@@ -906,8 +902,8 @@ FUNC VOID DIA_Shawn_HELP_TORLOF_Info()
     AI_Output (self, other ,"DIA_Shawn_HELP_TORLOF_03_02"); //Œwietnie. Mo¿e to da Gomezowi do myœlenia. Ostatnio Stra¿nicy zabili Nowicjusza zbieraj¹cego zio³a. 
     AI_Output (self, other ,"DIA_Shawn_HELP_TORLOF_03_03"); //Nie podoba mi siê to. Je¿eli takie zdarzenia bêd¹ siê powtarzaæ, bêdziemy musieli przy³¹czyæ siê do tej wojny. 
     AI_Output (self, other ,"DIA_Shawn_HELP_TORLOF_03_04"); //Na razie mo¿esz ju¿ iœæ.
-    Log_SetTopicStatus       (CH1_Watek_Bandytow_BRACTWO, LOG_SUCCESS);
-    MIS_Watek_Bandytow_BRACTWO = LOG_SUCCESS;
+    Log_SetTopicStatus       (CH4_BanditNeedPsionicHelp, LOG_SUCCESS);
+    MIS_BanditNeedPsionicHelp = LOG_SUCCESS;
 
     B_GiveXP (250);
     AI_StopProcessInfos	(self);

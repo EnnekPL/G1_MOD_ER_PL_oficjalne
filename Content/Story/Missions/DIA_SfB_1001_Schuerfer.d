@@ -106,7 +106,7 @@ INSTANCE DIA_Schuerfer_GOR_NA_LIN (C_INFO)
 FUNC INT DIA_Schuerfer_GOR_NA_LIN_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_GorNaLin_HELLO1))
-    && (MIS_zginalLIN == LOG_RUNNING)
+    && (MIS_MissedSpy == LOG_RUNNING)
 	&& ((MIS_KopalniaZlota != LOG_RUNNING) || (MIS_KopalniaZlota != LOG_SUCCESS))
     {
     return TRUE;
@@ -119,6 +119,6 @@ FUNC VOID DIA_Schuerfer_GOR_NA_LIN_Info()
     AI_Output (other, self ,"DIA_Schuerfer_GOR_NA_LIN_15_01"); //Powiesz mi coœ ciekawego o Gor Na Linie?
     AI_Output (self, other ,"DIA_Schuerfer_GOR_NA_LIN_03_02"); //Ja? Ja nic nie wiem.
     AI_Output (self, other ,"DIA_Schuerfer_GOR_NA_LIN_03_03"); //Nie obchodzi mnie ten goœæ. Odczep siê. 
-    B_LogEntry                     (CH1_ZginalLIN,"Shutfer nie powiedzia³ mi nic ciekawego o Gor Na Linie.");
+    B_LogEntry                     (CH2_MissedSpy,"Shutfer nie powiedzia³ mi nic ciekawego o Gor Na Linie.");
     AI_StopProcessInfos	(self);
 };

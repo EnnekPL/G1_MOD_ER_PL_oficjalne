@@ -2467,11 +2467,11 @@ FUNC VOID DIA_THORUS_ZLECENIE_NA_OBRONE_Info()
     AI_Output (self, other ,"DIA_THORUS_ZLECENIE_NA_OBRONE_03_03"); //Grupka Bandytów chce zaatakowaæ to miejsce i obrabowaæ skrzynie. Mamy tam ledwie szeœciu ludzi i jednego robotnika.
     AI_Output (self, other ,"DIA_THORUS_ZLECENIE_NA_OBRONE_03_04"); //IdŸ tam i dopilnuj, ¿eby ¿aden Bandyta nie prze¿y³. 
     AI_Output (self, other ,"DIA_THORUS_ZLECENIE_NA_OBRONE_03_05"); //Tylko siê poœpiesz!
-    MIS_Obrona_Placu = LOG_RUNNING;
+    MIS_ReplacePointDefense = LOG_RUNNING;
 
-    Log_CreateTopic          (CH1_Obrona_Placu, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_Obrona_Placu, LOG_RUNNING);
-    B_LogEntry               (CH1_Obrona_Placu,"Muszê jak najszybciej udaæ siê na plac wymian. podobno grupa Bandytów chce napaœæ na naszych ludzi.");
+    Log_CreateTopic          (CH2_ReplacePointDefense, LOG_MISSION);
+    Log_SetTopicStatus       (CH2_ReplacePointDefense, LOG_RUNNING);
+    B_LogEntry               (CH2_ReplacePointDefense,"Muszê jak najszybciej udaæ siê na plac wymian. podobno grupa Bandytów chce napaœæ na naszych ludzi.");
 	Wld_InsertNpc				(bandyta8,"OW_PATH_1_16_5_1");
 	Wld_InsertNpc				(bandyta4,"OW_PATH_1_16_6");
 	Wld_InsertNpc				(bandyta2,"OW_PATH_1_16_5");
@@ -2509,7 +2509,7 @@ FUNC INT DIA_THORUS_PLAC_WYMIAN_Condition()
     if (Npc_KnowsInfo (hero, DIA_Stra¿nik_OBRONA))
     && (Npc_KnowsInfo (hero, DIA_Robotnik_OBRONA_2))
     && (Npc_KnowsInfo (hero, DIA_Stra¿nik_OBRONA_1))
-    && (MIS_Obrona_placu == LOG_RUNNING)
+    && (MIS_ReplacePointDefense == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -2522,9 +2522,9 @@ FUNC VOID DIA_THORUS_PLAC_WYMIAN_Info()
     AI_Output (other, self ,"DIA_THORUS_PLAC_WYMIAN_15_02"); //Uda³o nam siê ich pozbyæ.
     AI_Output (self, other ,"DIA_THORUS_PLAC_WYMIAN_03_03"); //Doskonale. To oduczy Quentina zadzierania z moimi ludŸmi.
     AI_Output (self, other ,"DIA_THORUS_PLAC_WYMIAN_03_04"); //Masz tu swój ¿o³d. 
-    B_LogEntry                     (CH1_Obrona_placu,"Zadanie zosta³o wykonane. Plac wymian jest bezpieczny.");
-    Log_SetTopicStatus       (CH1_Obrona_placu, LOG_SUCCESS);
-    MIS_Obrona_placu = LOG_SUCCESS;
+    B_LogEntry                     (CH2_ReplacePointDefense,"Zadanie zosta³o wykonane. Plac wymian jest bezpieczny.");
+    Log_SetTopicStatus       (CH2_ReplacePointDefense, LOG_SUCCESS);
+    MIS_ReplacePointDefense = LOG_SUCCESS;
 
     B_GiveXP (158);
 	

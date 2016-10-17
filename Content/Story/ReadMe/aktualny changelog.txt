@@ -42,4 +42,5 @@
 - zadanie od Merdariona ("Trzej lordowie") jest tylko dla cz³onków Nowego Obozu
 - usniête zadania "Sprzeda¿ alkoholu" i "Dostawy alkoholu" (w¹tek Bandyty)
 - oddajemy miecz Luisowi w opuszczonej kopalni
-- przerobione zadanie "Nowe ziele" od Davsona
+- przerobione zadanie "Nowe, mocne ziele" od Davsona
+- zadanie od Baal Lukora ("Zaginiony szpieg Gor Na Lin") jest tylko dla Stra¿ników Œwi¹tynnych

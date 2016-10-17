@@ -2311,14 +2311,14 @@ FUNC VOID DIA_Pc_Thief_SprawkaXD_Info()
     AI_Output (self, other ,"DIA_Pc_Thief_SprawkaXD_03_04"); //Jednak pos³aniec nie przychodzi.
     AI_Output (self, other ,"DIA_Pc_Thief_SprawkaXD_03_05"); //Móg³byœ go dla mnie poszukaæ?
     AI_Output (other, self ,"DIA_Pc_Thief_SprawkaXD_15_06"); //Jasne.
-    MIS_Search_Poslaniec = LOG_RUNNING;
+    MIS_MissedList = LOG_RUNNING;
 	CreateInvItem (VLK_507_Buddler, OldMineList2);
 	B_ExchangeRoutine (VLK_507_Buddler,"trup");
 	B_killnpc (VLK_507_Buddler);
 	
-    Log_CreateTopic            (CH1_Search_Poslaniec, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_Search_Poslaniec, LOG_RUNNING);
-    B_LogEntry                     (CH1_Search_Poslaniec,"Diego kaza³ mi odnaleŸæ pos³añca z kopalni. Ma przy sobiê liste zamówieñ na której zale¿y Cieniowi.");
+    Log_CreateTopic            (CH3_MissedList, LOG_MISSION);
+    Log_SetTopicStatus       (CH3_MissedList, LOG_RUNNING);
+    B_LogEntry                     (CH3_MissedList,"Diego kaza³ mi odnaleŸæ pos³añca z kopalni. Ma przy sobiê liste zamówieñ na której zale¿y Cieniowi.");
     AI_StopProcessInfos	(self);
 };
 
@@ -2356,9 +2356,9 @@ FUNC VOID DIA_Pc_Thief_ListGive_Info()
     AI_Output (self, other ,"DIA_Pc_Thief_ListGive_03_05"); //Gdzie by³ ten pos³aniec?
     AI_Output (other, self ,"DIA_Pc_Thief_ListGive_15_06"); //Zosta³ na obiedzie u zêbaczy.
     AI_Output (self, other ,"DIA_Pc_Thief_ListGive_03_07"); //Rozumiem. WeŸ tê rudê.
-    B_LogEntry                     (CH1_Search_Poslaniec,"Przy ciele pos³añca znalaz³em listê, któr¹ odda³em Diego.");
-    Log_SetTopicStatus       (CH1_Search_Poslaniec, LOG_SUCCESS);
-    MIS_Search_Poslaniec = LOG_SUCCESS;
+    B_LogEntry                     (CH3_MissedList,"Przy ciele pos³añca znalaz³em listê, któr¹ odda³em Diego.");
+    Log_SetTopicStatus       (CH3_MissedList, LOG_SUCCESS);
+    MIS_MissedList = LOG_SUCCESS;
 
     B_GiveXP (300);
     CreateInvItems (self, ItMiNugget, 120);

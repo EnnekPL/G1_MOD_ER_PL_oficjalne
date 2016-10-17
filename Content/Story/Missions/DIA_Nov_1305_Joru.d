@@ -415,7 +415,7 @@ INSTANCE DIA_Joru_ORE (C_INFO)
 
 FUNC INT DIA_Joru_ORE_Condition()
 {
-    if (MIS_OszukanyHandlarz == LOG_RUNNING)
+    if (MIS_CheatedMerchant == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -430,7 +430,7 @@ FUNC VOID DIA_Joru_ORE_Info()
     AI_Output (self, other ,"DIA_Joru_ORE_03_04"); //Hmm... Nie chcê burd. Guru bardzo tego nie lubi¹. Oddajê swój d³ug.
     CreateInvItems (self, ItMiNugget, 50);
     B_GiveInvItems (self, other, ItMiNugget, 50);
-    B_LogEntry     (CH1_OszukanyHandlarz,"Odzyska³em rudê od Joru. Chcia³ stawiaæ opór, ale w porê siê opamiêta³.");//fix 1210
+    B_LogEntry     (CH1_CheatedMerchant,"Odzyska³em rudê od Joru. Chcia³ stawiaæ opór, ale w porê siê opamiêta³.");//fix 1210
 
     //B_GiveXP (50);
     AI_StopProcessInfos	(self);

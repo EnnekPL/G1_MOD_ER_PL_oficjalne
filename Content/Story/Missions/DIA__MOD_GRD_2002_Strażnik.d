@@ -153,7 +153,7 @@ INSTANCE DIA_Stra¿nik_OBRONA_1 (C_INFO)
 
 FUNC INT DIA_Stra¿nik_OBRONA_1_Condition()
 {
-    if (MIS_Obrona_Placu == LOG_RUNNING)
+    if (MIS_ReplacePointDefense == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -165,7 +165,7 @@ FUNC VOID DIA_Stra¿nik_OBRONA_1_Info()
     AI_Output (self, other ,"DIA_Stra¿nik_OBRONA_1_03_01"); //Zjawi³eœ siê w ostatniej chwili. Dziêki! 
     AI_Output (self, other ,"DIA_Stra¿nik_OBRONA_1_03_02"); //Ale to jeszcze nie koniec. Jest ich wiêcej. Pobiegli na plac wymian.
     AI_Output (self, other ,"DIA_Stra¿nik_OBRONA_1_03_03"); //Ruszaj za nimi! My bêdziemy pilnowaæ, by nie zaskoczyli was od ty³u.
-    B_LogEntry                     (CH1_Obrona_Placu,"Odparliœmy atak przy wejœciu do Opuszczonej Kopalni. Pora iœæ dalej. Bandytów jest wiêcej.");
+    B_LogEntry                     (CH2_ReplacePointDefense,"Odparliœmy atak przy wejœciu do Opuszczonej Kopalni. Pora iœæ dalej. Bandytów jest wiêcej.");
 
     B_GiveXP (48);
     AI_StopProcessInfos	(self);

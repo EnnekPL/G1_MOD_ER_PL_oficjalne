@@ -210,7 +210,7 @@ INSTANCE DIA_Stra¿nik_OBRONA (C_INFO)
 
 FUNC INT DIA_Stra¿nik_OBRONA_Condition()
 {
-    if (MIS_Obrona_placu == LOG_RUNNING)
+    if (MIS_ReplacePointDefense == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -225,14 +225,14 @@ FUNC VOID DIA_Stra¿nik_OBRONA_Info()
     {
         AI_Output (other, self ,"DIA_Stra¿nik_OBRONA_15_03"); //Tak.
         AI_Output (self, other ,"DIA_Stra¿nik_OBRONA_03_04"); //W takim razie wszyscy s¹ bezpieczni. Mo¿esz wracaæ do Obozu.
-		B_LogEntry                     (CH1_Obrona_placu,"Pozby³em siê Bandytów z placu wymian. Mogê wróciæ do Obozu.");
+		B_LogEntry                     (CH2_ReplacePointDefense,"Pozby³em siê Bandytów z placu wymian. Mogê wróciæ do Obozu.");
     }
     else
     {
         AI_Output (other, self ,"DIA_Stra¿nik_OBRONA_15_05"); //Jeszcze nie.
         AI_Output (self, other ,"DIA_Stra¿nik_OBRONA_03_06"); //W takim razie sprawdŸ czy innym te¿ uda³o siê odeprzeæ atak.
         AI_Output (self, other ,"DIA_Stra¿nik_OBRONA_03_07"); //Potem wróæ do Thorusa.
-		B_LogEntry                     (CH1_Obrona_placu,"Pozby³em siê Bandytów z placu wymian, jednak wci¹¿ nie rozmawia³em ze Stra¿nikami z pozosta³ych posterunków. Muszê sprawdziæ czy s¹ bezpieczni. Dopiero potem bêdê móg³ wróciæ. ");
+		B_LogEntry                     (CH2_ReplacePointDefense,"Pozby³em siê Bandytów z placu wymian, jednak wci¹¿ nie rozmawia³em ze Stra¿nikami z pozosta³ych posterunków. Muszê sprawdziæ czy s¹ bezpieczni. Dopiero potem bêdê móg³ wróciæ. ");
 		
     };
 	B_GiveXP (79);

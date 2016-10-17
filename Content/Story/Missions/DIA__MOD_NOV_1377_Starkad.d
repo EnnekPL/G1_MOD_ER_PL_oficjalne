@@ -117,12 +117,12 @@ FUNC VOID DIA_Patros_QUEST1_POMOC_Info()
 
 func void RunQuest_OszukanyHandlarz ()
 {
-    MIS_OszukanyHandlarz = LOG_RUNNING;
+    MIS_CheatedMerchant = LOG_RUNNING;
 	CreateInvItems (self, ItCH1_ListaDlugowPatrosa, 1);
     B_GiveInvItems (self, other, ItCH1_ListaDlugowPatrosa, 1);
-    Log_CreateTopic          (CH1_OszukanyHandlarz, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_OszukanyHandlarz, LOG_RUNNING);
-    B_LogEntry               (CH1_OszukanyHandlarz,"Starkad kaza³ mi zebraæ rudê od zalegaj¹cych mu j¹ mieszkañców obozu: Gor Na Idona, Joru i Darriona.");
+    Log_CreateTopic          (CH1_CheatedMerchant, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_CheatedMerchant, LOG_RUNNING);
+    B_LogEntry               (CH1_CheatedMerchant,"Starkad kaza³ mi zebraæ rudê od zalegaj¹cych mu j¹ mieszkañców obozu: Gor Na Idona, Joru i Darriona.");
 };
 
 func void DIA_Patros_QUEST1_POMOC_25 ()
@@ -164,12 +164,12 @@ INSTANCE DIA_Patros_QUEST1_OK (C_INFO)
    condition    = DIA_Patros_QUEST1_OK_Condition;
    information  = DIA_Patros_QUEST1_OK_Info;
    permanent	= FALSE;
-   description	= "Mam twoje dobra.";
+   description	= "Mam rudê, któr¹ zalegali mieszkañcy Obozu. ";
 };
 
 FUNC INT DIA_Patros_QUEST1_OK_Condition()
 {
-    if (MIS_OszukanyHandlarz == LOG_RUNNING)
+    if (MIS_CheatedMerchant == LOG_RUNNING)
     && (Npc_HasItems (hero, ItMiNugget)>=250)
 	&& (Npc_KnowsInfo (hero, DIA_GorNaToth_IdonDebt))
 	&& (Npc_KnowsInfo (hero, DIA_Joru_ORE))
@@ -187,9 +187,9 @@ FUNC VOID DIA_Patros_QUEST1_OK_Info()
     AI_Output (self, other ,"DIA_Patros_QUEST1_OK_03_04"); //Œwietna robota.
 	AI_Output (other, self ,"DIA_Patros_QUEST1_OK_15_05"); //Nie tak prêdko! Dawaj nagrodê. Umawialiœmy siê przecie¿.
 	AI_Output (self, other ,"DIA_Patros_QUEST1_OK_03_06"); //Ach tak. Proszê.
-    B_LogEntry               (CH1_OszukanyHandlarz,"Odda³em rudê Starkadowi, a w zamian otrzyma³em tyle bry³ek, ile wczeœniej wynegocjowa³em.");
-    Log_SetTopicStatus       (CH1_OszukanyHandlarz, LOG_SUCCESS);
-    MIS_OszukanyHandlarz = LOG_SUCCESS;
+    B_LogEntry               (CH1_CheatedMerchant,"Odda³em rudê Starkadowi, a w zamian otrzyma³em tyle bry³ek, ile wczeœniej wynegocjowa³em.");
+    Log_SetTopicStatus       (CH1_CheatedMerchant, LOG_SUCCESS);
+    MIS_CheatedMerchant = LOG_SUCCESS;
 	
 	CreateInvItems (self, itminugget, prize_Starkad_loans);
     B_GiveInvItems (self, other, itminugget, prize_Starkad_loans);

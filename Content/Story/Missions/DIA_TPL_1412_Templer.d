@@ -38,7 +38,7 @@ INSTANCE DIA_GorNaIdon_LOAN (C_INFO)
 
 FUNC INT DIA_GorNaIdon_LOAN_Condition()
 {
-    if (MIS_OszukanyHandlarz == LOG_RUNNING)
+    if (MIS_CheatedMerchant == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -51,7 +51,7 @@ FUNC VOID DIA_GorNaIdon_LOAN_Info()
     AI_Output (self, other ,"DIA_GorNaIdon_LOAN_03_02"); //Jak on œmie ¿¹daæ ode mnie rudy! Jestem Stra¿nikiem Œwi¹tynnym. S³u¿ê Œni¹cemu.
 	AI_Output (other, self ,"DIA_GorNaIdon_LOAN_15_03"); //On te¿ s³u¿y Œni¹cemu, dlatego proszê ciê b¹dŸ uczciwy i oddaj rudê.
     AI_Output (self, other ,"DIA_GorNaIdon_LOAN_03_03"); //Zapomnij.
-    B_LogEntry (CH1_OszukanyHandlarz,"Gor Na Idon nie zamierza zwróciæ rudy. O ma³o ci nie pêk³ z dumy, gdy mi to oznajmi³. Chyba muszê pogadaæ z jego prze³o¿onym.");
+    B_LogEntry (CH1_CheatedMerchant,"Gor Na Idon nie zamierza zwróciæ rudy. O ma³o ci nie pêk³ z dumy, gdy mi to oznajmi³. Chyba muszê pogadaæ z jego prze³o¿onym.");
 };
 
 //========================================

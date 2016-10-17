@@ -64,7 +64,7 @@ INSTANCE DIA_Garp_DOSTAWA (C_INFO)
 
 FUNC INT DIA_Garp_DOSTAWA_Condition()
 {
-    if MIS_OMWytrychy == LOG_RUNNING
+    if MIS_SmallDelivery == LOG_RUNNING
     && (Npc_HasItems (other, ItKeLockpick) >=20)
     {
     return TRUE;
@@ -78,18 +78,15 @@ FUNC VOID DIA_Garp_DOSTAWA_Info()
     AI_Output (self, other ,"DIA_Garp_DOSTAWA_03_02"); //Nie tak g³oœno, bo Stra¿nicy nas us³ysz¹!
 	AI_Output (self, other ,"DIA_Garp_DOSTAWA_03_03"); //Dziêki. 
 	
-    B_LogEntry               (CH1_OMWytrychy,"Dostarczenie tych wytrychów nie by³o zbyt trudne. Przynajmniej otrzyma³em kilka bry³ek rudy.");
-    Log_SetTopicStatus       (CH1_OMWytrychy, LOG_SUCCESS);
-    MIS_OMWytrychy = LOG_SUCCESS;
+    B_LogEntry               (CH1_SmallDelivery,"Dostarczenie tych wytrychów nie by³o zbyt trudne. Przynajmniej otrzyma³em kilka bry³ek rudy.");
+    Log_SetTopicStatus       (CH1_SmallDelivery, LOG_SUCCESS);
+    MIS_SmallDelivery = LOG_SUCCESS;
 
     B_GiveXP (25);
     CreateInvItems (self, ItMiNugget, 10);
     B_GiveInvItems (self, other, ItMiNugget, 10);
 
 };
-
-
-
 
 //========================================
 //-----------------> AKSZYN
@@ -166,7 +163,7 @@ FUNC VOID DIA_Garp_GADANINA_Info()
     AI_Output (other, self ,"DIA_Garp_GADANINA_15_04"); //Powiedzia³, ¿e nie ma zamiaru braæ w tym udzia³u. Wasz plan jest wiêc z góry skazany na pora¿kê. 
     AI_Output (self, other ,"DIA_Garp_GADANINA_03_05"); //Co ten sukinsyn sobie myœli?! Wycofa³ siê w ostatniej chwili!
     AI_Output (self, other ,"DIA_Garp_GADANINA_03_06"); //A co je¿eli skuma³ siê ze Stra¿nikami?! Musimy uwa¿aæ. Ju¿ zbyt du¿o osób o tym wie.
-    B_LogEntry                     (CH1_ActionOM,"Przekaza³em stanowisko Alepha Garpowi. Nie by³ zadowolony z takiego obrotu sprawy. Gdybym umia³ otwieraæ zamki, móg³bym zaproponowaæ Garpowi pomoc.");
+    B_LogEntry                     (CH1_ActionOM,"Przekaza³em odpowiedŸ Alepha Garpowi. Nie by³ zadowolony z takiego obrotu sprawy. Gdybym umia³ otwieraæ zamki, móg³bym zaproponowaæ Garpowi pomoc.");
 };
 
 //========================================
@@ -197,9 +194,9 @@ FUNC VOID DIA_Garp_WLAM_Info()
     AI_Output (other, self ,"DIA_Garp_WLAM_15_01"); //Mo¿e ja bym siê w³ama³?
     AI_Output (other, self ,"DIA_Garp_WLAM_15_02"); //Potrafiê otwieraæ zamki.
     AI_Output (self, other ,"DIA_Garp_WLAM_03_03"); //Naprawdê? Zrobisz to?
-    AI_Output (other, self ,"DIA_Garp_WLAM_15_04"); //Chyba dostanê od was jak¹œ pomoc?
+    AI_Output (other, self ,"DIA_Garp_WLAM_15_04"); //Chyba mogê liczyæ na wasz¹ pomoc?
     AI_Output (self, other ,"DIA_Garp_WLAM_03_05"); //Oczywiœcie. Glen da ci wytrychy, a ja odci¹gnê Stra¿nika.
-    AI_Output (self, other ,"DIA_Garp_WLAM_03_06"); //Grimes dopilnuje, aby Ian nie krêci³ siê na dnie kopalni.
+    AI_Output (self, other ,"DIA_Garp_WLAM_03_06"); //Grimes dopilnuje, aby Ianowi nie przysz³o do g³owy zrobiæ sobie obchód po dnie kopalni.
     AI_Output (self, other ,"DIA_Garp_WLAM_03_07"); //IdŸ do Glena po wytrychy. Powiedz te¿ Grimesowi, ¿eby siê przygotowa³.
     B_LogEntry                     (CH1_ActionOM,"Zaproponowa³em, ¿e to ja otworzê skrzynie w magazynie. Glen da mi kilka wytrychów, a Grimes dopilnuje, by nikt nam nie przerwa³. Mam iœæ i powiedzieæ im, co maja robiæ.");
 };
@@ -280,7 +277,7 @@ INSTANCE DIA_Garp_UKONCZONO (C_INFO)
    condition    = DIA_Garp_UKONCZONO_Condition;
    information  = DIA_Garp_UKONCZONO_Info;
    permanent	= FALSE;
-   description	= "Uda³o mi siê. Zwijamy siê.";
+   description	= "(kiwnij porozumiewawczo g³ow¹)";
 };
 
 FUNC INT DIA_Garp_UKONCZONO_Condition()
@@ -295,8 +292,8 @@ FUNC INT DIA_Garp_UKONCZONO_Condition()
 
 FUNC VOID DIA_Garp_UKONCZONO_Info()
 {
-    AI_Output (other, self ,"DIA_Garp_UKONCZONO_15_01"); //Uda³o mi siê. Zwijamy siê.
-    AI_Output (self, other ,"DIA_Garp_UKONCZONO_15_02"); //Œwietnie. Oddalmy siê.
+    AI_Output (other, self ,"DIA_Garp_UKONCZONO_15_01"); //Ekhem...
+    AI_Output (self, other ,"DIA_Garp_UKONCZONO_15_02"); //Mmmm...
     Npc_ExchangeRoutine (self,"START");
 	B_ExchangeRoutine (GRD_2035_Dracon, "start");  
 	B_LogEntry        (CH1_ActionOM,"Uda³o mi siê z³amaæ zamki. Teraz muszê oddaæ Kopaczom przedmioty nale¿¹ce do nich, a resztê rzeczy bêdê móg³ zachowaæ.");
@@ -346,5 +343,3 @@ FUNC VOID DIA_Garp_SAKWA_Info()
     B_GiveXP (XP_OldMineAction);
     AI_StopProcessInfos	(self);
 };
-
-

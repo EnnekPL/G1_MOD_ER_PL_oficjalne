@@ -96,7 +96,7 @@ instance Info_Kirgo_Charge(C_INFO)
 
 FUNC INT Info_Kirgo_Charge_Condition()
 {
-	if ((Npc_KnowsInfo (hero,DIA_Scatty_JoinOC) && Npc_KnowsInfo (hero,Info_Kirgo_What) && (Kapitel <= 1)))	|| (MIS_WpierdolNaArenie == LOG_RUNNING)
+	if ((Npc_KnowsInfo (hero,DIA_Scatty_JoinOC) && Npc_KnowsInfo (hero,Info_Kirgo_What) && (Kapitel <= 1)))	|| (MIS_HanisAsTeacher == LOG_RUNNING)
 	// Kapitelfix   ***Björn***
 	{
 		return 1;

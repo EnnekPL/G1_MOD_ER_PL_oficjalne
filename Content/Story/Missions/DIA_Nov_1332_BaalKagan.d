@@ -453,7 +453,7 @@ FUNC VOID DIA_BaalKagan_SellZiele_Info()
     AI_Output (self, other ,"DIA_BaalKagan_SellZiele_03_10"); //Mam swoje ziele, które trzymam w szczelnie zamkniêtej skrzyni.
     AI_Output (self, other ,"DIA_BaalKagan_SellZiele_03_11"); //Nie potrzebujê waszych wynalazków.
 	
-	B_LogEntry                     (CH1_NoweZiele,"Baal Kagan nie chce kupiæ ziela, gdy¿ woli sprzedawaæ stare, które przetrzymuje w skrzyni.");
+	B_LogEntry                     (CH1_NewWeed,"Baal Kagan nie chce kupiæ ziela, gdy¿ woli sprzedawaæ stare, które przetrzymuje w skrzyni.");
     B_GiveXP (100);
     AI_StopProcessInfos	(self);
 };
@@ -566,7 +566,7 @@ FUNC VOID DIA_BaalKagan_SkrzynaPelna_Info()
     AI_Output (self, other ,"DIA_BaalKagan_SkrzynaPelna_03_04"); //Spokojnie. Jest œwietne!
     AI_Output (self, other ,"DIA_BaalKagan_SkrzynaPelna_03_05"); //Tym razem Nowicjuszom siê uda³o.
     AI_Output (self, other ,"DIA_BaalKagan_SkrzynaPelna_03_06"); //Powiedz im, ¿e bêdê skupywa³ ich ziele za 35 bry³ek rudy.
-    B_LogEntry                     (CH1_NoweZiele,"Podmieni³em ziele w skrzyni Kagana. Przez przypadek je wypali³. By³ bardzo zadowolony. Mogê to przekazaæ Davsonowi.");
+    B_LogEntry                     (CH1_NewWeed,"Podmieni³em ziele w skrzyni Kagana. Przez przypadek je wypali³. By³ bardzo zadowolony. Mogê to przekazaæ Davsonowi.");
 
     B_GiveXP (300);
     AI_StopProcessInfos	(self);

@@ -68,7 +68,7 @@ instance Info_Kharim_Charge(C_INFO)
 
 FUNC INT Info_Kharim_Charge_Condition()
 {
-	if (( Npc_KnowsInfo (hero,DIA_Scatty_JoinOC) && Npc_KnowsInfo(hero,Info_Kharim_What) && (Kharim_Charged != TRUE) && (Kapitel <= 1) ) ) || (MIS_WpierdolNaArenie == LOG_RUNNING)// Kapitelfix ***Björn***
+	if (( Npc_KnowsInfo (hero,DIA_Scatty_JoinOC) && Npc_KnowsInfo(hero,Info_Kharim_What) && (Kharim_Charged != TRUE) && (Kapitel <= 1) ) ) || (MIS_HanisAsTeacher == LOG_RUNNING)// Kapitelfix ***Björn***
 	{
 		return 1;
 	};

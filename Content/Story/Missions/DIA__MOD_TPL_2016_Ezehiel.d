@@ -52,10 +52,10 @@ FUNC VOID DIA_Ezehiel_VERY_IMPORTANT_Info()
     AI_Output (self, other ,"DIA_Ezehiel_VERY_IMPORTANT_03_01"); //Zaczekaj. Mam wa¿n¹ wiadomoœæ z Bractwa.
     AI_Output (other, self ,"DIA_Ezehiel_VERY_IMPORTANT_15_02"); //Co jest?
     AI_Output (self, other ,"DIA_Ezehiel_VERY_IMPORTANT_03_03"); //Shawn chce ciê pilnie widzieæ. Ma dla ciebie zadanie.
-    MIS_Watek_Bandytow_BRACTWO = LOG_RUNNING;
+    MIS_BanditNeedPsionicHelp = LOG_RUNNING;
 
-    Log_CreateTopic            (CH1_Watek_Bandytow_BRACTWO, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_Watek_Bandytow_BRACTWO, LOG_RUNNING);
-    B_LogEntry                     (CH1_Watek_Bandytow_BRACTWO,"Mam jak najszybciej udaæ siê do Shawna. Mogê skorzystaæ z mojej runy teleportacji do Bractwa.");
+    Log_CreateTopic            (CH4_BanditNeedPsionicHelp, LOG_MISSION);
+    Log_SetTopicStatus       (CH4_BanditNeedPsionicHelp, LOG_RUNNING);
+    B_LogEntry                     (CH4_BanditNeedPsionicHelp,"Mam jak najszybciej udaæ siê do Shawna. Mogê skorzystaæ z mojej runy teleportacji do Bractwa.");
     AI_StopProcessInfos	(self);
 };

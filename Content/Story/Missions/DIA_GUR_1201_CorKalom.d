@@ -282,7 +282,7 @@ func void  GUR_1201_CorKalom_JoinPSI_Info()
 		counter = counter + 1;
 	};
 	//er 1.4
-	if (MIS_PolowanieZBaalem == LOG_SUCCESS)
+	if (MIS_HuntingWithLukor == LOG_SUCCESS)
 	{
 	AI_Output (self, other,"GUR_1201_CorKalom_JoinPSI_10_10"); //Ktoœ jeszcze?
 	AI_Output (other, self,"GUR_1201_CorKalom_JoinPSI_15_11"); //Baal Lukor jest pe³en podziwu moich zdolnoœci bojowych. Pomog³em mu odzyskaæ amulet. 

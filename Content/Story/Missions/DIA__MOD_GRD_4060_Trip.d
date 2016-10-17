@@ -102,7 +102,7 @@ FUNC VOID DIA_Trip_GoToWork_SzukajaCie()
     AI_Output (self, other ,"DIA_Trip_GoToWork_SzukajaCie_03_06"); //Bardzo ci dziêkujê, przyjacielu.
     AI_Output (other, self ,"DIA_Trip_GoToWork_SzukajaCie_15_07"); //To drobiazg.
     AI_Output (other, self ,"DIA_Trip_GoToWork_SzukajaCie_15_08"); //Ale idŸ ju¿, nim siê zorientuj¹, ¿e ca³y czas tu siedzisz.
-    B_LogEntry                     (CH1_NewGRDfromArene,"Trip to nierób z karczmy. Ju¿ od kilku tygodni dostaje wyp³atê za picie alkoholu w karczmie. Uzna³em, ¿e jak trochê popracuje za Fletchera, to nic mu siê nie stanie.");
+    B_LogEntry                     (CH1_FletchersReplacement,"Trip to nierób z karczmy. Ju¿ od kilku tygodni dostaje wyp³atê za picie alkoholu w karczmie. Uzna³em, ¿e jak trochê popracuje za Fletchera, to nic mu siê nie stanie.");
 
     B_GiveXP (100);
 
@@ -117,7 +117,7 @@ FUNC VOID DIA_Trip_GoToWork_Dosyc()
     AI_Output (self, other ,"DIA_Trip_GoToWork_Dosyc_03_02"); //Ty pod³y zdrajco!
     AI_Output (other, self ,"DIA_Trip_GoToWork_Dosyc_15_03"); //Ruszaj siê, ruszaj! Arena czeka na patrolowanie.
     AI_Output (self, other ,"DIA_Trip_GoToWork_Dosyc_03_04"); //Zobaczysz. Zemszczê siê!
-    B_LogEntry                     (CH1_NewGRDfromArene,"Trip to nierób z karczmy. Ju¿ od kilku tygodni dostaje wyp³atê za picie alkoholu w karczmie. Chyba trochê Ÿle to rozegra³em. Zamiast zyskaæ sojusznika, zyska³em wroga.");
+    B_LogEntry                     (CH1_FletchersReplacement,"Trip to nierób z karczmy. Ju¿ od kilku tygodni dostaje wyp³atê za picie alkoholu w karczmie. Chyba trochê Ÿle to rozegra³em. Zamiast zyskaæ sojusznika, zyska³em wroga.");
 	Npc_ExchangeRoutine (self,"guard");
     B_GiveXP (35);
     Info_ClearChoices		(DIA_Trip_GoToWork);

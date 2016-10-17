@@ -135,34 +135,31 @@ const string    GE_Food                 =   "Sprzedawcy jedzenia";
 
 // Aufnahme Altes Lager
 const string	CH1_MordragKO			=	"Zadanie od Thorusa";
-const string	CH1_JoinOC			    	=	"Przyjêcie do Starego Obozu";
+const string	CH1_JoinOC			    =	"Przyjêcie do Starego Obozu";
 const string	CH1_SnafsRecipe			=	"Przepis Snafa";
-const string	CH1_LostNek 				=	"Zaginiony Stra¿nik";
+const string	CH1_LostNek 			=	"Zaginiony Stra¿nik";
 const string	CH1_FiskNewDealer		=	"Nowy paser dla Fiska";
-const string	CH1_KalomsRecipe			=	"Receptura Bractwa";
-const string	CH1_BringList     			=	"Test zaufania";
-const string	CH1_GoToPsi     			=	"Co siê dzieje na bagnach";
-// Poboczne - Stary Obóz
-
-const string   CH1_Jedzenie_zplacu     =  "Ukradzione jedzenie"; //nieu¿ywane
+const string	CH1_KalomsRecipe		=	"Receptura Bractwa";
+const string	CH1_BringList     		=	"Test zaufania";
+const string	CH1_GoToPsi     		=	"Co siê dzieje na bagnach";
 
 //Aufnahme Neues Lager
-const string	CH1_JoinNC             		=  "Przyjêcie do Nowego Obozu";    
-const string	CH1_CarryWater				=	"Nosiwoda w s³u¿bie Lewusa";
-const string	CH1_DamLurker           	=  "Topielec pod tam¹";
-const string	CH1_SpreadJoints        	=  "Pozyskiwanie klientów"; 
-const string	CH1_DealerJob           	=  "Handlarz zielem";
-const string	CH1_ShrikesHut				=	"Chata Krzykacza";
+const string	CH1_JoinNC             	=  "Przyjêcie do Nowego Obozu";    
+const string	CH1_CarryWater			=	"Nosiwoda w s³u¿bie Lewusa";
+const string	CH1_DamLurker           =  "Topielec pod tam¹";
+const string	CH1_SpreadJoints        =  "Pozyskiwanie klientów"; 
+const string	CH1_DealerJob           =  "Handlarz zielem";
+const string	CH1_ShrikesHut			=	"Chata Krzykacza";
 const string	CH1_HoratiosTeachings	=	"Zbieracz Horacy";
 const string	CH1_GotoPsiCamp			=	"Co siê dzieje na bagnach";
 
 // Aufnahme Sumpflager
-const string	CH1_JoinPsi					=	"Przyjêcie do Obozu Bractwa";
-const string	CH1_GhorimsRelief			=	"Zastêpstwo dla Ghorima";
+const string	CH1_JoinPsi				=	"Przyjêcie do Obozu Bractwa";
+const string	CH1_GhorimsRelief		=	"Zastêpstwo dla Ghorima";
 const string	CH1_DeliverWeed			=	"Zbiory bagiennego ziela";
-const string	CH1_RecruitDusty			=	"Nowi wyznawcy dla Bractwa";
-const string	CH1_KrautBote				=	"Dostawa ziela dla Gomeza";
-const string	CH1_DrugMonopol		=	"Wytwórnia ziela";
+const string	CH1_RecruitDusty		=	"Nowi wyznawcy dla Bractwa";
+const string	CH1_KrautBote			=	"Dostawa ziela dla Gomeza";
+const string	CH1_DrugMonopol			=	"Wytwórnia ziela";
 
 // Do³¹czenie do Obozu Bandytów
 
@@ -182,21 +179,21 @@ const string    CH1_BANDITOS_ZAUFANIE   =   "Szacunek wœród Bandytów";
 //---------------------------------------------------------------------
 //	KAPITEL 2
 //---------------------------------------------------------------------
-const string	CH2_Focus					=	"Kamieñ ogniskuj¹cy dla Guru";
+const string	CH2_Focus				=	"Kamieñ ogniskuj¹cy dla Guru";
 const string	CH2_MCEggs				=	"Wydzielina pe³zaczy";
-const string	CH2_Book						=	"Almanach";
-const string	CH2_SnipesDeal				=	"Skrzynia Aarona";
+const string	CH2_Book				=	"Almanach";
+const string	CH2_SnipesDeal			=	"Skrzynia Aarona";
 const string	CH2_StorageShed			=	"Szopa Ulberta";
 
 //---------------------------------------------------------------------
 //	KAPITEL 3
 //---------------------------------------------------------------------
 const string	CH3_OrcGraveyard		=	"Cmentarzysko Orków";
-const string	CH3_FindHerbs				=	"Lecznicze zio³a dla Y'Beriona";
+const string	CH3_FindHerbs			=	"Lecznicze zio³a dla Y'Beriona";
 const string	CH3_EscapePlanNC		=	"Plan ucieczki Nowego Obozu";
-const string	CH3_BringFoci				=	"Kamienie ogniskuj¹ce";
+const string	CH3_BringFoci			=	"Kamienie ogniskuj¹ce";
 const string	CH3_Stonehenge			=	"Kamieñ pod krêgiem";
-const string	CH3_Fortress					=	"Kamieñ z górskiej fortecy";
+const string	CH3_Fortress			=	"Kamieñ z górskiej fortecy";
 const string	CH3_MonasteryRuin		=	"Kamieñ ze starego klasztoru";
 const string	CH3_TrollCanyon			=	"Kamieñ z kanionu trolli";
 
@@ -230,18 +227,9 @@ const string	CH6_Sleeper				=	"Przebudzenie Œni¹cego";
 
 
 
-//---------------------------------------------------------------------
-//   Bractwo 
-//---------------------------------------------------------------------
 
 
 
-const string CH1_NoweZiele    		 	= "Nowe, mocne ziele";
-const string CH1_KeyKagan   	     	= "Klucz Baal Kagana"; 
-const string CH1_OszukanyHandlarz    	= "Oszukany handlarz";
-const string CH1_ListDoCronosa   	 	= "Poselstwo z Bractwa";
-const string CH1_PoszukiwanaAlchemika 	= "Poszukiwania alchemika";
-const string CH1_Watek_Bandytow_BRACTWO = "Co siê dzieje u Bandytów";
 //---------------------------------------------------------------------
 //   Stary Obóz 
 //---------------------------------------------------------------------
@@ -250,37 +238,36 @@ const string CH1_MiksturaTrujacaOM   	= "Sk³adniki do trucizny";
 const string CH1_RudaJoelowiOM    	 	= "Ruda dla Joel'a";
 const string CH1_MineEnter     		 	= "Wejœcie do Starej Kopalni";
 const string CH1_Kopacz      		 	= "Kopacz";
-const string CH1_OMWytrychy      	 	= "Paczka wytrychów";
-const string CH1_ActionOM    		 	= "Magazyn w Starej Kopalni";
-const string CH1_AwansCien    		 	= "Awans na cienia";
+
+
+
 const string CH1_TestOc    			 	= "Test myœliwski";
 const string CH1_GrimOc  		     	= "Oszust Grim";
 const string CH1_HandDed     			= "Poszukiwania R¹czki"; 
-const string CH1_NewGRDfromArene     	= "Zastêpstwo dla Fletchera"; 
+
 const string CH1_Snaf_Przepis    	 	= "Skradziony przepis Snafa";
 const string CH1_Odstraszeni      	 	= "Ktoœ odstrasza skazañców"; 
 const string CH1_KosztemQuentina     	= "Wykorzystaæ Quentina";
-const string CH1_Search_Poslaniec      	= "Zaginiona lista";
+
 const string CH1_EskortaKopaczy      	= "Eskorta Kopaczy";
 const string CH1_Spike_Pomiot      		= "Problem Spike'a";
 const string CH1_PropozycjaFlinta      	= "Propozycja Flinta";
 const string CH1_FlintaPrzyjecie      	= "Sposób na Thorusa";
 const string CH1_SayOkylFlintDead      	= "Powiedz Okylowi, ¿e Flint nie ¿yje";
-const string CH1_Food_Patter      		= "Jedzenie do obozu Moroka";
+
 const string CH1_SzpiegoMoroka      	= "Szpieg przy œwi¹tyni";
 const string CH1_ZbrojaTemplera      	= "Pancerz dla szpiega";
 const string CH1_FireMage_Help      	= "Informacje od Magów";
 const string CH1_RzopierdolInTemple     = "Zniszczyæ œwi¹tyniê";
-const string CH1_MagnatTrololo      	= "Awans na magnata";
-const string CH1_OpiniaOSO      		= "Opinia Starego Obozu";
-const string CH1_GomezSuperQuest 		= "Sytuacja w dolinie";
-const string CH1_WpierdolNaArenie      	= "Nauka za pojedynek";
-const string CH1_FightWithScar      	= "Pojedynek z Blizn¹";
-const string CH1_PolowanieNaTrola      	= "Ziemny troll w kopalni";
-const string CH1_GoldSword_Bartholo		= "Z³oty miecz";
+
+
+
+
+
+
 const string CH1_Cpuny      			= "Nowi palacze";
-const string CH1_guyhut      			= "Chata Kyle'a";
-const string CH1_JimsSword      		= "Sentymentalny miecz";
+
+
 //---------------------------------------------------------------------
 //   Nowy Obóz 
 //---------------------------------------------------------------------
@@ -297,7 +284,7 @@ const string CH1_InfoDlaLaresa      	= "Ostrzec Bandytów";
 const string CH1_PomocTorlofowi     	= "Na pomoc Torlofowi";
 const string CH1_PomocQuentinowi    	= "Wsparcie dla Quentina";
 const string CH1_MagicySzkodnicy    	= "Nieudolni magicy";
-const string CH1_PathToFreeMine			= "Droga do Wolnej Kopalni";
+
 //---------------------------------------------------------------------
 //   Bandycki Obóz 
 //---------------------------------------------------------------------
@@ -331,13 +318,13 @@ const string CH1_Wielki_troll      = "Polowanie z Alexem";
 const string CH1_UCieczkaShrata    			 = "Nowe miejsce dla Shrata";
 const string CH1_PorwanieAlexa    			 = "Porwanie Alexa";
 const string CH1_ZieleClawa      			 	= "Ziele dla Clawa";
-const string CH1_ZabojstwBlizny  		     	= "Blizna na sumieniu";
-const string CH1_JosepZniknal    			 	= "Josep znikn¹³";
+const string CH1_ZabojstwBlizny  		 = "Blizna na sumieniu";
+const string CH1_JosepZniknal    		= "Josep znikn¹³";
 const string CH1_DziwnyJosep    		= "Dziwne zachowania";
-const string CH1_RannyWojownik      	= "Ranny wojownik";
-const string CH1_PolowanieZBaalem       = "Agresywne wilki";
-const string CH1_BaalQuest2     		= "Zrabowany amulet";
-const string CH1_ZginalLIN      		= "Zaginiony szpieg Gor Na Lin";
+
+
+
+
 const string CH1_Magazyny_OC      		= "Skarby w magazynie";
 const string CH1_FireNovize     		= "Nowicjusz Ognia";
 const string CH1_Do_lowcow      		= "Wsparcie ³owców";
@@ -365,7 +352,7 @@ const string CH1_lekiDlaAva      		= "Lekarstwo dla Avallacha";
 //const string CH1_megaSpam      = "Wrzód chêdo¿y pó³ obozu";
 const string CH1_Wherevart2      = "Dlaczego Vart nie ¿yje?";
 const string CH1_NieSpelnionaZemsta   		 = "Niespe³niona zemsta";
-const string CH1_NoweZiele3BAU      	= "Kupiec na ziele"; //usuniête
+const string CH1_NewWeed3BAU      	= "Kupiec na ziele"; //usuniête
 const string CH1_Przepis_Snaf 	     	= "Przepis Snafa";//zle
 const string CH1_Melvin_D³ug    	 	= "D³ug Melvina";
 const string CH1_Fire_Novize      		= "Nowicjusz Ognia";//wy³¹czone
@@ -373,3 +360,11 @@ const string CH1_NekInNC      			= "Droga do Nowego Obozu";
 const string CH1_EasyJoinOC     	 	= "Droga do Starej Kopalni";
 const string CH1_WalkiBractwo      		= "Mistrz areny w Bractwie";
 const string CH1_HelpBrothersBra     	= "Bracia z kopalni";
+const string CH1_ListDoCronosa   	 	= "Poselstwo z Bractwa";
+const string CH1_MagnatTrololo      	= "Awans na magnata";
+const string CH1_OpiniaOSO      		= "Opinia Starego Obozu";
+const string CH1_FightWithScar      	= "Pojedynek z Blizn¹";
+const string CH1_AwansCien    		 	= "Awans na cienia";
+// Poboczne - Stary Obóz
+
+const string   CH1_Jedzenie_zplacu     =  "Ukradzione jedzenie"; //nieu¿ywane
