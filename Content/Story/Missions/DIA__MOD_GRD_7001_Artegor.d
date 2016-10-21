@@ -580,18 +580,18 @@ if (Npc_IsDead(VLK_5090_Tragaz)) || (Npc_IsDead(VLK_5088_Tragaz)) || (Npc_IsDead
     AI_Output (other, self ,"DIA_Artegor_Konwoj_15_04"); //Niestety, nie wszyscy.
     AI_Output (self, other ,"DIA_Artegor_Konwoj_03_05"); //Mieli dotrzeæ wszyscy!
     AI_Output (self, other ,"DIA_Artegor_Konwoj_03_06"); //Jak zwykle nawali³eœ!
-    B_LogEntry                     (CH1_EskortaKopaczy,"Stra¿nik konwoju nie prze¿y³. Artegor odebra³ dostawê, jednak nie by³ zbyt zadowolony z braku tragarzy.");
-    Log_SetTopicStatus       (CH1_EskortaKopaczy, LOG_FAILED);
-    MIS_EskortaKopaczy = LOG_FAILED;
+    B_LogEntry                     (CH2_BuddlersEscort,"Stra¿nik konwoju nie prze¿y³. Artegor odebra³ dostawê, jednak nie by³ zbyt zadowolony z braku tragarzy.");
+    Log_SetTopicStatus       (CH2_BuddlersEscort, LOG_FAILED);
+    MIS_BuddlersEscort = LOG_FAILED;
 	PrintScreen	("Anulowano zadanie: Eskorta Kopaczy! ", 1,-1,"font_new_10_red.tga",2);	
 }
 else
 {
     AI_Output (other, self ,"DIA_Artegor_Konwoj_15_07"); //Wszyscy tragarze prze¿yli.
     AI_Output (self, other ,"DIA_Artegor_Konwoj_03_08"); //I dobrze, reszta mnie nie obchodzi.
-    B_LogEntry                     (CH1_EskortaKopaczy,"Tragarze dotarli w jednym kawa³ku. Niestety, nie prze¿y³ g³ówny stra¿nik konwoju. Zamiast niego odprawi³ mnie Artegor.");
-    Log_SetTopicStatus       (CH1_EskortaKopaczy, LOG_SUCCESS);
-    MIS_EskortaKopaczy = LOG_SUCCESS;
+    B_LogEntry                     (CH2_BuddlersEscort,"Tragarze dotarli w jednym kawa³ku. Niestety, nie prze¿y³ g³ówny stra¿nik konwoju. Zamiast niego odprawi³ mnie Artegor.");
+    Log_SetTopicStatus       (CH2_BuddlersEscort, LOG_SUCCESS);
+    MIS_BuddlersEscort = LOG_SUCCESS;
 
     B_GiveXP (300);
 };   
@@ -773,9 +773,9 @@ FUNC VOID DIA_Artegor_EveryoneDie_Info()
 	Info_AddChoice			(DIA_Artegor_EveryoneDie, "WeŸ te miksturê lecznicz¹.", DIA_Artegor_EveryoneDie_Help);
 	Info_AddChoice			(DIA_Artegor_EveryoneDie, "Zas³u¿y³eœ na taki los.", DIA_Artegor_EveryoneDie_DieMdfk);
 	
-	if (MIS_SytucajaWOM == LOG_RUNNING)
+	if (MIS_BackToOldMine == LOG_RUNNING)
 	{
-    B_LogEntry                     (CH1_SytucajaWOM,"Wszystko u³o¿y³o siê zgodnie z planem Quentina. Gomez wys³a³ du¿y oddzia³ Stra¿ników w kierunku kopalni. Walka by³a wyrównana. Ostatnim, który prze¿y³, by³ Artegor.");
+    B_LogEntry                     (CH4_BackToOldMine,"Wszystko u³o¿y³o siê zgodnie z planem Quentina. Gomez wys³a³ du¿y oddzia³ Stra¿ników w kierunku kopalni. Walka by³a wyrównana. Ostatnim, który prze¿y³, by³ Artegor.");
 	};
     B_GiveXP (300);
 };

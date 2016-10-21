@@ -197,7 +197,7 @@ FUNC VOID DIA_Pacho_ShadowEmil_Info()
     AI_Output (self, other ,"DIA_Pacho_ShadowEmil_03_17"); //Przynieœ mi piêæ piw, trzy bochenki chleba, dwie szynki, piêæ kawa³ków pieczonego miêsa i dwa jab³ka.
     AI_Output (self, other ,"DIA_Pacho_ShadowEmil_03_18"); //No i butelkê wina, tak! Od dawna nie pi³em wina.
     AI_Output (other, self ,"DIA_Pacho_ShadowEmil_15_19"); //Cholera, cz³owieku, mam wa¿niejsze sprawy na g³owie.
-    B_LogEntry                     (CH1_CourierFireMage,"Pacho zdradzi mi szczegó³y ataku na Emila, jeœli przyniosê mu: piêæ piw, trzy bochenki chleba, dwie szynki, piêæ kawa³ków pieczonego miêsa, dwa jab³ka i wino. ");
+    B_LogEntry                     (CH2_CourierFireMage,"Pacho zdradzi mi szczegó³y ataku na Emila, jeœli przyniosê mu: piêæ piw, trzy bochenki chleba, dwie szynki, piêæ kawa³ków pieczonego miêsa, dwa jab³ka i wino. ");
 
     B_GiveXP (150);
 };
@@ -240,7 +240,7 @@ FUNC VOID DIA_Pacho_IhabeFood_Info()
     AI_Output (self, other ,"DIA_Pacho_IhabeFood_03_04"); //Cieniem, który towarzyszy³ temu Bandycie by³ Flint.
     AI_Output (self, other ,"DIA_Pacho_IhabeFood_03_05"); //Zazwyczaj krêci siê po Starym Obozie w okolicach areny.
     AI_Output (self, other ,"DIA_Pacho_IhabeFood_03_06"); //O ile pamiêtam w ka¿dym razie. Dawno nie by³em w Starym Obozie. Mo¿liwe, ¿e coœ pokrêci³em.
-    B_LogEntry                     (CH1_CourierFireMage,"Cieniem, który towarzyszy³ zabójcy Emila by³ Flint. Znajdê go w Starym Obozie nieopodal areny.");
+    B_LogEntry                     (CH2_CourierFireMage,"Cieniem, który towarzyszy³ zabójcy Emila by³ Flint. Znajdê go w Starym Obozie nieopodal areny.");
 
     B_GiveXP (250);
     B_GiveInvItems (other, self, ItFoWine, 2);

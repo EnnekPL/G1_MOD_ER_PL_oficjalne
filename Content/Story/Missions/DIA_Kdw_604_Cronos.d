@@ -224,7 +224,7 @@ FUNC VOID DIA_Cronos_CourierFireMage_QuestCont_Info()
     AI_Output (other, self ,"DIA_Cronos_CourierFireMage_QuestCont_15_10"); //Czego chce?
     AI_Output (self, other ,"DIA_Cronos_CourierFireMage_QuestCont_03_11"); //Nie wiem. Prosi³ mnie tylko, bym ciê do niego przys³a³.
     AI_Output (other, self ,"DIA_Cronos_CourierFireMage_QuestCont_15_12"); //W takim razie pójdê do niego.
-    B_LogEntry                     (CH1_CourierFireMage,"Odda³em paczkê Cronosowi. Mag poleci³ mi zajrzeæ do karczmy na jeziorze. Podobno czeka tam na mnie Roscoe - prawa rêka Laresa.");
+    B_LogEntry                     (CH2_CourierFireMage,"Odda³em paczkê Cronosowi. Mag poleci³ mi zajrzeæ do karczmy na jeziorze. Podobno czeka tam na mnie Roscoe - prawa rêka Laresa.");
 	Npc_ExchangeRoutine (ORG_840_Roscoe, "spotkanie");
     B_GiveXP (150);
     B_GiveInvItems (other, self, ItMis_PaczkaMagowOgnia, 1);

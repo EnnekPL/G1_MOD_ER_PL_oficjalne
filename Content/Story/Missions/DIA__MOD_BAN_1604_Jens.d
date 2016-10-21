@@ -397,7 +397,7 @@ INSTANCE DIA_Jens_Idziesz (C_INFO)
 
 FUNC INT DIA_Jens_Idziesz_Condition()
 {
-    if (MIS_OdbijanieOpKop == LOG_RUNNING)
+    if (MIS_BanditsInAbadonedMine == LOG_RUNNING)
     {
     return TRUE;
     };

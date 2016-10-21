@@ -266,9 +266,9 @@ FUNC VOID DIA_Patrick_Nieidz_Info()
     AI_Output (self, other ,"DIA_Patrick_Nieidz_03_32"); //A ja nie zamierzam ginąć ani za Artegora ani tym bardziej za Gomeza. 
     };
 
-    if (MIS_SytucajaWOM == LOG_RUNNING)
+    if (MIS_BackToOldMine == LOG_RUNNING)
     {
-        B_LogEntry                     (CH1_SytucajaWOM,"Od Patricka dowiedziałem się, że Gomez wysłał Arto do obozu przy kopalni. Magnat miał tam osobiście sprawować władzę i nadzorować sytuacje, jednak podstępny szef Strażników, Artegor, postanowił go zabić i sam objął władzę w obozie. Gdy Gomez dowie się, że utracił wpływy także w obozie przed Starą kopalnią, wścieknie się.");
+        B_LogEntry                     (CH4_BackToOldMine,"Od Patricka dowiedziałem się, że Gomez wysłał Arto do obozu przy kopalni. Magnat miał tam osobiście sprawować władzę i nadzorować sytuacje, jednak podstępny szef Strażników, Artegor, postanowił go zabić i sam objął władzę w obozie. Gdy Gomez dowie się, że utracił wpływy także w obozie przed Starą kopalnią, wścieknie się.");
 
         B_GiveXP (150);
     };

@@ -141,11 +141,11 @@ FUNC VOID DIA_KUCHARZ_ZADANIE_Info()
     AI_Output (self, other ,"DIA_KUCHARZ_ZADANIE_03_02"); //Chcia³bym pozbyæ siê pewnej osoby w obozie. Nie musisz wiedzieæ, kogo.
     AI_Output (self, other ,"DIA_KUCHARZ_ZADANIE_03_03"); //Jednak do tego potrzebujê silnej trucizny, któr¹ dodam do jedzenia.
     AI_Output (self, other ,"DIA_KUCHARZ_ZADANIE_03_04"); //Sporz¹dŸ dla mnie odpowiedni¹ miksturê. Mo¿esz te¿ j¹ ukraœæ albo od kogoœ odkupiæ.
-    MIS_TrutkaOM = LOG_RUNNING;
+    MIS_Poison = LOG_RUNNING;
 
-    Log_CreateTopic          (CH1_TrutkaOM, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_TrutkaOM, LOG_RUNNING);
-    B_LogEntry               (CH1_TrutkaOM,"Kucharz z obozu przy kopalni kaza³ mi przynieœæ truciznê, któr¹ wykorzysta do morderstwa.");
+    Log_CreateTopic          (CH1_Poison, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_Poison, LOG_RUNNING);
+    B_LogEntry               (CH1_Poison,"Kucharz z obozu przy kopalni kaza³ mi przynieœæ truciznê, któr¹ wykorzysta do morderstwa.");
     AI_StopProcessInfos	(self);
 };
 
@@ -165,7 +165,7 @@ INSTANCE DIA_KUCHARZ_TRUTKA (C_INFO)
 
 FUNC INT DIA_KUCHARZ_TRUTKA_Condition()
 {
-    if (MIS_TrutkaOM == LOG_RUNNING)
+    if (MIS_Poison == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -180,11 +180,11 @@ FUNC VOID DIA_KUCHARZ_TRUTKA_Info()
 	{
 	AI_Output (other, self ,"DIA_KUCHARZ_TRUTKA_15_03"); //Oto s³aba trucizna.
 	AI_Output (self, other ,"DIA_KUCHARZ_TRUTKA_03_04"); //Dobrze siê spisa³eœ. Tyle mi wystarczy.
-	B_LogEntry               (CH1_TrutkaOM,"Przynios³em s³ab¹ truciznê kucharzowi.");
-    Log_SetTopicStatus       (CH1_TrutkaOM, LOG_SUCCESS);
-    MIS_TrutkaOM = LOG_SUCCESS;
+	B_LogEntry               (CH1_Poison,"Przynios³em s³ab¹ truciznê kucharzowi.");
+    Log_SetTopicStatus       (CH1_Poison, LOG_SUCCESS);
+    MIS_Poison = LOG_SUCCESS;
 
-    B_GiveXP (60);
+    B_GiveXP (25);
 	DIA_KUCHARZ_TRUTKA.permanent = false;
 	B_GiveInvItems (other, self, ItMi_Alchemy_trucizna_01, 1);
 	}
@@ -192,21 +192,21 @@ FUNC VOID DIA_KUCHARZ_TRUTKA_Info()
 	{
 	AI_Output (other, self ,"DIA_KUCHARZ_TRUTKA_15_05"); //Oto œrednia trucizna.
 	AI_Output (self, other ,"DIA_KUCHARZ_TRUTKA_03_06"); //Œwietnie. Szybko podzia³a.
-	    B_LogEntry               (CH1_TrutkaOM,"Przynios³em œredni¹ truciznê kucharzowi.");
-        Log_SetTopicStatus       (CH1_TrutkaOM, LOG_SUCCESS);
-        MIS_TrutkaOM = LOG_SUCCESS;
+	    B_LogEntry               (CH1_Poison,"Przynios³em œredni¹ truciznê kucharzowi.");
+        Log_SetTopicStatus       (CH1_Poison, LOG_SUCCESS);
+        MIS_Poison = LOG_SUCCESS;
 		B_GiveInvItems (other, self, ItMi_Alchemy_trucizna_02, 1);
-        B_GiveXP (120);
+        B_GiveXP (50);
 		DIA_KUCHARZ_TRUTKA.permanent = false;
 	}
 	else if (Npc_HasItems (other, ItMi_Alchemy_trucizna_03) >=1)
 	{
 	AI_Output (other, self ,"DIA_KUCHARZ_TRUTKA_15_07"); //Oto silna trucizna.
 	AI_Output (self, other ,"DIA_KUCHARZ_TRUTKA_03_08"); //No, no. NieŸle!
-	B_LogEntry               (CH1_TrutkaOM,"Przynios³em siln¹ truciznê kucharzowi. Na pewno nie bêdzie mia³ k³opotów z pozbyciem siê ofiary.");
-    Log_SetTopicStatus       (CH1_TrutkaOM, LOG_SUCCESS);
-    MIS_TrutkaOM = LOG_SUCCESS;
-    B_GiveXP (200);
+	B_LogEntry               (CH1_Poison,"Przynios³em siln¹ truciznê kucharzowi. Na pewno nie bêdzie mia³ k³opotów z pozbyciem siê ofiary.");
+    Log_SetTopicStatus       (CH1_Poison, LOG_SUCCESS);
+    MIS_Poison = LOG_SUCCESS;
+    B_GiveXP (100);
 	B_GiveInvItems (other, self, ItMi_Alchemy_trucizna_03, 1);
 	DIA_KUCHARZ_TRUTKA.permanent = false;
 	}
@@ -219,9 +219,9 @@ FUNC VOID DIA_KUCHARZ_TRUTKA_Info()
    /* if (Npc_HasItems (other, ItMi_Alchemy_trucizna_03) >=1)
     {
         AI_Output (self, other ,"DIA_KUCHARZ_TRUTKA_03_03"); //Œwietnie. Ta bêdzie a¿ nadto.
-        B_LogEntry                     (CH1_TrutkaOM,"Przynios³em truciznê.");
-        Log_SetTopicStatus       (CH1_TrutkaOM, LOG_SUCCESS);
-        MIS_TrutkaOM = LOG_SUCCESS;
+        B_LogEntry                     (CH1_Poison,"Przynios³em truciznê.");
+        Log_SetTopicStatus       (CH1_Poison, LOG_SUCCESS);
+        MIS_Poison = LOG_SUCCESS;
 
         B_GiveXP (150);
     }
@@ -249,7 +249,7 @@ INSTANCE DIA_KUCHARZ_UMOWA (C_INFO)
 
 FUNC INT DIA_KUCHARZ_UMOWA_Condition()
 {
-    if (MIS_TrutkaOM == LOG_SUCCESS)
+    if (MIS_Poison == LOG_SUCCESS)
     {
     return TRUE;
     };
@@ -303,7 +303,7 @@ FUNC VOID DIA_KUCHARZ_KopaczToChuje_Info()
     AI_Output (self, other ,"DIA_KUCHARZ_KopaczToChuje_03_04"); //Hmm... Mów dalej.
     AI_Output (other, self ,"DIA_KUCHARZ_KopaczToChuje_15_05"); //Zap³acê ci, jeœli te gnojki odczepi¹ siê od Spike'a.
     AI_Output (self, other ,"DIA_KUCHARZ_KopaczToChuje_03_07"); //Ach, ju¿ rozumiem. To ciê bêdzie kosztowaæ 40 bry³ek rudy.
-    B_LogEntry                     (CH1_Spike_Pomiot,"Za 40 bry³ek rudy Matt wp³ynie na Kopaczy.");
+    B_LogEntry                     (CH1_SpikeLoser,"Za 40 bry³ek rudy Matt wp³ynie na Kopaczy.");
 };
 
 //========================================
@@ -334,7 +334,7 @@ FUNC VOID DIA_KUCHARZ_OreGiveZaplata_Info()
 {
     AI_Output (other, self ,"DIA_KUCHARZ_OreGiveZaplata_15_01"); //Mam 40 bry³ek.
     AI_Output (self, other ,"DIA_KUCHARZ_OreGiveZaplata_03_02"); //Œwietnie. Zajmê siê wszystkim.
-    B_LogEntry                     (CH1_Spike_Pomiot,"Da³em rudê Mattowi. Teraz pozosta³o mi czekaæ na rozwój wydarzeñ.");
+    B_LogEntry                     (CH1_SpikeLoser,"Da³em rudê Mattowi. Teraz pozosta³o mi czekaæ na rozwój wydarzeñ.");
 	B_GiveInvItems (other, self, ItMiNugget, 40);
 };
 

@@ -546,8 +546,7 @@ INSTANCE DIA_Cavalorn_WhereIsVart (C_INFO)
 
 FUNC INT DIA_Cavalorn_WhereIsVart_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_cavalorn_Sytuacja
-	))
+    if (Npc_KnowsInfo (hero, DIA_cavalorn_Sytuacja))
     {
     return TRUE;
     };
@@ -560,11 +559,11 @@ FUNC VOID DIA_Cavalorn_WhereIsVart_Info()
     AI_Output (self, other ,"DIA_Cavalorn_WhereIsVart_03_02"); //Nie mam pojêcia, gdzie mo¿e byæ. W³óczy³ siê w okolicy po czym znikn¹³.
     AI_Output (self, other ,"DIA_Cavalorn_WhereIsVart_03_03"); //Nie mogê ci daæ ¿adnych wskazówek.
 	
-    MIS_Wherevart = LOG_RUNNING;
+    MIS_VartSeeking = LOG_RUNNING;
 
-    Log_CreateTopic          (CH1_Wherevart, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_Wherevart, LOG_RUNNING);
-    B_LogEntry               (CH1_Wherevart,"Cavalorn nie ma pojêcia, gdzie znajduje siê Vart. Mo¿liwe, ¿e uciek³ b¹dŸ zgubi³ siê w lesie.");
+    Log_CreateTopic          (CH4_VartSeeking, LOG_MISSION);
+    Log_SetTopicStatus       (CH4_VartSeeking, LOG_RUNNING);
+    B_LogEntry               (CH4_VartSeeking,"Cavalorn nie ma pojêcia, gdzie znajduje siê Vart. Mo¿liwe, ¿e uciek³ b¹dŸ zgubi³ siê w lesie.");
 };
 
 //========================================
@@ -584,7 +583,7 @@ INSTANCE DIA_Cavalorn_IFoundVart (C_INFO)
 FUNC INT DIA_Cavalorn_IFoundVart_Condition()
 {
     if (Npc_HasItems (other, VartSword) >=1)
-    && (MIS_Wherevart == LOG_RUNNING)
+    && (MIS_VartSeeking == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -606,9 +605,9 @@ FUNC VOID DIA_Cavalorn_IFoundVart_Info()
 	CreateInvItems (self, ItMiNugget, 50);
     B_GiveInvItems (self, other, ItMiNugget, 50);
 	
-    B_LogEntry               (CH1_Wherevart,"Znalaz³em cia³o Varta. Niestety nie ¿yje. Cavalorn nie mo¿e siê pogodziæ ze œmierci¹ towarzysza.");
-    Log_SetTopicStatus       (CH1_Wherevart, LOG_SUCCESS);
-    MIS_Wherevart = LOG_SUCCESS;
+    B_LogEntry               (CH4_VartSeeking,"Znalaz³em cia³o Varta. Niestety nie ¿yje. Cavalorn nie mo¿e siê pogodziæ ze œmierci¹ towarzysza.");
+    Log_SetTopicStatus       (CH4_VartSeeking, LOG_SUCCESS);
+    MIS_VartSeeking = LOG_SUCCESS;
 
     B_GiveXP (300);
 };
@@ -640,12 +639,12 @@ FUNC VOID DIA_Cavalorn_LifeIsBrutal_Info()
 {
     AI_Output (other, self ,"DIA_Cavalorn_LifeIsBrutal_15_01"); //Nie przywrócisz mu ¿ycia.
     AI_Output (self, other ,"DIA_Cavalorn_LifeIsBrutal_03_02"); //Masz racjê, ale...
-    AI_Output (self, other ,"DIA_Cavalorn_LifeIsBrutal_03_03"); //Co dzieje siê z tym miejscem?! Czy bogowie chc¹ nas ukaraæ za nasze wystêpki?!
-   /* MIS_Wherevart2 = LOG_RUNNING;
+    AI_Output (self, other ,"DIA_Cavalorn_LifeIsBrutal_03_03"); //Co dzieje siê z tym miejscem?! Czy bogowie chc¹ nas ukaraæ za nasze wystêpki? Ju¿ sam nie wiem.
+   /* MIS_VartSeeking2 = LOG_RUNNING;
 
-    Log_CreateTopic            (CH1_Wherevart2, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_Wherevart2, LOG_RUNNING);
-    B_LogEntry                     (CH1_Wherevart2,"Cavalorn chce abym ustali³ o co chodzi z tymi Poszukiwaczami.");*/
+    Log_CreateTopic            (CH4_VartSeeking2, LOG_MISSION);
+    Log_SetTopicStatus       (CH4_VartSeeking2, LOG_RUNNING);
+    B_LogEntry                     (CH4_VartSeeking2,"Cavalorn chce abym ustali³ o co chodzi z tymi Poszukiwaczami.");*/
 };
 
 
@@ -745,7 +744,7 @@ FUNC INT DIA_Cavalorn_SFSasf_Condition()
 {
     if (heroKnowsPoszukiwacze == true)
    // && (Npc_KnowsInfo (hero, DIA_Cavalorn_LifeIsBrutal))
-   && (MIS_Wherevart2 == LOG_RUNNING)
+   && (MIS_VartSeeking2 == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -761,9 +760,9 @@ FUNC VOID DIA_Cavalorn_SFSasf_Info()
     AI_Output (self, other ,"DIA_Cavalorn_SFSasf_03_05"); //Kim jest ten Czarny Mag?
     AI_Output (other, self ,"DIA_Cavalorn_SFSasf_15_06"); //To potê¿ny wys³annik Beliara. 
     AI_Output (other, self ,"DIA_Cavalorn_SFSasf_15_07"); //Mroczne si³y szykuj¹ siê do czegoœ wielkiego.
-    B_LogEntry                     (CH1_Wherevart2,"To co dowiedzia³em siê od Nidasa przekaza³em Cavalornowi. Wygl¹da³ na przestraszonego.");
-    Log_SetTopicStatus       (CH1_Wherevart2, LOG_SUCCESS);
-    MIS_Wherevart2 = LOG_SUCCESS;
+    B_LogEntry                     (CH4_VartSeeking2,"To co dowiedzia³em siê od Nidasa przekaza³em Cavalornowi. Wygl¹da³ na przestraszonego.");
+    Log_SetTopicStatus       (CH4_VartSeeking2, LOG_SUCCESS);
+    MIS_VartSeeking2 = LOG_SUCCESS;
 
     B_GiveXP (150);
     AI_StopProcessInfos	(self);
@@ -798,17 +797,17 @@ FUNC VOID DIA_Cavalorn_Help455675_Info()
     AI_Output (other, self ,"DIA_Cavalorn_Help455675_15_02"); //O co chodzi?
     AI_Output (self, other ,"DIA_Cavalorn_Help455675_03_03"); //Przyznam, ¿e nastraszy³eœ mnie t¹ opowieœci¹.
     AI_Output (self, other ,"DIA_Cavalorn_Help455675_03_04"); //Myœla³em, ¿e jedyne czego mamy siê obawiaæ to orkowie.
-    AI_Output (self, other ,"DIA_Cavalorn_Help455675_03_05"); //Jak widaæ teraz nawet drugi cz³owiek mo¿e byæ zagro¿eniem.
+    AI_Output (self, other ,"DIA_Cavalorn_Help455675_03_05"); //Jak widaæ teraz drugi cz³owiek mo¿e byæ wiêkszym zagro¿eniem ni¿ dziki zwierz.
     AI_Output (self, other ,"DIA_Cavalorn_Help455675_03_06"); //Ty w³óczysz siê po okolicy, znasz du¿o osób...
     AI_Output (self, other ,"DIA_Cavalorn_Help455675_03_07"); //SprowadŸ mi tu jakiegoœ nowego towarzysza. 
     AI_Output (self, other ,"DIA_Cavalorn_Help455675_03_08"); //Co je¿eli ci sekciarze przyjd¹ tak¿e po mnie?
     AI_Output (self, other ,"DIA_Cavalorn_Help455675_03_09"); //Sam nie dam sobie rady.
     AI_Output (other, self ,"DIA_Cavalorn_Help455675_15_10"); //Poszukam kogoœ odpowiedniego.
-    MIS_NowyVart = LOG_RUNNING;
+    MIS_CavalornHelper = LOG_RUNNING;
 
-    Log_CreateTopic            (CH1_NowyVart, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_NowyVart, LOG_RUNNING);
-    B_LogEntry                     (CH1_NowyVart,"Cavalorn prosi³ mnie, abym znalaz³ mu nowego czeladnika, gdy¿ boi siê samotnoœci.");
+    Log_CreateTopic            (CH4_CavalornHelper, LOG_MISSION);
+    Log_SetTopicStatus       (CH4_CavalornHelper, LOG_RUNNING);
+    B_LogEntry                     (CH4_CavalornHelper,"Cavalorn prosi³ mnie, abym znalaz³ mu nowego czeladnika, gdy¿ boi siê samotnoœci.");
     AI_StopProcessInfos	(self);
 };
 
@@ -828,7 +827,7 @@ INSTANCE DIA_Cavalorn_iPszypasfasf (C_INFO)
 
 FUNC INT DIA_Cavalorn_iPszypasfasf_Condition()
 {
-    if (MIS_NowyVart == LOG_RUNNING)
+    if (MIS_CavalornHelper == LOG_RUNNING)
     && (Npc_KnowsInfo (hero, DIA_Jesse_gotocav))
     {
     return TRUE;
@@ -844,9 +843,9 @@ FUNC VOID DIA_Cavalorn_iPszypasfasf_Info()
     AI_Output (self, other ,"DIA_Cavalorn_iPszypasfasf_03_04"); //Jednak bêdê go musia³ wiele nauczyæ.
     AI_Output (other, self ,"DIA_Cavalorn_iPszypasfasf_15_05"); //Masz nowe zajêcie.
     AI_Output (self, other ,"DIA_Cavalorn_iPszypasfasf_03_06"); //Oto twoja zap³ata.
-    B_LogEntry                     (CH1_NowyVart,"Przyprowadzi³em Jessego do Cavalorna. Myœlê, ¿e siê dogadaj¹.");
-    Log_SetTopicStatus       (CH1_NowyVart, LOG_SUCCESS);
-    MIS_NowyVart = LOG_SUCCESS;
+    B_LogEntry                     (CH4_CavalornHelper,"Przyprowadzi³em Jessego do Cavalorna. Myœlê, ¿e siê dogadaj¹.");
+    Log_SetTopicStatus       (CH4_CavalornHelper, LOG_SUCCESS);
+    MIS_CavalornHelper = LOG_SUCCESS;
 
     B_GiveXP (150);
     CreateInvItems (self, ItMiNugget, 50);

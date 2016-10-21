@@ -94,7 +94,7 @@ INSTANCE DIA_Silas_killFingers (C_INFO)
 
 FUNC INT DIA_Silas_killFingers_Condition()
 {
-    if (MIS_HandDed == LOG_RUNNING)
+    if (MIS_FingersSeeking == LOG_RUNNING)
     && (Npc_KnowsInfo (hero, DIA_Dexter_ReadBook))
     {
     return TRUE;
@@ -114,7 +114,7 @@ FUNC VOID DIA_Silas_killFingers_Info()
 	AI_Output (self, other ,"DIA_Silas_killFingers_03_05"); //No tak. Gdyby ktoœ mnie okrad³ ju¿ dawno p³ywa³by po jeziorze i robi³ za ¿arcie dla ryb. 
 	AI_Output (self, other ,"DIA_Silas_killFingers_03_06"); //Jeœli jakiœ sukinsyn faktycznie chce mnie okraœæ to niech przychodzi. Odr¹biê mu ³eb!
 	
-    B_LogEntry                     (CH1_HandDed,"Delikatnie zapyta³em Silasa, czy ktoœ go ostatnio przypadkiem nie okrad³. Szodnik stwierdzi³, ¿e nie dzia³o siê nic podejrzanego. Jeœli mówi prawdê, oznacza to, ¿e R¹czka jeszcze nie przyst¹pi³ do kradzie¿y. Byæ mo¿e jest jeszcze nadzieja, ¿eby odnaleŸæ go w jednym kawa³ku. Kolejn¹ wskazówk¹ z notatnika jest jego domniemany wspólnik - niejaki Krzykacz. ");
+    B_LogEntry                     (CH2_FingersSeeking,"Delikatnie zapyta³em Silasa, czy ktoœ go ostatnio przypadkiem nie okrad³. Szodnik stwierdzi³, ¿e nie dzia³o siê nic podejrzanego. Jeœli mówi prawdê, oznacza to, ¿e R¹czka jeszcze nie przyst¹pi³ do kradzie¿y. Byæ mo¿e jest jeszcze nadzieja, ¿eby odnaleŸæ go w jednym kawa³ku. Kolejn¹ wskazówk¹ z notatnika jest jego domniemany wspólnik - niejaki Krzykacz. ");
 
     B_GiveXP (100);
 };

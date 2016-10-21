@@ -94,7 +94,7 @@ FUNC VOID DIA_Corristo_MageCourier_Quest_Info()
     AI_Output (other, self ,"DIA_Corristo_MageCourier_Quest_15_14"); //Zobaczê co da siê zrobiæ.
     AI_Output (self, other ,"DIA_Corristo_MageCourier_Quest_03_15"); //Doskonale! Niech Innos ciê prowadzi.
     AI_Output (self, other ,"DIA_Corristo_MageCourier_Quest_03_16"); //Wróæ do mnie, gdy tylko siê czegoœ dowiesz. 
-    B_LogEntry                     (CH1_CourierFireMage,"Uda³o mi siê spotkaæ z samym Corristo - Arcymistrzem Magów Ognia. Zleci³ mi pewn¹ misje, polegaj¹c¹ na odnalezieniu wys³anego do Magów Wody kuriera. Podobno kurier bardzo szczyci³ siê swym zadaniem i chwali³ siê nim, gdzie tylko móg³. Powinienem porozmawiaæ z plotkarzami w Zewnêtrznym Pierœcieniu.");
+    B_LogEntry                     (CH2_CourierFireMage,"Uda³o mi siê spotkaæ z samym Corristo - Arcymistrzem Magów Ognia. Zleci³ mi pewn¹ misje, polegaj¹c¹ na odnalezieniu wys³anego do Magów Wody kuriera. Podobno kurier bardzo szczyci³ siê swym zadaniem i chwali³ siê nim, gdzie tylko móg³. Powinienem porozmawiaæ z plotkarzami w Zewnêtrznym Pierœcieniu.");
     AI_StopProcessInfos	(self);
 };
 
@@ -135,7 +135,7 @@ FUNC VOID DIA_Corristo_QUestSucces_Info()
     AI_Output (self, other ,"DIA_Corristo_QUestSucces_03_09"); //Zw¹ go Stra¿nikiem Rudy. Znajdziesz go przy kopcu w Nowym Obozie.
     AI_Output (other, self ,"DIA_Corristo_QUestSucces_15_10"); //W porz¹dku.
     AI_Output (self, other ,"DIA_Corristo_QUestSucces_03_11"); //Zatem idŸ ju¿. 
-    B_LogEntry                     (CH1_CourierFireMage,"Corristo poprosi³ mnie, bym odniós³ paczkê do Maga Wody Cronosa.");
+    B_LogEntry                     (CH2_CourierFireMage,"Corristo poprosi³ mnie, bym odniós³ paczkê do Maga Wody Cronosa.");
 
     B_GiveXP (300);
     AI_StopProcessInfos	(self);
@@ -190,8 +190,8 @@ FUNC VOID DIA_Corristo_CourierQuest_EndLastDia_Info()
     AI_Output (self, other ,"DIA_Corristo_CourierQuest_EndLastDia_03_18"); //Sam Innos kieruje naszym losem i wiemy, co robimy.
     AI_Output (self, other ,"DIA_Corristo_CourierQuest_EndLastDia_03_19"); //WeŸ te kilka mikstur. 
     AI_Output (self, other ,"DIA_Corristo_CourierQuest_EndLastDia_03_20"); //A teraz odejdŸ, zakoñczmy tê rozmowê. 
-    B_LogEntry                     (CH1_CourierFireMage,"Odda³em list od Laresa Corristo. Podobno ludzie z Nowego Obozu chcieli nak³oniæ Magów Ognia do porzucenia Gomeza i po³¹czenia si³ z Magami Wody. Corristo odrzuci³ ofertê i poda³ kilka wyssanych z palca argumentów. Gdy próbowa³em go zapytaæ o wiêcej szczegó³ów, zez³oœci³ siê i zakoñczy³ rozmowê. Coœ mi tu œmierdzi...");
-    Log_SetTopicStatus       (CH1_CourierFireMage, LOG_SUCCESS);
+    B_LogEntry                     (CH2_CourierFireMage,"Odda³em list od Laresa Corristo. Podobno ludzie z Nowego Obozu chcieli nak³oniæ Magów Ognia do porzucenia Gomeza i po³¹czenia si³ z Magami Wody. Corristo odrzuci³ ofertê i poda³ kilka wyssanych z palca argumentów. Gdy próbowa³em go zapytaæ o wiêcej szczegó³ów, zez³oœci³ siê i zakoñczy³ rozmowê. Coœ mi tu œmierdzi...");
+    Log_SetTopicStatus       (CH2_CourierFireMage, LOG_SUCCESS);
     MIS_CourierFireMage = LOG_SUCCESS;
 
     B_GiveXP (200);

@@ -345,7 +345,7 @@ INSTANCE DIA_Guy_backToMine (C_INFO)
 FUNC INT DIA_Guy_backToMine_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Guy_Ucieczka))
-    && (MIS_MineChlopy == LOG_RUNNING)
+    && (MIS_NewEnginer == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -363,7 +363,7 @@ FUNC VOID DIA_Guy_backToMine_Info()
     AI_Output (other, self ,"DIA_Guy_backToMine_15_07"); //Zaj¹³em siê tym.
     AI_Output (self, other ,"DIA_Guy_backToMine_03_08"); //Doprawdy?
     AI_Output (self, other ,"DIA_Guy_backToMine_03_09"); //W takim razie wyruszê w najbli¿szym czasie.
-    B_LogEntry                     (CH1_MineChlopy,"Guy z chêci¹ wróci do pracy. Mogê powiedzieæ Quentinowi, ¿e ma nowego robotnika.");
+    B_LogEntry                     (CH4_NewEnginer,"Guy z chêci¹ wróci do pracy. Mogê powiedzieæ Quentinowi, ¿e ma nowego robotnika.");
     B_GiveXP (100);
     AI_StopProcessInfos	(self);
 };

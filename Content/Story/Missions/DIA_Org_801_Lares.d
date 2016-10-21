@@ -811,11 +811,11 @@ FUNC VOID DIA_Lares_DRAX_CH4_Info()
 
 	
         B_GiveXP (670);
-        MIS_PomocTorlofowi = LOG_RUNNING;
+        MIS_TorlofNeedHelp = LOG_RUNNING;
 
-        Log_CreateTopic          (CH1_PomocTorlofowi, LOG_MISSION);
-        Log_SetTopicStatus       (CH1_PomocTorlofowi, LOG_RUNNING);
-        B_LogEntry               (CH1_PomocTorlofowi,"Lares chce ¿ebym poszed³ do Torlofa i pomóg³ mu pozbyæ siê Stra¿ników z doliny, w której zazwyczaj poluje Aidan.");
+        Log_CreateTopic          (CH4_TorlofNeedHelp, LOG_MISSION);
+        Log_SetTopicStatus       (CH4_TorlofNeedHelp, LOG_RUNNING);
+        B_LogEntry               (CH4_TorlofNeedHelp,"Lares chce ¿ebym poszed³ do Torlofa i pomóg³ mu pozbyæ siê Stra¿ników z doliny, w której zazwyczaj poluje Aidan.");
     }
     else
     {
@@ -874,11 +874,11 @@ FUNC VOID DIA_Lares_SYTUACJA_W_OB_Info()
 	Npc_ExchangeRoutine (BAN_1613_Doyle,"zwial");
 	B_GiveXP (670);
 		
-		MIS_PomocTorlofowi = LOG_RUNNING;
+		MIS_TorlofNeedHelp = LOG_RUNNING;
 
-        Log_CreateTopic          (CH1_PomocTorlofowi, LOG_MISSION);
-        Log_SetTopicStatus       (CH1_PomocTorlofowi, LOG_RUNNING);
-        B_LogEntry               (CH1_PomocTorlofowi,"Lares chce ¿ebym poszed³ do Torlofa i pomóg³ mu siê pozbyæ Stra¿ników z doliny, w której zazwyczaj poluje Aidan.");
+        Log_CreateTopic          (CH4_TorlofNeedHelp, LOG_MISSION);
+        Log_SetTopicStatus       (CH4_TorlofNeedHelp, LOG_RUNNING);
+        B_LogEntry               (CH4_TorlofNeedHelp,"Lares chce ¿ebym poszed³ do Torlofa i pomóg³ mu siê pozbyæ Stra¿ników z doliny, w której zazwyczaj poluje Aidan.");
         AI_StopProcessInfos	(self);
 		
 };
@@ -900,7 +900,7 @@ INSTANCE DIA_Lares_POMOC_TORLOFOWI (C_INFO)
 
 FUNC INT DIA_Lares_POMOC_TORLOFOWI_Condition()
 {
-    if (MIS_PomocTorlofowi == LOG_RUNNING)
+    if (MIS_TorlofNeedHelp == LOG_RUNNING)
     && (MIS_helpSld1 == LOG_SUCCESS)
     {
     return TRUE;
@@ -915,9 +915,9 @@ FUNC VOID DIA_Lares_POMOC_TORLOFOWI_Info()
 	
 	//zadanie - zakoñczenie
 	//kluczowe do postêpu (odblokowuje dilaog z Lee)
-    B_LogEntry               (CH1_PomocTorlofowi ,"Poinformowa³em Laresa, ¿e za³atwi³em sprawê z Torlofem. Muszê siê teraz udaæ do Lee. Przywódca Najemników ma ponoæ jakieœ plany.");
-    Log_SetTopicStatus       (CH1_PomocTorlofowi , LOG_SUCCESS);
-    MIS_PomocTorlofowi  = LOG_SUCCESS;
+    B_LogEntry               (CH4_TorlofNeedHelp ,"Poinformowa³em Laresa, ¿e za³atwi³em sprawê z Torlofem. Muszê siê teraz udaæ do Lee. Przywódca Najemników ma ponoæ jakieœ plany.");
+    Log_SetTopicStatus       (CH4_TorlofNeedHelp , LOG_SUCCESS);
+    MIS_TorlofNeedHelp  = LOG_SUCCESS;
 	
 	//zadanie - wpis dla cz³onków bractwa
 	if MIS_PsiAbadonedMine == log_running
@@ -971,7 +971,7 @@ FUNC VOID DIA_Lares_POTZREBNI_LUDZIE_Info()
     AI_Output (self, other ,"DIA_Lares_POTZREBNI_LUDZIE_03_08"); //Mo¿e tak, a mo¿e nie.
     AI_Output (self, other ,"DIA_Lares_POTZREBNI_LUDZIE_03_09"); //Pomyœl, jeœli Gomez mia³by nowe Ÿród³o rudy z pewnoœci¹ by siê uspokoi³. By³aby szansa na przynajmniej tymczasowe z³agodzenie konfliktów.
     AI_Output (self, other ,"DIA_Lares_POTZREBNI_LUDZIE_03_10"); //Zreszt¹... czas poka¿e jakie to bêdzie mia³o skutki.
-    B_LogEntry                     (CH1_NC_Mine,"Lares radzi, ¿eby iœæ do Quentina. Najpierw jednak muszê pogadaæ z Lee. ");
+    B_LogEntry                     (CH4_NC_Mine,"Lares radzi, ¿eby iœæ do Quentina. Najpierw jednak muszê pogadaæ z Lee. ");
 
     B_GiveXP (150);
     AI_StopProcessInfos	(self);

@@ -363,7 +363,7 @@ INSTANCE DIA_Lefty_JARVIS_CO_OP (C_INFO)
 FUNC INT DIA_Lefty_JARVIS_CO_OP_Condition()
 {
     if (wpadka_Flint_Jarvis == true)
-    && (MIS_PropozycjaFlinta == LOG_SUCCESS)
+    && (MIS_FlintsOffer == LOG_SUCCESS)
     {
     return TRUE;
     };
@@ -397,7 +397,7 @@ INSTANCE DIA_Tuersteher_ANGRY_LEFTY_PAID (C_INFO)
 FUNC INT DIA_Tuersteher_ANGRY_LEFTY_PAID_Condition()
 {
     if (wpadka_Flint_Jarvis == true)
-    && (MIS_PropozycjaFlinta == LOG_SUCCESS)
+    && (MIS_FlintsOffer == LOG_SUCCESS)
     {
     return TRUE;
     };

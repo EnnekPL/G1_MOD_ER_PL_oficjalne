@@ -347,7 +347,7 @@ FUNC VOID DIA_Ratford_KillEmil_Info()
     AI_Output (other, self ,"DIA_Ratford_KillEmil_15_11"); //Ile chcesz za te pierœcienie?
     AI_Output (self, other ,"DIA_Ratford_KillEmil_03_12"); //Zapomnij o tym. Rudy mam pod dostatkiem, po upadku Bariery bardziej bêdê potrzebowa³ z³ota.
 	//log
-    B_LogEntry                     (CH1_CourierFireMage,"To prawda, Ratford zabi³ Emila i przej¹³ przesy³kê Corristo. Nie chce mi jej jednak oddaæ. Mo¿e znajdê jakiœ jego czu³y punkt? Najlepiej zapytam jego kolegi.");
+    B_LogEntry                     (CH2_CourierFireMage,"To prawda, Ratford zabi³ Emila i przej¹³ przesy³kê Corristo. Nie chce mi jej jednak oddaæ. Mo¿e znajdê jakiœ jego czu³y punkt? Najlepiej zapytam jego kolegi.");
 	//exit
     AI_StopProcessInfos	(self);
 };
@@ -394,7 +394,7 @@ FUNC VOID DIA_Ratford_SuperJoin_Info()
     AI_Output (self, other ,"DIA_Ratford_SuperJoin_03_11"); //Masz i zje¿d¿aj. 
     CreateInvItems (self, ItMis_PaczkaMagowOgnia, 1);
     B_GiveInvItems (self, other, ItMis_PaczkaMagowOgnia, 1);
-    B_LogEntry                     (CH1_CourierFireMage,"Ratford nieŸle odlecia³ po zielu Fortuno, a ja zdoby³em przesy³kê. ");
+    B_LogEntry                     (CH2_CourierFireMage,"Ratford nieŸle odlecia³ po zielu Fortuno, a ja zdoby³em przesy³kê. ");
 
     B_GiveXP (200);
     AI_StopProcessInfos	(self);

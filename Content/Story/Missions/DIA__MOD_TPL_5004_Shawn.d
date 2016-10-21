@@ -888,7 +888,7 @@ INSTANCE DIA_Shawn_HELP_TORLOF (C_INFO)
 
 FUNC INT DIA_Shawn_HELP_TORLOF_Condition()
 {
-    if (MIS_PomocTorlofowi == LOG_SUCCESS)
+    if (MIS_TorlofNeedHelp == LOG_SUCCESS)
     && (go_help_torlof == true) && (kapitel == 10)
     {
     return TRUE;

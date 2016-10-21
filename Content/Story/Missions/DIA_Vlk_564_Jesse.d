@@ -390,7 +390,7 @@ FUNC VOID DIA_Jesse_gotocav_Info()
     AI_Output (self, other ,"DIA_Jesse_gotocav_03_04"); //Hmm. No dobra. Mo¿e tam bêdzie mi lepiej.
 
     Npc_ExchangeRoutine (self,"cava");
-    B_LogEntry                     (CH1_NowyVart,"Jesse zgodzi³ siê towarzyszyæ Cavalornowi.");
+    B_LogEntry                     (CH4_CavalornHelper,"Jesse zgodzi³ siê towarzyszyæ Cavalornowi.");
 
     B_GiveXP (150);
     AI_StopProcessInfos	(self);

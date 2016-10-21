@@ -124,11 +124,11 @@ FUNC VOID DIA_Pirat1_helpju_Info()
     AI_Output (self, other ,"DIA_Pirat1_helpju_03_05"); //Zaczekaj!
     AI_Output (self, other ,"DIA_Pirat1_helpju_03_06"); //Masz przy sobie mapê tego miejsca?
     AI_Output (self, other ,"DIA_Pirat1_helpju_03_07"); //By³bym ci bardzo wdziêczny.
-    MIS_MapaRicka = LOG_RUNNING;
+    MIS_HarksMap = LOG_RUNNING;
 
-    Log_CreateTopic            (CH1_MapaRicka, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_MapaRicka, LOG_RUNNING);
-    B_LogEntry                     (CH1_MapaRicka,"Hark, pirat, który rozbi³ siê u wybrze¿y Kolonii prosi³ mnie o przyniesienie mu mapy tego miejsca.");
+    Log_CreateTopic            (CH4_HarksMap, LOG_MISSION);
+    Log_SetTopicStatus       (CH4_HarksMap, LOG_RUNNING);
+    B_LogEntry                     (CH4_HarksMap,"Hark, pirat, który rozbi³ siê u wybrze¿y Kolonii prosi³ mnie o przyniesienie mu mapy tego miejsca.");
 };
 
 //========================================
@@ -159,9 +159,9 @@ FUNC VOID DIA_Pirat1_GiveMap_Info()
 {
     AI_Output (other, self ,"DIA_Pirat1_GiveMap_15_01"); //Mam mapê.
     AI_Output (self, other ,"DIA_Pirat1_GiveMap_03_02"); //Dziêki. W nagrodê mo¿esz wzi¹æ sobie ten strój pirata.
-    B_LogEntry                     (CH1_MapaRicka,"Hark otrzyma³ swoj¹ mapê.");
-    Log_SetTopicStatus       (CH1_MapaRicka, LOG_SUCCESS);
-    MIS_MapaRicka = LOG_SUCCESS;
+    B_LogEntry                     (CH4_HarksMap,"Hark otrzyma³ swoj¹ mapê.");
+    Log_SetTopicStatus       (CH4_HarksMap, LOG_SUCCESS);
+    MIS_HarksMap = LOG_SUCCESS;
 	CreateInvItem		(self, ItAmArrow);
 	B_GiveInvItems      (self, hero, ItAmArrow, 1);
 	Npc_RemoveInvItem	(hero, ItAmArrow);

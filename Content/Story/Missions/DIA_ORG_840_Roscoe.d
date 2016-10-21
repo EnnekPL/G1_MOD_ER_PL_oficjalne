@@ -266,7 +266,7 @@ FUNC VOID DIA_Roscoe_LetterForFireMages_Info()
     Npc_ExchangeRoutine (self, "START");
     AI_StopProcessInfos	(self);
 	
-	B_LogEntry                     (CH1_CourierFireMage,"Roscoe przekaza³ mi list do Magów Ognia. Podobno Lares ma do nich jakiœ interes.");
+	B_LogEntry                     (CH2_CourierFireMage,"Roscoe przekaza³ mi list do Magów Ognia. Podobno Lares ma do nich jakiœ interes.");
 };
 
 

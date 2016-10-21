@@ -421,11 +421,11 @@ FUNC VOID DIA_Damarok_HELLO3_Info()
     AI_Output (other, self ,"DIA_Damarok_HELLO3_15_06"); //Rozejrzê siê za nimi. Wiesz mo¿e, gdzie znajdê wiêksz¹ iloœæ tych stworzeñ?
     AI_Output (self, other ,"DIA_Damarok_HELLO3_03_07"); //Krwiopijcy uwielbiaj¹ wilgotne powietrze oraz zaduch. Najlepiej rozejrzyj siê na bagnach w pobli¿u Obozu Bractwa. 
 	AI_Output (self, other ,"DIA_Damarok_HELLO3_03_08"); //PrzejdŸ siê tak¿e wzd³u¿ rzeki odchodz¹cej z wodospadu w Nowym Obozie. Po drodze powinieneœ spotkaæ ich ca³e mnóstwo.
-    MIS_Damarok_Zadla = LOG_RUNNING;
+    MIS_BloodflyStings = LOG_RUNNING;
 
-    Log_CreateTopic            (TOPIC_Damarok_Zadla, LOG_MISSION);
-    Log_SetTopicStatus       (TOPIC_Damarok_Zadla, LOG_RUNNING);
-    B_LogEntry                     (TOPIC_Damarok_Zadla,"Damarok kaza³ mi przynieœæ 25 ¿¹de³ krwiopijców. Narz¹dy s¹ mu potrzebne do badañ.");
+    Log_CreateTopic          (CH2_BloodflyStings, LOG_MISSION);
+    Log_SetTopicStatus       (CH2_BloodflyStings, LOG_RUNNING);
+    B_LogEntry               (CH2_BloodflyStings,"Damarok kaza³ mi przynieœæ 25 ¿¹de³ krwiopijców. Narz¹dy s¹ mu potrzebne do badañ.");
 };
 
 //========================================
@@ -444,7 +444,7 @@ INSTANCE DIA_Damarok_HELLO4 (C_INFO)
 
 FUNC INT DIA_Damarok_HELLO4_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Damarok_HELLO3))
+    if (MIS_BloodflyStings == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -458,7 +458,7 @@ FUNC VOID DIA_Damarok_HELLO4_Info()
 	AI_Output (self, other ,"DIA_Damarok_HELLO4_03_03"); //Nasz kurier, którego wysy³aliœmy z listami do Saturasa, jednak opowiedzia³ mi o cz³owieku imieniem Wilk.
     AI_Output (self, other ,"DIA_Damarok_HELLO4_03_04"); //Ma on na stanie ksiêgê pod tytu³em "Krwiopijcy". Myœlê, ¿e handlarze w Bractwie równie¿ powinni dysponowaæ jednym egzemplarzem. 
     AI_Output (other, self ,"DIA_Damarok_HELLO4_15_05"); //W takim razie ruszam w dalsz¹ drogê. 
-    B_LogEntry                     (TOPIC_Damarok_Zadla,"W pewnej ksiêdze opisany jest sposób pozyskiwania ¿¹de³ krwiopijców. Byæ mo¿e Wilk lub ktoœ z Sekty bêdzie w jej posiadaniu.");
+    B_LogEntry          (CH2_BloodflyStings,"W pewnej ksiêdze opisany jest sposób pozyskiwania ¿¹de³ krwiopijców. Byæ mo¿e Wilk lub ktoœ z Sekty bêdzie w jej posiadaniu.");
 };
 
 //========================================
@@ -477,7 +477,7 @@ INSTANCE DIA_Damarok_HELLO5 (C_INFO)
 
 FUNC INT DIA_Damarok_HELLO5_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Damarok_HELLO4))
+    if (MIS_BloodflyStings == LOG_RUNNING)
     && (Npc_HasItems (other, ItAt_Bloodfly_02) >=25)
     {
     return TRUE;
@@ -490,11 +490,11 @@ FUNC VOID DIA_Damarok_HELLO5_Info()
     AI_Output (other, self ,"DIA_Damarok_HELLO5_15_01"); //Przynios³em 25 ¿¹de³ krwiopijców.
     AI_Output (self, other ,"DIA_Damarok_HELLO5_03_02"); //Doskonale, doskonale. W koñcu zakoñczê mój eksperyment. Daj mi je szybko. Oczywiœcie nie pozwolê odejœæ ci st¹d z pustymi rêkami. 
    AI_Output (self, other ,"DIA_Damarok_HELLO5_03_03"); //WeŸ proszê ten zwój z zaklêciem i niech Innos rozœwietla twoj¹ œcie¿kê. 
-    B_LogEntry                     (TOPIC_Damarok_Zadla,"Zabi³em 25 krwiopijców i przekaza³em ich ¿¹d³a Damarokowi.");
-    Log_SetTopicStatus       (TOPIC_Damarok_Zadla, LOG_SUCCESS);
-    MIS_Damarok_Zadla = LOG_SUCCESS;
+    B_LogEntry                     (CH2_BloodflyStings,"Zabi³em 25 krwiopijców i przekaza³em ich ¿¹d³a Damarokowi.");
+    Log_SetTopicStatus       (CH2_BloodflyStings, LOG_SUCCESS);
+    MIS_BloodflyStings = LOG_SUCCESS;
 
-    B_GiveXP (350);
+    B_GiveXP (200);
     CreateInvItems (self, ItArScrollFireRain, 1);
     B_GiveInvItems (self, other, ItArScrollFireRain, 1);
 	B_GiveInvItems (other, self, ItAt_Bloodfly_02, 25);

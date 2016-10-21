@@ -202,7 +202,7 @@ INSTANCE DIA_Shrike_FINGERS (C_INFO)
 
 FUNC INT DIA_Shrike_FINGERS_Condition()
 {
-    if (MIS_HandDed == LOG_RUNNING)
+    if (MIS_FingersSeeking == LOG_RUNNING)
     && (Npc_KnowsInfo (hero, DIA_Dexter_ReadBook))
     {
     return TRUE;
@@ -223,7 +223,7 @@ FUNC VOID DIA_Shrike_FINGERS_Info()
 	AI_Output (other, self ,"DIA_Shrike_FINGERS_15_09"); //Jak dobrze go znasz? Mia³ tu jakichœ wrogów?
 	AI_Output (self, other ,"DIA_Shrike_FINGERS_03_10"); //Pewnie, ¿e mia³ tu wrogów. Jest Cieniem, do cholery! Ca³y Obóz to jego wrogowie! Lepiej szybko go znajdŸ. Ostatnio widzia³em go jak rozmawia³ z Klinem.
 	
-	B_LogEntry                     (CH1_HandDed,"Od Krzykacza dowiedzia³em siê, ¿e skok na karczmê Silasa jeszcze siê nie odby³, a R¹czka ostatnio krêci³ siê po Nowym Obozie. Ponoæ rozmawia³ z Klinem.");
+	B_LogEntry                     (CH2_FingersSeeking,"Od Krzykacza dowiedzia³em siê, ¿e skok na karczmê Silasa jeszcze siê nie odby³, a R¹czka ostatnio krêci³ siê po Nowym Obozie. Ponoæ rozmawia³ z Klinem.");
 	
 	Npc_ExchangeRoutine (ORG_850_Wedge,"hanargument");
 	Npc_ExchangeRoutine (STT_331_Fingers,"hanargument");

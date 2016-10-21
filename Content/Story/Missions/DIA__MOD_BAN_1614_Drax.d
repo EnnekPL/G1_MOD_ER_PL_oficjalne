@@ -63,7 +63,7 @@ FUNC VOID DIA_Drax_AboutRatford_Info()
     AI_Output (other, self ,"DIA_Drax_AboutRatford_15_07"); //Co to ma wspólnego z twoim przyjacielem? 
     AI_Output (self, other ,"DIA_Drax_AboutRatford_03_08"); //Jak to co?! Ziele siê skoñczy³o, a on zacz¹³ narzekaæ jak stara baba. Mam ju¿ tego doœæ. 
 	//log
-    B_LogEntry                     (CH1_CourierFireMage,"Wychodzi na to, ¿e Ratford lubi sobie zapaliæ coœ mocniejszego. Mo¿e to bêdzie klucz do jego zagadki? Ostatnio Bandyci kupili sporo ziela u Fortuno. Powinienem siê do niego udaæ. ");
+    B_LogEntry                     (CH2_CourierFireMage,"Wychodzi na to, ¿e Ratford lubi sobie zapaliæ coœ mocniejszego. Mo¿e to bêdzie klucz do jego zagadki? Ostatnio Bandyci kupili sporo ziela u Fortuno. Powinienem siê do niego udaæ. ");
 	//exit
     AI_StopProcessInfos	(self);
 };

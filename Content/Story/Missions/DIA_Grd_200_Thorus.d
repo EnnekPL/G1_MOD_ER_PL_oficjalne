@@ -548,8 +548,8 @@ FUNC VOID Info_Thorus_Give1000Ore_Info()
 		Info_Thorus_Give1000Ore.permanent = 0;
 	if (Npc_GetTrueGuild (other)==GIL_BAU)
     {
-	Log_SetTopicStatus	(CH1_WejscieDoZamku,LOG_SUCCESS);
-	B_LogEntry			(CH1_WejscieDoZamku,"Có¿... zap³aci³em Thorusowi 1000 bry³ek rudy. Innego wyjœcia nie by³o.");
+	Log_SetTopicStatus	(CH1_CastleEntranceBandit,LOG_SUCCESS);
+	B_LogEntry			(CH1_CastleEntranceBandit,"Có¿... zap³aci³em Thorusowi 1000 bry³ek rudy. Innego wyjœcia nie by³o.");
 	};
 	}
 	else
@@ -2173,27 +2173,31 @@ FUNC INT DIA_THORUS_QuestGRD1_Condition()
 FUNC VOID DIA_THORUS_QuestGRD1_Info()
 {
     AI_Output (other, self ,"DIA_THORUS_QuestGRD1_15_01"); //Masz dla mnie jakieœ zadanie?
-    AI_Output (self, other ,"DIA_THORUS_QuestGRD1_03_02"); //W sumie to mam.
-    AI_Output (other, self ,"DIA_THORUS_QuestGRD1_15_03"); //Co siê dzieje?
-    AI_Output (self, other ,"DIA_THORUS_QuestGRD1_03_04"); //Dawno nie widzia³em tu nikogo nowego, ¿adnej nowej twarzy.
-    AI_Output (self, other ,"DIA_THORUS_QuestGRD1_03_05"); //Skazañcy nas omijaj¹. Uciekaj¹ do Nowego Obozu albo do Bandytów.
-    AI_Output (self, other ,"DIA_THORUS_QuestGRD1_03_06"); //Nied³ugo braknie nam Kopaczy do kopalni.
-    AI_Output (other, self ,"DIA_THORUS_QuestGRD1_15_07"); //Co wiêc mam zrobiæ?
+    AI_Output (self, other ,"DIA_THORUS_QuestGRD1_03_02"); //Coœ ma³ego na pewno siê znajdzie.
+    AI_Output (other, self ,"DIA_THORUS_QuestGRD1_15_03"); //W czym rzecz?
+    AI_Output (self, other ,"DIA_THORUS_QuestGRD1_03_04"); //Dawno nie widzia³em tu nikogo nowego, ¿adnej nowej twarzy. Skazañcy widocznie nas omijaj¹.
+    AI_Output (self, other ,"DIA_THORUS_QuestGRD1_03_05"); //Uciekaj¹ do innych obozów, a przecie¿ tu maj¹ pracê, jedzenie i inne wygody...
+    AI_Output (self, other ,"DIA_THORUS_QuestGRD1_03_06"); //Jak tak dalej pójdzie to nied³ugo braknie nam górników w kopalni. 
+    AI_Output (other, self ,"DIA_THORUS_QuestGRD1_15_07"); //Jak temu zaradziæ?
     AI_Output (self, other ,"DIA_THORUS_QuestGRD1_03_08"); //Przypuszczam, ¿e na placu wymian dzieje siê coœ z³ego. 
     AI_Output (other, self ,"DIA_THORUS_QuestGRD1_15_09"); //TO BULLIT!
     AI_Output (self, other ,"DIA_THORUS_QuestGRD1_03_10"); //Bullit? Niby dlaczego?
     AI_Output (other, self ,"DIA_THORUS_QuestGRD1_15_11"); //Gdy zrzucono mnie za Barierê, dosta³em od niego porz¹dnie w pysk.
-    AI_Output (self, other ,"DIA_THORUS_QuestGRD1_03_12"); //Wiedzia³em, ¿e ta twarz jest zbyt krzywa, ¿eby by³a naturalna.
+    AI_Output (self, other ,"DIA_THORUS_QuestGRD1_03_12"); //hmm, doprawdy? Myœla³em, ¿e spad³eœ z konia. He he...
     AI_Output (other, self ,"DIA_THORUS_QuestGRD1_15_13"); //Darujmy sobie docinki...
-    AI_Output (self, other ,"DIA_THORUS_QuestGRD1_03_14"); //Spokojnie, spokojnie. Tak tylko ¿artowa³em.
-    AI_Output (self, other ,"DIA_THORUS_QuestGRD1_03_15"); //Skoro uwa¿asz, ¿e to Bullit, to znajdŸ mi na niego jakieœ dowody.
-	AI_Output (self, other ,"DIA_THORUS_QuestGRD1_03_16"); //Dziœ mieli zostaæ zrzuceni nowi skazañcy. Je¿eli spotkasz kogoœ na placu wymian, zadbaj, aby przyszed³ do Obozu.
-    MIS_Odstraszeni = LOG_RUNNING;
-	B_ExchangeRoutine	(GRD_203_Bullit, "meka");	
+    AI_Output (self, other ,"DIA_THORUS_QuestGRD1_03_14"); //W porz¹dku. Tak tylko ¿artowa³em.
+    AI_Output (self, other ,"DIA_THORUS_QuestGRD1_03_15"); //Mo¿e i Bullit macza w tym palce. Bêdê musia³ z nim pogadaæ, ale zanim to zrobiê...
+	AI_Output (self, other ,"DIA_THORUS_QuestGRD1_03_16"); //Dziœ mieli zostaæ zrzuceni nowi skazañcy. PrzyprowadŸ mi jednego. Jeœli Bullit, któregoœ z nich odstraszy³, to niech mi o tym powie.
+	
+    MIS_BullitBadass = LOG_RUNNING;
+	
+    Log_CreateTopic         (CH2_BullitBadass, LOG_MISSION);
+    Log_SetTopicStatus      (CH2_BullitBadass, LOG_RUNNING);
+    B_LogEntry              (CH2_BullitBadass,"Thorus kaza³ mi odkryæ, który z jego ludzi odstrasza nowych skazañców. Jestem pewien, ¿e to wina Bullita. Muszê tylko znaleŸæ na niego jakieœ dowody. Dziœ na plac wymian maj¹ zostaæ zrzuceni nowi skazañcy. Je¿eli kogoœ tam spotkam, mam zadbaæ, aby przyby³ do Starego Obozu.");
+	
 	Wld_InsertNpc				(NON_7046_Skazaniec,"OC1");	
-    Log_CreateTopic            (CH1_Odstraszeni, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_Odstraszeni, LOG_RUNNING);
-    B_LogEntry                     (CH1_Odstraszeni,"Thorus kaza³ mi odkryæ, który z jego ludzi odstrasza nowych skazañców. Jestem pewien, ¿e to wina Bullita. Muszê tylko znaleŸæ na niego jakieœ dowody. Dziœ na plac wymian maj¹ zostaæ zrzuceni nowi skazañcy. Je¿eli kogoœ tam spotkam mam zadbaæ, aby przyby³ do Starego Obozu. ");
+	B_ExchangeRoutine	(GRD_203_Bullit, "meka");	
+	
     AI_StopProcessInfos	(self);
 };
 
@@ -2214,7 +2218,7 @@ INSTANCE DIA_THORUS_Swadek (C_INFO)
 FUNC INT DIA_THORUS_Swadek_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Skaza_HELLO1))
-    && (MIS_Odstraszeni == LOG_SUCCESS)
+    && (MIS_BullitBadass == LOG_SUCCESS)
     {
     return TRUE;
     };
@@ -2224,13 +2228,11 @@ FUNC INT DIA_THORUS_Swadek_Condition()
 FUNC VOID DIA_THORUS_Swadek_Info()
 {
     AI_Output (other, self ,"DIA_THORUS_Swadek_15_01"); //By³em na placu wymian. Rozmawia³em z nowym skazañcem.
-    AI_Output (self, other ,"DIA_THORUS_Swadek_03_02"); //W³aœnie zauwa¿y³em go w Obozie. Jest zbyt weso³y jak na skazañca.
-    AI_Output (other, self ,"DIA_THORUS_Swadek_15_03"); //Poczekaj a¿ ci opowie jak mu pomog³em, oraz co mu zrobi³ Bullit. 
-    AI_Output (self, other ,"DIA_THORUS_Swadek_03_04"); //Jesteœ pewien, ¿e go nie przekupi³eœ?
-	AI_Output (self, other ,"DIA_THORUS_Swadek_03_05"); //Spójrz na niego. Nie ma przy sobie ani bry³ki. Zreszt¹, sam siê wkrótce przekonasz.
-    AI_Output (self, other ,"DIA_THORUS_Swadek_03_06"); //Masz tu coœ za dobrze wykonane zadanie.
-    CreateInvItems (self, ItMiNugget, 100);
-    B_GiveInvItems (self, other, ItMiNugget, 100);
+    AI_Output (self, other ,"DIA_THORUS_Swadek_03_02"); //W³aœnie zauwa¿y³em go w Obozie. Jakieœ przemyœlenia?
+    AI_Output (other, self ,"DIA_THORUS_Swadek_15_03"); //Powinieneœ z nim pogadaæ. Ja zrobi³em, to co mia³em zrobiæ.
+    AI_Output (self, other ,"DIA_THORUS_Swadek_03_04"); //No dobra, zobaczymy co mi powie. Mo¿esz ju¿ iœæ.
+
+    B_GiveXP (100);
     AI_StopProcessInfos	(self);
 };
 
@@ -2293,7 +2295,7 @@ INSTANCE DIA_THORUS_FlintFindPath (C_INFO)
 
 FUNC INT DIA_THORUS_FlintFindPath_Condition()
 {
-    if (MIS_FlintaPrzyjecie == LOG_RUNNING)
+    if (Npc_KnowsInfo (hero, DIA_Flint_InOC1))
     {
     return TRUE;
     };
@@ -2321,7 +2323,7 @@ FUNC VOID DIA_THORUS_FlintFindPath_Info()
     AI_Output (self, other ,"DIA_THORUS_FlintFindPath_03_16"); //M¹drze post¹pi³eœ. Zanim pójdziesz do Gomeza wróæ do Okyla i powiedz mu, ¿e zabi³eœ Flinta.
     AI_Output (self, other ,"DIA_THORUS_FlintFindPath_03_17"); //Tylko pamiêtaj, ¿eby to zrobiæ, ZANIM wst¹pisz w szeregi Cieni.
 	
-    B_LogEntry                     (CH1_FlintaPrzyjecie,"Zgodnie z poleceniem Flinta Thorus dowiedzia³ siê ode mnie o œcie¿ce przez góry. Otrzyma³em wstêp na plac zamkowy. Zanim jednak pójdê do Gomeza muszê wróciæ do Okyla i powiedzieæ mu, ¿e zabi³em Flinta.");
+    B_LogEntry                     (CH1_FlintsOffer,"Zgodnie z poleceniem Flinta Thorus dowiedzia³ siê ode mnie o œcie¿ce przez góry. Otrzyma³em wstêp na plac zamkowy. Zanim jednak pójdê do Gomeza muszê wróciæ do Okyla i powiedzieæ mu, ¿e zabi³em Flinta. Wszystko po to, by st³umiæ podejrzenia Najemników.");
 
 	var C_NPC wache212; wache212 = Hlp_GetNpc(Grd_212_Torwache);
 	var C_NPC wache213; wache213 = Hlp_GetNpc(Grd_213_Torwache);
@@ -2336,9 +2338,9 @@ FUNC VOID DIA_THORUS_FlintFindPath_Info()
 	
     MIS_SayOkylFlintDead = LOG_RUNNING;
 
-    Log_CreateTopic          (CH1_SayOkylFlintDead, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_SayOkylFlintDead, LOG_RUNNING);
-    B_LogEntry               (CH1_SayOkylFlintDead,"Zanim do³¹czê do Obozu, bêdê musia³ powiedzieæ Okylowi, ¿e Flint nie ¿yje. Wszystko po to, by st³umiæ podejrzenia Najemników.");
+    //Log_CreateTopic          (CH1_SayOkylFlintDead, LOG_MISSION);
+    //Log_SetTopicStatus       (CH1_SayOkylFlintDead, LOG_RUNNING);
+   // B_LogEntry               (CH1_SayOkylFlintDead,"Zanim do³¹czê do Obozu, bêdê musia³ powiedzieæ Okylowi, ¿e Flint nie ¿yje. ");
     AI_StopProcessInfos	(self);
 	}
 	else 
@@ -2353,9 +2355,9 @@ FUNC VOID DIA_THORUS_FlintFindPath_Info()
 	Info_AddChoice (DIA_THORUS_FlintFindPath,"Chcê siê spotkaæ z Gomezem.",DIA_THORUS_FlintFindPath_GOMEZ);
 	Info_AddChoice (DIA_THORUS_FlintFindPath,"Wystarczy mi ruda.",DIA_THORUS_FlintFindPath_ORE);
 	
-	MIS_FlintaPrzyjecie = LOG_FAILED;
-    Log_SetTopicStatus       (CH1_FlintaPrzyjecie, LOG_FAILED);
-    B_LogEntry                     (CH1_FlintaPrzyjecie,"Nie zyska³em sympatii Thorusa. Lepiej nie bêdê mu teraz wchodzi³ w drogê.");
+	MIS_FlintsOffer = LOG_FAILED;
+    Log_SetTopicStatus       (CH1_FlintsOffer, LOG_FAILED);
+    B_LogEntry                     (CH1_FlintsOffer,"Nie zyska³em sympatii Thorusa. Lepiej nie bêdê mu teraz wchodzi³ w drogê.");
 	};
 };
 
@@ -2370,7 +2372,7 @@ func void DIA_THORUS_FlintFindPath_GOMEZ ()
 	{
 	AI_Output (self, other ,"DIA_THORUS_FlintFindPath_GOMEZ_WTF_26"); //Jeszcze nie zd¹¿y³eœ siê na niego napatrzeæ? Wracaj do swojej roboty.
 	}
-	else //no kurwa albo bandyta, albo ktoœ z nowego obozu - innej opcji nie ma
+	else //no kurwa albo bandyta, albo ktoœ z nowego obozu - innej opcji nie ma, chyba ¿e Psimogoth znowu coœ odjebie...
 	{
 	AI_Output (self, other ,"DIA_THORUS_FlintFindPath_GOMEZ_BAN_27"); //Ktoœ twojego pokroju chcia³by siê zobaczyæ z Gomezem tylko po to, ¿eby go zabiæ. Nie pozwolê na to.
 	AI_StopProcessInfos (self);
@@ -2429,11 +2431,11 @@ FUNC VOID DIA_THORUS_QuestGRD_Info()
     AI_Output (self, other ,"DIA_THORUS_QuestGRD_03_03"); //No to w takim razie mo¿esz eskortowaæ Kopaczy do Starej Kopalni.
     AI_Output (self, other ,"DIA_THORUS_QuestGRD_03_04"); //Pomo¿e ci w tym trzech moich ludzi.
     AI_Output (self, other ,"DIA_THORUS_QuestGRD_03_05"); //Pogadaj ze stra¿nikiem konwoju. On da ci dalsze instrukcje.
-    MIS_EskortaKopaczy = LOG_RUNNING;
+    MIS_BuddlersEscort = LOG_RUNNING;
 
-    Log_CreateTopic          (CH1_EskortaKopaczy, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_EskortaKopaczy, LOG_RUNNING);
-    B_LogEntry               (CH1_EskortaKopaczy,"Wreszcie coœ ciekawego. Tym razem mam eskortowaæ Kopaczy do Starej Kopalni. Wiêcej informacji uzyskam od stra¿nika konwoju. Chyba widzia³em go na placu zamkowym.");
+    Log_CreateTopic          (CH2_BuddlersEscort, LOG_MISSION);
+    Log_SetTopicStatus       (CH2_BuddlersEscort, LOG_RUNNING);
+    B_LogEntry               (CH2_BuddlersEscort,"Wreszcie coœ ciekawego. Tym razem mam eskortowaæ Kopaczy do Starej Kopalni. Wiêcej informacji uzyskam od stra¿nika konwoju. Chyba widzia³em go na placu zamkowym.");
     AI_StopProcessInfos	(self);
 };
 
@@ -2453,7 +2455,7 @@ INSTANCE DIA_THORUS_ZLECENIE_NA_OBRONE (C_INFO)
 
 FUNC INT DIA_THORUS_ZLECENIE_NA_OBRONE_Condition()
 {
-    if (MIS_EskortaKopaczy == LOG_SUCCESS) && (Npc_GetTrueGuild(hero) == GIL_GRD)
+    if (MIS_BuddlersEscort == LOG_SUCCESS) && (Npc_GetTrueGuild(hero) == GIL_GRD)
     {
     return TRUE;
     };
@@ -2984,10 +2986,7 @@ FUNC INT DIA_Thorus_BANDYTA_GATE_Condition()
 	var int		armorInstance_bandyty2;	armorInstance_bandyty2	= Hlp_GetInstanceID		(armor_bandyty2);
 	if (armorInstance_bandyty2 == BAU_ARMOR_L) || (armorInstance_bandyty2 == BAU_ARMOR_M) || (armorInstance_bandyty2 == BAU_ARMOR_H)
 	&& (Npc_GetTrueGuild(other) == GIL_BAU) 
-	&& 
-		(wache212.aivar[AIV_PASSGATE] == false) 
-		&&
-		(wache213.aivar[AIV_PASSGATE] == false)
+	&& (wache212.aivar[AIV_PASSGATE] == false) && (wache213.aivar[AIV_PASSGATE] == false)
     {
     return TRUE;
     };
@@ -3000,9 +2999,9 @@ FUNC VOID DIA_Thorus_BANDYTA_GATE_Info()
     AI_Output (self, other ,"DIA_Thorus_BANDYTA_GATE_03_02"); //Chyba ¿artujesz. Nosisz pancerz jednego z tych sukinsynów, którzy atakuj¹ nasze konwoje. Zapomnij o tym. 
     AI_Output (self, other ,"DIA_Thorus_BANDYTA_GATE_03_03"); //Nie wiem, czy jesteœ w bandzie Quentina, ale widzê, ze masz z nim jakiœ kontakt. Nie chcê mieæ z tob¹ nic wspólnego.	
 	
-	Log_CreateTopic		(CH1_WejscieDoZamku,LOG_MISSION);
-	Log_SetTopicStatus	(CH1_WejscieDoZamku,LOG_RUNNING);
-	B_LogEntry			(CH1_WejscieDoZamku,"Thorus nie chce mnie wpuœciæ do zamku, bo zadajê siê z Quentinem. Jedynym sposobem na wejœcie do zamku jest przekupstwo. Problem w tym, ¿e tysi¹c bry³ek rudy to ca³kiem sporo, a w¹tpiê ¿eby Quentin chcia³ mi to zrefundowaæ...");
+	Log_CreateTopic		(CH1_CastleEntranceBandit,LOG_MISSION);
+	Log_SetTopicStatus	(CH1_CastleEntranceBandit,LOG_RUNNING);
+	B_LogEntry			(CH1_CastleEntranceBandit,"Thorus nie chce mnie wpuœciæ do zamku, bo zadajê siê z Quentinem. Jedynym sposobem na wejœcie do zamku jest przekupstwo. Problem w tym, ¿e tysi¹c bry³ek rudy to ca³kiem sporo, a w¹tpiê ¿eby Quentin chcia³ mi to zrefundowaæ...");
 	
 };
 
@@ -3038,8 +3037,8 @@ FUNC VOID DIA_Thorus_DIEGO_PASS_Info()
 		var C_NPC wache213; wache213 = Hlp_GetNpc(Grd_213_Torwache);
 		wache212.aivar[AIV_PASSGATE] = TRUE;
 		wache213.aivar[AIV_PASSGATE] = TRUE;
-	Log_SetTopicStatus	(CH1_WejscieDoZamku,LOG_SUCCESS);
-	B_LogEntry			(CH1_WejscieDoZamku,"Uda³o siê! Wiedzia³em, ¿e na Diego mo¿na polegaæ. Teraz mam dostêp do zamku.");
+	Log_SetTopicStatus	(CH1_CastleEntranceBandit,LOG_SUCCESS);
+	B_LogEntry			(CH1_CastleEntranceBandit,"Uda³o siê! Wiedzia³em, ¿e na Diego mo¿na polegaæ. Teraz mam dostêp do zamku.");
 	//MIS_WejscieDoZamku = LOG_SUCCESS; 
 	b_givexp (250);
 };

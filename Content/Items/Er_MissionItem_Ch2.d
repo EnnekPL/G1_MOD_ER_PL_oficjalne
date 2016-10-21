@@ -55,9 +55,9 @@ INSTANCE ItMis_FingersSecretBook(C_Item)
 						B_GiveXP (100);
 						ItemUsed_FingersSecretBook = TRUE;
 					
-					if (MIS_HandDed == LOG_RUNNING)
+					if (MIS_FingersSeeking == LOG_RUNNING)
 					{
-					B_LogEntry                     (CH1_HandDed,"Z zapisków Raczki wynika, ¿e planowa³ wiele kradzie¿y. Ostatni na liœcie jest Silas - Szkodnik z Nowego Obozu, prowadz¹cy karczmê.");
+					B_LogEntry                     (CH2_FingersSeeking,"Z zapisków Raczki wynika, ¿e planowa³ wiele kradzie¿y. Ostatni na liœcie jest Silas - Szkodnik z Nowego Obozu, prowadz¹cy karczmê.");
 					};
 					};
 					

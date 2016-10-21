@@ -428,9 +428,9 @@ FUNC VOID DIA_Torrez_CourierQuest_Info()
     AI_Output (self, other ,"DIA_Torrez_CourierQuest_03_05"); //Mo¿esz wejœæ do naszych komnat, tylko zachowaj szacunek i pokorê.
     MIS_CourierFireMage = LOG_RUNNING;
 
-    Log_CreateTopic          (CH1_CourierFireMage, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_CourierFireMage, LOG_RUNNING);
-    B_LogEntry               (CH1_CourierFireMage,"Torrez zaczepi³ mnie, gdy chodzi³em po placu zamkowym. Mam siê zg³osiæ do Corristo po zadanie.");
+    Log_CreateTopic          (CH2_CourierFireMage, LOG_MISSION);
+    Log_SetTopicStatus       (CH2_CourierFireMage, LOG_RUNNING);
+    B_LogEntry               (CH2_CourierFireMage,"Torrez zaczepi³ mnie, gdy chodzi³em po placu zamkowym. Mam siê zg³osiæ do Corristo po zadanie.");
     AI_StopProcessInfos	(self);
 };
 

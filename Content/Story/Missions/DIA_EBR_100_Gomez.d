@@ -169,11 +169,11 @@ func void DIA_Gomez_Hello_MineENter ()
 	AI_Output (self, other,"DIA_Gomez_Hello_MineENter_11_01"); //To siê mo¿e przydaæ! S³ysza³em ju¿ wstêpne wieœci od moich ludzi.
 	AI_Output (self, other,"DIA_Gomez_Hello_MineENter_11_03"); //A wiêc to o tobie wszyscy mówi¹.
 	AI_Output (self, other,"DIA_Gomez_Hello_MineENter_11_04"); //Pos³uchaj: gdybym ciê teraz nie przyj¹³, by³bym g³upcem. Witaj wœród nas!
-	MIS_FlintaPrzyjecie = LOG_SUCCESS;
+	MIS_FlintsOffer = LOG_SUCCESS;
 	gomez_kontakte = gomez_kontakte + 10;
-    Log_SetTopicStatus       (CH1_FlintaPrzyjecie, LOG_SUCCESS);
+    Log_SetTopicStatus       (CH1_FlintsOffer, LOG_SUCCESS);
 	hero_join_fn = false;
-    B_LogEntry                     (CH1_FlintaPrzyjecie,"Gomez by³ bardzo uradowany z moich dokonañ.");
+    B_LogEntry                     (CH1_FlintsOffer,"Gomez by³ bardzo uradowany z moich dokonañ.");
 	Info_ClearChoices	(DIA_Gomez_Hello);
 };
 
@@ -466,7 +466,7 @@ INSTANCE DIA_Gomez_SuperQuestSuccess (C_INFO)
 
 FUNC INT DIA_Gomez_SuperQuestSuccess_Condition()
 {
-    if (MIS_RzopierdolInTemple == LOG_SUCCESS)
+    if (MIS_BattleInTemple == LOG_SUCCESS)
     && (MIS_QuestForHeavyArmor == LOG_RUNNING)
     {
     return TRUE;
@@ -509,7 +509,7 @@ INSTANCE DIA_Gomez_TempleIsClear (C_INFO)
 
 FUNC INT DIA_Gomez_TempleIsClear_Condition()
 {
-    if (MIS_RzopierdolInTemple == LOG_SUCCESS) && (Kapitel == 10)
+    if (MIS_BattleInTemple == LOG_SUCCESS) && (Kapitel == 10)
     {
     return TRUE;
     };

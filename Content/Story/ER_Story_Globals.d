@@ -13,6 +13,11 @@ const string CH1_Bulit 				 		= "Chrzest Wody";
 var int MIS_GrimAmulet;
 const string CH1_GrimAmulet 				= "Amulet Magnatów";
 
+var int MIS_FlintsOffer;
+const string CH1_FlintsOffer      			= "Propozycja Flinta";
+
+var int MIS_SayOkylFlintDead;
+
 var int MIS_HanisAsTeacher;
 const string CH1_HanisAsTeacher      		= "Nauka za pojedynek";
 
@@ -67,6 +72,21 @@ const string CH2_GoldSword_Bartholo			= "Z³oty miecz";
 var int MIS_NEW_GOD;
 const string CH2_New_God      				= "Nieznany bóg";
 
+var int MIS_BullitBadass;
+const string CH2_BullitBadass      	 		= "Ktoœ odstrasza skazañców"; 
+
+var int MIS_FingersSeeking;
+const string CH2_FingersSeeking     		= "Poszukiwania R¹czki"; 
+
+var int MIS_BuddlersEscort;
+const string CH2_BuddlersEscort      		= "Eskorta Kopaczy";
+
+var int MIS_BloodflyStings;
+const string CH2_BloodflyStings     		= "¯¹d³a krwiopijców";
+
+var int MIS_CourierFireMage;
+const string CH2_CourierFireMage    		= "Przesy³ka dla magów";
+
 var int MIS_ArtosSafeGuard;
 const string CH3_ArtosSafeGuard      		= "Eskorta Arto";
 
@@ -74,7 +94,14 @@ var int MIS_MissedList;
 const string CH3_MissedList      			= "Zaginiona lista";
 
 var int MIS_QuestForHeavyArmor;
-const string CH3_QuestForHeavyArmor 			= "Sytuacja w dolinie";
+const string CH3_QuestForHeavyArmor 		= "Sytuacja w dolinie";
+
+var int MIS_ArmorForSpy;
+const string CH3_ArmorForSpy      			= "Pancerz dla szpiega";
+
+var int MIS_SpyInRuins;
+var int MIS_FireMage_Help;
+var int MIS_BattleInTemple;
 
 var int MIS_SnafBag;
 const string CH4_SnafBag 					= "Sakiewka Snafa";
@@ -168,6 +195,11 @@ const string CH1_DraxTest      				= "Test Draxa";
 var int MIS_PSIcampWORK;
 const string CH1_PSIcampWORK     	 		= "Szpieg na bagnie";
 
+var int MIS_BaronsRings;
+const string CH1_BaronsRings  				= "Magnackie pierœcienie";
+
+const string CH1_CastleEntranceBandit      	= "Wejœcie do zamku";
+
 var int MIS_KalomsNewWeed;
 const string CH2_KalomsNewWeed      		= "Przepis na niesamowite ziele";
 
@@ -183,8 +215,17 @@ const string CH4_SupportFromOrcHunters      = "Pomoc ³owców orków";
 var int MIS_QuentinsCutlass;
 const string CH4_QuentinsCutlass      		= "Kordelas dla Quentina";
 
+var int MIS_BanditsInAbadonedMine;
+const string CH4_BanditsInAbadonedMine      = "Bandyci i opuszczona kopalnia";
+
+var int MIS_NewEnginer;	
+const string CH4_NewEnginer      			= "Robotnik do kopalni";
+
+var int MIS_BackToOldMine;
+const string CH4_BackToOldMine      		= "Sytuacja w Starej Kopalni";
+
 var int MIS_RockyArmor;
-const string CH1_RockyArmor      			= "Nowy pancerz dla Bandyty";
+const string CH4_RockyArmor      			= "Nowy pancerz dla Bandyty";
 
 //***Nowy Obóz***
 //***Zmienne zadañ*** 
@@ -228,8 +269,23 @@ const string CH4_ThreeLords     			= "Trzej Lordowie";
 var int MIS_BanditsInTroubles;
 const string CH4_BanditsInTroubles   		= "Banda Quentina";
 
+var int MIS_NC_Mine;
+const string CH4_NC_Mine      				= "Lee i kopalnia";
+
+var int MIS_TorlofNeedHelp;
+const string CH4_TorlofNeedHelp     		= "Na pomoc Torlofowi";
+
 //***Kolonia***
 //***Zmienne zadañ***
+var int MIS_FlyingBook;
+const string CH1_FlyingBook   				= "Lataj¹cy pamiêtnik";
+
+var int MIS_SpikeLoser;
+const string CH1_SpikeLoser      			= "Problem Spike'a";
+
+var int MIS_Poison;
+const string CH1_Poison     		 		= "Trucizna dla kucharza";
+
 var int MIS_PathToFreeMine;
 const string CH1_PathToFreeMine				= "Droga do Wolnej Kopalni";
 
@@ -292,6 +348,18 @@ const string CH4_CorristoEvil      			= "Ucieczka Corristo";
 
 var int MIS_MagicalCrystals;
 const string CH4_MagicalCrystals      		= "Szturm na Barierê";
+
+var int MIS_VartSeeking;
+const string CH4_VartSeeking      			= "Zaginiony Vart";
+
+var int MIS_CavalornHelper;
+const string CH4_CavalornHelper     		= "Pomocnik Cavalorna";
+
+var int MIS_HarksMap;
+const string CH4_HarksMap     				 = "Mapa dla Harka";
+
+var int MIS_StevesEquipment;
+const string CH4_StevesEquipment      = "Ekwipunek Steve'a";
 
 var int MIS_FoodForHunters;
 const string CH5_FoodForHunters      		= "Dostawa ¿ywnoœci";

@@ -1491,7 +1491,7 @@ INSTANCE DIA_Lee_KOPALNIA_QUENTINA (C_INFO)
 
 FUNC INT DIA_Lee_KOPALNIA_QUENTINA_Condition()
 {
-    if (MIS_PomocTorlofowi == LOG_SUCCESS)
+    if (MIS_TorlofNeedHelp == LOG_SUCCESS)
     {
     return TRUE;
     };
@@ -1566,7 +1566,7 @@ FUNC VOID DIA_Lee_CZYSTKA_W_KOPALNI_Info()
     AI_Output (other, self ,"DIA_Lee_CZYSTKA_W_KOPALNI_15_08"); //Chyba jednak warto zaryzykowaæ. 
     AI_Output (self, other ,"DIA_Lee_CZYSTKA_W_KOPALNI_03_09"); //Masz racjê, ale jest jeden problem. Do kopania rudy potrzebni s¹ robotnicy. Nie mam doœæ ludzi, aby wys³aæ ich do pracy.
     AI_Output (self, other ,"DIA_Lee_CZYSTKA_W_KOPALNI_03_10"); //IdŸ do Laresa i spytaj czy wys³a³by kilku Szkodników do kopalni.
-    B_LogEntry                     (CH1_NC_Mine,"Mam iœæ do Laresa i poprosiæ go o wys³anie kilku Szkodników do pracy w kopalni. ");
+    B_LogEntry                     (CH4_NC_Mine,"Mam iœæ do Laresa i poprosiæ go o wys³anie kilku Szkodników do pracy w kopalni. ");
 
     B_GiveXP (200);
     AI_StopProcessInfos	(self);
@@ -1602,7 +1602,7 @@ FUNC VOID DIA_Lee_BRAK_LUDZI_Info()
     AI_Output (self, other ,"DIA_Lee_BRAK_LUDZI_03_04"); //Racja. Mo¿e oni wyœl¹ czêœæ swoich ludzi do kopalni. 
     AI_Output (self, other ,"DIA_Lee_BRAK_LUDZI_03_05"); //IdŸ do Quentina i siê z nim dogadaj. Zaproponuj mu czwart¹ czêœæ wydobytego urobku jako zap³atê.
     AI_Output (other, self ,"DIA_Lee_BRAK_LUDZI_15_06"); //Ju¿ tam idê.
-    B_LogEntry                     (CH1_NC_Mine,"Trzeba dogadaæ siê z Quentinem. Mam zaproponowaæ przywódcy Bandytów czwart¹ czêœæ urobku z kopalni w zamian za pomoc. ");
+    B_LogEntry                     (CH4_NC_Mine,"Trzeba dogadaæ siê z Quentinem. Mam zaproponowaæ przywódcy Bandytów czwart¹ czêœæ urobku z kopalni w zamian za pomoc. ");
 
     B_GiveXP (200);
     AI_StopProcessInfos	(self);
@@ -1639,8 +1639,8 @@ FUNC VOID DIA_lee_PertractacjieDD_Info()
     AI_Output (self, other ,"DIA_lee_PertractacjieDD_03_04"); //Oto twoja zap³ata.
     CreateInvItems (self, ItMiNugget, 200);
     B_GiveInvItems (self, other, ItMiNugget, 200);
-    B_LogEntry                     (CH1_NC_Mine,"Nowy Obóz dogada³ siê z Quentinem. Mamy zapewnione nowe Ÿród³o rudy ma³ym kosztem.");
-    Log_SetTopicStatus       (CH1_NC_Mine, LOG_SUCCESS);
+    B_LogEntry                     (CH4_NC_Mine,"Nowy Obóz dogada³ siê z Quentinem. Mamy zapewnione nowe Ÿród³o rudy ma³ym kosztem.");
+    Log_SetTopicStatus       (CH4_NC_Mine, LOG_SUCCESS);
     MIS_NC_Mine = LOG_SUCCESS;
 	if MIS_PsiAbadonedMine == log_running
 	{

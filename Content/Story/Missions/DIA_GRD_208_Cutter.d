@@ -306,7 +306,7 @@ FUNC VOID DIA_Cutter_SzukaszBulita_Info()
     AI_Output (self, other ,"DIA_Cutter_SzukaszBulita_03_01"); //Szukasz Bullita?
     AI_Output (other, self ,"DIA_Cutter_SzukaszBulita_15_02"); //Mo¿liwe.
     AI_Output (self, other ,"DIA_Cutter_SzukaszBulita_03_03"); //Poszed³ w³aœnie na plac wymian. Podobno zrzucili kogoœ nowego.
-    B_LogEntry                     (CH1_Odstraszeni,"Bullit poszed³ na plac wymian. Teraz mam szansê zdobyæ jakiœ dowód na niego.");
+    B_LogEntry                     (CH2_BullitBadass,"Bullit poszed³ na plac wymian. Teraz mam szansê zdobyæ jakiœ dowód na niego.");
     AI_StopProcessInfos	(self);
 };
 

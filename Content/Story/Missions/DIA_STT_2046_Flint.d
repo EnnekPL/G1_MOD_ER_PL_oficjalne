@@ -211,11 +211,11 @@ FUNC VOID DIA_Flint_OkylQuest_Info()
     AI_Output (self, other ,"DIA_Flint_OkylQuest_03_07"); //Mogê za³atwiæ ci miejsce w Obozie. 
     AI_Output (self, other ,"DIA_Flint_OkylQuest_03_08"); //Wystarczy, ¿e mi pomo¿esz i przeka¿esz wiadomoœæ Thorusowi. 
     AI_Output (self, other ,"DIA_Flint_OkylQuest_03_09"); //Co ty na to?
-    MIS_PropozycjaFlinta = LOG_RUNNING;
+    MIS_FlintsOffer = LOG_RUNNING;
 
-    Log_CreateTopic          (CH1_PropozycjaFlinta, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_PropozycjaFlinta, LOG_RUNNING);
-    B_LogEntry               (CH1_PropozycjaFlinta,"Cieñ Flint z³o¿y³ mi ciekaw¹ propozycjê. Wkrêci mnie do Starego Obozu, je¿eli pomogê mu wyjœæ z tarapatów. Warto przemyœleæ tê propozycjê.");
+    Log_CreateTopic          (CH1_FlintsOffer, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_FlintsOffer, LOG_RUNNING);
+    B_LogEntry               (CH1_FlintsOffer,"Cieñ Flint z³o¿y³ mi ciekaw¹ propozycjê. Wkrêci mnie do Starego Obozu, je¿eli pomogê mu wyjœæ z tarapatów. Warto przemyœleæ tê propozycjê.");
 	
 };
 
@@ -253,10 +253,11 @@ FUNC VOID DIA_Flint_NewCamRulez_Info()
     AI_StartState (self, ZS_ATTACK, 1, "");
 	self.guild = GIL_NONE;
 	Npc_SetTrueGuild (self,GIL_NONE);
-    B_LogEntry               (CH1_OkylQuest,"Odnalaz³em szpiegia w górach. By³ zagubiony i zmêczony, postanowi³em wiec wyzwaæ go na pojedynek.");
-    Log_SetTopicStatus       (CH1_PropozycjaFlinta, LOG_FAILED);
-    MIS_PropozycjaFlinta = LOG_FAILED;
-	PrintScreen	("Anulowano zadanie: Propozycja Flinta! ", 1,-1,"font_new_10_red.tga",2);	
+    B_LogEntry               (CH1_OkylQuest,"Odnalaz³em szpiega w górach. By³ zagubiony i zmêczony, postanowi³em wiec wyzwaæ go na pojedynek.");
+	B_LogEntry               (CH1_FlintsOffer,"Odrzuci³em propozycjê Flinta. Chcê do³¹czyæ do Nowego Obozu. Tak postanowi³em.");
+    Log_SetTopicStatus       (CH1_FlintsOffer, LOG_FAILED);
+    MIS_FlintsOffer = LOG_FAILED;
+	//PrintScreen	("Anulowano zadanie: Propozycja Flinta! ", 1,-1,"font_new_10_red.tga",2);	
 	
 	if (MIS_FoodForFlint == LOG_RUNNING)
 	{
@@ -299,7 +300,8 @@ FUNC VOID DIA_Flint_OldCampRulez_Info()
     AI_Output (self, other ,"DIA_Flint_OldCampRulez_03_06"); //Zaczekaj. Nie pójdê w takim stroju. 
 	AI_Output (self, other ,"DIA_Flint_OldCampRulez_03_07"); //W porz¹dku. Teraz jestem gotów.
 	AI_UnequipArmor			 (STT_2046_Flint);
-    B_LogEntry               (CH1_PropozycjaFlinta,"Flint kaza³ mi zaprowadziæ siê do Starego Obozu. W zamian bêdê móg³ przekazaæ raport Thorusowi, co w ostatecznoœci zapewni mi miejsce wœród Cieni.");
+    B_LogEntry               (CH1_FlintsOffer,"Flint kaza³ mi zaprowadziæ siê do Starego Obozu. W zamian bêdê móg³ przekazaæ raport Thorusowi, co w ostatecznoœci zapewni mi miejsce wœród Cieni.");
+	B_LogEntry               (CH1_OkylQuest,"Zdecydowa³em siê przyj¹æ propozycjê Flinta i porzuciæ zlecenie od Okyla.");
 	Log_SetTopicStatus       (CH1_OkylQuest, LOG_FAILED);
     MIS_OkylQuest = LOG_FAILED;
 };
@@ -333,7 +335,7 @@ FUNC VOID DIA_Flint_FollowMe_Info()
     AI_Output (self, other ,"DIA_Flint_FollowMe_03_02"); //Œwietnie! Pamiêtaj tylko, ¿eby uwa¿aæ na Najemników. 
 	AI_Output (other, self ,"DIA_Flint_FollowMe_15_03"); //Raczej nie uda nam siê omin¹æ g³ównej bramy. 
 	AI_Output (self, other ,"DIA_Flint_FollowMe_03_04"); //Dobrze by by³o ¿ebyœ mia³ w pogotowiu jak¹œ solidn¹ wymówkê. 
-	B_LogEntry                     (CH1_PropozycjaFlinta,"Id¹c wraz z Flintem powinienem pomyœleæ nad tym, co powiem Jarvisowi przy bramie do Nowego Obozu. Lepiej te¿ nie zbli¿aæ siê do wnêtrza jaskini. Niepotrzebne mi nowe k³opoty.");
+	B_LogEntry                     (CH1_FlintsOffer,"Id¹c wraz z Flintem powinienem pomyœleæ nad tym, co powiem Jarvisowi przy bramie do Nowego Obozu. Lepiej te¿ nie zbli¿aæ siê do wnêtrza jaskini. Niepotrzebne mi nowe k³opoty.");
     Npc_ExchangeRoutine (self, "follow");
 	self.aivar[AIV_PARTYMEMBER] = TRUE;
     AI_StopProcessInfos	(self);
@@ -372,16 +374,16 @@ FUNC VOID DIA_Flint_InOC1_Info()
     AI_Output (self, other ,"DIA_Flint_InOC1_03_05"); //Powinien byæ zadowolony.
     AI_Output (other, self ,"DIA_Flint_InOC1_15_06"); //Mam nadziejê. 
 	//log
-    B_LogEntry                     (CH1_PropozycjaFlinta,"Zaprowadzi³em Flinta do Starego Obozu.");
-    Log_SetTopicStatus       (CH1_PropozycjaFlinta, LOG_SUCCESS);
-    MIS_PropozycjaFlinta = LOG_SUCCESS;
+    B_LogEntry                     (CH1_FlintsOffer,"Zaprowadzi³em Flinta do Starego Obozu. Mam teraz przekazaæ Thorusowi, ¿e Cieñ odkry³ œcie¿kê prowadz¹c¹ do Wolnej Kopalni przez góry.");
+    //Log_SetTopicStatus       (CH1_FlintsOffer, LOG_SUCCESS);
+    //MIS_FlintsOffer = LOG_SUCCESS;
 	//experience
     B_GiveXP (XP_GoToOCWithFlint);
 	//log
-    MIS_FlintaPrzyjecie = LOG_RUNNING;
-    Log_CreateTopic          (CH1_FlintaPrzyjecie, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_FlintaPrzyjecie, LOG_RUNNING);
-    B_LogEntry               (CH1_FlintaPrzyjecie,"Mam przekazaæ Thorusowi, ¿e Flint odkry³ œcie¿kê prowadz¹c¹ do Wolnej Kopalni przez góry.");
+    //MIS_FlintaPrzyjecie = LOG_RUNNING;
+    //Log_CreateTopic          (CH1_FlintaPrzyjecie, LOG_MISSION);
+    //Log_SetTopicStatus       (CH1_FlintaPrzyjecie, LOG_RUNNING);
+    //B_LogEntry               (CH1_FlintaPrzyjecie,"Mam przekazaæ Thorusowi, ¿e Flint odkry³ œcie¿kê prowadz¹c¹ do Wolnej Kopalni przez góry.");
 	//npc
 	Npc_ExchangeRoutine (self, "prestart"); //1.25 edit
 	self.aivar[AIV_PARTYMEMBER] = FALSE;
@@ -463,7 +465,7 @@ FUNC VOID DIA_Flint_Emil_Fight()
     AI_Output (self, other ,"DIA_Flint_Emil_Fight_03_06"); //ChodŸmy na arenê, niech wszyscy zobacz¹, ¿e ze mn¹ nie ma ¿artów!
     AI_Output (other, self ,"DIA_Flint_Emil_Fight_15_07"); //ProwadŸ, zatem.
 	//log 
-    B_LogEntry              (CH1_CourierFireMage,"Zabójc¹ Emila jest jeden z Bandytów, kumpel Flinta z dawnych czasów. Zdradzi mi jego imiê, je¿eli pokonam go na arenie.");
+    B_LogEntry              (CH2_CourierFireMage,"Zabójc¹ Emila jest jeden z Bandytów, kumpel Flinta z dawnych czasów. Zdradzi mi jego imiê, je¿eli pokonam go na arenie.");
     //rutyna dodana
 	Npc_ExchangeRoutine (self,"arena");
 	//exit
@@ -481,7 +483,7 @@ FUNC VOID DIA_Flint_Emil_Help ()
 	AI_Output (self, other ,"DIA_Flint_Emil_Help_03_06"); //No dobra. Skoro tak stawiasz sprawê... Bandyta nazywa siê Ratford. Wiem, ¿e jest cz³onkiem bandy Quentina.
 	AI_Output (self, other ,"DIA_Flint_Emil_Help_03_07"); //Nic wiêcej nie wiem. 
 	//log
-    B_LogEntry                     (CH1_CourierFireMage,"Zabójc¹ Emila jest jeden z Bandytów, kumpel Flinta z dawnych czasów. Goœæ nazywa siê Ratford.");
+    B_LogEntry                     (CH2_CourierFireMage,"Zabójc¹ Emila jest jeden z Bandytów, kumpel Flinta z dawnych czasów. Goœæ nazywa siê Ratford.");
 	//exit
 	Info_ClearChoices		(DIA_Flint_Emil);
     AI_StopProcessInfos	(self);
@@ -560,7 +562,7 @@ FUNC VOID DIA_Flint_HeroWin_Info()
     AI_Output (self, other ,"DIA_Flint_HeroWin_03_09"); //Jak chcesz to sobie sam ich szukaj. Ja ci nie pomogê.
     AI_Output (other, self ,"DIA_Flint_HeroWin_15_10"); //Widzisz, to nie by³o takie trudne. 
 	//log
-    B_LogEntry                     (CH1_CourierFireMage,"Pokona³em Flinta na arenie. Zabójc¹ Emila jest Ratford, Szkodnik z Nowego Obozu wspó³pracuj¹cy z Bandytami.");
+    B_LogEntry                     (CH2_CourierFireMage,"Pokona³em Flinta na arenie. Zabójc¹ Emila jest Ratford, Szkodnik z Nowego Obozu wspó³pracuj¹cy z Bandytami.");
 	//gildia
 	STT_2046_Flint.guild = GIL_STT;
 	Npc_SetTrueGuild (STT_2046_Flint, GIL_STT);
@@ -603,8 +605,8 @@ FUNC VOID DIA_Flint_HeroLose_Info()
     AI_Output (self, other ,"DIA_Flint_HeroLose_03_01"); //Przegra³eœ! Nie mamy o czym rozmawiaæ.
 	//log
 	MIS_CourierFireMage = LOG_SUCCESS;
-	Log_SetTopicStatus  (CH1_CourierFireMage, LOG_SUCCESS);
-    B_LogEntry          (CH1_CourierFireMage,"Przegra³em walkê. Teraz ju¿ nigdy siê nie dowiem, kto zabi³ Emila.");
+	Log_SetTopicStatus  (CH2_CourierFireMage, LOG_SUCCESS);
+    B_LogEntry          (CH2_CourierFireMage,"Przegra³em walkê. Teraz ju¿ nigdy siê nie dowiem, kto zabi³ Emila.");
 	//npc
 	Npc_ExchangeRoutine (self, "START");
 	//gildia

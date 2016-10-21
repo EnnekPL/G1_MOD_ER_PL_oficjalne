@@ -13,7 +13,7 @@ INSTANCE DIA_Organisator_LookingForWedge (C_INFO)
 
 FUNC INT DIA_Organisator_LookingForWedge_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Shrike_FINGERS)) && (MIS_HandDed == LOG_RUNNING)
+    if (Npc_KnowsInfo (hero, DIA_Shrike_FINGERS)) && (MIS_FingersSeeking == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -33,7 +33,7 @@ FUNC VOID DIA_Organisator_LookingForWedge_Info()
     Info_AddChoice		(DIA_Organisator_LookingForWedge, "Ca³uj mnie w dupê. ", DIA_Organisator_LookingForWedge_KissMyAss);
     Info_AddChoice		(DIA_Organisator_LookingForWedge, "W sumie racja. (Daj 5 bry³ek rudy)", DIA_Organisator_LookingForWedge_Ok);
 	
-	B_LogEntry                     (CH1_HandDed,"Od pewnego Szkodnika dowiedzia³em siê, ¿e R¹czka wraz z Klinem wyszli przed Obóz, ¿eby o czymœ pogadaæ.");
+	B_LogEntry                     (CH2_FingersSeeking,"Od pewnego Szkodnika dowiedzia³em siê, ¿e R¹czka wraz z Klinem wyszli przed Obóz, ¿eby o czymœ pogadaæ.");
 	
 };
 
@@ -746,7 +746,7 @@ instance TRIA_KillFingers (C_INFO)
 
 func int TRIA_KillFingers_condition()
 {
-	if ( (Npc_GetDistToNpc (hero,self) < 900) && (Npc_KnowsInfo (hero, DIA_Organisator_LookingForWedge)) && (MIS_HandDed == LOG_RUNNING) )
+	if ( (Npc_GetDistToNpc (hero,self) < 900) && (Npc_KnowsInfo (hero, DIA_Organisator_LookingForWedge)) && (MIS_FingersSeeking == LOG_RUNNING) )
 	{
 		return TRUE;
 	};
@@ -834,7 +834,7 @@ func void TRIA_KillFingers_info()
     Info_AddChoice		(TRIA_KillFingers, "(pomó¿ R¹czce)", TRIA_KillFingers_HELP);
     Info_AddChoice		(TRIA_KillFingers, "(nic nie rób)", TRIA_KillFingers_NOPE);
 	
-	B_LogEntry                     (CH1_HandDed,"Przed Nowym Obozem znalaz³em R¹czkê i Klina. Obaj k³ócili siê o jak¹œ za¿y³oœæ z przesz³oœci. Klin uwa¿a, ¿e R¹czka wyda³ go stra¿y miejskiej przez co ten trafi³ do Kolonii. Z kolei Cieñ przedstawia doœæ silne alibi, które jednak wymaga potwierdzenia. Muszê stan¹æ przed wyborem komu zaufam. ");
+	B_LogEntry                     (CH2_FingersSeeking,"Przed Nowym Obozem znalaz³em R¹czkê i Klina. Obaj k³ócili siê o jak¹œ za¿y³oœæ z przesz³oœci. Klin uwa¿a, ¿e R¹czka wyda³ go stra¿y miejskiej przez co ten trafi³ do Kolonii. Z kolei Cieñ przedstawia doœæ silne alibi, które jednak wymaga potwierdzenia. Muszê stan¹æ przed wyborem komu zaufam. ");
 };
 
 FUNC VOID TRIA_KillFingers_HELP ()
@@ -853,7 +853,7 @@ var c_npc Wedge;    	Wedge = Hlp_GetNpc(ORG_850_Wedge); // Ihm gehört der Dialog
 		AI_StopProcessInfos (self);
 		Npc_ExchangeRoutine	(Wedge, "start");
 		
-		B_LogEntry                     (CH1_HandDed,"Nie pozwoli³em na œmieræ R¹czki. Rani³em Klina moj¹ broni¹ zanim ten zd¹¿y³ cokolwiek zrobiæ.");
+		B_LogEntry                     (CH2_FingersSeeking,"Nie pozwoli³em na œmieræ R¹czki. Rani³em Klina moj¹ broni¹ zanim ten zd¹¿y³ cokolwiek zrobiæ.");
 		HeroPermitToKillFingers = false;
 };
 
@@ -873,7 +873,7 @@ var c_npc Wedge;    	Wedge = Hlp_GetNpc(ORG_850_Wedge); // Ihm gehört der Dialog
 		AI_StopProcessInfos (self);
 		Npc_ExchangeRoutine	(Wedge, "start");
 		
-		B_LogEntry                     (CH1_HandDed,"Pozwoli³em Klinowi zabiæ R¹czkê. Przypuszczam, ¿e to co mówi³ by³o prawd¹ i Cieñ zas³u¿y³ na œmieræ. Zreszt¹ to nie moja sprawa. Muszê powiedzieæ Diego, ¿e jego cz³owiek nie ¿yje.");
+		B_LogEntry                     (CH2_FingersSeeking,"Pozwoli³em Klinowi zabiæ R¹czkê. Przypuszczam, ¿e to co mówi³ by³o prawd¹ i Cieñ zas³u¿y³ na œmieræ. Zreszt¹ to nie moja sprawa. Muszê powiedzieæ Diego, ¿e jego cz³owiek nie ¿yje.");
 		HeroPermitToKillFingers = true;
 };
 

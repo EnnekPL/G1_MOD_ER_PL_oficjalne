@@ -1155,7 +1155,7 @@ INSTANCE DIA_Raeuber_ZNANY_NAJEMNIK (C_INFO)
 
 FUNC INT DIA_Raeuber_ZNANY_NAJEMNIK_Condition()
 {
-    if (MIS_PomocTorlofowi == LOG_RUNNING) || (MIS_PomocTorlofowi == LOG_SUCCESS)
+    if (MIS_TorlofNeedHelp == LOG_RUNNING) || (MIS_TorlofNeedHelp == LOG_SUCCESS)
     {
     return TRUE;
     };
@@ -1295,7 +1295,7 @@ INSTANCE DIA_Raeuber_GoL (C_INFO)
 
 FUNC INT DIA_Raeuber_GoL_Condition()
 {
-    if (MIS_OdbijanieOpKop == LOG_RUNNING)
+    if (MIS_BanditsInAbadonedMine == LOG_RUNNING)
     //&& (Npc_KnowsInfo (hero, DIA_Raeuber_backtoCamp)) niepotrzebne
     {
     return TRUE;
@@ -1312,7 +1312,7 @@ FUNC VOID DIA_Raeuber_GoL_Info()
 	//  self.aivar[AIV_PARTYMEMBER] = TRUE;
 	// Npc_ExchangeRoutine (self,"pomoc");
 	RockyRobiZaDoyle  = false;
-    B_LogEntry                     (CH1_OdbijanieOpKop,"Doyle doradzi³ mi, ¿ebym poszed³ jeszcze po Chrisa i Rockiego. Mog¹ nam siê przydaæ. ");
+    B_LogEntry                     (CH4_BanditsInAbadonedMine,"Doyle doradzi³ mi, ¿ebym poszed³ jeszcze po Chrisa i Rockiego. Mog¹ nam siê przydaæ. ");
     AI_StopProcessInfos	(self);
 };
 
@@ -1431,7 +1431,7 @@ FUNC VOID DIA_Raeuber_Spiepszam_Info()
     AI_Output (other, self ,"DIA_Raeuber_Spiepszam_15_02"); //Jak sobie chcesz. Pewnie bêdê siê tam dobrze bawi³.
     AI_Output (self, other ,"DIA_Raeuber_Spiepszam_03_03"); //No to ¿yczê powodzenia. Bêdê pilnowa³ wejœcia.
     AI_Output (other, self ,"DIA_Raeuber_Spiepszam_15_05"); //W porz¹dku.
-    B_LogEntry          (CH1_OdbijanieOpKop,"Dotarliœmy na miejsce. Wokó³ wejœcia do kopalni roi³o siê od Stra¿ników i nieumar³ych. Pod ziemiê bêdê musia³ zejœæ sam. Doyle, ani pozostali Bandyci nie s¹ sk³onni mi pomóc.");
+    B_LogEntry          (CH4_BanditsInAbadonedMine,"Dotarliœmy na miejsce. Wokó³ wejœcia do kopalni roi³o siê od Stra¿ników i nieumar³ych. Pod ziemiê bêdê musia³ zejœæ sam. Doyle, ani pozostali Bandyci nie s¹ sk³onni mi pomóc.");
     AI_StopProcessInfos	(self);
 	Npc_ExchangeRoutine (self,"kopalnia");
 	Npc_ExchangeRoutine (BAN_1607_Chris,"kopalnia");
@@ -1482,7 +1482,7 @@ FUNC VOID DIA_Raeuber_NoNareszcie_Info()
         AI_Output (self, other ,"DIA_Raeuber_NoNareszcie_03_11"); //Nie denerwuj mnie!
         AI_Output (other, self ,"DIA_Raeuber_NoNareszcie_15_12"); //Dobra, ju¿ dobra. Uwa¿aj, bo go wyjmê!
         AI_Output (self, other ,"DIA_Raeuber_NoNareszcie_03_13"); //IdŸ ju¿.
-    B_LogEntry                     (CH1_OdbijanieOpKop,"Pokaza³em Doyle'owi artefakt odebrany nekromancie. Kaza³ mi udaæ siê z dobrymi wieœciami do Quentina. Wraz z Rockym i Chrisem postanowi³ pozostaæ tymczasowo na stra¿y.");
+    B_LogEntry                     (CH4_BanditsInAbadonedMine,"Pokaza³em Doyle'owi artefakt odebrany nekromancie. Kaza³ mi udaæ siê z dobrymi wieœciami do Quentina. Wraz z Rockym i Chrisem postanowi³ pozostaæ tymczasowo na stra¿y.");
 	HeroMaArtefakt = false;
     B_GiveXP (2000);
 	/*
@@ -1533,7 +1533,7 @@ FUNC VOID DIA_Raeuber_MamKamien_Info()
     AI_Output (other, self ,"DIA_Raeuber_MamKamien_15_01"); //Mam ju¿ ten kamieñ.
     AI_Output (self, other ,"DIA_Raeuber_MamKamien_03_02"); //To œwietnie. Zabierz go jak najszybciej ode mnie i idŸ do Quentina po dalsze rozkazy.
     AI_Output (self, other ,"DIA_Raeuber_MamKamien_03_03"); //My popilnujemy wejœcia do kopalni.
-B_LogEntry                     (CH1_OdbijanieOpKop,"Zabra³em z kopalni artefakt, który doprowadza³ do pojawiania siê o¿ywieñców. Kopalnia jest oczyszczona. Mogê iœæ do Quentina.");
+B_LogEntry                     (CH4_BanditsInAbadonedMine,"Zabra³em z kopalni artefakt, który doprowadza³ do pojawiania siê o¿ywieñców. Kopalnia jest oczyszczona. Mogê iœæ do Quentina.");
 B_GiveXP (500);    
 AI_StopProcessInfos	(self);
 HeroMaArtefakt = false;

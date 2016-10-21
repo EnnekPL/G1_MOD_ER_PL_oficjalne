@@ -825,7 +825,7 @@ var int MIS_Melvin_D³ug;
 // OBÓZ PRZY KOPALNI
 //********************************************
 var int MIS_EasyJoinOC;
-var int MIS_TrutkaOM;
+
 var int MIS_MiksturaTrujacaOM;
 var int MIS_RudaJoelowiOM;
 var int MIS_MineEnter;
@@ -869,7 +869,7 @@ var int MIS_AtakNaSO;
 var int MIS_Zniewolenie;
 var int MIS_FindFriends;
 var int dupa;
-var int MIS_MineChlopy;
+
 var int MIS_NoweKola;
 
 
@@ -883,7 +883,7 @@ var int MIS_NewWeed3BAU; //usuniête
 
 
 
-var int MIS_NC_Mine;
+
 var int MIS_KillFingers;
 var int MIS_FindPosazekKlina;
 
@@ -891,7 +891,7 @@ var int MIS_FindPosazekKlina;
 // STARY OBÓZ
 //********************************************
 
-var int MIS_HandDed;
+
 var int MIS_KosztemQuentina;
 //********************************************
 // KOLONIA
@@ -899,8 +899,8 @@ var int MIS_KosztemQuentina;
 var int MIS_CavalornFuck;
 
 
-var int MIS_Wherevart;
-var int MIS_Wherevart2;
+
+var int MIS_VartSeeking2;
 
 //czarny mag
 var int MIS_blackMage;
@@ -912,12 +912,12 @@ var int MIS_Cytadelaposzukiwacz;
 var int MIS_ListDoCronosa;
 
 
-var int MIS_MapaRicka;
-var int MIS_EqAngusa;
+
+
 var int MIS_SearhSkarb;
 
 var int MIS_helpSld1;
-var int MIS_OdbijanieOpKop;
+
 
 
 
@@ -925,11 +925,10 @@ var int MIS_OdbijanieOpKop;
 
 var int MIS_MagazynBroni;
 
-var int MIS_NowyVart;
 
-var int MIS_SytucajaWOM;
 
-var int MIS_Odstraszeni;
+
+
 
 
 
@@ -938,12 +937,12 @@ var int MIS_NekInNC;
 
 
 var int MIS_AlternativBanditoSCamp;
-var int MIS_EskortaKopaczy;
+
 
 var int MIS_ZnowuZapierdalam;
 
 
-var int MIS_Spike_Pomiot;
+
 
 
 //var int MIS_GuazyDrena;
@@ -951,23 +950,21 @@ var int MIS_Spike_Pomiot;
 
 var int MIS_HelpBrothersBra;//z³e
 
-var int MIS_PropozycjaFlinta;
-var int MIS_FlintaPrzyjecie;
-var int MIS_SayOkylFlintDead;
+//potrzebne
 
 
 
 
 
-var int MIS_SzpiegoMoroka;
-var int MIS_ZbrojaTemplera;
-var int MIS_FireMage_Help;
-var int MIS_RzopierdolInTemple;
+
+
+
+
 var int MIS_MagnatTrololo;
 var int MIS_OpiniaOSO;
 
 var int MIS_FightWithScar;
-var int MIS_MagnackiePi4erscienie;
+
 
 var int MIS_UCieczkaShrata;
 var int MIS_PorwanieAlexa;
@@ -987,7 +984,7 @@ var int MIS_ZieleClawa;
 
 
 var int MIS_ZabojstwBlizny;
-var int MIS_PamietnikZNieba;
+
 var int MIS_JosepZniknal;
 var int MIS_DziwnyJosep;
 var int MIS_WalkiBractwo;
@@ -1002,7 +999,7 @@ var int MIS_4Friends;
 
 
 var int MIS_InfoDlaLaresa;
-var int MIS_PomocTorlofowi;
+
 
 var int MIS_PomocQuentinowi;
 
@@ -1016,7 +1013,7 @@ var int MIS_Gdzie_hugo;
 var int mis_firenovize;
 var int MIS_Do_lowcow;
 
-var int MIS_Damarok_Zadla;
+
 
 var int MIS_Wielki_troll;
 var int MIS_Italian_Job;
@@ -1026,6 +1023,6 @@ var int MIS_ObronaWK;
 var int MIS_Upadek_Gomeza;
 
 
-var int MIS_CourierFireMage;
+
 var int MIS_FoodForOldMine;
 var int MIS_NewLocationForPirates;

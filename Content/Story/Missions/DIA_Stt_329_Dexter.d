@@ -41,7 +41,7 @@ FUNC INT DIA_Dexter_First_Condition()
 	if (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist)
 	&& (!Wld_IsTime	(02,00,03,00))
 	&& (Kapitel < 4)
-	&& (MIS_HandDed != LOG_RUNNING)
+	&& (MIS_FingersSeeking != LOG_RUNNING)
 	{
 		return 1;
 	};
@@ -555,7 +555,7 @@ INSTANCE DIA_Dexter_CSI_SO (C_INFO)
 
 FUNC INT DIA_Dexter_CSI_SO_Condition()
 {
-    if (MIS_HandDed == LOG_RUNNING)
+    if (MIS_FingersSeeking == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -581,7 +581,7 @@ FUNC VOID DIA_Dexter_CSI_SO_HUT()
     AI_Output (other, self ,"DIA_Dexter_CSI_SO_HUT_15_04"); //Sk¹d wiesz, ¿e w œrodku nie znajdziemy kolejnych gratów?
     AI_Output (self, other ,"DIA_Dexter_CSI_SO_HUT_03_05"); //Nie przekonamy siê dopóki jej nie otworzymy. 
 
-    B_LogEntry                     (CH1_HandDed,"Dexter znalaz³ w chacie R¹czki ma³¹ solidnie zamkniêt¹ skrzynkê. Muszê spróbowaæ poszukaæ do niej klucza.");
+    B_LogEntry                     (CH2_FingersSeeking,"Dexter znalaz³ w chacie R¹czki ma³¹ solidnie zamkniêt¹ skrzynkê. Muszê spróbowaæ poszukaæ do niej klucza.");
 	
 	Wld_InsertItem (ItMis_KeyFingers,"OC_MIS_SPAWNKEYFINGERS");
 	if hero_choice_dexter == false
@@ -602,7 +602,7 @@ FUNC VOID DIA_Dexter_CSI_SO_MOTYW()
     AI_Output (self, other ,"DIA_Dexter_CSI_SO_MOTYW_03_03"); //Musia³byœ zapytaæ o to Diego. Dobrze siê znali. 
     AI_Output (other, self ,"DIA_Dexter_CSI_SO_MOTYW_15_04"); //W takim razie pójdê z nim pogadaæ.
 	
-    B_LogEntry                     (CH1_HandDed,"Nie wiemy, czy R¹czka mia³ jakiœ wrogów. Muszê spytaæ o to Diego, który go dobrze zna.");
+    B_LogEntry                     (CH2_FingersSeeking,"Nie wiemy, czy R¹czka mia³ jakiœ wrogów. Muszê spytaæ o to Diego, który go dobrze zna.");
 
 	if hero_choice_dexter == false
 	{
@@ -631,7 +631,7 @@ INSTANCE DIA_Dexter_FindKey (C_INFO)
 
 FUNC INT DIA_Dexter_FindKey_Condition()
 {
-    if (MIS_HandDed == LOG_RUNNING) && (Npc_HasItems(other,ItMis_KeyFingers) >= 1)
+    if (MIS_FingersSeeking == LOG_RUNNING) && (Npc_HasItems(other,ItMis_KeyFingers) >= 1)
     {
     return TRUE;
     };
@@ -650,7 +650,7 @@ FUNC VOID DIA_Dexter_FindKey_Info()
 	AI_Output (self, other ,"DIA_Dexter_FindKey_03_03"); //Hmmm... To jakiœ notatnik. Przejrzyj go. Mo¿e znajdziemy tu jakieœ wskazówki. 
 	B_GiveInvItems (self,other,ItMis_FingersSecretBook,1);
 	
-	B_LogEntry                     (CH1_HandDed,"Znalaz³em w chacie znalaz³em klucz, który powinien pasowaæ do skrzynki. Wewn¹trz niej by³ pamiêtnik R¹czki. Muszê go przeczytaæ. Byæ mo¿e znajdê tam coœ, co mnie naprowadzi.");
+	B_LogEntry                     (CH2_FingersSeeking,"Znalaz³em w chacie znalaz³em klucz, który powinien pasowaæ do skrzynki. Wewn¹trz niej by³ pamiêtnik R¹czki. Muszê go przeczytaæ. Byæ mo¿e znajdê tam coœ, co mnie naprowadzi.");
 };
 
 //========================================
@@ -669,7 +669,7 @@ INSTANCE DIA_Dexter_ReadBook (C_INFO)
 
 FUNC INT DIA_Dexter_ReadBook_Condition()
 {
-    if (MIS_HandDed == LOG_RUNNING) && (ItemUsed_FingersSecretBook == true)
+    if (MIS_FingersSeeking == LOG_RUNNING) && (ItemUsed_FingersSecretBook == true)
     {
     return TRUE;
     };
@@ -693,7 +693,7 @@ FUNC VOID DIA_Dexter_ReadBook_Info()
 	CreateInvItems (self,itminugget,50);
 	B_GiveInvItems (self,other,itminugget,50);
 	
-	B_LogEntry                     (CH1_HandDed,"Pomoc Dextera w tym momencie siê koñczy. Mój dotychczasowy pomocnik uwa¿a, ¿e R¹czka na pewno nie ¿yje, a pójœcie do Nowego Obozu to samobójstwo. By³em ju¿ kilka razy w Nowym Obozie, wiêc to dla mnie nie pierwszyzna. Wypytam o naszego zaginionego Cienia i wrócê do Diego.");
+	B_LogEntry                     (CH2_FingersSeeking,"Pomoc Dextera w tym momencie siê koñczy. Mój dotychczasowy pomocnik uwa¿a, ¿e R¹czka na pewno nie ¿yje, a pójœcie do Nowego Obozu to samobójstwo. By³em ju¿ kilka razy w Nowym Obozie, wiêc to dla mnie nie pierwszyzna. Wypytam o naszego zaginionego Cienia i wrócê do Diego.");
 	
 	Npc_ExchangeRoutine (self,"start");
 };

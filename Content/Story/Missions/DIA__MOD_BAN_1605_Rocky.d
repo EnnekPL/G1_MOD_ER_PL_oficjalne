@@ -835,7 +835,7 @@ INSTANCE DIA_Rocky_GoToMine (C_INFO)
 
 FUNC INT DIA_Rocky_GoToMine_Condition()
 {
-    if (MIS_OdbijanieOpKop == LOG_RUNNING) && (Npc_KnowsInfo (hero, DIA_Raeuber_GoL))
+    if (MIS_BanditsInAbadonedMine == LOG_RUNNING) && (Npc_KnowsInfo (hero, DIA_Raeuber_GoL))
     {
     return TRUE;
     };
@@ -853,9 +853,9 @@ FUNC VOID DIA_Rocky_GoToMine_Info()
 	//AI_StopProcessInfos	(self);
 	MIS_RockyArmor = LOG_RUNNING;
 
-    Log_CreateTopic      (CH1_RockyArmor, LOG_MISSION);
-    Log_SetTopicStatus   (CH1_RockyArmor, LOG_RUNNING);
-    B_LogEntry       	 (CH1_RockyArmor,"Je¿eli chcê, aby Rocky poszed³ ze mn¹ do kopalni, muszê za³atwiæ mu nowy pancerz.");
+    Log_CreateTopic      (CH4_RockyArmor, LOG_MISSION);
+    Log_SetTopicStatus   (CH4_RockyArmor, LOG_RUNNING);
+    B_LogEntry       	 (CH4_RockyArmor,"Je¿eli chcê, aby Rocky poszed³ ze mn¹ do kopalni, muszê za³atwiæ mu nowy pancerz.");
 
 };
 //========================================
@@ -919,8 +919,8 @@ FUNC VOID DIA_Quentin_DOOBOZU_MYSLIWY()
     AI_Output (self, other ,"DIA_Quentin_DOOBOZU_MYSLIWY_03_03"); //Œwietna robota.
 	B_giveXP (400);
 	MIS_RockyArmor = LOG_SUCCESS;
-    Log_SetTopicStatus       (CH1_RockyArmor, LOG_SUCCESS);
-    B_LogEntry       (CH1_RockyArmor,"Da³em Rockiemu ozdobn¹ zbrojê myœliwego. Jest gotowy ¿eby wyruszyæ.");
+    Log_SetTopicStatus       (CH4_RockyArmor, LOG_SUCCESS);
+    B_LogEntry       (CH4_RockyArmor,"Da³em Rockiemu ozdobn¹ zbrojê myœliwego. Jest gotowy ¿eby wyruszyæ.");
 	B_GiveInvItems      (hero, self, NON_ARMOR1, 1);
     Info_ClearChoices		(DIA_Rocky_AddArmor);
 	DIA_Rocky_AddArmor.permanent	= 0;
@@ -934,8 +934,8 @@ FUNC VOID DIA_Quentin_DOOBOZU_BANDITOSMID()
     AI_Output (self, other ,"DIA_Quentin_DOOBOZU_BANDITOSMID_03_03"); //Œwietna robota.
 	B_giveXP (300);
 	MIS_RockyArmor = LOG_SUCCESS;
-    Log_SetTopicStatus       (CH1_RockyArmor, LOG_SUCCESS);
-    B_LogEntry       (CH1_RockyArmor,"Da³em Rockiemu moj¹ star¹ zbrojê. Jest gotowy ¿eby wyruszyæ.");
+    Log_SetTopicStatus       (CH4_RockyArmor, LOG_SUCCESS);
+    B_LogEntry       (CH4_RockyArmor,"Da³em Rockiemu moj¹ star¹ zbrojê. Jest gotowy ¿eby wyruszyæ.");
 	B_GiveInvItems      (hero, self, BAU_ARMOR_H, 1);
     Info_ClearChoices		(DIA_Rocky_AddArmor);
 	DIA_Rocky_AddArmor.permanent	= 0;
@@ -949,8 +949,8 @@ FUNC VOID DIA_Quentin_PODROZNIK()
     AI_Output (self, other ,"DIA_Quentin_PODROZNIK_03_03"); //Podoba mi siê! Dziêki.
 	B_giveXP (300);
 	MIS_RockyArmor = LOG_SUCCESS;
-    Log_SetTopicStatus       (CH1_RockyArmor, LOG_SUCCESS);
-    B_LogEntry       (CH1_RockyArmor,"Da³em Rockiemu moj¹ star¹ zbrojê. Jest gotowy ¿eby wyruszyæ.");
+    Log_SetTopicStatus       (CH4_RockyArmor, LOG_SUCCESS);
+    B_LogEntry       (CH4_RockyArmor,"Da³em Rockiemu moj¹ star¹ zbrojê. Jest gotowy ¿eby wyruszyæ.");
 	B_GiveInvItems      (hero, self, PodroznikArmor, 1);
     Info_ClearChoices		(DIA_Rocky_AddArmor);
 	DIA_Rocky_AddArmor.permanent	= 0;
@@ -964,8 +964,8 @@ FUNC VOID DIA_Quentin_DOOBOZU_PIRAT()
     AI_Output (self, other ,"DIA_Quentin_DOOBOZU_PIRAT_03_03"); //Wola³bym coœ mocniejszego, ale skoro nie masz nic innego. Dziêki.
 	B_giveXP (300);
 	MIS_RockyArmor = LOG_SUCCESS;
-    Log_SetTopicStatus       (CH1_RockyArmor, LOG_SUCCESS);
-    B_LogEntry       (CH1_RockyArmor,"Da³em Rockiemu strój pirata. Jest gotowy ¿eby wyruszyæ.");
+    Log_SetTopicStatus       (CH4_RockyArmor, LOG_SUCCESS);
+    B_LogEntry       (CH4_RockyArmor,"Da³em Rockiemu strój pirata. Jest gotowy ¿eby wyruszyæ.");
 	B_GiveInvItems      (hero, self, PiratArmor, 1);
     Info_ClearChoices		(DIA_Rocky_AddArmor);
 	DIA_Rocky_AddArmor.permanent	= 0;
@@ -1128,7 +1128,7 @@ FUNC VOID DIA_Rocky_NoNareszcie_Info()
         AI_Output (other, self ,"DIA_Rocky_NoNareszcie_15_12"); //Dobra, ju¿ dobra. Uwa¿aj, bo go wyjmê!
         AI_Output (self, other ,"DIA_Rocky_NoNareszcie_03_13"); //IdŸ ju¿.
 		
-    //B_LogEntry                     (CH1_OdbijanieOpKop,"Wkrótce po odnalezieniu tajemniczego kamienia z Opuszczonej Kopalni uda³em siê na zewn¹trz. Czekali tam ju¿ na mnie sprzymierzeñcy. Bandyta Rocky ");
+    //B_LogEntry                     (CH4_BanditsInAbadonedMine,"Wkrótce po odnalezieniu tajemniczego kamienia z Opuszczonej Kopalni uda³em siê na zewn¹trz. Czekali tam ju¿ na mnie sprzymierzeñcy. Bandyta Rocky ");
 	HeroMaArtefakt = false;
     B_GiveXP (500);
     }

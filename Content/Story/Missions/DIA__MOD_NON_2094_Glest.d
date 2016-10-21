@@ -107,7 +107,7 @@ FUNC VOID DIA_Glest_First_Info()
 	//zadanie - wpis dla bandyty
 	if (Npc_GetTrueGuild(hero) == GIL_BAU)
 	{
-	B_LogEntry                     (CH1_OdbijanieOpKop,"Zaraz po zejœciu na dó³ spotka³em rannego Kopacza. Dowiedzia³em siê, ¿e Stra¿nicy których wys³a³ Gomez zostali niemal¿e wybici przez hordy o¿ywieñców wype³zaj¹cych spod ziemi. Kopacz twierdzi i¿ widzia³ jakiegoœ nekromantê dzier¿¹cego potê¿ny artefakt, dziêki któremu mo¿e on przywo³ywaæ nieumar³ych. Jeœli to prawda, bêdê siê musia³ z nim zmierzyæ.");
+	B_LogEntry                     (CH4_BanditsInAbadonedMine,"Zaraz po zejœciu na dó³ spotka³em rannego Kopacza. Dowiedzia³em siê, ¿e Stra¿nicy których wys³a³ Gomez zostali niemal¿e wybici przez hordy o¿ywieñców wype³zaj¹cych spod ziemi. Kopacz twierdzi i¿ widzia³ jakiegoœ nekromantê dzier¿¹cego potê¿ny artefakt, dziêki któremu mo¿e on przywo³ywaæ nieumar³ych. Jeœli to prawda, bêdê siê musia³ z nim zmierzyæ.");
 	}
 	else 
 	{

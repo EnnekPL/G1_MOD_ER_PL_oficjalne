@@ -304,11 +304,11 @@ FUNC VOID DIA_Outlam_HELLO1_Info()
     AI_Output (other, self ,"DIA_Outlam_HELLO1_15_05"); //Pamiêtnik?
     AI_Output (self, other ,"DIA_Outlam_HELLO1_03_06"); //Nie mam pojêcia sk¹d siê tu wzi¹³. Próbujê rozwik³aæ tê zagadkê.
 
-    MIS_PamietnikZNieba = LOG_RUNNING;
+    MIS_FlyingBook = LOG_RUNNING;
 
-    Log_CreateTopic            (CH1_PamietnikZNieba, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_PamietnikZNieba, LOG_RUNNING);
-    B_LogEntry                     (CH1_PamietnikZNieba,"Myœliwemu Outlamowi spad³ na g³owê stary pamiêtnik. Zastanawia siê, jak to siê mog³o staæ..");
+    Log_CreateTopic            (CH1_FlyingBook, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_FlyingBook, LOG_RUNNING);
+    B_LogEntry                     (CH1_FlyingBook,"Myœliwemu Outlamowi spad³ na g³owê stary pamiêtnik. Zastanawia siê, jak to siê mog³o staæ...");
 };
 
 //========================================
@@ -372,9 +372,9 @@ FUNC VOID DIA_Outlam_Zagadka_Info()
     AI_Output (other, self ,"DIA_Outlam_Zagadka_15_03"); //W górach znalaz³em szcz¹tki starszego mê¿czyzny. Mia³ przy magiczny kryszta³. Wed³ug pamiêtnika, kilka lat temu ukrad³ go z Kot³a.
     AI_Output (other, self ,"DIA_Outlam_Zagadka_15_04"); //Przypuszczam, ¿e to jego pamiêtnik. Po prostu przywia³ go tu wiatr. 
     AI_Output (self, other ,"DIA_Outlam_Zagadka_03_05"); //W górach ³atwo o wiatr. To co mówisz ma sens. W nagrodê mo¿esz zachowaæ kryszta³.
-    B_LogEntry                     (CH1_PamietnikZNieba,"Tajemnica rozwi¹zana. Pamiêtnik nale¿a³ do starca z gór, który przed laty ukrad³ magiczny kryszta³ z Wolnej Kopalni.");
-    Log_SetTopicStatus       (CH1_PamietnikZNieba, LOG_SUCCESS);
-    MIS_PamietnikZNieba = LOG_SUCCESS;
+    B_LogEntry                     (CH1_FlyingBook,"Tajemnica rozwi¹zana. Pamiêtnik nale¿a³ do starca z gór, który przed laty ukrad³ magiczny kryszta³ z Wolnej Kopalni.");
+    Log_SetTopicStatus       (CH1_FlyingBook, LOG_SUCCESS);
+    MIS_FlyingBook = LOG_SUCCESS;
 
     B_GiveXP (150);
     AI_StopProcessInfos	(self);

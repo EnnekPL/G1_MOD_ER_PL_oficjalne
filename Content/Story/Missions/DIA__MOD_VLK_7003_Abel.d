@@ -94,7 +94,7 @@ INSTANCE DIA_Abel_TRUTKA (C_INFO)
 
 FUNC INT DIA_Abel_TRUTKA_Condition()
 {
-    if (MIS_TrutkaOM == LOG_RUNNING) && (Npc_KnowsInfo (hero, DIA_Abel_ALCHEMY))
+    if (MIS_Poison == LOG_RUNNING) && (Npc_KnowsInfo (hero, DIA_Abel_ALCHEMY))
     {
     return TRUE;
     };
@@ -106,6 +106,7 @@ FUNC VOID DIA_Abel_TRUTKA_Info()
     AI_Output (other, self ,"DIA_Abel_TRUTKA_15_01"); //Potrafisz przygotowaæ truciznê?
     AI_Output (self, other ,"DIA_Abel_TRUTKA_03_02"); //Truciznê powiadasz? Znam jeden przepis na s³ab¹ truciznê, ale musisz mi przynieœæ sk³adniki.
     AI_Output (self, other ,"DIA_Abel_TRUTKA_03_03"); //Przypuszczam, ¿e móg³byœ j¹ te¿ kupiæ w Bractwie, albo u jakiegoœ handlarza, który ma kontakty z magami.
+	B_LogEntry               (CH1_Poison,"Niejaki Abel z obozu przed kopalni¹ potrafi przygotowaæ s³ab¹ truciznê, jednak potrzebuje sk³adników.");
 };
 
 //========================================
@@ -125,7 +126,7 @@ INSTANCE DIA_Abel_CREATE (C_INFO)
 FUNC INT DIA_Abel_CREATE_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Abel_TRUTKA))
-    && (MIS_TrutkaOM == LOG_RUNNING)
+    && (MIS_Poison == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -138,12 +139,11 @@ FUNC VOID DIA_Abel_CREATE_Info()
     AI_Output (self, other ,"DIA_Abel_CREATE_03_02"); //No dobrze. Przynieœ mi wiêc: butelkê wody, krucze ziele, bagienne ziele i jedno piwo.
     AI_Output (other, self ,"DIA_Abel_CREATE_15_03"); //Po co ci piwo?
     AI_Output (self, other ,"DIA_Abel_CREATE_03_04"); //Chcê siê napiæ. He he.
-    MIS_MiksturaTrujacaOM = LOG_RUNNING;
+    //MIS_MiksturaTrujacaOM = LOG_RUNNING;
 
-    Log_CreateTopic          (CH1_MiksturaTrujacaOM, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_MiksturaTrujacaOM, LOG_RUNNING);
-    B_LogEntry               (CH1_MiksturaTrujacaOM,"Abel przygotuje dla mnie truj¹c¹ miksturê, je¿eli dostanie: butelkê wody, krucze ziele, bagienne ziele i jedno piwo.");
-    AI_StopProcessInfos	(self);
+    //Log_CreateTopic          (CH1_MiksturaTrujacaOM, LOG_MISSION);
+    //Log_SetTopicStatus       (CH1_MiksturaTrujacaOM, LOG_RUNNING);
+    B_LogEntry               (CH1_Poison,"Abel przygotuje dla mnie truj¹c¹ miksturê, je¿eli dostanie: butelkê wody, krucze ziele, bagienne ziele i jedno piwo.");
 };
 
 //========================================
@@ -163,7 +163,7 @@ INSTANCE DIA_Abel_QUEST_OK (C_INFO)
 FUNC INT DIA_Abel_QUEST_OK_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Abel_CREATE))
-    && (MIS_MiksturaTrujacaOM == LOG_RUNNING)
+    //&& (MIS_MiksturaTrujacaOM == LOG_RUNNING)
     && (Npc_HasItems (other, ItFoBeer) >=1)
     && (Npc_HasItems (other, ItFo_Plants_RavenHerb_01) >=1)
     && (Npc_HasItems (other, ItFo_Potion_Water_01) >=1)
@@ -178,17 +178,18 @@ FUNC VOID DIA_Abel_QUEST_OK_Info()
 {
     AI_Output (other, self ,"DIA_Abel_QUEST_OK_15_01"); //Mam twoje sk³adniki.
     AI_Output (self, other ,"DIA_Abel_QUEST_OK_03_02"); //To œwietnie. Poczekaj chwilkê.
+	AI_Output (self, other ,"DIA_Abel_QUEST_OK_03_03"); //Gotowe!
     B_GiveInvItems (other, self, ItMi_Plants_Swampherb_01, 1);
     B_GiveInvItems (other, self, ItFo_Plants_RavenHerb_01, 1);
     B_GiveInvItems (other, self, ItFo_Potion_Water_01, 1);
     B_GiveInvItems (other, self, ItFoBeer, 1);
     CreateInvItems (self, ItMi_Alchemy_trucizna_01, 1);
     B_GiveInvItems (self, other, ItMi_Alchemy_trucizna_01, 1);
-    B_LogEntry               (CH1_MiksturaTrujacaOM,"Zanios³em Ablowi potrzebne sk³adniki. Otrzyma³em s³ab¹ miksturê truj¹c¹.");
-    Log_SetTopicStatus       (CH1_MiksturaTrujacaOM, LOG_SUCCESS);
-    MIS_MiksturaTrujacaOM = LOG_SUCCESS;
+    B_LogEntry               (CH1_Poison,"Zanios³em Ablowi potrzebne sk³adniki. Otrzyma³em s³ab¹ miksturê truj¹c¹.");
+    //Log_SetTopicStatus       (CH1_MiksturaTrujacaOM, LOG_SUCCESS);
+   // MIS_MiksturaTrujacaOM = LOG_SUCCESS;
 
-    B_GiveXP (200);
+    B_GiveXP (55);
 };
 
 //========================================

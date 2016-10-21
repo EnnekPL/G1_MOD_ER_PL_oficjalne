@@ -332,7 +332,7 @@ INSTANCE DIA_Torlof_iHelpYou (C_INFO)
 
 FUNC INT DIA_Torlof_iHelpYou_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Raeuber_FindFriend2)) || (MIS_PomocTorlofowi == LOG_RUNNING) || (go_help_torlof == true)
+    if (Npc_KnowsInfo (hero, DIA_Raeuber_FindFriend2)) || (MIS_TorlofNeedHelp == LOG_RUNNING) || (go_help_torlof == true)
     {
     return TRUE;
     };

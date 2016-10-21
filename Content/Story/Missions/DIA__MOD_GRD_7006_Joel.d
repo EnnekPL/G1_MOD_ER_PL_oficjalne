@@ -231,11 +231,11 @@ FUNC VOID DIA_Joel_Wazne_Info()
     AI_Output (self, other ,"DIA_Joel_Wazne_03_05"); //Wiesz... wtedy wolniej pracuj¹.
     AI_Output (other, self ,"DIA_Joel_Wazne_15_06"); //Mo¿e móg³bym mu jakoœ pomóc?
     AI_Output (self, other ,"DIA_Joel_Wazne_03_07"); //Gdyby uda³o ci siê jakoœ wp³yn¹æ na Kopaczy...
-    MIS_Spike_Pomiot = LOG_RUNNING;
+    MIS_SpikeLoser = LOG_RUNNING;
 
-    Log_CreateTopic          (CH1_Spike_Pomiot, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_Spike_Pomiot, LOG_RUNNING);
-    B_LogEntry               (CH1_Spike_Pomiot,"Joel opowiedzia³ mi o problemie Spike'a. Stra¿nik jest obiektem drwin Kopaczy z obozu. Muszê znaleŸæ kogoœ, kto wp³ynie na robotników.");
+    Log_CreateTopic          (CH1_SpikeLoser, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_SpikeLoser, LOG_RUNNING);
+    B_LogEntry               (CH1_SpikeLoser,"Joel opowiedzia³ mi o problemie Spike'a. Stra¿nik jest obiektem drwin Kopaczy z obozu. Muszê znaleŸæ kogoœ, kto wp³ynie na robotników.");
 };
 
 // **************************************************

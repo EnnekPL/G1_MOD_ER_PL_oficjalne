@@ -225,7 +225,7 @@ FUNC VOID DIA_Bullit_LACHMYTA_Info()
 	{
     AI_Output (other, self ,"DIA_Bullit_LACHMYTA_15_07"); //Jeszcze za wszystko zap³acisz!
 	};
-    B_LogEntry  (CH1_Odstraszeni,"Na placu wymian spotka³em Bullita. Na szczêœcie nie dosz³o do konfrontacji.");
+    B_LogEntry  (CH2_BullitBadass,"Na placu wymian spotka³em Bullita. Na szczêœcie nie dosz³o do konfrontacji.");
 	Npc_ExchangeRoutine	(GRD_203_Bullit, "start");	
     AI_StopProcessInfos	(self);
 };

@@ -730,11 +730,11 @@ FUNC VOID DIA_Quentin_SzpeszialQuest_Info()
     AI_Output (self, other ,"DIA_Quentin_SzpeszialQuest_03_08"); //Tak. Pogadaj z Miguelem. To nasz cz³owiek w Obozie. Znajdziesz go na targowisku.
     AI_Output (self, other ,"DIA_Quentin_SzpeszialQuest_03_09"); //Goœæ zna Stary Obóz jak w³asn¹ kieszeñ.
     AI_Output (other, self ,"DIA_Quentin_SzpeszialQuest_15_10"); //Dobra. Postaram siê przynieœæ ci te pierœcienie jak najszybciej.
-    MIS_MagnackiePi4erscienie = LOG_RUNNING;
+    MIS_BaronsRings = LOG_RUNNING;
 
-    Log_CreateTopic            (CH1_MagnackiePi4erscienie, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_MagnackiePi4erscienie, LOG_RUNNING);
-    B_LogEntry                     (CH1_MagnackiePi4erscienie,"Quentin kaza³ mi odszukaæ wszystkie magiczne pierœcienie nale¿¹ce do Magnatów. Pomóc mi w tym ma Miguel. ");
+    Log_CreateTopic            (CH1_BaronsRings, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_BaronsRings, LOG_RUNNING);
+    B_LogEntry                     (CH1_BaronsRings,"Quentin kaza³ mi odszukaæ wszystkie magiczne pierœcienie nale¿¹ce do Magnatów. Pomóc mi w tym ma Miguel. ");
     AI_StopProcessInfos	(self);
 };
 
@@ -754,7 +754,7 @@ INSTANCE DIA_Quentin_HELLORINGS (C_INFO)
 
 FUNC INT DIA_Quentin_HELLORINGS_Condition()
 {
-    if (MIS_MagnackiePi4erscienie == LOG_RUNNING)
+    if (MIS_BaronsRings == LOG_RUNNING)
     && (Npc_HasItems (other, EBR_Ring1) >=1)
     && (Npc_HasItems (other, EBR_Ring2) >=1)
     && (Npc_HasItems (other, EBR_Ring3) >=1)
@@ -772,9 +772,9 @@ FUNC VOID DIA_Quentin_HELLORINGS_Info()
     AI_Output (other, self ,"DIA_Quentin_HELLORINGS_15_04"); //Co chcesz z nimi zrobiæ?
     AI_Output (self, other ,"DIA_Quentin_HELLORINGS_03_05"); //Mam kilka pomys³ów, ale muszê to jeszcze przemyœleæ.
     AI_Output (self, other ,"DIA_Quentin_HELLORINGS_03_06"); //Tymczasem weŸ swoj¹ rudê.
-    B_LogEntry                     (CH1_MagnackiePi4erscienie,"Odda³em skardzione pierœcienie Quentinowi.");
-    Log_SetTopicStatus       (CH1_MagnackiePi4erscienie, LOG_SUCCESS);
-    MIS_MagnackiePi4erscienie = LOG_SUCCESS;
+    B_LogEntry                     (CH1_BaronsRings,"Odda³em skardzione pierœcienie Quentinowi.");
+    Log_SetTopicStatus       (CH1_BaronsRings, LOG_SUCCESS);
+    MIS_BaronsRings = LOG_SUCCESS;
 
     B_GiveXP (XP_EBR_Rings);
 	B_GiveInvItems (hero,self, EBR_Ring1, 1);
@@ -1966,10 +1966,10 @@ FUNC VOID DIA_Quentin_PrzejscieDalej_Info()
     Log_SetTopicStatus (CH1_FindFriends, LOG_SUCCESS);
 	MIS_FindFriends = LOG_RUNNING;
 	//log 2
-    MIS_OdbijanieOpKop = LOG_RUNNING;
-    Log_CreateTopic          (CH1_OdbijanieOpKop, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_OdbijanieOpKop, LOG_RUNNING);
-    B_LogEntry               (CH1_OdbijanieOpKop,"Quentin znów ma plan. Tym razem muszê udaæ siê wraz z grupk¹ Bandytów do Opuszczonej Kopalni. Mamy pozbyæ siê Stra¿ników i zaj¹æ kopalniê dla siebie. Powinienem uprzednio pogadaæ z Doylem.");
+    MIS_BanditsInAbadonedMine = LOG_RUNNING;
+    Log_CreateTopic          (CH4_BanditsInAbadonedMine, LOG_MISSION);
+    Log_SetTopicStatus       (CH4_BanditsInAbadonedMine, LOG_RUNNING);
+    B_LogEntry               (CH4_BanditsInAbadonedMine,"Quentin znów ma plan. Tym razem muszê udaæ siê wraz z grupk¹ Bandytów do Opuszczonej Kopalni. Mamy pozbyæ siê Stra¿ników i zaj¹æ kopalniê dla siebie. Powinienem uprzednio pogadaæ z Doylem.");
 	//story func
     B_Story_FocusCorristoQuest ();
 	//stuff
@@ -2020,14 +2020,14 @@ FUNC VOID DIA_Quentin_MineIsClean_Info()
     AI_Output (self, other ,"DIA_Quentin_MineIsClean_03_08"); //Móg³byœ coœ zorganizowaæ?
     AI_Output (other, self ,"DIA_Quentin_MineIsClean_15_09"); //Postaram siê.
 	//log
-	MIS_OdbijanieOpKop = LOG_SUCCESS;
-    Log_SetTopicStatus       (CH1_OdbijanieOpKop, LOG_SUCCESS);
-    B_LogEntry               (CH1_OdbijanieOpKop,"Powiedzia³em Quentinowi o wszystkim, co wydarzy³o siê w opuszczonej kopalni. Moje zadanie dobieg³o koñca.");
+	MIS_BanditsInAbadonedMine = LOG_SUCCESS;
+    Log_SetTopicStatus       (CH4_BanditsInAbadonedMine, LOG_SUCCESS);
+    B_LogEntry               (CH4_BanditsInAbadonedMine,"Powiedzia³em Quentinowi o wszystkim, co wydarzy³o siê w opuszczonej kopalni. Moje zadanie dobieg³o koñca.");
 	//new quest
-	MIS_MineChlopy = LOG_RUNNING;
-	Log_CreateTopic          (CH1_MineChlopy, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_MineChlopy, LOG_RUNNING);
-    B_LogEntry               (CH1_MineChlopy,"Quentin natychmiast wys³a³ oddzia³ Bandytów do kopalni. Maj¹ zacz¹æ tam pracê, jednak najpierw potrzebny jest ktoœ z doœwiadczeniem, kto pokieruje wydobyciem. Muszê odnaleŸæ odpowiedniego cz³owieka. Sêk w tym, ¿e najlepsi in¿ynierowie byli w Starym Obozie... ");
+	MIS_NewEnginer = LOG_RUNNING;
+	Log_CreateTopic          (CH4_NewEnginer, LOG_MISSION);
+    Log_SetTopicStatus       (CH4_NewEnginer, LOG_RUNNING);
+    B_LogEntry               (CH4_NewEnginer,"Quentin natychmiast wys³a³ oddzia³ Bandytów do kopalni. Maj¹ zacz¹æ tam pracê, jednak najpierw potrzebny jest ktoœ z doœwiadczeniem, kto pokieruje wydobyciem. Muszê odnaleŸæ odpowiedniego cz³owieka. Sêk w tym, ¿e najlepsi in¿ynierowie byli w Starym Obozie... ");
 	//npcs
 	Wld_InsertNpc				(NON_3040_Bandyta,"KOPACZ");	
 	Wld_InsertNpc				(NON_3042_Bandyta,"KOPACZ");	
@@ -2066,7 +2066,7 @@ INSTANCE DIA_Quentin_GuyWork (C_INFO)
 
 FUNC INT DIA_Quentin_GuyWork_Condition()
 {
-    if (MIS_MineChlopy == LOG_RUNNING)
+    if (MIS_NewEnginer == LOG_RUNNING)
     && (Npc_KnowsInfo (hero, DIA_Guy_backToMine))
     {
     return TRUE;
@@ -2086,11 +2086,11 @@ FUNC VOID DIA_Quentin_GuyWork_Info()
 	AI_Output (self, other ,"DIA_Quentin_GuyWork_03_10"); //Powiedz Lee, ¿e wyœlê swoich ludzi.
 	};
 	//log
-	MIS_MineChlopy = LOG_SUCCESS;
+	MIS_NewEnginer = LOG_SUCCESS;
     CreateInvItems (self, ItMiNugget, 200);
     B_GiveInvItems (self, other, ItMiNugget, 200);
-    B_LogEntry               (CH1_MineChlopy,"Powiedzia³em Quentinowi, ¿e Guy bêdzie dla niego pracowa³. Ten cz³owiek ma du¿e doœwiadczenie.");
-	Log_SetTopicStatus       (CH1_MineChlopy, LOG_SUCCESS);
+    B_LogEntry               (CH4_NewEnginer,"Powiedzia³em Quentinowi, ¿e Guy bêdzie dla niego pracowa³. Ten cz³owiek ma du¿e doœwiadczenie.");
+	Log_SetTopicStatus       (CH4_NewEnginer, LOG_SUCCESS);
 	//npc
 	B_ExchangeRoutine	(VLK_530_Guy, "delte");
 	Wld_InsertNpc		(VLK_599_GuyMine,"LOCATION_11_08");
@@ -2114,7 +2114,7 @@ INSTANCE DIA_Quentin_Successasd (C_INFO)
 
 FUNC INT DIA_Quentin_Successasd_Condition()
 {
-    if (MIS_OdbijanieOpKop == LOG_SUCCESS)
+    if (MIS_BanditsInAbadonedMine == LOG_SUCCESS)
     {
     return TRUE;
     };
@@ -2150,7 +2150,7 @@ INSTANCE DIA_Quentin_OldMine (C_INFO)
 
 FUNC INT DIA_Quentin_OldMine_Condition()
 {
-    if (MIS_OdbijanieOpKop == LOG_SUCCESS)
+    if (MIS_BanditsInAbadonedMine == LOG_SUCCESS)
     {
     return TRUE;
     };
@@ -2164,10 +2164,10 @@ FUNC VOID DIA_Quentin_OldMine_Info()
     AI_Output (self, other ,"DIA_Quentin_OldMine_03_03"); //Wybierz siê tam i zobacz, co siê tam wyprawia.
     AI_Output (self, other ,"DIA_Quentin_OldMine_03_04"); //Tylko nie idŸ prosto do obozu. Obserwuj z daleka. Nie chcia³bym ¿eby po tym wszystkim Stra¿nicy przerobili ciê na pasztet.
 	//log
-    MIS_SytucajaWOM = LOG_RUNNING;
-    Log_CreateTopic          (CH1_SytucajaWOM, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_SytucajaWOM, LOG_RUNNING);
-    B_LogEntry               (CH1_SytucajaWOM,"Zapyta³em Quentina o to, co siê dzieje w Starej Kopalni. Sadzi³em, ¿e przywódca Bandytów bêdzie coœ wiedzia³ od swoich szpiegów. Ku mojemu zaskoczeniu niczego nowego nie wiedzia³ Zaproponowa³ mi, abym siê tam pokrêci³ i czegoœ dowiedzia³.");
+    MIS_BackToOldMine = LOG_RUNNING;
+    Log_CreateTopic          (CH4_BackToOldMine, LOG_MISSION);
+    Log_SetTopicStatus       (CH4_BackToOldMine, LOG_RUNNING);
+    B_LogEntry               (CH4_BackToOldMine,"Zapyta³em Quentina o to, co siê dzieje w Starej Kopalni. Sadzi³em, ¿e przywódca Bandytów bêdzie coœ wiedzia³ od swoich szpiegów. Ku mojemu zaskoczeniu niczego nowego nie wiedzia³ Zaproponowa³ mi, abym siê tam pokrêci³ i czegoœ dowiedzia³.");
 	//story func
 	B_Story_BattleInOldMineCamp ();
 };
@@ -2189,7 +2189,7 @@ INSTANCE DIA_Quentin_TalkAboutMine (C_INFO)
 FUNC INT DIA_Quentin_TalkAboutMine_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Patrick_Nieidz))
-    && (MIS_SytucajaWOM == LOG_RUNNING)
+    && (MIS_BackToOldMine == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -2212,7 +2212,7 @@ FUNC VOID DIA_Quentin_TalkAboutMine_Info()
     AI_Output (self, other ,"DIA_Quentin_TalkAboutMine_03_12"); //Nie wiem. Pomyœl, poszukaj, pogadaj i przyjdŸ do mnie póŸniej.
     AI_Output (other, self ,"DIA_Quentin_TalkAboutMine_15_13"); //Zobaczê co da siê zrobiæ.
 	//log
-    B_LogEntry                     (CH1_SytucajaWOM,"Quentin ucieszy³ siê z takiego obrotu sprawy. Mam znaleŸæ kogoœ, kto powie ludziom Gomeza o tym co sta³o siê w obozie przy Starej Kopalni.");
+    B_LogEntry                     (CH4_BackToOldMine,"Quentin ucieszy³ siê z takiego obrotu sprawy. Mam znaleŸæ kogoœ, kto powie ludziom Gomeza o tym co sta³o siê w obozie przy Starej Kopalni.");
 	//story func
 	B_Story_BattleInOldMineCamp ();
 	//experience
@@ -2250,7 +2250,7 @@ FUNC VOID DIA_Quentin_ZlatwioneXDXD_Info()
     AI_Output (self, other ,"DIA_Quentin_ZlatwioneXDXD_03_03"); //Teraz skoro Gomez ju¿ o wszystkim wie, z pewnoœci¹ wys³a³ ju¿ tam kolejne oddzia³y swoich ludzi.
     AI_Output (self, other ,"DIA_Quentin_ZlatwioneXDXD_03_04"); //Ponownie zakradnij siê w pobli¿e kopalni i zobacz co siê tam dzieje. 
 	//log
-    B_LogEntry                     (CH1_SytucajaWOM,"Pora zobaczyæ skutki naszych dzia³añ... Mam wróciæ w okolice kopalni i siê rozejrzeæ.");
+    B_LogEntry                     (CH4_BackToOldMine,"Pora zobaczyæ skutki naszych dzia³añ... Mam wróciæ w okolice kopalni i siê rozejrzeæ.");
 	//experience
     B_GiveXP (XP_SkorpioWork);
 	//exit
@@ -2294,9 +2294,9 @@ FUNC VOID DIA_Quentin_KoniecWatkuBandytow_Info()
     AI_Output (self, other ,"DIA_Quentin_KoniecWatkuBandytow_03_10"); //W takim razie, powodzenia. Pamiêtaj, ¿e tutaj zawsze mo¿esz wróciæ.
     AI_Output (self, other ,"DIA_Quentin_KoniecWatkuBandytow_03_11"); //Masz tu kilka mikstur na drogê. Zrabowa³em je lata temu.
 	//log
-    B_LogEntry               (CH1_SytucajaWOM,"Potêga Gomeza podupad³a na tyle, ¿e Quentin odetchn¹³ z ulg¹. Obóz Bandytów jest na razie bezpieczny, a moja misja w nim dobiega koñca.");
-    Log_SetTopicStatus       (CH1_SytucajaWOM, LOG_SUCCESS);
-    MIS_SytucajaWOM = LOG_SUCCESS;
+    B_LogEntry               (CH4_BackToOldMine,"Potêga Gomeza podupad³a na tyle, ¿e Quentin odetchn¹³ z ulg¹. Obóz Bandytów jest na razie bezpieczny, a moja misja w nim dobiega koñca.");
+    Log_SetTopicStatus       (CH4_BackToOldMine, LOG_SUCCESS);
+    MIS_BackToOldMine = LOG_SUCCESS;
 	//experience
     B_GiveXP (5000);
 	//prize
@@ -2513,7 +2513,7 @@ FUNC VOID DIA_Quentin_NegocjacieNc_Info()
     AI_Output (self, other ,"DIA_Quentin_NegocjacieNc_03_09"); //Powiedz Lee, ¿e wyœlê kilku ludzi, ale przy okazji bêdziesz musia³ coœ dla mnie zrobiæ.
 	AI_Output (other, self ,"DIA_Quentin_NegocjacieNc_15_10"); //Co takiego? 
 	AI_Output (self, other ,"DIA_Quentin_NegocjacieNc_03_11"); //PrzyprowadŸ do pracy w kopalni jakiegoœ doœwiadczonego górnika. Moi ludzie kompletnie siê na tym nie znaj¹.
-    //B_LogEntry                     (CH1_NC_Mine,"Quentin niechêtnie, ale zgodzi³ siê na nasz¹ propozycjê.");
+    //B_LogEntry                     (CH4_NC_Mine,"Quentin niechêtnie, ale zgodzi³ siê na nasz¹ propozycjê.");
 	
 	Wld_InsertNpc				(NON_3040_Bandyta,"KOPACZ");	
 	Wld_InsertNpc				(NON_3042_Bandyta,"KOPACZ");	
@@ -2529,10 +2529,10 @@ FUNC VOID DIA_Quentin_NegocjacieNc_Info()
 	//Wld_InsertNpc				(BAN_1608_Kereth,"KOPACZ"); kereth fix
 	
 	//zadanie
-	MIS_MineChlopy = LOG_RUNNING;
-    Log_CreateTopic            		(CH1_MineChlopy, LOG_MISSION);
-    Log_SetTopicStatus       		(CH1_MineChlopy, LOG_RUNNING);
-    B_LogEntry                     	(CH1_MineChlopy,"Quentin zgodzi³ siê na propozycjê Lee. Przywódca Bandytów wyœle kilku swoich ludzi do kopalni, jednak poprosi³ mnie w zamian o przys³ugê. Mam przyprowadziæ jakiegoœ kompetentnego cz³owieka, który pokieruje jego ludŸmi. Tylko gdzie ja teraz znajdê kogoœ takiego...");
+	MIS_NewEnginer = LOG_RUNNING;
+    Log_CreateTopic            		(CH4_NewEnginer, LOG_MISSION);
+    Log_SetTopicStatus       		(CH4_NewEnginer, LOG_RUNNING);
+    B_LogEntry                     	(CH4_NewEnginer,"Quentin zgodzi³ siê na propozycjê Lee. Przywódca Bandytów wyœle kilku swoich ludzi do kopalni, jednak poprosi³ mnie w zamian o przys³ugê. Mam przyprowadziæ jakiegoœ kompetentnego cz³owieka, który pokieruje jego ludŸmi. Tylko gdzie ja teraz znajdê kogoœ takiego...");
     B_GiveXP (300);
 };
 

@@ -96,7 +96,7 @@ INSTANCE DIA_Ghoram_Hand (C_INFO)
 
 FUNC INT DIA_Ghoram_Hand_Condition()
 {
-    if (MIS_HandDed == LOG_RUNNING)
+    if (MIS_FingersSeeking == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -139,7 +139,7 @@ FUNC VOID DIA_Ghoram_GadajKurwo_Info()
     AI_Output (self, other ,"DIA_Ghoram_GadajKurwo_03_02"); //Jakieœ cia³o le¿y w karczmie. W miejscu, gdzie Jeremiasz destyluje alkohol.
     AI_Output (other, self ,"DIA_Ghoram_GadajKurwo_15_03"); //Muszê to sprawdziæ. 
     AI_Output (self, other ,"DIA_Ghoram_GadajKurwo_03_04"); //Przypuszczam, ¿e to w³aœnie twój kole¿ka.
-    B_LogEntry                     (CH1_HandDed,"Cia³o jakiegoœ Cienia le¿y w karczmie. Tam, gdzie Jeremiasz destyluje alkohol.");
+    B_LogEntry                     (CH2_FingersSeeking,"Cia³o jakiegoœ Cienia le¿y w karczmie. Tam, gdzie Jeremiasz destyluje alkohol.");
     B_GiveInvItems (other, self, ItMiNugget, 50);
 
     B_GiveXP (100);

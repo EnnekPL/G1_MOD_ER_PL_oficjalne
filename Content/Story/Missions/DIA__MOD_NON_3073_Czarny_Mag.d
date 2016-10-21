@@ -44,9 +44,9 @@ FUNC VOID DIA_Czarny_Mag_FIGHT_Info()
     Npc_SetTarget (self, other);
     AI_StartState (self, ZS_ATTACK, 1, "");
 	
-	if (MIS_OdbijanieOpKop  == LOG_RUNNING)
+	if (MIS_BanditsInAbadonedMine  == LOG_RUNNING)
 	{
-	B_LogEntry    (CH1_OdbijanieOpKop,"Odnalaz³em przyczynê pojawiania siê o¿ywieñców w kopalni. To przeklêty nekromanta przyzywa nieumar³ych i wykorzystuje przy tym jakiœ artefakt. Muszê go pokonaæ i zabraæ st¹d magiczny kamieñ.");
+	B_LogEntry    (CH4_BanditsInAbadonedMine,"Odnalaz³em przyczynê pojawiania siê o¿ywieñców w kopalni. To przeklêty nekromanta przyzywa nieumar³ych i wykorzystuje przy tym jakiœ artefakt. Muszê go pokonaæ i zabraæ st¹d magiczny kamieñ.");
 	};
 };
 

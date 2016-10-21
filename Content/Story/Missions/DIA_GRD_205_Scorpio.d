@@ -436,9 +436,9 @@ FUNC VOID DIA_Scorpio_GetInfos_Info()
     AI_Output (self, other ,"DIA_Scorpio_GetInfos_03_08"); //No dobrze. Zrobiê to za 1700 bry³ek rudy.
     AI_Output (other, self ,"DIA_Scorpio_GetInfos_15_09"); //Dlaczego tak drogo?
     AI_Output (self, other ,"DIA_Scorpio_GetInfos_03_10"); //To niebezpieczne zadanie. Nie wnikaj.
-	if (MIS_SytucajaWOM == LOG_RUNNING)
+	if (MIS_BackToOldMine == LOG_RUNNING)
 	{
-    B_LogEntry                     (CH1_SytucajaWOM,"Za 1700 bry³ek rudy Skorpion zaniesie informacjê Gomezowi.");
+    B_LogEntry                     (CH4_BackToOldMine,"Za 1700 bry³ek rudy Skorpion zaniesie informacjê Gomezowi.");
 	};
 	if (MIS_HelpBrothersBra == LOG_RUNNING)
 	{
@@ -478,9 +478,9 @@ FUNC VOID DIA_Scorpio_GiveSomeOrexD_Info()
         AI_Output (other, self ,"DIA_Scorpio_GiveSomeOrexD_15_02"); //Proszê, oto twoja ruda.
         AI_Output (self, other ,"DIA_Scorpio_GiveSomeOrexD_03_03"); //Dziêki. Zajmê siê tym. Nie ma obawy.
         B_GiveInvItems (other, self, ItMiNugget, 1700);
-	if (MIS_SytucajaWOM == LOG_RUNNING)
+	if (MIS_BackToOldMine == LOG_RUNNING)
 	{
-	B_LogEntry                     (CH1_SytucajaWOM,"Zap³aci³em Skorpionowi za zaniesienie informacji do Starego Obozu. Mogê wróciæ do Quentina.");
+	B_LogEntry                     (CH4_BackToOldMine,"Zap³aci³em Skorpionowi za zaniesienie informacji do Starego Obozu. Mogê wróciæ do Quentina.");
 	};
 	if (MIS_HelpBrothersBra == LOG_RUNNING)
 	{

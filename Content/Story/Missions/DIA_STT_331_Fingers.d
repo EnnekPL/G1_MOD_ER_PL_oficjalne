@@ -465,7 +465,7 @@ FUNC VOID DIA_Fingers_FingersStayAlive_Info()
 	CreateInvItems (self, ItMiNugget, 50);
     B_GiveInvItems (self, other, ItMiNugget, 50);
 	
-    B_LogEntry               (CH1_HandDed,"R¹czka by³ wdziêczny za moj¹ pomoc. Powiedzia³, ¿e jeœli nie wierzê w to co mówi³ do Klina to mogê to sprawdziæ rozmawiaj¹c z Brandickiem lub Asghanem. Byæ mo¿e póŸniej to zrobiê. Teraz najlepiej wróciæ do Diego.");
+    B_LogEntry               (CH2_FingersSeeking,"R¹czka by³ wdziêczny za moj¹ pomoc. Powiedzia³, ¿e jeœli nie wierzê w to co mówi³ do Klina to mogê to sprawdziæ rozmawiaj¹c z Brandickiem lub Asghanem. Byæ mo¿e póŸniej to zrobiê. Teraz najlepiej wróciæ do Diego.");
 	
 	B_GiveXP (100);
 	

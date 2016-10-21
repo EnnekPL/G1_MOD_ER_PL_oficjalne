@@ -77,28 +77,27 @@ FUNC INT DIA_Rodriguez_ImportantQuest_Condition()
 
 FUNC VOID DIA_Rodriguez_ImportantQuest_Info()
 {
-    AI_Output (self, other ,"DIA_Rodriguez_ImportantQuest_03_01"); //Witaj, Stra¿niku. Czy to nie ciebie wys³ano z misj¹ do obozu Moroka?
+    AI_Output (self, other ,"DIA_Rodriguez_ImportantQuest_03_01"); //PodejdŸ, Stra¿niku. Czy to nie ciebie wys³ano z misj¹ do obozu Moroka?
     AI_Output (other, self ,"DIA_Rodriguez_ImportantQuest_15_02"); //Tak, w³aœnie dlatego tu przyby³em.
     AI_Output (self, other ,"DIA_Rodriguez_ImportantQuest_03_03"); //Co siê tam dzieje? Jak wygl¹da sytuacja?
     AI_Output (self, other ,"DIA_Rodriguez_ImportantQuest_03_04"); //Mo¿liwe, ¿e nie wiesz, ale Gomez powierzy³ mi was wspieraæ.
     AI_Output (other, self ,"DIA_Rodriguez_ImportantQuest_15_05"); //Odkryliœmy, ¿e œwi¹tynia jest wykorzystywana do jakichœ orkowych rytua³ów.
-    AI_Output (other, self ,"DIA_Rodriguez_ImportantQuest_15_06"); //Orkowie i ich szamani chyba sk³adaj¹ tam mod³y.
-    AI_Output (self, other ,"DIA_Rodriguez_ImportantQuest_03_07"); //Na pewno nie s¹ to mod³y do Innosa.
-    AI_Output (self, other ,"DIA_Rodriguez_ImportantQuest_03_08"); //Musicie czym prêdzej zniszczyæ ten plugawy kult.
-    AI_Output (self, other ,"DIA_Rodriguez_ImportantQuest_03_09"); //To mo¿e sprowadziæ na nas nieszczêœcia.
-    AI_Output (self, other ,"DIA_Rodriguez_ImportantQuest_03_10"); //WeŸ te magiczne zwoje. Pomog¹ ci w walce.
-    AI_Output (self, other ,"DIA_Rodriguez_ImportantQuest_03_11"); //A teraz ruszaj. Zniszczcie to siedlisko z³a.
+    AI_Output (other, self ,"DIA_Rodriguez_ImportantQuest_15_06"); //Orkowie i ich szamani chyba sk³adaj¹ tam mod³y. Morok nie jest pewien jak powinien dalej post¹piæ.
+    AI_Output (self, other ,"DIA_Rodriguez_ImportantQuest_03_07"); //To miejsce trzeba jak najszybciej zniszczyæ. Przeka¿ moje polecenia swojemu prze³o¿onemu.
+    AI_Output (self, other ,"DIA_Rodriguez_ImportantQuest_03_08"); //A i weŸ te magiczne zwoje. Jeœli potrafisz je wykorzystaæ, przechyl¹ szalê zwyciêstwa na twoj¹ stronê.
+    AI_Output (self, other ,"DIA_Rodriguez_ImportantQuest_03_09"); //Niestety nie mogê ci daæ ¿adnej broni. Powinieneœ j¹ raczej kupiæ u kowala.
+    AI_Output (other, self ,"DIA_Rodriguez_ImportantQuest_15_10"); //Myœlê, ¿e te zwoje wystarcz¹.
+	AI_Output (self, other ,"DIA_Rodriguez_ImportantQuest_03_11"); //Powodzenia! Niech Innos ma was w opiece!
     CreateInvItems (self, ItArScrollFirestorm, 3);
     B_GiveInvItems (self, other, ItArScrollFirestorm, 3);
-    CreateInvItems (self, ItArScrollFireball, 10);
-    B_GiveInvItems (self, other, ItArScrollFireball, 10);
-    CreateInvItems (self, ItArScrollHeal, 10);
-    B_GiveInvItems (self, other, ItArScrollHeal, 10);
-    CreateInvItems (self, ItArScrollDestroyUndead, 4);
-    B_GiveInvItems (self, other, ItArScrollDestroyUndead, 4);
-    B_LogEntry                     (CH1_FireMage_Help,"Otrzyma³em od Rodrigueza sporo przydatnych zwojów. Razem z oddzia³em Moroka mamy zniszczyæ wszystko, co znajduje siê w œwi¹tyni.");
+    CreateInvItems (self, ItArScrollFireball, 5);
+    B_GiveInvItems (self, other, ItArScrollFireball, 5);
+    CreateInvItems (self, ItArScrollHeal, 2);
+    B_GiveInvItems (self, other, ItArScrollHeal, 2);
 
-    B_GiveXP (250);
+    B_LogEntry                     (CH3_QuestForHeavyArmor,"Otrzyma³em od Rodrigueza sporo przydatnych zwojów. Razem z oddzia³em Moroka mamy zniszczyæ wszystko, co znajduje siê w œwi¹tyni.");
+
+    //B_GiveXP (250);
     AI_StopProcessInfos	(self);
 };
 

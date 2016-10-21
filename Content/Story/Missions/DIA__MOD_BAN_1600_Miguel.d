@@ -68,7 +68,7 @@ INSTANCE DIA_Miguel_HELLO2 (C_INFO)
 
 FUNC INT DIA_Miguel_HELLO2_Condition()
 {
-    if (MIS_MagnackiePi4erscienie == LOG_RUNNING)
+    if (MIS_BaronsRings == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -90,7 +90,7 @@ FUNC VOID DIA_Miguel_HELLO2_Info()
     AI_Output (self, other ,"DIA_Miguel_HELLO2_03_09"); //Spokojnie. Wiem, gdzie go schowa³.
     AI_Output (self, other ,"DIA_Miguel_HELLO2_03_10"); //Jest w skrzyni ukrytej nad strzelnic¹. Strzelnica to ta wielka szopa w której znajduj¹ siê tarcze. Byæ mo¿e trzeba bêdzie tam wejœæ przez pokoje Stra¿ników.
 	AI_Output (self, other ,"DIA_Miguel_HELLO2_03_11"); //Tak siê sk³ada, ¿e ukrad³em ten klucz. Stra¿nicy jednak niezbyt za mn¹ przepadaj¹. Jesteœ nowy, uœpij ich czujnoœæ.
-    B_LogEntry                     (CH1_MagnackiePi4erscienie,"Miguel zdradzi³ mi, ¿e jeden z pierœcieni znajduje siê w skrzyni nad dawn¹ sal¹ treningow¹. Gdy odnajdê pierœcieñ, mam go zanieœæ Miguelowi.");
+    B_LogEntry                     (CH1_BaronsRings,"Miguel zdradzi³ mi, ¿e jeden z pierœcieni znajduje siê w skrzyni nad dawn¹ sal¹ treningow¹. Gdy odnajdê pierœcieñ, mam go zanieœæ Miguelowi.");
 	CreateInvItems (self, ItKe_Miguel, 1);
     B_GiveInvItems (self, other, ItKe_Miguel, 1);
 	}
@@ -99,7 +99,7 @@ FUNC VOID DIA_Miguel_HELLO2_Info()
 	AI_Output (self, other ,"DIA_Miguel_HELLO2_03_12"); //Pierœcieñ zosta³ ukradziony kilka lat temu przez pewnego Cienia. Wo³aj¹ na niego Œwistak.
 	AI_Output (self, other ,"DIA_Miguel_HELLO2_03_13"); //Kojarzysz goœcia? Mieszka nieopodal. SprawdŸ jego chatê.
 	AI_Output (self, other ,"DIA_Miguel_HELLO2_03_14"); //Wierni ludzie Gomeza. Ha! W³aœnie widaæ. ¯a³osne...
-	B_LogEntry                     (CH1_MagnackiePi4erscienie,"Poszukiwania pierœcienia powinienem zacz¹æ od chaty Œwistaka.");
+	B_LogEntry                     (CH1_BaronsRings,"Poszukiwania pierœcienia powinienem zacz¹æ od chaty Œwistaka.");
 	};
     AI_Output (self, other ,"DIA_Miguel_HELLO2_03_15"); //Jak ju¿ ukradniesz pierœcieñ, przynieœ mi go. Dam ci dalsze wskazówki.
 };
@@ -136,7 +136,7 @@ FUNC VOID DIA_Miguel_FindFirstRing_Info()
     AI_Output (self, other ,"DIA_Miguel_FindFirstRing_03_05"); //Proponujê przeszukaæ pokoje Magnatów.
     AI_Output (self, other ,"DIA_Miguel_FindFirstRing_03_06"); //Na pewno zostawili jakieœ wskazówki. Musisz dok³adnie poszukaæ.
     AI_Output (self, other ,"DIA_Miguel_FindFirstRing_03_07"); //Tylko nie daj siê z³apaæ Stra¿nikom!
-    B_LogEntry                     (CH1_MagnackiePi4erscienie,"Kolejne wskazówki dotycz¹ce pierœcieni znajdê w pokojach Magnatów.");
+    B_LogEntry                     (CH1_BaronsRings,"Kolejne wskazówki dotycz¹ce pierœcieni znajdê w pokojach Magnatów.");
 
     B_GiveXP (125);
 };
@@ -174,7 +174,7 @@ FUNC VOID DIA_Miguel_MagnaciEnter_Info()
     AI_Output (self, other ,"DIA_Miguel_MagnaciEnter_03_07"); //Nie, sk¹d¿e. Po prostu s¹ ciêci na Bandytów. Gdy tylko zauwa¿¹, ¿e krêcisz z Quentinem, wydadz¹ ciê w rêce Thorusa. A wtedy czeka ciê rych³a œmieræ.
     AI_Output (self, other ,"DIA_Miguel_MagnaciEnter_03_08"); //Co do tego Cienia... hmm... On raczej te¿ nie bêdzie siê pali³ do pomocy. Powinieneœ znaleŸæ na kogoœ haka, zaszanta¿owaæ go.
     AI_Output (self, other ,"DIA_Miguel_MagnaciEnter_03_09"); //Tutejsi informatorzy z pewnoœci¹ ci w tym pomog¹. Pamiêtaj, ¿eby w takich sprawach nie oszczêdzaæ rudy. Ka¿da wiadomoœæ jest cenna i mo¿e ci siê zwróciæ potrójnie.
-    B_LogEntry                     (CH1_MagnackiePi4erscienie,"Aby wejœæ do komnat Magnatów, bêdê musia³ zaszanta¿owaæ któregoœ z Cieni, by za mnie porêczy³. Wiêcej informacji uzyskam od lokalnych informatorów.");
+    B_LogEntry                     (CH1_BaronsRings,"Aby wejœæ do komnat Magnatów, bêdê musia³ zaszanta¿owaæ któregoœ z Cieni, by za mnie porêczy³. Wiêcej informacji uzyskam od lokalnych informatorów.");
 };
 
 //========================================
@@ -209,7 +209,7 @@ FUNC VOID DIA_Miguel_FindSecondRing_Info()
     AI_Output (self, other ,"DIA_Miguel_FindSecondRing_03_05"); //Ha ha ha. Co za g³upiec!
     AI_Output (self, other ,"DIA_Miguel_FindSecondRing_03_06"); //Dobra robota.
     B_GiveXP (150);
-	B_LogEntry      (CH1_MagnackiePi4erscienie,"Odda³em Miguelowi pierœcieñ, który znalaz³em na stole w pokoju Gomeza. Pora poszukaæ ostatniego.");
+	B_LogEntry      (CH1_BaronsRings,"Odda³em Miguelowi pierœcieñ, który znalaz³em na stole w pokoju Gomeza. Pora poszukaæ ostatniego.");
 };
 
 //========================================
@@ -240,7 +240,7 @@ FUNC VOID DIA_Miguel_AboutThirdRing_Info()
     AI_Output (other, self ,"DIA_Miguel_AboutThirdRing_15_01"); //Gdzie szukaæ trzeciego pierœcienia?
     AI_Output (self, other ,"DIA_Miguel_AboutThirdRing_03_02"); //Ciê¿ko powiedzieæ. Nie wiem dok³adnie, ale na pewno gdzieœ na zamku.
     AI_Output (self, other ,"DIA_Miguel_AboutThirdRing_03_03"); //Myœlê, ¿e powinieneœ poci¹gn¹æ za jêzyk s³u¿bê Gomeza. Mo¿e ktoœ coœ wie. Lepiej naszykuj sakiewkê.
-    B_LogEntry                     (CH1_MagnackiePi4erscienie,"Miguel nie wie, gdzie znajduje siê trzeci pierœcieñ. Aby go odnaleŸæ muszê zasiêgn¹æ jêzyka wœród zamkowego personelu. ");
+    B_LogEntry                     (CH1_BaronsRings,"Miguel nie wie, gdzie znajduje siê trzeci pierœcieñ. Aby go odnaleŸæ muszê zasiêgn¹æ jêzyka wœród zamkowego personelu. ");
 };
 
 //========================================
@@ -272,7 +272,7 @@ FUNC VOID DIA_Miguel_IFindThirdRing_Info()
     AI_Output (other, self ,"DIA_Miguel_IFindThirdRing_15_01"); //Mam nastêpny pierœcieñ.
     AI_Output (self, other ,"DIA_Miguel_IFindThirdRing_03_02"); //Œwietnie.
     B_GiveXP (200);
-	B_LogEntry                     (CH1_MagnackiePi4erscienie,"Odda³em Miguelowi pierœcieñ, który znalaz³em w kuchni Magnatów. To by³ ju¿ ostatni.");
+	B_LogEntry                     (CH1_BaronsRings,"Odda³em Miguelowi pierœcieñ, który znalaz³em w kuchni Magnatów. To by³ ju¿ ostatni.");
 	
 	AI_StopProcessInfos (Self);
 };
@@ -296,7 +296,7 @@ FUNC INT DIA_Miguel_AllRings_Condition()
     if (Npc_KnowsInfo (hero, DIA_Miguel_IFindThirdRing))
     && (Npc_KnowsInfo (hero, DIA_Miguel_FindSecondRing))
     && (Npc_KnowsInfo (hero, DIA_Miguel_FindFirstRing))
-    && (MIS_MagnackiePi4erscienie == LOG_RUNNING)
+    && (MIS_BaronsRings == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -307,7 +307,7 @@ FUNC VOID DIA_Miguel_AllRings_Info()
 {
     AI_Output (self, other ,"DIA_Miguel_AllRings_03_01"); //Pokaza³eœ mi wszystkie pierœcienie. Mo¿esz zanieœæ je Quentinowi.
     AI_Output (self, other ,"DIA_Miguel_AllRings_03_02"); //Bêdzie bardzo zadowolony.
-    B_LogEntry                     (CH1_MagnackiePi4erscienie,"Odnalezione pierœcienie musz¹ trafiæ do Quentina.");
+    B_LogEntry                     (CH1_BaronsRings,"Odnalezione pierœcienie musz¹ trafiæ do Quentina.");
 
     B_GiveXP (400);
 };

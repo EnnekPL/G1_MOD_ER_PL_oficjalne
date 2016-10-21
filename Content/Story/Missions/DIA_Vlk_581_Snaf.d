@@ -484,7 +484,7 @@ FUNC VOID DIA_Snaf_SellInfos_Emil()
 	AI_Output (self, other ,"DIA_Snaf_SellInfos_Emil_03_09"); //Dpuki p³acisz, nie musisz mi dziêkowaæ.
 	B_GiveInvItems (other, self, ItMiNugget, 10);
 	heroknow_Emil = true;
-	B_LogEntry                     (CH1_CourierFireMage,"Rozmawia³em ze Snafem, ten gruby kucharzyna twierdzi, ¿e Emila móg³ pójœæ w stronê Terytorium Orków. Powinienem porozmawiaæ z Pacho, jednym ze Stra¿ników, który patroluje tamt¹ okolicê.");
+	B_LogEntry                     (CH2_CourierFireMage,"Rozmawia³em ze Snafem, ten gruby kucharzyna twierdzi, ¿e Emila móg³ pójœæ w stronê Terytorium Orków. Powinienem porozmawiaæ z Pacho, jednym ze Stra¿ników, który patroluje tamt¹ okolicê.");
 	B_GiveXP (100);
 };
 

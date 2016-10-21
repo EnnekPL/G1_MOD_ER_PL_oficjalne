@@ -79,10 +79,10 @@ if (MIS_AwansJakoKret != LOG_SUCCESS)
 MIS_AwansJakoKret = LOG_FAILED;
 Log_SetTopicStatus       (CH1_AwansJakoKret, LOG_FAILED);
 };
-if (MIS_PropozycjaFlinta != LOG_SUCCESS)
+if (MIS_FlintsOffer != LOG_SUCCESS)
 {
-MIS_PropozycjaFlinta = LOG_FAILED;
-Log_SetTopicStatus       (CH1_PropozycjaFlinta, LOG_FAILED);
+MIS_FlintsOffer = LOG_FAILED;
+Log_SetTopicStatus       (CH1_FlintsOffer, LOG_FAILED);
 };
 if (MIS_FlintaPrzyjecie != LOG_SUCCESS)
 {
@@ -261,10 +261,10 @@ if (MIS_AlternativBanditoSCamp  != LOG_SUCCESS)
 MIS_AlternativBanditoSCamp = LOG_FAILED;
 Log_SetTopicStatus       (CH1_AlternativBanditoSCamp, LOG_FAILED);
 };
-if (MIS_PropozycjaFlinta  != LOG_SUCCESS)
+if (MIS_FlintsOffer  != LOG_SUCCESS)
 {
-MIS_PropozycjaFlinta = LOG_FAILED;
-Log_SetTopicStatus       (CH1_PropozycjaFlinta, LOG_FAILED);
+MIS_FlintsOffer = LOG_FAILED;
+Log_SetTopicStatus       (CH1_FlintsOffer, LOG_FAILED);
 };
 if (MIS_FlintaPrzyjecie  != LOG_SUCCESS)
 {
@@ -350,10 +350,10 @@ if (MIS_AwansJakoKret != LOG_SUCCESS)
 MIS_AwansJakoKret = LOG_FAILED;
 Log_SetTopicStatus       (CH1_AwansJakoKret, LOG_FAILED);
 };
-if (MIS_PropozycjaFlinta != LOG_SUCCESS)
+if (MIS_FlintsOffer != LOG_SUCCESS)
 {
-MIS_PropozycjaFlinta = LOG_FAILED;
-Log_SetTopicStatus       (CH1_PropozycjaFlinta, LOG_FAILED);
+MIS_FlintsOffer = LOG_FAILED;
+Log_SetTopicStatus       (CH1_FlintsOffer, LOG_FAILED);
 };
 if (MIS_FlintaPrzyjecie != LOG_SUCCESS)
 {

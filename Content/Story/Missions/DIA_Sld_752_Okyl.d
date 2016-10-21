@@ -441,26 +441,26 @@ FUNC VOID DIA_OKYL_Lie_Info()
         AI_Output (self, other ,"DIA_OKYL_Lie_03_06"); //Chcesz mnie oszukaæ?
         AI_Output (self, other ,"DIA_OKYL_Lie_03_07"); //Nie tak ³atwo kolego. 
         AI_Output (self, other ,"DIA_OKYL_Lie_03_08"); //Je¿eli myœlisz, ¿e zaniesiesz informacjê o skrócie do Starego Obozu, to siê grubo mylisz. 
-        B_LogEntry                     (CH1_SayOkylFlintDead,"Mog³em przyjœæ do Okyla wczeœniej. Zorientowa³ siê, ¿e chce go oszukaæ. Muszê szybko uciekaæ... ");
-        Log_SetTopicStatus       (CH1_SayOkylFlintDead, LOG_FAILED);
+        //B_LogEntry                     (CH1_SayOkylFlintDead,"Mog³em przyjœæ do Okyla wczeœniej. Zorientowa³ siê, ¿e chce go oszukaæ. Muszê szybko uciekaæ... ");
+        //Log_SetTopicStatus       (CH1_SayOkylFlintDead, LOG_FAILED);
         MIS_SayOkylFlintDead = LOG_FAILED;
-		PrintScreen	("Anulowano zadanie: Powiedz Okylowi, ¿e Flint nie ¿yje! ", 1,-1,"font_new_10_red.tga",2);	
+		//PrintScreen	("Anulowano zadanie: Powiedz Okylowi, ¿e Flint nie ¿yje! ", 1,-1,"font_new_10_red.tga",2);	
         AI_StopProcessInfos	(self);
         Npc_SetPermAttitude (self, ATT_HOSTILE);
         Npc_SetTarget (self, other);
         AI_StartState (self, ZS_ATTACK, 1, "");
-PrintScreen	("Anulowano zadanie: Powiedz Okylowi, ¿e Flint nie ¿yje! ", 1,-1,"font_new_10_red.tga",2);	
+		//PrintScreen	("Anulowano zadanie: Powiedz Okylowi, ¿e Flint nie ¿yje! ", 1,-1,"font_new_10_red.tga",2);	
     }
     else
     {
         AI_Output (self, other ,"DIA_OKYL_Lie_03_09"); //Œwietna robota! Gdyby Stra¿nicy wpadli na ten skrót, by³oby po nas.
-        B_LogEntry                     (CH1_SayOkylFlintDead,"Powiedzia³em Okylowi, ¿e Flint nie ¿yje. G³upi Najemnik niczego nie podejrzewa³.");
-        Log_SetTopicStatus       (CH1_SayOkylFlintDead, LOG_SUCCESS);
+        //B_LogEntry                     (CH1_SayOkylFlintDead,"Powiedzia³em Okylowi, ¿e Flint nie ¿yje. G³upi Najemnik niczego nie podejrzewa³.");
+        //Log_SetTopicStatus       (CH1_SayOkylFlintDead, LOG_SUCCESS);
         MIS_SayOkylFlintDead = LOG_SUCCESS;
-//PrintScreen	("Wykonano zadanie: Powiedz  Okylowi, ¿e Flint nie ¿yje! ", 1,-1,"FONT_OLD_20_WHITE.TGA",2);
-        B_GiveXP (200);
-        CreateInvItems (self, ItMiNugget, 150);
-        B_GiveInvItems (self, other, ItMiNugget, 150);
+		//PrintScreen	("Wykonano zadanie: Powiedz  Okylowi, ¿e Flint nie ¿yje! ", 1,-1,"FONT_OLD_20_WHITE.TGA",2);
+        B_GiveXP (150);
+        CreateInvItems (self, ItMiNugget, 30);
+        B_GiveInvItems (self, other, ItMiNugget, 30);
         AI_StopProcessInfos	(self);
     };
 };

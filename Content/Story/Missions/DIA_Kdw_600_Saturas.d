@@ -1847,7 +1847,7 @@ FUNC VOID DIA_Saturas_OpuszczonaOdbitaNc_Info()
     AI_Output (self, other ,"DIA_Saturas_OpuszczonaOdbitaNc_03_08"); //Ich g³ównym celem jest zarobek. 
     AI_Output (self, other ,"DIA_Saturas_OpuszczonaOdbitaNc_03_09"); //IdŸ do Quentina i zaproponuj mu, ¿e jego ludzie dostan¹ czwart¹ czêœæ urobku.
     AI_Output (other, self ,"DIA_Saturas_OpuszczonaOdbitaNc_15_10"); //Spróbujê siê jakoœ z nim dogadaæ.
-    B_LogEntry                     (CH1_NC_Mine,"Saturas kaza³ mi iœæ do Obozu Bandytów i poprosiæ Quentina o kilku robotników do kopalni.");
+    B_LogEntry                     (CH4_NC_Mine,"Saturas kaza³ mi iœæ do Obozu Bandytów i poprosiæ Quentina o kilku robotników do kopalni.");
 
     B_GiveXP (300);
  //   AI_StopProcessInfos	(self);
@@ -1883,8 +1883,8 @@ FUNC VOID DIA_Saturas_PertractacjieDD_Info()
     AI_Output (self, other ,"DIA_Saturas_PertractacjieDD_03_04"); //Oto twoja zap³ata.
     CreateInvItems (self, ItMiNugget, 200);
     B_GiveInvItems (self, other, ItMiNugget, 200);
-    B_LogEntry                     (CH1_NC_Mine,"Nowy Obóz dogada³ siê z Quentinem. Mamy zapewnione nowe Ÿród³o rudy ma³ym kosztem.");
-    Log_SetTopicStatus       (CH1_NC_Mine, LOG_SUCCESS);
+    B_LogEntry                     (CH4_NC_Mine,"Nowy Obóz dogada³ siê z Quentinem. Mamy zapewnione nowe Ÿród³o rudy ma³ym kosztem.");
+    Log_SetTopicStatus       (CH4_NC_Mine, LOG_SUCCESS);
     MIS_NC_Mine = LOG_SUCCESS;
 
     B_GiveXP (300);

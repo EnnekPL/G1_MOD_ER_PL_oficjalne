@@ -29,7 +29,7 @@ FUNC VOID DIA_Eskorta_HELLO1_Info()
     AI_Output (self, other ,"DIA_Eskorta_HELLO1_03_02"); //Tak. Poprowadzisz nas do kopalni.
     AI_Output (self, other ,"DIA_Eskorta_HELLO1_03_03"); //Tylko musisz uwa¿aæ na Bandytów.
     AI_Output (self, other ,"DIA_Eskorta_HELLO1_03_04"); //Powiedz, gdy bêdziesz gotowy.
-    B_LogEntry                     (CH1_EskortaKopaczy,"Mam siê zg³osiæ, gdy bêdê gotowy do wyjœcia.");
+    B_LogEntry                     (CH2_BuddlersEscort,"Mam siê zg³osiæ do przywódcy konwoju, gdy bêdê gotowy do wyjœcia.");
 };
 
 //========================================
@@ -58,8 +58,7 @@ FUNC INT DIA_Eskorta_Go_Condition()
 FUNC VOID DIA_Eskorta_Go_Info()
 {
     AI_Output (other, self ,"DIA_Eskorta_Go_15_01"); //ChodŸmy.
-    AI_Output (self, other ,"DIA_Eskorta_Go_03_02"); //Pamiêtaj, ¿e przed Obozem siedzi dwóch Kopaczy.
-    AI_Output (self, other ,"DIA_Eskorta_Go_03_03"); //Ich te¿ musimy ze sob¹ zabraæ.
+    AI_Output (self, other ,"DIA_Eskorta_Go_03_02"); //A wiêc prowadŸ.
 	
     self.aivar[AIV_PARTYMEMBER] = TRUE;
     Npc_ExchangeRoutine (self,"FOLLOW");
@@ -113,22 +112,23 @@ FUNC INT DIA_Eskorta_HELLO3_Condition()
 FUNC VOID DIA_Eskorta_HELLO3_Info()
 {
     AI_Output (self, other ,"DIA_Eskorta_HELLO3_03_01"); //To tutaj. Zobaczmy, ilu mamy ludzi.
+	AI_GotoNpc(self,hero);
     if (Npc_IsDead(VLK_5090_Tragaz)) || (Npc_IsDead(VLK_5088_Tragaz)) || (Npc_IsDead(VLK_5089_Tragaz))
     {
         AI_Output (self, other ,"DIA_Eskorta_HELLO3_03_02"); //Nie uda³o nam siê doprowadziæ wszystkich Kopaczy do celu.
         AI_Output (self, other ,"DIA_Eskorta_HELLO3_03_03"); //Thorus nie bêdzie zadowolony.
-        B_LogEntry                     (CH1_EskortaKopaczy,"Skopaliœmy sprawê. Nie wszyscy tragarze prze¿yli.");
-        Log_SetTopicStatus       (CH1_EskortaKopaczy, LOG_FAILED);
-        MIS_EskortaKopaczy = LOG_FAILED;
+        B_LogEntry                     (CH2_BuddlersEscort,"Skopaliœmy sprawê. Nie wszyscy tragarze prze¿yli.");
+        Log_SetTopicStatus       (CH2_BuddlersEscort, LOG_FAILED);
+        MIS_BuddlersEscort = LOG_FAILED;
 		//PrintScreen	("Anulowano zadanie: Eskorta kopaczy! ", 1,-1,"font_new_10_red.tga",2);	
     }
     else
     {
         AI_Output (self, other ,"DIA_Eskorta_HELLO3_03_04"); //Œwietna robota!
         AI_Output (self, other ,"DIA_Eskorta_HELLO3_03_05"); //Wszyscy tragarze dotarli w jednym kawa³ku.
-        B_LogEntry                     (CH1_EskortaKopaczy,"Doprowadziliœmy bezpiecznie Kopaczy do obozu przed kopalni¹. Dobra robota.");
-        Log_SetTopicStatus       (CH1_EskortaKopaczy, LOG_SUCCESS);
-        MIS_EskortaKopaczy = LOG_SUCCESS;
+        B_LogEntry                     (CH2_BuddlersEscort,"Doprowadziliœmy bezpiecznie Kopaczy do obozu przed kopalni¹. Dobra robota.");
+        Log_SetTopicStatus       (CH2_BuddlersEscort, LOG_SUCCESS);
+        MIS_BuddlersEscort = LOG_SUCCESS;
 		
 		if (Npc_IsDead(GRD_5054_Gardist)) || (Npc_IsDead(GRD_5053_Gardist)) || (Npc_IsDead(GRD_5055_Eskorta))
 		{

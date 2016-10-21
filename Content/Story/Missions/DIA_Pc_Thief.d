@@ -2136,15 +2136,15 @@ FUNC VOID DIA_PC_Thief_Quest_DeadHand_Info()
 	AI_Output (self, other ,"DIA_PC_Thief_Quest_DeadHand_03_04"); //Móg³byœ siê tym zaj¹æ? Przydzieli³em do tego zadania tak¿e Dextera. Powinno wam pójœæ sprawnie we dwóch.
     AI_Output (other, self ,"DIA_PC_Thief_Quest_DeadHand_15_05"); //Gdzie go znajdê? 
 	AI_Output (self, other ,"DIA_PC_Thief_Quest_DeadHand_03_06"); //Zapewne jest ju¿ w chacie R¹czki i szuka poszlak. 
-    MIS_HandDed = LOG_RUNNING;
+    MIS_FingersSeeking = LOG_RUNNING;
 	Npc_ExchangeRoutine (STT_329_Dexter,"csi");
 	
 	//CreateInvItems 	  (STT_331_Fingers, ItMis_FingersSecretBook, 1);
 	//R¹czka znika z mapy gry
 	
-    Log_CreateTopic          (CH1_HandDed, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_HandDed, LOG_RUNNING);
-    B_LogEntry               (CH1_HandDed,"Diego poprosi³ mnie o zbadanie sprawy tajemniczego znikniêcia R¹czki. Œledztwo mam prowadziæ razem z Dexterem. Znajdê go w chacie R¹czki. Byæ mo¿e znalaz³ ju¿ jakieœ poszlaki.");
+    Log_CreateTopic          (CH2_FingersSeeking, LOG_MISSION);
+    Log_SetTopicStatus       (CH2_FingersSeeking, LOG_RUNNING);
+    B_LogEntry               (CH2_FingersSeeking,"Diego poprosi³ mnie o zbadanie sprawy tajemniczego znikniêcia R¹czki. Œledztwo mam prowadziæ razem z Dexterem. Znajdê go w chacie R¹czki. Byæ mo¿e znalaz³ ju¿ jakieœ poszlaki.");
 	
 	var C_NPC reka;
 	reka = Hlp_GetNpc(STT_331_Fingers);
@@ -2187,7 +2187,7 @@ FUNC VOID DIA_PC_Thief_FNGERS_PAST_Info()
     AI_Output (self, other ,"DIA_PC_Thief_FNGERS_PAST_03_08"); //Byæ mo¿e ktoœ z nich te¿ trafi³ do Kolonii? 
     AI_Output (other, self ,"DIA_PC_Thief_FNGERS_PAST_15_09"); //To bardzo prawdopodobne. Jednak w dalszym ci¹gu to za ma³o, ¿eby cokolwiek ustaliæ. 
 	
-    B_LogEntry                     (CH1_HandDed,"R¹czka przed wrzuceniem za Barierê dzia³a³ w Gildii Z³odziei w Khorinis. Byæ mo¿e któryœ z jego dawniejszych wrogów równie¿ trafi³ za Barierê. Niestety ta informacja w niczym mi nie pomo¿e. ");
+    B_LogEntry                     (CH2_FingersSeeking,"R¹czka przed wrzuceniem za Barierê dzia³a³ w Gildii Z³odziei w Khorinis. Byæ mo¿e któryœ z jego dawniejszych wrogów równie¿ trafi³ za Barierê. Niestety ta informacja w niczym mi nie pomo¿e. ");
 };
 
 //========================================
@@ -2226,9 +2226,9 @@ FUNC VOID DIA_PC_Thief_NoWPyte_Info()
     CreateInvItems (self, ItMiNugget, 100);
     B_GiveInvItems (self, other, ItMiNugget, 100);
 	
-    B_LogEntry               (CH1_HandDed,"Powiedzia³em Diego o œmierci R¹czki. Mam nie wspominaæ nikomu tego o czym siê dowiedzia³em.");
-    Log_SetTopicStatus       (CH1_HandDed, LOG_SUCCESS);
-    MIS_HandDed = LOG_SUCCESS;
+    B_LogEntry               (CH2_FingersSeeking,"Powiedzia³em Diego o œmierci R¹czki. Mam nie wspominaæ nikomu tego o czym siê dowiedzia³em.");
+    Log_SetTopicStatus       (CH2_FingersSeeking, LOG_SUCCESS);
+    MIS_FingersSeeking = LOG_SUCCESS;
 
     B_GiveXP (200);
     AI_StopProcessInfos	(self);
@@ -2251,7 +2251,7 @@ INSTANCE DIA_PC_Thief_FingersStayAlive (C_INFO)
 
 FUNC INT DIA_PC_Thief_FingersStayAlive_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Fingers_FingersStayAlive)) && (MIS_HandDed == LOG_RUNNING)
+    if (Npc_KnowsInfo (hero, DIA_Fingers_FingersStayAlive)) && (MIS_FingersSeeking == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -2270,9 +2270,9 @@ FUNC VOID DIA_PC_Thief_FingersStayAlive_Info()
     CreateInvItems (self, ItMiNugget, 200);
     B_GiveInvItems (self, other, ItMiNugget, 200);
 	
-    B_LogEntry               (CH1_HandDed,"Powiedzia³em Diego o tym, ¿e R¹czka wróci³ do Obozu. W nagrodê otrzyma³em 200 bry³ek rudy i zaskarbi³em sobie szacunek starego Cienia.");
-    Log_SetTopicStatus       (CH1_HandDed, LOG_SUCCESS);
-    MIS_HandDed = LOG_SUCCESS;
+    B_LogEntry               (CH2_FingersSeeking,"Powiedzia³em Diego o tym, ¿e R¹czka wróci³ do Obozu. W nagrodê otrzyma³em 200 bry³ek rudy i zaskarbi³em sobie szacunek starego Cienia.");
+    Log_SetTopicStatus       (CH2_FingersSeeking, LOG_SUCCESS);
+    MIS_FingersSeeking = LOG_SUCCESS;
 
     B_GiveXP (325);
     AI_StopProcessInfos	(self);
@@ -2780,7 +2780,7 @@ FUNC VOID DIA_PC_Thief_BANDYTA_ZAMEK_Info()
     AI_Output (self, other ,"DIA_PC_Thief_BANDYTA_ZAMEK_03_02"); //Jesteœ pewien, ¿e chcesz tam wejœæ? W zamku a¿ roi siê od Stra¿ników.
     AI_Output (other, self ,"DIA_PC_Thief_BANDYTA_ZAMEK_15_03"); //Mimo wszystko muszê tam wejœæ. Masz jakiœ pomys³ na przekonanie Stra¿ników?
     AI_Output (self, other ,"DIA_PC_Thief_BANDYTA_ZAMEK_03_04"); //Hmm... Mogê porozmawiaæ z Thorusem, jednak bêdê potrzebowa³ 500 bry³ek rudy na poniesienie ewentualnych kosztów.
-	B_LogEntry			(CH1_WejscieDoZamku,"Diego zaproponowa³ mi pomoc. Za 500 bry³ek rudy spróbuje za³atwiæ mi wstêp.");
+	B_LogEntry			(CH1_CastleEntranceBandit,"Diego zaproponowa³ mi pomoc. Za 500 bry³ek rudy spróbuje za³atwiæ mi wstêp.");
 };
 
 //========================================
@@ -2813,7 +2813,7 @@ FUNC VOID DIA_PC_Thief_BANDYTA_PRZEKUPSTWO_GATE_Info()
     AI_Output (other, self ,"DIA_PC_Thief_BANDYTA_PRZEKUPSTWO_GATE_15_01"); //Oto ruda.
     AI_Output (self, other ,"DIA_PC_Thief_BANDYTA_PRZEKUPSTWO_GATE_03_02"); //W porz¹dku. Zajmê siê wszystkim.
 	B_giveinvitems (hero,self, ItMiNugget, 500);
-	B_LogEntry			(CH1_WejscieDoZamku,"Zap³aci³em Diego. Ciekawe czy uda mu siê coœ wskóraæ.");
+	B_LogEntry			(CH1_CastleEntranceBandit,"Zap³aci³em Diego. Ciekawe czy uda mu siê coœ wskóraæ.");
 };
 
 //#####################################################################################

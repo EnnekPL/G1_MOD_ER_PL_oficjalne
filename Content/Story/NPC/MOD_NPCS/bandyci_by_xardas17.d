@@ -24,7 +24,7 @@ fight_tactic = FAI_HUMAN_STRONG;
 
 //-------- Talente -------- 
 
-Npc_SetTalentSkill (self,NPC_TALENT_1H,1); 
+Npc_SetTalentSkill (self,NPC_TALENT_1H,4); 
 Npc_SetTalentSkill (self,NPC_TALENT_BOW,1); 
 
 //-------- inventory -------- 

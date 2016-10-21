@@ -967,9 +967,9 @@ FUNC VOID DIA_Cord_SpottedNearMine_Info()
         AI_Output (self, other ,"DIA_Cord_SpottedNearMine_03_12"); //Dobrze.
         MIS_NC_Mine = LOG_RUNNING;
 
-        Log_CreateTopic            (CH1_NC_Mine, LOG_MISSION);
-        Log_SetTopicStatus       (CH1_NC_Mine, LOG_RUNNING);
-        B_LogEntry                     (CH1_NC_Mine,"Oczyœci³em kopalniê ze z³ych si³. Cord zaproponowa³, aby poddaæ Magom Wody pomys³ na wznowienie wydobycia.");
+        Log_CreateTopic            (CH4_NC_Mine, LOG_MISSION);
+        Log_SetTopicStatus       (CH4_NC_Mine, LOG_RUNNING);
+        B_LogEntry                     (CH4_NC_Mine,"Oczyœci³em kopalniê ze z³ych si³. Cord zaproponowa³, aby poddaæ Magom Wody pomys³ na wznowienie wydobycia.");
 
         B_GiveXP (500);
     }
@@ -1025,9 +1025,9 @@ FUNC VOID DIA_Cord_IHaveStone_Info()
 	//nowe zadanie 
 	MIS_NC_Mine = LOG_RUNNING;
 
-    Log_CreateTopic          (CH1_NC_Mine, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_NC_Mine, LOG_RUNNING);
-    B_LogEntry               (CH1_NC_Mine,"Oczyœci³em kopalniê ze z³ych si³. Cord zaproponowa³, aby poddaæ Lee pomys³ na wznowienie wydobycia.");
+    Log_CreateTopic          (CH4_NC_Mine, LOG_MISSION);
+    Log_SetTopicStatus       (CH4_NC_Mine, LOG_RUNNING);
+    B_LogEntry               (CH4_NC_Mine,"Oczyœci³em kopalniê ze z³ych si³. Cord zaproponowa³, aby poddaæ Lee pomys³ na wznowienie wydobycia.");
 	
 	//stare zadanie z kopalni¹
 	MIS_PomocQuentinowi = LOG_SUCCESS;

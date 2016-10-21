@@ -373,7 +373,7 @@ INSTANCE DIA_Patter_HELLO5 (C_INFO)
 
 FUNC INT DIA_Patter_HELLO5_Condition()
 {
-    if (MIS_RzopierdolInTemple == LOG_RUNNING)
+    if (MIS_BattleInTemple == LOG_RUNNING)
     {
     return TRUE;
     };

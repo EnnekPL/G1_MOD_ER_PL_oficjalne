@@ -78,9 +78,9 @@ FUNC VOID DIA_Spike_HELLO2_Info()
     AI_Output (self, other ,"DIA_Spike_HELLO2_03_02"); //Wielkie dziêki! Równy z ciebie goœæ. Nie mogê ci du¿o zaoferowaæ. Mam tu ca³kiem fajny miecz. Na pocz¹tek bêdzie dla ciebie w sam raz.
     AI_Output (other, self ,"DIA_Spike_HELLO2_15_03"); //Dziêki. Broñ zawsze siê przyda.
 	
-    B_LogEntry                     (CH1_Spike_Pomiot,"Spike by³ bardzo zadowolony z moich dzia³añ. Zyska³em kolejnego sojusznika w obozie.");
-    Log_SetTopicStatus       (CH1_Spike_Pomiot, LOG_SUCCESS);
-    MIS_Spike_Pomiot = LOG_SUCCESS;
+    B_LogEntry                     (CH1_SpikeLoser,"Spike by³ bardzo zadowolony z moich dzia³añ. Zyska³em kolejnego sojusznika w obozie.");
+    Log_SetTopicStatus       (CH1_SpikeLoser, LOG_SUCCESS);
+    MIS_SpikeLoser = LOG_SUCCESS;
     B_GiveXP (100);
 	CreateInvItems (self,ItMw_1H_Sword_Short_05,1);
 	B_GiveInvItems (self,other,ItMw_1H_Sword_Short_05,1);

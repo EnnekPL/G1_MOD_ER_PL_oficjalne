@@ -49,6 +49,9 @@ FUNC VOID DIA_Bula_Opcje_Info()
 	Info_AddChoice		(DIA_Bula_Opcje,"devmode -- guild to none",DIA_Bula_DevMode22);
 	Info_AddChoice		(DIA_Bula_Opcje,"devmode -- guild to org",DIA_Bula_DevMode23);
 	Info_AddChoice		(DIA_Bula_Opcje,"devmode -- rutyny do trialogów",DIA_Bula_DevMode24);
+	
+	//AI_AskText (self, DIA_Bula_DevMode13, DIA_Bula_DevMode10, "raczka","uturiel");
+	//print ("rpk");
 	//Info_AddChoice		(DIA_Bula_Opcje,B_BuildLearnString(NAME_LearnStrength_1,LPCOST_ATTRIBUTE_STRENGTH,0)			,DIA_Bula_Opcje2);
 };
 
@@ -427,9 +430,9 @@ FUNC VOID DIA_Bula_printtest23_Info()
     B_GiveInvItems (self, other, ItFo_Plants_Berrys_01, 1500);
     B_GiveInvItems (other, self, ItFo_Plants_Berrys_01, 1000);
     B_GiveXP (300);
-	B_LogEntry                     (CH1_MagnackiePi4erscienie,"Odda³em pierœcienie Quentinowi.");
-    Log_SetTopicStatus       (CH1_MagnackiePi4erscienie, LOG_SUCCESS);
-    MIS_MagnackiePi4erscienie = LOG_SUCCESS;
+	B_LogEntry                     (CH1_BaronsRings,"Odda³em pierœcienie Quentinowi.");
+    Log_SetTopicStatus       (CH1_BaronsRings, LOG_SUCCESS);
+    MIS_BaronsRings = LOG_SUCCESS;
 };
 var int lopek;
 //========================================
@@ -608,16 +611,16 @@ func void DIA_Bula_Questy_ZemstaGrim ()
 
 func void DIA_Bula_Questy_StartFingers ()
 {
-	MIS_HandDed = LOG_RUNNING;
+	MIS_FingersSeeking = LOG_RUNNING;
 	B_ExchangeRoutine (STT_329_Dexter,"csi");
 	
 	CreateInvItems 	  (STT_331_Fingers, ItMis_FingersSecretBook, 1);
 	B_ExchangeRoutine (STT_331_Fingers,"ded");
 	B_killnpc (STT_331_Fingers);
 	
-    Log_CreateTopic          (CH1_HandDed, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_HandDed, LOG_RUNNING);
-    B_LogEntry               (CH1_HandDed,"Diego poprosi³ mnie o zbadanie sprawy tajemniczego znikniêcia R¹czki. Œledztwo mam prowadziæ razem z Dexterem. Znajdê go w chacie R¹czki. Byæ mo¿e znalaz³ ju¿ jakieœ poszlaki. Na razie jedyn¹ moj¹ wskazówk¹ jest informacja, ¿e Diego otrzyma³ list z pogró¿kami z Nowego Obozu. Nie otrzyma³em jednak od niego tego dokumentu.");
+    Log_CreateTopic          (CH2_FingersSeeking, LOG_MISSION);
+    Log_SetTopicStatus       (CH2_FingersSeeking, LOG_RUNNING);
+    B_LogEntry               (CH2_FingersSeeking,"Diego poprosi³ mnie o zbadanie sprawy tajemniczego znikniêcia R¹czki. Œledztwo mam prowadziæ razem z Dexterem. Znajdê go w chacie R¹czki. Byæ mo¿e znalaz³ ju¿ jakieœ poszlaki. Na razie jedyn¹ moj¹ wskazówk¹ jest informacja, ¿e Diego otrzyma³ list z pogró¿kami z Nowego Obozu. Nie otrzyma³em jednak od niego tego dokumentu.");
 };
 
 func void DIA_Bula_Questy_WykonaajKopacz ()
@@ -1059,9 +1062,9 @@ FUNC INT DIA_Bula_KURWAMACJAPIE2_Condition()
 FUNC VOID DIA_Bula_KURWAMACJAPIE2_Info()
 {
     AI_Output (self, other ,"DIA_Bula_KURWAMACJAPIE2_03_01"); //test !!
-	    B_LogEntry                     (CH1_MagnackiePi4erscienie,"Odda³em pierœcienie Quentinowi.");
-    Log_SetTopicStatus       (CH1_MagnackiePi4erscienie, LOG_SUCCESS);
-    MIS_MagnackiePi4erscienie = LOG_SUCCESS;
+	    B_LogEntry                     (CH1_BaronsRings,"Odda³em pierœcienie Quentinowi.");
+    Log_SetTopicStatus       (CH1_BaronsRings, LOG_SUCCESS);
+    MIS_BaronsRings = LOG_SUCCESS;
 
     B_GiveXP (400);
 	Npc_RemoveInvItems (hero, EBR_Ring1, 1);

@@ -44,3 +44,9 @@
 - oddajemy miecz Luisowi w opuszczonej kopalni
 - przerobione zadanie "Nowe, mocne ziele" od Davsona
 - zadanie od Baal Lukora ("Zaginiony szpieg Gor Na Lin") jest tylko dla Stra¿ników Œwi¹tynnych
+- zmniejszona iloœæ zwojów jakie dostajemy od Rodrigueza
+- zadanie "Sytuacja w dolinie" od teraz ³¹czy w sobie trzy questy: Szpieg przy œwi¹tyni, Informacje od Magów, Zniszczyæ œwi¹tyniê
+- zadanie "Trucizna dla kucharza" (dawniej "Trucizna") od teraz ³¹czy w sobie zadanie "Sk³adniki do trucizny"
+- bandyci napadaj¹cy na nas podczas eskortowania konwoju lepiej walcz¹ orê¿em
+- przywódca eskorty nie wspomina ju¿ o kopaczach przed obozem, których nie ma
+- przywódca eskorty podchodzi do nas podczas dialogu

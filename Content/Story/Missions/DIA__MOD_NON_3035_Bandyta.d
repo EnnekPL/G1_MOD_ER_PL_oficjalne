@@ -50,13 +50,13 @@ FUNC INT DIA_Luis_HELLO1_Condition()
 FUNC VOID DIA_Luis_HELLO1_Info()
 {
     AI_Output (self, other ,"DIA_Luis_HELLO1_03_01"); //Widzê, ¿e wróci³eœ do kopalni. 
-    if  (MIS_MineChlopy == LOG_RUNNING)
+    if  (MIS_NewEnginer == LOG_RUNNING)
     {
         AI_Output (self, other ,"DIA_Luis_HELLO1_03_02"); //Wci¹¿, ¿e nie mamy nikogo, kto zaprowadzi³by tutaj porz¹dek. Teoretycznie dowodzê t¹ grup¹, ale nie znam siê na kopalniach.
         AI_Output (self, other ,"DIA_Luis_HELLO1_03_03"); //Nie wiem jak to zorganizowaæ.
         AI_Output (self, other ,"DIA_Luis_HELLO1_03_04"); //Pospiesz siê z tym szukaniem pomocy. To musi byæ ktoœ doœwiadczony. Jakiœ stary Kopacz.
     }
-    else if (MIS_MineChlopy == LOG_SUCCESS)
+    else if (MIS_NewEnginer == LOG_SUCCESS)
     {
         AI_Output (self, other ,"DIA_Luis_HELLO1_03_05"); //Dobrze, ¿e sprowadzi³eœ tutaj Guya. Ten goœæ ma jaja i wie co robiæ. 
         AI_Output (self, other ,"DIA_Luis_HELLO1_03_06"); //Ja niezbyt znam siê na kopalniach.
@@ -85,7 +85,7 @@ INSTANCE DIA_Luis_WORK (C_INFO)
 
 FUNC INT DIA_Luis_WORK_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Luis_HELLO1)) && (MIS_MineChlopy == LOG_SUCCESS)
+    if (Npc_KnowsInfo (hero, DIA_Luis_HELLO1)) && (MIS_NewEnginer == LOG_SUCCESS)
     {
     return TRUE;
     };

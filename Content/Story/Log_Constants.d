@@ -225,53 +225,16 @@ const string	CH6_Sleeper				=	"Przebudzenie Œni¹cego";
 
 
 
-
-
-
-
-
 //---------------------------------------------------------------------
 //   Stary Obóz 
 //---------------------------------------------------------------------
-const string CH1_TrutkaOM     		 	= "Trucizna";
-const string CH1_MiksturaTrujacaOM   	= "Sk³adniki do trucizny";
-const string CH1_RudaJoelowiOM    	 	= "Ruda dla Joel'a";
-const string CH1_MineEnter     		 	= "Wejœcie do Starej Kopalni";
-const string CH1_Kopacz      		 	= "Kopacz";
-
-
-
-const string CH1_TestOc    			 	= "Test myœliwski";
-const string CH1_GrimOc  		     	= "Oszust Grim";
-const string CH1_HandDed     			= "Poszukiwania R¹czki"; 
-
-const string CH1_Snaf_Przepis    	 	= "Skradziony przepis Snafa";
-const string CH1_Odstraszeni      	 	= "Ktoœ odstrasza skazañców"; 
-const string CH1_KosztemQuentina     	= "Wykorzystaæ Quentina";
-
-const string CH1_EskortaKopaczy      	= "Eskorta Kopaczy";
-const string CH1_Spike_Pomiot      		= "Problem Spike'a";
-const string CH1_PropozycjaFlinta      	= "Propozycja Flinta";
-const string CH1_FlintaPrzyjecie      	= "Sposób na Thorusa";
-const string CH1_SayOkylFlintDead      	= "Powiedz Okylowi, ¿e Flint nie ¿yje";
-
-const string CH1_SzpiegoMoroka      	= "Szpieg przy œwi¹tyni";
-const string CH1_ZbrojaTemplera      	= "Pancerz dla szpiega";
-const string CH1_FireMage_Help      	= "Informacje od Magów";
-const string CH1_RzopierdolInTemple     = "Zniszczyæ œwi¹tyniê";
-
-
-
-
-
-
+const string CH1_TestOc    			 	= "Test myœliwski"; //do obrobki
 const string CH1_Cpuny      			= "Nowi palacze";
-
 
 //---------------------------------------------------------------------
 //   Nowy Obóz 
 //---------------------------------------------------------------------
-const string CH1_NC_Mine      			= "Lee i kopalnia";
+
 const string CH1_KillFingers      		= "Stra¿nik w karczmie";
 const string CH1_FindPosazekKlina   	= "Poszukiwania pos¹¿ka";
 const string CH1_ZnowuZapierdalam   	= "Kto ukrad³ pos¹¿ek Klina?";
@@ -279,9 +242,9 @@ const string CH1_ZabijThompsona     	= "Zlecenie Will'a";
 const string CH1_KopalniaZlota      	= "Kopalnia z³ota";
 const string CH1_DrogaDoKopalni     	= "Do kopalni z³ota";
 const string CH1_KryjowkaNaKase     	= "Skrytka";
-const string CH1_PamietnikZNieba   		= "Lataj¹cy pamiêtnik";
+
 const string CH1_InfoDlaLaresa      	= "Ostrzec Bandytów";
-const string CH1_PomocTorlofowi     	= "Na pomoc Torlofowi";
+
 const string CH1_PomocQuentinowi    	= "Wsparcie dla Quentina";
 const string CH1_MagicySzkodnicy    	= "Nieudolni magicy";
 
@@ -289,26 +252,26 @@ const string CH1_MagicySzkodnicy    	= "Nieudolni magicy";
 //   Bandycki Obóz 
 //---------------------------------------------------------------------
 const string CH1_RozwalaUBnadytow       = "Dalsze losy Bandytów";
-const string CH1_CavalornFuck      		= "Cavalorn w niewoli";
+
 const string CH1_AtakNaSO      			= "Atak na Stary Obóz";
 const string CH1_Zniewolenie     		= "Zniewoleni Bandyci";
 const string CH1_FindFriends      		= "OdnaleŸæ przyjació³";
 const string CH1_helpSld1      			= "Atak na oddzia³y Gomeza";
-const string CH1_OdbijanieOpKop      	= "Gomez i kopalnia";
-const string CH1_MineChlopy      		= "Robotnik do kopalni";
-const string CH1_SytucajaWOM      		= "Sytuacja w Starej Kopalni";
+
+
+
 const string CH1_Rozpierdol1      		= "Atak na plac wymian";
 const string CH1_Rozpierdol2      		= "Transport do kopalni";
 const string CH1_AtakNaOC      			= "Plany Draxa";
-const string CH1_MagnackiePi4erscienie  = "Magnackie pierœcienie";
-const string CH1_WejscieDoZamku      	= "Wejœcie do zamku";
+
+
 //---------------------------------------------------------------------
 //   KOLONIA
 //---------------------------------------------------------------------
-const string CH1_Wherevart      = "Zaginiony Vart";
-const string CH1_NowyVart      = "Pomocnik Cavalorna";
-const string CH1_MapaRicka      = "Mapa dla Harka";
-const string CH1_EqAngusa      = "Ekwipunek Steve'a";
+
+
+
+
 const string CH1_SearhSkarb      = "Poszukiwanie skarbu";
 const string CH1_Gdzie_hugo      = "£owca Hugo";
 const string CH1_Wielki_troll      = "Polowanie z Alexem";
@@ -326,13 +289,13 @@ const string CH1_DziwnyJosep    		= "Dziwne zachowania";
 
 
 const string CH1_Magazyny_OC      		= "Skarby w magazynie";
-const string CH1_FireNovize     		= "Nowicjusz Ognia";
+
 const string CH1_Do_lowcow      		= "Wsparcie ³owców";
-const string TOPIC_Damarok_Zadla     	= "¯¹d³a krwiopijców";
+
 const string CH1_Italian_Job      		= "Burdy w karczmie";
 const string CH1_Stan_gerarda      		= "Samotny Gerard";
 const string CH5_Upadek_Gomeza      	= "Upadek Gomeza";
-const string CH1_CourierFireMage    	= "Przesy³ka dla magów";
+
 const string CH1_FoodForOldMine     	= "¯ywnoœæ dla Starej Kopalni";
 const string CH4_NewLocationForPirates  = "Spokojniejsze miejsce dla piratów";
 
@@ -350,10 +313,11 @@ const string CH1_Cytadelaposzukiwacz    = "Poszukiwacze w pobli¿u cytadeli";
 const string CH1_lekiDlaAva      		= "Lekarstwo dla Avallacha";
 //const string CH1_GuazyDrena      = "Kryszta³y dla Drena";
 //const string CH1_megaSpam      = "Wrzód chêdo¿y pó³ obozu";
-const string CH1_Wherevart2      = "Dlaczego Vart nie ¿yje?";
+const string CH4_VartSeeking2      = "Dlaczego Vart nie ¿yje?";
 const string CH1_NieSpelnionaZemsta   		 = "Niespe³niona zemsta";
 const string CH1_NewWeed3BAU      	= "Kupiec na ziele"; //usuniête
-const string CH1_Przepis_Snaf 	     	= "Przepis Snafa";//zle
+const string CH1_Przepis_Snaf 	     	= "Przepis Snafa";//zle\
+const string CH1_Snaf_Przepis    	 	= "Skradziony przepis Snafa";
 const string CH1_Melvin_D³ug    	 	= "D³ug Melvina";
 const string CH1_Fire_Novize      		= "Nowicjusz Ognia";//wy³¹czone
 const string CH1_NekInNC      			= "Droga do Nowego Obozu";
@@ -366,5 +330,17 @@ const string CH1_OpiniaOSO      		= "Opinia Starego Obozu";
 const string CH1_FightWithScar      	= "Pojedynek z Blizn¹";
 const string CH1_AwansCien    		 	= "Awans na cienia";
 // Poboczne - Stary Obóz
-
+const string CH1_SzpiegoMoroka      	= "Szpieg przy œwi¹tyni"; //nieu¿ywane
 const string   CH1_Jedzenie_zplacu     =  "Ukradzione jedzenie"; //nieu¿ywane
+const string CH1_FireMage_Help      	= "Informacje od Magów";
+const string CH1_RzopierdolInTemple     = "Zniszczyæ œwi¹tyniê";
+const string CH1_KosztemQuentina     	= "Wykorzystaæ Quentina";
+const string CH1_RudaJoelowiOM    	 	= "Ruda dla Joel'a";
+const string CH1_MineEnter     		 	= "Wejœcie do Starej Kopalni";
+const string CH1_Kopacz      		 	= "Kopacz";
+const string CH1_MiksturaTrujacaOM   	= "Sk³adniki do trucizny";
+const string CH1_GrimOc  		     	= "Oszust Grim";//popsute
+const string CH1_FlintaPrzyjecie      	= "Sposób na Thorusa";
+const string CH1_SayOkylFlintDead      	= "Powiedz Okylowi, ¿e Flint nie ¿yje";
+const string CH1_FireNovize     		= "Nowicjusz Ognia";
+const string CH1_CavalornFuck      		= "Cavalorn w niewoli";
