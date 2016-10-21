@@ -785,12 +785,12 @@ FUNC VOID DIA_Lares_DRAX_CH4_Info()
     AI_Output (self, other ,"DIA_Lares_DRAX_CH4_03_05"); //IdŸ do Draxa, to mój stary przyjaciel. Powiedz mu co siê dzieje, a przy okazji przynieœ mi jakieœ wieœci od niego. 
 	
 	//log
-	MIS_InfoDlaLaresa = LOG_RUNNING;
-    Log_CreateTopic         (CH1_InfoDlaLaresa, LOG_MISSION);
-    Log_SetTopicStatus      (CH1_InfoDlaLaresa, LOG_RUNNING);
-    B_LogEntry              (CH1_InfoDlaLaresa,"Lares kaza³ mi iœæ do Draxa i ostrzec Bandytów przed tym, co siê dzieje w Kolonii. ");
+	MIS_RaportForLares = LOG_RUNNING;
+    Log_CreateTopic         (CH4_RaportForLares, LOG_MISSION);
+    Log_SetTopicStatus      (CH4_RaportForLares, LOG_RUNNING);
+    B_LogEntry              (CH4_RaportForLares,"Lares kaza³ mi iœæ do Draxa i ostrzec Bandytów przed tym, co siê dzieje w Kolonii. ");
 		
-    if (Npc_KnowsInfo (hero, DIA_Drax_Ded)) //&& (MIS_Do_lowcow == LOG_SUCCESS)
+    if (Npc_KnowsInfo (hero, DIA_Drax_Ded)) //&& (MIS_HuntersSupport == LOG_SUCCESS)
     {
 		AI_Output (other, self ,"DIA_Lares_DRAX_CH4_15_09"); //Ju¿ rozmawia³em z Draxem. Spotka³em go przy œcie¿ce do placu wymian. 
         AI_Output (self, other ,"DIA_Lares_DRAX_CH4_03_10"); //I co u niego s³ychaæ?
@@ -801,9 +801,9 @@ FUNC VOID DIA_Lares_DRAX_CH4_Info()
         AI_Output (self, other ,"DIA_Lares_DRAX_CH4_03_15"); //Zreszt¹ nie mam czasu teraz o tym myœleæ. Mamy inne problemy. 
         AI_Output (self, other ,"DIA_Lares_DRAX_CH4_03_16"); //Pos³uchaj: Torlof z kilkoma Najemnikami uda³ siê do doliny, w której przesiaduje Aidan. Chc¹ wypêdziæ Stra¿ników, którzy siê tam rozplenili.
         AI_Output (self, other ,"DIA_Lares_DRAX_CH4_03_17"); //Powinieneœ iœæ im pomóc. Zg³oœ siê do Torlofa.
-        B_LogEntry                     (CH1_InfoDlaLaresa,"Uprzedzi³em polecenie Laresa i ju¿ wczeœniej rozmawia³em z Draxem. Przekaza³em szefowi Szkodników wszystko, czego siê dowiedzia³em w Obozie. Ostrze¿enia nie by³y potrzebne. Bandyci maj¹ w³asny plan.");
-        Log_SetTopicStatus       (CH1_InfoDlaLaresa, LOG_SUCCESS);
-        MIS_InfoDlaLaresa = LOG_SUCCESS;
+        B_LogEntry                     (CH4_RaportForLares,"Uprzedzi³em polecenie Laresa i ju¿ wczeœniej rozmawia³em z Draxem. Przekaza³em szefowi Szkodników wszystko, czego siê dowiedzia³em w Obozie. Ostrze¿enia nie by³y potrzebne. Bandyci maj¹ w³asny plan.");
+        Log_SetTopicStatus       (CH4_RaportForLares, LOG_SUCCESS);
+        MIS_RaportForLares = LOG_SUCCESS;
 		
 		B_Story_SoldiersValleyDefense ();
 		Npc_ExchangeRoutine (BAN_1613_Doyle,"zwial");
@@ -847,8 +847,8 @@ INSTANCE DIA_Lares_SYTUACJA_W_OB (C_INFO)
 
 FUNC INT DIA_Lares_SYTUACJA_W_OB_Condition()
 {
-    if (MIS_InfoDlaLaresa == LOG_RUNNING)
-    && (Npc_KnowsInfo (hero, DIA_Drax_Ded)) //&& (MIS_Do_lowcow == LOG_SUCCESS)
+    if (MIS_RaportForLares == LOG_RUNNING)
+    && (Npc_KnowsInfo (hero, DIA_Drax_Ded)) //&& (MIS_HuntersSupport == LOG_SUCCESS)
     {
     return TRUE;
     };
@@ -867,9 +867,9 @@ FUNC VOID DIA_Lares_SYTUACJA_W_OB_Info()
         AI_Output (self, other ,"DIA_Lares_DRAX_CH4_03_16"); //Pos³uchaj: Torlof z kilkoma Najemnikami uda³ siê do doliny, w której przesiaduje Aidan. Chc¹ wypêdziæ Stra¿ników, którzy siê tam rozplenili.
         AI_Output (self, other ,"DIA_Lares_DRAX_CH4_03_17"); //Powinieneœ iœæ im pomóc. Zg³oœ siê do Torlofa.
 		
-    B_LogEntry               (CH1_InfoDlaLaresa,"Przekaza³em szefowi Szkodników wszystko, czego siê dowiedzia³em od Draxa. Pomimo kiepskiej sytuacji w Obozie Bandytów Lares postanowi³ zleciæ mi inne zadanie. Mam teraz iœæ do Torlofa i pomóc mu pozbyæ siê Stra¿ników z doliny.");
-    Log_SetTopicStatus       (CH1_InfoDlaLaresa, LOG_SUCCESS);
-    MIS_InfoDlaLaresa = LOG_SUCCESS;
+    B_LogEntry               (CH4_RaportForLares,"Przekaza³em szefowi Szkodników wszystko, czego siê dowiedzia³em od Draxa. Pomimo kiepskiej sytuacji w Obozie Bandytów Lares postanowi³ zleciæ mi inne zadanie. Mam teraz iœæ do Torlofa i pomóc mu pozbyæ siê Stra¿ników z doliny.");
+    Log_SetTopicStatus       (CH4_RaportForLares, LOG_SUCCESS);
+    MIS_RaportForLares = LOG_SUCCESS;
 	B_Story_SoldiersValleyDefense ();
 	Npc_ExchangeRoutine (BAN_1613_Doyle,"zwial");
 	B_GiveXP (670);

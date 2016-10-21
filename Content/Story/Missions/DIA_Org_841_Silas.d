@@ -135,9 +135,7 @@ INSTANCE DIA_Silas_Robota (C_INFO)
 FUNC INT DIA_Silas_Robota_Condition()
 {
     if (Kapitel == 2)
-    && ((Npc_GetTrueGuild(hero) == GIL_SLD)
-    || (Npc_GetTrueGuild(hero) == GIL_ORG))
-
+    && ((Npc_GetTrueGuild(hero) == GIL_SLD) || (Npc_GetTrueGuild(hero) == GIL_ORG))
     {
     return TRUE;
     };
@@ -146,35 +144,36 @@ FUNC INT DIA_Silas_Robota_Condition()
 
 FUNC VOID DIA_Silas_Robota_Info()
 {
-    AI_Output (self, other ,"DIA_Silas_Robota_03_01"); //Hej! Bêdê mia³ dla ciebie robotê.
+    AI_Output (self, other ,"DIA_Silas_Robota_03_01"); //Czekaj, nie chcesz mo¿e zarobiæ kilku bry³ek rudy?
     AI_Output (other, self ,"DIA_Silas_Robota_15_02"); //O co chodzi?
-    AI_Output (self, other ,"DIA_Silas_Robota_03_03"); //Pewien Cieñ ze Starego Obozu kr¹¿y wokó³ karczmy wieczorami.
-    AI_Output (self, other ,"DIA_Silas_Robota_03_04"); //Przypilnujesz dzisiejszej nocy moj¹ gospodê.
+    AI_Output (self, other ,"DIA_Silas_Robota_03_03"); //Jakiœ sukinsyn wieczorami kr¹¿y wokó³ karczmy. Mam wra¿enie, ¿e chce siê tu zakraœæ, gdy wszyscy bêd¹ spaæ.
+    AI_Output (self, other ,"DIA_Silas_Robota_03_04"); //Przypilnujesz dzisiejszej nocy moj¹ gospodê. Te dwa obiboki przy wejœciu s¹ bezu¿yteczni.
     AI_Output (self, other ,"DIA_Silas_Robota_03_05"); //Co ty na to?
 
     Info_ClearChoices		(DIA_Silas_Robota);
-    Info_AddChoice		(DIA_Silas_Robota, "Raczej nie.", DIA_Silas_Robota_Nie);
-    Info_AddChoice		(DIA_Silas_Robota, "Dobrze.", DIA_Silas_Robota_TAk);
+    Info_AddChoice		(DIA_Silas_Robota, "Nie jestem zainteresowany.", DIA_Silas_Robota_Nie);
+    Info_AddChoice		(DIA_Silas_Robota, "Czemu nie?", DIA_Silas_Robota_TAk);
 };
 
 FUNC VOID DIA_Silas_Robota_Nie()
 {
-    AI_Output (other, self ,"DIA_Silas_Robota_Nie_15_01"); //Raczej nie.
-    AI_Output (self, other ,"DIA_Silas_Robota_Nie_03_02"); //W takim razie idŸ ju¿.
+    AI_Output (other, self ,"DIA_Silas_Robota_Nie_15_01"); //Nie jestem zainteresowany.
+    AI_Output (self, other ,"DIA_Silas_Robota_Nie_03_02"); //No trudno, mo¿e Butch bêdzie chcia³.
     Info_ClearChoices		(DIA_Silas_Robota);
-    AI_StopProcessInfos	(self);
+    //AI_StopProcessInfos	(self);
 };
 
 FUNC VOID DIA_Silas_Robota_TAk()
 {
-    AI_Output (other, self ,"DIA_Silas_Robota_TAk_15_01"); //Dobrze.
-    AI_Output (self, other ,"DIA_Silas_Robota_TAk_03_02"); //IdŸ wiêc na górê i je¿eli go tu spotkasz, zabij!
+    AI_Output (other, self ,"DIA_Silas_Robota_TAk_15_01"); //Czemu nie?
+    AI_Output (self, other ,"DIA_Silas_Robota_TAk_03_02"); //Stój wiêc na czatach i jeœli spotkasz kogoœ obcego, pozb¹dŸ siê go.
     AI_Output (other, self ,"DIA_Silas_Robota_TAk_15_03"); //W porz¹dku.
+	AI_Output (self, other ,"DIA_Silas_Robota_TAk_03_04"); //Tylko nie przesiaduj w œrodku. ObchodŸ karczmê woko³o przez ca³¹ noc. I nie rób za du¿o ha³asu, bo ucieknie. 
     MIS_KillFingers = LOG_RUNNING;
 	Npc_ExchangeRoutine (STT_331_Fingers,"zlo");
     Log_CreateTopic         (CH1_KillFingers, LOG_MISSION);
     Log_SetTopicStatus      (CH1_KillFingers, LOG_RUNNING);
-    B_LogEntry              (CH1_KillFingers,"Silas kaza³ mi dziœ w nocy pilnowaæ swojej karczmy. Obawia siê kradzie¿y ze strony pewnego Cienia.");
+    B_LogEntry              (CH1_KillFingers,"Silas kaza³ mi dziœ w nocy pilnowaæ swojej karczmy. Podobno noc¹ ktoœ siê wokó³ niej krêci.");
     Info_ClearChoices		(DIA_Silas_Robota);
 }; 
 
@@ -189,12 +188,12 @@ INSTANCE DIA_Silas_KillPaluchy (C_INFO)
    condition    = DIA_Silas_KillPaluchy_Condition;
    information  = DIA_Silas_KillPaluchy_Info;
    permanent	= FALSE;
-   description	= "Zabi³em R¹czkê.";
+   description	= "Ktoœ faktycznie tu by³.";
 };
 
 FUNC INT DIA_Silas_KillPaluchy_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Fingers_ZAbic))
+    if (Npc_KnowsInfo (hero, DIA_Fingers_InTavern))
     {
     return TRUE;
     };
@@ -203,17 +202,19 @@ FUNC INT DIA_Silas_KillPaluchy_Condition()
 
 FUNC VOID DIA_Silas_KillPaluchy_Info()
 {
-    AI_Output (other, self ,"DIA_Silas_KillPaluchy_15_01"); //Zabi³em R¹czkê.
-    AI_Output (self, other ,"DIA_Silas_KillPaluchy_03_02"); //A wiêc to ten Cieñ.
-    AI_Output (self, other ,"DIA_Silas_KillPaluchy_03_03"); //Naprawdê pozby³eœ siê tego sukinsyna?
-    AI_Output (other, self ,"DIA_Silas_KillPaluchy_15_04"); //Tak.
+    AI_Output (other, self ,"DIA_Silas_KillPaluchy_15_01"); //Ktoœ faktycznie tu by³.
+    AI_Output (self, other ,"DIA_Silas_KillPaluchy_03_02"); //I mam rozumieæ, ¿e wiêcej siê tu nie pojawi.
+    AI_Output (other, self ,"DIA_Silas_KillPaluchy_15_03"); //Tak.
     AI_Output (self, other ,"DIA_Silas_KillPaluchy_03_05"); //Dobra robota. WeŸ to jako wynagrodzenie.
-    B_LogEntry                     (CH1_KillFingers,"Silas by³ bardzo zadowolony z informacji o pozbyciu siê R¹czki.");
+    B_LogEntry                     (CH1_KillFingers,"Silas by³ bardzo zadowolony z informacji o pozbyciu siê z³odzieja.");
     Log_SetTopicStatus       (CH1_KillFingers, LOG_SUCCESS);
     MIS_KillFingers = LOG_SUCCESS;
 
-    B_GiveXP (300);
+    B_GiveXP (180);
     AI_StopProcessInfos	(self);
+	
+	CreateInvItems (self, ItMiNugget, 60);
+    B_GiveInvItems (self, other, ItMiNugget, 60);
 };
 
 //////////////////////////////////////////////

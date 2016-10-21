@@ -456,7 +456,7 @@ INSTANCE DIA_Senyan_GoldMine (C_INFO)
 
 FUNC INT DIA_Senyan_GoldMine_Condition()
 {
-    if (MIS_KopalniaZlota == LOG_RUNNING) && (kapitel == 10)
+    if (MIS_GoldMine == LOG_RUNNING) && (kapitel == 10)
     {
     return TRUE;
     };
@@ -471,7 +471,7 @@ FUNC VOID DIA_Senyan_GoldMine_Info()
     AI_Output (self, other ,"DIA_Senyan_GoldMine_03_05"); //Czegoœ tu nie rozumiem...
     AI_Output (other, self ,"DIA_Senyan_GoldMine_15_06"); //Spotykamy siê na górnym piêtrze karczmy na jeziorze. Will ci wszystko wyjaœni.
     AI_Output (self, other ,"DIA_Senyan_GoldMine_03_07"); //Dobra, zjawiê siê tam.
-    B_LogEntry                     (CH1_KopalniaZlota,"Senyan przyjdzie na spotkanie do karczmy.");
+    B_LogEntry                     (CH2_GoldMine,"Senyan przyjdzie na spotkanie do karczmy.");
 	Npc_ExchangeRoutine (self, "karczma");
     B_GiveXP (50);
     AI_StopProcessInfos	(self);

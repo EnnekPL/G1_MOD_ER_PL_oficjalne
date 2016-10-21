@@ -1031,7 +1031,7 @@ FUNC VOID DIA_Drax_ZIOLA_Info()
     CreateInvItems (self, ItFoMuttonRaw, 13);
     B_GiveInvItems (self, other, ItFoMuttonRaw, 13);
 	//log
-    B_LogEntry     (CH1_DostawaEmanuela,"Drax przekaza³ mi to, co uda³o im siê zdobyæ. Teraz muszê szybko zanieœæ to do Emanuela. Jest tu: oko³o 20 grzybów, dwie sztuki ziela, piêæ kawa³ków miêsa chrz¹szcza i 13 kawa³ków miêsa œcierwojada.");
+    B_LogEntry     (CH1_SmallDelivery,"Drax przekaza³ mi to, co uda³o im siê zdobyæ. Teraz muszê szybko zanieœæ to do Emanuela. Jest tu: oko³o 20 grzybów, dwie sztuki ziela, piêæ kawa³ków miêsa chrz¹szcza i 13 kawa³ków miêsa œcierwojada.");
 	//experience
     B_GiveXP (50);
 };
@@ -1081,24 +1081,24 @@ FUNC VOID DIA_Drax_Ded_Info()
     AI_Output (other, self ,"DIA_Drax_Ded_15_12"); //Przemyœl to!
     AI_Output (self, other ,"DIA_Drax_Ded_03_13"); //Przestañ!
 	
-	if (MIS_InfoDlaLaresa == LOG_RUNNING)
+	if (MIS_RaportForLares == LOG_RUNNING)
 	{
-	B_LogEntry  (CH1_InfoDlaLaresa,"Sytuacja w Obozie Bandytów nie wygl¹da najlepiej. Stra¿nicy zabili Ratforda. Drax chce pomœciæ œmieræ przyjaciela. Zebra³ grupê Bandytów i szykuje atak na Stra¿ników. Muszê szybko wróciæ do Laresa.");
+	B_LogEntry  (CH4_RaportForLares,"Sytuacja w Obozie Bandytów nie wygl¹da najlepiej. Stra¿nicy zabili Ratforda. Drax chce pomœciæ œmieræ przyjaciela. Zebra³ grupê Bandytów i szykuje atak na Stra¿ników. Muszê szybko wróciæ do Laresa.");
 	};
 	
 	/*
 	if (Npc_GetTrueGuild(hero) == GIL_BAU)
 	{
-	if (MIS_RozwalaUBnadytow == LOG_RUNNING) && (Npc_KnowsInfo (hero, DIA_Quentin_HELLO35))
+	if (MIS_NewDanger == LOG_RUNNING) && (Npc_KnowsInfo (hero, DIA_Quentin_HELLO35))
 	{
-    B_LogEntry                     (CH1_RozwalaUBnadytow,"Drax oszala³ po tym, gdy Ratford zgin¹³ z rêki Stra¿ników. Bandyta powzi¹³ zemstê na ludziach Gomeza. Przypuszczam, ¿e Bandyci, którzy uciekli z Obozu chc¹ razem z nim walczyæ. Muszê szybko ostzrec Quentina.");
+    B_LogEntry                     (CH4_NewDanger,"Drax oszala³ po tym, gdy Ratford zgin¹³ z rêki Stra¿ników. Bandyta powzi¹³ zemstê na ludziach Gomeza. Przypuszczam, ¿e Bandyci, którzy uciekli z Obozu chc¹ razem z nim walczyæ. Muszê szybko ostzrec Quentina.");
 	}
 	else if (!Npc_KnowsInfo (hero, DIA_Quentin_HELLO35)) && (Npc_KnowsInfo (hero, Info_Diego_OCWARN))
 	{
-	MIS_RozwalaUBnadytow = LOG_RUNNING;
-    Log_CreateTopic            (CH1_RozwalaUBnadytow, LOG_MISSION);
-	Log_SetTopicStatus       (CH1_RozwalaUBnadytow, LOG_RUNNING);
-	B_LogEntry                     (CH1_RozwalaUBnadytow,"To o czym mówi³ Diego zaczê³o siê sprawdzaæ. Rozproszeni po Kolonii Stra¿nicy zabijaj¹ ka¿dego, kto nie ma na sobie czerwonego pancerza. Jedn¹ z ich pierwszych ofiar sta³ siê Ratford. Drax jest zrozpaczony œmierci¹ przyjaciela. Muszê jak najszybciej poinformowaæ Quentina o sytuacji zanim Drax zrobi coœ g³upiego. ");
+	MIS_NewDanger = LOG_RUNNING;
+    Log_CreateTopic            (CH4_NewDanger, LOG_MISSION);
+	Log_SetTopicStatus       (CH4_NewDanger, LOG_RUNNING);
+	B_LogEntry                     (CH4_NewDanger,"To o czym mówi³ Diego zaczê³o siê sprawdzaæ. Rozproszeni po Kolonii Stra¿nicy zabijaj¹ ka¿dego, kto nie ma na sobie czerwonego pancerza. Jedn¹ z ich pierwszych ofiar sta³ siê Ratford. Drax jest zrozpaczony œmierci¹ przyjaciela. Muszê jak najszybciej poinformowaæ Quentina o sytuacji zanim Drax zrobi coœ g³upiego. ");
 	};
 	}
 	*/
@@ -1121,7 +1121,7 @@ INSTANCE DIA_Drax_WTFCH4 (C_INFO)
 FUNC INT DIA_Drax_WTFCH4_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Drax_Ded))
-	&& (MIS_RozwalaUBnadytow == LOG_RUNNING)
+	&& (MIS_NewDanger == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -1142,7 +1142,7 @@ FUNC VOID DIA_Drax_WTFCH4_Info()
     Info_AddChoice		(DIA_Drax_WTFCH4, "Jestem z wami!", DIA_Drax_WTFCH4_JA);
     Info_AddChoice		(DIA_Drax_WTFCH4, "Nie dam siê w to wci¹gn¹æ.", DIA_Drax_WTFCH4_NO);
 	
-	B_LogEntry              (CH1_RozwalaUBnadytow,"Musze porozmawiaæ z Quentinem. Draxa ju¿ nie da siê odci¹gn¹æ od jego planów. Quentin musi nas wesprzeæ kilkoma ludŸmi.");
+	B_LogEntry              (CH4_NewDanger,"Musze porozmawiaæ z Quentinem. Draxa ju¿ nie da siê odci¹gn¹æ od jego planów. Quentin musi nas wesprzeæ kilkoma ludŸmi.");
 };
 
 FUNC VOID DIA_Drax_WTFCH4_JA()
@@ -1194,7 +1194,7 @@ FUNC VOID DIA_Drax_QUENTINInfosHelp_Info()
     AI_Output (other, self ,"DIA_Drax_QUENTINInfosHelp_15_01"); //Quentin kaza³ ci poczekaæ z atakiem.
     AI_Output (other, self ,"DIA_Drax_QUENTINInfosHelp_15_02"); //Zostañcie tu i nie zwracajcie na siebie uwagi Stra¿ników. My przygotujemy orê¿ i do was do³¹czymy.
 	AI_Output (self, other ,"DIA_Drax_QUENTINInfosHelp_03_03"); //Dobrze, ale poœpieszcie siê!
-    B_LogEntry                     (CH1_RozwalaUBnadytow,"Przekaza³em informacjê o planach Quentina Draxowi. Pora znów wróciæ do szefa i czekaæ na nastêpne polecenie.");
+    B_LogEntry                     (CH4_NewDanger,"Przekaza³em informacjê o planach Quentina Draxowi. Pora znów wróciæ do szefa i czekaæ na nastêpne polecenie.");
 	
 	B_GiveXP (200);
 };
@@ -1233,11 +1233,11 @@ FUNC VOID DIA_Drax_EndPrzygotowan_Info()
     AI_Output (self, other ,"DIA_Drax_EndPrzygotowan_03_12"); //Nie róbcie du¿o ha³asu, po prostu idŸcie za mn¹.
     AI_Output (self, other ,"DIA_Drax_EndPrzygotowan_03_13"); //WeŸ tê mapê, z³ap oddech przed walk¹ i powiedz, gdy bêdziesz gotów. Zaraz wyruszamy. 
 	B_GiveInvItems (self, other, ItWrWorldmapDrax, 1);
-    MIS_AtakNaSO = LOG_RUNNING;
+    MIS_GardistsCheckpoints = LOG_RUNNING;
 
-    Log_CreateTopic          (CH1_AtakNaSO, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_AtakNaSO, LOG_RUNNING);
-    B_LogEntry               (CH1_AtakNaSO,"Spotka³em wszystkich w miejscu, w którym pierwszy raz widzia³em Ratforda i Draxa. Drax da³ mi mapê z planami dzia³ania. Mam pilnowaæ szeregów Bandytów. Gdy bêdê gotowy, wyruszymy zaatakowaæ Stra¿ników.");
+    Log_CreateTopic          (CH4_GardistsCheckpoints, LOG_MISSION);
+    Log_SetTopicStatus       (CH4_GardistsCheckpoints, LOG_RUNNING);
+    B_LogEntry               (CH4_GardistsCheckpoints,"Spotka³em wszystkich w miejscu, w którym pierwszy raz widzia³em Ratforda i Draxa. Drax da³ mi mapê z planami dzia³ania. Mam pilnowaæ szeregów Bandytów. Gdy bêdê gotowy, wyruszymy zaatakowaæ Stra¿ników.");
 };
 
 //========================================
@@ -1523,9 +1523,9 @@ FUNC VOID DIA_Drax_Pokonani3_Info()
 
     CreateInvItems (self, ItMw_1H_Sword_Broad_02, 1);
     B_GiveInvItems (self, other, ItMw_1H_Sword_Broad_02, 1);
-    B_LogEntry               (CH1_AtakNaSO,"Pozbyliœmy wszystkich Stra¿ników krêc¹cych siê wokó³ Starego Obozu. Drax jest usatysfakcjonowany. Pora pogadaæ z Quentinem i wracaæ do Obozu.");
-    Log_SetTopicStatus       (CH1_AtakNaSO, LOG_SUCCESS);
-    MIS_AtakNaSO = LOG_SUCCESS;
+    B_LogEntry               (CH4_GardistsCheckpoints,"Pozbyliœmy wszystkich Stra¿ników krêc¹cych siê wokó³ Starego Obozu. Drax jest usatysfakcjonowany. Pora pogadaæ z Quentinem i wracaæ do Obozu.");
+    Log_SetTopicStatus       (CH4_GardistsCheckpoints, LOG_SUCCESS);
+    MIS_GardistsCheckpoints = LOG_SUCCESS;
 
     B_GiveXP (1000);
 	BAN_1614_Drax.flags = 0;

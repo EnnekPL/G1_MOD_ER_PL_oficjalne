@@ -187,11 +187,11 @@ FUNC VOID DIA_osko_QUEST_HUGO_START_Info()
 	AI_Output (self, other ,"DIA_osko_QUEST_HUGO_START_03_05"); //Hugo po walce znalaz³ przy zw³okach orkowego przywódcy jak¹œ mapê. Po tym jak wróciliœmy do obozu, studiowa³ j¹ przez dwa dni, po czym znikn¹³ bez œladu nikomu nic nie mówi¹c.
     AI_Output (self, other ,"DIA_osko_QUEST_HUGO_START_03_06"); //Ja i reszta ch³opaków jesteœmy trochê tym faktem zmartwieni. Hugo to œwietny wojownik i wie jak traktowaæ orków. Szkoda by³oby straciæ kogoœ takiego. Jeœli gdzieœ go spotkasz, daj mi znaæ. 
     AI_Output (other, self ,"DIA_osko_QUEST_HUGO_START_15_07"); //W porz¹dku. Jeœli go gdzieœ spotkam, to siê o tym dowiesz.
-    MIS_Gdzie_hugo = LOG_RUNNING;
+    MIS_HunterHugo = LOG_RUNNING;
 
-    Log_CreateTopic          (CH1_Gdzie_hugo, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_Gdzie_hugo, LOG_RUNNING);
-    B_LogEntry               (CH1_Gdzie_hugo,"Osko zdradzi³ mi, ¿e w obozie ³owców orków by³ jeszcze jeden myœliwy imieniem Hugo. Ponoæ bardzo interesowa³a go kultura orków. By³ dosyæ osobliwym cz³owiekiem, ale potrafi³ sobie poradziæ w niebezpieczeñstwie. Muszê go poszukaæ. Z pewnoœci¹ jest gdzieœ w pobli¿u obozu. ");
+    Log_CreateTopic          (CH1_HunterHugo, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_HunterHugo, LOG_RUNNING);
+    B_LogEntry               (CH1_HunterHugo,"Osko zdradzi³ mi, ¿e w obozie ³owców orków by³ jeszcze jeden myœliwy imieniem Hugo. Ponoæ bardzo interesowa³a go kultura orków. By³ dosyæ osobliwym cz³owiekiem, ale potrafi³ sobie poradziæ w niebezpieczeñstwie. Muszê go poszukaæ. Z pewnoœci¹ jest gdzieœ w pobli¿u obozu. ");
     AI_StopProcessInfos	(self);
 };
 
@@ -225,9 +225,9 @@ FUNC VOID DIA_osko_ODKRYLEM_Info()
     AI_Output (other, self ,"DIA_osko_ODKRYLEM_15_03"); //Dziêki. 
     CreateInvItems (self, ItMiNugget, 100);
     B_GiveInvItems (self, other, ItMiNugget, 100);
-    B_LogEntry     (CH1_gdzie_hugo,"Powiedzia³em Osko o tym, ¿e znalaz³em Hugo i pomog³em mu rozwi¹zaæ jego problemy.");
-    Log_SetTopicStatus       (CH1_gdzie_hugo, LOG_SUCCESS);
-    MIS_gdzie_hugo = LOG_SUCCESS;
+    B_LogEntry     (CH1_HunterHugo,"Powiedzia³em Osko o tym, ¿e znalaz³em Hugo i pomog³em mu rozwi¹zaæ jego problemy.");
+    Log_SetTopicStatus       (CH1_HunterHugo, LOG_SUCCESS);
+    MIS_HunterHugo = LOG_SUCCESS;
 
     B_GiveXP (200);
 };

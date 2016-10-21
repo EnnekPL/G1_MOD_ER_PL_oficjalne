@@ -785,7 +785,7 @@ INSTANCE DIA_Rocky_WtfRozwalaWobozie (C_INFO)
 
 FUNC INT DIA_Rocky_WtfRozwalaWobozie_Condition()
 {
-    if (MIS_AtakNaSO == LOG_SUCCESS)
+    if (MIS_GardistsCheckpoints == LOG_SUCCESS)
     {
     return TRUE;
     };
@@ -806,11 +806,11 @@ FUNC VOID DIA_Rocky_WtfRozwalaWobozie_Info()
     AI_Output (other, self ,"DIA_Rocky_WtfRozwalaWobozie_15_09"); //Jakiœ plan?
     AI_Output (self, other ,"DIA_Rocky_WtfRozwalaWobozie_03_10"); //Z mojej strony nic... Pogadaj z Quentinem.
 	
-	MIS_Zniewolenie = LOG_RUNNING;
+	MIS_GardistsInBC = LOG_RUNNING;
 
-    Log_CreateTopic          (CH1_zniewolenie, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_zniewolenie, LOG_RUNNING);
-    B_LogEntry               (CH1_zniewolenie,"Obóz Bandytów zosta³ odnaleziony przez Stra¿ników. Na szczêœcie Rocky'emu uda³o siê w porê uciec i zd¹¿y³ nas ostrzec. Muszê porozmawiaæ z Quentinem o naszych kolejnych krokach.");
+    Log_CreateTopic          (CH4_GardistsInBC, LOG_MISSION);
+    Log_SetTopicStatus       (CH4_GardistsInBC, LOG_RUNNING);
+    B_LogEntry               (CH4_GardistsInBC,"Obóz Bandytów zosta³ odnaleziony przez Stra¿ników. Na szczêœcie Rocky'emu uda³o siê w porê uciec i zd¹¿y³ nas ostrzec. Muszê porozmawiaæ z Quentinem o naszych kolejnych krokach.");
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////

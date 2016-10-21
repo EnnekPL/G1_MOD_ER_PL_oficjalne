@@ -267,7 +267,7 @@ INSTANCE DIA_Glen_GoldMine (C_INFO)
 
 FUNC INT DIA_Glen_GoldMine_Condition()
 {
-    if (MIS_KopalniaZlota == LOG_RUNNING) && (kapitel == 10)
+    if (MIS_GoldMine == LOG_RUNNING) && (kapitel == 10)
     {
     return TRUE;
     };
@@ -286,7 +286,7 @@ FUNC VOID DIA_Glen_GoldMine_Info()
     AI_Output (self, other ,"DIA_Glen_GoldMine_03_08"); //No dobra. Raz siê ¿yje.
     AI_Output (other, self ,"DIA_Glen_GoldMine_15_09"); //Spotykamy siê w karczmie w Nowym Obozie.
     AI_Output (self, other ,"DIA_Glen_GoldMine_03_10"); //Zatem widzimy siê w karczmie.
-    B_LogEntry                     (CH1_KopalniaZlota,"Glen bêdzie pracowaæ w kopalni z³ota.");
+    B_LogEntry                     (CH2_GoldMine,"Glen bêdzie pracowaæ w kopalni z³ota.");
 
     B_GiveXP (300);
 };

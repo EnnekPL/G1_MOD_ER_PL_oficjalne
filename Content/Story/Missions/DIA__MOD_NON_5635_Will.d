@@ -65,7 +65,7 @@ INSTANCE DIA_Will_HELLO2 (C_INFO)
 
 FUNC INT DIA_Will_HELLO2_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Will_HELLO1)) && (!Npc_KnowsInfo (hero, DIA_Will_HELLO3)) && (MIS_ZabijThompsona != LOG_RUNNING) && (MIS_ZabijThompsona != LOG_SUCCESS) && (MIS_ZabijThompsona != LOG_FAILED) 
+    if (Npc_KnowsInfo (hero, DIA_Will_HELLO1)) && (!Npc_KnowsInfo (hero, DIA_Will_HELLO3)) && (MIS_WillQuest != LOG_RUNNING) && (MIS_WillQuest != LOG_SUCCESS) && (MIS_WillQuest != LOG_FAILED) 
     {
     return TRUE;
     };
@@ -97,7 +97,7 @@ INSTANCE DIA_Will_HELLO3 (C_INFO)
 
 FUNC INT DIA_Will_HELLO3_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Will_HELLO1)) && (!Npc_KnowsInfo (hero, DIA_Will_HELLO2)) && (can_killthopson_dia == false) && (MIS_ZabijThompsona != LOG_RUNNING) && (MIS_ZabijThompsona != LOG_SUCCESS) && (MIS_ZabijThompsona != LOG_FAILED) 
+    if (Npc_KnowsInfo (hero, DIA_Will_HELLO1)) && (!Npc_KnowsInfo (hero, DIA_Will_HELLO2)) && (can_killthopson_dia == false) && (MIS_WillQuest != LOG_RUNNING) && (MIS_WillQuest != LOG_SUCCESS) && (MIS_WillQuest != LOG_FAILED) 
     {
     return TRUE;
     };
@@ -132,10 +132,10 @@ FUNC VOID DIA_Will_HELLO3_Zawsze()
     AI_Output (self, other ,"DIA_Will_HELLO3_Zawsze_03_02"); //Widzê, ¿e mam do czynienia z porz¹dnym cz³owiekiem.
     AI_Output (self, other ,"DIA_Will_HELLO3_Zawsze_03_03"); //Koleœ, którego masz sprz¹tn¹æ nazywa siê Thompson. Pewnie zaszy³ siê w jakiejœ karczmie, albo innej melinie.
     AI_Output (self, other ,"DIA_Will_HELLO3_Zawsze_03_04"); //Tylko uwa¿aj. Ma sporo znajomych. Za³atw go po cichu.
-	MIS_ZabijThompsona = LOG_RUNNING;
-	Log_CreateTopic		(CH1_ZabijThompsona,		LOG_MISSION);
-	Log_SetTopicStatus	(CH1_ZabijThompsona,		LOG_RUNNING);
-    B_LogEntry          (CH1_ZabijThompsona,"Will kaza³ mi zabiæ cz³owieka imieniem Thompson. Mam uwa¿aæ na jego obstawê. Nie dosta³em informacji dotycz¹cych jego aktualnego miejsca pobytu.");
+	MIS_WillQuest = LOG_RUNNING;
+	Log_CreateTopic		(CH2_WillQuest,		LOG_MISSION);
+	Log_SetTopicStatus	(CH2_WillQuest,		LOG_RUNNING);
+    B_LogEntry          (CH2_WillQuest,"Will kaza³ mi zabiæ cz³owieka imieniem Thompson. Mam uwa¿aæ na jego obstawê. Nie dosta³em informacji dotycz¹cych jego aktualnego miejsca pobytu.");
     Info_ClearChoices		(DIA_Will_HELLO3);
     AI_StopProcessInfos	(self);
 	will_herosay_zawsze = true;
@@ -166,7 +166,7 @@ INSTANCE DIA_Will_ThompsonDED (C_INFO)
 
 FUNC INT DIA_Will_ThompsonDED_Condition()
 {
-    if (MIS_ZabijThompsona == LOG_RUNNING)
+    if (MIS_WillQuest == LOG_RUNNING)
     && (Npc_IsDead(NON_5636_Thompson))
     {
     return TRUE;
@@ -190,18 +190,18 @@ FUNC VOID DIA_Will_ThompsonDED_Info()
     AI_Output (other, self ,"DIA_Will_ThompsonDED_15_13"); //Co mam zrobiæ?
     AI_Output (self, other ,"DIA_Will_ThompsonDED_03_14"); //Szybko siê uczysz. TRZY ZAUFANE OSOBY, tylko o tyle ciê proszê. Postaraj siê! Dwóch robotników i jeden ma³o wygadany ochroniarz. Zapamiêtasz?
     AI_Output (self, other ,"DIA_Will_ThompsonDED_03_15"); //Zadbaj, ¿eby mieli kompetencje, a jak ju¿ zbierzesz ekipê, to przyjdŸ do mnie.
-    B_LogEntry               (CH1_ZabijThompsona,"Thompson nie ¿yje, a Will by³ pe³en podziwu. Co wiêcej, ten tajemniczy cz³owiek opowiedzia³ mi o ¿yle z³ota, któr¹ znalaz³ w Kolonii. Wiedzia³em, ¿e znajomoœæ z nim siê op³aci.");
-    Log_SetTopicStatus       (CH1_ZabijThompsona, LOG_SUCCESS);
-    MIS_ZabijThompsona = LOG_SUCCESS;
+    B_LogEntry               (CH2_WillQuest,"Thompson nie ¿yje, a Will by³ pe³en podziwu. Co wiêcej, ten tajemniczy cz³owiek opowiedzia³ mi o ¿yle z³ota, któr¹ znalaz³ w Kolonii. Wiedzia³em, ¿e znajomoœæ z nim siê op³aci.");
+    Log_SetTopicStatus       (CH2_WillQuest, LOG_SUCCESS);
+    MIS_WillQuest = LOG_SUCCESS;
 
     B_GiveXP (200);
     CreateInvItems (self, ItMiNugget, 150);
     B_GiveInvItems (self, other, ItMiNugget, 150);
-    MIS_KopalniaZlota = LOG_RUNNING;
+    MIS_GoldMine = LOG_RUNNING;
 
-    Log_CreateTopic          (CH1_KopalniaZlota, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_KopalniaZlota, LOG_RUNNING);
-    B_LogEntry               (CH1_KopalniaZlota,"Will w sekrecie zdradzi³ mi, ¿e odnalaz³ w Kolonii ¿y³ê z³ota. Oznacza to dla nas ca³kiem niez³y zarobek, o ile pomogê mu zorganizowaæ wydobycie. Mam zebraæ ekipê, która podjê³aby siê pracy w ma³ej kopalni z³ota. Potrzebni s¹ dwaj robotnicy i jeden ochroniarz. Tylko, gdzie ja znajdê takich ludzi...");
+    Log_CreateTopic          (CH2_GoldMine, LOG_MISSION);
+    Log_SetTopicStatus       (CH2_GoldMine, LOG_RUNNING);
+    B_LogEntry               (CH2_GoldMine,"Will w sekrecie zdradzi³ mi, ¿e odnalaz³ w Kolonii ¿y³ê z³ota. Oznacza to dla nas ca³kiem niez³y zarobek, o ile pomogê mu zorganizowaæ wydobycie. Mam zebraæ ekipê, która podjê³aby siê pracy w ma³ej kopalni z³ota. Potrzebni s¹ dwaj robotnicy i jeden ochroniarz. Tylko, gdzie ja znajdê takich ludzi...");
     AI_StopProcessInfos	(self);
 };
 
@@ -222,7 +222,7 @@ INSTANCE DIA_Will_Rekrut_Shutfer (C_INFO)
 FUNC INT DIA_Will_Rekrut_Shutfer_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Schuerfer_Kopalnia))
-    && (MIS_KopalniaZlota == LOG_RUNNING)
+    && (MIS_GoldMine == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -252,7 +252,7 @@ INSTANCE DIA_Will_Rekrut_Shrat (C_INFO)
 FUNC INT DIA_Will_Rekrut_Shrat_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Shrat_GoldMine))
-    && (MIS_KopalniaZlota == LOG_RUNNING)
+    && (MIS_GoldMine == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -282,7 +282,7 @@ INSTANCE DIA_Will_Rekrut_Magnus (C_INFO)
 FUNC INT DIA_Will_Rekrut_Magnus_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Magnus_Ucieczka))
-    && (MIS_KopalniaZlota == LOG_RUNNING)
+    && (MIS_GoldMine == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -295,8 +295,6 @@ FUNC VOID DIA_Will_Rekrut_Magnus_Info()
     AI_Output (self, other ,"DIA_Will_Rekrut_Magnus_03_02"); //Oby by³ wystarczaj¹co silny, aby poradziæ sobie z zêbaczami!
 
 };
-
-
 
 //========================================
 //-----------------> Werbowanie
@@ -314,7 +312,7 @@ INSTANCE DIA_Will_Werbowanie (C_INFO)
 
 FUNC INT DIA_Will_Werbowanie_Condition()
 {
-    if (MIS_KopalniaZlota == LOG_RUNNING) && (Npc_KnowsInfo (hero, DIA_Will_Rekrut_Magnus)) && (Npc_KnowsInfo (hero, DIA_Will_Rekrut_Shrat)) && (Npc_KnowsInfo (hero, DIA_Will_Rekrut_Shutfer))
+    if (MIS_GoldMine == LOG_RUNNING) && (Npc_KnowsInfo (hero, DIA_Will_Rekrut_Magnus)) && (Npc_KnowsInfo (hero, DIA_Will_Rekrut_Shrat)) && (Npc_KnowsInfo (hero, DIA_Will_Rekrut_Shutfer))
     {
     return TRUE;
     };
@@ -337,9 +335,9 @@ FUNC VOID DIA_Will_Werbowanie_Info()
     AI_Output (self, other ,"DIA_Will_Werbowanie_03_02"); //Mamy ju¿ trzech. To wystarczy. Dobrze siê spisa³eœ
 	AI_Output (self, other ,"DIA_Will_Werbowanie_03_03"); //Wkrótce wybierzemy siê do kopalni. Tam przedyskutujemy pozosta³e sprawy.
 	AI_Output (self, other ,"DIA_Will_Werbowanie_03_04"); //Powiedz, gdy bêdziesz gotów. 
-	B_LogEntry               (CH1_KopalniaZlota,"Zebra³em ca³¹ ekipê potrzebn¹ do pracy w kopalni. Mam daæ znak Willowi, gdy bêdziemy mogli ruszaæ.");
-    Log_SetTopicStatus       (CH1_KopalniaZlota, LOG_SUCCESS);
-    MIS_KopalniaZlota = LOG_SUCCESS;
+	B_LogEntry               (CH2_GoldMine,"Zebra³em ca³¹ ekipê potrzebn¹ do pracy w kopalni. Mam daæ znak Willowi, gdy bêdziemy mogli ruszaæ.");
+    Log_SetTopicStatus       (CH2_GoldMine, LOG_SUCCESS);
+    MIS_GoldMine = LOG_SUCCESS;
 	B_GiveXP (250);
 	/*
     Info_ClearChoices		(DIA_Will_Werbowanie);
@@ -497,9 +495,9 @@ FUNC VOID DIA_Will_Werbowanie_EnDQuest()
     AI_Output (self, other ,"DIA_Will_Werbowanie_EnDQuest_03_02"); //Uda³o ci siê skompletowaæ ca³¹ dru¿ynê.
 	AI_Output (self, other ,"DIA_Will_Werbowanie_EnDQuest_03_03"); //Wkrótce wybierzemy siê do kopalni. Tam przedyskutujemy pozosta³e sprawy.
 	AI_Output (self, other ,"DIA_Will_Werbowanie_EnDQuest_03_04"); //Powiedz, gdy bêdziesz gotów. 
-	B_LogEntry                     (CH1_KopalniaZlota,"Zebra³em ca³¹ ekipê potrzebn¹ w kopalni. Mo¿emy wyruszaæ.");
-    Log_SetTopicStatus       (CH1_KopalniaZlota, LOG_SUCCESS);
-    MIS_KopalniaZlota = LOG_SUCCESS;
+	B_LogEntry                     (CH2_GoldMine,"Zgodnie z poleceniem Willa zebra³em ca³¹ ekipê potrzebn¹ do pracy w kopalni. Powinienem daæ znak, gdy bêdê gotowy do wyjœcia.");
+    //Log_SetTopicStatus       (CH2_GoldMine, LOG_SUCCESS);
+    //MIS_GoldMine = LOG_SUCCESS;
 	DIA_Will_Werbowanie.permanent = false;
 	B_giveXP (500);
 	} 
@@ -532,7 +530,7 @@ INSTANCE DIA_Will_Ruchy (C_INFO)
 
 FUNC INT DIA_Will_Ruchy_Condition()
 {
-    if (MIS_KopalniaZlota == LOG_SUCCESS) 
+    if (Npc_KnowsInfo (hero,DIA_Will_Werbowanie)) 
     {
     return TRUE;
     };
@@ -544,13 +542,12 @@ FUNC VOID DIA_Will_Ruchy_Info()
 
     AI_Output (other, self ,"DIA_Will_Ruchy_15_01"); //Mo¿emy ruszaæ.
     AI_Output (self, other ,"DIA_Will_Ruchy_03_02"); //Zbieraj ludzi i za mn¹!
-	AI_Output (self, other ,"DIA_Will_Ruchy_03_03"); //Tylko b¹dŸcie ostro¿ni. W górach jest niebezpiecznie. 
+	AI_Output (self, other ,"DIA_Will_Ruchy_03_03"); //Tylko b¹dŸcie ostro¿ni. Wola³bym, ¿eby ¿aden idiota nie spad³.
     MIS_DrogaDoKopalni = LOG_RUNNING;
 
-    Log_CreateTopic          (CH1_DrogaDoKopalni, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_DrogaDoKopalni, LOG_RUNNING);
-    B_LogEntry               (CH1_DrogaDoKopalni,"Pora wyruszyæ do sekretnej kopalni z³ota. Musimy mieæ siê na bacznoœci.");
-    
+    //Log_CreateTopic          (CH1_DrogaDoKopalni, LOG_MISSION);
+    //Log_SetTopicStatus       (CH1_DrogaDoKopalni, LOG_RUNNING);
+    //B_LogEntry               (CH1_DrogaDoKopalni,"Pora wyruszyæ do sekretnej kopalni z³ota. Musimy mieæ siê na bacznoœci.");
 	var c_npc will; will = Hlp_GetNpc (NON_5635_Will);
     Npc_ExchangeRoutine (will, "guide");
 	will.flags = 2;
@@ -625,7 +622,7 @@ INSTANCE DIA_Will_PrzystanekZamosc (C_INFO)
 FUNC INT DIA_Will_PrzystanekZamosc_Condition()
 {
     if (Npc_GetDistToWP (self, "OW_PATH_07_15_CAVE2") < 1000)
-    && (MIS_DrogaDoKopalni == LOG_RUNNING)
+    && (Npc_KnowsInfo (hero, DIA_Will_Ruchy)
     {
     return TRUE;
     };
@@ -642,9 +639,9 @@ FUNC VOID DIA_Will_PrzystanekZamosc_Info()
     CreateInvItems (self, ItMiNugget, 300);
     B_GiveInvItems (self, other, ItMiNugget, 300);
     
-    B_LogEntry               (CH1_DrogaDoKopalni,"Zadanie wykonane. Stanêliœmy przed kopalni¹. Pora zacz¹æ pracê... Przypuszczam, ¿e dla mnie znajdzie siê coœ specjalnego. ");
-    Log_SetTopicStatus       (CH1_DrogaDoKopalni, LOG_SUCCESS);
-    MIS_DrogaDoKopalni = LOG_SUCCESS;
+    B_LogEntry               (CH2_GoldMine,"Zadanie wykonane. Stanêliœmy przed kopalni¹. Pora zacz¹æ pracê... Przypuszczam, ¿e dla mnie znajdzie siê coœ specjalnego. ");
+    Log_SetTopicStatus       (CH2_GoldMine, LOG_SUCCESS);
+    MIS_GoldMine = LOG_SUCCESS;
     B_GiveXP (100);
 	
 	var c_npc will; will = Hlp_GetNpc (NON_5635_Will);
@@ -732,11 +729,11 @@ FUNC VOID DIA_Will_GoldKryjowka_Info()
 	AI_Output (self, other ,"DIA_Will_GoldKryjowka_03_06"); //Jeszcze jedno! WeŸ te mapê Kolonii. Bez niej nic nie zaznaczysz.
 	CreateInvItems (self, ItWrWorldmap, 1);
     B_GiveInvItems (self, other, ItWrWorldmap, 1);
-    MIS_KryjowkaNaKase = LOG_RUNNING;
+    MIS_Treasury = LOG_RUNNING;
 
-    Log_CreateTopic          (CH1_KryjowkaNaKase, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_KryjowkaNaKase, LOG_RUNNING);
-    B_LogEntry               	(CH1_KryjowkaNaKase,"Mam poszukaæ jakiegoœ specjalnego miejsca, w którym mo¿na by przechowaæ z³oto. ");
+    Log_CreateTopic          (CH2_Treasury, LOG_MISSION);
+    Log_SetTopicStatus       (CH2_Treasury, LOG_RUNNING);
+    B_LogEntry               (CH2_Treasury,"Mam poszukaæ jakiegoœ specjalnego miejsca, w którym mo¿na by przechowaæ z³oto. ");
 };
 
 //========================================
@@ -755,7 +752,7 @@ INSTANCE DIA_Will_Kryjowka (C_INFO)
 
 FUNC INT DIA_Will_Kryjowka_Condition()
 {
-    if (MIS_KryjowkaNaKase == LOG_RUNNING) && (kryjowka_znaleziona == false)
+    if (MIS_Treasury == LOG_RUNNING) && (kryjowka_znaleziona == false)
     {
     return TRUE;
     };
@@ -775,9 +772,9 @@ FUNC VOID DIA_Will_Kryjowka_Info()
         AI_Output (self, other ,"DIA_Will_Kryjowka_03_04"); //Dobra robota. Bêd¹ z ciebie ludzie.
         AI_Output (self, other ,"DIA_Will_Kryjowka_03_05"); //To miejsce bêdzie œwietne.
         b_givexp (350);
-		B_LogEntry                     (CH1_KryjowkaNaKase,"Powiedzia³em Willowi o odnalezionej przeze mnie kryjówce. Odda³em mu równie¿ mapê na której zaznaczy³em jej po³o¿enie. Nagrod¹ by³y kolejne bry³ki rudy.");
-		Log_SetTopicStatus       (CH1_KryjowkaNaKase, LOG_SUCCESS);
-		MIS_KryjowkaNaKase = LOG_SUCCESS;
+		B_LogEntry                     (CH2_Treasury,"Powiedzia³em Willowi o odnalezionej przeze mnie kryjówce. Odda³em mu równie¿ mapê na której zaznaczy³em jej po³o¿enie. Nagrod¹ by³y kolejne bry³ki rudy.");
+		Log_SetTopicStatus       (CH2_Treasury, LOG_SUCCESS);
+		MIS_Treasury = LOG_SUCCESS;
 		DIA_Will_Kryjowka.permanent = 0;
 		kryjowka_znaleziona = true;
     }
@@ -790,9 +787,9 @@ FUNC VOID DIA_Will_Kryjowka_Info()
         CreateInvItems (self, ItMiNugget, 150);
         B_GiveInvItems (self, other, ItMiNugget, 150);
         b_givexp (350);
-		B_LogEntry                     (CH1_KryjowkaNaKase,"Powiedzia³em Willowi o odnalezionej przeze mnie kryjówce. Odda³em mu równie¿ mapê na której zaznaczy³em jej po³o¿enie. Nagrod¹ by³y kolejne bry³ki rudy.");
-		Log_SetTopicStatus       (CH1_KryjowkaNaKase, LOG_SUCCESS);
-		MIS_KryjowkaNaKase = LOG_SUCCESS;
+		B_LogEntry                     (CH2_Treasury,"Powiedzia³em Willowi o odnalezionej przeze mnie kryjówce. Odda³em mu równie¿ mapê na której zaznaczy³em jej po³o¿enie. Nagrod¹ by³y kolejne bry³ki rudy.");
+		Log_SetTopicStatus       (CH2_Treasury, LOG_SUCCESS);
+		MIS_Treasury = LOG_SUCCESS;
 		DIA_Will_Kryjowka.permanent = 0;
 		kryjowka_znaleziona = true;
     }
@@ -806,9 +803,9 @@ FUNC VOID DIA_Will_Kryjowka_Info()
         CreateInvItems (self, ItMiNugget, 150);
         B_GiveInvItems (self, other, ItMiNugget, 150);
         b_givexp (350);
-		B_LogEntry                     (CH1_KryjowkaNaKase,"Powiedzia³em Willowi o odnalezionej przeze mnie kryjówce. Odda³em mu równie¿ mapê na której zaznaczy³em jej po³o¿enie. Nagrod¹ by³y kolejne bry³ki rudy.");
-		Log_SetTopicStatus       (CH1_KryjowkaNaKase, LOG_SUCCESS);
-		MIS_KryjowkaNaKase = LOG_SUCCESS;
+		B_LogEntry                     (CH2_Treasury,"Powiedzia³em Willowi o odnalezionej przeze mnie kryjówce. Odda³em mu równie¿ mapê na której zaznaczy³em jej po³o¿enie. Nagrod¹ by³y kolejne bry³ki rudy.");
+		Log_SetTopicStatus       (CH2_Treasury, LOG_SUCCESS);
+		MIS_Treasury = LOG_SUCCESS;
 		DIA_Will_Kryjowka.permanent = 0;
 		kryjowka_znaleziona = true;
 	}

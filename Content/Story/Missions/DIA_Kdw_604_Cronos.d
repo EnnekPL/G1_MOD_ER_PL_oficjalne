@@ -818,7 +818,7 @@ FUNC VOID DIA_Cronos_FindMage_Info()
     AI_Output (self, other ,"DIA_Cronos_FindMage_03_07"); //Potrzebny mi przede wszystkim górski mech.
     AI_Output (self, other ,"DIA_Cronos_FindMage_03_08"); //A tak¿e jedna kocianka, kamieñ runiczny i esencja many.
     AI_Output (self, other ,"DIA_Cronos_FindMage_03_09"); //To wszystko. Przynieœ wymienione przeze mnie produkty, a utworzê runê.
-    B_LogEntry                     (CH1_Zniewolenie,"Cronos sporz¹dzi dla mnie runê przywo³uj¹c¹ górskie trolle, gdy przyniosê mu: górski mech, kociankê, kamieñ runiczny i esencjê many.");
+    B_LogEntry                     (CH4_GardistsInBC,"Cronos sporz¹dzi dla mnie runê przywo³uj¹c¹ górskie trolle, gdy przyniosê mu: górski mech, kociankê, kamieñ runiczny i esencjê many.");
 
     B_GiveXP (200);
 };
@@ -852,7 +852,7 @@ FUNC VOID DIA_Cronos_RuneHelp_Info()
     AI_Output (self, other ,"DIA_Cronos_RuneHelp_03_02"); //Z tym mo¿e byæ problem. W Obozie nic takiego nie znajdziesz.
     AI_Output (other, self ,"DIA_Cronos_RuneHelp_15_03"); //Czyli mam szukaæ gdzieœ indziej?
     AI_Output (self, other ,"DIA_Cronos_RuneHelp_03_04"); //Niestety. Wydaje mi siê, ¿e w Bractwie uda ci siê coœ znaleŸæ. Porozmawiaj z Baalami.
-    B_LogEntry                     (CH1_Zniewolenie,"Pustego kamienia runicznego powinienem szukaæ w Bractwie.");
+    B_LogEntry                     (CH4_GardistsInBC,"Pustego kamienia runicznego powinienem szukaæ w Bractwie.");
 
     B_GiveXP (200);
 };
@@ -925,7 +925,7 @@ FUNC VOID DIA_Cronos_GiveMeRune_Info()
     AI_Output (other, self ,"DIA_Cronos_GiveMeRune_15_07"); //Bêdê pamiêta³.
 	CreateInvItems		(self, ItMa_RuneBandit,	1);
 	B_GiveInvItems (self, hero, ItMa_RuneBandit,	1);
-    B_LogEntry                     (CH1_Zniewolenie,"Cronos wreszcie da³ mi pieczêæ, która przywo³a górskie trolle. Muszê pamiêtaæ, ¿e mogê jej u¿yæ tylko raz.");
+    B_LogEntry                     (CH4_GardistsInBC,"Cronos wreszcie da³ mi pieczêæ, która przywo³a górskie trolle. Muszê pamiêtaæ, ¿e mogê jej u¿yæ tylko raz.");
     AI_StopProcessInfos	(self);
 };
 
@@ -1030,7 +1030,7 @@ FUNC VOID DIA_Cronos_KRADZIEZ_Info()
     AI_Output (self, other ,"DIA_Cronos_KRADZIEZ_03_08"); //Pos³uchaj, to by³o póŸn¹ noc¹. Napadli mnie grup¹. Kilku rozpozna³em, ale nie wszystkich.
     AI_Output (other, self ,"DIA_Cronos_KRADZIEZ_15_09"); //Kim by³y osoby, które rozpozna³eœ?
     AI_Output (self, other ,"DIA_Cronos_KRADZIEZ_03_10"); //Hmm... Kojarzê Szkodnika Bofura oraz braci Kila i Fila. Dwóch pozosta³ych nie znam, ale jednego ju¿ siê pozby³eœ, wiêc jego imiê jest nie istotne.
-    MIS_MagicySzkodnicy = LOG_RUNNING;
+    MIS_CronosArtifacts = LOG_RUNNING;
 
     Log_CreateTopic          (CH1_MagicySzkodnicy, LOG_MISSION);
     Log_SetTopicStatus       (CH1_MagicySzkodnicy, LOG_RUNNING);
@@ -1091,7 +1091,7 @@ INSTANCE DIA_Cronos_BOFUR_DED (C_INFO)
 FUNC INT DIA_Cronos_BOFUR_DED_Condition()
 {
     var C_NPC whodie0; 	whodie0 = Hlp_GetNpc(ORG_956_Bofur);
-    if (MIS_MagicySzkodnicy == LOG_RUNNING)
+    if (MIS_CronosArtifacts == LOG_RUNNING)
     && (Npc_IsDead(whodie0))
     {
     return TRUE;
@@ -1106,16 +1106,18 @@ FUNC VOID DIA_Cronos_BOFUR_DED_Info()
     if (Npc_HasItems (other, ItArRuneIceCube) >=1)
     {
         AI_Output (other, self ,"DIA_Cronos_BOFUR_DED_15_03"); //Tak. Znalaz³em runê Bry³a Lodu. 
-        AI_Output (self, other ,"DIA_Cronos_BOFUR_DED_03_04"); //Wspaniale! WeŸ jako wynagrodzenie te 100 bry³ek rudy.
-        CreateInvItems (self, ItMiNugget, 100);
-        B_GiveInvItems (self, other, ItMiNugget, 100);
-		 B_GiveInvItems (other, self, ItArRuneIceCube, 1);
-    } else {
-	AI_Output (other, self ,"DIA_Cronos_BOFUR_DED_15_05"); //Nie.
+        AI_Output (self, other ,"DIA_Cronos_BOFUR_DED_03_04"); //Wspaniale! WeŸ jako wynagrodzenie odrobinê rudy.
+        CreateInvItems (self, ItMiNugget, 25);
+        B_GiveInvItems (self, other, ItMiNugget, 25);
+		B_GiveInvItems (other, self, ItArRuneIceCube, 1);
+		B_LogEntry                     (CH1_MagicySzkodnicy,"Cornos otrzyma³ ode mnie skradzion¹ przez Bofura runê.");
+		B_GiveXP (50);
+    } 
+	else 
+	{
+	AI_Output (other, self ,"DIA_Cronos_BOFUR_DED_15_05"); //Nie. 
+	B_LogEntry                     (CH1_MagicySzkodnicy,"Pozby³em siê Szkodnika Bofura, jednak nie odda³em runy Cronosowi.");
 	};
-    B_LogEntry                     (CH1_MagicySzkodnicy,"Pozby³em siê Szkodnika Bofura. ");
-
-    B_GiveXP (150);
 };
 
 //========================================
@@ -1136,7 +1138,7 @@ FUNC INT DIA_Cronos_KIL_DED_Condition()
 {
     var C_NPC whodie1; 	whodie1 = Hlp_GetNpc(ORG_954_Kil);
     if (Npc_IsDead(whodie1))
-    && (MIS_MagicySzkodnicy == LOG_RUNNING)
+    && (MIS_CronosArtifacts == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -1151,8 +1153,8 @@ FUNC VOID DIA_Cronos_KIL_DED_Info()
     {
         AI_Output (other, self ,"DIA_Cronos_KIL_DED_15_03"); //Znalaz³em Amulet Dêbowej Skóry.
         AI_Output (self, other ,"DIA_Cronos_KIL_DED_03_04"); //Jest niezwykle cenny. Zap³acê ci za to znalezisko
-        CreateInvItems (self, ItMiNugget, 70);
-        B_GiveInvItems (self, other, ItMiNugget, 70);
+        CreateInvItems (self, ItMiNugget, 25);
+        B_GiveInvItems (self, other, ItMiNugget, 25);
         B_GiveInvItems (other, self, Schutzamulett_Geschosse, 1);
 		B_GiveXP (50);
 		B_LogEntry                     (CH1_MagicySzkodnicy,"Cornos otrzyma³ ode mnie skradziony przez Kila artefakt.");
@@ -1163,9 +1165,6 @@ FUNC VOID DIA_Cronos_KIL_DED_Info()
         AI_Output (self, other ,"DIA_Cronos_KIL_DED_03_06"); //Trudno.
 		B_LogEntry                     (CH1_MagicySzkodnicy,"Cornos nie otrzyma³ ode mnie skradzionego przez Kila artefaktu.");
     };
-
-
-
 };
 
 //========================================
@@ -1185,7 +1184,7 @@ INSTANCE DIA_Cronos_FIL_DED (C_INFO)
 FUNC INT DIA_Cronos_FIL_DED_Condition()
 {
     var C_NPC whodie2; 	whodie2 = Hlp_GetNpc(ORG_955_Fil);
-    if (MIS_MagicySzkodnicy == LOG_RUNNING)
+    if (MIS_CronosArtifacts == LOG_RUNNING)
     && (Npc_IsDead(whodie2))
     {
     return TRUE;
@@ -1200,10 +1199,10 @@ FUNC VOID DIA_Cronos_FIL_DED_Info()
     if (Npc_HasItems (other, Schutzamulett_Feuer) >=1)
     {
         AI_Output (other, self ,"DIA_Cronos_FIL_DED_15_03"); //Mam przy sobie Amulet P³omieni. 
-        AI_Output (self, other ,"DIA_Cronos_FIL_DED_03_04"); //Genialnie!
+        AI_Output (self, other ,"DIA_Cronos_FIL_DED_03_04"); //Cieszy mnie to.
         B_GiveInvItems (other, self, Schutzamulett_Feuer, 1);
-        CreateInvItems (self, ItMiNugget, 70);
-        B_GiveInvItems (self, other, ItMiNugget, 70);
+        CreateInvItems (self, ItMiNugget, 25);
+        B_GiveInvItems (self, other, ItMiNugget, 25);
 		B_LogEntry                     (CH1_MagicySzkodnicy,"Zwróci³em Crnonoswi znaleziony przy Filu amulet.");
 		B_GiveXP (50);
     }
@@ -1231,7 +1230,7 @@ INSTANCE DIA_Cronos_DRANOR_DED (C_INFO)
 FUNC INT DIA_Cronos_DRANOR_DED_Condition()
 {
     var C_NPC whodie0; 	whodie0 = Hlp_GetNpc(ORG_816_Organisator);
-    if (MIS_MagicySzkodnicy == LOG_RUNNING)
+    if (MIS_CronosArtifacts == LOG_RUNNING)
     && (Npc_IsDead(whodie0))
     {
     return TRUE;
@@ -1251,15 +1250,16 @@ FUNC VOID DIA_Cronos_DRANOR_DED_Info()
         AI_Output (other, self ,"DIA_Cronos_DRANOR_DED_15_06"); //Tak. Mam magiczny kryszta³.
         AI_Output (self, other ,"DIA_Cronos_DRANOR_DED_03_07"); //Œwietnie. Daj mi go.
         AI_Output (self, other ,"DIA_Cronos_DRANOR_DED_03_08"); //Dobra robota.
-        CreateInvItems (self, ItMiNugget, 70);
-        B_GiveInvItems (self, other, ItMiNugget, 70);
+        CreateInvItems (self, ItMiNugget, 50);
+        B_GiveInvItems (self, other, ItMiNugget, 50);
         B_GiveInvItems (other, self, BlueCrystal, 1);
-		B_GiveXP (50);
+		B_GiveXP (100);
 		B_LogEntry                     (CH1_MagicySzkodnicy,"Cronos odzyska³ skradziony przez Dranora kryszta³.");
     }
     else
     {
         AI_Output (other, self ,"DIA_Cronos_DRANOR_DED_15_09"); //Nie.
+		AI_Output (self, other ,"DIA_Cronos_DRANOR_DED_03_10"); //To naprawdê du¿a strata.
 		B_LogEntry                     (CH1_MagicySzkodnicy,"Cronos nie otrzyma³ ode mnie kryszta³u ukradzionego przez Dranora.");
     };
 };
@@ -1275,12 +1275,12 @@ INSTANCE DIA_Cronos_END_QUEST (C_INFO)
    condition    = DIA_Cronos_END_QUEST_Condition;
    information  = DIA_Cronos_END_QUEST_Info;
    permanent	= FALSE;
-   description	= "Pokona³em ju¿ wszystkich.";
+   description	= "To ju¿ chyba wszyscy.";
 };
 
 FUNC INT DIA_Cronos_END_QUEST_Condition()
 {
-    if (MIS_MagicySzkodnicy == LOG_RUNNING)
+    if (MIS_CronosArtifacts == LOG_RUNNING)
     && (Npc_KnowsInfo (hero, DIA_Cronos_DRANOR_DED))
     && (Npc_KnowsInfo (hero, DIA_Cronos_BOFUR_DED))
     && (Npc_KnowsInfo (hero, DIA_Cronos_KIL_DED))
@@ -1293,12 +1293,12 @@ FUNC INT DIA_Cronos_END_QUEST_Condition()
 
 FUNC VOID DIA_Cronos_END_QUEST_Info()
 {
-    AI_Output (other, self ,"DIA_Cronos_END_QUEST_15_01"); //Pokona³em ju¿ wszystkich.
-    AI_Output (self, other ,"DIA_Cronos_END_QUEST_03_02"); //Uda³o ci siê pozbyæ tych natrêtnych magików. Nastêpnym razem muszê bardziej uwa¿aæ na te artefakty. 
-    AI_Output (self, other ,"DIA_Cronos_END_QUEST_03_03"); //Dziêkujê ci za wszystko.
+    AI_Output (other, self ,"DIA_Cronos_END_QUEST_15_01"); //To ju¿ chyba wszyscy.
+    AI_Output (self, other ,"DIA_Cronos_END_QUEST_03_02"); //Tak, nastêpnym razem muszê bardziej uwa¿aæ. Powinienem porozmawiaæ z Laresem na temat dyscypliny wœród jego ludzi. 
+    AI_Output (self, other ,"DIA_Cronos_END_QUEST_03_03"); //Jeszcze raz dziêkujê za wszystko.
     B_LogEntry                     (CH1_MagicySzkodnicy,"Uda³o mi siê pozbyæ wszystkich Szkodników-magików z okolic Nowego Obozu.");
     Log_SetTopicStatus       (CH1_MagicySzkodnicy, LOG_SUCCESS);
-    MIS_MagicySzkodnicy = LOG_SUCCESS;
+    MIS_CronosArtifacts = LOG_SUCCESS;
 
     B_GiveXP (200);
     AI_StopProcessInfos	(self);

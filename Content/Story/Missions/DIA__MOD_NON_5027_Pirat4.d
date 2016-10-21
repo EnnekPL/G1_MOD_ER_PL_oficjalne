@@ -147,7 +147,7 @@ FUNC INT DIA_Pirat4_MorokCamp_Condition()
 {
     if (MIS_StevesEquipment == LOG_SUCCESS)
     && (MIS_HarksMap == LOG_SUCCESS)
-    && (MIS_SearhSkarb == LOG_SUCCESS)
+    && (MIS_TreasureSeeking == LOG_SUCCESS)
     && (kapitel < 5)
     {
     return TRUE;

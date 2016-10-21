@@ -1823,10 +1823,10 @@ func void Info_Diego_OCWARN_Info()
 	};
 	if (Npc_GetTrueGuild(hero) == GIL_BAU)
 	{
-	MIS_RozwalaUBnadytow = LOG_RUNNING;
-	Log_CreateTopic          (CH1_RozwalaUBnadytow, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_RozwalaUBnadytow, LOG_RUNNING);
-    B_LogEntry               (CH1_RozwalaUBnadytow,"Od Diego dowiedzia³em siê o niepokoj¹cej sytuacji w Kolonii. Zawalenie siê Starej Kopalni, zamordowanie Magów Ognia... To zbyt wiele na moj¹ g³owê. Quentin musi siê jak najszybciej o tym dowiedzieæ.");
+	MIS_NewDanger = LOG_RUNNING;
+	Log_CreateTopic          (CH4_NewDanger, LOG_MISSION);
+    Log_SetTopicStatus       (CH4_NewDanger, LOG_RUNNING);
+    B_LogEntry               (CH4_NewDanger,"Od Diego dowiedzia³em siê o niepokoj¹cej sytuacji w Kolonii. Zawalenie siê Starej Kopalni, zamordowanie Magów Ognia... To zbyt wiele na moj¹ g³owê. Quentin musi siê jak najszybciej o tym dowiedzieæ.");
 	};
 };
 
@@ -2399,7 +2399,7 @@ FUNC VOID DIA_PC_THIEF_GDZIE_PATROLE_Info()
 	AI_Output (self, other ,"DIA_PC_THIEF_GDZIE_PATROLE_03_05"); //W porz¹dku. Mogê jednak wiedzieæ w co siê znowu wpakowa³eœ?
 	AI_Output (other, self ,"DIA_PC_THIEF_GDZIE_PATROLE_15_06"); //Potrzebujê znaleŸæ jednego ze Stra¿ników, który wyruszy³ na misje nie oddawszy Magnatom klucza do piwnic zamkowych.
     AI_Output (self, other ,"DIA_PC_THIEF_GDZIE_PATROLE_03_07"); //S¹dz¹c po twojej zbroi jesteœ jednym z ludzi Laresa. Pewnie pracujesz dla kogoœ w Nowym Obozie. Nie wiem co dok³adnie planujesz, ale b¹dŸ ostro¿ny. 
-	B_LogEntry                     (CH1_Magazyny_OC,"Gomez wysy³a swoich ludzi w okolice placu wymian, lasu, nieopodal Starej Kopalni oraz w rejony Nowego Obozu. Tam powinienem szukaæ.");
+	B_LogEntry                     (CH2_OldCampCellar,"Gomez wysy³a swoich ludzi w okolice placu wymian, lasu, nieopodal Starej Kopalni oraz w rejony Nowego Obozu. Tam powinienem szukaæ.");
 
     B_GiveXP (200);
     AI_StopProcessInfos	(self);
@@ -2590,9 +2590,9 @@ FUNC VOID DIA_PC_THIEF_KILL_GOMEZ_Info()
     AI_Output (self, other ,"DIA_PC_THIEF_KILL_GOMEZ_03_11"); //Œwietnie.
     MIS_Upadek_Gomeza = LOG_RUNNING;
 
-    Log_CreateTopic            (CH5_Upadek_Gomeza, LOG_MISSION);
+    Log_CreateTopic          (CH5_Upadek_Gomeza, LOG_MISSION);
     Log_SetTopicStatus       (CH5_Upadek_Gomeza, LOG_RUNNING);
-    B_LogEntry                     (CH5_Upadek_Gomeza,"Diego poprosi³ mnie, abym znalaz³ jakiœ sposób na dostanie siê do zamku w Starym Obozie. Gdy ju¿ mi siê uda, mam poder¿n¹æ gard³o Gomezowi.");
+    B_LogEntry               (CH5_Upadek_Gomeza,"Diego poprosi³ mnie, abym znalaz³ jakiœ sposób na dostanie siê do zamku w Starym Obozie. Gdy ju¿ mi siê uda, mam poder¿n¹æ gard³o Gomezowi.");
 };
 
 //========================================

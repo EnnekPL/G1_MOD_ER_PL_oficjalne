@@ -209,7 +209,7 @@ INSTANCE DIA_Magnus_Ucieczka (C_INFO)
 
 FUNC INT DIA_Magnus_Ucieczka_Condition()
 {
-    if (MIS_KopalniaZlota == LOG_RUNNING)
+    if (MIS_GoldMine == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -226,7 +226,7 @@ FUNC VOID DIA_Magnus_Ucieczka_Info()
     AI_Output (self, other ,"DIA_Magnus_Ucieczka_03_06"); //To jest w Nowym Obozie?
     AI_Output (other, self ,"DIA_Magnus_Ucieczka_15_07"); //Tak.
     AI_Output (self, other ,"DIA_Magnus_Ucieczka_03_08"); //Dobrze. Wkrótce siê tam zjawiê.
-    B_LogEntry                     (CH1_KopalniaZlota,"Magnus zajmie siê ochron¹ kopalni z³ota.");
+    B_LogEntry                     (CH2_GoldMine,"Magnus zajmie siê ochron¹ kopalni z³ota.");
     B_GiveXP (100);
     AI_StopProcessInfos	(self);
     Npc_ExchangeRoutine (self, "karczma");

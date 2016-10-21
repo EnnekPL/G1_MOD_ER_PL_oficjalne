@@ -2938,7 +2938,7 @@ INSTANCE DIA_THORUS_POKABLOWAC_DOBRA_RZECZ (C_INFO)
 
 FUNC INT DIA_THORUS_POKABLOWAC_DOBRA_RZECZ_Condition()
 {
-    if (MIS_Cpuny == LOG_RUNNING)
+    if (MIS_Druggy == LOG_RUNNING)
     && (Huno_pali == false)
 	&& (Huno_drugs_level < 1)
 	&& (!Npc_KnowsInfo (hero, DIA_Huno_HELLO2))
@@ -2956,9 +2956,9 @@ FUNC VOID DIA_THORUS_POKABLOWAC_DOBRA_RZECZ_Info()
     AI_Output (self, other ,"DIA_THORUS_POKABLOWAC_DOBRA_RZECZ_03_04"); //Dobrze, ¿e mi o tym powiedzia³eœ. Ju¿ ja sobie porozmawiam z tym Nowicjuszem. 
     B_GiveInvItems (self, other, ItMiNugget, 150);
     AI_Output (self, other ,"DIA_THORUS_POKABLOWAC_DOBRA_RZECZ_03_05"); //Myœlê, ¿e powinieneœ porozmawiaæ z Huno i mu o tym powiedzieæ. Mo¿e jakoœ ciê wynagrodzi? Kto wie...
-    B_LogEntry                     (CH1_Cpuny,"Popsu³em zadanie, ale myœlê, ¿e przys³u¿y³em siê Staremu Obozowi. Kowal to wa¿ny mieszkaniec Obozu.");
-    Log_SetTopicStatus       (CH1_Cpuny, LOG_FAILED);
-    MIS_Cpuny = LOG_FAILED;
+    B_LogEntry                     (CH1_Druggy,"Popsu³em zadanie, ale myœlê, ¿e przys³u¿y³em siê Staremu Obozowi. Kowal to wa¿ny mieszkaniec Obozu.");
+    Log_SetTopicStatus       (CH1_Druggy, LOG_FAILED);
+    MIS_Druggy = LOG_FAILED;
 
     B_GiveXP (300);
     AI_StopProcessInfos	(self);

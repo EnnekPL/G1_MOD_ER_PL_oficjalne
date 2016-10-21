@@ -40,7 +40,7 @@ INSTANCE DIA_Hugo_HELLO1 (C_INFO)
 
 FUNC INT DIA_Hugo_HELLO1_Condition()
 {
-    if (MIS_gdzie_hugo == LOG_RUNNING)
+    if (MIS_HunterHugo == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -56,7 +56,7 @@ FUNC VOID DIA_Hugo_HELLO1_Info()
     AI_Output (self, other ,"DIA_Hugo_HELLO1_03_04"); //Tak, jestem Hugo, ³owca orków, sk¹d znasz moje imiê?
     AI_Output (other, self ,"DIA_Hugo_HELLO1_15_05"); //Ch³opaki z obozu ciê szukaj¹. Mówili, ¿e znikn¹³eœ bez œladu.
     AI_Output (self, other ,"DIA_Hugo_HELLO1_03_06"); //Zgadza siê, nie chcia³em siê im t³umaczyæ z tego, co odkry³em. Jestem na tropie skarbu i chcia³em wymkn¹æ siê ukradkiem, aby w spokoju go odnaleŸæ. 
-    B_LogEntry                     (CH1_gdzie_hugo,"Hugo ukry³ siê przed przyjació³mi, bo odnalaz³ mapê do orkowego skarbu. Nie chcia³ dzieliæ siê nagrod¹, której jeszcze nawet nie zdoby³.");
+    B_LogEntry                     (CH1_HunterHugo,"Hugo ukry³ siê przed przyjació³mi, bo odnalaz³ mapê do orkowego skarbu. Nie chcia³ dzieliæ siê nagrod¹, której jeszcze nawet nie zdoby³.");
 //fix 1210
     B_GiveXP (150);
 };
@@ -126,7 +126,7 @@ FUNC VOID DIA_Hugo_HELLO3_Info()
     AI_Output (self, other ,"DIA_Hugo_HELLO3_03_05"); //Œwietnie, oto mapa. Miejsce, gdzie znajduje siê skarb znajduje siê chyba w okolicach Nowego Obozu i Starej Kopalni. Powodzenia, i pamiêtaj o naszej umowie.
     AI_Output (other, self ,"DIA_Hugo_HELLO3_15_06"); //Dziêki.
 	B_GiveInvItems (self, other, Hugo_Map, 1);
-    B_LogEntry                     (CH1_gdzie_hugo,"Hugo nie pokusi³ siê, ¿eby iœæ ze mn¹ odnaleŸæ skarb. Nie doœæ, ¿e muszê sam udaæ siê w wyznaczone miejsce, to jeszcze mam siê z nim podzieliæ po³ow¹ skarbu.");
+    B_LogEntry                     (CH1_HunterHugo,"Hugo nie pokusi³ siê, ¿eby iœæ ze mn¹ odnaleŸæ skarb. Nie doœæ, ¿e muszê sam udaæ siê w wyznaczone miejsce, to jeszcze mam siê z nim podzieliæ po³ow¹ skarbu.");
 };//fix 1210
 
 //========================================
@@ -213,7 +213,7 @@ FUNC VOID DIA_Hugo_HELLO5_Info()
     AI_Output (self, other ,"DIA_Hugo_HELLO5_03_04"); //W porz¹dku, wierzê ci. Cholerni orkowie, pewnie to jakaœ stara mapa i zwinêli skarb ju¿ dawno temu zabieraj¹c go do miasta. 
 	AI_Output (self, other ,"DIA_Hugo_HELLO5_03_05"); //Trochê siê rozczarowa³em, ale trudno. Wracam do obozu. Mo¿esz powiedzieæ ch³opakom, ¿e nied³ugo tam bêdê.
     AI_Output (other, self ,"DIA_Hugo_HELLO5_15_06"); //Przeka¿ê.
-    B_LogEntry                     (CH1_gdzie_hugo,"Skarb nie istnieje, Hugo postanowi³ wróciæ do obozu. Powinienem poinformowaæ o tym Osko.");
+    B_LogEntry                     (CH1_HunterHugo,"Skarb nie istnieje, Hugo postanowi³ wróciæ do obozu. Powinienem poinformowaæ o tym Osko.");
 
     B_GiveXP (200);
 	Npc_ExchangeRoutine (self,"lowcy");

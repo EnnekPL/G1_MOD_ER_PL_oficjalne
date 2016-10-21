@@ -396,7 +396,7 @@ FUNC VOID DIA_Mazin_ITALIAN_JOB_XD_Info()
     AI_Output (self, other ,"DIA_Mazin_ITALIAN_JOB_XD_03_06"); //Te obszczymury wpadaj¹ do karczmy g³ównie gdy coœ siê dzieje. 
     AI_Output (self, other ,"DIA_Mazin_ITALIAN_JOB_XD_03_07"); //Zorganizuj jak¹œ burdê. Wyzwij na pojedynek Bruce'a. Nowy ³obuz w Obozie. To bêdzie coœ! Wszyscy bêd¹ o tobie gadaæ!
     AI_Output (self, other ,"DIA_Mazin_ITALIAN_JOB_XD_03_08"); //Bruce zjawia siê tutaj wieczorami. PóŸno po zachodzie s³oñca. 
-    AI_Output (self, other ,"DIA_Mazin_ITALIAN_JOB_XD_03_09"); //Je¿eli wygrasz z nim pojedynek, dam ci 300 bry³ek rudy.
+    AI_Output (self, other ,"DIA_Mazin_ITALIAN_JOB_XD_03_09"); //Je¿eli wygrasz z nim pojedynek, dam ci 150 bry³ek rudy.
     AI_Output (self, other ,"DIA_Mazin_ITALIAN_JOB_XD_03_10"); //Wchodzisz w to?
 
     Info_ClearChoices		(DIA_Mazin_ITALIAN_JOB_XD);
@@ -408,11 +408,11 @@ FUNC VOID DIA_Mazin_ITALIAN_JOB_XD_SURE()
 {
     AI_Output (other, self ,"DIA_Mazin_ITALIAN_JOB_XD_SURE_15_01"); //Jasne.
     AI_Output (self, other ,"DIA_Mazin_ITALIAN_JOB_XD_SURE_03_02"); //No dobra. Wiêc do dzie³a.
-    MIS_Italian_Job = LOG_RUNNING;
+    MIS_BroilInTavern = LOG_RUNNING;
 
-    Log_CreateTopic            (CH1_Italian_Job, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_Italian_Job, LOG_RUNNING);
-    B_LogEntry                     (CH1_Italian_Job,"Mazin chce, ¿ebym wyzwa³ na pojedynek Bruce'a. Bójki zwiêkszaj¹ zainteresowanie karczm¹.");
+    Log_CreateTopic            (CH1_BroilInTavern, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_BroilInTavern, LOG_RUNNING);
+    B_LogEntry                     (CH1_BroilInTavern,"Mazin chce, ¿ebym wyzwa³ na pojedynek Bruce'a. Bójki zwiêkszaj¹ zainteresowanie karczm¹.");
     Info_ClearChoices		(DIA_Mazin_ITALIAN_JOB_XD);
     AI_StopProcessInfos	(self);
 };
@@ -439,7 +439,7 @@ INSTANCE DIA_Mazin_FIGHTBRUCE (C_INFO)
 FUNC INT DIA_Mazin_FIGHTBRUCE_Condition()
 {
     if ((Npc_KnowsInfo (hero, DIA_Bruce_WYGRANA_BITKA)) || (Npc_KnowsInfo (hero, DIA_Bruce_FAIL_BITKA)))
-    && (MIS_Italian_Job == LOG_RUNNING)
+    && (MIS_BroilInTavern == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -452,11 +452,11 @@ FUNC VOID DIA_Mazin_FIGHTBRUCE_Info()
     AI_Output (self, other ,"DIA_Mazin_FIGHTBRUCE_03_02"); //S³ysza³em, to znaczy ca³y Obóz s³ysza³! 
     AI_Output (self, other ,"DIA_Mazin_FIGHTBRUCE_03_03"); //Ludzie przychodz¹ do mnie i wypytuj¹ o ciebie, a przy okazji zamawiaj¹ ry¿ówkê! Dobra robota. 
     AI_Output (self, other ,"DIA_Mazin_FIGHTBRUCE_03_04"); //Oto twoja nale¿noœæ.
-    CreateInvItems (self, ItMiNugget, 300);
-    B_GiveInvItems (self, other, ItMiNugget, 300);
-	B_LogEntry                     (CH1_Italian_Job,"Walczy³em z Bruce'm. Otrzyma³em nagrodê od Mazina i przy okazji trochê s³awy. ");
-	MIS_Italian_Job = LOG_SUCCESS;
-	Log_SetTopicStatus       (CH1_Italian_Job, LOG_SUCCESS);
+    CreateInvItems (self, ItMiNugget, 150);
+    B_GiveInvItems (self, other, ItMiNugget, 150);
+	B_LogEntry                     (CH1_BroilInTavern,"Walczy³em z Bruce'm. Otrzyma³em nagrodê od Mazina i przy okazji trochê s³awy. ");
+	MIS_BroilInTavern = LOG_SUCCESS;
+	Log_SetTopicStatus       (CH1_BroilInTavern, LOG_SUCCESS);
     B_GiveXP (100);
     AI_StopProcessInfos	(self);
 };

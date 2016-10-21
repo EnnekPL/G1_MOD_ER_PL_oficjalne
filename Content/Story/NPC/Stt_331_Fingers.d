@@ -63,7 +63,7 @@ FUNC VOID Rtn_ded_331 ()
 FUNC VOID Rtn_zlo_331 ()
 {
 	TA_Boss		(02,35,00,00,"OCR_OUTSIDE_HUT_20");             
-	TA_Stay		(23,50,02,35,"NC_TAVERN_BACKROOM01");
+	TA_Stay		(23,50,02,35,"NC_TAVERN_MOVE2");
 };
 FUNC VOID Rtn_hanargument_331 ()
 {

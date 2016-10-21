@@ -244,7 +244,7 @@ FUNC VOID DIA_Patros_Dostawa_Info()
 	
 	B_GiveInvItems (other, self, ItFoMutton, 30);
 	B_GiveInvItems (other, self, ItFoSoup, 5);
-    B_LogEntry                     (CH1_HandelEmanuela,"Zanios³em towary Starkadowi i powiedzia³em mu o tym co siê wydarzy³o.");
+    B_LogEntry                     (CH1_EmanuelsDeals,"Zanios³em towary Starkadowi i powiedzia³em mu o tym co siê wydarzy³o.");
 
     B_GiveXP (150);
 };

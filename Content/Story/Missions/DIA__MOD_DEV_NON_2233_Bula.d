@@ -673,9 +673,9 @@ FUNC VOID DIA_Bula_Questy_transport()
 FUNC VOID DIA_Bula_Questy_rozwalaakldjad()
 {
     AI_Output (other, self ,"DIA_Bula_Questy_rozwalaakldjad_15_01"); //Wykonaj "Dalsze losy bandytów"
-    B_LogEntry                     (CH1_RozwalaUBnadytow,"Wykonano");
-    Log_SetTopicStatus       (CH1_RozwalaUBnadytow, LOG_SUCCESS);
-    MIS_RozwalaUBnadytow = LOG_SUCCESS;
+    B_LogEntry                     (CH4_NewDanger,"Wykonano");
+    Log_SetTopicStatus       (CH4_NewDanger, LOG_SUCCESS);
+    MIS_NewDanger = LOG_SUCCESS;
 
     B_GiveXP (1000);
 };

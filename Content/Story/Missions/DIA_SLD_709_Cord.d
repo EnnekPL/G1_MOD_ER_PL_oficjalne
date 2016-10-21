@@ -37,7 +37,7 @@ INSTANCE DIA_Cord_SZKODNICY (C_INFO)
 
 FUNC INT DIA_Cord_SZKODNICY_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Cronos_KRADZIEZ)) && (MIS_MagicySzkodnicy == LOG_RUNNING)
+    if (Npc_KnowsInfo (hero, DIA_Cronos_KRADZIEZ)) && (MIS_CronosArtifacts == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -935,7 +935,7 @@ INSTANCE DIA_Cord_SpottedNearMine (C_INFO)
 
 FUNC INT DIA_Cord_SpottedNearMine_Condition()
 {
-    if (MIS_PomocQuentinowi == LOG_RUNNING)
+    if (MIS_SupportForQuentin == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -953,7 +953,7 @@ FUNC VOID DIA_Cord_SpottedNearMine_Info()
     AI_Output (self, other ,"DIA_Cord_SpottedNearMine_15_07"); //My zostaniemy tutaj i bêdziemy pilnowaæ wejœcia. W ka¿dej chwili mog¹ siê pojawiæ kolejni Stra¿nicy. Dopilnujemy, ¿eby nie zaszli ciê od ty³u.
  
 	//zadanie - wpis
-	B_LogEntry                     (CH1_PomocQuentinowi,"Sytuacja nie wygl¹da za dobrze. W okolicy kopalni krêci siê sporo Stra¿ników. Bêdê musia³ zostawiæ Najemników i Bandytów na stra¿y, a do kopalni zejœæ sam.");
+	B_LogEntry                     (CH4_SupportForQuentin,"Sytuacja nie wygl¹da za dobrze. W okolicy kopalni krêci siê sporo Stra¿ników. Bêdê musia³ zostawiæ Najemników i Bandytów na stra¿y, a do kopalni zejœæ sam.");
     
 	//exp 
 	B_GiveXP (290);
@@ -1030,9 +1030,9 @@ FUNC VOID DIA_Cord_IHaveStone_Info()
     B_LogEntry               (CH4_NC_Mine,"Oczyœci³em kopalniê ze z³ych si³. Cord zaproponowa³, aby poddaæ Lee pomys³ na wznowienie wydobycia.");
 	
 	//stare zadanie z kopalni¹
-	MIS_PomocQuentinowi = LOG_SUCCESS;
-    Log_SetTopicStatus       (CH1_PomocQuentinowi, LOG_SUCCESS);
-	B_LogEntry               (CH1_PomocQuentinowi,"Pozby³em siê nekromanty, który przywo³ywaj o¿ywieñców w kopalni i opowiedzia³em o tym Cordowi. Moje zadanie dobieg³o koñca. Po kolejne instrukcje powinienem siê udaæ do Lee.");
+	MIS_SupportForQuentin = LOG_SUCCESS;
+    Log_SetTopicStatus       (CH4_SupportForQuentin, LOG_SUCCESS);
+	B_LogEntry               (CH4_SupportForQuentin,"Pozby³em siê nekromanty, który przywo³ywaj o¿ywieñców w kopalni i opowiedzia³em o tym Cordowi. Moje zadanie dobieg³o koñca. Po kolejne instrukcje powinienem siê udaæ do Lee.");
 	B_GiveXP (500); 
 	
     AI_StopProcessInfos	(self);

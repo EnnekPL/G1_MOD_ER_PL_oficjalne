@@ -407,11 +407,11 @@ FUNC VOID DIA_Wedge_Zlodzieje_Info()
     AI_Output (other, self ,"DIA_Wedge_Zlodzieje_15_07"); //Czemu nie?
     AI_Output (self, other ,"DIA_Wedge_Zlodzieje_03_08"); //Niestety nie mogê ci daæ ¿adnej wskazówki.
     AI_Output (self, other ,"DIA_Wedge_Zlodzieje_03_09"); //Po prostu rozgl¹daj siê tu i tam.
-    MIS_FindPosazekKlina = LOG_RUNNING;
+    MIS_WedgesStatuette = LOG_RUNNING;
 
-    Log_CreateTopic            (CH1_FindPosazekKlina, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_FindPosazekKlina, LOG_RUNNING);
-    B_LogEntry                     (CH1_FindPosazekKlina,"Klin chce, abym odnalaz³ jego rodzinn¹ pami¹tkê. To ma³y pos¹¿ek przedstawiaj¹cy dziwne bóstwo.");
+    Log_CreateTopic          (CH1_WedgesStatuette, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_WedgesStatuette, LOG_RUNNING);
+    B_LogEntry               (CH1_WedgesStatuette,"Klin chce, abym odnalaz³ jego rodzinn¹ pami¹tkê. To ma³y pos¹¿ek przedstawiaj¹cy dziwne bóstwo.");
 	//CreateInvItems (Stt_311_Fisk, JakBylPosazekPoAngielskuDoZCholery, 1); ***FIX*** TWORZONY W INNYM SKRYPCIE!!
     AI_StopProcessInfos	(self);
 };
@@ -448,11 +448,11 @@ FUNC VOID DIA_Wedge_Posog_Info()
     AI_Output (self, other ,"DIA_Wedge_Posog_03_04"); //A to pod³a gnida!
     AI_Output (other, self ,"DIA_Wedge_Posog_15_05"); //Myœlisz, ¿e sam tu przyszed³ i ci go ukrad³?
     AI_Output (self, other ,"DIA_Wedge_Posog_03_06"); //Nie wiem tego.
-    B_LogEntry                     (CH1_FindPosazekKlina,"Znalaz³em pos¹¿ek Klina w ofercie handlarza Fiska.");
-    Log_SetTopicStatus       (CH1_FindPosazekKlina, LOG_SUCCESS);
-    MIS_FindPosazekKlina = LOG_SUCCESS;
+    B_LogEntry                     (CH1_WedgesStatuette,"Znalaz³em pos¹¿ek Klina w ofercie handlarza Fiska. Odda³em Szkodnikowi zgubê.");
+    Log_SetTopicStatus       (CH1_WedgesStatuette, LOG_SUCCESS);
+    MIS_WedgesStatuette = LOG_SUCCESS;
 
-    B_GiveXP (250);
+    B_GiveXP (125);
     B_GiveInvItems (other, self, JakBylPosazekPoAngielskuDoZCholery, 1);
     CreateInvItems (self, ItMiNugget, 35);
     B_GiveInvItems (self, other, ItMiNugget, 35);
@@ -474,7 +474,7 @@ INSTANCE DIA_Wedge_Zlodzieje2 (C_INFO)
 
 FUNC INT DIA_Wedge_Zlodzieje2_Condition()
 {
-    if (MIS_FindPosazekKlina == LOG_SUCCESS)
+    if (MIS_WedgesStatuette == LOG_SUCCESS)
     && (Npc_KnowsInfo (hero, Org_843_Sharky_Fisk))
     {
     return TRUE;
@@ -488,7 +488,7 @@ FUNC VOID DIA_Wedge_Zlodzieje2_Info()
     AI_Output (self, other ,"DIA_Wedge_Zlodzieje2_03_02"); //Jeszcze nie.
     AI_Output (self, other ,"DIA_Wedge_Zlodzieje2_03_03"); //Jednak widzê, ¿e ty masz wielk¹ chêæ to ustaliæ.
     AI_Output (other, self ,"DIA_Wedge_Zlodzieje2_15_04"); //Powiedzmy, ¿e to by³o moje ¿yciowe marzenie.
-    AI_Output (self, other ,"DIA_Wedge_Zlodzieje2_03_05"); //Œwietnie! Gdy coœ ustalisz, zg³oœ siê do mnie.
+    AI_Output (self, other ,"DIA_Wedge_Zlodzieje2_03_05"); //Œwietnie! Gdy czegoœ siê dowiesz, daj mi znaæ. Wynagrodzê ciê.
     MIS_ZnowuZapierdalam = LOG_RUNNING;
 
     Log_CreateTopic            (CH1_ZnowuZapierdalam, LOG_MISSION);

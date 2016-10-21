@@ -377,7 +377,7 @@ FUNC VOID DIA_Bandyta_FreePotions_Info()
     AI_Output (other, self ,"DIA_Bandyta_FreePotions_15_01"); //Quentin przys³a³ mnie po eliksiry.
     AI_Output (self, other ,"DIA_Bandyta_FreePotions_03_02"); //Mam tu coœ dla ciebie. Powodzenia.
 	//log
-	B_LogEntry     (CH1_RozwalaUBnadytow,"Wzi¹³em od Briama eliksiry.");
+	B_LogEntry     (CH4_NewDanger,"Wzi¹³em od Briama eliksiry.");
 	//items
 	B_GiveInvItems (self,hero, ItFo_Potion_Health_02, 5);
 };

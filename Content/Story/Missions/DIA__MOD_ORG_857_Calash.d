@@ -248,7 +248,7 @@ INSTANCE DIA_Calash_GoldMine (C_INFO)
 
 FUNC INT DIA_Calash_GoldMine_Condition()
 { 
-    if (MIS_KopalniaZlota == LOG_RUNNING) && (kapitel == 10)
+    if (MIS_GoldMine == LOG_RUNNING) && (kapitel == 10)
     {
     return TRUE;
     };
@@ -274,7 +274,7 @@ FUNC VOID DIA_Calash_GoldMine_Info()
         AI_Output (other, self ,"DIA_Calash_GoldMine_15_09"); //Wola³bym ¿ebyœ pe³ni³ funkcje ochroniarza.
         AI_Output (self, other ,"DIA_Calash_GoldMine_03_10"); //Hmm... Rozumiem. Nie chcecie nieproszonych goœci.
         AI_Output (self, other ,"DIA_Calash_GoldMine_03_11"); //Pomogê wam. I tak nic mnie tu nie trzyma. 
-        B_LogEntry                     (CH1_KopalniaZlota,"Calash bêdzie pracowa³ w kopalni z³ota jako ochroniarz.  ");
+        B_LogEntry                     (CH2_GoldMine,"Calash bêdzie pracowa³ w kopalni z³ota jako ochroniarz.  ");
 		DIA_Calash_GoldMine.permanent = false;
 		Calash_gototavern = true;
         B_GiveXP (400);

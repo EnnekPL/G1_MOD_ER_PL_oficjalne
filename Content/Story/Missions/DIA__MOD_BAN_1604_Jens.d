@@ -446,7 +446,7 @@ FUNC VOID DIA_Jens_HeavyArmor_Info()
     AI_Output (self, other ,"DIA_Jens_HeavyArmor_03_02"); //Nie mogê ci go oddaæ za darmo. W³o¿y³em w niego du¿o pracy.
 	AI_Output (other, self ,"DIA_Jens_HeavyArmor_15_03"); //Ile?
     AI_Output (self, other ,"DIA_Jens_HeavyArmor_03_04"); //Trzy tysi¹ce bry³ek rudy.
-	B_LogEntry     (CH1_RozwalaUBnadytow,"Pancerz od Jesna bêdzie mnie kosztowa³ 3000 bry³ek rudy.");
+	B_LogEntry     (CH4_NewDanger,"Pancerz od Jesna bêdzie mnie kosztowa³ 3000 bry³ek rudy.");
 };
 
 //========================================
@@ -479,7 +479,7 @@ FUNC VOID DIA_Jens_BuyHeavyArmor_Info()
 	{
     AI_Output (self, other ,"DIA_Jens_BuyHeavyArmor_03_02"); //Niech ci s³u¿y.
 	//log
-	B_LogEntry     (CH1_RozwalaUBnadytow,"Kupi³em od Jensa ciê¿k¹ zbrojê Bandyty.");
+	B_LogEntry     (CH4_NewDanger,"Kupi³em od Jensa ciê¿k¹ zbrojê Bandyty.");
 	//pay
 	B_GiveInvItems (hero,self,itminugget,3000);
 	//armor

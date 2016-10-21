@@ -232,13 +232,13 @@ FUNC INT DIA_Organisator_NEWSY_Condition()
 FUNC VOID DIA_Organisator_NEWSY_Info()
 {
     AI_Output (other, self ,"DIA_Organisator_NEWSY_15_01"); //Jakieœ wieœci?
-    if (!MIS_MAgicySzkodnicy == LOG_SUCCESS)
+    if (!MIS_CronosArtifacts == LOG_SUCCESS)
     {
         AI_Output (self, other ,"DIA_Organisator_NEWSY_03_02"); //Cronos wci¹¿ poszukuje skradzionych artefaktów. Podobno pomaga mu Orik. 
         AI_Output (self, other ,"DIA_Organisator_NEWSY_03_03"); //Szczerze, to mam ju¿ dosyæ tego ca³ego zamieszania. Po okolicy biega kilku œwirów uzbrojonych w magiczne zwoje.
         AI_Output (self, other ,"DIA_Organisator_NEWSY_03_04"); //Jedni siê boj¹, inni ich szukaj¹. 
     }
-    else if (MIS_MagicySzkodnicy == LOG_SUCCESS)
+    else if (MIS_CronosArtifacts == LOG_SUCCESS)
     {
         AI_Output (self, other ,"DIA_Organisator_NEWSY_03_05"); //Uda³o ci siê rozwi¹zaæ problemy ze Szkodnikami. Wreszcie jest trochê spokoju.
    

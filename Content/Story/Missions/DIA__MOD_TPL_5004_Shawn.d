@@ -795,7 +795,7 @@ FUNC VOID DIA_Shawn_BAN_THREAD_Info()
         AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_04"); //Dobrze, ¿e jesteœ poinformowany.
         AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_05"); //S³ysza³em te¿ o planach Bandytów. Chcê, abyœ siê tym zaj¹³ i zda³ mi raport. 
         AI_Output (self, other ,"DIA_Shawn_BAN_THREAD_03_06"); //Pogadaj z cz³owiekiem imieniem Drax. Ponoæ planuje on jak¹œ rewolucjê.
-        if (Npc_KnowsInfo (hero, DIA_Drax_Ded)) && (MIS_Do_lowcow == LOG_SUCCESS)
+        if (Npc_KnowsInfo (hero, DIA_Drax_Ded)) && (MIS_HuntersSupport == LOG_SUCCESS)
         {
             AI_Output (other, self ,"DIA_Shawn_BAN_THREAD_15_07"); //Ju¿ rozmawia³em z Draxem. Bandyci chc¹ pozbyæ siê patrolów Stra¿ników w okolicach Obozu.
             AI_Output (other, self ,"DIA_Shawn_BAN_THREAD_15_08"); //Pomog³em im zdobyæ wsparcie ³owców orków. Mam nadziejê, ¿e jakoœ sobie poradz¹.
@@ -847,7 +847,7 @@ INSTANCE DIA_Shawn_DRAX_IMPORTANT (C_INFO)
 FUNC INT DIA_Shawn_DRAX_IMPORTANT_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Drax_Ded))
-    && (MIS_Do_lowcow == LOG_SUCCESS)
+    && (MIS_HuntersSupport == LOG_SUCCESS)
     && (second_d_shawn == true)
     {
     return TRUE;

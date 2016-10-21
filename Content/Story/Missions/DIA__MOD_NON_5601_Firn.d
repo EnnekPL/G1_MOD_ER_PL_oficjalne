@@ -601,11 +601,11 @@ FUNC INT DIA_Firn_CHAPTER_5_Condition()
 FUNC VOID DIA_Firn_CHAPTER_5_Info()
 {
     AI_Output (self, other ,"DIA_Firn_CHAPTER_5_03_01"); //Ej! Jest sprawa. Alex chyba ma dla ciebie jak¹œ robotê.
-    MIS_Wielki_troll = LOG_RUNNING;
+    MIS_BigTroll = LOG_RUNNING;
 
-    Log_CreateTopic            (CH1_Wielki_troll, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_Wielki_troll, LOG_RUNNING);
-    B_LogEntry                     (CH1_Wielki_troll,"Firn twierdzi, ¿e Alex ma dla mnie jakieœ zadanie.");
+    Log_CreateTopic            (CH5_BigTroll, LOG_MISSION);
+    Log_SetTopicStatus       (CH5_BigTroll, LOG_RUNNING);
+    B_LogEntry                     (CH5_BigTroll,"Firn twierdzi, ¿e Alex ma dla mnie jakieœ zadanie.");
     AI_StopProcessInfos	(self);
 };
 

@@ -7,6 +7,7 @@
 
 //***Stary Obóz***
 //***Zmienne zadañ***
+const string CH1_HelpJesse 					= "Przys³uga za przys³ugê";
 
 const string CH1_Bulit 				 		= "Chrzest Wody";
 
@@ -20,6 +21,9 @@ var int MIS_SayOkylFlintDead;
 
 var int MIS_HanisAsTeacher;
 const string CH1_HanisAsTeacher      		= "Nauka za pojedynek";
+
+var int MIS_Druggy;
+const string CH1_Druggy      				= "Nowi palacze";
 
 var int MIS_guyhut;
 const string CH1_guyhut      				= "Chata Kyle'a";
@@ -62,6 +66,9 @@ const string CH1_WhoeverPoursSand 			= "Kto komu piasek sypie";
 
 var int MIS_ZlecenieJima;
 const string CH1_ZlecenieJima 				= "Zbezczeszczone o³tarze";
+
+var int MIS_FoodForOldMine;
+const string CH1_FoodForOldMine     		= "¯ywnoœæ dla Starej Kopalni";
 
 var int MIS_ReplacePointDefense;
 const string CH2_ReplacePointDefense   	  	= "Obrona placu wymian";
@@ -138,6 +145,9 @@ const string CH2_OldAlchemist 				= "Poszukiwania alchemika";
 var int MIS_Plates;
 const string CH2_Plates 			 		= "Tabliczki dla Steha";
 
+var int MIS_OldCampCellar;
+const string CH2_OldCampCellar      		= "Skarby w magazynie";
+
 var int MIS_TestGuru;
 const string CH3_TestGuru    		 		= "Zostaæ Guru";
 
@@ -171,6 +181,12 @@ const string CH4_BanditNeedPsionicHelp 		= "Co siê dzieje u Bandytów?";
 //***Obóz Bandytów***
 //***Zmienne zadañ***
 
+var int MIS_SmallDelivery;
+const string CH1_SmallDelivery     			= "Dostawa dla Emanuela";
+
+var int MIS_EmanuelsDeals;
+const string CH1_EmanuelsDeals      		=   "Handel Emanuela";
+
 var int MIS_BanditCave;
 const string CH1_BanditCave      			= "Dostawa z Nowego Obozu";
 
@@ -195,6 +211,12 @@ const string CH1_DraxTest      				= "Test Draxa";
 var int MIS_PSIcampWORK;
 const string CH1_PSIcampWORK     	 		= "Szpieg na bagnie";
 
+var int MIS_Rozpierdol1;
+const string CH1_Rozpierdol1      			= "Atak na plac wymian";
+
+var int MIS_Rozpierdol2;
+const string CH1_Rozpierdol2      			= "Transport do kopalni";
+
 var int MIS_BaronsRings;
 const string CH1_BaronsRings  				= "Magnackie pierœcienie";
 
@@ -209,8 +231,20 @@ const string CH3_HuntingWithDoyle      		= "Polowanie z Doylem";
 var int MIS_SearchKalom;
 const string CH3_SearchKalom      			= "Poszukiwania Kaloma";
 
+var int MIS_NewDanger;
+const string CH4_NewDanger       			= "Zagro¿enie ze strony Gomeza";
+
 var int MIS_SupportFromOrcHunters;
 const string CH4_SupportFromOrcHunters      = "Pomoc ³owców orków";
+
+var int MIS_GardistsCheckpoints;
+const string CH4_GardistsCheckpoints      	= "Zdobycie posterunków Stra¿ników";
+
+var int MIS_GardistsInBC;
+const string CH4_GardistsInBC     			= "Bandyci bez obozu";
+
+var int MIS_FindFriends;
+const string CH4_FindFriends      			= "OdnaleŸæ przyjació³";
 
 var int MIS_QuentinsCutlass;
 const string CH4_QuentinsCutlass      		= "Kordelas dla Quentina";
@@ -230,8 +264,22 @@ const string CH4_RockyArmor      			= "Nowy pancerz dla Bandyty";
 //***Nowy Obóz***
 //***Zmienne zadañ*** 
 
+const string CH1_KdWCourier 				= "Kurier Magów Wody";
+
 var int MIS_MapForRatford;
 const string CH1_MapForRatford      		= "Mapa dla Ratforda";
+
+var int MIS_WedgesStatuette;
+const string CH1_WedgesStatuette   			= "Poszukiwania pos¹¿ka";
+
+var int MIS_ZnowuZapierdalam;
+const string CH1_ZnowuZapierdalam   		= "Kto ukrad³ pos¹¿ek Klina?";
+
+var int MIS_KillFingers;
+const string CH1_KillFingers      			= "Stra¿nik w karczmie";
+
+var int MIS_BroilInTavern;
+const string CH1_BroilInTavern      		= "Burdy w karczmie";
 
 var int MIS_OkylQuest;
 const string CH1_OkylQuest      			= "Zadanie Okyla";
@@ -257,14 +305,32 @@ const string CH1_Scams     					= "Przekrêty";
 var int MIS_KeyKagan;
 const string CH1_KeyKagan   	     		= "Klucz Baal Kagana"; 
 
+var int MIS_WillQuest;
+const string CH2_WillQuest     				= "Zlecenie Will'a"; 
+
+var int MIS_Treasury;
+const string CH2_Treasury     				= "Skrytka";
+
+var int MIS_GoldMine;
+const string CH2_GoldMine      				= "Kopalnia z³ota";
+
 var int MIS_StupidMagican;
 const string CH2_StupidMagican      		= "Szkodnik-magik w Nowym Obozie";
+
+var int MIS_CronosArtifacts;
+const string CH1_MagicySzkodnicy    	= "Nieudolni magicy";
 
 var int MIS_TreasureOldGuard;
 const string CH2_TreasureOldGuard 			= "Skarb starego Stra¿nika";
 
 var int MIS_ThreeLords;
 const string CH4_ThreeLords     			= "Trzej Lordowie";
+
+var int MIS_RaportForLares;
+const string CH4_RaportForLares      		= "Ostrzec Bandytów";
+
+var int MIS_SupportForQuentin;
+const string CH4_SupportForQuentin    		= "Wsparcie dla Quentina";
 
 var int MIS_BanditsInTroubles;
 const string CH4_BanditsInTroubles   		= "Banda Quentina";
@@ -275,10 +341,16 @@ const string CH4_NC_Mine      				= "Lee i kopalnia";
 var int MIS_TorlofNeedHelp;
 const string CH4_TorlofNeedHelp     		= "Na pomoc Torlofowi";
 
+var int MIS_HuntersSupport;
+const string CH4_HuntersSupport      		= "Wsparcie od ³owców";
+
 //***Kolonia***
 //***Zmienne zadañ***
 var int MIS_FlyingBook;
 const string CH1_FlyingBook   				= "Lataj¹cy pamiêtnik";
+
+var int MIS_HunterHugo;
+const string CH1_HunterHugo     	 		= "£owca Hugo";
 
 var int MIS_SpikeLoser;
 const string CH1_SpikeLoser      			= "Problem Spike'a";
@@ -356,17 +428,25 @@ var int MIS_CavalornHelper;
 const string CH4_CavalornHelper     		= "Pomocnik Cavalorna";
 
 var int MIS_HarksMap;
-const string CH4_HarksMap     				 = "Mapa dla Harka";
+const string CH4_HarksMap     				= "Mapa dla Harka";
 
 var int MIS_StevesEquipment;
-const string CH4_StevesEquipment      = "Ekwipunek Steve'a";
+const string CH4_StevesEquipment      		= "Ekwipunek Steve'a";
+
+var int MIS_TreasureSeeking;
+const string CH4_TreasureSeeking     		= "Poszukiwanie skarbu";
+
+var int MIS_NewLocationForPirates;
+const string CH4_NewLocationForPirates  	= "Spokojniejsze miejsce dla piratów";
 
 var int MIS_FoodForHunters;
 const string CH5_FoodForHunters      		= "Dostawa ¿ywnoœci";
 
-const string CH1_HelpJesse 					= "Przys³uga za przys³ugê";
+var int MIS_BigTroll;
+const string CH5_BigTroll      				= "Polowanie z Alexem";
 
-const string CH1_KdWCourier 				= "Kurier Magów Wody";
+var int MIS_Upadek_Gomeza;
+const string CH5_Upadek_Gomeza      		= "Upadek Gomeza";
 
 //***Opuszczona kopalnia***
 //***Zmienne zadañ***

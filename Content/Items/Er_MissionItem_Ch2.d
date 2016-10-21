@@ -521,10 +521,10 @@ INSTANCE ItMi_BloodyShirt (C_Item)
 func void Use_BloodyShirt ()
 {
 var int used_shirt;
-if (used_shirt == false) && (HandelEmanuela == LOG_RUNNING)
+if (used_shirt == false) && (MIS_EmanuelsDeals == LOG_RUNNING)
 {
 used_shirt = true;
- B_LogEntry               (CH1_HandelEmanuela,"Przy jaskini znalaz³em cia³o martwego Nowicjusza. Jego ubranie by³o silnie przekrwione. Myœlê, ¿e mo¿e mnie ono zaprowadziæ do pozosta³ych rabusiów. ");
+ B_LogEntry               (CH1_EmanuelsDeals,"Przy jaskini znalaz³em cia³o martwego Nowicjusza. Jego ubranie by³o silnie przekrwione. Myœlê, ¿e mo¿e mnie ono zaprowadziæ do pozosta³ych rabusiów. ");
  B_GiveXP (50);
 };
 };

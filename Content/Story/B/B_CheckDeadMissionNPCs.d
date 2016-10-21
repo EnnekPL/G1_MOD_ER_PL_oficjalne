@@ -12,9 +12,9 @@ func void B_CheckDeadMissionNPCs ()
 	};
 	if (Hlp_GetInstanceID(NOV_1373_Novize) ==  Hlp_GetInstanceID(self))
 	{
-	if (HandelEmanuela == LOG_RUNNING)
+	if (MIS_EmanuelsDeals == LOG_RUNNING)
 		{
-			B_LogEntry	(CH1_HandelEmanuela,"Nied³ugo musia³em szukaæ. Przy po³udniowej bramie do Starego Obozu znalaz³em kolejnych Nowicjuszy. Tym razem ¿ywych i agresywnych. Rozprawi³em siê z nimi. Muszê teraz poszukaæ rudy Emanuela i wróciæ do niego.");
+			B_LogEntry	(CH1_EmanuelsDeals,"Nied³ugo musia³em szukaæ. Przy po³udniowej bramie do Starego Obozu znalaz³em kolejnych Nowicjuszy. Tym razem ¿ywych i agresywnych. Rozprawi³em siê z nimi. Muszê teraz poszukaæ rudy Emanuela i wróciæ do niego.");
 	};
 	};
 	

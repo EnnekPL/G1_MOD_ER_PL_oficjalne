@@ -66,7 +66,7 @@ FUNC VOID DIA_MAGAZYNIER_WARN_PAY_ORE()
     AI_Output (other, self ,"DIA_MAGAZYNIER_WARN_PAY_ORE_15_01"); //Niech bêdzie, oto 200 bry³ek rudy.
     B_GiveInvItems (other, self, ItMiNugget, 200);
     AI_Output (self, other ,"DIA_MAGAZYNIER_WARN_PAY_ORE_03_02"); //W takim razie w porz¹dku. Bierz, co chcesz, a my nic powiemy, tylko lepiej nas nie wkurzaj!
-    B_LogEntry                     (CH1_Magazyny_OC,"Dogadanie siê ze Stra¿nikami to pestka. Mam nadziejê, ¿e te inwestycje wkrótce mi siê zwróc¹.");
+    B_LogEntry                     (CH2_OldCampCellar,"Dogadanie siê ze Stra¿nikami to pestka. Mam nadziejê, ¿e te inwestycje wkrótce mi siê zwróc¹.");
 
     B_GiveXP (100);
     Info_ClearChoices		(DIA_MAGAZYNIER_WARN);

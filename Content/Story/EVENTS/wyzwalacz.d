@@ -204,17 +204,17 @@ hero_explore_aidanquestcave = true;
 B_LogEntry                     (CH3_Aidan_Quest,"W miejscu o którym mówi³ Aidan znalaz³em skrzyniê. Wygl¹da na solidnie zamkniêt¹. Muszê wróciæ do Aidana i zapytaæ, czy wie jak j¹ otworzyæ.");
 };
 //************JASKINIA HUGO
-if (Npc_GetDistToWP (hero, "BOFUR") < 700) && (Bylem_wodospad == false) && (MIS_gdzie_hugo == LOG_RUNNING)
+if (Npc_GetDistToWP (hero, "BOFUR") < 700) && (Bylem_wodospad == false) && (MIS_HunterHugo == LOG_RUNNING)
 {
 Bylem_wodospad = true; 
-B_LogEntry        (CH1_gdzie_hugo,"Znalaz³em jaskiniê, jednak wydajê siê byæ ona zupe³nie pusta.");
+B_LogEntry        (CH1_HunterHugo,"Znalaz³em jaskiniê, jednak wydajê siê byæ ona zupe³nie pusta.");
 };
 //************RUDA EMANUELA
 var int hero_saw_die_shine;
-if (Npc_GetDistToWP (hero, "ER_WD_QUEST_TRUP_01") < 1000) && (hero_saw_die_shine == false) && (HandelEmanuela == LOG_RUNNING)
+if (Npc_GetDistToWP (hero, "ER_WD_QUEST_TRUP_01") < 1000) && (hero_saw_die_shine == false) && (MIS_EmanuelsDeals == LOG_RUNNING)
 {
 hero_saw_die_shine = true;
-B_LogEntry                     (CH1_HandelEmanuela,"W jaskini znalaz³em cia³o Shine i jakiegoœ Nowicjusza. NajwyraŸniej walczyli. Nie widzê, aby któryœ z nich mia³ rudê. Na pewno w napadzie brali udzia³ tak¿e inni Nowicjusze. Cia³a s¹ œwie¿e, wiêc myœlê, ¿e nie uciekli daleko. Muszê ich poszukaæ i odebraæ rudê.");
+B_LogEntry                     (CH1_EmanuelsDeals,"W jaskini znalaz³em cia³o Shine i jakiegoœ Nowicjusza. NajwyraŸniej walczyli. Nie widzê, aby któryœ z nich mia³ rudê. Na pewno w napadzie brali udzia³ tak¿e inni Nowicjusze. Cia³a s¹ œwie¿e, wiêc myœlê, ¿e nie uciekli daleko. Muszê ich poszukaæ i odebraæ rudê.");
 };
 //************PO£ÓW INFO
  if (Npc_GetDistToWP (hero, "POMOST") < 300) || (Npc_GetDistToWP (hero, "POMOST2") < 300) || (Npc_GetDistToWP (hero, "POMOST3") < 300) || (Npc_GetDistToWP (hero, "POMOST4") < 300) || (Npc_GetDistToWP (hero, "POMOST5") < 300)
@@ -655,21 +655,21 @@ if (Npc_GetTalentSkill(hero, NPC_TALENT_MAGE) == 3)
 	var int skrytka2LOC;
 	var int skrytka3LOC;
 //************WILL KRYJÓWKI	
-if (Npc_GetDistToWP (hero, "KRYJOWKA1") < 1500) && (MIS_KryjowkaNaKase == LOG_RUNNING) && (Npc_HasItems (hero, ItWrWorldmap) >=1) && (skrytka1LOC == false)
+if (Npc_GetDistToWP (hero, "KRYJOWKA1") < 1500) && (MIS_Treasury == LOG_RUNNING) && (Npc_HasItems (hero, ItWrWorldmap) >=1) && (skrytka1LOC == false)
 {
 B_GiveXP (400);
 PrintS_Ext ("To miejsce pasuje na kryjówkê! Oznaczê je na mapie.",COL_WHITE);
 CreateInvItems (hero, ItWrWorldmap_Edit1, 1);
 skrytka1LOC = true;
 };
-if (Npc_GetDistToWP (hero, "KRYJOWKA2") < 1500) && (MIS_KryjowkaNaKase == LOG_RUNNING) && (Npc_HasItems (hero, ItWrWorldmap) >=1) && (skrytka2LOC == false)
+if (Npc_GetDistToWP (hero, "KRYJOWKA2") < 1500) && (MIS_Treasury == LOG_RUNNING) && (Npc_HasItems (hero, ItWrWorldmap) >=1) && (skrytka2LOC == false)
 {
 PrintS_Ext ("To miejsce pasuje na kryjówkê! Oznaczê je na mapie.",COL_WHITE);
 B_GiveXP (400);
  CreateInvItems (hero, ItWrWorldmap_Edit2, 1);
 skrytka2LOC = true;
 };
-if (Npc_GetDistToWP (hero, "KRYJOWKA3") < 1500) && (MIS_KryjowkaNaKase == LOG_RUNNING) && (Npc_HasItems (hero, ItWrWorldmap) >=1) && (skrytka3LOC == false)
+if (Npc_GetDistToWP (hero, "KRYJOWKA3") < 1500) && (MIS_Treasury == LOG_RUNNING) && (Npc_HasItems (hero, ItWrWorldmap) >=1) && (skrytka3LOC == false)
 {
 //Print ("Zlokalizowano kryjówkê!");
 //PrintScreen	("Kryjówka oznaczona na mapie!", -1,70,"FONT_OLD_20_WHITE.TGA",3);

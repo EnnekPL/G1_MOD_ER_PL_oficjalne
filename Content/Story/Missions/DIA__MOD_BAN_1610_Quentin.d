@@ -1163,7 +1163,7 @@ FUNC INT DIA_Quentin_HELLO35_Condition()
 {
     if (Npc_KnowsInfo (hero, Info_Diego_OCWARN))
 	&& (Npc_GetTrueGuild(hero) == GIL_BAU)
-	&& (MIS_RozwalaUBnadytow != LOG_SUCCESS)
+	&& (MIS_NewDanger != LOG_SUCCESS)
     {
     return TRUE;
     };
@@ -1187,12 +1187,12 @@ FUNC VOID DIA_Quentin_HELLO35_Info()
     AI_Output (self, other ,"DIA_Quentin_HELLO35_03_13"); //Na razie to wszystko. Zrób co ci kaza³em. Nie ma czasu do stracenia.
 	//log
 	//zadanie nie jest ju¿ rozpoczynane u Draxa
-	//if (MIS_RozwalaUBnadytow != LOG_RUNNING)
+	//if (MIS_NewDanger != LOG_RUNNING)
 	//{
-        MIS_RozwalaUBnadytow = LOG_RUNNING;
-        Log_CreateTopic          (CH1_RozwalaUBnadytow, LOG_MISSION);
-        Log_SetTopicStatus       (CH1_RozwalaUBnadytow, LOG_RUNNING);
-        B_LogEntry               (CH1_RozwalaUBnadytow,"Sytuacja nie wygl¹da zbyt dobrze. W tym ca³ym zamieszaniu Stra¿nicy mog¹ próbowaæ odnaleŸæ Obóz Bandytów. Musimy powzi¹æ œrodki ostro¿noœci. Quentin kaza³ mi porozmawiaæ z Draxem i Ratfordem, obaj maj¹ wróciæ do Obozu. Pryz okazji mam odnaleŸæ kilku Bandytów, którzy zniknêli z Obozu.");  
+        MIS_NewDanger = LOG_RUNNING;
+        Log_CreateTopic          (CH4_NewDanger, LOG_MISSION);
+        Log_SetTopicStatus       (CH4_NewDanger, LOG_RUNNING);
+        B_LogEntry               (CH4_NewDanger,"Sytuacja nie wygl¹da zbyt dobrze. W tym ca³ym zamieszaniu Stra¿nicy mog¹ próbowaæ odnaleŸæ Obóz Bandytów. Musimy powzi¹æ œrodki ostro¿noœci. Quentin kaza³ mi porozmawiaæ z Draxem i Ratfordem, obaj maj¹ wróciæ do Obozu. Pryz okazji mam odnaleŸæ kilku Bandytów, którzy zniknêli z Obozu.");  
 	//};
 	//experience
 	B_GiveXP (XP_FireMagesDeath);
@@ -1216,7 +1216,7 @@ INSTANCE DIA_Quentin_DraxInfos (C_INFO)
 
 FUNC INT DIA_Quentin_DraxInfos_Condition()
 {
-    if (MIS_RozwalaUBnadytow == LOG_RUNNING) //(Npc_KnowsInfo (hero, DIA_Quentin_HELLO35))
+    if (MIS_NewDanger == LOG_RUNNING) //(Npc_KnowsInfo (hero, DIA_Quentin_HELLO35))
 	&& (Npc_KnowsInfo (hero, DIA_Drax_WTFCH4))
     {
     return TRUE;
@@ -1238,7 +1238,7 @@ FUNC VOID DIA_Quentin_DraxInfos_Info()
     AI_Output (self, other ,"DIA_Quentin_DraxInfos_03_10"); //Gdybyœmy zostawili go samego, to tak jakbyœmy powiedzieli Gomezowi, gdzie jest nasz Obóz. 
     AI_Output (self, other ,"DIA_Quentin_DraxInfos_03_11"); //IdŸ do niego i powiedz mu, ¿eby na nas poczeka³. Nie pójdê mordowaæ Stra¿ników bez przygotowania.
 	//log
-    B_LogEntry                     (CH1_RozwalaUBnadytow,"Quentin zgodzi³ siê pomóc Draxowi. W sumie to nie mia³ za du¿ego wyboru... Mam wróciæ do Draxa i powiedzieæ mu, ¿eby poczeka³ na wsparcie z Obozu.");
+    B_LogEntry                     (CH4_NewDanger,"Quentin zgodzi³ siê pomóc Draxowi. W sumie to nie mia³ za du¿ego wyboru... Mam wróciæ do Draxa i powiedzieæ mu, ¿eby poczeka³ na wsparcie z Obozu.");
 	//exit
     AI_StopProcessInfos	(self);
 };
@@ -1273,7 +1273,7 @@ FUNC VOID DIA_Quentin_nextWork22_Info()
 	AI_Output (self, other ,"DIA_Quentin_nextWork22_03_03"); //Musisz teraz pogadaæ z dwiema osobami Jensem i Briamem.
     AI_Output (self, other ,"DIA_Quentin_nextWork22_03_04"); //Jensa poproœ o ciê¿ki pancerz, a Briama o pomocne podczas walki eliksiry.
 	//log
-    B_LogEntry                     (CH1_RozwalaUBnadytow,"Quentin zezwoli³ mi na otrzymanie ciê¿kiej zbroi Bandyty od Jensa. Briam ponadto da mi kilka eliksirów. Powinienem bez zw³oki z nimi porozmawiaæ.");
+    B_LogEntry                     (CH4_NewDanger,"Quentin zezwoli³ mi na otrzymanie ciê¿kiej zbroi Bandyty od Jensa. Briam ponadto da mi kilka eliksirów. Powinienem bez zw³oki z nimi porozmawiaæ.");
 	//exit
 	AI_StopProcessInfos	(self);
 	//note
@@ -1316,7 +1316,7 @@ FUNC VOID DIA_Quentin_Idea_Info()
     Log_CreateTopic      (CH4_SupportFromOrcHunters, LOG_MISSION);
     Log_SetTopicStatus   (CH4_SupportFromOrcHunters, LOG_RUNNING);
     B_LogEntry           (CH4_SupportFromOrcHunters,"Mam odnaleŸæ obóz ³owców orków. Ich szef podobno zna³ siê z Quentinem, dlatego ten teraz liczy na jego pomoc. Obozu mam szukaæ w jaskini bêd¹cej czêœci¹ œciany skalnej oddzielaj¹cej Stary Obóz od Ziem Orków.");
-	B_LogEntry           (CH1_RozwalaUBnadytow,"Ju¿ mia³em braæ siê do roboty, gdy nagle ponownie zaczepi³ mnie Quentin. Poprosi³ o odnalezienie obozu ³owców orków i poproszenie ich o pomoc. Obozu mam szukaæ w jaskini bêd¹cej czêœci¹ œciany skalnej oddzielaj¹cej Stary Obóz od Ziem Orków.");
+	B_LogEntry           (CH4_NewDanger,"Ju¿ mia³em braæ siê do roboty, gdy nagle ponownie zaczepi³ mnie Quentin. Poprosi³ o odnalezienie obozu ³owców orków i poproszenie ich o pomoc. Obozu mam szukaæ w jaskini bêd¹cej czêœci¹ œciany skalnej oddzielaj¹cej Stary Obóz od Ziem Orków.");
 	//exit
     AI_StopProcessInfos	(self);
 };
@@ -1351,7 +1351,7 @@ FUNC VOID DIA_Quentin_QuestOk890976_Info()
     AI_Output (self, other ,"DIA_Quentin_QuestOk890976_03_02"); //To nie tak Ÿle. Wiêksza grupa mog³a by wzbudziæ zamieszanie.
 	//log
     B_LogEntry               (CH4_SupportFromOrcHunters,"Powiedzia³em Quentinowi, ¿e uda³o mi siê przekonaæ Wilsona, aby przys³a³ nam kilku ludzi do pomocy. Nasze si³y teraz znacznie wzrosn¹.");
-	B_LogEntry               (CH1_RozwalaUBnadytow,"Wilson przyœle do obozu dwóch swoich najlepszych wojowników. Powiedzia³em o tym szefowi.");
+	B_LogEntry               (CH4_NewDanger,"Wilson przyœle do obozu dwóch swoich najlepszych wojowników. Powiedzia³em o tym szefowi.");
     Log_SetTopicStatus       (CH4_SupportFromOrcHunters, LOG_SUCCESS);
     MIS_SupportFromOrcHunters = LOG_SUCCESS;
 	//experience
@@ -1391,9 +1391,9 @@ FUNC VOID DIA_Quentin_WykonanoXD_Info()
 	AI_Output (other, self ,"DIA_Quentin_WykonanoXD_15_03"); //Myœlê, ¿e to dobra decyzja.
     AI_Output (self, other ,"DIA_Quentin_WykonanoXD_03_04"); //Zostan¹ te¿ Rocky i Emanuel. Powinni sobie poradziæ.
     AI_Output (self, other ,"DIA_Quentin_WykonanoXD_03_04"); //Nie wiem tylko jaki Drax ma plan ataku. Mam nadziejê, ¿e wszystko przygotowa³. Lepiej ju¿ do niego chodŸmy. 
-    B_LogEntry               (CH1_RozwalaUBnadytow,"Przygotowa³em wszystko co by³o trzeba. Teraz musimy udaæ siê do Draxa. Quentin powierzy³ mu dowództwo nad ca³¹ wypraw¹. Widzê jednak, ¿e nie jest zachwycony ca³¹ t¹ wypraw¹. Sprawia wra¿enie zamyœlonego. Byæ mo¿e obawia siê konsekwencji ataku na ludzi Gomeza.");
-    Log_SetTopicStatus       (CH1_RozwalaUBnadytow, LOG_SUCCESS);
-    MIS_RozwalaUBnadytow = LOG_SUCCESS;
+    B_LogEntry               (CH4_NewDanger,"Przygotowa³em wszystko co by³o trzeba. Teraz musimy udaæ siê do Draxa. Quentin powierzy³ mu dowództwo nad ca³¹ wypraw¹. Widzê jednak, ¿e nie jest zachwycony ca³¹ t¹ wypraw¹. Sprawia wra¿enie zamyœlonego. Byæ mo¿e obawia siê konsekwencji ataku na ludzi Gomeza.");
+    Log_SetTopicStatus       (CH4_NewDanger, LOG_SUCCESS);
+    MIS_NewDanger = LOG_SUCCESS;
 
     B_GiveXP (XP_WeMustHelpDrax);
 	AI_StopProcessInfos	(self);
@@ -1499,9 +1499,9 @@ FUNC VOID DIA_Quentin_AkcjaUkonczona_Info()
 	Wld_InsertNpc				(GRD_2290_Stra¿nik  ,"OC1");
 	Npc_ExchangeRoutine			(GRD_3935_Hector,"misja"); //boss
 	
-	B_LogEntry               (CH1_AtakNaSO,"Quentin równie¿ ucieszy³ siê z takiego przebiegu wydarzeñ. Nie pozosta³o nam nic innego jak zaszyæ siê ponownie w górskim obozie.");
-    Log_SetTopicStatus       (CH1_AtakNaSO, LOG_SUCCESS);
-    MIS_AtakNaSO = LOG_SUCCESS;
+	B_LogEntry               (CH4_GardistsCheckpoints,"Quentin równie¿ ucieszy³ siê z takiego przebiegu wydarzeñ. Nie pozosta³o nam nic innego jak zaszyæ siê ponownie w górskim obozie.");
+    Log_SetTopicStatus       (CH4_GardistsCheckpoints, LOG_SUCCESS);
+    MIS_GardistsCheckpoints = LOG_SUCCESS;
 };
 
 /////////// opcja usuniêta - dialog z Rockym jest pierwszy
@@ -1580,7 +1580,7 @@ FUNC VOID DIA_Quentin_Plan_Info()
 	//stara zmienna (byæ mo¿e u¿ywana jeszcze w jakimœ dialogu - nie przeszkadza)
 	PlanA = true;
 	
-	B_LogEntry          (CH1_zniewolenie,"Aby odbiæ nasz Obóz, bêdziemy musieli szybko i skutecznie zaatakowaæ niespodziewaj¹cych siê nas Stra¿ników. Tak swój plan przedstawi³ mi Quentin.");
+	B_LogEntry          (CH4_GardistsInBC,"Aby odbiæ nasz Obóz, bêdziemy musieli szybko i skutecznie zaatakowaæ niespodziewaj¹cych siê nas Stra¿ników. Tak swój plan przedstawi³ mi Quentin.");
 	//Armor daje Jens przed atakiem
 	/*CreateInvItem		(self, ItAmArrow);
 	B_GiveInvItems      (self, hero, ItAmArrow, 1);
@@ -1610,7 +1610,7 @@ FUNC VOID DIA_Quentin_Plan_PalisadeZbudjmy()
     B_GiveInvItems (self, hero, BAU_ARMOR_H, 1);
 	Mdl_SetVisualBody (self,"hum_body_Naked0",0, 2,"Hum_Head_Pony", 8,  1, BAU_ARMOR_H);
 	PlanA = true;
-    B_LogEntry                     (CH1_zniewolenie,"Postanowi³em, ¿e po szybkim ataku uwiêzimy pozosta³ych Stra¿ników w Obozie.");
+    B_LogEntry                     (CH4_GardistsInBC,"Postanowi³em, ¿e po szybkim ataku uwiêzimy pozosta³ych Stra¿ników w Obozie.");
 
     B_GiveXP (1000);
     Info_ClearChoices		(DIA_Quentin_Plan);
@@ -1621,7 +1621,7 @@ FUNC VOID DIA_Quentin_Plan_Trolllle()
     AI_Output (other, self ,"DIA_Quentin_Plan_Trolllle_15_01"); //Sprowadzimy górskie trolle do Obozu.
     AI_Output (self, other ,"DIA_Quentin_Plan_Trolllle_03_02"); //Jak chcesz to zrobiæ?
     AI_Output (other, self ,"DIA_Quentin_Plan_Trolllle_15_03"); //Skorzystamy z pomocy Magów Wody.
-    B_LogEntry                     (CH1_zniewolenie,"Postanowi³em poprosiæ o pomoc Magów Wody. Sprowadzimy górskie trolle do Obozu. One z pewnoœci¹ za³atwi¹ sprawê za nas.");
+    B_LogEntry                     (CH4_GardistsInBC,"Postanowi³em poprosiæ o pomoc Magów Wody. Sprowadzimy górskie trolle do Obozu. One z pewnoœci¹ za³atwi¹ sprawê za nas.");
     PlanB = true;
     B_GiveXP (500);
     Info_ClearChoices		(DIA_Quentin_Plan);
@@ -1636,7 +1636,7 @@ FUNC VOID DIA_Quentin_Plan_Inne()
     AI_Output (other, self ,"DIA_Quentin_Plan_Inne_15_03"); //Skorzystam z pomocy jakiegoœ maga.
     
     AI_Output (self, other ,"DIA_Quentin_Plan_Inne_03_04"); //¯yczê ci powodzenia. PrzyjdŸ jak coœ przygotujesz.
-	B_LogEntry                     (CH1_zniewolenie,"Uwa¿am, ¿e sprowadzenie lawiny to dobry pomys³. Potrzebujê tylko jakiegoœ maga i Ÿród³a mocy.");
+	B_LogEntry                     (CH4_GardistsInBC,"Uwa¿am, ¿e sprowadzenie lawiny to dobry pomys³. Potrzebujê tylko jakiegoœ maga i Ÿród³a mocy.");
 
     B_GiveXP (500);
 	Info_ClearChoices	    (DIA_Quentin_Plan);
@@ -1759,9 +1759,9 @@ FUNC VOID DIA_Quentin_54_Info()
 	AI_Output (other, self ,"DIA_Quentin_54_15_04"); //To Skelden, jeden z najbardziej wp³ywowych Stra¿ników w Starym Obozie. 
 	AI_Output (self, other ,"DIA_Quentin_54_03_05"); //To nie lada wyczyn wygraæ z kimœ takim. Dobrze, ¿e ten typ ju¿ gryzie piach. 
 	//log
-    B_LogEntry               (CH1_zniewolenie,"Podczas gdy Bandyci eliminowali Stra¿ników, jak skupi³em siê na zabiciu niejakiego Skeldena. To silny i doœwiadczony cz³onek przybocznej stra¿y Gomeza. Walka z nim nie by³a ³atwa, jednak ostatecznie uda³o mi siê wys³aæ go w zaœwiaty. Obóz znów jest nasz, jednak teraz czeka nas du¿o pracy z przywróceniem temu miejscu dawnej œwietnoœci.");
-    Log_SetTopicStatus       (CH1_zniewolenie, LOG_SUCCESS);
-    MIS_zniewolenie = LOG_SUCCESS;
+    B_LogEntry               (CH4_GardistsInBC,"Podczas gdy Bandyci eliminowali Stra¿ników, jak skupi³em siê na zabiciu niejakiego Skeldena. To silny i doœwiadczony cz³onek przybocznej stra¿y Gomeza. Walka z nim nie by³a ³atwa, jednak ostatecznie uda³o mi siê wys³aæ go w zaœwiaty. Obóz znów jest nasz, jednak teraz czeka nas du¿o pracy z przywróceniem temu miejscu dawnej œwietnoœci.");
+    Log_SetTopicStatus       (CH4_GardistsInBC, LOG_SUCCESS);
+    MIS_GardistsInBC = LOG_SUCCESS;
 	//experience
     B_GiveXP (XP_KillAllgardist);
 	//powrót bandytów do obozu
@@ -1813,7 +1813,7 @@ INSTANCE DIA_Quentin_findFriends (C_INFO)
 
 FUNC INT DIA_Quentin_findFriends_Condition()
 {
-    if (MIS_Zniewolenie == LOG_SUCCESS)
+    if (MIS_GardistsInBC == LOG_SUCCESS)
     {
     return TRUE;
     };
@@ -1830,9 +1830,9 @@ FUNC VOID DIA_Quentin_findFriends_Info()
     AI_Output (self, other ,"DIA_Quentin_findFriends_03_06"); //Musisz ich jak najszybciej odnaleŸæ. Mo¿liwe, ¿e potrzebuj¹ naszej pomocy.
 	//log
     MIS_FindFriends = LOG_RUNNING;
-    Log_CreateTopic          (CH1_FindFriends, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_FindFriends, LOG_RUNNING);
-    B_LogEntry               (CH1_FindFriends,"W odbitym Obozie nie znaleŸliœmy Doyla. Mo¿liwe, ¿e gdzieœ uciek³ lub porwali go Stra¿nicy. Ponadto zagin¹³ Drax. Muszê odnaleŸæ ich obu. Bez ¿adnych wskazówek to nie bêdzie zbyt proste.");
+    Log_CreateTopic          (CH4_FindFriends, LOG_MISSION);
+    Log_SetTopicStatus       (CH4_FindFriends, LOG_RUNNING);
+    B_LogEntry               (CH4_FindFriends,"W odbitym Obozie nie znaleŸliœmy Doyla. Mo¿liwe, ¿e gdzieœ uciek³ lub porwali go Stra¿nicy. Ponadto zagin¹³ Drax. Muszê odnaleŸæ ich obu. Bez ¿adnych wskazówek to nie bêdzie zbyt proste.");
 	//story
 	B_Story_SoldiersValleyDefense ();
 };
@@ -1880,7 +1880,7 @@ FUNC VOID DIA_Quentin_FoundDrax_Info()
     AI_Output (self, other ,"DIA_Quentin_FoundDrax_03_15"); //Nie spodziewa³em siê, ¿e z niego kawa³ takiego sukinsyna. 
 	AI_Output (self, other ,"DIA_Quentin_FoundDrax_03_16"); //Zas³u¿y³ na taki los. 
 	//log
-	B_LogEntry                     (CH1_FindFriends,"Przywódca Bandytów by³ zaskoczony t¹ zdrad¹. Daliœmy siê nieŸle oszukaæ...");
+	B_LogEntry                     (CH4_FindFriends,"Przywódca Bandytów by³ zaskoczony t¹ zdrad¹. Daliœmy siê nieŸle oszukaæ...");
 	//experience
     B_GiveXP (XP_FindDrax);
 };
@@ -1916,7 +1916,7 @@ FUNC VOID DIA_Quentin_iFindDoyle_Info()
 	AI_Output (other, self ,"DIA_Quentin_iFindDoyle_15_06"); //Kaza³em mu wróciæ do Obozu.
     AI_Output (self, other ,"DIA_Quentin_iFindDoyle_03_07"); //Najwy¿sza pora... Bêdê mia³ dla was jeszcze trochê roboty. 
 	//log
-    B_LogEntry                     (CH1_FindFriends,"Zg³osi³em Quentinowi, gdzie znalaz³em Doyla. Szef Bandytów by³ na niego nieŸle wkurzony.");
+    B_LogEntry                     (CH4_FindFriends,"Zg³osi³em Quentinowi, gdzie znalaz³em Doyla. Szef Bandytów by³ na niego nieŸle wkurzony.");
 	//experience
     B_GiveXP (XP_FindDoyle);
 };
@@ -1962,8 +1962,8 @@ FUNC VOID DIA_Quentin_PrzejscieDalej_Info()
     AI_Output (self, other ,"DIA_Quentin_PrzejscieDalej_03_13"); //Poproœ Doyle'a o pomoc. Eksplorowa³ ju¿ ongiœ jakieœ podziemia.
 	AI_Output (self, other ,"DIA_Quentin_PrzejscieDalej_03_14"); //Dobrze, ¿e uda³o ci siê go sprowadziæ. 
 	//log
-	B_LogEntry         (CH1_FindFriends,"Odnalaz³em obu Bandytów, co koñczy moje zadanie.");
-    Log_SetTopicStatus (CH1_FindFriends, LOG_SUCCESS);
+	B_LogEntry         (CH4_FindFriends,"Odnalaz³em obu Bandytów, co koñczy moje zadanie.");
+    Log_SetTopicStatus (CH4_FindFriends, LOG_SUCCESS);
 	MIS_FindFriends = LOG_RUNNING;
 	//log 2
     MIS_BanditsInAbadonedMine = LOG_RUNNING;
@@ -3282,7 +3282,7 @@ FUNC VOID DIA_Quentin_OdbityOboz_Info()
     AI_Output (other, self ,"DIA_Quentin_OdbityOboz_15_02"); //Teraz weŸmy siê za tê palisadê. Zagoñ tych nierobów do pracy.
     Wld_SendTrigger("PULAPKA1");
    // PlayVideo ("INTRO.BIK");
-    B_LogEntry                     (CH1_zniewolenie,"Uda³o nam siê odbiæ górn¹ czêœæ Obozu. Teraz musimy zbudowaæ palisadê i odci¹æ drogê ucieczki Stra¿nikom.");
+    B_LogEntry                     (CH4_GardistsInBC,"Uda³o nam siê odbiæ górn¹ czêœæ Obozu. Teraz musimy zbudowaæ palisadê i odci¹æ drogê ucieczki Stra¿nikom.");
 
     B_GiveXP (700);
     AI_Output (self, other ,"DIA_Quentin_OdbityOboz_03_03"); //Palisada gotowa. Ostrzeliwaæ ich z góry!
@@ -3305,7 +3305,7 @@ INSTANCE DIA_Quentin_EmanuelLife (C_INFO)
 
 FUNC INT DIA_Quentin_EmanuelLife_Condition()
 {
-    if (MIS_Zniewolenie == LOG_SUCCESS) && (kapitel == 10)
+    if (MIS_GardistsInBC == LOG_SUCCESS) && (kapitel == 10)
     {
     return TRUE;
     };
@@ -3361,7 +3361,7 @@ FUNC VOID DIA_Quentin_MamPiczec_Info()
     AI_Output (other, self ,"DIA_Quentin_MamPiczec_15_05"); //To wyprujemy im flaki. W czym problem?
     AI_Output (self, other ,"DIA_Quentin_MamPiczec_03_06"); //Dobra, zostawmy ten temat.
     AI_Output (self, other ,"DIA_Quentin_MamPiczec_03_07"); //ProwadŸ i postaraj siê nas nie pozabijaæ.
-    B_LogEntry                     (CH1_Zniewolenie,"Muszê podejœæ jak najbli¿ej Obozu i u¿yæ czaru. Potem zostanie nam ju¿ tylko obserwowaæ i pozbyæ siê tego, co zostanie po tym starciu.");
+    B_LogEntry                     (CH4_GardistsInBC,"Muszê podejœæ jak najbli¿ej Obozu i u¿yæ czaru. Potem zostanie nam ju¿ tylko obserwowaæ i pozbyæ siê tego, co zostanie po tym starciu.");
     B_ExchangeRoutine (BAN_1610_Quentin , "atak");
     B_ExchangeRoutine (BAN_1603_Martin , "atak");
     B_ExchangeRoutine (BAN_1606_Josh , "atak");
@@ -3405,7 +3405,7 @@ FUNC VOID DIA_Quentin_UseCZAr_Info()
     AI_Output (other, self ,"DIA_Quentin_UseCZAr_15_01"); //U¿y³em czaru.
     AI_Output (self, other ,"DIA_Quentin_UseCZAr_03_02"); //ChodŸmy dalej do Obozu. Zobaczymy co zosta³o ze Stra¿ników.
     AI_Output (self, other ,"DIA_Quentin_UseCZAr_03_03"); //Trzeba bêdzie siê te¿ pozbyæ naszych w³ochatych przyjació³.
-    B_LogEntry                     (CH1_Zniewolenie,"U¿y³em pieczêci. Pora udaæ siê do naszego Obozu i sprawdziæ co siê sta³o.");
+    B_LogEntry                     (CH4_GardistsInBC,"U¿y³em pieczêci. Pora udaæ siê do naszego Obozu i sprawdziæ co siê sta³o.");
 
     B_GiveXP (200);
     AI_StopProcessInfos	(self);
@@ -3449,9 +3449,9 @@ FUNC VOID DIA_Quentin_DedALlQuent_Info()
     AI_Output (other, self ,"DIA_Quentin_DedALlQuent_15_01"); //Pokonaliœmy ich.
     AI_Output (self, other ,"DIA_Quentin_DedALlQuent_03_02"); //Wszystko siê uda³o! Dobra robota!
     AI_Output (self, other ,"DIA_Quentin_DedALlQuent_03_03"); //Myœlê, ¿e zas³u¿y³eœ ju¿ na lepszy pancerz. Niech ci dobrze s³u¿y.
-    B_LogEntry                     (CH1_zniewolenie,"Pozbyliœmy siê troli grasuj¹cych po Obozie. Wszystko przebieg³o zgodnie z planem.");
-    Log_SetTopicStatus       (CH1_zniewolenie, LOG_SUCCESS);
-    MIS_zniewolenie = LOG_SUCCESS;
+    B_LogEntry                     (CH4_GardistsInBC,"Pozbyliœmy siê troli grasuj¹cych po Obozie. Wszystko przebieg³o zgodnie z planem.");
+    Log_SetTopicStatus       (CH4_GardistsInBC, LOG_SUCCESS);
+    MIS_GardistsInBC = LOG_SUCCESS;
 	Npc_ExchangeRoutine (self,"start");
     Npc_ExchangeRoutine (BAN_1603_Martin , "start");
     Npc_ExchangeRoutine (BAN_1606_Josh , "start");

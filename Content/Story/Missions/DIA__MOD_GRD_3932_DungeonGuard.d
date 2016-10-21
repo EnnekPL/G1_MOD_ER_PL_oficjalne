@@ -68,7 +68,7 @@ INSTANCE DIA_DungeonGuard_HELLO2 (C_INFO)
 
 FUNC INT DIA_DungeonGuard_HELLO2_Condition()
 {
-    if (MIS_Magazyny_OC == LOG_RUNNING)
+    if (MIS_OldCampCellar == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -81,7 +81,7 @@ FUNC VOID DIA_DungeonGuard_HELLO2_Info()
     AI_Output (self, other ,"DIA_DungeonGuard_HELLO2_03_02"); //Kaza³em ci spadaæ! ALE JU¯!
     AI_Output (other, self ,"DIA_DungeonGuard_HELLO2_15_03"); //100 bry³ek rudy, jeœli pozwolisz mi wejœæ do piwnic. 
     AI_Output (self, other ,"DIA_DungeonGuard_HELLO2_03_04"); //Niech bêdzie. Dawaj bry³ki, to pogadamy.
-    B_LogEntry                     (CH1_Magazyny_OC,"Cena za mo¿liwoœæ buszowania po lochach to 100 bry³ek rudy.");
+    B_LogEntry                     (CH2_OldCampCellar,"Cena za mo¿liwoœæ buszowania po lochach to 100 bry³ek rudy.");
 };
 
 //========================================

@@ -573,13 +573,13 @@ var int HeroUseRuneB;
 var int heroKnowsPoszukiwacze;
 //zadania STARE!
 var int Jedzenie_zplacu;
-var int BANDITOS_CAMP;
+
 var int BANDITOS_ZAUFANIE;
 var int BANDITOS_MORDRAG;
 var int Problem_ZLY;
 var int ZLY_Poplecznicy;
-var int DostawaEmanuela;
-var int HandelEmanuela;
+
+
 var int BANDITOS_RINGS;
 var int MartinLevel;
 
@@ -825,83 +825,37 @@ var int MIS_Melvin_D³ug;
 // OBÓZ PRZY KOPALNI
 //********************************************
 var int MIS_EasyJoinOC;
-
 var int MIS_MiksturaTrujacaOM;
 var int MIS_RudaJoelowiOM;
 var int MIS_MineEnter;
-
 var int MIS_Kopacz;
-
-
 var int MIS_AwansCien;
 var int MIS_TestOc;
 var int MIS_GrimOc;
 //********************************************
 // BRACTWO
 //********************************************
-
-
-
-
-
-
-
-
-
-
-
-
 //********************************************
 // BANDYCI
 //********************************************
-
-var int MIS_Rozpierdol1;
-
-var int MIS_Rozpierdol2;
 var int MIS_AtakNaOC;
-
-
 var int MIS_Poszukiwacze;
-var int MIS_RozwalaUBnadytow;
-
 var int MIS_materials4Rocky;
-var int MIS_AtakNaSO;
-var int MIS_Zniewolenie;
-var int MIS_FindFriends;
 var int dupa;
-
 var int MIS_NoweKola;
-
-
 var int MIS_NewWeed3BAU; //usuniête
-
-
 //********************************************
 // NOWY OBÓZ
 //********************************************
-
-
-
-
-
-var int MIS_KillFingers;
-var int MIS_FindPosazekKlina;
-
 //********************************************
 // STARY OBÓZ
 //********************************************
-
-
 var int MIS_KosztemQuentina;
 //********************************************
 // KOLONIA
 //********************************************
 var int MIS_CavalornFuck;
-
-
-
 var int MIS_VartSeeking2;
-
 //czarny mag
 var int MIS_blackMage;
 var int MIS_lekiDlaAva;
@@ -910,119 +864,42 @@ var int MIS_LowcyPoszukiwaczy;
 var int MIS_MagWGoorach1;
 var int MIS_Cytadelaposzukiwacz;
 var int MIS_ListDoCronosa;
-
-
-
-
-var int MIS_SearhSkarb;
-
 var int MIS_helpSld1;
-
-
-
-
-
-
 var int MIS_MagazynBroni;
-
-
-
-
-
-
-
-
 var int MIS_NekInNC;
-
-
-
 var int MIS_AlternativBanditoSCamp;
-
-
-var int MIS_ZnowuZapierdalam;
-
-
-
-
 
 //var int MIS_GuazyDrena;
 //var int MIS_megaSpam;
-
 var int MIS_HelpBrothersBra;//z³e
-
 //potrzebne
-
-
-
-
-
-
-
-
-
 var int MIS_MagnatTrololo;
 var int MIS_OpiniaOSO;
-
 var int MIS_FightWithScar;
-
-
 var int MIS_UCieczkaShrata;
 var int MIS_PorwanieAlexa;
-var int MIS_ZabijThompsona;
-var int MIS_KopalniaZlota;
+
 
 var int MIS_NieSpelnionaZemsta;//usuniête
 var int MIS_DrogaDoKopalni;
-var int MIS_KryjowkaNaKase;
+
 var int MIS_MroczneBractwo;//usuniête
 var int MIS_ZieleClawa;
-
-
-
-
-
-
-
 var int MIS_ZabojstwBlizny;
-
 var int MIS_JosepZniknal;
 var int MIS_DziwnyJosep;
 var int MIS_WalkiBractwo;
 
-var int MIS_MagicySzkodnicy;
 
-
-
-var int MIS_Cpuny;
 var int MIS_4Friends;
 
 
-
-var int MIS_InfoDlaLaresa;
-
-
-var int MIS_PomocQuentinowi;
-
-
-
-
-
 var int MIS_Fire_Novize;
-var int MIS_Magazyny_OC;
-var int MIS_Gdzie_hugo;
+
 var int mis_firenovize;
-var int MIS_Do_lowcow;
 
 
-
-var int MIS_Wielki_troll;
-var int MIS_Italian_Job;
 
 var int MIS_Stan_gerarda;
 var int MIS_ObronaWK;
-var int MIS_Upadek_Gomeza;
 
-
-
-var int MIS_FoodForOldMine;
-var int MIS_NewLocationForPirates;

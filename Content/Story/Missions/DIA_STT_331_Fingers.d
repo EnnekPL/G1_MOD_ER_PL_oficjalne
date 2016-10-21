@@ -357,20 +357,20 @@ FUNC VOID DIA_Fingers_LorenzoCourier_Info()
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 //========================================
-//-----------------> ZAbic
+//-----------------> InTavern
 //========================================
 
-INSTANCE DIA_Fingers_ZAbic (C_INFO)
+INSTANCE DIA_Fingers_InTavern (C_INFO)
 {
    npc          = STT_331_Fingers;
    nr           = 1;
-   condition    = DIA_Fingers_ZAbic_Condition;
-   information  = DIA_Fingers_ZAbic_Info;
+   condition    = DIA_Fingers_InTavern_Condition;
+   information  = DIA_Fingers_InTavern_Info;
    permanent	= FALSE;
    description	= "Co ty tutaj robisz?";
 };
 
-FUNC INT DIA_Fingers_ZAbic_Condition()
+FUNC INT DIA_Fingers_InTavern_Condition()
 {
     if (MIS_KillFingers == LOG_RUNNING)
     && (Wld_IsTime     (23,50,02,35))
@@ -380,47 +380,47 @@ FUNC INT DIA_Fingers_ZAbic_Condition()
 };
 
 
-FUNC VOID DIA_Fingers_ZAbic_Info()
+FUNC VOID DIA_Fingers_InTavern_Info()
 {
-    AI_Output (other, self ,"DIA_Fingers_ZAbic_15_01"); //Co ty tutaj robisz?
-    AI_Output (other, self ,"DIA_Fingers_ZAbic_15_02"); //Silas bardzo nie lubi takich goœci!
+    AI_Output (other, self ,"DIA_Fingers_InTavern_15_01"); //Co ty tutaj robisz?
+    AI_Output (other, self ,"DIA_Fingers_InTavern_15_02"); //Silas bardzo nie lubi takich goœci!
     AI_DrawWeapon (other);
-    AI_Output (self, other ,"DIA_Fingers_ZAbic_03_03"); //Zaczekaj, pracujesz dla niego?
-	AI_Output (other, self ,"DIA_Fingers_ZAbic_15_04"); //Byæ mo¿e...
-    AI_Output (self, other ,"DIA_Fingers_ZAbic_03_05"); //S³uchaj, nie chcê z tob¹ walczyæ. Nie potrzebujê mieæ dodatkowych porachunków ze Szkodnikami.
-    AI_Output (self, other ,"DIA_Fingers_ZAbic_03_06"); //Dogadajmy siê. Oferujê ci 400 bry³ek rudy i gwarancjê, ¿e nigdy siê tutaj nie zjawiê.
-    AI_Output (self, other ,"DIA_Fingers_ZAbic_03_07"); //Obydwoje na tym zyskamy. Co ty na to?
+    AI_Output (self, other ,"DIA_Fingers_InTavern_03_03"); //Zaczekaj, pracujesz dla niego?
+	AI_Output (other, self ,"DIA_Fingers_InTavern_15_04"); //Byæ mo¿e...
+    AI_Output (self, other ,"DIA_Fingers_InTavern_03_05"); //S³uchaj, nie chcê z tob¹ walczyæ. Nie potrzebujê mieæ dodatkowych porachunków ze Szkodnikami.
+    AI_Output (self, other ,"DIA_Fingers_InTavern_03_06"); //Dogadajmy siê. Oferujê ci 200 bry³ek rudy i gwarancjê, ¿e nigdy siê tutaj nie zjawiê.
+    AI_Output (self, other ,"DIA_Fingers_InTavern_03_07"); //Obydwoje na tym zyskamy. Co ty na to?
 
-    Info_ClearChoices		(DIA_Fingers_ZAbic);
-    Info_AddChoice		(DIA_Fingers_ZAbic, "Zginiesz. Zapêdzi³eœ siê za daleko!", DIA_Fingers_ZAbic_Dedaj);
-    Info_AddChoice		(DIA_Fingers_ZAbic, "Dawaj rudê i wynoœ siê st¹d.", DIA_Fingers_ZAbic_Dobra);
+    Info_ClearChoices		(DIA_Fingers_InTavern);
+    Info_AddChoice		(DIA_Fingers_InTavern, "Zginiesz. Zapêdzi³eœ siê za daleko!", DIA_Fingers_InTavern_Dedaj);
+    Info_AddChoice		(DIA_Fingers_InTavern, "Dawaj rudê i wynoœ siê st¹d.", DIA_Fingers_InTavern_Dobra);
 };
 
-FUNC VOID DIA_Fingers_ZAbic_Dedaj()
+FUNC VOID DIA_Fingers_InTavern_Dedaj()
 {
-    AI_Output (other, self ,"DIA_Fingers_ZAbic_Dedaj_15_01"); //Zginiesz. Zapêdzi³eœ siê za daleko!
+    AI_Output (other, self ,"DIA_Fingers_InTavern_Dedaj_15_01"); //Zginiesz. Zapêdzi³eœ siê za daleko!
     Npc_SetPermAttitude (self, ATT_HOSTILE);
     Npc_SetTarget (self,other);
     AI_StartState (self,ZS_ATTACK,1,"");
     B_LogEntry                     (CH1_KillFingers,"Spotka³em R¹czkê w karczmie Silasa i postanowi³em natychmiast siê z nim rozprawiæ.");
 
     //B_GiveXP (100);
-    Info_ClearChoices		(DIA_Fingers_ZAbic);
+    Info_ClearChoices		(DIA_Fingers_InTavern);
     AI_StopProcessInfos	(self);
 };
 
-FUNC VOID DIA_Fingers_ZAbic_Dobra()
+FUNC VOID DIA_Fingers_InTavern_Dobra()
 {
-    AI_Output (other, self ,"DIA_Fingers_ZAbic_Dobra_15_01"); //Dawaj rudê i wynoœ siê st¹d.
-    AI_Output (self, other ,"DIA_Fingers_ZAbic_Dobra_03_02"); //Wielkie dziêki.
+    AI_Output (other, self ,"DIA_Fingers_InTavern_Dobra_15_01"); //Dawaj rudê i wynoœ siê st¹d.
+    AI_Output (self, other ,"DIA_Fingers_InTavern_Dobra_03_02"); //Wielkie dziêki.
 	
     B_LogEntry                     (CH1_KillFingers,"Noc¹ w karczmie spotka³em R¹czkê. Z³o¿y³ mi propozycjê: nieŸle mi zap³aci, jeœli puszczê go wolno. G³upot¹ by³oby nie przyj¹æ takiej propozycji. ");
 
-    B_GiveXP (250);
-    CreateInvItems (self, ItMiNugget, 400);
-    B_GiveInvItems (self, other, ItMiNugget, 400);
+    //B_GiveXP (50);
+    CreateInvItems (self, ItMiNugget, 200);
+    B_GiveInvItems (self, other, ItMiNugget, 200);
     Npc_ExchangeRoutine (self,"start");
-    Info_ClearChoices		(DIA_Fingers_ZAbic);
+    Info_ClearChoices		(DIA_Fingers_InTavern);
     AI_StopProcessInfos	(self);
 };
 
@@ -540,11 +540,11 @@ FUNC VOID DIA_Fingers_ORG_QUEST_ASK_Info()
 	AI_Output (self, other ,"DIA_Fingers_ORG_QUEST_ASK_03_07"); //Jeœli uda ci siê przynieœæ skarby z piwnicy Magnatów, wynagrodzê ciê. Jednak nie mo¿esz nikomu powiedzieæ o tym, dla kogo pracujesz.
     AI_Output (other, self ,"DIA_Fingers_ORG_QUEST_ASK_15_08"); //Postaram siê przynieœæ te rzeczy.
     AI_Output (self, other ,"DIA_Fingers_ORG_QUEST_ASK_03_09"); //Powodzenia, ch³opcze.
-    MIS_Magazyny_OC = LOG_RUNNING;
+    MIS_OldCampCellar = LOG_RUNNING;
 
-    Log_CreateTopic          (CH1_Magazyny_OC, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_Magazyny_OC, LOG_RUNNING);
-    B_LogEntry               (CH1_Magazyny_OC,"R¹czka zleci³ mi, aby w jakiœ sposób dosta³ siê do piwnic pod zamkiem i obrabowaæ znajduj¹ce siê tam kufry. Wejœcie znajduje siê nad placem targowym.");
+    Log_CreateTopic          (CH2_OldCampCellar, LOG_MISSION);
+    Log_SetTopicStatus       (CH2_OldCampCellar, LOG_RUNNING);
+    B_LogEntry               (CH2_OldCampCellar,"R¹czka zleci³ mi, aby w jakiœ sposób dosta³ siê do piwnic pod zamkiem i obrabowaæ znajduj¹ce siê tam kufry. Wejœcie znajduje siê nad placem targowym.");
 };
 
 //========================================
@@ -563,7 +563,7 @@ INSTANCE DIA_Fingers_HELLO1 (C_INFO)
 
 FUNC INT DIA_Fingers_HELLO1_Condition()
 {
-    if (MIS_MAGAZYNY_OC == LOG_RUNNING)
+    if (MIS_OldCampCellar == LOG_RUNNING)
     && (Npc_HasItems (other, Skarb_ring1) >=1)
     && (Npc_HasItems (other, Skarb_ring2) >=1)
     && (Npc_HasItems (other, Skarb_cup1) >=1)
@@ -580,9 +580,9 @@ FUNC VOID DIA_Fingers_HELLO1_Info()
     AI_Output (self, other ,"DIA_Fingers_HELLO1_03_02"); //Œwietnie, dziêki za dyskrecje, poka¿ mi co przynios³eœ.
     AI_Output (other, self ,"DIA_Fingers_HELLO1_15_03"); //Spójrz sam.
     AI_Output (self, other ,"DIA_Fingers_HELLO1_03_04"); //Hmm, wezmê ten miecz, pierœcienie oraz kielich. Za³o¿e siê, ¿e nieŸle na nich zarobiê. Ty mo¿esz zachowaæ rudê i resztê tego co znalaz³eœ.
-    B_LogEntry                     (CH1_MAGAZYNY_OC,"Zanios³em R¹czce b³yskotki, które znalaz³em. Zabra³ wszystkie najciekawsze przedmioty, ale i tak wyszed³em na swoje, bo zosta³o mi sporo rudy i fajny miecz. ");
-    Log_SetTopicStatus       (CH1_MAGAZYNY_OC, LOG_SUCCESS);
-    MIS_MAGAZYNY_OC = LOG_SUCCESS;
+    B_LogEntry                     (CH2_OldCampCellar,"Zanios³em R¹czce b³yskotki, które znalaz³em. Zabra³ wszystkie najciekawsze przedmioty, ale i tak wyszed³em na swoje, bo zosta³o mi sporo rudy i ca³kiem niez³y miecz. ");
+    Log_SetTopicStatus       (CH2_OldCampCellar, LOG_SUCCESS);
+    MIS_OldCampCellar = LOG_SUCCESS;
 	B_GiveInvItems	(other, self,Skarb_ring1,1);
 	B_GiveInvItems	(other, self,Skarb_ring2,1);
 	B_GiveInvItems	(other, self,Skarb_cup1,1);

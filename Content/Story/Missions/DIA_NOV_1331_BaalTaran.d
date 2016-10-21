@@ -354,7 +354,7 @@ FUNC VOID DIA_BaalTaran_JOB_Info()
     AI_Output (other, self ,"DIA_BaalTaran_JOB_15_09"); //Postaram siê jakoœ ich przekonaæ.
     AI_Output (self, other ,"DIA_BaalTaran_JOB_03_10"); //Zaczekaj. Dam ci specjalne ziele o nieco mocniejszym dzia³aniu. 
     AI_Output (self, other ,"DIA_BaalTaran_JOB_03_11"); //Proszê. Teraz mo¿esz zaczynaæ.
-    MIS_Cpuny = LOG_RUNNING;
+    MIS_Druggy = LOG_RUNNING;
 	CreateInvItems (self, RecruitJoint, 3);
     B_GiveInvItems (self, other, RecruitJoint, 3);
     CreateInvItems (self, ItMiJoint_1, 2);
@@ -364,9 +364,9 @@ FUNC VOID DIA_BaalTaran_JOB_Info()
 	CreateInvItems (self, ItMiJoint_3, 1);
     B_GiveInvItems (self, other, ItMiJoint_3, 1);
 	Huno_drugs_level = 0;
-    Log_CreateTopic            (CH1_Cpuny, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_Cpuny, LOG_RUNNING);
-    B_LogEntry                     (CH1_Cpuny,"Baal Taran zleci³ mi zdobycie mu nowych klientów. W tym celu muszê obudziæ stary na³óg w Huno, oraz namówiæ Gravo i Szakala do palenia.");
+    Log_CreateTopic            (CH1_Druggy, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_Druggy, LOG_RUNNING);
+    B_LogEntry                     (CH1_Druggy,"Baal Taran zleci³ mi zdobycie mu nowych klientów. W tym celu muszê obudziæ stary na³óg w Huno, oraz namówiæ Gravo i Szakala do palenia.");
     AI_StopProcessInfos	(self);
 };
 
@@ -386,7 +386,7 @@ INSTANCE DIA_BaalTaran_HUNO_SYTUACJA (C_INFO)
 
 FUNC INT DIA_BaalTaran_HUNO_SYTUACJA_Condition()
 {
-    if (MIS_Cpuny == LOG_RUNNING)
+    if (MIS_Druggy == LOG_RUNNING)
     && (!Huno_drugs_level == 0)
     {
     return TRUE;
@@ -419,7 +419,7 @@ else if (Huno_drugs_level == 3)
     CreateInvItems (self, ItMiNugget, 100);
     B_GiveInvItems (self, other, ItMiNugget, 100);
 };
-B_LogEntry                     (CH1_Cpuny,"No dobra, sprawê z Huno mam ju¿ za³atwion¹.");
+B_LogEntry                     (CH1_Druggy,"No dobra, sprawê z Huno mam ju¿ za³atwion¹.");
 
 B_GiveXP (200);
 };
@@ -439,7 +439,7 @@ INSTANCE DIA_BaalTaran_GRAVO_PALACZ (C_INFO)
 
 FUNC INT DIA_BaalTaran_GRAVO_PALACZ_Condition()
 {
-    if (MIS_Cpuny == LOG_RUNNING)
+    if (MIS_Druggy == LOG_RUNNING)
     && (Gravo_pali == false)
     {
     return TRUE;
@@ -453,7 +453,7 @@ FUNC VOID DIA_BaalTaran_GRAVO_PALACZ_Info()
     AI_Output (self, other ,"DIA_BaalTaran_GRAVO_PALACZ_03_02"); //Ponoæ ten goœæ lubi wymyœlne smaki. Spróbuj z ró¿nymi rodzajami tytoniu. Mo¿esz je kupiæ w Bractwie.
     AI_Output (self, other ,"DIA_BaalTaran_GRAVO_PALACZ_03_03"); //Spróbuj zrobiæ skrêta o specjalnym smaku. Je¿eli nie znasz siê na alchemii, to pogadaj z goœciem imieniem Claw. Mieszka w obozie myœliwych.
     AI_Output (self, other ,"DIA_BaalTaran_GRAVO_PALACZ_03_04"); //Naprawdê zna siê na rzeczy.
-    B_LogEntry                     (CH1_Cpuny,"Gravo szuka jointa o specyficznym smaku. Powinienem coœ pokombinowaæ na stole alchemicznym. ");
+    B_LogEntry                     (CH1_Druggy,"Gravo szuka jointa o specyficznym smaku. Powinienem coœ pokombinowaæ na stole alchemicznym. ");
 };
 
 //========================================
@@ -472,7 +472,7 @@ INSTANCE DIA_BaalTaran_GRAVO_END (C_INFO)
 
 FUNC INT DIA_BaalTaran_GRAVO_END_Condition()
 {
-    if (MIS_Cpuny == LOG_RUNNING)
+    if (MIS_Druggy == LOG_RUNNING)
     && (Gravo_pali == true)
     {
     return TRUE;
@@ -504,7 +504,7 @@ INSTANCE DIA_BaalTaran_SZAKAL_PALI (C_INFO)
 
 FUNC INT DIA_BaalTaran_SZAKAL_PALI_Condition()
 {
-    if (MIS_Cpuny == LOG_RUNNING)
+    if (MIS_Druggy == LOG_RUNNING)
     && (Jackal_pali == true)
     {
     return TRUE;
@@ -521,7 +521,7 @@ FUNC VOID DIA_BaalTaran_SZAKAL_PALI_Info()
     {
     AI_Output (other, self ,"DIA_BaalTaran_SZAKAL_PALI_15_04"); //O jedn¹ bry³kê rudy. Nie by³ zachwycony, ale od czasu do czasu coœ u ciebie kupi.
     AI_Output (self, other ,"DIA_BaalTaran_SZAKAL_PALI_03_05"); //Dobre i to.
-    B_LogEntry                     (CH1_Cpuny,"Zmniejszy³em Szakalowi cenê o jedn¹ bry³kê. Myœlê, ¿e mog³em opuœciæ ciut wiêcej. Mo¿e by³by bardziej chêtny do zakupu.");
+    B_LogEntry                     (CH1_Druggy,"Zmniejszy³em Szakalowi cenê o jedn¹ bry³kê. Myœlê, ¿e mog³em opuœciæ ciut wiêcej. Mo¿e by³by bardziej chêtny do zakupu.");
 
     CreateInvItems (self, ItMiNugget, 40);
     B_GiveInvItems (self, other, ItMiNugget, 40);
@@ -531,7 +531,7 @@ FUNC VOID DIA_BaalTaran_SZAKAL_PALI_Info()
     {
     AI_Output (other, self ,"DIA_BaalTaran_SZAKAL_PALI_15_06"); //Zmieni³em cenê o dwie bry³ki rudy. Szakal by³ zadowolony. Bêdzie tu czêsto zagl¹da³.
     AI_Output (self, other ,"DIA_BaalTaran_SZAKAL_PALI_03_07"); //Œwietnie. Przy okazji sporo nie stracê na tej obni¿ce.
-	B_LogEntry                     (CH1_Cpuny,"Zmniejszy³em Szakalowi cenê za skrêta o 2 bry³ki. Baal Taran powiedzia³, ¿e to ca³kiem op³acalna decyzja. ");
+	B_LogEntry                     (CH1_Druggy,"Zmniejszy³em Szakalowi cenê za skrêta o 2 bry³ki. Baal Taran powiedzia³, ¿e to ca³kiem op³acalna decyzja. ");
     CreateInvItems (self, ItMiNugget, 80);
     B_GiveInvItems (self, other, ItMiNugget, 80);
 
@@ -547,7 +547,7 @@ FUNC VOID DIA_BaalTaran_SZAKAL_PALI_Info()
         AI_Output (self, other ,"DIA_BaalTaran_SZAKAL_PALI_03_12"); //W dupie mam jego zapewnienie. Wykona³eœ robotê, ale gorzej siê nie da³o tego spapraæ...
         AI_Output (other, self ,"DIA_BaalTaran_SZAKAL_PALI_15_13"); //Potr¹cisz mi z wyp³aty.
         AI_Output (self, other ,"DIA_BaalTaran_SZAKAL_PALI_03_14"); //Jakiej wyp³aty? Nic za niego nie dostaniesz!
-        B_LogEntry                     (CH1_Cpuny,"Baal Taran by³ nieŸle wkurzony, ¿e zmniejszy³em cenê za skrêta a¿ o 5 bry³ek.");
+        B_LogEntry                     (CH1_Druggy,"Baal Taran by³ nieŸle wkurzony, ¿e zmniejszy³em cenê za skrêta a¿ o 5 bry³ek.");
     };
 
 };
@@ -572,7 +572,7 @@ FUNC INT DIA_BaalTaran_END_WORK_Condition()
     if (Npc_KnowsInfo (hero, DIA_BaalTaran_SZAKAL_PALI))
     && (Npc_KnowsInfo (hero, DIA_BaalTaran_GRAVO_END))
     && (Npc_KnowsInfo (hero, DIA_BaalTaran_HUNO_SYTUACJA))
-    && (MIS_Cpuny == LOG_RUNNING)
+    && (MIS_Druggy == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -587,9 +587,9 @@ FUNC VOID DIA_BaalTaran_END_WORK_Info()
     B_GiveInvItems (self, other, ItMiNugget, 100);
     CreateInvItems (self, ItMiJoint_3, 5);
     B_GiveInvItems (self, other, ItMiJoint_3, 5);
-    B_LogEntry                     (CH1_Cpuny,"Przekona³em wszystkie trzy osoby do palenia. Baal Taran nieŸle mnie za to wynagrodzi³.");
-    Log_SetTopicStatus       (CH1_Cpuny, LOG_SUCCESS);
-    MIS_Cpuny = LOG_SUCCESS;
+    B_LogEntry                     (CH1_Druggy,"Przekona³em wszystkie trzy osoby do palenia. Baal Taran nieŸle mnie za to wynagrodzi³.");
+    Log_SetTopicStatus       (CH1_Druggy, LOG_SUCCESS);
+    MIS_Druggy = LOG_SUCCESS;
 
     B_GiveXP (250);
     AI_StopProcessInfos	(self);

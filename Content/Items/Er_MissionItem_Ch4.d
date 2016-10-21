@@ -143,7 +143,7 @@ func void UseDraxList ()
 					var int heroread_draxletter;
 					if (heroread_draxletter == false)     
 					{
-					B_LogEntry                     (CH1_FindFriends,"Znalaz³em cia³o Draxa w lesie. Le¿a³ przy nim list w którym przyznaje siê do zdrady i zabójstwa Ratforda. Okaza³o siê, ¿e wszystko uknu³ wraz ze Stra¿nikami, jednak ich wspólny plan nie wypali³. Pora przekazaæ te rewelacje Quentinowi. ");
+					B_LogEntry                     (CH4_FindFriends,"Znalaz³em cia³o Draxa w lesie. Le¿a³ przy nim list w którym przyznaje siê do zdrady i zabójstwa Ratforda. Okaza³o siê, ¿e wszystko uknu³ wraz ze Stra¿nikami, jednak ich wspólny plan nie wypali³. Pora przekazaæ te rewelacje Quentinowi. ");
 					heroread_draxletter = true;
 					B_giveXP (500);
 					};

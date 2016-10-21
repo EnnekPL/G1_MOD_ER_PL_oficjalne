@@ -83,11 +83,11 @@ FUNC VOID DIA_Pirat3_HELLO2_Info()
     AI_Output (self, other ,"DIA_Pirat3_HELLO2_03_05"); //Dam ci mapê, a ty mnie zaprowadzisz w te miejsca.
     AI_Output (self, other ,"DIA_Pirat3_HELLO2_03_06"); //Co ty na to? Dzielimy siê po po³owie.
     AI_Output (other, self ,"DIA_Pirat3_HELLO2_15_07"); //Wchodzê w to!
-    MIS_SearhSkarb = LOG_RUNNING;
+    MIS_TreasureSeeking = LOG_RUNNING;
 
-    Log_CreateTopic            (CH1_SearhSkarb, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_SearhSkarb, LOG_RUNNING);
-    B_LogEntry                     (CH1_SearhSkarb,"Stary pirat Szerszeñ zaoferowa³ mi poszukiwanie skarbu w Kolonii. Mam go zaprowadziæ w wyznaczone na mapie miejsca.");
+    Log_CreateTopic            (CH4_TreasureSeeking, LOG_MISSION);
+    Log_SetTopicStatus       (CH4_TreasureSeeking, LOG_RUNNING);
+    B_LogEntry                     (CH4_TreasureSeeking,"Stary pirat Szerszeñ zaoferowa³ mi poszukiwanie skarbu w Kolonii. Mam go zaprowadziæ w wyznaczone na mapie miejsca.");
 };
 
 //========================================
@@ -156,7 +156,7 @@ FUNC VOID DIA_Pirat3_SKARB1_Info()
 	AI_GotoNpc			(self,hero);
     AI_Output (self, other ,"DIA_Pirat3_SKARB1_03_01"); //O ile siê nie mylê to jesteœmy w pobli¿u skarbu.
     AI_Output (other, self ,"DIA_Pirat3_SKARB1_15_02"); //Dok³adnie. Zaraz otworzê skrzyniê.
-    B_LogEntry                     (CH1_SearhSkarb,"ZnaleŸliœmy pierwszy skarb. Muszê tylko otworzyæ skrzyniê.");
+    B_LogEntry                     (CH4_TreasureSeeking,"ZnaleŸliœmy pierwszy skarb. Muszê tylko otworzyæ skrzyniê.");
 
     B_GiveXP (350);
     AI_StopProcessInfos	(self);
@@ -230,7 +230,7 @@ FUNC VOID DIA_Pirat3_HELLO4_Info()
 	AI_GotoNpc			(self,hero);
     AI_Output (self, other ,"DIA_Pirat3_HELLO4_03_01"); //Tutaj jest kolejny skarb.
     AI_Output (self, other ,"DIA_Pirat3_HELLO4_03_02"); //Bierz go!
-    B_LogEntry                     (CH1_SearhSkarb,"Uda³o nam siê znaleŸæ drugi skarb.");
+    B_LogEntry                     (CH4_TreasureSeeking,"Uda³o nam siê znaleŸæ drugi skarb.");
 
     B_GiveXP (350);
     AI_StopProcessInfos	(self);
@@ -301,9 +301,9 @@ FUNC VOID DIA_Pirat3_SLLA_Info()
 {
     AI_Output (other, self ,"DIA_Pirat3_SLLA_15_01"); //To ju¿ chyba wszystko.
     AI_Output (self, other ,"DIA_Pirat3_SLLA_03_02"); //Tak. By³y tylko dwa skarby o ile dobrze pamiêtam. Dziêki, ch³opcze.
-    B_LogEntry                     (CH1_SearhSkarb,"ZnaleŸliœmy obydwa skarby. Musia³em oddaæ po³owê Szerszeniowi, ale i tak sporo zyska³em.");
-    Log_SetTopicStatus       (CH1_SearhSkarb, LOG_SUCCESS);
-    MIS_SearhSkarb = LOG_SUCCESS;
+    B_LogEntry                     (CH4_TreasureSeeking,"ZnaleŸliœmy obydwa skarby. Musia³em oddaæ po³owê Szerszeniowi, ale i tak sporo zyska³em.");
+    Log_SetTopicStatus       (CH4_TreasureSeeking, LOG_SUCCESS);
+    MIS_TreasureSeeking = LOG_SUCCESS;
 
     B_GiveXP (500);
 

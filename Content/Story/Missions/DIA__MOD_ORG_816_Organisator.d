@@ -40,7 +40,7 @@ INSTANCE DIA_Organisator_Fight (C_INFO)
 
 FUNC INT DIA_Organisator_Fight_Condition()
 {
-    if (MIS_MagicySzkodnicy == LOG_RUNNING)
+    if (MIS_CronosArtifacts == LOG_RUNNING)
     {
     return TRUE;
     };

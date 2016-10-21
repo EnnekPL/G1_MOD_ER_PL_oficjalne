@@ -277,7 +277,7 @@ INSTANCE DIA_Jackal_PALENIE (C_INFO)
 
 FUNC INT DIA_Jackal_PALENIE_Condition()
 {
-    if (MIS_Cpuny == LOG_RUNNING)
+    if (MIS_Druggy == LOG_RUNNING)
     && (Jackal_Pali == false)
     {
     return TRUE;
@@ -289,7 +289,7 @@ FUNC VOID DIA_Jackal_PALENIE_Info()
 {
     AI_Output (other, self ,"DIA_Jackal_PALENIE_15_01"); //Chcesz sobie zapaliæ?
     AI_Output (self, other ,"DIA_Jackal_PALENIE_03_02"); //A masz mo¿e Zew Nocy?
-    B_LogEntry                     (CH1_Cpuny,"Szakal chce zapaliæ Zew Nocy.");
+    B_LogEntry                     (CH1_Druggy,"Szakal chce zapaliæ Zew Nocy.");
 };
 
 //========================================
@@ -357,7 +357,7 @@ FUNC VOID DIA_Jackal_ZEW_NOCY_1ORE()
 	jackal_ore = 1;
     Info_ClearChoices		(DIA_Jackal_ZEW_NOCY);
     AI_StopProcessInfos	(self);
-	B_LogEntry                     (CH1_Cpuny,"Nieco spuœci³em z ceny. Powinienem teraz porozmawiaæ z Baal Taranem.");
+	B_LogEntry                     (CH1_Druggy,"Nieco spuœci³em z ceny. Powinienem teraz porozmawiaæ z Baal Taranem.");
 };
 
 FUNC VOID DIA_Jackal_ZEW_NOCY_2ORE()
@@ -369,7 +369,7 @@ FUNC VOID DIA_Jackal_ZEW_NOCY_2ORE()
 	jackal_ore = 2;
     Info_ClearChoices		(DIA_Jackal_ZEW_NOCY);
     AI_StopProcessInfos	(self);
-	B_LogEntry                     (CH1_Cpuny,"Nieco spuœci³em z ceny. Powinienem teraz porozmawiaæ z Baal Taranem.");
+	B_LogEntry                     (CH1_Druggy,"Nieco spuœci³em z ceny. Powinienem teraz porozmawiaæ z Baal Taranem.");
 };
 
 FUNC VOID DIA_Jackal_ZEW_NOCY_5ORE()
@@ -381,7 +381,7 @@ FUNC VOID DIA_Jackal_ZEW_NOCY_5ORE()
 	 Jackal_pali = true;
     Info_ClearChoices		(DIA_Jackal_ZEW_NOCY);
     AI_StopProcessInfos	(self);
-	B_LogEntry                     (CH1_Cpuny,"Nieco spuœci³em z ceny. Powinienem teraz porozmawiaæ z Baal Taranem.");
+	B_LogEntry                     (CH1_Druggy,"Nieco spuœci³em z ceny. Powinienem teraz porozmawiaæ z Baal Taranem.");
 };
 
 

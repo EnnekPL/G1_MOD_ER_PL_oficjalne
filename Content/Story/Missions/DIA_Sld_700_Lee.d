@@ -1510,10 +1510,10 @@ FUNC VOID DIA_Lee_KOPALNIA_QUENTINA_Info()
     AI_Output (self, other ,"DIA_Lee_KOPALNIA_QUENTINA_03_08"); //Wys³a³em ju¿ Najemników, którzy ci pomog¹. Powinieneœ ich spotkaæ przy wejœciu do kopalni. IdŸ ju¿! Nie ma czasu do stracenia...
 	
 	//zadanie - oficjalne zadanie [odwiedzenie kopalni] dla wszystkich gildii innych ni¿ bandyta 
-    MIS_PomocQuentinowi = LOG_RUNNING;
-	Log_CreateTopic          (CH1_PomocQuentinowi, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_PomocQuentinowi, LOG_RUNNING);
-    B_LogEntry               (CH1_PomocQuentinowi,"Lee chce pomóc Quentinowi pozbyæ siê Stra¿ników z Opuszczonej Kopalni. Gomez postanowi³ wznowiæ tam wydobycie. Przywódca Najemników twierdzi, ¿e Stra¿nicy nie s¹ najwiêkszym zagro¿eniem jakie czyha pod ziemi¹. Có¿, wkrótce przekonam siê o tym na w³asnej skórze. Mam siê przegrupowaæ z ludŸmi przydzielonymi przez Lee przy wejœciu do kopalni.");
+    MIS_SupportForQuentin = LOG_RUNNING;
+	Log_CreateTopic          (CH4_SupportForQuentin, LOG_MISSION);
+    Log_SetTopicStatus       (CH4_SupportForQuentin, LOG_RUNNING);
+    B_LogEntry               (CH4_SupportForQuentin,"Lee chce pomóc Quentinowi pozbyæ siê Stra¿ników z Opuszczonej Kopalni. Gomez postanowi³ wznowiæ tam wydobycie. Przywódca Najemników twierdzi, ¿e Stra¿nicy nie s¹ najwiêkszym zagro¿eniem jakie czyha pod ziemi¹. Có¿, wkrótce przekonam siê o tym na w³asnej skórze. Mam siê przegrupowaæ z ludŸmi przydzielonymi przez Lee przy wejœciu do kopalni.");
 	
 	//rutyny: Cord [kluczowy npc], Jarvis, Rocky
 	B_Story_AbMine_Soldiers ();
@@ -1547,7 +1547,7 @@ INSTANCE DIA_Lee_CZYSTKA_W_KOPALNI (C_INFO)
 
 FUNC INT DIA_Lee_CZYSTKA_W_KOPALNI_Condition()
 {
-    if (MIS_PomocQuentinowi == LOG_SUCCESS)
+    if (MIS_SupportForQuentin == LOG_SUCCESS)
     {
     return TRUE;
     };

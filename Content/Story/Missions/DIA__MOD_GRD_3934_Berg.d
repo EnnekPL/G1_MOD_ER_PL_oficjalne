@@ -67,7 +67,7 @@ FUNC VOID DIA_Berg_HELLO1_200_ORE()
     B_GiveInvItems (other, self, ItMiNugget, 200);
     CreateInvItems (self, ItKe_DunegonKeyOC, 1);
     B_GiveInvItems (self, other, ItKe_DunegonKeyOC, 1);
-    B_LogEntry                     (CH1_Magazyny_OC,"Odkupi³em od Berga klucz za 200 bry³ek rudy.");
+    B_LogEntry                     (CH2_OldCampCellar,"Odkupi³em od Berga klucz za 200 bry³ek rudy.");
 
     B_GiveXP (120);
     Info_ClearChoices		(DIA_Berg_HELLO1);
@@ -82,7 +82,7 @@ FUNC VOID DIA_Berg_HELLO1_INNE_ROZW()
     AI_Output (self, other ,"DIA_Berg_HELLO1_INNE_ROZW_03_03"); //Jednak pewnego wieczoru, gdy by³em w siedzibie Magnatów, zgubi³em go. Zorientowa³em siê dopiero rano. Zapyta³em Kruka, czy nie widzia³ mojego pierœcienia, a on powiedzia³, ¿e "znalezione, nie kradzione" i ¿ebym lepiej spada³.
 	AI_Output (self, other ,"DIA_Berg_HELLO1_INNE_ROZW_03_04"); //Potem widzia³em, jak wys³a³ Bartholo do piwnic z moim pierœcieniem. Pamiêtaj jednak, ¿e masz tylko jeden dzieñ na przyniesienie mi go, inaczej powiem Thorusowi, ¿e chcia³eœ okraœæ Magnatów, jasne?
     AI_Output (other, self ,"DIA_Berg_HELLO1_INNE_ROZW_15_05"); //Nie ma sprawy.
-    B_LogEntry                     (CH1_Magazyny_OC,"Berg da³ mi klucz do skrzyni za darmo, ale mam jeden dzieñ, aby znaleŸæ wœród ³upów jego pierœcieñ i przynieœæ mu go jako wynagrodzenie.");
+    B_LogEntry                     (CH2_OldCampCellar,"Berg da³ mi klucz do skrzyni za darmo, ale mam jeden dzieñ, aby znaleŸæ wœród ³upów jego pierœcieñ i przynieœæ mu go jako wynagrodzenie.");
     Info_ClearChoices		(DIA_Berg_HELLO1);
 	Berg_ring_giveday = wld_getday ();
     AI_StopProcessInfos	(self);
@@ -122,7 +122,7 @@ FUNC VOID DIA_Berg_GIVE_RING_Info()
     AI_Output (other, self ,"DIA_Berg_GIVE_RING_15_01"); //Przynios³em twój pierœcieñ.
     AI_Output (self, other ,"DIA_Berg_GIVE_RING_03_02"); //Œwietnie siê spisa³eœ. Gdy skoñczê wykonywaæ misjê od Thorusa i spotkamy siê w Starym Obozie, zapraszam na piwo do karczmy w zawalonej wie¿y.
     AI_Output (other, self ,"DIA_Berg_GIVE_RING_15_03"); //Chêtnie skorzystam.
-    B_LogEntry       (CH1_Magazyny_OC,"Zd¹¿y³em tego samego dnia odnieœæ Bergowi pierœcieñ. Nie bêdê mia³ k³opotów.");
+    B_LogEntry       (CH2_OldCampCellar,"Zd¹¿y³em tego samego dnia odnieœæ Bergowi pierœcieñ. Nie bêdê mia³ k³opotów.");
 	Npc_ExchangeRoutine (self,"start");
     B_GiveXP (130);
     B_GiveInvItems (other, self, Bergs_Ring, 1);
@@ -164,12 +164,12 @@ FUNC VOID DIA_Berg_WARN_Info()
         AI_Output (other, self ,"DIA_Berg_WARN_15_03"); //Zaczekaj. Przecie¿ mam tu ten pierœcieñ. WeŸ go.
         AI_Output (self, other ,"DIA_Berg_WARN_03_04"); //Masz szczêœcie. Inaczej mia³byœ spore k³opoty. Spadaj st¹d.
         B_GiveInvItems (other, self, Bergs_Ring, 1);
-        B_LogEntry                     (CH1_Magazyny_OC,"W ostatniej chwili odda³em pierœcieñ Bergowi. W przeciwnym razie mia³bym niez³e k³opoty.");
+        B_LogEntry                     (CH2_OldCampCellar,"W ostatniej chwili odda³em pierœcieñ Bergowi. W przeciwnym razie mia³bym niez³e k³opoty.");
     }
     else
     {
 		berg_problemy = true;
-        B_LogEntry                     (CH1_Magazyny_OC,"Cholera, bêdê mia³ teraz problemy w Starym Obozie. Niepotrzebnie próbowa³em wykiwaæ Berga.");
+        B_LogEntry                     (CH2_OldCampCellar,"Cholera, bêdê mia³ teraz problemy w Starym Obozie. Niepotrzebnie próbowa³em wykiwaæ Berga.");
     };
 	Npc_ExchangeRoutine (self,"start");
     AI_StopProcessInfos	(self);
@@ -192,8 +192,8 @@ INSTANCE DIA_Berg_HowAreYou (C_INFO)
 FUNC INT DIA_Berg_HowAreYou_Condition()
 {
     if (berg_problemy == false)
-    && ((MIS_Magazyny_OC != LOG_SUCCESS)
-    || (MIS_Magazyny_OC != LOG_FAILED))
+    && ((MIS_OldCampCellar != LOG_SUCCESS)
+    || (MIS_OldCampCellar != LOG_FAILED))
     {
     return TRUE;
     };

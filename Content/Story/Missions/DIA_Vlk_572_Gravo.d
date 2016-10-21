@@ -443,7 +443,7 @@ INSTANCE DIA_Gravo_JOINTY (C_INFO)
 
 FUNC INT DIA_Gravo_JOINTY_Condition()
 {
-    if (MIS_Cpuny == LOG_RUNNING)
+    if (MIS_Druggy == LOG_RUNNING)
     && (Gravo_pali == false)
     {
     return TRUE;
@@ -499,7 +499,7 @@ FUNC VOID DIA_Gravo_JOINTY_NOWICJUSZ1()
 {
     AI_Output (other, self ,"DIA_Gravo_JOINTY_NOWICJUSZ1_15_01"); //Spróbuj Zielonego Nowicjusza.
     AI_Output (self, other ,"DIA_Gravo_JOINTY_NOWICJUSZ1_03_02"); //Co? Przychodzisz z czymœ takim?! Nie denerwuj mnie.
-    B_LogEntry                     (CH1_Cpuny,"Gravo nie przepada za klasycznymi skrêtami z ziela. Zielony Nowicjusz odpada. Pozosta³e 'klasyki' pewnie te¿.");
+    B_LogEntry                     (CH1_Druggy,"Gravo nie przepada za klasycznymi skrêtami z ziela. Zielony Nowicjusz odpada. Pozosta³e 'klasyki' pewnie te¿.");
 };
 
 FUNC VOID DIA_Gravo_JOINTY_MROK()
@@ -534,7 +534,7 @@ FUNC VOID DIA_Gravo_JOINTY_HONEY_TYT()
     AI_UseItem (self, ItMiJoint_Honey);
     AI_Output (self, other ,"DIA_Gravo_JOINTY_HONEY_TYT_03_03"); //Rewelacja! To coœ, czego szuka³em.
     AI_Output (self, other ,"DIA_Gravo_JOINTY_HONEY_TYT_03_04"); //Powiedz Taranowi, ¿e przyjdê po wiêcej.
-    B_LogEntry                     (CH1_Cpuny,"Gravo najwy¿ej posmakowa³ mój miodowy Nowicjusz. Baal Taran sporo mi za to zap³aci.");
+    B_LogEntry                     (CH1_Druggy,"Gravo najwy¿ej posmakowa³ mój miodowy Nowicjusz. Baal Taran sporo mi za to zap³aci.");
 
     B_GiveXP (50);
     Info_ClearChoices		(DIA_Gravo_JOINTY);

@@ -86,11 +86,11 @@ FUNC VOID DIA_Emanuel_QUEST1_Info()
 	{
     AI_Output (self, other ,"DIA_Emanuel_QUEST1_03_07"); //Poza tym nie jesteœ jednym z Bandytów, ¿eby móc mieszaæ siê w moje interesy.
 	};
-    DostawaEmanuela = LOG_RUNNING;
+    MIS_SmallDelivery = LOG_RUNNING;
 
-    Log_CreateTopic          (CH1_DostawaEmanuela, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_DostawaEmanuela, LOG_RUNNING);
-    B_LogEntry               (CH1_DostawaEmanuela,"Emanuel kaza³ mi przynieœæ zio³a i miêso od myœliwego Draxa.");
+    Log_CreateTopic          (CH1_SmallDelivery, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_SmallDelivery, LOG_RUNNING);
+    B_LogEntry               (CH1_SmallDelivery,"Emanuel kaza³ mi przynieœæ zio³a i miêso od myœliwego Draxa.");
 };
 
 //========================================
@@ -135,11 +135,11 @@ FUNC VOID DIA_Emanuel_MAMZIOLA_Info()
 	
 	CreateInvItems (self, ItMiNugget, 10);
     B_GiveInvItems (self, other, ItMiNugget, 10);
-    B_LogEntry                     (CH1_DostawaEmanuela,"Dostarczy³em ¿ywnoœæ Emanuelowi. Dosta³em 10 bry³ek rudy.");
-    Log_SetTopicStatus       (CH1_DostawaEmanuela, LOG_SUCCESS);
-    DostawaEmanuela = LOG_SUCCESS;
+    B_LogEntry                     (CH1_SmallDelivery,"Dostarczy³em ¿ywnoœæ Emanuelowi. Dosta³em 10 bry³ek rudy.");
+    Log_SetTopicStatus       (CH1_SmallDelivery, LOG_SUCCESS);
+    MIS_SmallDelivery = LOG_SUCCESS;
 
-    B_GiveXP (XP_DostawaEmanuela);
+    B_GiveXP (XP_MIS_SmallDelivery);
 };
 
 //========================================
@@ -215,11 +215,11 @@ FUNC VOID DIA_Emanuel_REPUTACJA_Info()
     AI_Output (self, other ,"DIA_Emanuel_REPUTACJA_03_14"); //Zaczekaj. Zamiast Starkada w jaskini mo¿esz spotkaæ Shine. To ca³kiem mi³y goœæ, przyjaciel Starkada. Rêczê za niego. Nie powinien nic kombinowaæ.
     AI_Output (self, other ,"DIA_Emanuel_REPUTACJA_03_15"); //Starkad w³aœnie jego czasem wysy³a, gdy podobnie jak ja dzisiaj, nie ma czasu. No, mo¿esz iœæ. Powodzenia.
 	
-    HandelEmanuela = LOG_RUNNING;
+    MIS_EmanuelsDeals = LOG_RUNNING;
 
-    Log_CreateTopic          (CH1_HandelEmanuela, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_HandelEmanuela, LOG_RUNNING);
-    B_LogEntry               (CH1_HandelEmanuela,"Emanuel kaza³ mi spotkaæ siê z jego kontrahentem z Obozu Bractwa w jaskini na lewo od przejœcia na Ziemie Orków pilnowanego przez Stra¿ników. Muszê odebraæ kwotê w wysokoœci 400 bry³ek rudy i przekazaæ 30 sztuk miêsa, oraz 5 zup.");
+    Log_CreateTopic          (CH1_EmanuelsDeals, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_EmanuelsDeals, LOG_RUNNING);
+    B_LogEntry               (CH1_EmanuelsDeals,"Emanuel kaza³ mi spotkaæ siê z jego kontrahentem z Obozu Bractwa w jaskini na lewo od przejœcia na Ziemie Orków pilnowanego przez Stra¿ników. Muszê odebraæ kwotê w wysokoœci 400 bry³ek rudy i przekazaæ 30 sztuk miêsa, oraz 5 zup.");
     CreateInvItems (self, ItFoMutton, 30);
     B_GiveInvItems (self, other, ItFoMutton, 30);
     CreateInvItems (self, ItFoSoup, 5);
@@ -253,7 +253,7 @@ INSTANCE DIA_Emanuel_RUDAOK (C_INFO)
 
 FUNC INT DIA_Emanuel_RUDAOK_Condition()
 {
-    if (HandelEmanuela == LOG_RUNNING)
+    if (MIS_EmanuelsDeals == LOG_RUNNING)
     && (Npc_HasItems (other, RudaEmanuela) >=1)
     {
     return TRUE;
@@ -278,10 +278,10 @@ FUNC VOID DIA_Emanuel_RUDAOK_Info()
     B_GiveInvItems (other, self, RudaEmanuela, 1);
 	Npc_RemoveInvItems (self, RudaEmanuela,1);
 	
-    B_LogEntry                     (CH1_HandelEmanuela,"Niestety wymiana nie zakoñczy³a siê zbyt dobrze. Wprawdzie Emanuel odzyska³ rudê, ale pomiêdzy Nowicjuszami dosz³o do zdrady w wyniku której Shine zgin¹³.");
+    B_LogEntry                     (CH1_EmanuelsDeals,"Niestety wymiana nie zakoñczy³a siê zbyt dobrze. Wprawdzie Emanuel odzyska³ rudê, ale pomiêdzy Nowicjuszami dosz³o do zdrady w wyniku której Shine zgin¹³.");
 	
-    Log_SetTopicStatus       (CH1_HandelEmanuela, LOG_SUCCESS);
-    HandelEmanuela = LOG_SUCCESS;
+    Log_SetTopicStatus       (CH1_EmanuelsDeals, LOG_SUCCESS);
+    MIS_EmanuelsDeals = LOG_SUCCESS;
     B_GiveXP (325);
 };
 

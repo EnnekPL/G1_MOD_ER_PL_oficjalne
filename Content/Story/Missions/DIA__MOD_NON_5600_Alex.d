@@ -872,7 +872,7 @@ FUNC VOID DIA_Alex_QUEST_TROLL_Info()
     AI_Output (self, other ,"DIA_Alex_QUEST_TROLL_03_08"); //A teraz chodŸ za mn¹!
 	self.aivar[AIV_PARTYMEMBER] =	TRUE;
     Npc_ExchangeRoutine (self, "troll");
-	B_LogEntry                     (CH1_Wielki_troll,"Mam udaæ siê z Alexem na polowanie na wielkiego trolla, któremu spodoba³y siê okolice Nowego Obozu.");
+	B_LogEntry                     (CH5_BigTroll,"Mam udaæ siê z Alexem na polowanie na wielkiego trolla, któremu spodoba³y siê okolice Nowego Obozu.");
     Wld_InsertNpc				(BlackTroll,"OW_PATH_152K");	
     AI_StopProcessInfos	(self);
 };
@@ -910,9 +910,9 @@ FUNC VOID DIA_Alex_POKONANY_TROLL_Info()
     AI_Output (other, self ,"DIA_Alex_POKONANY_TROLL_15_05"); //Umowa stoi.
     AI_Output (self, other ,"DIA_Alex_POKONANY_TROLL_03_06"); //Œwietnie. WeŸ jeszcze te dwie silne mikstury uzdrawiaj¹ce. 
     AI_Output (other, self ,"DIA_Alex_POKONANY_TROLL_15_07"); //Dziêki. Trzymaj siê przyjacielu. 
-    B_LogEntry                     (CH1_Wielki_troll,"Uda³o nam siê pokonaæ wielkiego trolla. To by³a naprawdê ciê¿ka walka.");
-    Log_SetTopicStatus       (CH1_Wielki_troll, LOG_SUCCESS);
-    MIS_Wielki_troll = LOG_SUCCESS;
+    B_LogEntry                     (CH5_BigTroll,"Uda³o nam siê pokonaæ wielkiego trolla. To by³a naprawdê ciê¿ka walka.");
+    Log_SetTopicStatus       (CH5_BigTroll, LOG_SUCCESS);
+    MIS_BigTroll = LOG_SUCCESS;
 
     B_GiveXP (250);
     Npc_ExchangeRoutine (self, "START");

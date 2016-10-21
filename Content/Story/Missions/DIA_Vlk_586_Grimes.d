@@ -290,7 +290,7 @@ INSTANCE DIA_Grimes_GoldMine (C_INFO)
 
 FUNC INT DIA_Grimes_GoldMine_Condition()
 {
-    if (MIS_KopalniaZlota == LOG_RUNNING) && (kapitel == 10)
+    if (MIS_GoldMine == LOG_RUNNING) && (kapitel == 10)
     {
     return TRUE;
     };
@@ -308,7 +308,7 @@ FUNC VOID DIA_Grimes_GoldMine_Info()
     AI_Output (self, other ,"DIA_Grimes_GoldMine_03_07"); //Za stary ju¿ jestem na takie przygody.
     AI_Output (self, other ,"DIA_Grimes_GoldMine_03_08"); //Myœlê, ¿e Glen bêdzie chêtny.
     AI_Output (self, other ,"DIA_Grimes_GoldMine_03_09"); //Jest m³ody i ma wiele si³y.
-    B_LogEntry                     (CH1_KopalniaZlota,"Grimes uwa¿a, ¿e Glen bêdzie chêtny do pracy w kopalni z³ota.");
+    B_LogEntry                     (CH2_GoldMine,"Grimes uwa¿a, ¿e Glen bêdzie chêtny do pracy w kopalni z³ota.");
 
     B_GiveXP (100);
 };

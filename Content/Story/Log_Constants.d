@@ -144,11 +144,11 @@ const string	CH1_BringList     		=	"Test zaufania";
 const string	CH1_GoToPsi     		=	"Co siê dzieje na bagnach";
 
 //Aufnahme Neues Lager
-const string	CH1_JoinNC             	=  "Przyjêcie do Nowego Obozu";    
+const string	CH1_JoinNC             	=  	"Przyjêcie do Nowego Obozu";    
 const string	CH1_CarryWater			=	"Nosiwoda w s³u¿bie Lewusa";
-const string	CH1_DamLurker           =  "Topielec pod tam¹";
-const string	CH1_SpreadJoints        =  "Pozyskiwanie klientów"; 
-const string	CH1_DealerJob           =  "Handlarz zielem";
+const string	CH1_DamLurker           =  	"Topielec pod tam¹";
+const string	CH1_SpreadJoints        =  	"Pozyskiwanie klientów"; 
+const string	CH1_DealerJob           =  	"Handlarz zielem";
 const string	CH1_ShrikesHut			=	"Chata Krzykacza";
 const string	CH1_HoratiosTeachings	=	"Zbieracz Horacy";
 const string	CH1_GotoPsiCamp			=	"Co siê dzieje na bagnach";
@@ -160,21 +160,6 @@ const string	CH1_DeliverWeed			=	"Zbiory bagiennego ziela";
 const string	CH1_RecruitDusty		=	"Nowi wyznawcy dla Bractwa";
 const string	CH1_KrautBote			=	"Dostawa ziela dla Gomeza";
 const string	CH1_DrugMonopol			=	"Wytwórnia ziela";
-
-// Do³¹czenie do Obozu Bandytów
-
-
-const string    CH1_BANDITOS_CAMP       =   "Przyjêcie do Obozu Bandytów";
-const string    CH1_BANDITOS_MORDRAG    =   "Sytuacja w Starym Obozie";
-const string    CH1_DostawaEmanuela     =   "Dostawa dla Emanuela";
-const string 	CH1_HandelEmanuela      =   "Handel Emanuela";
-const string 	CH1_BANDITOS_RINGS      =   "Piêæ pierœcieni";
-
-//nieu¿ywane
-const string    CH1_Problem_ZLY         =   "Problem ze Z³ym";
-const string    CH1_ZLY_Poplecznicy     =   "Poplecznicy Z³ego";
-const string 	CH1_MartinLevel         =   "Doœwiadczenie";
-const string    CH1_BANDITOS_ZAUFANIE   =   "Szacunek wœród Bandytów";
 
 //---------------------------------------------------------------------
 //	KAPITEL 2
@@ -229,56 +214,16 @@ const string	CH6_Sleeper				=	"Przebudzenie Œni¹cego";
 //   Stary Obóz 
 //---------------------------------------------------------------------
 const string CH1_TestOc    			 	= "Test myœliwski"; //do obrobki
-const string CH1_Cpuny      			= "Nowi palacze";
-
 //---------------------------------------------------------------------
 //   Nowy Obóz 
 //---------------------------------------------------------------------
-
-const string CH1_KillFingers      		= "Stra¿nik w karczmie";
-const string CH1_FindPosazekKlina   	= "Poszukiwania pos¹¿ka";
-const string CH1_ZnowuZapierdalam   	= "Kto ukrad³ pos¹¿ek Klina?";
-const string CH1_ZabijThompsona     	= "Zlecenie Will'a"; 
-const string CH1_KopalniaZlota      	= "Kopalnia z³ota";
-const string CH1_DrogaDoKopalni     	= "Do kopalni z³ota";
-const string CH1_KryjowkaNaKase     	= "Skrytka";
-
-const string CH1_InfoDlaLaresa      	= "Ostrzec Bandytów";
-
-const string CH1_PomocQuentinowi    	= "Wsparcie dla Quentina";
-const string CH1_MagicySzkodnicy    	= "Nieudolni magicy";
-
-//---------------------------------------------------------------------
-//   Bandycki Obóz 
-//---------------------------------------------------------------------
-const string CH1_RozwalaUBnadytow       = "Dalsze losy Bandytów";
-
-const string CH1_AtakNaSO      			= "Atak na Stary Obóz";
-const string CH1_Zniewolenie     		= "Zniewoleni Bandyci";
-const string CH1_FindFriends      		= "OdnaleŸæ przyjació³";
-const string CH1_helpSld1      			= "Atak na oddzia³y Gomeza";
-
-
-
-const string CH1_Rozpierdol1      		= "Atak na plac wymian";
-const string CH1_Rozpierdol2      		= "Transport do kopalni";
-const string CH1_AtakNaOC      			= "Plany Draxa";
-
-
 //---------------------------------------------------------------------
 //   KOLONIA
 //---------------------------------------------------------------------
-
-
-
-
-const string CH1_SearhSkarb      = "Poszukiwanie skarbu";
-const string CH1_Gdzie_hugo      = "£owca Hugo";
-const string CH1_Wielki_troll      = "Polowanie z Alexem";
 //---------------------------------------------------------------------
 //   Obóz myœliwych
 //---------------------------------------------------------------------
-const string CH1_UCieczkaShrata    			 = "Nowe miejsce dla Shrata";
+
 const string CH1_PorwanieAlexa    			 = "Porwanie Alexa";
 const string CH1_ZieleClawa      			 	= "Ziele dla Clawa";
 const string CH1_ZabojstwBlizny  		 = "Blizna na sumieniu";
@@ -288,16 +233,7 @@ const string CH1_DziwnyJosep    		= "Dziwne zachowania";
 
 
 
-const string CH1_Magazyny_OC      		= "Skarby w magazynie";
 
-const string CH1_Do_lowcow      		= "Wsparcie ³owców";
-
-const string CH1_Italian_Job      		= "Burdy w karczmie";
-const string CH1_Stan_gerarda      		= "Samotny Gerard";
-const string CH5_Upadek_Gomeza      	= "Upadek Gomeza";
-
-const string CH1_FoodForOldMine     	= "¯ywnoœæ dla Starej Kopalni";
-const string CH4_NewLocationForPirates  = "Spokojniejsze miejsce dla piratów";
 
 //////////////////////////////////////////
 // USUNIÊTE
@@ -344,3 +280,17 @@ const string CH1_FlintaPrzyjecie      	= "Sposób na Thorusa";
 const string CH1_SayOkylFlintDead      	= "Powiedz Okylowi, ¿e Flint nie ¿yje";
 const string CH1_FireNovize     		= "Nowicjusz Ognia";
 const string CH1_CavalornFuck      		= "Cavalorn w niewoli";
+const string CH1_helpSld1      			= "Atak na oddzia³y Gomeza";
+const string CH1_AtakNaOC      			= "Plany Draxa";
+//nieu¿ywane
+const string    CH1_Problem_ZLY         =   "Problem ze Z³ym";
+const string    CH1_ZLY_Poplecznicy     =   "Poplecznicy Z³ego";
+const string 	CH1_MartinLevel         =   "Doœwiadczenie";
+const string    CH1_BANDITOS_ZAUFANIE   =   "Szacunek wœród Bandytów";
+const string CH1_Stan_gerarda      		= "Samotny Gerard";
+// Do³¹czenie do Obozu Bandytów
+const string    CH1_BANDITOS_CAMP       =   "Przyjêcie do Obozu Bandytów";
+const string    CH1_BANDITOS_MORDRAG    =   "Sytuacja w Starym Obozie";
+const string 	CH1_BANDITOS_RINGS      =   "Piêæ pierœcieni";
+const string CH1_UCieczkaShrata    			 = "Nowe miejsce dla Shrata";
+const string CH1_DrogaDoKopalni     	= "Do kopalni z³ota";

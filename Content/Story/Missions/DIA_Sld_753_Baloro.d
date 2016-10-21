@@ -435,7 +435,7 @@ FUNC VOID DIA_Baloro_WpierdolAlboKasa_Info()
     AI_Output (other, self ,"DIA_Baloro_WpierdolAlboKasa_15_10"); //Chwila! Nie wiem, gdzie jest ta kopalnia.
     AI_Output (other, self ,"DIA_Baloro_WpierdolAlboKasa_15_11"); //Jestem tylko poœrednikiem.
     AI_Output (self, other ,"DIA_Baloro_WpierdolAlboKasa_03_12"); //Zaczynasz mnie wkurzaæ.
-    B_LogEntry                     (CH1_KopalniaZlota,"Baloro rzuci³ siê na mnie w karczmie. Senyan chcia³ zgarn¹æ z³oto z kopalni dla siebie i podzieliæ siê zyskami z Najemnikiem Baloro.");
+    B_LogEntry                     (CH2_GoldMine,"Baloro rzuci³ siê na mnie w karczmie. Senyan chcia³ zgarn¹æ z³oto z kopalni dla siebie i podzieliæ siê zyskami z Najemnikiem Baloro.");
     AI_StopProcessInfos	(self);
     Npc_SetPermAttitude (self, ATT_HOSTILE);
     Npc_SetTarget (self, other);

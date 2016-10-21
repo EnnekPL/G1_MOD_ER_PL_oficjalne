@@ -253,7 +253,7 @@ FUNC VOID DIA_SZEFU_BANDYCI_POMOC_Info()
     AI_Output (self, other ,"DIA_SZEFU_Quest12_03_08"); //Dobra, wyœlê wam moich dwóch najlepszych ludzi. Tyle musi wam wystarczyæ.
 	AI_Output (self, other ,"DIA_SZEFU_Quest12_03_09"); //Pójd¹ Rakus i Osko. 
 	
-	B_LogEntry                     (CH1_Do_lowcow,"Przekaza³em Wilsonowi proœbê o pomoc. Postanowi³ wys³aæ dwóch swoich najlepszych ludzi do pomocy.");
+	B_LogEntry                     (CH4_HuntersSupport,"Przekaza³em Wilsonowi proœbê o pomoc. Postanowi³ wys³aæ dwóch swoich najlepszych ludzi do pomocy.");
 	
     //B_LogEntry                     (CH1_CavalornFuck,"Przez przypadek rozwi¹za³em problem Cavalorna z ³owcami orków.");
     AI_StopProcessInfos	(self);
@@ -480,8 +480,8 @@ FUNC VOID DIA_SZEFU_HUGO_BACK_Info()
     AI_Output (other, self ,"DIA_SZEFU_HUGO_BACK_15_03"); //Dziêki.
 	CreateInvItems (self, ItMiNugget, 130);
     B_GiveInvItems (self, other, ItMiNugget, 130);
-    B_LogEntry                     (CH1_gdzie_hugo,"Wilson by³ bardzo zadowolony, gdy wspomnia³em o powrocie Hugo. Wynagrodzi³ mnie rud¹.");
-    //Log_SetTopicStatus       (CH1_gdzie_hugo, LOG_SUCCESS);
-    //MIS_gdzie_hugo = LOG_SUCCESS;
+    B_LogEntry                     (CH1_HunterHugo,"Wilson by³ bardzo zadowolony, gdy wspomnia³em o powrocie Hugo. Wynagrodzi³ mnie rud¹.");
+    //Log_SetTopicStatus       (CH1_HunterHugo, LOG_SUCCESS);
+    //MIS_HunterHugo = LOG_SUCCESS;
     //B_GiveXP (50);
 };

@@ -460,7 +460,7 @@ INSTANCE DIA_Huno_JARAJ (C_INFO)
 
 FUNC INT DIA_Huno_JARAJ_Condition()
 {
-    if (MIS_Cpuny == LOG_RUNNING)
+    if (MIS_Druggy == LOG_RUNNING)
     && (Npc_HasItems (other, RecruitJoint) >=1)
     {
     return TRUE;
@@ -488,7 +488,7 @@ FUNC VOID DIA_Huno_JARAJ_PRZY_PRACY()
     B_GiveInvItems (other, self, RecruitJoint, 1);
     AI_UseItem (self, RecruitJoint);
     AI_Output (self, other ,"DIA_Huno_JARAJ_PRZY_PRACY_03_05"); //Och... Od razu lepiej.
-    B_LogEntry                     (CH1_Cpuny,"Da³em Huno zapaliæ jednego skrêta. Wypada³oby teraz daæ mu coœ innego.");
+    B_LogEntry                     (CH1_Druggy,"Da³em Huno zapaliæ jednego skrêta. Wypada³oby teraz daæ mu coœ innego.");
 	Npc_ExchangeRoutine			(Vlk_538_Huno,"pali");
 	Huno_drugs_level = 1;
     B_GiveXP (100);
@@ -507,7 +507,7 @@ FUNC VOID DIA_Huno_JARAJ_NIE()
 {
     AI_Output (other, self ,"DIA_Huno_JARAJ_NIE_15_01"); //Szkoda. W takim razie dam je komuœ innemu.
     AI_Output (self, other ,"DIA_Huno_JARAJ_NIE_03_02"); //Tak bêdzie najlepiej.
-    B_LogEntry                     (CH1_Cpuny,"Nie mog³em tego zrobiæ. Ten cz³owiek wyszed³ z na³ogu i zacz¹³ w Kolonii nowe ¿ycie. Nie mogê mu go zniszczyæ.");
+    B_LogEntry                     (CH1_Druggy,"Nie mog³em tego zrobiæ. Ten cz³owiek wyszed³ z na³ogu i zacz¹³ w Kolonii nowe ¿ycie. Nie mogê mu go zniszczyæ.");
     Info_ClearChoices		(DIA_Huno_JARAJ);
 	Huno_drugs_level = 0;
     AI_StopProcessInfos	(self);
@@ -543,7 +543,7 @@ FUNC VOID DIA_Huno_HELLO2_Info()
     AI_Output (other, self ,"DIA_Huno_HELLO2_15_01"); //Jeszcze jednego?
     AI_Output (self, other ,"DIA_Huno_HELLO2_03_02"); //A, tak. Chêtnie.
     B_GiveInvItems (other, self, ItMiJoint_1, 1);
-    B_LogEntry                     (CH1_Cpuny,"Huno z chêci¹ zapali³ drugiego skrêta. ");
+    B_LogEntry                     (CH1_Druggy,"Huno z chêci¹ zapali³ drugiego skrêta. ");
     AI_UseItem (self, itmijoint_1);
     AI_StopProcessInfos	(self);
     Huno_drugs_level = 2;
@@ -568,7 +568,7 @@ FUNC INT DIA_Huno_DAWAJ_SKRETA_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Huno_HELLO2))
     && (Huno_drugs_day != wld_getday ())
-    && (MIS_Cpuny == LOG_RUNNING)
+    && (MIS_Druggy == LOG_RUNNING)
     && (!Npc_KnowsInfo (hero, DIA_BaalTaran_HUNO_SYTUACJA)) && (Huno_drugs_level == 2)
     {
     return TRUE;
@@ -591,7 +591,7 @@ FUNC VOID DIA_Huno_DAWAJ_SKRETA_Info()
         AI_Output (other, self ,"DIA_Huno_DAWAJ_SKRETA_15_04"); //Ju¿ nic nie mam.
         AI_Output (self, other ,"DIA_Huno_DAWAJ_SKRETA_03_05"); //Cholera, muszê iœæ do Baal Tarana.
     };
-    B_LogEntry                     (CH1_Cpuny,"NieŸle. Skrêty Baal Tarana szybko podzia³a³y na Huno. Wróci³ do swoich na³ogów. Coœ czujê, ¿e Ÿle zrobi³em.");
+    B_LogEntry                     (CH1_Druggy,"NieŸle. Skrêty Baal Tarana szybko podzia³a³y na Huno. Wróci³ do swoich na³ogów. Coœ czujê, ¿e Ÿle zrobi³em.");
 	Huno_drugs_level = 3;
     B_GiveXP (100);
     AI_StopProcessInfos	(self);

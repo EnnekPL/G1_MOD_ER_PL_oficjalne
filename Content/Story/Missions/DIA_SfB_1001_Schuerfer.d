@@ -64,7 +64,7 @@ INSTANCE DIA_Schuerfer_Kopalnia (C_INFO)
 
 FUNC INT DIA_Schuerfer_Kopalnia_Condition()
 {
-    if (MIS_KopalniaZlota == LOG_RUNNING)
+    if (MIS_GoldMine == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -84,7 +84,7 @@ FUNC VOID DIA_Schuerfer_Kopalnia_Info()
     AI_Output (self, other ,"DIA_Schuerfer_Kopalnia_03_09"); //Gdzie jest ta kopalnia?
     AI_Output (other, self ,"DIA_Schuerfer_Kopalnia_15_10"); //To nie takie proste! 
     AI_Output (other, self ,"DIA_Schuerfer_Kopalnia_15_11"); //Wszyscy zbieramy siê na górnym piêtrze karczmy. Tam ci wszystko wyjaœnimy.
-	B_LogEntry                     (CH1_KopalniaZlota,"Zaproponowa³em Shutferowi pracê w kopalni z³ota. Przestrzeg³ mnie przed Swineyem. Na szczêœcie Shutfer to uczciwy cz³owiek, ale na przysz³oœæ powinienem bardziej uwa¿aæ.");
+	B_LogEntry                     (CH2_GoldMine,"Zaproponowa³em Shutferowi pracê w kopalni z³ota. Przestrzeg³ mnie przed Swineyem. Na szczêœcie Shutfer to uczciwy cz³owiek, ale na przysz³oœæ powinienem bardziej uwa¿aæ.");
     B_GiveXP (50);
 	Npc_ExchangeRoutine (self, "karczma");
 };
@@ -107,7 +107,7 @@ FUNC INT DIA_Schuerfer_GOR_NA_LIN_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_GorNaLin_HELLO1))
     && (MIS_MissedSpy == LOG_RUNNING)
-	&& ((MIS_KopalniaZlota != LOG_RUNNING) || (MIS_KopalniaZlota != LOG_SUCCESS))
+	&& ((MIS_GoldMine != LOG_RUNNING) || (MIS_GoldMine != LOG_SUCCESS))
     {
     return TRUE;
     };

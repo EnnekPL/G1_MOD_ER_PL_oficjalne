@@ -309,7 +309,7 @@ INSTANCE DIA_Cipher_YOU_WANNA_FIGHT (C_INFO)
 
 FUNC INT DIA_Cipher_YOU_WANNA_FIGHT_Condition()
 {
-    if (MIS_Italian_Job == LOG_RUNNING)
+    if (MIS_BroilInTavern == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -395,7 +395,7 @@ FUNC VOID DIA_Cipher_WARN_FIGHT_Info()
     AI_Output (self, other ,"DIA_Cipher_WARN_FIGHT_03_02"); //Mieliœmy walczyæ na piêœci! Nie masz honoru. IdŸ precz.
     Npc_SetPermAttitude (self, ATT_NEUTRAL);
 
-    B_LogEntry                     (CH1_Italian_Job,"Chcia³em oszukaæ Ciphera i walczyæ z nim przy u¿yciu broni. To nie by³o zbyt m¹dre. Nie da mi drugiej szansy, by z nim walczyæ. ");
+    B_LogEntry                     (CH1_BroilInTavern,"Chcia³em oszukaæ Ciphera i walczyæ z nim przy u¿yciu broni. To nie by³o zbyt m¹dre. Nie da mi drugiej szansy, by z nim walczyæ. ");
     AI_StopProcessInfos	(self);
 };
 

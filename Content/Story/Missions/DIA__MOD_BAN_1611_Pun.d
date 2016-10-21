@@ -237,11 +237,11 @@ FUNC VOID DIA_Raeuber_VERY_IMPORTATN_Info()
     AI_Output (self, other ,"DIA_Raeuber_VERY_IMPORTATN_03_05"); //Poproœ go o pomoc. Zap³acê ci z góry, tylko siê spiesz.
     AI_Output (other, self ,"DIA_Raeuber_VERY_IMPORTATN_15_06"); //A ile mi zap³acisz?
     AI_Output (self, other ,"DIA_Raeuber_VERY_IMPORTATN_03_07"); //Cholera, 100 bry³ek rudy,
-    MIS_Do_lowcow = LOG_RUNNING;
+    MIS_HuntersSupport = LOG_RUNNING;
 
-    Log_CreateTopic          (CH1_Do_lowcow, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_Do_lowcow, LOG_RUNNING);
-    B_LogEntry               (CH1_Do_lowcow,"Mam jak najszybciej odnaleŸæ ³owców orków i poprosiæ ich przywódcê o pomoc Bandytom.");
+    Log_CreateTopic          (CH4_HuntersSupport, LOG_MISSION);
+    Log_SetTopicStatus       (CH4_HuntersSupport, LOG_RUNNING);
+    B_LogEntry               (CH4_HuntersSupport,"Mam jak najszybciej odnaleŸæ ³owców orków i poprosiæ ich przywódcê o pomoc Bandytom.");
 
     Info_ClearChoices		(DIA_Raeuber_VERY_IMPORTATN);
     Info_AddChoice		(DIA_Raeuber_VERY_IMPORTATN, "Dobra. Wyruszê najszybciej jak siê da.", DIA_Raeuber_VERY_IMPORTATN_DEAL);
