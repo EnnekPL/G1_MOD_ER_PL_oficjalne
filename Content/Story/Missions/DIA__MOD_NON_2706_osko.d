@@ -124,6 +124,52 @@ FUNC VOID DIA_osko_HELLO6_Info()
 };
 
 //========================================
+//-----------------> LegendaModdingu
+//========================================
+
+INSTANCE DIA_osko_LegendaModdingu (C_INFO)
+{
+   npc          = NON_2706_osko;
+   nr           = 6;
+   condition    = DIA_osko_LegendaModdingu_Condition;
+   information  = DIA_osko_LegendaModdingu_Info;
+   permanent	= FALSE;
+   description	= "Mo¿esz mi opowiedzieæ jeszcze coœ ciekawego?";
+};
+
+FUNC INT DIA_osko_LegendaModdingu_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_osko_WhoJu))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_osko_LegendaModdingu_Info()
+{
+    AI_Output (other, self ,"DIA_osko_LegendaModdingu_15_01"); //Mo¿esz mi opowiedzieæ jeszcze coœ ciekawego?
+    AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_02"); //W³aœnie przypomnia³em sobie pewn¹ legendê...
+    AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_03"); //Wieki temu, jeszcze przed powstaniem Bariery w Górniczej Dolinie zjawi³ siê tajemniczy Przybysz.
+	AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_04"); //By³ to cz³owiek niezwykle uzdolniony. Ponoæ walczy³ mieczem niczym najznamienitszy z wojowników, a cios jego by³ równy sile uderzaj¹cej ³apy trolla.
+    AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_05"); //Oko jego by³o stworzone do ³uku, a rêka mimo i¿ ciê¿ka potrafi³a wyci¹gn¹æ z kieszeni bogaczy najró¿niejsze skarby. 
+    AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_06"); //I ta w³aœnie rêka pewnego dnia go zawiod³a. Nasz tajemniczy Przybysz wybra³ ongiœ siê do klasztoru Zmiennokszta³tnych.
+	AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_07"); //Zale¿a³o mu ponoæ na jakimœ cennym artefakcie. W klasztorze opisa³ siê jako handlarza.
+	AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_08"); //Mia³ ze sob¹ ró¿ne sk³adniki alchemiczne i rzemieœlnicze. Od wêgla, po sztabki stali, a¿ po przynêtê dla ryb. 
+	AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_09"); //Zmiennokszta³tni uwierzyli w jego historiê i wpuœcili do klasztoru. Spêdzi³ tam kilka dni.
+	AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_10"); //Pi¹tego dnia dokona³ odwa¿nej próby kradzie¿y na najznamienitszym spoœród cz³onków gildii. Natychmiast go przy³apano.
+	AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_11"); //Jego niedosz³a ofiara wpad³a w sza³. Przybysz musia³ zostaæ ukarany. 
+	AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_12"); //Jako, ¿e Zmiennokszta³tni doskonalili sztukê transmutacji, postanowili wykorzystaæ go jako swój eksperyment.
+	AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_13"); //Przetestowali na nim zaklêcie przemiany w k¹sacza. S³uch ciê nie myli. W k¹sacza...
+	AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_14"); //Czar zadzia³a³. Cz³owiek w jednej chwili sta³ siê potworem, ale nie utraci³ swojej si³y.
+	AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_15"); //Powali³ magusów i puœci³ siê w szaleñczy pêd, który zakoñczy³ dopiero na Ziemiach Orków.
+	AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_16"); //Legenda g³osi, ¿e krêci siê tutaj po dziœ dzieñ. Zgin¹æ bowiem mo¿e tylko z rêki wojownika. Staroœæ mu niestraszna.
+	AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_17"); //Wiêc gdybyœ kiedyœ przy szlachtowaniu k¹saczy w ciele jednego z nich znalaz³ rozmaite skarby, wêgle i stal najcudowniejsz¹...
+	AI_Output (self, other ,"DIA_osko_LegendaModdingu_03_18"); //... to wiec ¿eœ zaszlachtowa³ pradawnego Przybysza, wojownika, handlarza, co Zmiennokszta³tnych magusów oszukaæ pragn¹³.
+};
+	
+	
+//========================================
 //-----------------> PROWOKACJA_DO_QUESTA
 //========================================
 
