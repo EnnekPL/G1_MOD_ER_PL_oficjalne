@@ -493,10 +493,12 @@ FUNC VOID DIA_PC_Hero_SpecialPotions_BACK()
 
 FUNC VOID DIA_PC_Hero_SpecialPotions_KING()
 {
-    if (Npc_HasItems (hero, ItFo_Plants_utarteJagody_01) >=1) && (Npc_HasItems (hero, ItFo_Plants_Nightshadow_01) >=3) && (Npc_HasItems (hero, ItMi_Alchemy_Syrianoil_01) >=1) && (Npc_HasItems (hero, ItMi_Alchemy_Alcohol_01) >=1)
+    if (Npc_HasItems (hero, ItFo_Plants_PapkaZziela) >=1) && (Npc_HasItems (hero, ItFo_Plants_Flameberry_01) >=2) && (Npc_HasItems (hero, ItFo_Plants_OrcHerb_02) >=1) && (Npc_HasItems (hero, ItFo_Plants_Nightshadow_01) >=3) && (Npc_HasItems (hero, ItMi_Alchemy_Syrianoil_01) >=1) && (Npc_HasItems (hero, ItMi_Alchemy_Alcohol_01) >=1)
     {
 	CreateInvItem (hero,ItFo_Potion_Master_01);
-    Npc_RemoveInvItems (hero, ItFo_Plants_utarteJagody_01, 1);
+	Npc_RemoveInvItems (hero, ItFo_Plants_PapkaZziela, 1);
+    Npc_RemoveInvItems (hero, ItFo_Plants_Flameberry_01, 2);
+	Npc_RemoveInvItems (hero, ItFo_Plants_OrcHerb_02, 1);
 	Npc_RemoveInvItems (hero, ItFo_Plants_Nightshadow_01, 3);
 	Npc_RemoveInvItems (hero, ItMi_Alchemy_Syrianoil_01, 1);
 	Npc_RemoveInvItems (hero, ItMi_Alchemy_Alcohol_01, 1);
@@ -549,10 +551,12 @@ FUNC VOID DIA_PC_Hero_SpecialPotions_KING()
 
 FUNC VOID DIA_PC_Hero_SpecialPotions_MAGE()
 {
-    if (Npc_HasItems (hero, ItFo_Plants_PapkaZziela) >=1) && (Npc_HasItems (hero, ItFo_Plants_Nightshadow_01) >=3) && (Npc_HasItems (hero, ItMi_Alchemy_Syrianoil_01) >=1) && (Npc_HasItems (hero, ItMi_Alchemy_Alcohol_01) >=1)
+    if (Npc_HasItems (hero, ItFo_Plants_PapkaZziela) >=2) && (Npc_HasItems (hero, ItFo_Plants_OrcHerb_02) >=2) && (Npc_HasItems (hero, ItFo_Plants_Flameberry_01) >=3) && (Npc_HasItems (hero, ItFo_Plants_Nightshadow_01) >=3) && (Npc_HasItems (hero, ItMi_Alchemy_Syrianoil_01) >=1) && (Npc_HasItems (hero, ItMi_Alchemy_Alcohol_01) >=1)
     {
 	CreateInvItem (hero,ItFo_Potion_Master_02);
-    Npc_RemoveInvItems (hero, ItFo_Plants_PapkaZziela, 1);
+	Npc_RemoveInvItems (hero, ItFo_Plants_PapkaZziela, 2);
+    Npc_RemoveInvItems (hero, ItFo_Plants_OrcHerb_02, 2);
+	Npc_RemoveInvItems (hero, ItFo_Plants_Flameberry_01, 3);
 	Npc_RemoveInvItems (hero, ItFo_Plants_Nightshadow_01, 3);
 	Npc_RemoveInvItems (hero, ItMi_Alchemy_Syrianoil_01, 1);
 	Npc_RemoveInvItems (hero, ItMi_Alchemy_Alcohol_01, 1);

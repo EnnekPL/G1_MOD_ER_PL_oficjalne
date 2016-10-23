@@ -279,7 +279,7 @@ INSTANCE ItFo_Plants_utarteJagody_01(C_Item)
 	TEXT[1]					= NAME_Bonus_Hp;				COUNT[1]	= 50;
 	TEXT[2]					= "Cenny sk³adnik alchemiczny.";
 	TEXT[3]					= "Sk³adnik bazowy napoju potêgi.";
-	TEXT[5]					= NAME_Value;					COUNT[5]	= 300;
+	TEXT[5]					= NAME_Value;					COUNT[5]	= 200;
 };
 
 		func void UseTrollberrys2 ()
@@ -309,7 +309,7 @@ INSTANCE ItFo_Plants_PapkaZziela(C_Item)
 	TEXT[1]				= NAME_Bonus_Mana;				COUNT[1]	= 50;
 	TEXT[2]				= "Cenny sk³adnik alchemiczny.";
 	TEXT[3]				= "Sk³adnik bazowy napoju w³adzy.";
-	TEXT[5]				= NAME_Value;					COUNT[5]	= 300;
+	TEXT[5]				= NAME_Value;					COUNT[5]	= 200;
 };
 
 		func void Usemoos3 ()
@@ -317,6 +317,36 @@ INSTANCE ItFo_Plants_PapkaZziela(C_Item)
 			Npc_ChangeAttribute	(self,	ATR_MANA,	50);
 			PrintDebugNpc 		(PD_ITEM_MOBSI, "Zjad³eœ papkê z ziela");
 		};	
+
+//********************************************************************
+// Kwiat Nemora
+//********************************************************************
+INSTANCE ItFo_Plants_NemorsFlower(C_Item)
+{	
+	name 				=	"Kwiat Nemora";
+
+	mainflag 			=	ITEM_KAT_FOOD;
+	flags 				=	ITEM_MULTI;	
+
+	value 				=	250;
+
+	visual 				=	"Napalms_Plant.3ds";
+	material 			=	MAT_WOOD;
+	on_state[0]			= 	UseNemorsFlower;	
+	scemeName			=	"FOOD";
+
+	description			= name;
+	//TEXT[1]				= NAME_Bonus_Mana;				COUNT[1]	= 50;
+	TEXT[2]				= "Bardzo cenny sk³adnik alchemiczny.";
+	TEXT[3]				= "Sk³adnik bazowy napoju w³adzy i potêgi.";
+	TEXT[5]				= NAME_Value;					COUNT[5]	= 250;
+};
+
+		func void UseNemorsFlower ()
+		{			
+			//Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	HP_Seraphis);
+			PrintDebugNpc 		(PD_ITEM_MOBSI, "UseNemorsFlower");
+		};
 		
 /**********************************************************/
 /**********************************************************/

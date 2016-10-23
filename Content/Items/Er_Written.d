@@ -387,8 +387,9 @@ INSTANCE ItWr_AlchemyPowerPotions(C_Item)
 					//2.Seite
 					Doc_SetMargins	( nDocID, -1, 30, 20, 275, 20, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus, links,oben,rechts,unten)
 					Doc_PrintLine	( nDocID,  1, "Sk³adniki");
-					Doc_PrintLines	( nDocID,  1, "- Roztarte nasiona ogniociernia (napój potêgi)");
-					Doc_PrintLines	( nDocID,  1, "- Roztarte bagienne ziele (napój w³adzy)");
+					Doc_PrintLines	( nDocID,  1, "- Ogniocierñ (2x napój potêgi, 3x napój w³adzy)");
+					Doc_PrintLines	( nDocID,  1, "- Liœæ dêbu (1x napój potêgi, 2x napój w³adzy)");
+					Doc_PrintLines	( nDocID,  1, "- Roztarte bagienne ziele (1x napój potêgi, 2x napój w³adzy)");
 					Doc_PrintLines	( nDocID,  1, "- 3 Psianki");
 					Doc_PrintLines	( nDocID,  1, "- Olej syrianiczny");
 					Doc_PrintLines	( nDocID,  1, "- Czysty alkohol");

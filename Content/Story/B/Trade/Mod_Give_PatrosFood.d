@@ -88,7 +88,7 @@ func void b_givepatrosfoodch4()
 	CreateInvItems(npc,ItFoMutton,5);
 	CreateInvItems(npc,ItFo_mutton_01,5);
 	CreateInvItems(npc,ItFoCheese,5);
-	CreateInvItems(npc,ItWr_AlchemyPermPotions1,1);
+	//CreateInvItems(npc,ItWr_AlchemyPermPotions1,1);
 	CreateInvItems(npc,itwe_przepismoleratsoup,1);
 	CreateInvItems(npc,ItMi_Alchemy_Syrianoil_01,2);
 	CreateInvItems(npc,ItMi_Alchemy_Salt_01,3);
