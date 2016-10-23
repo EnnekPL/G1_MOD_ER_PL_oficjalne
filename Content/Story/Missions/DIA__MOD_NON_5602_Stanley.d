@@ -545,7 +545,7 @@ FUNC VOID DIA_Stanley_Porwanie_Info()
     AI_Output (self, other ,"DIA_Stanley_Porwanie_03_09"); //Na swojego szefa wo³ali Siekacz.
     AI_Output (self, other ,"DIA_Stanley_Porwanie_03_10"); //Mówi ci coœ to imiê?
     AI_Output (other, self ,"DIA_Stanley_Porwanie_15_11"); //Kojarzê goœcia. Zobaczê, co da siê zrobiæ.
-    B_LogEntry                     (CH1_PorwanieAlexa,"Alex zosta³ porwany przez oddzia³ Stra¿ników pod dowództwem Siekacza. ");
+    B_LogEntry                     (CH3_Kidnapping,"Alex zosta³ porwany przez oddzia³ Stra¿ników pod dowództwem Siekacza. ");
 };
 
 

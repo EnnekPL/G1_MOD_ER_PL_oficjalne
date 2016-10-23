@@ -230,7 +230,7 @@ FUNC VOID DIA_Blade_HELLO1_Info()
     AI_Output (self, other ,"DIA_Blade_HELLO1_03_17"); //IdŸ do Starego Obozu i zobacz co siê tam dzieje. Potem wróæ jak najszybciej do mnie. 
 	AI_Output (other, self ,"DIA_Blade_HELLO1_15_18"); //Nie ma potrzeby. Mogê ci wszystko opowiedzieæ od razu. Stra¿nicy na zamku pij¹ piwo i objadaj¹ siê pieczonym miêsem, Magnaci debatuj¹ w sali Gomeza, Kopacze przesia...
 	AI_Output (other, self ,"DIA_Blade_HELLO1_15_19"); //Przestañ siê zgrywaæ i ruszaj siê. Muszê wiedzieæ jak wygl¹da sytuacja. Nie ma czasu. 
-    B_LogEntry                     (CH1_ZabojstwBlizny,"Mam iœæ do Starego Obozu i zobaczyæ co siê tam dzieje. Kosa i jego pracownik ju¿ chyba podjêli jakieœ dzia³ania.");
+    B_LogEntry                     (CH3_ScarMurder,"Mam iœæ do Starego Obozu i zobaczyæ co siê tam dzieje. Kosa i jego pracownik ju¿ chyba podjêli jakieœ dzia³ania.");
     AI_StopProcessInfos	(self);
 	DIA_Blade_HELLO1.permanent = 0;
 	dia_blade_avbl = true;
@@ -286,7 +286,7 @@ FUNC VOID DIA_Blade_BACK_FROM_OC_Info()
     AI_Output (self, other ,"DIA_Blade_BACK_FROM_OC_03_12"); //Ale jeœli siê zdradzisz i powiesz, któremuœ z ludzi Gomeza, ¿e to ja ciê przysy³am, bêdziesz musia³ po sobie posprz¹taæ. Rozumiesz?
     AI_Output (other, self ,"DIA_Blade_BACK_FROM_OC_15_13"); //Tak, nikt ma o niczym nie wiedzieæ.
     AI_Output (self, other ,"DIA_Blade_BACK_FROM_OC_03_14"); //Dobrze, ¿e siê rozumiemy. A teraz idŸ, bo nie ma czasu do stracenia.
-    B_LogEntry                     (CH1_ZabojstwBlizny,"Sytuacja nieco wymknê³a siê spod kontroli. Magnat nie ¿yje, ale to nie znaczy, ¿e sprawa jest zamkniêta. Snake, zabójca, którego wynaj¹³ Kosa najpewniej zosta³ w Starym Obozie i nie mo¿e uciec. Muszê mu pomóc, zanim Stra¿nicy go z³api¹ i ca³a akcja pójdzie na marne. Z poprzedniej rozmowy z Thorusem wiem, ¿e nasz cz³owiek powinien nosiæ zbroje Stra¿ników. Pewnie to dziêki niej jeszcze ¿yje. ");
+    B_LogEntry                     (CH3_ScarMurder,"Sytuacja nieco wymknê³a siê spod kontroli. Magnat nie ¿yje, ale to nie znaczy, ¿e sprawa jest zamkniêta. Snake, zabójca, którego wynaj¹³ Kosa najpewniej zosta³ w Starym Obozie i nie mo¿e uciec. Muszê mu pomóc, zanim Stra¿nicy go z³api¹ i ca³a akcja pójdzie na marne. Z poprzedniej rozmowy z Thorusem wiem, ¿e nasz cz³owiek powinien nosiæ zbroje Stra¿ników. Pewnie to dziêki niej jeszcze ¿yje. ");
     AI_StopProcessInfos	(self);
 };
 
@@ -324,9 +324,9 @@ FUNC VOID DIA_Blade_SNAKESESCAPE_Info()
         AI_Output (self, other ,"DIA_Blade_SNAKESESCAPE_03_05"); //Chcesz przeliczyæ?
         AI_Output (other, self ,"DIA_Blade_SNAKESESCAPE_15_06"); //A powinienem?
         AI_Output (self, other ,"DIA_Blade_SNAKESESCAPE_03_07"); //Nie. Do zobaczenia.
-        B_LogEntry                     (CH1_ZabojstwBlizny,"Odebra³em od Kosy nagrodê za pomoc w wykonaniu zadania. Snake chyba te¿ coœ dla mnie ma. Mam siê z nim spotkaæ w Kotle. Jeœli chcê dowiedzieæ siê wiêcej o sensie ca³ego tego zadania, powinienem pogadaæ z Orikiem.");
-		Log_SetTopicStatus       (CH1_ZabojstwBlizny, LOG_SUCCESS);
-		MIS_ZabojstwBlizny = LOG_SUCCESS;
+        B_LogEntry                     (CH3_ScarMurder,"Odebra³em od Kosy nagrodê za pomoc w wykonaniu zadania. Snake chyba te¿ coœ dla mnie ma. Mam siê z nim spotkaæ w Kotle. Jeœli chcê dowiedzieæ siê wiêcej o sensie ca³ego tego zadania, powinienem pogadaæ z Orikiem.");
+		Log_SetTopicStatus       (CH3_ScarMurder, LOG_SUCCESS);
+		MIS_ScarMurder = LOG_SUCCESS;
         B_GiveXP (500);
 		CreateInvItems (self, ItMiNugget, 500);
         B_GiveInvItems (self, other, ItMiNugget, 500);
@@ -338,9 +338,9 @@ FUNC VOID DIA_Blade_SNAKESESCAPE_Info()
         AI_Output (self, other ,"DIA_Blade_SNAKESESCAPE_03_10"); //Uczestnicz¹c w zabójstwie Magnata powinieneœ ka¿dego Stra¿nika, który ciê zdemaskowa³ uznawaæ za wroga...
         AI_Output (self, other ,"DIA_Blade_SNAKESESCAPE_03_11"); //To tak na przysz³oœæ...
         AI_Output (self, other ,"DIA_Blade_SNAKESESCAPE_03_12"); //Oto twoja ruda. 
-        B_LogEntry                     (CH1_ZabojstwBlizny,"Odebra³em od Kosy nagrodê za pomoc w wykonaniu zadania. Jeœli chcê dowiedzieæ siê wiêcej o sensie ca³ego tego zadania, powinienem pogadaæ z Orikiem.");
-		Log_SetTopicStatus       (CH1_ZabojstwBlizny, LOG_SUCCESS);
-		MIS_ZabojstwBlizny = LOG_SUCCESS;
+        B_LogEntry                     (CH3_ScarMurder,"Odebra³em od Kosy nagrodê za pomoc w wykonaniu zadania. Jeœli chcê dowiedzieæ siê wiêcej o sensie ca³ego tego zadania, powinienem pogadaæ z Orikiem.");
+		Log_SetTopicStatus       (CH3_ScarMurder, LOG_SUCCESS);
+		MIS_ScarMurder = LOG_SUCCESS;
 		
         B_GiveXP (500);
         CreateInvItems (self, ItMiNugget, 500);
@@ -429,7 +429,7 @@ FUNC VOID DIA_Blade_Next_Info()
     AI_Output (self, other ,"DIA_Blade_Next_15_06"); //Je¿eli Stra¿nicy jednak nie bêd¹ ciê zaczepiaæ, to idŸ mu to powiedz osobiœcie.
 	AI_Output (self, other ,"DIA_Blade_Next_03_07"); //IdŸ ju¿.
 	
-	B_LogEntry                     (CH1_ZabojstwBlizny,"Mam powiedzieæ BliŸnie, ¿e Stra¿nik Spike chce siê z nim spotkaæ przy kaplicy Innosa.");
+	B_LogEntry                     (CH3_ScarMurder,"Mam powiedzieæ BliŸnie, ¿e Stra¿nik Spike chce siê z nim spotkaæ przy kaplicy Innosa.");
 	var C_NPC kosa	; kosa 	= Hlp_GetNpc (SLD_704_Blade	);
 	Npc_RemoveInvItems (kosa, ItMw_1H_Mace_War_03, 1);
 	EquipItem (kosa, egzekutor_killer);
@@ -471,7 +471,7 @@ FUNC VOID DIA_Blade_Guardnians_Info()
     AI_Output (self, other ,"DIA_Blade_Guardnians_03_04"); //Ja muszê zabiæ Bliznê. Postaram siê to zrobiæ szybko. Mam specjalny miecz.
     AI_Output (self, other ,"DIA_Blade_Guardnians_03_05"); //Ty postaraj siê prze¿yæ. Wypij szybko tê miksturê. Zwiêkszy twoj¹ si³ê. 
     AI_Output (self, other ,"DIA_Blade_Guardnians_03_06"); //Musimy jakoœ sobie poradziæ.
-    B_LogEntry                     (CH1_ZabojstwBlizny,"Cholera... spapra³em sprawê. Blizna idzie w naszym kierunku wraz z dwoma najlepszymi Stra¿nikami. Muszê prze¿yæ i odci¹gn¹æ uwagê Stra¿ników. Z naciskiem na prze¿yæ.");
+    B_LogEntry                     (CH3_ScarMurder,"Cholera... spapra³em sprawê. Blizna idzie w naszym kierunku wraz z dwoma najlepszymi Stra¿nikami. Muszê prze¿yæ i odci¹gn¹æ uwagê Stra¿ników. Z naciskiem na prze¿yæ.");
 
     CreateInvItems (self, ItFo_PotionTime_Master_01, 1);
     B_GiveInvItems (self, other, ItFo_PotionTime_Master_01, 1);
@@ -507,7 +507,7 @@ FUNC INT DIA_Blade_Wygrana_Condition()
 FUNC VOID DIA_Blade_Wygrana_Info()
 {
     AI_Output (self, other ,"DIA_Blade_Wygrana_03_01"); //Cholera, uda³o nam siê! Spadamy! Ruszaj siê.
-    B_LogEntry                     (CH1_ZabojstwBlizny,"Uda³o nam siê. Musimy uciekaæ z Obozu.");
+    B_LogEntry                     (CH3_ScarMurder,"Uda³o nam siê. Musimy uciekaæ z Obozu.");
 	czas_ucieczki_scar = 20;
     B_GiveXP (300);
     AI_StopProcessInfos	(self);
@@ -551,9 +551,9 @@ FUNC VOID DIA_Blade_QuestSukces_Info()
     AI_Output (self, other ,"DIA_Blade_QuestSukces_03_09"); //Uwa¿aj przez jakiœ czas na Stra¿ników. Lepiej nie wchodŸ do obozu.
     CreateInvItems (self, ItMiNugget, 1000);
     B_GiveInvItems (self, other, ItMiNugget, 1000);
-    B_LogEntry               (CH1_ZabojstwBlizny,"Blizna nie ¿yje. Okazuje siê, ¿e za sznurki poci¹ga³ Orik. Ciekawe co ma do tego Magnata.");
-    Log_SetTopicStatus       (CH1_ZabojstwBlizny, LOG_SUCCESS);
-    MIS_ZabojstwBlizny = LOG_SUCCESS;
+    B_LogEntry               (CH3_ScarMurder,"Blizna nie ¿yje. Okazuje siê, ¿e za sznurki poci¹ga³ Orik. Ciekawe co ma do tego Magnata.");
+    Log_SetTopicStatus       (CH3_ScarMurder, LOG_SUCCESS);
+    MIS_ScarMurder = LOG_SUCCESS;
 	czas_ucieczki_scar2 = 300;
     B_GiveXP (XP_ZabojstwoBlizny);
     AI_StopProcessInfos	(self);

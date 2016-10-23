@@ -39,7 +39,7 @@ INSTANCE DIA_Snake_NOWAY (C_INFO)
 FUNC INT DIA_Snake_NOWAY_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Blade_BACK_FROM_OC))
-    && (MIS_ZabojstwBlizny == LOG_RUNNING)
+    && (MIS_ScarMurder == LOG_RUNNING)
     && (kapitel == 3)
     {
     return TRUE;
@@ -66,7 +66,7 @@ FUNC VOID DIA_Snake_NOWAY_Info()
     AI_Output (self, other ,"DIA_Snake_NOWAY_03_15"); //Spokojnie, mam swoje sposoby. Zrobiê ma³e zamieszanie i przedostanê siê w pobli¿e sypialni Stra¿ników. Stamt¹d do wejœcia do lochów ju¿ tylko kilka kroków.
     AI_Output (other, self ,"DIA_Snake_NOWAY_15_16"); //W porz¹dku. Powodzenia.
     AI_Output (self, other ,"DIA_Snake_NOWAY_03_17"); //Pospiesz siê. A i gdybym siê nie zjawi³ za drzwiami nie panikuj. Przeœpij siê, poczekaj, a ja na pewno siê zjawiê.
-    B_LogEntry                     (CH1_ZabojstwBlizny,"Odnalaz³em Snake'a w zamku. Musze mu pomóc w ucieczce. W tym celu mam siê udaæ na plac targowy, odnaleŸæ dziurê w murze i zabiæ pilnuj¹cego wyjœcia z lochów Stra¿nika.");
+    B_LogEntry                     (CH3_ScarMurder,"Odnalaz³em Snake'a w zamku. Musze mu pomóc w ucieczce. W tym celu mam siê udaæ na plac targowy, odnaleŸæ dziurê w murze i zabiæ pilnuj¹cego wyjœcia z lochów Stra¿nika.");
 	
 
     B_GiveXP (200);
@@ -92,7 +92,7 @@ INSTANCE DIA_Snake_CELLAR (C_INFO)
 FUNC INT DIA_Snake_CELLAR_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_DungeonGuard_KILL))
-    && (MIS_ZabojstwBlizny == LOG_RUNNING)
+    && (MIS_ScarMurder == LOG_RUNNING)
 	&& (Npc_GetDistToNpc(self,hero) < 300)
     {
     return TRUE;
@@ -109,7 +109,7 @@ FUNC VOID DIA_Snake_CELLAR_Info()
     {
         AI_Output (other, self ,"DIA_Snake_CELLAR_15_03"); //Tak. Mo¿esz uciekaæ.
         AI_Output (self, other ,"DIA_Snake_CELLAR_03_04"); //Podziêkujê ci innym razem. Teraz nie ma na to czasu.
-        B_LogEntry                     (CH1_ZabojstwBlizny,"Pomog³em Snake'owi uciec z zamku. Najwy¿sza pora wróciæ do Kosy.");
+        B_LogEntry                     (CH3_ScarMurder,"Pomog³em Snake'owi uciec z zamku. Najwy¿sza pora wróciæ do Kosy.");
 
         B_GiveXP (100);
         Npc_ExchangeRoutine (self, "START");
@@ -182,7 +182,7 @@ INSTANCE DIA_Snake_HelloGuy (C_INFO)
 
 FUNC INT DIA_Snake_HelloGuy_Condition()
 {
-    if (MIS_ZabojstwBlizny != LOG_RUNNING)
+    if (MIS_ScarMurder != LOG_RUNNING)
     {
     return TRUE;
     };
@@ -212,7 +212,7 @@ INSTANCE DIA_Snake_Colony (C_INFO)
 
 FUNC INT DIA_Snake_Colony_Condition()
 {
-    if (MIS_ZabojstwBlizny == LOG_SUCCESS)
+    if (MIS_ScarMurder == LOG_SUCCESS)
     {
     return TRUE;
     };
@@ -267,7 +267,7 @@ INSTANCE DIA_Snake_FreeMineCamp (C_INFO)
 
 FUNC INT DIA_Snake_FreeMineCamp_Condition()
 {
-    if (MIS_ZabojstwBlizny == LOG_SUCCESS) && (kapitel < 4)
+    if (MIS_ScarMurder == LOG_SUCCESS) && (kapitel < 4)
     {
     return TRUE;
     };

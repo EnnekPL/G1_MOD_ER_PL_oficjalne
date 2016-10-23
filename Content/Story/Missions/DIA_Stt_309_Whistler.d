@@ -456,10 +456,10 @@ FUNC VOID DIA_Whistler_Zdrada_Info()
 	Log_SetTopicStatus       (CH1_NewsFromSpy, LOG_FAILED);
 	B_LogEntry      	(CH1_NewsFromSpy,"Porzuci³em Bandytów. Stary Obóz wydaje siê byæ lepszym miejscem dla mnie.");
 	
-	BANDITOS_CAMP = LOG_FAILED;
-	PrintScreen	("Anulowano zadanie: Przyjêcie do Obozu Bandytów! ", 1,-1,"font_new_10_red.tga",2);	
-	Log_SetTopicStatus       (CH1_BANDITOS_CAMP, LOG_FAILED);
-	B_LogEntry                     (CH1_BANDITOS_CAMP,"Porzuci³em Bandytów. Stary Obóz wydaje siê byæ lepszym miejscem dla mnie.");
+	//BANDITOS_CAMP = LOG_FAILED;
+	//PrintScreen	("Anulowano zadanie: Przyjêcie do Obozu Bandytów! ", 1,-1,"font_new_10_red.tga",2);	
+	//Log_SetTopicStatus       (CH1_BANDITOS_CAMP, LOG_FAILED);
+	//B_LogEntry                     (CH1_BANDITOS_CAMP,"Porzuci³em Bandytów. Stary Obóz wydaje siê byæ lepszym miejscem dla mnie.");
 	};
 	
 	// **************************************************

@@ -622,7 +622,7 @@ INSTANCE DIA_Will_PrzystanekZamosc (C_INFO)
 FUNC INT DIA_Will_PrzystanekZamosc_Condition()
 {
     if (Npc_GetDistToWP (self, "OW_PATH_07_15_CAVE2") < 1000)
-    && (Npc_KnowsInfo (hero, DIA_Will_Ruchy)
+    && (Npc_KnowsInfo (hero, DIA_Will_Ruchy))
     {
     return TRUE;
     };

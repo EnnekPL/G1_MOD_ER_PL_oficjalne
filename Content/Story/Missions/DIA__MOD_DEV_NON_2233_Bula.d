@@ -81,18 +81,18 @@ devmode_dostawyalkoholu = true;
 
 func void DIA_Bula_DevMode20 ()
 {
-	MIS_JosepZniknal = LOG_RUNNING;
+	MIS_MissedJosep = LOG_RUNNING;
 
-    Log_CreateTopic            (CH1_JosepZniknal, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_JosepZniknal, LOG_RUNNING);
-    B_LogEntry                     (CH1_JosepZniknal,"Z obozu znikn¹³ jeden z myœliwych. Od Alexa dowiedzia³em siê, ¿e nazywa³ siê Josep i polowa³ w okolicach Nowego Obozu.");
+    Log_CreateTopic            (CH1_MissedJosep, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_MissedJosep, LOG_RUNNING);
+    B_LogEntry                     (CH1_MissedJosep,"Z obozu znikn¹³ jeden z myœliwych. Od Alexa dowiedzia³em siê, ¿e nazywa³ siê Josep i polowa³ w okolicach Nowego Obozu.");
 	
 	CreateInvItems (self, ItMiNugget, 300);
     B_GiveInvItems (self, other, ItMiNugget, 300);
-    B_LogEntry                     (CH1_JosepZniknal,"Josep wróci³ do obozu. Alex by³ bardzo zadowolony z moich dokonañ.");
+    B_LogEntry                     (CH1_MissedJosep,"Josep wróci³ do obozu. Alex by³ bardzo zadowolony z moich dokonañ.");
 
-    Log_SetTopicStatus       (CH1_JosepZniknal, LOG_SUCCESS);
-    MIS_JosepZniknal = LOG_SUCCESS;
+    Log_SetTopicStatus       (CH1_MissedJosep, LOG_SUCCESS);
+    MIS_MissedJosep = LOG_SUCCESS;
 
     B_GiveXP (350);
 	Npc_ExchangeRoutine (NON_5614_Josep, "camp");
@@ -218,7 +218,7 @@ func void DIA_Bula_OpcjeBACK ()
  
  func void DIA_Bula_Devmode4 ()
  {
-     B_LogEntry                     (CH1_ZabojstwBlizny,"Dziwne... Mil zachowywa³ siê podejrzanie. Powiedzia³, ¿e je¿eli chcê dorobiæ muszê pogadaæ z Kos¹. Mo¿e od niego dowiem siê, dlaczego p³aszcz mia³ trafiæ do Blizny.");
+     B_LogEntry                     (CH3_ScarMurder,"Dziwne... Mil zachowywa³ siê podejrzanie. Powiedzia³, ¿e je¿eli chcê dorobiæ muszê pogadaæ z Kos¹. Mo¿e od niego dowiem siê, dlaczego p³aszcz mia³ trafiæ do Blizny.");
 
     B_GiveXP (200);
     AI_StopProcessInfos	(self);

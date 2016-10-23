@@ -181,8 +181,8 @@ const string CH4_BanditNeedPsionicHelp 		= "Co siê dzieje u Bandytów?";
 //***Obóz Bandytów***
 //***Zmienne zadañ***
 
-var int MIS_SmallDelivery;
-const string CH1_SmallDelivery     			= "Dostawa dla Emanuela";
+var int MIS_EmanuelDelivery;
+const string CH1_EmanuelDelivery     		= "Dostawa dla Emanuela";
 
 var int MIS_EmanuelsDeals;
 const string CH1_EmanuelsDeals      		=   "Handel Emanuela";
@@ -318,10 +318,13 @@ var int MIS_StupidMagican;
 const string CH2_StupidMagican      		= "Szkodnik-magik w Nowym Obozie";
 
 var int MIS_CronosArtifacts;
-const string CH1_MagicySzkodnicy    	= "Nieudolni magicy";
+const string CH1_MagicySzkodnicy    		= "Nieudolni magicy";
 
 var int MIS_TreasureOldGuard;
 const string CH2_TreasureOldGuard 			= "Skarb starego Stra¿nika";
+
+var int MIS_ScarMurder;
+const string CH3_ScarMurder  				= "Blizna na sumieniu";
 
 var int MIS_ThreeLords;
 const string CH4_ThreeLords     			= "Trzej Lordowie";
@@ -346,11 +349,15 @@ const string CH4_HuntersSupport      		= "Wsparcie od ³owców";
 
 //***Kolonia***
 //***Zmienne zadañ***
+
 var int MIS_FlyingBook;
 const string CH1_FlyingBook   				= "Lataj¹cy pamiêtnik";
 
 var int MIS_HunterHugo;
 const string CH1_HunterHugo     	 		= "£owca Hugo";
+
+var int MIS_MissedJosep;
+const string CH1_MissedJosep    			= "Zaginiêce Josepa";
 
 var int MIS_SpikeLoser;
 const string CH1_SpikeLoser      			= "Problem Spike'a";
@@ -414,6 +421,12 @@ const string CH3_NewBloodForOrcHunters      = "Rekruci do obozu ³owców";
 
 var int MIS_Aidan_Quest;
 const string CH3_Aidan_Quest      			= "Proœba Aidana";
+
+var int MIS_Kidnapping;
+const string CH3_Kidnapping    				= "Porwanie Alexa";
+
+var int MIS_PlantsForClaw;
+const string CH3_PlantsForClaw      		= "Ziele dla Clawa";
 
 var int MIS_CorristoEvil;
 const string CH4_CorristoEvil      			= "Ucieczka Corristo";
@@ -501,6 +514,7 @@ var int amulet_sprzedany; //OreInOM
 var int hero_explore_aidanquestcave;
 var int Nyras_splacil_Talasa; var int Hero_dogadany_Nyras; var int Hero_donosi_na_Nyras; var int ruda_talasa_odzyskana; //oszukany handlarz
 var int guysay_about_hut;
+var int day_LeftyAndZick;
 
 //***Pomocnicze***
 //***Wld_GetDay***

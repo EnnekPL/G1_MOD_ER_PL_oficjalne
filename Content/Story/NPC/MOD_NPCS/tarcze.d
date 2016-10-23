@@ -750,6 +750,19 @@ FUNC VOID Rtn_start_5614 ()
 	TA_Sleep		(20,35,07,35,"NC_PATH_PEASANT4");
 	TA_PickRice		(07,35,20,35,"NC_PATH81");
 };
+
+FUNC VOID Rtn_guide_5614 ()
+{
+	TA_GuidePC		(20,35,07,35,"OW_PATH_066");
+	TA_GuidePC		(07,35,20,35,"OW_PATH_066");
+};
+
+FUNC VOID Rtn_guide2_5614 ()
+{
+	TA_GuidePC		(20,35,07,35,"PACZ2");
+	TA_GuidePC		(07,35,20,35,"PACZ2");
+};
+
 FUNC VOID Rtn_camp_5614 ()
 {
 	TA_smoke		(20,35,07,35,"WYKOAPLISKA2_MS1");

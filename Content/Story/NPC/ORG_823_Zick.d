@@ -1,11 +1,11 @@
-instance ORG_823_Organisator (Npc_Default)
+instance ORG_823_Zick (Npc_Default)
 {
 	//-------- primary data --------
 	
-	name =					Name_Organisator;
-	Npctype =				Npctype_Ambient;
+	name =					"Zick";
+	Npctype =				Npctype_Main;
 	guild =						GIL_ORG;      
-	level =						8;
+	level =						3;
 
 	
 	voice =						7;
@@ -14,12 +14,12 @@ instance ORG_823_Organisator (Npc_Default)
 
 	//-------- abilities --------
 
-	attribute[ATR_STRENGTH] =		30;
-	attribute[ATR_DEXTERITY] =		30;
+	attribute[ATR_STRENGTH] =		15;
+	attribute[ATR_DEXTERITY] =		15;
 	attribute[ATR_MANA_MAX] =		0;
 	attribute[ATR_MANA] =			0;
-	attribute[ATR_HITPOINTS_MAX] =	136;
-	attribute[ATR_HITPOINTS] =		136;
+	attribute[ATR_HITPOINTS_MAX] =	80;
+	attribute[ATR_HITPOINTS] =		80;
 
 	//-------- visuals --------
 	// 				animations
@@ -37,7 +37,7 @@ instance ORG_823_Organisator (Npc_Default)
 	//-------- Talente ----------
 
 	Npc_SetTalentSkill (self, NPC_TALENT_BOW,1);
-	Npc_SetTalentSkill (self, NPC_TALENT_1H,4);
+	Npc_SetTalentSkill (self, NPC_TALENT_1H,2);
 	
 
 	//-------- inventory --------   
@@ -68,14 +68,20 @@ FUNC VOID Rtn_start_823 ()
 	TA_SitAround	(20,00,00,00,"NC_HUT21_OUT");
 };
 
+FUNC VOID Rtn_follow_823 ()
+{
+	TA_FollowPC		(00,00,12,30,"NC_HUT21_OUT");
+	TA_FollowPC		(12,30,00,00,"NC_HUT21_OUT");
+};
 
+FUNC VOID Rtn_loser_823 ()
+{
+	TA_SitCampfire	(00,00,12,30,"OW_PATH_075_GUARD");
+	TA_SitCampfire	(12,30,00,00,"OW_PATH_075_GUARD");
+};
 
-
-
-
-
-
-
-
-
-
+FUNC VOID Rtn_party_823 ()
+{
+	TA_Boss	(00,00,12,30,"OW_PATH_066");
+	TA_Boss	(12,30,00,00,"OW_PATH_066");
+};

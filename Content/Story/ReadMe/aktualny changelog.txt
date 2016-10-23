@@ -50,3 +50,4 @@
 - bandyci napadaj¹cy na nas podczas eskortowania konwoju lepiej walcz¹ orê¿em
 - przywódca eskorty nie wspomina ju¿ o kopaczach przed obozem, których nie ma
 - przywódca eskorty podchodzi do nas podczas dialogu
+- przerobione zadanie z zaginiêciem Josepa

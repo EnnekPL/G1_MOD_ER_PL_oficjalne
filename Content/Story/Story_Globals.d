@@ -877,16 +877,16 @@ var int MIS_MagnatTrololo;
 var int MIS_OpiniaOSO;
 var int MIS_FightWithScar;
 var int MIS_UCieczkaShrata;
-var int MIS_PorwanieAlexa;
+
 
 
 var int MIS_NieSpelnionaZemsta;//usuniête
 var int MIS_DrogaDoKopalni;
 
 var int MIS_MroczneBractwo;//usuniête
-var int MIS_ZieleClawa;
-var int MIS_ZabojstwBlizny;
-var int MIS_JosepZniknal;
+
+
+
 var int MIS_DziwnyJosep;
 var int MIS_WalkiBractwo;
 

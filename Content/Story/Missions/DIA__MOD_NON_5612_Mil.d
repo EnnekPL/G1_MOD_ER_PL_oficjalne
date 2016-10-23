@@ -179,10 +179,10 @@ FUNC VOID DIA_Mil_PlaszczOK_Info()
 	AI_Output (self, other ,"DIA_Mil_PlaszczOK_03_03"); //Mam dla ciebie jeszcze jedno zlecenie.
     AI_Output (self, other ,"DIA_Mil_PlaszczOK_03_04"); //IdŸ do Starego Obozu i znajdŸ mi pasera, który dopilnuje, ¿eby ten p³aszcz trafi³ w rêce Magnata Blizny.
     AI_Output (self, other ,"DIA_Mil_PlaszczOK_03_05"); //Zrób to szybko. Gdy p³aszcz bêdzie jego, wróæ do mnie.  
-    MIS_ZabojstwBlizny = LOG_RUNNING;
-    Log_CreateTopic          (CH1_ZabojstwBlizny, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_ZabojstwBlizny, LOG_RUNNING);
-    B_LogEntry               (CH1_ZabojstwBlizny,"Mam znaleŸæ kogoœ, kto sprzeda p³aszcz ze skóry wilka Magnatowi imieniem Blizna. Muszê szukaæ wœród handlarzy ze Starego Obozu.");
+    MIS_ScarMurder = LOG_RUNNING;
+    Log_CreateTopic          (CH3_ScarMurder, LOG_MISSION);
+    Log_SetTopicStatus       (CH3_ScarMurder, LOG_RUNNING);
+    B_LogEntry               (CH3_ScarMurder,"Mam znaleŸæ kogoœ, kto sprzeda p³aszcz ze skóry wilka Magnatowi imieniem Blizna. Muszê szukaæ wœród handlarzy ze Starego Obozu.");
 	}
 	else
 	{
@@ -207,7 +207,7 @@ INSTANCE DIA_Mil_BliznaDed (C_INFO)
 
 FUNC INT DIA_Mil_BliznaDed_Condition()
 {
-    if (MIS_ZabojstwBlizny == LOG_RUNNING) 
+    if (MIS_ScarMurder == LOG_RUNNING) 
 	&& ((oferta_fiska == true)
     || (Npc_KnowsInfo (hero, DIA_Whistler_SellPlaszcz))
    || (Npc_KnowsInfo (hero, DIA_Gravo_GiveItemPlaszcz)))
@@ -226,7 +226,7 @@ FUNC VOID DIA_Mil_BliznaDed_Info()
     AI_Output (other, self ,"DIA_Mil_BliznaDed_15_05"); //Kosê? Czy on jest w to wszystko wmieszany? Dlaczego p³aszcz mia³ trafiæ do Blizny?
     AI_Output (self, other ,"DIA_Mil_BliznaDed_03_06"); //Pytania póŸniej. Powtórzê, jeœli chcesz dorobiæ, to idŸ do Kosy. 
     AI_Output (self, other ,"DIA_Mil_BliznaDed_03_07"); //No, ju¿. Nie zawracaj mi g³owy.
-    B_LogEntry                     (CH1_ZabojstwBlizny,"Dziwne... Mil zachowywa³ siê podejrzanie. Powiedzia³, ¿e je¿eli chcê dorobiæ muszê pogadaæ z Kos¹. Mo¿e od niego dowiem siê, dlaczego p³aszcz mia³ trafiæ do Blizny.");
+    B_LogEntry                     (CH3_ScarMurder,"Dziwne... Mil zachowywa³ siê podejrzanie. Powiedzia³, ¿e je¿eli chcê dorobiæ muszê pogadaæ z Kos¹. Mo¿e od niego dowiem siê, dlaczego p³aszcz mia³ trafiæ do Blizny.");
 
     B_GiveXP (200);
     AI_StopProcessInfos	(self);

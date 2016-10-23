@@ -224,11 +224,10 @@ const string CH1_TestOc    			 	= "Test myœliwski"; //do obrobki
 //   Obóz myœliwych
 //---------------------------------------------------------------------
 
-const string CH1_PorwanieAlexa    			 = "Porwanie Alexa";
-const string CH1_ZieleClawa      			 	= "Ziele dla Clawa";
-const string CH1_ZabojstwBlizny  		 = "Blizna na sumieniu";
-const string CH1_JosepZniknal    		= "Josep znikn¹³";
-const string CH1_DziwnyJosep    		= "Dziwne zachowania";
+
+
+
+
 
 
 
@@ -294,3 +293,4 @@ const string    CH1_BANDITOS_MORDRAG    =   "Sytuacja w Starym Obozie";
 const string 	CH1_BANDITOS_RINGS      =   "Piêæ pierœcieni";
 const string CH1_UCieczkaShrata    			 = "Nowe miejsce dla Shrata";
 const string CH1_DrogaDoKopalni     	= "Do kopalni z³ota";
+const string CH1_DziwnyJosep    		= "Dziwne zachowania";

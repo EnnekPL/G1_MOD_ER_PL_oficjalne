@@ -86,11 +86,11 @@ FUNC VOID DIA_Emanuel_QUEST1_Info()
 	{
     AI_Output (self, other ,"DIA_Emanuel_QUEST1_03_07"); //Poza tym nie jesteœ jednym z Bandytów, ¿eby móc mieszaæ siê w moje interesy.
 	};
-    MIS_SmallDelivery = LOG_RUNNING;
+    MIS_EmanuelDelivery = LOG_RUNNING;
 
-    Log_CreateTopic          (CH1_SmallDelivery, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_SmallDelivery, LOG_RUNNING);
-    B_LogEntry               (CH1_SmallDelivery,"Emanuel kaza³ mi przynieœæ zio³a i miêso od myœliwego Draxa.");
+    Log_CreateTopic          (CH1_EmanuelDelivery, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_EmanuelDelivery, LOG_RUNNING);
+    B_LogEntry               (CH1_EmanuelDelivery,"Emanuel kaza³ mi przynieœæ zio³a i miêso od myœliwego Draxa.");
 };
 
 //========================================
@@ -135,11 +135,11 @@ FUNC VOID DIA_Emanuel_MAMZIOLA_Info()
 	
 	CreateInvItems (self, ItMiNugget, 10);
     B_GiveInvItems (self, other, ItMiNugget, 10);
-    B_LogEntry                     (CH1_SmallDelivery,"Dostarczy³em ¿ywnoœæ Emanuelowi. Dosta³em 10 bry³ek rudy.");
-    Log_SetTopicStatus       (CH1_SmallDelivery, LOG_SUCCESS);
-    MIS_SmallDelivery = LOG_SUCCESS;
+    B_LogEntry                     (CH1_EmanuelDelivery,"Dostarczy³em ¿ywnoœæ Emanuelowi. Dosta³em 10 bry³ek rudy.");
+    Log_SetTopicStatus       (CH1_EmanuelDelivery, LOG_SUCCESS);
+    MIS_EmanuelDelivery = LOG_SUCCESS;
 
-    B_GiveXP (XP_MIS_SmallDelivery);
+    B_GiveXP (XP_EmanuelDelivery);
 };
 
 //========================================

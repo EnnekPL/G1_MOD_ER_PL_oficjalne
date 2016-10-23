@@ -939,7 +939,7 @@ FUNC VOID DIA_Drax_GOTO_BANDITOS_Info() //fix nazwy z du¿ej 1.4
 {
     AI_Output (other, self ,"DIA_Drax_GOTO_BANDITOS_15_01"); //ChodŸmy do Obozu Bandytów!
     AI_Output (self, other ,"DIA_Drax_GOTO_BANDITOS_03_02"); //IdŸ za mn¹! Tylko uwa¿aj na dzik¹ zwierzynê.
-    BANDITOS_CAMP = LOG_RUNNING;
+    //BANDITOS_CAMP = LOG_RUNNING;
 
     //Log_CreateTopic            (CH1_BANDITOS_CAMP, LOG_MISSION);
     //Log_SetTopicStatus       (CH1_BANDITOS_CAMP, LOG_RUNNING);
@@ -1031,7 +1031,7 @@ FUNC VOID DIA_Drax_ZIOLA_Info()
     CreateInvItems (self, ItFoMuttonRaw, 13);
     B_GiveInvItems (self, other, ItFoMuttonRaw, 13);
 	//log
-    B_LogEntry     (CH1_SmallDelivery,"Drax przekaza³ mi to, co uda³o im siê zdobyæ. Teraz muszê szybko zanieœæ to do Emanuela. Jest tu: oko³o 20 grzybów, dwie sztuki ziela, piêæ kawa³ków miêsa chrz¹szcza i 13 kawa³ków miêsa œcierwojada.");
+    B_LogEntry     (CH1_EmanuelDelivery,"Drax przekaza³ mi to, co uda³o im siê zdobyæ. Teraz muszê szybko zanieœæ to do Emanuela. Jest tu: oko³o 20 grzybów, dwie sztuki ziela, piêæ kawa³ków miêsa chrz¹szcza i 13 kawa³ków miêsa œcierwojada.");
 	//experience
     B_GiveXP (50);
 };

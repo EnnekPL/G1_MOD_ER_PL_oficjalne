@@ -484,7 +484,7 @@ INSTANCE DIA_Horatio_Josep (C_INFO)
 
 FUNC INT DIA_Horatio_Josep_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Josep_HELLO1))
+    if (Npc_KnowsInfo (hero, DIA_Josep_Sorry))
 	&& (MIS_BuntZbieraczy != LOG_SUCCESS)
     {
     return TRUE;

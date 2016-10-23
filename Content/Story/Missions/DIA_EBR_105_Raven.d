@@ -551,7 +551,7 @@ INSTANCE DIA_Raven_ZniewolonyAlex (C_INFO)
 FUNC INT DIA_Raven_ZniewolonyAlex_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Cutter_PorwanieMysliwego))
-    && (MIS_PorwanieAlexa == LOG_RUNNING)
+    && (MIS_Kidnapping == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -570,7 +570,7 @@ FUNC VOID DIA_Raven_ZniewolonyAlex_Info()
     AI_Output (self, other ,"DIA_Raven_ZniewolonyAlex_03_07"); //Bêdzie ciê to kosztowaæ 1000 bry³ek rudy.
     AI_Output (other, self ,"DIA_Raven_ZniewolonyAlex_15_08"); //Ile?!
     AI_Output (self, other ,"DIA_Raven_ZniewolonyAlex_03_09"); //Nie próbuj ¿adnych sztuczek.
-    B_LogEntry                     (CH1_PorwanieAlexa,"Kruk ¿yczy sobie 1000 bry³ek rudy za wypuszczenie Alexa.");
+    B_LogEntry                     (CH3_Kidnapping,"Kruk ¿yczy sobie 1000 bry³ek rudy za wypuszczenie Alexa.");
 };
 
 //========================================
@@ -590,7 +590,7 @@ INSTANCE DIA_Raven_ZaplataZaWolnosc (C_INFO)
 FUNC INT DIA_Raven_ZaplataZaWolnosc_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Raven_ZniewolonyAlex))
-    && (MIS_PorwanieAlexa == LOG_RUNNING)
+    && (MIS_Kidnapping == LOG_RUNNING)
     && (Npc_HasItems (hero, ItMiNugget)>=1000)
     {
     return TRUE;
@@ -602,7 +602,7 @@ FUNC VOID DIA_Raven_ZaplataZaWolnosc_Info()
 {
     AI_Output (other, self ,"DIA_Raven_ZaplataZaWolnosc_15_01"); //Chcê, ¿ebyœ go wypuœci³. 
     AI_Output (self, other ,"DIA_Raven_ZaplataZaWolnosc_03_02"); //Dobrze. Skoro tego sobie ¿yczysz.
-    B_LogEntry                     (CH1_PorwanieAlexa,"Poœwiêci³em siê i zap³aci³em 1000 bry³ek rudy za wolnoœæ Alexa.");
+    B_LogEntry                     (CH3_Kidnapping,"Poœwiêci³em siê i zap³aci³em 1000 bry³ek rudy za wolnoœæ Alexa.");
     B_GiveInvItems (other, self, ItMiNugget, 1000);
 
     B_GiveXP (500);

@@ -1,0 +1,320 @@
+
+//========================================
+//-----------------> Sledztwo2
+//========================================
+
+INSTANCE DIA_Josep_Sledztwo2 (C_INFO)
+{
+   npc          = NON_5614_Josep;
+   nr           = 1;
+   condition    = DIA_Josep_Sledztwo2_Condition;
+   information  = DIA_Josep_Sledztwo2_Info;
+   permanent	= FALSE;
+   Important    = TRUE;
+};
+
+FUNC INT DIA_Josep_Sledztwo2_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Josep_Sledztwo))
+    && (Npc_GetDistToNpc(self, other) <= 800)
+	&& (Npc_GetDistToWP (self, "JOSEP2") > 1000)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Josep_Sledztwo2_Info()
+{
+    AI_Output (self, other ,"DIA_Josep_Sledztwo2_03_01"); //To moje ostatnie ostrzeżenie!
+    AI_Output (self, other ,"DIA_Josep_Sledztwo2_03_02"); //Zjeżdżaj, albo pożałujesz! 
+    AI_StopProcessInfos	(self);
+};
+
+//========================================
+//-----------------> Sledztwo3
+//========================================
+
+INSTANCE DIA_Josep_Sledztwo3 (C_INFO)
+{
+   npc          = NON_5614_Josep;
+   nr           = 1;
+   condition    = DIA_Josep_Sledztwo3_Condition;
+   information  = DIA_Josep_Sledztwo3_Info;
+   permanent	= FALSE;
+   Important    = TRUE;
+};
+
+FUNC INT DIA_Josep_Sledztwo3_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Josep_Sledztwo2))
+    && (Npc_GetDistToNpc(self, other) <= 800)
+	&& (Npc_GetDistToWP (self, "JOSEP2") > 1000)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Josep_Sledztwo3_Info()
+{
+    AI_Output (self, other ,"DIA_Josep_Sledztwo3_03_01"); //Cholera, daj mi wreszcie spokój! Wracam do obozu!
+
+	Npc_ExchangeRoutine (self,"start");
+    AI_StopProcessInfos	(self);
+	
+	B_LogEntry                     (CH1_DziwnyJosep,"Podczas śledzenia Josepa dałem się trzykrotnie przyłapać, więc Josep wrócił do obozu. Od teraz będzie mnie obserwował i nie będę miał już okazji go śledzić.");
+    Log_SetTopicStatus       (CH1_DziwnyJosep, LOG_FAILED);
+    MIS_DziwnyJosep = LOG_FAILED;
+};
+
+//========================================
+//-----------------> NieDales
+//========================================
+
+INSTANCE DIA_Josep_NieDales (C_INFO)
+{
+   npc          = NON_5614_Josep;
+   nr           = 2;
+   condition    = DIA_Josep_NieDales_Condition;
+   information  = DIA_Josep_NieDales_Info;
+   permanent	= FALSE;
+   Important    = TRUE;
+};
+
+FUNC INT DIA_Josep_NieDales_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Alex_Podejrzane))
+	 && (Npc_GetDistToWP (self, "JOSEP2") < 600)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Josep_NieDales_Info()
+{
+    AI_Output (self, other ,"DIA_Josep_NieDales_03_01"); //Nie mogłeś się powstrzymać... Musiałeś za mną iść. Jesteś bardzo dociekliwym człowiekiem.
+    AI_Output (self, other ,"DIA_Josep_NieDales_03_02"); //Pewnie nie raz nieźle na tym wyszedłeś, ale teraz... teraz sprowadziłeś na siebie zgubę!
+    AI_Output (self, other ,"DIA_Josep_NieDales_03_03"); //Pewnie wiesz już o amulecie, który znalazłem. Czyż nie?
+    AI_Output (other, self ,"DIA_Josep_NieDales_15_04"); //Masz rację. Alex mi powiedział.
+    AI_Output (self, other ,"DIA_Josep_NieDales_03_05"); //Ten amulet pozwolił mi posiąść moc samego Beliara. Dysponuję teraz mocami, które są obce nawet niektórym magom!
+    AI_Output (other, self ,"DIA_Josep_NieDales_15_06"); //Nie jesteś sobą! Musisz mi oddać ten amulet. To nie jest rzecz dla ciebie. 
+    AI_Output (self, other ,"DIA_Josep_NieDales_03_07"); //NIGDY!
+
+	AI_StopProcessInfos	(self);
+	Npc_SetTarget (self, other);
+	AI_StartState (self, ZS_ATTACK, 1, "");
+};
+
+//========================================
+//-----------------> Normalny
+//========================================
+
+INSTANCE DIA_Josep_Normalny (C_INFO)
+{
+   npc          = NON_5614_Josep;
+   nr           = 1;
+   condition    = DIA_Josep_Normalny_Condition;
+   information  = DIA_Josep_Normalny_Info;
+   permanent	= FALSE;
+   Important    = TRUE;
+};
+
+FUNC INT DIA_Josep_Normalny_Condition()
+{
+    if (!Npc_HasItems (self, JosepSamulet) >=1)
+    && (Npc_KnowsInfo (hero, DIA_Josep_NieDales))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Josep_Normalny_Info()
+{
+	AI_Output (self, other ,"DIA_Josep_Normalny_03_01"); //Och, moja głowa! Czuję się dziwnie... Jakbyś się czegoś ze mnie pozbył...
+    AI_Output (other, self ,"DIA_Josep_Normalny_15_02"); //To moja specjalność.
+    AI_Output (self, other ,"DIA_Josep_Normalny_03_03"); //Pamiętam... tak już pamiętam co wydarzyło się w ruinach. Słyszałem głos, głos przypominający modlitwy ludzi z Bractwa...
+    AI_Output (self, other ,"DIA_Josep_Normalny_03_04"); //Hipnotyzujący głos...
+    AI_Output (other, self ,"DIA_Josep_Normalny_15_05"); //Spokojnie. Nie ma go tu.
+    AI_Output (self, other ,"DIA_Josep_Normalny_03_06"); //Wreszcie czuję ulgę. Weź te rudę. To wszystko co mam. Nie chcę już widzieć tego amuletu na oczy! Wyrzuć go!
+	AI_Output (other, self ,"DIA_Josep_Normalny_15_07"); //Następnym razem poluj w bezpieczniejszych miejscach. Stare ruiny nie są najlepszym miejscem na spacerek. 
+
+    CreateInvItems (self, ItMiNugget, 30);
+    B_GiveInvItems (self, other, ItMiNugget, 30);
+    B_LogEntry                     (CH1_DziwnyJosep,"Zabierając amulet Josepa oczyściłem jego umysł spod władzy złych mocy. Muszę teraz coś zrobić z tym amuletem. ");
+    Log_SetTopicStatus       (CH1_DziwnyJosep, LOG_SUCCESS);
+    MIS_DziwnyJosep = LOG_SUCCESS;
+
+    B_GiveXP (150);
+    AI_StopProcessInfos	(self);
+    Npc_ExchangeRoutine (self, "camp2");
+};
+
+
+//========================================
+//-----------------> Podejrzane
+//========================================
+
+INSTANCE DIA_Alex_Podejrzane (C_INFO)
+{
+   npc          = NON_5600_Alex;
+   nr           = 2;
+   condition    = DIA_Alex_Podejrzane_Condition;
+   information  = DIA_Alex_Podejrzane_Info;
+   permanent	= FALSE;
+   description	= "Nie uważasz, że Josep zachowuje się trochę dziwnie?";
+};
+
+FUNC INT DIA_Alex_Podejrzane_Condition()
+{
+    if (MIS_JosepZniknal == LOG_SUCCESS)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Alex_Podejrzane_Info()
+{
+    AI_Output (other, self ,"DIA_Alex_Podejrzane_15_01"); //Nie uważasz, że Josep zachowuje się trochę dziwnie?
+    AI_Output (self, other ,"DIA_Alex_Podejrzane_03_02"); //Zrobił się taki od kiedy wrócił z ruin.
+    AI_Output (other, self ,"DIA_Alex_Podejrzane_15_03"); //Ruin? Przecież był w niewoli?
+AI_Output (self, other ,"DIA_Alex_Podejrzane_03_04"); //Tak, ale jakiś miesiąc przed jego zniknięciem też przepadł na parę dni. 
+    AI_Output (self, other ,"DIA_Alex_Podejrzane_03_05"); //Gdy wrócił, powiedział, że zgubił się wśród jakichś ruin. W sumie, pełno tego cholerstwa w Kolonii, więc nie dopytywałem, gdzie dokładnie.
+    AI_Output (other, self ,"DIA_Alex_Podejrzane_15_06"); //Kiedy z nim rozmawiałem, powiedział mi o pewnym amulecie. Gadał, że przysłałeś mnie, żebym mu go zabrał.
+    AI_Output (self, other ,"DIA_Alex_Podejrzane_03_07"); //Obserwuj go, śledź. Może uda ci się czegoś dowiedzieć.
+    MIS_DziwnyJosep = LOG_RUNNING;
+Npc_ExchangeRoutine (NON_5614_Josep, "beliar");
+Npc_SetTalentSkill	(NON_5614_Josep,	NPC_TALENT_MAGE,		6);
+
+ Npc_RemoveInvItems (NON_5614_Josep, ItMw_1H_Scythe_01, 1);
+ 	CreateInvItem		(NON_5614_Josep,	ItArRuneThunderball);
+	NON_5614_Josep.fight_tactic	=	FAI_HUMAN_MAGE; 
+	NON_5614_Josep.level 		=	25;
+	NON_5614_Josep.attribute[ATR_STRENGTH] 	= 200;
+	NON_5614_Josep.attribute[ATR_DEXTERITY]	= 200;
+	NON_5614_Josep.attribute[ATR_MANA_MAX] 	= 300;
+	NON_5614_Josep.attribute[ATR_MANA] 		= 300;
+	NON_5614_Josep.attribute[ATR_HITPOINTS_MAX]= 400;
+	NON_5614_Josep.attribute[ATR_HITPOINTS] 	= 400;
+    Log_CreateTopic            (CH1_DziwnyJosep, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_DziwnyJosep, LOG_RUNNING);
+    B_LogEntry                     (CH1_DziwnyJosep,"Josep zachowuje się bardzo dziwnie. Alex poradził mi, abym go śledził.");
+
+    AI_StopProcessInfos	(NON_5600_Alex);
+};
+
+//========================================
+//-----------------> OpetanyJosep
+//========================================
+
+INSTANCE DIA_Alex_OpetanyJosep (C_INFO)
+{
+   npc          = NON_5600_Alex;
+   nr           = 1;
+   condition    = DIA_Alex_OpetanyJosep_Condition;
+   information  = DIA_Alex_OpetanyJosep_Info;
+   permanent	= FALSE;
+   description	= "Josep był opetany!";
+};
+
+FUNC INT DIA_Alex_OpetanyJosep_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Josep_Normalny))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Alex_OpetanyJosep_Info()
+{
+    AI_Output (other, self ,"DIA_Alex_OpetanyJosep_15_01"); //Josep był opętany!
+    AI_Output (self, other ,"DIA_Alex_OpetanyJosep_03_02"); //Co?!
+    AI_Output (other, self ,"DIA_Alex_OpetanyJosep_15_03"); //To przez amulet, który znalazł w ruinach. Z jego majaczeń mniemam, że zaszło tam coś dziwnego.
+    AI_Output (self, other ,"DIA_Alex_OpetanyJosep_03_04"); //Coś sugerujesz?
+    AI_Output (other, self ,"DIA_Alex_OpetanyJosep_15_05"); //W sumie to nie wiem dokładnie... Musiałbym poprosić o pomoc magów.
+    AI_Output (self, other ,"DIA_Alex_OpetanyJosep_03_06"); //O nie! Odejdź! Nie mieszam się w sprawy magów!
+    B_GiveXP (100);
+    AI_StopProcessInfos	(self);
+	
+	EquipItem (NON_5614_Josep, ItMwZ_1H_Sword_01);
+	EquipItem (NON_5614_Josep, ItRw_Bow_Small_04);
+	CreateInvItem (NON_5614_Josep,NON_WOLF_ARMOR);
+	AI_EquipBestArmor (NON_5614_Josep);
+};
+
+//========================================
+//-----------------> KillJosep
+//========================================
+
+INSTANCE DIA_Alex_KillJosep (C_INFO)
+{
+   npc          = NON_5600_Alex;
+   nr           = 1;
+   condition    = DIA_Alex_KillJosep_Condition;
+   information  = DIA_Alex_KillJosep_Info;
+   permanent	= FALSE;
+   description	= "Josep nie żyje!";
+};
+
+FUNC INT DIA_Alex_KillJosep_Condition()
+{
+    var C_NPC whodie0; 	whodie0 = Hlp_GetNpc(NON_5614_Josep);
+    if (Npc_KnowsInfo (hero, DIA_Josep_NieDales))
+    && (Npc_IsDead(whodie0))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Alex_KillJosep_Info()
+{
+    AI_Output (other, self ,"DIA_Alex_KillJosep_15_01"); //Josep nie żyje!
+    AI_Output (self, other ,"DIA_Alex_KillJosep_03_02"); //Jak to się stało?
+    AI_Output (other, self ,"DIA_Alex_KillJosep_15_03"); //Coś mu odbiło i rzucił się na mnie. Znalazłem przy nim dziwny amulet, który dawał mu niezwykłe moce.
+    AI_Output (other, self ,"DIA_Alex_KillJosep_15_04"); //Raził we mnie piorunami niczym doświadczony mag. Muszę pokazać ten amulet magom.
+    AI_Output (self, other ,"DIA_Alex_KillJosep_03_05"); //Cholera, w Kolonii robi się coraz bardziej niebezpiecznie. Powiem naszym, żeby nie zapuszczali się w ruiny. 
+    B_LogEntry                     (CH1_DziwnyJosep,"Niestety musiałem zabić Josepa. Jego dusza została zepsuta przez Beliara. ");
+
+    Log_SetTopicStatus       (CH1_DziwnyJosep, LOG_SUCCESS);
+    MIS_DziwnyJosep = LOG_SUCCESS;
+
+    B_GiveXP (250);
+    AI_StopProcessInfos	(self);
+};
+//========================================
+//-----------------> Sledztwo
+//========================================
+
+INSTANCE DIA_Josep_Sledztwo (C_INFO)
+{
+   npc          = NON_5614_Josep;
+   nr           = 1;
+   condition    = DIA_Josep_Sledztwo_Condition;
+   information  = DIA_Josep_Sledztwo_Info;
+   permanent	= FALSE;
+   Important    = TRUE;
+};
+
+FUNC INT DIA_Josep_Sledztwo_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Alex_Podejrzane))
+    && (Npc_GetDistToNpc(self, other) <= 800)
+	&& (Npc_GetDistToWP (self, "JOSEP2") > 1000)
+	&& (Npc_GetDistToWP (self, "SPAWN_OW_BLOODFLY_12") > 1800)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Josep_Sledztwo_Info()
+{
+    AI_Output (self, other ,"DIA_Josep_Sledztwo_03_01"); //Cholera, przestań za mną łazić! 
+    AI_Output (self, other ,"DIA_Josep_Sledztwo_03_02"); //Pomogłeś mi, dziękuję, ale teraz odejdź!
+    AI_StopProcessInfos	(self);
+};

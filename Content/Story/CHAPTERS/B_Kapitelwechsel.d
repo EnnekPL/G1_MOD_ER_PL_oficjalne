@@ -232,11 +232,11 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		B_ExchangeRoutine (TPL_3928_GorNaLin,"gardist");
 		//idzie pilnowaæ bramy do Obozu
 		};
-		if (MIS_ZabojstwBlizny == LOG_RUNNING)
+		if (MIS_ScarMurder == LOG_RUNNING)
 		{
-		B_LogEntry                     (CH1_ZabojstwBlizny,"Nie mam dostêpu do Starego Obozu. Nie uda mi siê wykonaæ tego zadania. Poza tym, nie ma teraz na to czasu.");
-		Log_SetTopicStatus       (CH1_ZabojstwBlizny, LOG_FAILED);
-		MIS_ZabojstwBlizny = LOG_FAILED;
+		B_LogEntry                     (CH3_ScarMurder,"Nie mam dostêpu do Starego Obozu. Nie uda mi siê wykonaæ tego zadania. Poza tym, nie ma teraz na to czasu.");
+		Log_SetTopicStatus       (CH3_ScarMurder, LOG_FAILED);
+		MIS_ScarMurder = LOG_FAILED;
 		};
 		B_ExchangeRoutine (GRD_205_Scorpio,"BANNISHED");
 		B_ChangeGuild    (GRD_205_Scorpio,GIL_NONE);  

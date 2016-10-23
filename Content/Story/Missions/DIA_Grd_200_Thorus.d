@@ -2916,7 +2916,7 @@ FUNC VOID DIA_THORUS_SCAR_DIE_Info()
     AI_Output (self, other ,"DIA_THORUS_SCAR_DIE_03_04"); //Jeœli oka¿e siê, ¿e dosz³o do zdrady Gomez urwie mi ³eb!
     AI_Output (other, self ,"DIA_THORUS_SCAR_DIE_15_05"); //Jeœli bêdê coœ wiedzia³ na jego temat z pewnoœci¹ ci powiem.
     AI_Output (self, other ,"DIA_THORUS_SCAR_DIE_03_06"); //Ta... Z pewnoœci¹. IdŸ ju¿ i nie krêæ siê tu!
-    B_LogEntry                     (CH1_ZabojstwBlizny,"Thorus zaczepi³ mnie i powiedzia³, ¿e w Starym Obozie zabito Magnata Bliznê. To Kosa macza³ w tym palce. Muszê szybko do niego wróciæ po wyjaœnienia.");
+    B_LogEntry                     (CH3_ScarMurder,"Thorus zaczepi³ mnie i powiedzia³, ¿e w Starym Obozie zabito Magnata Bliznê. To Kosa macza³ w tym palce. Muszê szybko do niego wróciæ po wyjaœnienia.");
 
     B_GiveXP (100);
     AI_StopProcessInfos	(self);

@@ -493,7 +493,7 @@ INSTANCE DIA_Claw_Okup (C_INFO)
 
 FUNC INT DIA_Claw_Okup_Condition()
 {
-    if (MIS_PorwanieAlexa == LOG_RUNNING)
+    if (MIS_Kidnapping == LOG_RUNNING)
     && (Npc_KnowsInfo (hero, DIA_Raven_ZniewolonyAlex))
     && (!Npc_KnowsInfo (hero, DIA_Raven_ZaplataZaWolnosc))
     {
@@ -512,11 +512,11 @@ FUNC VOID DIA_Claw_Okup_Info()
     AI_Output (self, other ,"DIA_Claw_Okup_03_06"); //Pos³uchaj. Przynieœ mi po trzy ziela: nadmorskie, górskie, polne i lecznicze. Pamiêtaj, po trzy sztuki ka¿dego.
     AI_Output (other, self ,"DIA_Claw_Okup_15_07"); //Dobra. Spróbujê to zrobiæ jak najszybciej.
     AI_Output (self, other ,"DIA_Claw_Okup_03_08"); //Bêdê wdziêczny.
-    MIS_ZieleClawa = LOG_RUNNING;
+    MIS_PlantsForClaw = LOG_RUNNING;
 
-    Log_CreateTopic            (CH1_ZieleClawa, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_ZieleClawa, LOG_RUNNING);
-    B_LogEntry                     (CH1_ZieleClawa,"Claw dorzuci siê na okup za Alexa, je¿eli przyniosê mu po trzy sztuki ziela: górskiego, nadmorskiego, polnego i leczniczego (chodzi o najs³absze ziele).");
+    Log_CreateTopic            (CH3_PlantsForClaw, LOG_MISSION);
+    Log_SetTopicStatus       (CH3_PlantsForClaw, LOG_RUNNING);
+    B_LogEntry                     (CH3_PlantsForClaw,"Claw dorzuci siê na okup za Alexa, je¿eli przyniosê mu po trzy sztuki ziela: górskiego, nadmorskiego, polnego i leczniczego (chodzi o najs³absze ziele).");
 };
 
 //========================================
@@ -535,7 +535,7 @@ INSTANCE DIA_Claw_MamZiele (C_INFO)
 
 FUNC INT DIA_Claw_MamZiele_Condition()
 {
-    if (MIS_ZieleClawa == LOG_RUNNING)
+    if (MIS_PlantsForClaw == LOG_RUNNING)
     && (Npc_HasItems (other, ItFo_Plants_Herb_01) >=3)
     && (Npc_HasItems (other, ItFo_FieldHerb) >=3)
     && (Npc_HasItems (other, ItFo_MountainHerb) >=3)
@@ -551,9 +551,9 @@ FUNC VOID DIA_Claw_MamZiele_Info()
     AI_Output (other, self ,"DIA_Claw_MamZiele_15_01"); //Mam to, o co prosi³eœ.
     AI_Output (self, other ,"DIA_Claw_MamZiele_03_02"); //Œwietnie. Masz tu moje oszczêdnoœci.
     AI_Output (other, self ,"DIA_Claw_MamZiele_15_03"); //Dziêkujê. Przydadz¹ siê.
-    B_LogEntry                     (CH1_ZieleClawa,"Odda³em Clawowi roœliny. Otrzyma³em 200 bry³ek rudy na zap³atê okupu.");
-    Log_SetTopicStatus       (CH1_ZieleClawa, LOG_SUCCESS);
-    MIS_ZieleClawa = LOG_SUCCESS;
+    B_LogEntry                     (CH3_PlantsForClaw,"Odda³em Clawowi roœliny. Otrzyma³em 200 bry³ek rudy na zap³atê okupu.");
+    Log_SetTopicStatus       (CH3_PlantsForClaw, LOG_SUCCESS);
+    MIS_PlantsForClaw = LOG_SUCCESS;
 
     B_GiveXP (250);
     B_GiveInvItems (other, self, ItFo_Plants_Herb_01, 3);

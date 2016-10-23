@@ -352,7 +352,7 @@ INSTANCE DIA_Cutter_PorwanieMysliwego (C_INFO)
 FUNC INT DIA_Cutter_PorwanieMysliwego_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Stanley_Porwanie))
-    && (MIS_PorwanieAlexa == LOG_RUNNING)
+    && (MIS_Kidnapping == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -366,7 +366,7 @@ FUNC VOID DIA_Cutter_PorwanieMysliwego_Info()
     AI_Output (other, self ,"DIA_Cutter_PorwanieMysliwego_15_03"); //Dlaczego to zrobiliœcie?
     AI_Output (self, other ,"DIA_Cutter_PorwanieMysliwego_03_04"); //O to musisz ju¿ spytaæ Kruka.
     AI_Output (self, other ,"DIA_Cutter_PorwanieMysliwego_03_05"); //To on zleci³ nam to zadanie.
-    B_LogEntry                     (CH1_PorwanieAlexa,"Za porwaniem Alexa stoi Kruk. Muszê z nim porozmawiaæ.");
+    B_LogEntry                     (CH3_Kidnapping,"Za porwaniem Alexa stoi Kruk. Muszê z nim porozmawiaæ.");
 
     B_GiveXP (150);
 };
@@ -422,7 +422,7 @@ INSTANCE DIA_Cutter_100OreZaInfo (C_INFO)
 FUNC INT DIA_Cutter_100OreZaInfo_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Cutter_WhereAlex))
-    && (MIS_PorwanieAlexa == LOG_RUNNING)
+    && (MIS_Kidnapping == LOG_RUNNING)
     && (Npc_HasItems (hero, ItMiNugget)>=100)
     {
     return TRUE;
@@ -439,7 +439,7 @@ FUNC VOID DIA_Cutter_100OreZaInfo_Info()
     AI_Output (self, other ,"DIA_Cutter_100OreZaInfo_03_04"); //Chyba, ¿e chcesz to za³atwiæ si³owo.
     AI_Output (self, other ,"DIA_Cutter_100OreZaInfo_03_05"); //Przed czym ciê ostrzegam.
     AI_Output (self, other ,"DIA_Cutter_100OreZaInfo_03_06"); //Jeœli nie chcesz mieæ k³opotów, to wstrzymuj siê.
-    B_LogEntry                     (CH1_PorwanieAlexa,"Myœliwy jest uwiêziony w lochu. Klucz ma Stra¿nik, którego pobicie nie jest najlepszym pomys³em. Los Alexa jest zale¿ny od Magnatów, wiêc powinienem z nimi porozmawiaæ.");
+    B_LogEntry                     (CH3_Kidnapping,"Myœliwy jest uwiêziony w lochu. Klucz ma Stra¿nik, którego pobicie nie jest najlepszym pomys³em. Los Alexa jest zale¿ny od Magnatów, wiêc powinienem z nimi porozmawiaæ.");
 
     B_GiveXP (200);
 };

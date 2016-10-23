@@ -40,7 +40,7 @@ INSTANCE DIA_DungeonGuard_HELLO1 (C_INFO)
 
 FUNC INT DIA_DungeonGuard_HELLO1_Condition()
 {
-	if (MIS_ZabojstwBlizny != LOG_RUNNING)
+	if (MIS_ScarMurder != LOG_RUNNING)
 	{
     return TRUE;
 	};
@@ -140,7 +140,7 @@ INSTANCE DIA_DungeonGuard_KILL (C_INFO)
 
 FUNC INT DIA_DungeonGuard_KILL_Condition()
 {
-	if (MIS_ZabojstwBlizny == LOG_RUNNING) && (Npc_KnowsInfo (hero, DIA_Snake_NOWAY))
+	if (MIS_ScarMurder == LOG_RUNNING) && (Npc_KnowsInfo (hero, DIA_Snake_NOWAY))
 	{
     return TRUE;
 	};

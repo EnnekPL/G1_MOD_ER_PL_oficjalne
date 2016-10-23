@@ -298,7 +298,153 @@ func void DIA_Lefty_PERM_Nothing()
 	AI_StopProcessInfos	(self);
 };
 
+///////////////////////////////////////////
+//		WhatDidJosep
+///////////////////////////////////////////
 
+instance DIA_Lefty_WhatDidJosep (C_INFO)
+{
+	npc			= Org_844_Lefty;
+	nr			= 1;
+	condition	= DIA_Lefty_WhatDidJosep_Condition;
+	information	= DIA_Lefty_WhatDidJosep_Info;
+	permanent	= 0;
+	description	= "Podobno wiêzisz myœliwego Josepa.";
+};                       
+
+FUNC int DIA_Lefty_WhatDidJosep_Condition()
+{
+	if (Npc_KnowsInfo (hero,DIA_Josep_Sorry))
+	{
+		return 1;
+	};
+};
+
+FUNC VOID DIA_Lefty_WhatDidJosep_Info()
+{
+	AI_Output (other, self,"DIA_Lefty_WhatDidJosep_15_00"); //Podobno wiêzisz myœliwego Josepa.
+	AI_Output (self, other,"DIA_Lefty_WhatDidJosep_07_01"); //Sam sobie ten los zgotowa³...
+	AI_Output (other, self,"DIA_Lefty_WhatDidJosep_15_02"); //Móg³byœ jaœniej?
+	AI_Output (self, other,"DIA_Lefty_WhatDidJosep_07_03"); //Sukinsyn próbowa³ okraœæ nasz magazyn. Na szczêœcie go przy³apa³em podczas nocnej warty.
+	AI_Output (self, other,"DIA_Lefty_WhatDidJosep_07_04"); //Chcia³em od razu odci¹æ mu ³apy, jednak nagle zjawi³ siê Torlof i kaza³ zostawiæ go w spokoju.
+	AI_Output (self, other,"DIA_Lefty_WhatDidJosep_07_05"); //Powiedzia³ tylko, ¿e ten cz³owiek jest zbyt cenny, ¿eby robiæ mu krzywdê. Podobno to jakiœ myœliwy dobrze znaj¹cy swoje rzemios³o.
+	AI_Output (self, other,"DIA_Lefty_WhatDidJosep_07_06"); //Zaprowadziliœmy wiec go do Laresa. Szef zaproponowa³ mu do³¹czenie do Szkodników. I wiesz co ten dupek zrobi³?
+	AI_Output (self, other,"DIA_Lefty_WhatDidJosep_07_07"); //Odrzuci³ propozycjê!
+	AI_Output (self, other,"DIA_Lefty_WhatDidJosep_07_08"); //Bezczelny typ. Teraz jest moim robotnikiem. Nie ma szans ¿ebym go wypuœci³. Nie po tym co zrobi³.
+
+	B_LogEntry               (CH1_MissedJosep,"Lewus nie ma najmniejszego zamiaru wypuœciæ Josepa. Myœliwy za bardzo zaszed³ mu za skórê. Muszê wymyœliæ coœ innego. Nie podoba mi siê, ¿e Josep nie wspomnia³, ¿e próbowa³ okraœæ magazyn Szkodników.");
+};	
+
+///////////////////////////////////////////
+//		Zick
+///////////////////////////////////////////
+
+instance DIA_Lefty_Zick (C_INFO)
+{
+	npc			= Org_844_Lefty;
+	nr			= 1;
+	condition	= DIA_Lefty_Zick_Condition;
+	information	= DIA_Lefty_Zick_Info;
+	permanent	= 0;
+	description	= "Lepiej wypuœæ Josepa.";
+};                       
+
+FUNC int DIA_Lefty_Zick_Condition()
+{
+	if (Npc_KnowsInfo (hero,DIA_Rene_AtPlace))
+	{
+		return 1;
+	};
+};
+
+FUNC VOID DIA_Lefty_Zick_Info()
+{
+	AI_Output (other, self,"DIA_Lefty_Zick_15_00"); //Lepiej wypuœæ Josepa.
+	AI_Output (self, other,"DIA_Lefty_Zick_07_01"); //Bo co mi zrobisz?
+	AI_Output (other, self,"DIA_Lefty_Zick_15_02"); //Tobie nic, ale twój bratanek Zick mo¿e ucierpieæ. 
+	AI_Output (self, other,"DIA_Lefty_Zick_07_03"); //Co? Gdzie on jest?
+	AI_Output (other, self,"DIA_Lefty_Zick_15_04"); //Na razie mi³o spêdza czas z Rene, ale to siê mo¿e zmieniæ.
+	AI_Output (self, other,"DIA_Lefty_Zick_07_04"); //Rene? Ten sukinsyn! Zabieraj tego myœliwego, tylko najpierw ka¿ temu psychopacie zostawiæ Zicka!
+	
+	B_LogEntry               (CH1_MissedJosep,"Lewus nieco zmiêk³. Pozwoli³ mi zabraæ Josepa, jednak najpierw mam kazaæ wróciæ Rene i Zickowi do obozu.");
+};	
+
+///////////////////////////////////////////
+//		Free
+///////////////////////////////////////////
+
+instance DIA_Lefty_Free (C_INFO)
+{
+	npc			= Org_844_Lefty;
+	nr			= 1;
+	condition	= DIA_Lefty_Free_Condition;
+	information	= DIA_Lefty_Free_Info;
+	permanent	= 0;
+	description	= "Twój bratanek wróci³ do obozu.";
+};                       
+
+FUNC int DIA_Lefty_Free_Condition()
+{
+	if (Npc_KnowsInfo (hero,DIA_Rene_AfterParty))
+	{
+		return 1;
+	};
+};
+
+FUNC VOID DIA_Lefty_Free_Info()
+{
+	AI_Output (other, self,"DIA_Lefty_Free_15_00"); //Twój bratanek wróci³ do obozu.
+	AI_Output (self, other,"DIA_Lefty_Free_07_01"); //To dobrze...
+	AI_Output (other, self,"DIA_Lefty_Free_15_02"); //Co z nasz¹ umow¹?
+	AI_Output (self, other,"DIA_Lefty_Free_07_03"); //Dotrzymam jej. PrzyjdŸ jutro do mnie, a wydam ci Josepa.
+	AI_Output (other, self,"DIA_Lefty_Free_15_04"); //Czemu nie dzisiaj? Tego nie by³o w umowie.
+	AI_Output (self, other,"DIA_Lefty_Free_07_04"); //Ee... Muszê przecie¿ poinformowaæ o tym Laresa. Pomyœl! Po prostu zg³oœ siê do mnie jutro.
+	
+	B_LogEntry               (CH1_MissedJosep,"Lewus kaza³ mi odczekaæ jeden dzieñ zanim bêdê móg³ zabraæ Josepa. Mam siê do niego zg³osiæ jutro.");
+	
+	day_LeftyAndZick = Wld_GetDay();
+	
+};	
+
+///////////////////////////////////////////
+//		NowFree
+///////////////////////////////////////////
+
+instance DIA_Lefty_NowFree (C_INFO)
+{
+	npc			= Org_844_Lefty;
+	nr			= 1;
+	condition	= DIA_Lefty_NowFree_Condition;
+	information	= DIA_Lefty_NowFree_Info;
+	permanent	= 0;
+	description	= "Wypuœæ Josepa!";
+};                       
+
+FUNC int DIA_Lefty_NowFree_Condition()
+{
+	if (Npc_KnowsInfo (hero,DIA_Lefty_Free)) && (day_LeftyAndZick != Wld_GetDay())
+	{
+		return 1;
+	};
+};
+
+FUNC VOID DIA_Lefty_NowFree_Info()
+{
+	AI_Output (other, self,"DIA_Lefty_NowFree_15_00"); //Wypuœæ Josepa!
+	AI_Output (self, other,"DIA_Lefty_NowFree_07_01"); //Jest wolny. IdŸ po niego i zabierajcie siê st¹d.
+	AI_Output (self, other,"DIA_Lefty_NowFree_07_02"); //Jeœli jeszcze raz go tu zobaczê, to nie uratuje go nawet wstawiennictwo Magów Wody! 
+	AI_Output (self, other,"DIA_Lefty_NowFree_07_03"); //A teraz precz!
+	
+	B_LogEntry               (CH1_MissedJosep,"Zjawi³em siê nastêpnego dnia u Lewusa. Pozwoli³ mi zabraæ z obozu Josepa.");
+	
+	AI_StopProcessInfos (self);
+	Npc_ExchangeRoutine (ORG_823_Zick,"party");
+	AI_Teleport (ORG_823_Zick,"OW_PATH_066");
+	Wld_InsertNpc (ORG_895_Organisator,"OW_PATH_066");
+	Wld_InsertNpc (ORG_896_Organisator,"OW_PATH_066");
+};
+ 
+ 
 //========================================
 //-----------------> ALCO_BUNT
 //========================================
@@ -406,11 +552,8 @@ FUNC INT DIA_Tuersteher_ANGRY_LEFTY_PAID_Condition()
 
 FUNC VOID DIA_Tuersteher_ANGRY_LEFTY_PAID_Info()
 {
-    AI_Output (self, other ,"DIA_Tuersteher_ANGRY_LEFTY_PAID_03_01"); //Pozdrowionka od Lewusa, œcierwojadzie!
+    AI_Output (self, other ,"DIA_Tuersteher_ANGRY_LEFTY_PAID_03_01"); //Pozdrowienia od Lewusa, œcierwojadzie!
 	AI_StopProcessInfos	(self);
     Npc_SetTarget (self, other);
     AI_StartState (self, ZS_ATTACK, 1, "");
 };
-
-
-	

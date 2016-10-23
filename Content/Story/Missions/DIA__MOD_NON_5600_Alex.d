@@ -48,7 +48,8 @@ FUNC VOID DIA_Alex_HELLO1_Info()
     AI_Output (other, self ,"DIA_Alex_HELLO1_15_01"); //Kim jesteœ?
     AI_Output (self, other ,"DIA_Alex_HELLO1_03_02"); //Nazywam siê Alex. Dbam o to, by w obozie panowa³ spokój. 
     AI_Output (other, self ,"DIA_Alex_HELLO1_15_03"); //Jesteœ tu szefem?
-    AI_Output (self, other ,"DIA_Alex_HELLO1_03_04"); //Szef to za mocne s³owo. Po prostu ogarniam co siê tu dzieje.
+    AI_Output (self, other ,"DIA_Alex_HELLO1_03_04"); //Szef to za mocne s³owo. Po prostu ogarniam co siê tu dzieje. 
+	AI_Output (self, other ,"DIA_Alex_HELLO1_03_05"); //Choæ jak widaæ i mnie to czasem przerasta. Ostatnio zagin¹³ nasz cz³owiek... 
 };
 
 //========================================
@@ -181,7 +182,7 @@ FUNC INT DIA_Alex_Armor_Condition()
 FUNC VOID DIA_Alex_Armor_Info()
 {
     AI_Output (other, self ,"DIA_Alex_Armor_15_01"); //Sprzedasz mi jakiœ pancerz?
-    if (MIS_PorwanieAlexa == LOG_SUCCESS)
+    if (MIS_Kidnapping == LOG_SUCCESS)
     {
         AI_Output (self, other ,"DIA_Alex_Armor_03_02"); //Mam na stanie zarówno ubranie, jak i zbrojê.
         AI_Output (self, other ,"DIA_Alex_Armor_03_03"); //Wybierz sobie, które ci odpowiada.
@@ -400,7 +401,7 @@ FUNC VOID DIA_Alex_CenneItemy_Info()
     Log_SetTopicStatus       (CH1_TheftInHuntersCamp, LOG_SUCCESS);
     MIS_TheftInHuntersCamp = LOG_SUCCESS;
 	B_GiveInvItems (hero, self, AlexCup, 1);
-    B_GiveXP (400);
+    B_GiveXP (250);
 };
 
 //========================================
@@ -524,15 +525,15 @@ FUNC VOID DIA_Alex_Narzekanie_Info()
         AI_Output (other, self ,"DIA_Alex_Narzekanie_15_07"); //Masz racjê. Nauczy³em ju¿ tego nieroba szacunku.
         AI_Output (self, other ,"DIA_Alex_Narzekanie_03_08"); //Pobi³eœ go? le post¹pi³eœ.
         AI_Output (other, self ,"DIA_Alex_Narzekanie_15_09"); //Dlaczego? Nale¿a³o mu siê.
-        AI_Output (self, other ,"DIA_Alex_Narzekanie_03_10"); //Zachowujecie siê jak dzieci w paskownicy. Nikt go tu nie trzyma. Je¿eli nie chce pracowaæ na rzecz obozu, to niech st¹d zje¿d¿a. Mog³eœ kazaæ mu po prostu odejœæ.
+        AI_Output (self, other ,"DIA_Alex_Narzekanie_03_10"); //Zachowujecie siê jak dzieci w piaskownicy. Nikt go tu nie trzyma. Je¿eli nie chce pracowaæ na rzecz obozu, to niech st¹d zje¿d¿a. Mog³eœ kazaæ mu po prostu odejœæ.
     }
     else
     {
         AI_Output (self, other ,"DIA_Alex_Narzekanie_03_11"); //Nie bêdê ciê zanudza³. IdŸ do tego cz³owieka i powiedz mu, ¿e nie ma ju¿ czego szukaæ w obozie.
-        AI_Output (self, other ,"DIA_Alex_Narzekanie_03_12"); //Niech odejdzie. Nie potrzebujemy tu darmozjadów.
+        AI_Output (self, other ,"DIA_Alex_Narzekanie_03_12"); //Niech odejdzie. Nie potrzebujemy tu takich jak on.
         AI_Output (other, self ,"DIA_Alex_Narzekanie_15_13"); //Tak zrobiê.
 
-        B_LogEntry                     (CH1_Nieroby,"Mam kazaæ odejœæ myœliwemu. ");
+        B_LogEntry                     (CH1_Nieroby,"Mam kazaæ odejœæ myœliwemu. Alexa bardzo zdenerwowa³a jego postawa.");
     };
     AI_StopProcessInfos	(self);
 };
@@ -548,7 +549,7 @@ INSTANCE DIA_Alex_NewQuest (C_INFO)
    condition    = DIA_Alex_NewQuest_Condition;
    information  = DIA_Alex_NewQuest_Info;
    permanent	= FALSE;
-   description	= "Nie jest was tu trochê za ma³o?";
+   description	= "Zagin¹³ jeden z waszych ludzi?";
 };
 
 FUNC INT DIA_Alex_NewQuest_Condition()
@@ -562,18 +563,20 @@ FUNC INT DIA_Alex_NewQuest_Condition()
 
 FUNC VOID DIA_Alex_NewQuest_Info()
 {
-    AI_Output (other, self ,"DIA_Alex_NewQuest_15_01"); //Nie jest was tu trochê za ma³o?
-    AI_Output (self, other ,"DIA_Alex_NewQuest_03_02"); //Mieliœmy jeszcze jednego cz³owieka, ale przepad³. Zazwyczaj polowa³ w okolicach Nowego Obozu.
-    AI_Output (other, self ,"DIA_Alex_NewQuest_15_03"); //Jak d³ugo ju¿ go nie ma?
-    AI_Output (self, other ,"DIA_Alex_NewQuest_03_04"); //Nie wiem... Mo¿e tydzieñ. Nazywa³ siê Josep. Jakbyœ go znalaz³, to daj mi znaæ.
+    AI_Output (other, self ,"DIA_Alex_NewQuest_15_01"); //Zagin¹³ jeden z waszych ludzi?
+    AI_Output (self, other ,"DIA_Alex_NewQuest_03_02"); //Ta... Nazywa³ siê Josep. Nie by³ jakimœ m³odzikiem. Doœwiadczony facet maj¹cy ju¿ wiele wiosen za sob¹. Dziwi mnie jego znikniêcie.
+    AI_Output (other, self ,"DIA_Alex_NewQuest_15_03"); //Wys³a³eœ kogoœ na jego poszukiwania?
+    AI_Output (self, other ,"DIA_Alex_NewQuest_03_04"); //Oczywiœcie, ¿e tak! Zazwyczaj polowa³ w okolicach Nowego Obozu. Czterech zwiadowców dok³adnie przeszuka³o tamte tereny. Bezskutecznie.
+	AI_Output (self, other ,"DIA_Alex_NewQuest_03_05"); //Jeœli chcesz, mo¿esz próbowaæ, ale w¹tpiê, ¿e on jeszcze wróci. 
 
-    MIS_JosepZniknal = LOG_RUNNING;
+    MIS_MissedJosep = LOG_RUNNING;
 
-    Log_CreateTopic            (CH1_JosepZniknal, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_JosepZniknal, LOG_RUNNING);
-    B_LogEntry                     (CH1_JosepZniknal,"Z obozu znikn¹³ jeden z myœliwych. Od Alexa dowiedzia³em siê, ¿e nazywa³ siê Josep i polowa³ w okolicach Nowego Obozu.");
+    Log_CreateTopic          (CH1_MissedJosep, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_MissedJosep, LOG_RUNNING);
+    B_LogEntry               (CH1_MissedJosep,"Z obozu znikn¹³ jeden z myœliwych. Od Alexa dowiedzia³em siê, ¿e nazywa³ siê Josep i polowa³ w okolicach Nowego Obozu. Poszukiwania nie przynios³y skutku.");
     AI_StopProcessInfos	(self);
 };
+
 //========================================
 //-----------------> JosepPowrot
 //========================================
@@ -585,12 +588,12 @@ INSTANCE DIA_Alex_JosepPowrot (C_INFO)
    condition    = DIA_Alex_JosepPowrot_Condition;
    information  = DIA_Alex_JosepPowrot_Info;
    permanent	= FALSE;
-   description	= "Josep wróci³ do obozu.";
+   description	= "Przed chwil¹ przyprowadzi³em Josepa do obozu.";
 };
 
 FUNC INT DIA_Alex_JosepPowrot_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Josep_Free))
+    if (Npc_KnowsInfo (hero, DIA_Josep_Camp))
     {
     return TRUE;
     };
@@ -599,155 +602,26 @@ FUNC INT DIA_Alex_JosepPowrot_Condition()
 
 FUNC VOID DIA_Alex_JosepPowrot_Info()
 {
-    AI_Output (other, self ,"DIA_Alex_JosepPowrot_15_01"); //Josep wróci³ do obozu.
-    AI_Output (self, other ,"DIA_Alex_JosepPowrot_03_02"); //Uda³o ci siê go znaleŸæ? Gdzie by³?
+    AI_Output (other, self ,"DIA_Alex_JosepPowrot_15_01"); //Przed chwil¹ przyprowadzi³em Josepa do obozu.
+    AI_Output (self, other ,"DIA_Alex_JosepPowrot_03_02"); //Gdzie go znalaz³eœ? Nie ukrywam, ¿e to œwietna wiadomoœæ.
     AI_Output (other, self ,"DIA_Alex_JosepPowrot_15_03"); //Zosta³ pojmany przez ludzi Lewusa i zmuszony do pracy na polach ry¿owych.
-    AI_Output (self, other ,"DIA_Alex_JosepPowrot_03_04"); //Te sukinsyny z Nowego Obozu! Ju¿ ja im poka¿ê!
-    AI_Output (other, self ,"DIA_Alex_JosepPowrot_15_05"); //Lewus i Ry¿owy Ksi¹¿ê nie ¿yj¹. Przy³¹czyliœmy siê do powstania przeciwko ich tyranii.
-    AI_Output (self, other ,"DIA_Alex_JosepPowrot_03_06"); //Jestem pe³en podziwu. WeŸ tê rudê w nagrodê.
-    CreateInvItems (self, ItMiNugget, 300);
-    B_GiveInvItems (self, other, ItMiNugget, 300);
-    B_LogEntry                     (CH1_JosepZniknal,"Josep wróci³ do obozu. Alex by³ bardzo zadowolony z moich dokonañ.");
-
-    Log_SetTopicStatus       (CH1_JosepZniknal, LOG_SUCCESS);
-    MIS_JosepZniknal = LOG_SUCCESS;
+    AI_Output (self, other ,"DIA_Alex_JosepPowrot_03_04"); //Jak to pojmany?
+    AI_Output (other, self ,"DIA_Alex_JosepPowrot_15_05"); //Mo¿na rzecz, ¿e zaszed³ Lewusowi za skórê, a póŸniej Laresowi, a póŸniej...
+    AI_Output (self, other ,"DIA_Alex_JosepPowrot_03_06"); //Dziwiê siê, ¿e w ogóle wyszed³ z tego ca³o. Chyba masz w tym niema³y udzia³?
+	AI_Output (other, self ,"DIA_Alex_JosepPowrot_15_07"); //Owszem. By³bym wdziêczny, gdybyœ...
+	AI_Output (self, other ,"DIA_Alex_JosepPowrot_03_08"); //Rozumiem. 200 bry³ek rudy to chyba uczciwa cena za ocalenie jednego z moich ludzi?
+	AI_Output (other, self ,"DIA_Alex_JosepPowrot_15_09"); //Zadowolê siê i tym. Dziêki.
+	AI_Output (self, other ,"DIA_Alex_JosepPowrot_03_10"); //To ja dziêkujê.
+	
+    CreateInvItems (self, ItMiNugget, 200);
+    B_GiveInvItems (self, other, ItMiNugget, 200);
+	
+    B_LogEntry               (CH1_MissedJosep,"Josep wróci³ do obozu. Alex by³ bardzo zadowolony z moich dokonañ.");
+    Log_SetTopicStatus       (CH1_MissedJosep, LOG_SUCCESS);
+    MIS_MissedJosep = LOG_SUCCESS;
 
     B_GiveXP (350);
-	EquipItem (NON_5614_Josep, ItMw_1H_Scythe_01);
-};
-
-//========================================
-//-----------------> Podejrzane
-//========================================
-
-INSTANCE DIA_Alex_Podejrzane (C_INFO)
-{
-   npc          = NON_5600_Alex;
-   nr           = 2;
-   condition    = DIA_Alex_Podejrzane_Condition;
-   information  = DIA_Alex_Podejrzane_Info;
-   permanent	= FALSE;
-   description	= "Nie uwa¿asz, ¿e Josep zachowuje siê trochê dziwnie?";
-};
-
-FUNC INT DIA_Alex_Podejrzane_Condition()
-{
-    if (MIS_JosepZniknal == LOG_SUCCESS)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Alex_Podejrzane_Info()
-{
-    AI_Output (other, self ,"DIA_Alex_Podejrzane_15_01"); //Nie uwa¿asz, ¿e Josep zachowuje siê trochê dziwnie?
-    AI_Output (self, other ,"DIA_Alex_Podejrzane_03_02"); //Zrobi³ siê taki od kiedy wróci³ z ruin.
-    AI_Output (other, self ,"DIA_Alex_Podejrzane_15_03"); //Ruin? Przecie¿ by³ w niewoli?
-AI_Output (self, other ,"DIA_Alex_Podejrzane_03_04"); //Tak, ale jakiœ miesi¹c przed jego znikniêciem te¿ przepad³ na parê dni. 
-    AI_Output (self, other ,"DIA_Alex_Podejrzane_03_05"); //Gdy wróci³, powiedzia³, ¿e zgubi³ siê wœród jakichœ ruin. W sumie, pe³no tego cholerstwa w Kolonii, wiêc nie dopytywa³em, gdzie dok³adnie.
-    AI_Output (other, self ,"DIA_Alex_Podejrzane_15_06"); //Kiedy z nim rozmawia³em, powiedzia³ mi o pewnym amulecie. Gada³, ¿e przys³a³eœ mnie, ¿ebym mu go zabra³.
-    AI_Output (self, other ,"DIA_Alex_Podejrzane_03_07"); //Obserwuj go, œledŸ. Mo¿e uda ci siê czegoœ dowiedzieæ.
-    MIS_DziwnyJosep = LOG_RUNNING;
-Npc_ExchangeRoutine (NON_5614_Josep, "beliar");
-Npc_SetTalentSkill	(NON_5614_Josep,	NPC_TALENT_MAGE,		6);
-
- Npc_RemoveInvItems (NON_5614_Josep, ItMw_1H_Scythe_01, 1);
- 	CreateInvItem		(NON_5614_Josep,	ItArRuneThunderball);
-	NON_5614_Josep.fight_tactic	=	FAI_HUMAN_MAGE; 
-	NON_5614_Josep.level 		=	25;
-	NON_5614_Josep.attribute[ATR_STRENGTH] 	= 200;
-	NON_5614_Josep.attribute[ATR_DEXTERITY]	= 200;
-	NON_5614_Josep.attribute[ATR_MANA_MAX] 	= 300;
-	NON_5614_Josep.attribute[ATR_MANA] 		= 300;
-	NON_5614_Josep.attribute[ATR_HITPOINTS_MAX]= 400;
-	NON_5614_Josep.attribute[ATR_HITPOINTS] 	= 400;
-    Log_CreateTopic            (CH1_DziwnyJosep, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_DziwnyJosep, LOG_RUNNING);
-    B_LogEntry                     (CH1_DziwnyJosep,"Josep zachowuje siê bardzo dziwnie. Alex poradzi³ mi, abym go œledzi³.");
-
-    AI_StopProcessInfos	(NON_5600_Alex);
-};
-
-//========================================
-//-----------------> OpetanyJosep
-//========================================
-
-INSTANCE DIA_Alex_OpetanyJosep (C_INFO)
-{
-   npc          = NON_5600_Alex;
-   nr           = 1;
-   condition    = DIA_Alex_OpetanyJosep_Condition;
-   information  = DIA_Alex_OpetanyJosep_Info;
-   permanent	= FALSE;
-   description	= "Josep by³ opetany!";
-};
-
-FUNC INT DIA_Alex_OpetanyJosep_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Josep_Normalny))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Alex_OpetanyJosep_Info()
-{
-    AI_Output (other, self ,"DIA_Alex_OpetanyJosep_15_01"); //Josep by³ opêtany!
-    AI_Output (self, other ,"DIA_Alex_OpetanyJosep_03_02"); //Co?!
-    AI_Output (other, self ,"DIA_Alex_OpetanyJosep_15_03"); //To przez amulet, który znalaz³ w ruinach. Z jego majaczeñ mniemam, ¿e zasz³o tam coœ dziwnego.
-    AI_Output (self, other ,"DIA_Alex_OpetanyJosep_03_04"); //Coœ sugerujesz?
-    AI_Output (other, self ,"DIA_Alex_OpetanyJosep_15_05"); //W sumie to nie wiem dok³adnie... Musia³bym poprosiæ o pomoc magów.
-    AI_Output (self, other ,"DIA_Alex_OpetanyJosep_03_06"); //O nie! OdejdŸ! Nie mieszam siê w sprawy magów!
-    B_GiveXP (100);
-    AI_StopProcessInfos	(self);
-	
-	EquipItem (NON_5614_Josep, ItMwZ_1H_Sword_01);
-	EquipItem (NON_5614_Josep, ItRw_Bow_Small_04);
-	CreateInvItem (NON_5614_Josep,NON_WOLF_ARMOR);
-	AI_EquipBestArmor (NON_5614_Josep);
-};
-
-//========================================
-//-----------------> KillJosep
-//========================================
-
-INSTANCE DIA_Alex_KillJosep (C_INFO)
-{
-   npc          = NON_5600_Alex;
-   nr           = 1;
-   condition    = DIA_Alex_KillJosep_Condition;
-   information  = DIA_Alex_KillJosep_Info;
-   permanent	= FALSE;
-   description	= "Josep nie ¿yje!";
-};
-
-FUNC INT DIA_Alex_KillJosep_Condition()
-{
-    var C_NPC whodie0; 	whodie0 = Hlp_GetNpc(NON_5614_Josep);
-    if (Npc_KnowsInfo (hero, DIA_Josep_NieDales))
-    && (Npc_IsDead(whodie0))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Alex_KillJosep_Info()
-{
-    AI_Output (other, self ,"DIA_Alex_KillJosep_15_01"); //Josep nie ¿yje!
-    AI_Output (self, other ,"DIA_Alex_KillJosep_03_02"); //Jak to siê sta³o?
-    AI_Output (other, self ,"DIA_Alex_KillJosep_15_03"); //Coœ mu odbi³o i rzuci³ siê na mnie. Znalaz³em przy nim dziwny amulet, który dawa³ mu niezwyk³e moce.
-    AI_Output (other, self ,"DIA_Alex_KillJosep_15_04"); //Razi³ we mnie piorunami niczym doœwiadczony mag. Muszê pokazaæ ten amulet magom.
-    AI_Output (self, other ,"DIA_Alex_KillJosep_03_05"); //Cholera, w Kolonii robi siê coraz bardziej niebezpiecznie. Powiem naszym, ¿eby nie zapuszczali siê w ruiny. 
-    B_LogEntry                     (CH1_DziwnyJosep,"Niestety musia³em zabiæ Josepa. Jego dusza zosta³a zepsuta przez Beliara. ");
-
-    Log_SetTopicStatus       (CH1_DziwnyJosep, LOG_SUCCESS);
-    MIS_DziwnyJosep = LOG_SUCCESS;
-
-    B_GiveXP (250);
-    AI_StopProcessInfos	(self);
+	EquipItem (NON_5614_Josep, ItMw_1H_Sword_02);
 };
 
 //========================================
@@ -801,7 +675,7 @@ INSTANCE DIA_Alex_Ratunek (C_INFO)
 FUNC INT DIA_Alex_Ratunek_Condition()
 {
     if (Npc_GetDistToNpc(self, other) < 700)
-    && (MIS_PorwanieAlexa == LOG_RUNNING)
+    && (MIS_Kidnapping == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -827,9 +701,9 @@ FUNC VOID DIA_Alex_Ratunek_Info()
     AI_UseItem (hero, ItFoBeer);
     AI_Output (self, other ,"DIA_Alex_Ratunek_03_12"); //ChodŸmy. 
     AI_StopProcessInfos	(self);
-    B_LogEntry                     (CH1_PorwanieAlexa,"Myœliwy Alex zosta³ uwolniony. Mo¿emy wracaæ do obozu. Wszystko dobrze siê skoñczy³o. ");
-    Log_SetTopicStatus       (CH1_PorwanieAlexa, LOG_SUCCESS);
-    MIS_PorwanieAlexa = LOG_SUCCESS;
+    B_LogEntry                     (CH3_Kidnapping,"Myœliwy Alex zosta³ uwolniony. Mo¿emy wracaæ do obozu. Wszystko dobrze siê skoñczy³o. ");
+    Log_SetTopicStatus       (CH3_Kidnapping, LOG_SUCCESS);
+    MIS_Kidnapping = LOG_SUCCESS;
  Npc_ExchangeRoutine (self, "start");
     B_GiveXP (1000);
 };
@@ -850,7 +724,7 @@ INSTANCE DIA_Alex_QUEST_TROLL (C_INFO)
 
 FUNC INT DIA_Alex_QUEST_TROLL_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Firn_CHAPTER_5)) && (MIS_PorwanieAlexa == LOG_SUCCESS)
+    if (Npc_KnowsInfo (hero, DIA_Firn_CHAPTER_5)) && (MIS_Kidnapping == LOG_SUCCESS)
     {
     return TRUE;
     };

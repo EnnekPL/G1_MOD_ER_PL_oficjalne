@@ -1,9 +1,9 @@
-instance ORG_806_Organisator (Npc_Default)
+instance ORG_806_Rene (Npc_Default)
 {
 	//-------- primary data --------
 	
-	name =					Name_Organisator;
-	Npctype =				Npctype_Ambient;
+	name =					"Rene";
+	Npctype =				Npctype_Main;
 	guild =					GIL_ORG;      
 	level =					8;
 	
@@ -65,15 +65,14 @@ FUNC VOID Rtn_start_806 ()
 	TA_Smalltalk	(07,30,00,00,"NC_PLACE06");
 };
 
+FUNC VOID Rtn_guide_806 ()
+{
+	TA_GuidePC		(00,00,07,30,"OW_PATH_075_GUARD4");
+	TA_GuidePC		(07,30,00,00,"OW_PATH_075_GUARD4");
+};
 
-
-
-
-
-
-
-
-
-
-
-
+FUNC VOID Rtn_boss_806 ()
+{
+	TA_Boss			(00,00,07,30,"OW_PATH_075_GUARD4");
+	TA_Boss			(07,30,00,00,"OW_PATH_075_GUARD4");
+};

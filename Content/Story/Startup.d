@@ -484,7 +484,7 @@ func VOID STARTUP_SUB_NEWCAMP ()
 	Wld_InsertNpc				(ORG_800_Organisator,"NC_DAM"); //Hut 26
 	Wld_InsertNpc				(ORG_801_Lares,"NC_DAM");		//Hut 22
 	Wld_InsertNpc				(ORG_804_Organisator,"NC_DAM"); //Durchgangs-Wache zu Lares, 24h
-	Wld_InsertNpc				(ORG_806_Organisator,"NC_DAM"); //Hut 20
+	Wld_InsertNpc				(ORG_806_Rene,"NC_DAM"); //Hut 20
 	Wld_InsertNpc				(ORG_807_Organisator,"NC_DAM"); //Hut 14
 	Wld_InsertNpc				(ORG_810_Organisator,"NC_DAM"); //Hut 12
 	Wld_InsertNpc				(ORG_811_Organisator,"NC_DAM"); //Hut 17
@@ -494,7 +494,7 @@ func VOID STARTUP_SUB_NEWCAMP ()
 	Wld_InsertNpc				(ORG_820_Organisator,"NC_DAM"); //Hut 12
 	Wld_InsertNpc				(ORG_821_Organisator,"NC_DAM"); //Hut 25, Tavern Top
 	Wld_InsertNpc				(ORG_822_Organisator,"NC_DAM"); //Hut 16
-	Wld_InsertNpc				(ORG_823_Organisator,"NC_DAM"); //Hut 21
+	Wld_InsertNpc				(ORG_823_Zick,"NC_DAM"); //Hut 21
 	Wld_InsertNpc				(ORG_824_Organisator,"NC_DAM"); //Hut 24, Tavern Top
 	Wld_InsertNpc				(ORG_825_Organisator,"NC_DAM"); //Durchgangs-Wache zu Lares, 24h
 	Wld_InsertNpc				(ORG_828_Bruce,"NC_DAM");		//Hut 27

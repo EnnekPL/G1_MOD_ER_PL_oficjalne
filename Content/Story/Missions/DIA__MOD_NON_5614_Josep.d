@@ -39,7 +39,7 @@ INSTANCE DIA_Josep_WODA (C_INFO)
 FUNC INT DIA_Josep_WODA_Condition()
 {
     if ((Lefty_Mission==LOG_RUNNING) || (Lefty_Mission==LOG_SUCCESS)) && Npc_HasItems(other, ItFo_Potion_Water_01) && (self.aivar[AIV_DEALDAY] <= Wld_GetDay())
-	&& (!Npc_KnowsInfo (hero, DIA_Josep_Free))
+	&& (!Npc_KnowsInfo (hero, DIA_Josep_GoAway))
     {
     return TRUE;
     };
@@ -76,278 +76,227 @@ B_GiveInvItems		(other, self,	ItFo_Potion_Water_01, 1);
 
 
 //========================================
-//-----------------> HELLO1
+//-----------------> Angry
 //========================================
 
-INSTANCE DIA_Josep_HELLO1 (C_INFO)
+INSTANCE DIA_Josep_Angry (C_INFO)
 {
    npc          = NON_5614_Josep;
    nr           = 1;
-   condition    = DIA_Josep_HELLO1_Condition;
-   information  = DIA_Josep_HELLO1_Info;
+   condition    = DIA_Josep_Angry_Condition;
+   information  = DIA_Josep_Angry_Info;
    permanent	= FALSE;
    description	= "Nie wygl¹dasz mi na zbieracza.";
 };
 
-FUNC INT DIA_Josep_HELLO1_Condition()
+FUNC INT DIA_Josep_Angry_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Alex_NewQuest))
-	&& (MIS_BuntZbieraczy != LOG_SUCCESS)
     {
     return TRUE;
     };
 };
 
 
-FUNC VOID DIA_Josep_HELLO1_Info()
+FUNC VOID DIA_Josep_Angry_Info()
 {
-    AI_Output (other, self ,"DIA_Josep_HELLO1_15_01"); //Nie wygl¹dasz mi na zbieracza.
-    AI_Output (self, other ,"DIA_Josep_HELLO1_03_02"); //Bo nim nie jestem. Zosta³em z³apany przez ludzi Lewusa.
-    AI_Output (other, self ,"DIA_Josep_HELLO1_15_03"); //Alex wspomina³ mi o zaginionym myœliwym... Nazywasz siê Josep?
-    AI_Output (self, other ,"DIA_Josep_HELLO1_03_04"); //Tak, to ja. Szkoda, ¿e tak póŸno zorientowali siê, ¿e mnie nie ma. Banda sukinsynów!
-    AI_Output (other, self ,"DIA_Josep_HELLO1_15_05"); //Przecie¿ przyby³em ci z pomoc¹.
-    AI_Output (self, other ,"DIA_Josep_HELLO1_03_06"); //No i co z tego? Przecie¿ nie jesteœ myœliwym. Ledwo mnie znasz! A czy, któryœ z moich rzekomych przyjació³ siê mn¹ przej¹³? 
-    AI_Output (self, other ,"DIA_Josep_HELLO1_03_07"); //Nie! Wys³ali pierwszego lepszego przyb³êdê na poszukiwanie zw³ok. Pewnie Alex liczy³, ¿e znajdziesz przy mnie amulet.
-    AI_Output (self, other ,"DIA_Josep_HELLO1_03_08"); //O nie! Ten amulet jest mój!
-    AI_Output (other, self ,"DIA_Josep_HELLO1_15_09"); //Uspokój siê! Chcesz siê st¹d wydostaæ czy nie?
-    AI_PlayAni (self, "T_SEARCH");
-    //AI_StartState (self, ZS_SitCampfire, 1, "");
-    AI_Output (self, other ,"DIA_Josep_HELLO1_03_10"); //Och. Moja g³owa... strasznie boli.
-    AI_Output (other, self ,"DIA_Josep_HELLO1_15_11"); //Co z tob¹?
-    AI_Output (self, other ,"DIA_Josep_HELLO1_03_12"); //O czym to my... A, ju¿ wiem. Wydostaæ siê st¹d.
-    AI_Output (other, self ,"DIA_Josep_HELLO1_15_13"); //Jakiœ pomys³? Mo¿e po prostu zacznijmy biec. Wskoczmy do jeziora i pop³yñmy wraz z pr¹dem?
-    AI_Output (self, other ,"DIA_Josep_HELLO1_03_14"); //To by by³o zbyt proste. Pos³uchaj: jestem tu od tygodnia, wiem jak wygl¹da ¿ycie ludzi, którzy s¹ wyzyskiwani.
-    AI_Output (self, other ,"DIA_Josep_HELLO1_03_15"); //Musimy im pomóc zanim odejdziemy. To nasz cel. 
-    AI_Output (self, other ,"DIA_Josep_HELLO1_03_16"); //Jeden ze zbieraczy... nazywa siê Horacy... tak, on, planuje bunt. Krwawe powstanie przeciw siepaczom Lewusa. 
-    AI_Output (self, other ,"DIA_Josep_HELLO1_03_17"); //Musisz mu pomóc.
-
-    B_LogEntry                     (CH1_JosepZniknal,"Znalaz³em Josepa w Nowym Obozie. Zosta³ schwytany przez ludzi Lewusa i zmuszony do pracy na polach ry¿owych. Mam porozmawiaæ z Horacym i wypytaæ go o bunt zbieraczy.");
-
-    B_GiveXP (100);
+    AI_Output (other, self ,"DIA_Josep_Angry_15_01"); //Nie wygl¹dasz mi na zbieracza.
+    AI_Output (self, other ,"DIA_Josep_Angry_03_02"); //A ty nie wygl¹dasz mi na kogoœ inteligentnego. Spadaj! Zostaw mnie w spokoju!
     AI_StopProcessInfos	(self);
 };
+
 //========================================
-//-----------------> Free
+//-----------------> Sorry
 //========================================
-//edit by Nocturn
-INSTANCE DIA_Josep_Free (C_INFO)
+
+INSTANCE DIA_Josep_Sorry (C_INFO)
 {
    npc          = NON_5614_Josep;
    nr           = 1;
-   condition    = DIA_Josep_Free_Condition;
-   information  = DIA_Josep_Free_Info;
+   condition    = DIA_Josep_Sorry_Condition;
+   information  = DIA_Josep_Sorry_Info;
    permanent	= FALSE;
-   description	= "Jesteœ wolny!";
+   important	= TRUE;
 };
 
-FUNC INT DIA_Josep_Free_Condition()
+FUNC INT DIA_Josep_Sorry_Condition()
 {
-    if (MIS_BuntZbieraczy == LOG_SUCCESS)
-    && (MIS_JosepZniknal == LOG_RUNNING)
+    if (Npc_KnowsInfo (hero, DIA_Josep_Angry))
     {
     return TRUE;
     };
 };
 
 
-FUNC VOID DIA_Josep_Free_Info()
+FUNC VOID DIA_Josep_Sorry_Info()
 {
-    AI_Output (other, self ,"DIA_Josep_Free_15_01"); //Jesteœ wolny!
-    AI_Output (self, other ,"DIA_Josep_Free_03_02"); //Uda³o nam siê, naprawdê uda³o. Dobra robota. Bez ciebie nie dalibyœmy rady.
-
-    AI_Output (other, self ,"DIA_Josep_Free_15_03"); //Mo¿esz ju¿ wróciæ do obozu.
-    AI_Output (self, other ,"DIA_Josep_Free_03_04"); //Wróciæ? Do tych fa³szywych sukinsynów! Do tych darmozjadów?!
-    AI_Output (other, self ,"DIA_Josep_Free_15_05"); //Co z tob¹?
-    AI_PlayAni (self, "T_SEARCH");
-    //AI_StartState (self, ZS_SitCampfire, 1, "");
-    AI_Output (self, other ,"DIA_Josep_Free_03_06"); //Eh... Nic. To pewnie zmêczenie...
-    AI_Output (other, self ,"DIA_Josep_Free_15_07"); //Pewnie tak. Wracaj ju¿ do obozu i odpocznij.
-    Npc_ExchangeRoutine (self, "camp");
-    AI_StopProcessInfos	(self);
-};
-
-//========================================
-//-----------------> Sledztwo
-//========================================
-
-INSTANCE DIA_Josep_Sledztwo (C_INFO)
-{
-   npc          = NON_5614_Josep;
-   nr           = 1;
-   condition    = DIA_Josep_Sledztwo_Condition;
-   information  = DIA_Josep_Sledztwo_Info;
-   permanent	= FALSE;
-   Important    = TRUE;
-};
-
-FUNC INT DIA_Josep_Sledztwo_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Alex_Podejrzane))
-    && (Npc_GetDistToNpc(self, other) <= 800)
-	&& (Npc_GetDistToWP (self, "JOSEP2") > 1000)
-	&& (Npc_GetDistToWP (self, "SPAWN_OW_BLOODFLY_12") > 1800)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Josep_Sledztwo_Info()
-{
-    AI_Output (self, other ,"DIA_Josep_Sledztwo_03_01"); //Cholera, przestañ za mn¹ ³aziæ! 
-    AI_Output (self, other ,"DIA_Josep_Sledztwo_03_02"); //Pomog³eœ mi, dziêkujê, ale teraz odejdŸ!
-    AI_StopProcessInfos	(self);
-};
-
-//========================================
-//-----------------> Sledztwo2
-//========================================
-
-INSTANCE DIA_Josep_Sledztwo2 (C_INFO)
-{
-   npc          = NON_5614_Josep;
-   nr           = 1;
-   condition    = DIA_Josep_Sledztwo2_Condition;
-   information  = DIA_Josep_Sledztwo2_Info;
-   permanent	= FALSE;
-   Important    = TRUE;
-};
-
-FUNC INT DIA_Josep_Sledztwo2_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Josep_Sledztwo))
-    && (Npc_GetDistToNpc(self, other) <= 800)
-	&& (Npc_GetDistToWP (self, "JOSEP2") > 1000)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Josep_Sledztwo2_Info()
-{
-    AI_Output (self, other ,"DIA_Josep_Sledztwo2_03_01"); //To moje ostatnie ostrze¿enie!
-    AI_Output (self, other ,"DIA_Josep_Sledztwo2_03_02"); //Zje¿d¿aj, albo po¿a³ujesz! 
-    AI_StopProcessInfos	(self);
-};
-
-//========================================
-//-----------------> Sledztwo3
-//========================================
-
-INSTANCE DIA_Josep_Sledztwo3 (C_INFO)
-{
-   npc          = NON_5614_Josep;
-   nr           = 1;
-   condition    = DIA_Josep_Sledztwo3_Condition;
-   information  = DIA_Josep_Sledztwo3_Info;
-   permanent	= FALSE;
-   Important    = TRUE;
-};
-
-FUNC INT DIA_Josep_Sledztwo3_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Josep_Sledztwo2))
-    && (Npc_GetDistToNpc(self, other) <= 800)
-	&& (Npc_GetDistToWP (self, "JOSEP2") > 1000)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Josep_Sledztwo3_Info()
-{
-    AI_Output (self, other ,"DIA_Josep_Sledztwo3_03_01"); //Cholera, daj mi wreszcie spokój! Wracam do obozu!
-
-	Npc_ExchangeRoutine (self,"start");
-    AI_StopProcessInfos	(self);
+    AI_Output (self, other ,"DIA_Josep_Sorry_03_01"); //Ej, zaczekaj. Przepraszam. I tak, masz racjê. Nie jestem Zbieraczem.
+	AI_Output (self, other ,"DIA_Josep_Sorry_03_02"); //By³em myœliwym. Nazywam siê Josep.
+	AI_Output (other, self ,"DIA_Josep_Sorry_15_03"); //Co wiêc robisz na polach ry¿owych?
+	AI_Output (self, other ,"DIA_Josep_Sorry_03_04"); //Niewolniczo pracujê na rzecz Ry¿owego Ksiêcia. To Lewus mnie w to wpakowa³. Pod³y sukinsyn.
+	AI_Output (other, self ,"DIA_Josep_Sorry_15_05"); //Spróbujê ciê st¹d wydostaæ.
+	AI_Output (self, other ,"DIA_Josep_Sorry_03_06"); //Wyjdê na wolnoœæ, kiedy ten wieprz zginie.
+	AI_Output (other, self ,"DIA_Josep_Sorry_15_07"); //Zobaczê, co da siê zrobiæ. Byæ mo¿e to nie bêdzie konieczne. 
+	AI_Output (self, other ,"DIA_Josep_Sorry_03_08"); //Jeœli mnie st¹d wyci¹gniesz, bêdê mia³ u ciebie olbrzymi d³ug.
 	
-	B_LogEntry                     (CH1_DziwnyJosep,"Podczas œledzenia Josepa da³em siê trzykrotnie przy³apaæ, wiêc Josep wróci³ do obozu. Od teraz bêdzie mnie obserwowa³ i nie bêdê mia³ ju¿ okazji go œledziæ.");
-    Log_SetTopicStatus       (CH1_DziwnyJosep, LOG_FAILED);
-    MIS_DziwnyJosep = LOG_FAILED;
+	B_LogEntry               (CH1_MissedJosep,"Odnalaz³em Josepa na polach ry¿owych. Dowiedzia³em siê, ¿e jest jeñcem Lewusa. Ciekawe co takiego zrobi³. Muszê porozmawiaæ ze Szkodnikiem.");
+	
+    AI_StopProcessInfos	(self);
 };
 
 //========================================
-//-----------------> NieDales
+//-----------------> Truth
 //========================================
 
-INSTANCE DIA_Josep_NieDales (C_INFO)
-{
-   npc          = NON_5614_Josep;
-   nr           = 2;
-   condition    = DIA_Josep_NieDales_Condition;
-   information  = DIA_Josep_NieDales_Info;
-   permanent	= FALSE;
-   Important    = TRUE;
-};
-
-FUNC INT DIA_Josep_NieDales_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Alex_Podejrzane))
-	 && (Npc_GetDistToWP (self, "JOSEP2") < 600)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Josep_NieDales_Info()
-{
-    AI_Output (self, other ,"DIA_Josep_NieDales_03_01"); //Nie mog³eœ siê powstrzymaæ... Musia³eœ za mn¹ iœæ. Jesteœ bardzo dociekliwym cz³owiekiem.
-    AI_Output (self, other ,"DIA_Josep_NieDales_03_02"); //Pewnie nie raz nieŸle na tym wyszed³eœ, ale teraz... teraz sprowadzi³eœ na siebie zgubê!
-    AI_Output (self, other ,"DIA_Josep_NieDales_03_03"); //Pewnie wiesz ju¿ o amulecie, który znalaz³em. Czy¿ nie?
-    AI_Output (other, self ,"DIA_Josep_NieDales_15_04"); //Masz racjê. Alex mi powiedzia³.
-    AI_Output (self, other ,"DIA_Josep_NieDales_03_05"); //Ten amulet pozwoli³ mi posi¹œæ moc samego Beliara. Dysponujê teraz mocami, które s¹ obce nawet niektórym magom!
-    AI_Output (other, self ,"DIA_Josep_NieDales_15_06"); //Nie jesteœ sob¹! Musisz mi oddaæ ten amulet. To nie jest rzecz dla ciebie. 
-    AI_Output (self, other ,"DIA_Josep_NieDales_03_07"); //NIGDY!
-
-	AI_StopProcessInfos	(self);
-	Npc_SetTarget (self, other);
-	AI_StartState (self, ZS_ATTACK, 1, "");
-};
-
-//========================================
-//-----------------> Normalny
-//========================================
-
-INSTANCE DIA_Josep_Normalny (C_INFO)
+INSTANCE DIA_Josep_Truth (C_INFO)
 {
    npc          = NON_5614_Josep;
    nr           = 1;
-   condition    = DIA_Josep_Normalny_Condition;
-   information  = DIA_Josep_Normalny_Info;
+   condition    = DIA_Josep_Truth_Condition;
+   information  = DIA_Josep_Truth_Info;
    permanent	= FALSE;
-   Important    = TRUE;
+   description	= "Dlaczego mi nie powiedzia³eœ o kradzie¿y w magazynie?";
 };
 
-FUNC INT DIA_Josep_Normalny_Condition()
+FUNC INT DIA_Josep_Truth_Condition()
 {
-    if (!Npc_HasItems (self, JosepSamulet) >=1)
-    && (Npc_KnowsInfo (hero, DIA_Josep_NieDales))
+    if (Npc_KnowsInfo (hero, DIA_Josep_Angry))
     {
     return TRUE;
     };
 };
 
 
-FUNC VOID DIA_Josep_Normalny_Info()
+FUNC VOID DIA_Josep_Truth_Info()
 {
-	AI_Output (self, other ,"DIA_Josep_Normalny_03_01"); //Och, moja g³owa! Czujê siê dziwnie... Jakbyœ siê czegoœ ze mnie pozby³...
-    AI_Output (other, self ,"DIA_Josep_Normalny_15_02"); //To moja specjalnoœæ.
-    AI_Output (self, other ,"DIA_Josep_Normalny_03_03"); //Pamiêtam... tak ju¿ pamiêtam co wydarzy³o siê w ruinach. S³ysza³em g³os, g³os przypominaj¹cy modlitwy ludzi z Bractwa...
-    AI_Output (self, other ,"DIA_Josep_Normalny_03_04"); //Hipnotyzuj¹cy g³os...
-    AI_Output (other, self ,"DIA_Josep_Normalny_15_05"); //Spokojnie. Nie ma go tu.
-    AI_Output (self, other ,"DIA_Josep_Normalny_03_06"); //Wreszcie czujê ulgê. WeŸ te rudê. To wszystko co mam. Nie chcê ju¿ widzieæ tego amuletu na oczy! Wyrzuæ go!
-	AI_Output (other, self ,"DIA_Josep_Normalny_15_07"); //Nastêpnym razem poluj w bezpieczniejszych miejscach. Stare ruiny nie s¹ najlepszym miejscem na spacerek. 
-
-    CreateInvItems (self, ItMiNugget, 30);
-    B_GiveInvItems (self, other, ItMiNugget, 30);
-    B_LogEntry                     (CH1_DziwnyJosep,"Zabieraj¹c amulet Josepa oczyœci³em jego umys³ spod w³adzy z³ych mocy. Muszê teraz coœ zrobiæ z tym amuletem. ");
-    Log_SetTopicStatus       (CH1_DziwnyJosep, LOG_SUCCESS);
-    MIS_DziwnyJosep = LOG_SUCCESS;
-
-    B_GiveXP (150);
+	AI_Output (other, self ,"DIA_Josep_Truth_15_01"); //Dlaczego mi nie powiedzia³eœ o kradzie¿y w magazynie?
+	AI_Output (self, other ,"DIA_Josep_Truth_03_02"); //Bo to nieistotne. 
+	AI_Output (other, self ,"DIA_Josep_Truth_15_03"); //Faktycznie, taka ma³a drobnostka...
+	AI_Output (self, other ,"DIA_Josep_Truth_03_04"); //S³uchaj, mia³em zlecenie. To tyle! Lepiej wymyœl jak mnie st¹d wydostaæ, jeœli chcesz cokolwiek zarobiæ.
+	AI_Output (other, self ,"DIA_Josep_Truth_15_05"); //To nie takie proste. Œmieræ Lewusa poci¹gnê³aby za sob¹ kolejne. W tym moj¹...
+	AI_Output (self, other ,"DIA_Josep_Truth_03_06"); //Rozmawia³em z kilkoma Zbieraczami. Musisz znaleŸæ jakaœ kartê przetargow¹. Ja w zamian za coœ lub kogoœ...
+	AI_Output (self, other ,"DIA_Josep_Truth_03_07"); //Wtedy bêdziesz móg³ z nim negocjowaæ. Tylko to nie mo¿e byæ byle co. Pomyœl chwilê zanim coœ zrobisz.
+	
+	B_LogEntry               (CH1_MissedJosep,"Zabicie Lewusa nie wchodzi w grê. Josep zaproponowa³ wiêc, ¿ebym znalaz³ coœ lub kogoœ cennego dla Lewusa. Wtedy bêdê móg³ dokonaæ wymiany.");
+	
+	if (Npc_KnowsInfo (hero, DIA_Zick_ValuableInfo)) && (MIS_MissedJosep == LOG_RUNNING)
+	{
+	B_LogEntry    (CH1_MissedJosep,"Przypomnia³em sobie, ¿e niejaki Zick wspomina³ kiedyœ, ¿e jest bratankiem Lewusa. Pamiêtam, ¿e ten egoistyczny Szkodnik mieszka³ w chacie niedaleko Laresa.");
+	AI_Output (other, self ,"DIA_Josep_Truth_15_08"); //Lewus ma bratanka w obozie. Nazywa siê Zick. 
+	AI_Output (self, other ,"DIA_Josep_Truth_03_09"); //Doskonale. Teraz tylko weŸ go jako zak³adnika i po problemie.
+	};
     AI_StopProcessInfos	(self);
-    Npc_ExchangeRoutine (self, "camp2");
 };
+
+////////////////////////////////////////////////
+//			Go Away
+///////////////////////////////////////////////
+
+INSTANCE DIA_Josep_GoAway (C_INFO)
+{
+   npc          = NON_5614_Josep;
+   nr           = 1;
+   condition    = DIA_Josep_GoAway_Condition;
+   information  = DIA_Josep_GoAway_Info;
+   permanent	= FALSE;
+   description	= "Zbierajmy siê st¹d.";
+};
+
+FUNC INT DIA_Josep_GoAway_Condition()
+{
+    if (Npc_KnowsInfo (hero,DIA_Lefty_NowFree))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Josep_GoAway_Info()
+{
+    AI_Output (other, self ,"DIA_Josep_GoAway_15_01"); //Zbierajmy siê st¹d.
+    AI_Output (self, other ,"DIA_Josep_GoAway_03_02"); //Nareszcie! ChodŸ za mn¹. Pójdziemy razem do obozu myœliwych. 
+
+	B_LogEntry    (CH1_MissedJosep,"Josep poprosi³ mnie, aby wróciæ do obozu razem z nim. Jest mi to na rêkê. Muszê przecie¿ odebraæ zap³atê od Alexa.");
+	
+	self.aivar[AIV_PARTYMEMBER] = TRUE;
+	Npc_ExchangeRoutine (self,"guide");
+	AI_StopProcessInfos	(self);
+};
+
+////////////////////////////////////////////////
+//			Enemies
+///////////////////////////////////////////////
+
+INSTANCE DIA_Josep_Enemies (C_INFO)
+{
+   npc          = NON_5614_Josep;
+   nr           = 1;
+   condition    = DIA_Josep_Enemies_Condition;
+   information  = DIA_Josep_Enemies_Info;
+   permanent	= FALSE;
+   important 	= TRUE;
+};
+
+FUNC INT DIA_Josep_Enemies_Condition()
+{
+    if (Npc_KnowsInfo (hero,DIA_Josep_GoAway)) && (self.aivar[AIV_PARTYMEMBER] == TRUE) && (Npc_GetDistToWP (hero, "OW_PATH_066") < 1000) 
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Josep_Enemies_Info()
+{
+    AI_Output (self, other ,"DIA_Josep_Enemies_03_01"); //Czyli jednak nie obejdzie siê bez rozlewu krwi! Chc¹ tego, dobrze, niech maj¹!
+	AI_Output (self, other ,"DIA_Josep_Enemies_03_02"); //Nie bierz jeñców.
+
+	B_LogEntry    (CH1_MissedJosep,"Po drodze do obozu spotkaliœmy Zicka i dwóch jego popleczników. To pewnie dlatego musia³em czekaæ jeden dzieñ. Musieli siê zorganizowaæ przeciwko nam. Josep kaza³ mi zabijaæ bez litoœci.");
+	
+	NON_5614_Josep.flags = 2;
+	Npc_ExchangeRoutine (NON_5614_Josep,"guide2");
+	AI_StopProcessInfos	(NON_5614_Josep);
+	
+	B_ChangeGuild    (ORG_895_Organisator,GIL_DMB);
+	B_ChangeGuild    (ORG_896_Organisator,GIL_DMB);
+	B_ChangeGuild    (ORG_823_Zick,GIL_DMB);
+};
+
+////////////////////////////////////////////////
+//			Camp
+///////////////////////////////////////////////
+
+INSTANCE DIA_Josep_Camp (C_INFO)
+{
+   npc          = NON_5614_Josep;
+   nr           = 1;
+   condition    = DIA_Josep_Camp_Condition;
+   information  = DIA_Josep_Camp_Info;
+   permanent	= FALSE;
+   important 	= TRUE;
+};
+
+FUNC INT DIA_Josep_Camp_Condition()
+{
+    if (Npc_KnowsInfo (hero,DIA_Josep_GoAway)) && (self.aivar[AIV_PARTYMEMBER] == TRUE) && (Npc_GetDistToWP (hero, "OW_PATH_066") < 1000) 
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Josep_Camp_Info()
+{
+    AI_Output (self, other ,"DIA_Josep_Camp_03_01"); //Jesteœmy na miejscu! Jestem ci cholernie wdziêczny za pomoc. 
+	AI_Output (self, other ,"DIA_Josep_Camp_03_02"); //Postaram ci siê to jakoœ wynagrodziæ w przysz³oœci. W ci¹gu kilku tygdoni powinienem siê odkuæ i zarobiæ sporo rudy.
+	AI_Output (self, other ,"DIA_Josep_Camp_03_03"); //Niestety te bandziory zabra³y mi wszystko co mia³em.
+	AI_Output (other, self ,"DIA_Josep_Camp_15_04"); //W porz¹dku. Wynagrodzenie od Alexa powinno wystarczyæ na jakiœ czas.
+
+	B_LogEntry    (CH1_MissedJosep,"Razem z Josepem wróciliœmy do obozu myœliwych. ");
+	
+	NON_5614_Josep.flags = 0;
+	Npc_ExchangeRoutine (NON_5614_Josep,"camp2");
+	self.aivar[AIV_PARTYMEMBER] = FALSE;
+	AI_StopProcessInfos	(self);
+};
+

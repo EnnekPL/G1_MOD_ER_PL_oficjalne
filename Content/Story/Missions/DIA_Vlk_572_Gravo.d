@@ -366,7 +366,7 @@ FUNC INT DIA_Gravo_OfertaMila_Condition()
     if (Npc_KnowsInfo (hero, DIA_Mil_PlaszczOK))
     && (Npc_HasItems (other, ItMi_PancerzMil) >=1)
 	&& (oferta_fiska == false)
-	&& (MIS_ZabojstwBlizny == LOG_RUNNING)
+	&& (MIS_ScarMurder == LOG_RUNNING)
 	&& (!Npc_KnowsInfo (hero, DIA_Whistler_OfertaMila))
     {
     return TRUE;
@@ -387,7 +387,7 @@ FUNC VOID DIA_Gravo_OfertaMila_Info()
 	AI_Output (other, self ,"DIA_Gravo_OfertaMila_15_09"); //Nie, ta sprawa jest doœæ delikatna. Wola³bym jej na razie nie rozgrzebywaæ. To jak bêdzie? Pomo¿esz mi? Mój zleceniodawca nie bêdzie zadowolony, jeœli nie przeka¿ê p³aszcza. 
 	AI_Output (self, other ,"DIA_Gravo_OfertaMila_03_10"); //Skoro jest zleceniodawca, to jest i zap³ata. Nie dasz rady sam wykonaæ zadania, wiêc ca³oœæ ci siê nie nale¿y. 
 	AI_Output (self, other ,"DIA_Gravo_OfertaMila_03_11"); //Wejdê w to za 50 bry³ek rudy. 
-    B_LogEntry                     (CH1_ZabojstwBlizny,"Gravo mo¿e dostarczyæ p³aszcz BliŸnie, ale jeœli zap³acê mu 50 bry³ek rudy.");
+    B_LogEntry                     (CH3_ScarMurder,"Gravo mo¿e dostarczyæ p³aszcz BliŸnie, ale jeœli zap³acê mu 50 bry³ek rudy.");
 };
 
 //========================================
@@ -409,7 +409,7 @@ FUNC INT DIA_Gravo_GiveItemPlaszcz_Condition()
     if (Npc_KnowsInfo (hero, DIA_Gravo_OfertaMila))
     && (Npc_KnowsInfo (hero, DIA_Mil_PlaszczOK))
     && (Npc_HasItems (other, ItMi_PancerzMil) >=1)
-	&& (MIS_ZabojstwBlizny == LOG_RUNNING)
+	&& (MIS_ScarMurder == LOG_RUNNING)
 	&& (Npc_HasItems (hero, ItMiNugget)>=50)
     {
     return TRUE;
@@ -421,7 +421,7 @@ FUNC VOID DIA_Gravo_GiveItemPlaszcz_Info()
 {
     AI_Output (other, self ,"DIA_Gravo_GiveItemPlaszcz_15_01"); //Zgoda, zanieœ ten p³aszcz BliŸnie.
     AI_Output (self, other ,"DIA_Gravo_GiveItemPlaszcz_03_02"); //Dostarczê go Magnatowi. Mo¿esz byæ o to spokojny.
-    B_LogEntry                     (CH1_ZabojstwBlizny,"Gravo wzi¹³ p³aszcz i powiedzia³, ¿e Blizna wkrótce go dostanie.");
+    B_LogEntry                     (CH3_ScarMurder,"Gravo wzi¹³ p³aszcz i powiedzia³, ¿e Blizna wkrótce go dostanie.");
 	B_GiveInvItems (other,self,ItMi_PancerzMil,1);
 	B_GiveInvItems (other,self,itminugget,50);
     B_GiveXP (25);

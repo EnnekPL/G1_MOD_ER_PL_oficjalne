@@ -425,7 +425,7 @@ func void HeroJoinToOC ()
 	Log_SetTopicStatus	(CH1_JoinPsi,	LOG_FAILED);
 	B_LogEntry			(CH1_JoinPsi,	"Stary Obóz bêdzie od dziœ moim domem. Bractwo Œni¹cego bêdzie musia³o obejœæ siê jakoœ beze mnie.");
 	
-	Log_CreateTopic		(CH1_BANDITOS_CAMP,	LOG_MISSION);
-	Log_SetTopicStatus	(CH1_BANDITOS_CAMP,	LOG_FAILED);
-	B_LogEntry			(CH1_BANDITOS_CAMP,	"Banda Quentina bêdzie musia³a siê beze mnie obejœæ. Postanowi³em przy³¹czyæ siê do Gomeza.");
+	//Log_CreateTopic		(CH1_BANDITOS_CAMP,	LOG_MISSION);
+	//Log_SetTopicStatus	(CH1_BANDITOS_CAMP,	LOG_FAILED);
+	//B_LogEntry			(CH1_BANDITOS_CAMP,	"Banda Quentina bêdzie musia³a siê beze mnie obejœæ. Postanowi³em przy³¹czyæ siê do Gomeza.");
 };

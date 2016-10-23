@@ -207,7 +207,7 @@ INSTANCE DIA_Orik_PORACHUNKI (C_INFO)
 
 FUNC INT DIA_Orik_PORACHUNKI_Condition()
 {
-    if (MIS_ZabojstwBlizny == LOG_SUCCESS)
+    if (MIS_ScarMurder == LOG_SUCCESS)
     {
     return TRUE;
     };

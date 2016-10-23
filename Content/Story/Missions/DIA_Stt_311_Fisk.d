@@ -369,7 +369,7 @@ FUNC INT DIA_Fisk_OfertaOdMila_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Mil_PlaszczOK)) 
     && (Npc_HasItems (other, ItMi_PancerzMil) >=1)
-	&& (MIS_ZabojstwBlizny == LOG_RUNNING)
+	&& (MIS_ScarMurder == LOG_RUNNING)
 	&& (!Npc_KnowsInfo (hero, DIA_Gravo_GiveItemPlaszcz)) 
     {
     return TRUE;
@@ -403,7 +403,7 @@ FUNC VOID DIA_Fisk_OfertaOdMila_BIERZ_PLASZCZ()
     AI_Output (other, self ,"DIA_Fisk_OfertaOdMila_BIERZ_PLASZCZ_15_01"); //Dobra. Dawaj rudê i bierz ten p³aszcz.
     AI_Output (self, other ,"DIA_Fisk_OfertaOdMila_BIERZ_PLASZCZ_03_02"); //Œwietnie. Wkrótce trafi do Blizny.
     AI_Output (other, self ,"DIA_Fisk_OfertaOdMila_BIERZ_PLASZCZ_15_03"); //Prosi³bym ciê, abyœ zrobi³ to w miarê szybko.
-    B_LogEntry                     (CH1_ZabojstwBlizny,"Dogada³em siê z Fiskiem. Dostarczy p³aszcz BliŸnie.");
+    B_LogEntry                     (CH3_ScarMurder,"Dogada³em siê z Fiskiem. Dostarczy p³aszcz BliŸnie.");
 DIA_Fisk_OfertaOdMila.permanent = false;
     B_GiveXP (150);
     B_GiveInvItems (other, self, ItMi_PancerzMil, 1);

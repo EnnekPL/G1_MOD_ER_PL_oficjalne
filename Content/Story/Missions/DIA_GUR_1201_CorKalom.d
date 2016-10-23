@@ -319,9 +319,9 @@ func void  GUR_1201_CorKalom_JoinPSI_Info()
 			Log_SetTopicStatus	(CH1_JoinNC,	LOG_FAILED);
 			B_LogEntry				(CH1_JoinNC,	"Nie mogê do³¹czyæ do Szkodników z Nowego Obozu. Moje miejsce jest w Bractwie Œni¹cego.");
 			
-			Log_CreateTopic		(CH1_BANDITOS_CAMP,	LOG_MISSION);
-			Log_SetTopicStatus	(CH1_BANDITOS_CAMP,	LOG_FAILED);
-			B_LogEntry				(CH1_BANDITOS_CAMP,	"Quentin mo¿e zapomnieæ o mojej osobie. Do³¹czy³em do Bractwa.");
+			//Log_CreateTopic		(CH1_BANDITOS_CAMP,	LOG_MISSION);
+			//Log_SetTopicStatus	(CH1_BANDITOS_CAMP,	LOG_FAILED);
+			//B_LogEntry				(CH1_BANDITOS_CAMP,	"Quentin mo¿e zapomnieæ o mojej osobie. Do³¹czy³em do Bractwa.");
 			
 			Log_CreateTopic		(CH1_EasyJoinOC,	LOG_MISSION);
 			Log_SetTopicStatus	(CH1_EasyJoinOC,	LOG_FAILED);

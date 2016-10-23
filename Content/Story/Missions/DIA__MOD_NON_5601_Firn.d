@@ -255,7 +255,6 @@ func void DIA_Firn_TEACH_Gady ()
     };
 };
 
-
 //========================================
 //-----------------> HELLO6
 //========================================
@@ -322,41 +321,6 @@ FUNC VOID DIA_Firn_WhistlerSpotkanie_Info()
     B_GiveXP (100);
     CreateInvItems (self, ItMiNugget, 150);
     B_GiveInvItems (self, other, ItMiNugget, 150);
-};
-//========================================
-//-----------------> PorwanieInicjacja
-//========================================
-
-INSTANCE DIA_Firn_PorwanieInicjacja (C_INFO)
-{
-   npc          = NON_5601_Firn;
-   nr           = 1;
-   condition    = DIA_Firn_PorwanieInicjacja_Condition;
-   information  = DIA_Firn_PorwanieInicjacja_Info;
-   permanent	= FALSE;
-   Important    = TRUE;
-};
-
-FUNC INT DIA_Firn_PorwanieInicjacja_Condition()
-{
-    if (Kapitel == 3)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Firn_PorwanieInicjacja_Info()
-{
-    AI_Output (self, other ,"DIA_Firn_PorwanieInicjacja_03_01"); //Dobrze, ¿e jesteœ!
-    AI_Output (self, other ,"DIA_Firn_PorwanieInicjacja_03_02"); //Te sukinsyny porwa³y Alexa.
-    AI_Output (self, other ,"DIA_Firn_PorwanieInicjacja_03_03"); //Pogadaj ze Stanleyem. On wie najwiêcej.
-    MIS_PorwanieAlexa = LOG_RUNNING;
-
-    Log_CreateTopic            (CH1_PorwanieAlexa, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_PorwanieAlexa, LOG_RUNNING);
-    B_LogEntry                     (CH1_PorwanieAlexa,"Firn by³ bardzo roztrzêsiony. Ktoœ porwa³ Alexa, a ja mam pogadaæ o tym ze Stanleyem. ");
-    AI_StopProcessInfos	(self);
 };
 
 //========================================
@@ -489,6 +453,7 @@ Palisada_Mysliwych = false;
     B_GiveXP (150);
     AI_StopProcessInfos	(self);
 };
+
 //========================================
 //-----------------> palisadaSkonczone
 //========================================
@@ -574,6 +539,41 @@ FUNC VOID DIA_Firn_StaryZaruchal_Info()
         AI_StopProcessInfos	(self);
 };
 
+//========================================
+//-----------------> PorwanieInicjacja
+//========================================
+
+INSTANCE DIA_Firn_PorwanieInicjacja (C_INFO)
+{
+   npc          = NON_5601_Firn;
+   nr           = 1;
+   condition    = DIA_Firn_PorwanieInicjacja_Condition;
+   information  = DIA_Firn_PorwanieInicjacja_Info;
+   permanent	= FALSE;
+   Important    = TRUE;
+};
+
+FUNC INT DIA_Firn_PorwanieInicjacja_Condition()
+{
+    if (Kapitel == 3)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Firn_PorwanieInicjacja_Info()
+{
+    AI_Output (self, other ,"DIA_Firn_PorwanieInicjacja_03_01"); //Dobrze, ¿e jesteœ!
+    AI_Output (self, other ,"DIA_Firn_PorwanieInicjacja_03_02"); //Te sukinsyny porwa³y Alexa.
+    AI_Output (self, other ,"DIA_Firn_PorwanieInicjacja_03_03"); //Pogadaj ze Stanleyem. On wie najwiêcej.
+    MIS_Kidnapping = LOG_RUNNING;
+
+    Log_CreateTopic          (CH3_Kidnapping, LOG_MISSION);
+    Log_SetTopicStatus       (CH3_Kidnapping, LOG_RUNNING);
+    B_LogEntry               (CH3_Kidnapping,"Firn by³ bardzo roztrzêsiony. Ktoœ porwa³ Alexa, a ja mam pogadaæ o tym ze Stanleyem. ");
+    AI_StopProcessInfos	(self);
+};
 
 //========================================
 //-----------------> CHAPTER_5
@@ -591,7 +591,7 @@ INSTANCE DIA_Firn_CHAPTER_5 (C_INFO)
 
 FUNC INT DIA_Firn_CHAPTER_5_Condition()
 {
-    if (kapitel == 5) && (MIS_PorwanieAlexa == LOG_SUCCESS)
+    if (kapitel == 5) && (MIS_Kidnapping == LOG_SUCCESS)
     {
     return TRUE;
     };
