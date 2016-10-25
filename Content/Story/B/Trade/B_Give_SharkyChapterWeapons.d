@@ -25,7 +25,7 @@ func void B_Give_SharkyChapter1Weapons ()
 	CreateInvItem (npc,ItMw_2H_Sword_New_01);
 	//-------- Fernkampfwaffen --------
 	//-------- Munition --------
-  	CreateInvItems (npc,ItMiNugget,200);
+  	CreateInvItems (npc,ItMiNugget,130);
 	CreateInvItems	(npc, ItKeLockpick,10);
 	CreateInvItems	(npc, ItMi_Alchemy_Syrianoil_01,3);
 	CreateInvItems  (self,itmiflask,100);
@@ -58,7 +58,7 @@ func void B_Give_SharkyChapter2Weapons ()
 	CreateInvItems (npc,ItFo_Konfitura ,2);
 	CreateInvItems  (self,itmiflask,30);
 	CreateInvItems	(npc, ItKeLockpick,20);
-	CreateInvItems (npc,ItMiNugget,400);
+	CreateInvItems (npc,ItMiNugget,150);
 };
 
 func void B_Give_SharkyChapter3Weapons ()
@@ -79,7 +79,7 @@ func void B_Give_SharkyChapter3Weapons ()
 	//-------- Fernkampfwaffen --------
 	
  	//-------- Munition --------
-  	CreateInvItems (npc,ItMiNugget,600);
+  	CreateInvItems (npc,ItMiNugget,300);
 	CreateInvItems	(npc, ItKeLockpick,30);
 	CreateInvItems  (self,itmiflask,30);
 };
@@ -94,7 +94,7 @@ func void B_Give_SharkyChapter4Weapons ()
 	CreateInvItem (npc,ItMw_2H_Axe_Old_01);
 	CreateInvItem (npc,ItMw_2H_Axe_light_01); // Kapitel 5 und 6 zusammengefasst
 	CreateInvItem (npc,ItMw_2H_Axe_light_02);
-	CreateInvItems (npc,ItMiNugget,800);
+	CreateInvItems (npc,ItMiNugget,250);
 	CreateInvItems	(npc, ItKeLockpick,20);
 	//-------- Fernkampfwaffen --------
 	CreateInvItems  (self,itmiflask,30);
@@ -115,7 +115,7 @@ func void B_Give_SharkyChapter5Weapons ()
 	CreateInvItem (npc,ItMw_2H_Axe_Heavy_02);
 	CreateInvItem (npc,ItMw_2H_Axe_Heavy_03);
 	CreateInvItem (npc,ItMw_2H_Axe_Heavy_04);
-	CreateInvItems (npc,ItMiNugget,500);
+	CreateInvItems (npc,ItMiNugget,400);
 	CreateInvItems	(npc, ItKeLockpick,10);
 	//-------- Fernkampfwaffen --------
 	CreateInvItems  (self,itmiflask,30);
@@ -130,7 +130,7 @@ func void B_Give_SharkyChapter6Weapons ()
 	
 	//-------- Nahkampfwaffen --------
 
-	CreateInvItems (npc,ItMiNugget,600);
+	CreateInvItems (npc,ItMiNugget,270);
 	CreateInvItems  (self,itmiflask,30);
 	//-------- Fernkampfwaffen --------
 	

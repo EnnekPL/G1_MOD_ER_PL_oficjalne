@@ -28,7 +28,7 @@ func void B_Give_DarrionChapter1Weapons ()
 	//-------- Munition --------
   	CreateInvItems (npc,ItAmArrow,100);
 	CreateInvItems (npc,ItAmBolt,100);
-	CreateInvItems (npc,ItMiNugget,200);
+	CreateInvItems (npc,ItMiNugget,150);
 };
 
 func void B_Give_DarrionChapter2Weapons ()
@@ -53,7 +53,7 @@ func void B_Give_DarrionChapter2Weapons ()
 	//-------- Munition --------
 	CreateInvItems (npc,ItAmArrow,200);
 	CreateInvItems (npc,ItAmBolt,200);
-	CreateInvItems (npc,ItMiNugget,400);
+	CreateInvItems (npc,ItMiNugget,200);
 	//-------- Plany kowalaskie --------
 	CreateInvItem (npc,Plan1b); 
 //	
@@ -81,7 +81,7 @@ func void B_Give_DarrionChapter3Weapons ()
 	//-------- Munition --------
 	CreateInvItems (npc,ItAmArrow,400);
 	CreateInvItems (npc,ItAmBolt,400);
-	CreateInvItems (npc,ItMiNugget,600);
+	CreateInvItems (npc,ItMiNugget,250);
 	//-------- Plany kowalaskie --------
 	CreateInvItem (npc,Plan_Rapier); 
 	
@@ -103,7 +103,7 @@ func void B_Give_DarrionChapter4Weapons ()
 	CreateInvItem (npc,ItMw_2H_Sword_Light_03); 
 	CreateInvItems (npc,ItAmArrow,800);
 	CreateInvItems (npc,ItAmBolt,800);
-	CreateInvItems (npc,ItMiNugget,800);
+	CreateInvItems (npc,ItMiNugget,345);
 	//-------- Fernkampfwaffen --------
 	
  
@@ -131,7 +131,7 @@ func void B_Give_DarrionChapter5Weapons ()
 
 	CreateInvItems (npc,ItMiNugget,1000);
 	CreateInvItems (npc,ItAmArrow,800);
-	CreateInvItems (npc,ItAmBolt,800);
+	CreateInvItems (npc,ItAmBolt,400);
 	//-------- Fernkampfwaffen --------
 	//-------- Munition --------
 //	CreateInvItem (npc,Plan5b); 
@@ -150,7 +150,7 @@ func void B_Give_DarrionChapter6Weapons ()
 	
 	//-------- Nahkampfwaffen --------
 	
-	CreateInvItems (npc,ItMiNugget,1200);
+	CreateInvItems (npc,ItMiNugget,550);
 	//-------- Fernkampfwaffen --------
 	
 

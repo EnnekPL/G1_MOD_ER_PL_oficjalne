@@ -14,7 +14,7 @@ func void B_Give_WolfChapter1Weapons ()
 	CreateInvItems (npc,ItAmArrow,200);
 	CreateInvItems (npc,ItAmBolt,200);
 	
-	CreateInvItems (npc,ItMiNugget,200);
+	CreateInvItems (npc,ItMiNugget,140);
 	CreateInvItem (npc,ItWr_Bloodfly_01);
 	//-------- Munition --------
   
@@ -38,7 +38,7 @@ func void B_Give_WolfChapter2Weapons ()
 	
 	CreateInvItems (npc,ItAmArrow,400);
 	CreateInvItems (npc,ItAmBolt,400);
-	CreateInvItems (npc,ItMiNugget,400);
+	CreateInvItems (npc,ItMiNugget,200);
 	//-------- Munition --------
 
 };
@@ -58,7 +58,7 @@ func void B_Give_WolfChapter3Weapons ()
  
  	CreateInvItems (npc,ItAmArrow,600);
 	CreateInvItems (npc,ItAmBolt,600);
- 	CreateInvItems (npc,ItMiNugget,600);
+ 	CreateInvItems (npc,ItMiNugget,300);
  	//-------- Munition --------
   
 };
@@ -70,7 +70,7 @@ func void B_Give_WolfChapter4Weapons ()
 	
 	//-------- Nahkampfwaffen --------
 		
-		CreateInvItems (npc,ItMiNugget,800);
+		CreateInvItems (npc,ItMiNugget,375);
 	//-------- Fernkampfwaffen --------
 	CreateInvItem (npc,ItRw_Bow_Long_06);
 	CreateInvItem (npc,ItRw_Bow_Long_07);
@@ -92,7 +92,7 @@ func void B_Give_WolfChapter5Weapons ()
 	npc = Hlp_GetNpc(ORG_855_Wolf);
 	
 	//-------- Nahkampfwaffen --------
-	CreateInvItems (npc,ItMiNugget,1000);
+	CreateInvItems (npc,ItMiNugget,500);
 	//-------- Fernkampfwaffen --------
 	CreateInvItem (npc,ItRw_Bow_Long_09);
 	CreateInvItem (npc,ItRw_Bow_War_01);
@@ -115,7 +115,7 @@ func void B_Give_WolfChapter6Weapons ()
 	
 	//-------- Nahkampfwaffen --------
 
-	CreateInvItems (npc,ItMiNugget,1200);
+	CreateInvItems (npc,ItMiNugget,230);
 	//-------- Fernkampfwaffen --------
 	CreateInvItem (npc,ItRw_Bow_War_04);
 	CreateInvItem (npc,ItRw_Bow_War_05);

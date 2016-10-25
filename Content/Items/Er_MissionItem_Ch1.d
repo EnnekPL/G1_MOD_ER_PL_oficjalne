@@ -830,7 +830,7 @@ func void UseCronosBrief222 ()
 					Doc_PrintLine	( nDocID,  0, ""					);
 					Doc_PrintLine	( nDocID,  0, "Niechaj gniew Beliara nigdy was nie siêgnie."					);
 					Doc_PrintLine	( nDocID,  0, ""					);
-					Doc_PrintLine	( nDocID,  0, "Shawn"					);
+					Doc_PrintLine	( nDocID,  0, "Shan"					);
 					Doc_PrintLine	( nDocID,  0, ""					);
 					Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 				
@@ -2975,12 +2975,12 @@ func void OutlandersMassage ()
 					Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
 					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"	   			); 	// -1 -> all pages 
 					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
-					Doc_PrintLines	( nDocID,  0, "Nareszcie mi siê uda³o. Wspi¹³em siê na sam szczyt tej ska³y. Te dupki patrz¹ na mnie z podziwem. Nie mogê siê doczekaæ, a¿ wyskocz¹ z rudy, o któr¹ siê za³o¿yliœmy. Szczególnie liczê na sakiewkê Duna. Ten goœæ zawsze mnie irytowa³. Tym razem ja siê œmieje ostatni."					);
+					Doc_PrintLines	( nDocID,  0, "Nareszcie mi siê uda³o. Wspi¹³em siê na sam szczyt tej ska³y. Te dupki patrz¹ na mnie z podziwem. Nie mogê siê doczekaæ, a¿ wyskocz¹ z rudy, o któr¹ siê za³o¿yliœmy. Szczególnie liczê na sakiewkê Matta. Ten goœæ zawsze mnie irytowa³. Tym razem ja siê œmieje ostatni."					);
 					Doc_PrintLine	( nDocID,  0, ""	);
-					Doc_PrintLines	( nDocID,  0, "Czytelniku, na odwrocie opisa³em moje sztuczki pozwalaj¹ce zwiêkszyæ sprawnoœæ fizyczn¹, ale skoro siê tu dosta³eœ, to pewnie ich nie potrzebujesz. W takim razie zapamiêtaj to has³o: pracuj w ciszy, niech efekty zrobi¹ ha³as. Niech ci przyœwieca przez ca³y czas."	);
+					Doc_PrintLines	( nDocID,  0, "Czytelniku, na odwrocie opisa³em moje sztuczki pozwalaj¹ce zwiêkszyæ sprawnoœæ fizyczn¹, ale skoro siê tu dosta³eœ, to pewnie ich nie potrzebujesz. Trening czyni mistrza."	);
 					Doc_PrintLine	( nDocID,  0, ""	);
 					Doc_PrintLines	( nDocID,  0, "Spisano w ch³odny, dwudziesty siódmy wieczór listopada");
-					Doc_PrintLines	( nDocID,  0, "Outlander");
+					Doc_PrintLines	( nDocID,  0, "Kopacz Skirnir");
 					Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 				
 					Doc_Show		( nDocID );
@@ -2993,7 +2993,7 @@ INSTANCE ItMi_GhostsBagSpecial (C_Item)
 	name 				=	"Tobo³ek";
 
 	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MULTI;
+	flags 				=	ITEM_MISSION;
 
 	value 				=	0;
 
@@ -3005,4 +3005,82 @@ INSTANCE ItMi_GhostsBagSpecial (C_Item)
 	description		= name;
 	TEXT[1]				= "Tobo³ek pewnego stra¿nika królewskiego";
 	//TEXT[4]			= NAME_Value;					COUNT[4]	= value;
+};
+
+//////////////////////////////////////////////////////////
+// ZADANIE: TOPÓR TORLOFA
+// Przedmioty otrzymywane od NPC
+// Sztabka w œwiecie przy uszkodzonym wozie
+//////////////////////////////////////////////////////////
+
+INSTANCE Torlofs_Axt2 (C_Item)
+{
+	name 				=	"Uszkodzony topór Torlofa";
+
+	mainflag 			=	ITEM_KAT_NF;
+	flags 				=	ITEM_2HD_AXE | ITEM_MISSION;
+	material 			=	MAT_METAL;
+
+	value 				=	550;
+
+	damageTotal			= 	55;
+	damagetype			=	DAM_EDGE;
+	range    			=  	130;
+
+	cond_atr[2]   		= 	ATR_STRENGTH;
+	cond_value[2]  		= 	85;
+
+	//owner 				= 	SLD_737_TORLOF;
+	visual 				=	"ItMw_2H_Axe_Heavy_03.3DS";
+
+	description			= name;
+	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
+	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[4] 			= NAME_TwoHanded;
+	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
+};
+
+
+INSTANCE ItMi_OreStabOldMetode (C_Item)
+{
+	name 				=	"Stara sztabka stali ";
+
+	mainflag 			=	ITEM_KAT_NONE;
+	flags 				=	ITEM_MISSION;
+	value 				=	50;
+
+	visual 				=	"Er_OreStab.3ds";
+    material            =    MAT_METAL;
+
+	description			= 	name;
+	TEXT[2]				= 	"Sztabka wytopiona z rudy";
+	TEXT[3]				= 	"wed³ug starej metody odlewu.";
+	TEXT[4]				= 	NAME_Value;					COUNT[4]	= value;
+};
+
+INSTANCE Torlofs_Axt2_Fixed (C_Item)
+{
+	name 				=	"Naprawiony topór Torlofa";
+
+	mainflag 			=	ITEM_KAT_NF;
+	flags 				=	ITEM_2HD_AXE | ITEM_MISSION;
+	material 			=	MAT_METAL;
+
+	value 				=	550;
+
+	damageTotal			= 	99;
+	damagetype			=	DAM_EDGE;
+	range    			=  	130;
+
+	cond_atr[2]   		= 	ATR_STRENGTH;
+	cond_value[2]  		= 	85;
+
+	//owner 				= 	SLD_737_TORLOF;
+	visual 				=	"ItMw_2H_Axe_Heavy_03.3DS";
+
+	description			= name;
+	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
+	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[4] 			= NAME_TwoHanded;
+	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };

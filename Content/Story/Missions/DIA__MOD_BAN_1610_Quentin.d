@@ -3482,7 +3482,7 @@ INSTANCE DIA_Quentin_POSZUKIWACZE (C_INFO)
 
 FUNC INT DIA_Quentin_POSZUKIWACZE_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Shawn_POSZUKIWACZE))
+    if (Npc_KnowsInfo (hero, DIA_Shan_POSZUKIWACZE))
     && (Npc_GetTrueGuild(hero) == GIL_BAU)
     {
     return TRUE;

@@ -44,7 +44,7 @@ func void B_Give_FiskChapter2Weapons ()
 	CreateInvItem (npc,ItMw_1H_Sword_03);
 	CreateInvItem (npc,ItMw_1H_Sword_04);
 	CreateInvItem (npc,ItMw_1H_Sword_04);
-	CreateInvItems (npc,ItMiNugget,400); 
+	CreateInvItems (npc,ItMiNugget,170); 
 	
 	//2h er lekkie 1.4.5.v7
 	CreateInvItem (npc,ItMw_2H_Axe_Big_04);
@@ -76,7 +76,7 @@ func void B_Give_FiskChapter3Weapons ()
 	CreateInvItem	(npc,	ItMw_2H_Sword_New_03);
 	CreateInvItem	(npc,	ItMw_2h_Sword_Solid_01);
 	CreateInvItem	(npc,	ItMw_2H_Sword_New_05);
-	CreateInvItems (npc,ItMiNugget,600); 
+	CreateInvItems (npc,ItMiNugget,300); 
 	//-------- Fernkampfwaffen --------
 	//-------- Munition --------
   CreateInvItems	(self, ItKeLockpick,30);

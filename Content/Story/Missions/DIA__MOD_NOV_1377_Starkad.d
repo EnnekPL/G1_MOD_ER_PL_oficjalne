@@ -323,7 +323,7 @@ FUNC VOID DIA_Patros_PLOTY_Info()
     AI_Output (other, self ,"DIA_Patros_PLOTY_15_01"); //Masz mo¿e jakieœ plotki?
     AI_Output (self, other ,"DIA_Patros_PLOTY_03_02"); //Ludzie mówi¹, ¿e jeden z Nowicjuszy rozpocz¹³ badania na w³asn¹ rêkê.
     AI_Output (self, other ,"DIA_Patros_PLOTY_03_03"); //Podobno przesiaduje w pobli¿u ma³ej palisady przy placu Baal Tondrala.
-    AI_Output (self, other ,"DIA_Patros_PLOTY_03_04"); //Je¿eli Shawn siê o tym dowie, zacznie go szukaæ.
+    AI_Output (self, other ,"DIA_Patros_PLOTY_03_04"); //Je¿eli Shan siê o tym dowie, zacznie go szukaæ.
 };
 
 

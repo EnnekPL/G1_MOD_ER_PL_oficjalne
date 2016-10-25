@@ -81,6 +81,45 @@ FUNC VOID DIA_Nordmarczyk_HELLO2_Info()
 };
 
 //========================================
+//-----------------> OLDORESTAB
+//========================================
+
+INSTANCE DIA_Nordmarczyk_OLDORESTAB (C_INFO)
+{
+   npc          = NON_7851_Nordmarczyk;
+   nr           = 1;
+   condition    = DIA_Nordmarczyk_OLDORESTAB_Condition;
+   information  = DIA_Nordmarczyk_OLDORESTAB_Info;
+   permanent	= 0;
+   description	= "Pilnie potrzebujê sztabki stali...";
+};
+
+FUNC INT DIA_Nordmarczyk_OLDORESTAB_Condition()
+{
+    return TRUE;
+};
+
+FUNC VOID DIA_Nordmarczyk_OLDORESTAB_Info()
+{
+    AI_Output (other, self ,"DIA_Nordmarczyk_OLDORESTAB_15_01"); //Pilnie potrzebujê sztabki stali odlanej wed³ug starej metody.
+    AI_Output (self, other ,"DIA_Nordmarczyk_OLDORESTAB_03_02"); //Tej z czasów pierwszej wojny z orkami? A po có¿ ci coœ takiego?
+	AI_Output (other, self ,"DIA_Nordmarczyk_OLDORESTAB_15_03"); //Pewien kowal musi naprawiæ bardzo stary orê¿. 
+	AI_Output (self, other ,"DIA_Nordmarczyk_OLDORESTAB_03_04"); //Od lat nie u¿ywa siê tego typu stali.
+	AI_Output (other, self ,"DIA_Nordmarczyk_OLDORESTAB_15_05"); //Masz mo¿e jeden spoœród tych reliktów przesz³oœci na wyposa¿eniu?
+	AI_Output (self, other ,"DIA_Nordmarczyk_OLDORESTAB_03_06"); //Ja? Sk¹d¿e! Ale jest cieñ szansy...
+	AI_Output (self, other ,"DIA_Nordmarczyk_OLDORESTAB_03_07"); //Dawniej kowalstwo rozwija³o siê w dolinie niezwykle prê¿nie. Sam wiesz, kopalnie...
+	AI_Output (self, other ,"DIA_Nordmarczyk_OLDORESTAB_03_08"); //Rudê i inne sk³adniki rzemieœlnicze transportowano po Górniczej Dolinie przy u¿yciu wozów. 
+	AI_Output (self, other ,"DIA_Nordmarczyk_OLDORESTAB_03_09"); //Do dziœ mo¿na spotkaæ ich wraki na starych traktach. Jeden z takich w³aœnie wraków le¿y nieopodal.
+	AI_Output (self, other ,"DIA_Nordmarczyk_OLDORESTAB_03_10"); //By³ prze³adowany rud¹ i ¿elazem. Oczywiœcie zabra³em stamt¹d wszystko, co siê da³o, ale mo¿e zosta³y jakieœ resztki dla ciebie.
+	AI_Output (self, other ,"DIA_Nordmarczyk_OLDORESTAB_03_11"); //Rozejrzyj siê tam.
+	AI_Output (other, self ,"DIA_Nordmarczyk_OLDORESTAB_15_12"); //Gdzie dok³adnie jest ten wóz?
+	AI_Output (self, other ,"DIA_Nordmarczyk_OLDORESTAB_03_13"); //Za moj¹ wie¿¹ rozci¹ga siê p³askowy¿ na którym ¿yj¹ œcierwojady. PójdŸ tam i skieruj siê na Ziemie Orków.
+	AI_Output (self, other ,"DIA_Nordmarczyk_OLDORESTAB_03_14"); //Wóz znajduje siê w uschniêtym zagajniku. Uwa¿aj na czaj¹ce siê tam wilki.
+	
+	B_LogEntry               (CH1_TorlofsAxe,"Nordmarski kowal poleci³ mi przeszukaæ wrak starego wozu, którym dawniej transportowano sk³adniki rzemieœlnicze. Znajdê go w uschniêtym zagajniku, na p³askowy¿u za wie¿¹ Nordmarczyka. To moja ostatnia szansa.");
+};
+
+//========================================
 //-----------------> YOURWORK
 //========================================
 

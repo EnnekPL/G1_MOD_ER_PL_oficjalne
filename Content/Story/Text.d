@@ -461,7 +461,7 @@ const string NAME_BuyAttributeMAN = "Mana + ";
 const string NAME_XPGained			= "Doœwiadczenie + ";			// bei jedem Erfahrungsgewinn
 const string NAME_LevelUp			= "Wy¿szy poziom!";		// beim Stufenaufstieg
 
-const string NAME_NewLogEntry		= "Nowy zapis w dzienniku";
+const string NAME_NewLogEntry		= "Nowy zapis w dzienniku: ";
 
 
 

@@ -12,7 +12,7 @@ func void B_Give_CavalornChapter1Weapons ()
 	CreateInvItem (npc,ItRw_Bow_Small_01);
 	CreateInvItem (npc,BowBlunt1);
 	CreateInvItems (npc,ItAmArrow,200);
-	CreateInvItems (npc,ItMiNugget,200);
+	CreateInvItems (npc,ItMiNugget,150);
 	
 	//-------- Munition --------
   
@@ -34,7 +34,7 @@ func void B_Give_CavalornChapter2Weapons ()
 	CreateInvItem (npc,ItRw_Bow_Long_01);
 	CreateInvItems (npc,ItAmArrow,400);
 	CreateInvItems (npc,ItAmBolt,200);
-	CreateInvItems (npc,ItMiNugget,400);
+	CreateInvItems (npc,ItMiNugget,200);
 	//-------- Munition --------
 
 };
@@ -53,7 +53,7 @@ func void B_Give_CavalornChapter3Weapons ()
  	CreateInvItem (npc,ItRw_Bow_Long_05);	
  	CreateInvItems (npc,ItAmArrow,600);
 	CreateInvItems (npc,ItAmBolt,400);
- 	CreateInvItems (npc,ItMiNugget,600);
+ 	CreateInvItems (npc,ItMiNugget,300);
  	//-------- Munition --------
   
 };
@@ -65,7 +65,7 @@ func void B_Give_CavalornChapter4Weapons ()
 	
 	//-------- Nahkampfwaffen --------
 		
-		CreateInvItems (npc,ItMiNugget,400);
+		CreateInvItems (npc,ItMiNugget,350);
 	//-------- Fernkampfwaffen --------
 	CreateInvItem (npc,ItRw_Bow_Long_06);
 	CreateInvItem (npc,ItRw_Bow_Long_07);
@@ -82,7 +82,7 @@ func void B_Give_CavalornChapter5Weapons ()
 	npc = Hlp_GetNpc(STT_336_Cavalorn);
 	
 	//-------- Nahkampfwaffen --------
-	CreateInvItems (npc,ItMiNugget,1000);
+	CreateInvItems (npc,ItMiNugget,400);
 	//-------- Fernkampfwaffen --------
 	CreateInvItem (npc,ItRw_Bow_Long_09);
 	CreateInvItem (npc,ItRw_Bow_War_01);
@@ -102,7 +102,7 @@ func void B_Give_CavalornChapter6Weapons ()
 	
 	//-------- Nahkampfwaffen --------
 
-	CreateInvItems (npc,ItMiNugget,1200);
+	CreateInvItems (npc,ItMiNugget,550);
 	//-------- Fernkampfwaffen --------
 	CreateInvItem (npc,ItRw_Bow_War_04);
 	CreateInvItem (npc,ItRw_Bow_War_05);

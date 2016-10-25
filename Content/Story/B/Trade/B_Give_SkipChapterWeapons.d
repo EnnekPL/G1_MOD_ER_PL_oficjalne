@@ -39,7 +39,7 @@ func void B_Give_SkipChapter3Weapons ()
 	CreateInvItems (npc,ItAmArrow,400);
 	CreateInvItems (npc,ItAmBolt,400);
 	
-	CreateInvItems (npc,ItMiNugget,600); 
+	CreateInvItems (npc,ItMiNugget,250); 
 	//-------- Fernkampfwaffen --------
 	
 

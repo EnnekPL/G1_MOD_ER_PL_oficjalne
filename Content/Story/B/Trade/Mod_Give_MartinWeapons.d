@@ -43,7 +43,7 @@ func void B_GiveMartinItemsCH3 ()
 	CreateInvItem	(npc,	ItMw_1H_Sword_Long_01);
 	CreateInvItem	(npc,	ItMw_1H_Sword_Long_02);
 	CreateInvItem	(npc,	ItMw_1H_Sword_Long_03);
-	CreateInvItems (npc,ItMiNugget,500);
+	CreateInvItems (npc,ItMiNugget,400);
 };
 
 func void B_GiveMartinItemsCH4 ()
@@ -68,7 +68,7 @@ func void B_GiveMartinItemsCH4 ()
 	CreateInvItem	(npc,	ItMw_2H_Sword_Light_02);
 	CreateInvItem	(npc,	ItMw_2H_Sword_Light_03);
 
-	CreateInvItems (npc,ItMiNugget,800);
+	CreateInvItems (npc,ItMiNugget,200);
 	
 	CreateInvItems  (self,ItKeLockpick,15);
 	CreateInvItems  (self,ItMiHammer,15);
@@ -94,7 +94,7 @@ func void B_GiveMartinItemsCH5 ()
 	CreateInvItem 	(npc,	ItMw_2H_Sword_Heavy_03); 
 	CreateInvItem 	(npc,	ItMw_2H_Sword_Heavy_04); 
 	
-	CreateInvItems (npc,ItMiNugget,1000);
+	CreateInvItems (npc,ItMiNugget,550);
 };
 
 func void B_GiveMartinItemsCH6 ()

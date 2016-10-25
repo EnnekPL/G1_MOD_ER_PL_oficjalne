@@ -226,7 +226,7 @@ FUNC VOID DIA_Steh_QUEST2_YOU_LIE ()
 	AI_Output (other, self ,"DIA_Steh_QUEST2_YOU_LIE_15_05"); //Masz racjê, z pozoru... Tak naprawdê nie ma czego siê obawiaæ. Œni¹cy nam nie zagra¿a. Mo¿e nas nawet ocaliæ!
 	AI_Output (other, self ,"DIA_Steh_QUEST2_YOU_LIE_15_06"); //Musimy skorzystaæ z tej szansy, ale aby to siê sta³o Bractwo nie mo¿e upaœæ! 
 	AI_Output (self, other ,"DIA_Steh_QUEST2_YOU_LIE_03_07"); //Jestem gotowy poddaæ siê twojej woli! Co mam zrobiæ? 
-	AI_Output (other, self ,"DIA_Steh_QUEST2_YOU_LIE_15_08"); //Zanieœ wszystkie artefakty, które masz przy sobie do Shawna, a potem oddaj siê pracy na rzecz wspólnoty.
+	AI_Output (other, self ,"DIA_Steh_QUEST2_YOU_LIE_15_08"); //Zanieœ wszystkie artefakty, które masz przy sobie do Shana, a potem oddaj siê pracy na rzecz wspólnoty.
 	AI_Output (other, self ,"DIA_Steh_QUEST2_YOU_LIE_15_09"); //A i zapamiêtaj: nigdy nie lekcewa¿ zakazów narzuconych przez Guru!
 	AI_Output (self, other ,"DIA_Steh_QUEST2_YOU_LIE_03_10"); //Dziêkujê za drug¹ szansê!
 	B_LogEntry     (CH3_StrangeResearcher,"Nowicjuszem, który sprzedaje artefakty jest niejaki Steh, krêc¹cy siê przy palisadzie chroni¹cej Obóz przed b³otnymi wê¿ami. Rozmawia³em z nim i musia³em posun¹æ siê do k³amstwa, ¿eby dobrowolnie odda³ wszystkie artefakty, a przy tym nie opuœci³ Obozu.");

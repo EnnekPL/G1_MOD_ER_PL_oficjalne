@@ -135,89 +135,119 @@ FUNC INT DIA_Torlof_PoparcieNajemnikow_Condition()
     && (Npc_GetTrueGuild(hero) == GIL_SFB)    
 	{
     return TRUE;
-    };
+   };
 };
 
 
 FUNC VOID DIA_Torlof_PoparcieNajemnikow_Info()
 {
     AI_Output (other, self ,"DIA_Torlof_PoparcieNajemnikow_15_01"); //Szukam poparcia Najemników.
-    AI_Output (self, other ,"DIA_Torlof_PoparcieNajemnikow_03_02"); //To Ÿle trafi³eœ. Chcesz siê szybko dostaæ do Obozu?
-    AI_Output (self, other ,"DIA_Torlof_PoparcieNajemnikow_03_03"); //Raczej ja ci w tym nie pomogê. Jestem bardzo wymagaj¹cy.
-    AI_Output (self, other ,"DIA_Torlof_PoparcieNajemnikow_03_04"); //Lee daje swoim ludziom zbyt du¿o wolnoœci.
-    AI_Output (self, other ,"DIA_Torlof_PoparcieNajemnikow_03_05"); //Zauwa¿, ¿e walkê æwiczy tylko kilka osób. A co je¿eli Gomez zaatakuje?
-    AI_Output (self, other ,"DIA_Torlof_PoparcieNajemnikow_03_06"); //Co wtedy? Wiêkszoœæ ucieknie w góry do Obozu Bandytów.
+    AI_Output (self, other ,"DIA_Torlof_PoparcieNajemnikow_03_02"); //I pewnie stwierdzi³eœ, ¿e jestem kimœ wa¿nym?
+	AI_Output (other, self ,"DIA_Torlof_PoparcieNajemnikow_15_03"); //A myli³em siê?
+    AI_Output (self, other ,"DIA_Torlof_PoparcieNajemnikow_03_04"); //Sam siê przekonaj. Bêdê mia³ dla ciebie zadanie. Akurat potrzebny mi ch³opiec na posy³ki.
+    AI_Output (self, other ,"DIA_Torlof_PoparcieNajemnikow_03_05"); //WeŸ mój topór i zanieœ go do Huana. Ten chytry Szkodnik obieca³ mi naprawdê.
+    AI_Output (self, other ,"DIA_Torlof_PoparcieNajemnikow_03_06"); //Do jutra chcê mieæ topór z powrotem. Inaczej pos¹dzê ciê o kradzie¿, a wiedz, ¿e bardzo nie lubiê z³odziei. 
+    AI_Output (self, other ,"DIA_Torlof_PoparcieNajemnikow_03_07"); //Masz, pilnuj go jak oka w g³owie!
+	
+	//AI_UnequipWeapons (self);
+	//AI_EquipBestRangedWeapon (self);
+	CreateInvItems (self,Torlofs_Axt2,1);
+	B_GiveInvItems (self, hero,Torlofs_Axt2,1);
+	
+	Npc_RemoveInvItems (self, Torlofs_Axt,1);
+	CreateInvItems (self,ItMw_2H_Axe_Big_03,1);
+	AI_EquipBestMeleeWeapon (self);
+	self.flags = 2;
+	
+	B_LogEntry      (CH1_AwansJakoKret,"Podj¹³em siê zadania Torlofa. Mam zanieœæ jego topór do kowala Huana, którego znajdê w obozie.");
+	
+	MIS_TorlofsAxe = LOG_RUNNING;
+
+    Log_CreateTopic          (CH1_TorlofsAxe, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_TorlofsAxe, LOG_RUNNING);
+    B_LogEntry               (CH1_TorlofsAxe,"Torlof poprosi³ mnie, aby oddaæ jego topór do naprawy Szkodnikowi Huanowi. Szkodnika znajdê w obozowej kuŸni, a na naprawê orê¿a mam jeden dzieñ.");
+	
+	Day_TorlofAxe = wld_getday ();
 };
 
 //========================================
-//-----------------> YourHardQuest
+//-----------------> GiveAxe
 //========================================
 
-INSTANCE DIA_Torlof_YourHardQuest (C_INFO)
+INSTANCE DIA_Torlof_GiveAxe (C_INFO)
 {
    npc          = Sld_737_Torlof;
-   nr           = 2;
-   condition    = DIA_Torlof_YourHardQuest_Condition;
-   information  = DIA_Torlof_YourHardQuest_Info;
+   nr           = 1;
+   condition    = DIA_Torlof_GiveAxe_Condition;
+   information  = DIA_Torlof_GiveAxe_Info;
    permanent	= FALSE;
-   description	= "Chcê siê podj¹æ TWOJEGO zadania.";
+   description	= "Mam twój topór.";
 };
 
-FUNC INT DIA_Torlof_YourHardQuest_Condition()
+FUNC INT DIA_Torlof_GiveAxe_Condition()
 {
-if (MIS_OpinionInNewCamp == LOG_RUNNING)
-&& (Npc_GetTrueGuild(hero) == GIL_SFB)   
-&& (Npc_KnowsInfo (hero, DIA_Torlof_PoparcieNajemnikow))
+	if (Npc_KnowsInfo (hero,DIA_Huan_GetOreStab)) && (MIS_TorlofsAxe == LOG_RUNNING) && (Npc_HasItems (hero,Torlofs_Axt2_Fixed) == 1)
+	{
+    return TRUE;
+   };
+};
+
+
+FUNC VOID DIA_Torlof_GiveAxe_Info()
+{
+    AI_Output (other, self ,"DIA_Torlof_GiveAxe_15_01"); //Mam twój topór.
+    AI_Output (self, other ,"DIA_Torlof_GiveAxe_03_02"); //To œwietnie. Poka¿ mi go.
+	B_GiveInvItems (hero, self, Torlofs_Axt2_Fixed,1);
+	Npc_RemoveInvItems (self,Torlofs_Axt2_Fixed,1);
+	AI_EquipBestMeleeWeapon (self);
+	AI_Output (other, self ,"DIA_Torlof_GiveAxe_15_03"); //Jesteœ zadowolony?
+    AI_Output (self, other ,"DIA_Torlof_GiveAxe_03_04"); //Jak najbardziej. Huan to szumowina, ale kowal z niego bystry. Choæ pewnie nie najbystrzejszy.
+    AI_Output (self, other ,"DIA_Torlof_GiveAxe_03_05"); //Dobrze siê spisa³eœ. Masz mój g³os.
+    
+	self.flags = 0;
+	
+	B_LogEntry      (CH1_AwansJakoKret,"Wykonuj¹c zadanie dla Torlofa, zyska³em jego poparcie.");
+	
+	MIS_TorlofsAxe = LOG_SUCCESS;
+
+    Log_SetTopicStatus       (CH1_TorlofsAxe, LOG_SUCCESS);
+    B_LogEntry               (CH1_TorlofsAxe,"Torlof odzyska³ swój topór. Pozytywnie zaopiniuje mnie u odpowiednich osób.");
+	
+	B_GiveXP (200);
+};
+
+//========================================
+//-----------------> AxeFailed
+//========================================
+
+INSTANCE DIA_Torlof_AxeFailed (C_INFO)
+{
+   npc          = Sld_737_Torlof;
+   nr           = 1;
+   condition    = DIA_Torlof_AxeFailed_Condition;
+   information  = DIA_Torlof_AxeFailed_Info;
+   permanent	= TRUE;
+   Important    = TRUE;
+};
+
+FUNC INT DIA_Torlof_AxeFailed_Condition()
+{
+    if (MIS_TorlofsAxe == LOG_RUNNING) && (Day_TorlofAxe != wld_getday ()) && self.aivar[AIV_DEALDAY] <= Wld_GetDay()
     {
     return TRUE;
     };
 };
 
 
-FUNC VOID DIA_Torlof_YourHardQuest_Info()
+FUNC VOID DIA_Torlof_AxeFailed_Info()
 {
-    AI_Output (other, self ,"DIA_Torlof_YourHardQuest_15_01"); //Chcê siê podj¹æ TWOJEGO zadania.
-    AI_Output (self, other ,"DIA_Torlof_YourHardQuest_03_02"); //Naprawdê? Wiesz w co siê pakujesz?
-    AI_Output (other, self ,"DIA_Torlof_YourHardQuest_15_03"); //Przestañ gadaæ bez sensu, powiedz co mam zrobiæ.
-    AI_Output (self, other ,"DIA_Torlof_YourHardQuest_03_04"); //Och! Rozumiem... (drwi¹co)
-    AI_Output (self, other ,"DIA_Torlof_YourHardQuest_03_05"); //Od dawna obserwujê postawê Lewusa i Ry¿owego Ksiêcia.
-    AI_Output (self, other ,"DIA_Torlof_YourHardQuest_03_06"); //Otrzymali trochê w³adzy od Laresa i panosz¹ siê, jakby ca³y Obóz by³ ich.
-    AI_Output (self, other ,"DIA_Torlof_YourHardQuest_03_07"); //Szczególnie nie podoba mi siê to, jak wykorzystuj¹ zbieraczy.
-    AI_Output (self, other ,"DIA_Torlof_YourHardQuest_03_08"); //Zrób coœ, aby zbieraczom ¿y³o siê lepiej. Gdy us³yszê coœ dobrego o tobie, to ciê poprê.
-    AI_Output (self, other ,"DIA_Torlof_YourHardQuest_03_09"); //Mam ju¿ doœæ tych pata³achów. Powodzenia.
-    //B_LogEntry                     (CH1_OpinionInNewCamp,"Podj¹³em siê zadania Torlofa. Mam zrobiæ coœ, by zbieraczom ¿y³o siê lepiej. Mo¿e pogadaæ z którymœ z nich?");
-	B_LogEntry      (CH1_AwansJakoKret,"Podj¹³em siê zadania Torlofa. Mam zrobiæ coœ, by zbieraczom ¿y³o siê lepiej. Mo¿e pogadaæ z którymœ z nich?");
+    AI_Output (self, other ,"DIA_Torlof_AxeFailed_03_01"); //Bêdê ciê pra³ codziennie, a¿ do dnia w którym oddasz mi mój NAPRAWIONY topór.
+
+    AI_StopProcessInfos	(self);
+	Npc_SetTarget(self,other);
+	AI_StartState(self,ZS_ATTACK,1,"");
+	self.aivar[AIV_DEALDAY] = Wld_GetDay()+1;
 };
-
-//========================================
-//-----------------> Porady
-//========================================
-
-INSTANCE DIA_Torlof_Porady (C_INFO)
-{
-   npc          = Sld_737_Torlof;
-   nr           = 3;
-   condition    = DIA_Torlof_Porady_Condition;
-   information  = DIA_Torlof_Porady_Info;
-   permanent	= FALSE;
-   description	= "Mo¿esz mi daæ jakieœ rady?";
-};
-
-FUNC INT DIA_Torlof_Porady_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Torlof_YourHardQuest))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Torlof_Porady_Info()
-{
-    AI_Output (other, self ,"DIA_Torlof_Porady_15_01"); //Mo¿esz mi daæ jakieœ rady?
-    AI_Output (self, other ,"DIA_Torlof_Porady_03_02"); //Spróbuj porozmawiaæ ze zbieraczami. Mo¿e czegoœ siê dowiesz.
-};
-
 //========================================
 //-----------------> Jeraemiah
 //========================================
@@ -281,42 +311,6 @@ FUNC VOID DIA_Torlof_Jeraemiah_RyzowaDupa()
 };
 
 //========================================
-//-----------------> WiemOBuncie
-//========================================
-
-INSTANCE DIA_Torlof_WiemOBuncie (C_INFO)
-{
-   npc          = Sld_737_Torlof;
-   nr           = 1;
-   condition    = DIA_Torlof_WiemOBuncie_Condition;
-   information  = DIA_Torlof_WiemOBuncie_Info;
-   permanent	= FALSE;
-   Important    = TRUE;
-};
-
-FUNC INT DIA_Torlof_WiemOBuncie_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Torlof_YourHardQuest))
-    && (MIS_BuntZbieraczy == LOG_SUCCESS)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Torlof_WiemOBuncie_Info()
-{
-    AI_Output (self, other ,"DIA_Torlof_WiemOBuncie_03_01"); //Nie musisz nic mówiæ. Ju¿ wiem.
-    AI_Output (self, other ,"DIA_Torlof_WiemOBuncie_03_02"); //Dobra robota. Masz moje poparcie.
-    //AI_Output (other, self ,"DIA_Torlof_WiemOBuncie_15_03"); //Dziêki. 
-	
-    //B_LogEntry                     (CH1_OpinionInNewCamp,"Torlof by³ bardzo zadowolony z mojej pomocy buntownikom. Uda³o mi siê uzyskaæ jego poparcie.");
-	B_LogEntry     (CH1_AwansJakoKret,"Torlof by³ bardzo zadowolony z mojej pomocy buntownikom. Uda³o mi siê uzyskaæ jego poparcie.");
-
-    B_GiveXP (350);
-};
-
-//========================================
 //-----------------> iHelpYou
 //========================================
 
@@ -351,7 +345,6 @@ FUNC VOID DIA_Torlof_iHelpYou_Info()
     Log_CreateTopic          (CH1_helpSld1, LOG_MISSION);
     Log_SetTopicStatus       (CH1_helpSld1, LOG_RUNNING);
     B_LogEntry               (CH1_helpSld1,"Torlof wraz z grup¹ Najemników chce siê pozbyæ oddzia³u Stra¿ników zajmuj¹cego dolinê. Zdecydowa³em siê im pomóc. Mam siê zg³osiæ do Torlofa, gdy bêdê gotowy zaatakowaæ.");
-
 };
 
 //========================================

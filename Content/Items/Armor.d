@@ -1226,15 +1226,15 @@ INSTANCE LAW_ARMOR (C_Item)
 *******************************************************************************************/
 INSTANCE GRD_ARMOR_I(C_Item)
 {
-	name 					=	"Pancerz Stra¿y Królewskiej";
+	name 					=	"Stary pancerz Stra¿y Królewskiej";
 
 	mainflag 				=	ITEM_KAT_ARMOR;
 	flags 					=	0;
 
-	protection [PROT_EDGE]	=	30;
-	protection [PROT_BLUNT] = 	30;
+	protection [PROT_EDGE]	=	17;
+	protection [PROT_BLUNT] = 	17;
 	protection [PROT_POINT] = 	0;
-	protection [PROT_FIRE] 	= 	15;
+	protection [PROT_FIRE] 	= 	5;
 	protection [PROT_MAGIC] = 	0;
 
 	value 					=	protection [PROT_EDGE] * ARMOR_VALUE_MULTIPLIER;

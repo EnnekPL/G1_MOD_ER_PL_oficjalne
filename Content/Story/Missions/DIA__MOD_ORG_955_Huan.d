@@ -50,6 +50,93 @@ FUNC VOID DIA_Huan_HELLO1_Info()
     AI_Output (self, other ,"DIA_Huan_HELLO1_03_03"); //Mam sporo pracy. Ludzie Laresa w ogóle nie szanuj¹ broni.
 };
 
+////////////////////////////////////////////
+// 		FixMyAxe
+////////////////////////////////////////////
+
+INSTANCE DIA_Huan_FixMyAxe (C_INFO)
+{
+   npc          = ORG_9550_Huan;
+   nr           = 1;
+   condition    = DIA_Huan_FixMyAxe_Condition;
+   information  = DIA_Huan_FixMyAxe_Info;
+   permanent	= FALSE;
+   description	= "Przysy³a mnie Torlof.";
+};
+
+FUNC INT DIA_Huan_FixMyAxe_Condition()
+{
+	if (Npc_KnowsInfo (hero,DIA_Torlof_PoparcieNajemnikow)) && (MIS_TorlofsAxe == LOG_RUNNING) && (Npc_HasItems (hero,Torlofs_Axt2) == 1)
+	{
+    return TRUE;
+	};
+};
+
+FUNC VOID DIA_Huan_FixMyAxe_Info()
+{
+    AI_Output (other, self ,"DIA_Huan_FixMyAxe_15_01"); //Przysy³a mnie Torlof. Mam tu jego topór.
+    AI_Output (self, other ,"DIA_Huan_FixMyAxe_03_02"); //Cholera! Mia³em nadziejê, ¿e zapomnia³.
+	AI_Output (other, self ,"DIA_Huan_FixMyAxe_15_03"); //W czym problem?
+    AI_Output (self, other ,"DIA_Huan_FixMyAxe_03_04"); //Ten topór jest bardzo przestarza³y. Zosta³ wykuty prawdopodobnie w czasach pierwszej wojny z orkami.
+	AI_Output (self, other ,"DIA_Huan_FixMyAxe_03_05"); //Có¿, kowalstwo od tamtego czasu trochê siê zmieni³o. Opracowano nowsze metody odlewu stali.
+	AI_Output (self, other ,"DIA_Huan_FixMyAxe_03_06"); //¯eby naprawiæ tê broñ musia³bym mieæ sztabkê stali przygotowan¹ wed³ug starej metody.
+	AI_Output (self, other ,"DIA_Huan_FixMyAxe_03_07"); //Od lat takiej nie widzia³em.
+	AI_Output (other, self ,"DIA_Huan_FixMyAxe_15_08"); //Muszê do jutra zwróciæ broñ Torlofowi.
+	AI_Output (self, other ,"DIA_Huan_FixMyAxe_03_09"); //Czekaj, jest cieñ szansy...
+	AI_Output (self, other ,"DIA_Huan_FixMyAxe_03_10"); //Podobno w kolonii mieszka pewien nordmarski kowal. Jest ponoæ mistrzem w swoim fachu, lecz ma³o kto zagl¹da do jego kuŸni.
+	AI_Output (self, other ,"DIA_Huan_FixMyAxe_03_11"); //Jedynie najznamienitsi... Ale to chyba nasza jedyna nadzieja.
+	AI_Output (self, other ,"DIA_Huan_FixMyAxe_03_12"); //Byæ mo¿e on bêdzie mia³ na stanie tak¹ stal. Powinieneœ z nim porozmawiaæ.
+	AI_Output (self, other ,"DIA_Huan_FixMyAxe_03_13"); //S¹dzê, ¿e to nie bêdzie tania rzecz. A, kowal zajmuje star¹ wie¿ê w dolinie pomiêdzy Starym a Nowym Obozem.
+	AI_Output (self, other ,"DIA_Huan_FixMyAxe_03_14"); //Z tego co mi wiadomo, obozuje tam niejaki Cavalorn. Dalej ju¿ sobie poradzisz.
+	
+	B_LogEntry               (CH1_TorlofsAxe,"Huan powiedzia³ mi, ¿e topór Torlofa jest bardzo stary i ¿eby go naprawiæ bêdzie potrzebna sztabka stali wykonanej wed³ug starej metody. Jeœli nie znajdê nigdzie takiej sztabki, bêdê musia³ poprosiæ o pomoc nordmarskiego kowala. ZNajdê go w starej wie¿y, w dolinie, w której stacjonuje myœliwy Cavalorn.");
+};
+
+////////////////////////////////////////////
+// 		GetOreStab
+////////////////////////////////////////////
+
+INSTANCE DIA_Huan_GetOreStab (C_INFO)
+{
+   npc          = ORG_9550_Huan;
+   nr           = 1;
+   condition    = DIA_Huan_GetOreStab_Condition;
+   information  = DIA_Huan_GetOreStab_Info;
+   permanent	= FALSE;
+   description	= "Mam sztabkê stali.";
+};
+
+FUNC INT DIA_Huan_GetOreStab_Condition()
+{
+	if (Npc_KnowsInfo (hero,DIA_Huan_FixMyAxe)) && (MIS_TorlofsAxe == LOG_RUNNING) && (Npc_HasItems (hero,ItMi_OreStabOldMetode) == 1) && (Npc_HasItems (hero,Torlofs_Axt2) == 1)
+	{
+    return TRUE;
+	};
+};
+
+FUNC VOID DIA_Huan_GetOreStab_Info()
+{
+    AI_Output (other, self ,"DIA_Huan_GetOreStab_15_01"); //Mam sztabkê stali.
+    AI_Output (self, other ,"DIA_Huan_GetOreStab_03_02"); //A niech mnie! Uda³o ci siê j¹ znaleŸæ. Niesamowite. 
+	AI_Output (other, self ,"DIA_Huan_GetOreStab_15_03"); //Mo¿esz ju¿ siê wzi¹æ do roboty. 
+    AI_Output (self, other ,"DIA_Huan_GetOreStab_03_04"); //Jasne, to nie potrwa d³ugo.
+	
+	AI_GotoWp (self,"NO_KOWADLO");
+	AI_UseMob (self,"BSANVIL",1);
+	AI_UseMob (self,"BSANVIL",-1);
+	AI_GotoNpc (self,hero);
+	AI_Output (self, other ,"DIA_Huan_GetOreStab_03_05"); //Gotowe. Torlof powinien byæ usatysfakcjonowany. 
+	
+	B_LogEntry               (CH1_TorlofsAxe,"Przynios³em sztabkê stali Huanowi. Od rêki naprawi³ broñ Torlofa. Mogê ju¿ wróciæ do Najemnika z jego toporem.");
+	
+	B_GiveInvItems (hero,self,ItMi_OreStabOldMetode,1);
+	Npc_RemoveInvItems (self,ItMi_OreStabOldMetode,1);
+	B_GiveInvItems (hero,self,Torlofs_Axt2,1);
+	Npc_RemoveInvItems (self,Torlofs_Axt2,1);
+	CreateInvItem (self,Torlofs_Axt2_Fixed);
+	B_GiveInvItems (self,hero,Torlofs_Axt2_Fixed,1);
+};
+
 //========================================
 //-----------------> HELLO3
 //========================================

@@ -291,7 +291,7 @@ INSTANCE DIA_Patrick_Brothers (C_INFO)
 
 FUNC INT DIA_Patrick_Brothers_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Shawn_Questdadasd))
+    if (Npc_KnowsInfo (hero, DIA_Shan_Questdadasd))
     {
     return TRUE;
     };

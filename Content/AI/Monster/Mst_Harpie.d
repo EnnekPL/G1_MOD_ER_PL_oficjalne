@@ -9,17 +9,17 @@ PROTOTYPE Mst_Default_Harpie(C_Npc)
 	aivar[AIV_MM_REAL_ID]			= 	ID_HARPIE;
 	level							=	17;
 //---------------------------------------------------------------	
-	attribute	[ATR_STRENGTH]		=	85;
-	attribute	[ATR_DEXTERITY]		=	85;
+	attribute	[ATR_STRENGTH]		=	120;
+	attribute	[ATR_DEXTERITY]		=	120;
 	
-	attribute	[ATR_HITPOINTS_MAX]	=	200;
-	attribute	[ATR_HITPOINTS]		=	200;
+	attribute	[ATR_HITPOINTS_MAX]	=	230;
+	attribute	[ATR_HITPOINTS]		=	230;
 
 	attribute	[ATR_MANA_MAX] 		=	0;
 	attribute	[ATR_MANA] 			=	0;
 //---------------------------------------------------------------	
-	protection	[PROT_BLUNT]		=	50;
-	protection	[PROT_EDGE]			=	30;
+	protection	[PROT_BLUNT]		=	55;
+	protection	[PROT_EDGE]			=	32;
 	protection	[PROT_POINT]		=	10;
 	protection	[PROT_FIRE]			=	0;
 	protection	[PROT_FLY]			=	0;

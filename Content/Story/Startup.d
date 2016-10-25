@@ -153,7 +153,7 @@ func VOID STARTUP_SUB_PSICAMP ()
 
 		
 	//--------------------Admin------------------------------------------------------------
-	Wld_InsertNpc				(TPL_5004_Shawn,"PSI_START");
+	Wld_InsertNpc				(TPL_5004_Shan,"PSI_START");
 	//-------------------Bagno-------------------------------------------------
 	Wld_InsertNpc				(NOV_1376_Steh,"PSI_START");
 	Wld_InsertNpc				(NOV_1380_ArtfiactsThief,"PSI_START");

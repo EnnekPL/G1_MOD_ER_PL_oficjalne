@@ -526,7 +526,11 @@ func void B_LogEntry(var string topic, var string entry)
 	Log_AddEntry	(topic, entry);
 
 	//PrintScreen		(NAME_NewLogEntry, -1,_YPOS_MESSAGE_LOGENTRY,"font_old_10_white.tga",_TIME_MESSAGE_LOGENTRY);
-	PrintS_Ext		(NAME_NewLogEntry, COL_White);
+	var string msg;
+	
+	msg = ConcatStrings(NAME_NewLogEntry,	topic);
+	PrintS_Ext		(msg, COL_White);
+	//PrintS_Ext		(NAME_NewLogEntry, COL_White);
 	Snd_Play 		("LogEntry");
 	/*
 	var int mis; mis = Log_GetTopicStatus(topic);

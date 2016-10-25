@@ -51,3 +51,12 @@
 - przywódca eskorty nie wspomina ju¿ o kopaczach przed obozem, których nie ma
 - przywódca eskorty podchodzi do nas podczas dialogu
 - przerobione zadanie z zaginiêciem Josepa
+- zmienione przepisy na napoje w³adzy i potêgi
+- dodano opowieœæ o k¹saczu XD
+- poprawiony b³¹d z Bullitem jeœli go pobijemy a on nas wczeœniej pobije
+- usuniêto wszystkie cenne sk³adniki alchemiczne z ofery Jima i Riordiana
+- znacznie mniej mikstur w ofercie handlarzy (róbcie sobie sami :P )
+- znacznie zmniejszona iloœæ rudy u handlarzy
+- znacznie zmniejszone statystyki zbroi stra¿y królewskiej
+- zwiêkszone statystyki potworów z którymi walczymy na trzecim rozdziale (harpia, zêbacz, szkielet)
+- naprawiony b³¹d ze Snake gadaj¹cym przez drzwi w lochach

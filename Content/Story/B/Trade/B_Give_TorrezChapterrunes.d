@@ -60,10 +60,10 @@ func void B_Give_TorrezChapter2Runes ()
 	CreateInvItem (npc,ItWr_Book_Circle_05);
 	CreateInvItem (npc,ItWr_Book_Circle_06);
   	//-------- Tränke --------
-	CreateInvItems (npc,ItFo_Potion_Mana_01 ,8);
+	CreateInvItems (npc,ItFo_Potion_Mana_01 ,5);
 	CreateInvItems (npc,ItFo_Potion_Mana_02 ,4);
    
-	CreateInvItems (npc,ItFo_Potion_Health_01 ,8);
+	CreateInvItems (npc,ItFo_Potion_Health_01 ,6);
 	CreateInvItems (npc,ItFo_Potion_Health_02 ,4);
    
 	CreateInvItems (npc,ItFo_Potion_Water_01 ,20);
@@ -99,16 +99,16 @@ func void B_Give_TorrezChapter3Runes ()
 
 	//-------- Bücher --------
   	//-------- Tränke --------
-	CreateInvItems (npc,ItFo_Potion_Mana_01 ,13);
-	CreateInvItems (npc,ItFo_Potion_Mana_02 ,12);
-	CreateInvItems (npc,ItFo_Potion_Mana_03 ,8);
+	CreateInvItems (npc,ItFo_Potion_Mana_01 ,5);
+	CreateInvItems (npc,ItFo_Potion_Mana_02 ,5);
+	CreateInvItems (npc,ItFo_Potion_Mana_03 ,2);
     
-	CreateInvItems (npc,ItFo_Potion_Health_01 ,13);
-	CreateInvItems (npc,ItFo_Potion_Health_02 ,12);
-	CreateInvItems (npc,ItFo_Potion_Health_03 ,8); 
+	CreateInvItems (npc,ItFo_Potion_Health_01 ,4);
+	CreateInvItems (npc,ItFo_Potion_Health_02 ,2);
+	CreateInvItems (npc,ItFo_Potion_Health_03 ,3); 
 	CreateInvItems (self,ItMi_Bandaz40,20);
-	CreateInvItems (npc,ItFo_Potion_Haste_01 ,8);	
-	CreateInvItems (npc,ItFo_Potion_Haste_02 ,6);
+	CreateInvItems (npc,ItFo_Potion_Haste_01 ,4);	
+	CreateInvItems (npc,ItFo_Potion_Haste_02 ,3);
 };
 
 

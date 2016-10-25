@@ -23,7 +23,7 @@ func void B_Give_ScorpioChapter4Weapons ()
 	CreateInvItem	(npc,	ItMw_2H_Sword_Light_03);
 
 	//CreateInvItem	(npc,	ItMw_Rapier);
-	CreateInvItems (npc,ItMiNugget,800);
+	CreateInvItems (npc,ItMiNugget,400);
 	
 	CreateInvItem (npc,Gewandtheitsamulett2);
 	CreateInvItem (npc,Staerkeamulett2);
@@ -59,7 +59,7 @@ func void B_Give_ScorpioChapter5Weapons ()
 	CreateInvItem 	(npc,	ItMw_2H_Sword_Heavy_03); 
 	CreateInvItem 	(npc,	ItMw_2H_Sword_Heavy_04); 
 	
-	CreateInvItems (npc,ItMiNugget,1000);
+	CreateInvItems (npc,ItMiNugget,500);
 	//-------- Fernkampfwaffen --------
 	
 	CreateInvItems (npc,ItRw_Crossbow_04,2);
@@ -75,7 +75,7 @@ func void B_Give_ScorpioChapter6Weapons ()
 	
 	//-------- Nahkampfwaffen --------
 	
-	CreateInvItems (npc,ItMiNugget,600);
+	CreateInvItems (npc,ItMiNugget,300);
 	//-------- Fernkampfwaffen --------
 
 

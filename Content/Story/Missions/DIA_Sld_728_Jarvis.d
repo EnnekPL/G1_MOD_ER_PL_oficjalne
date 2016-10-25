@@ -474,7 +474,7 @@ INSTANCE DIA_Jarvis_TorlofPoprze (C_INFO)
 
 FUNC INT DIA_Jarvis_TorlofPoprze_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Torlof_WiemOBuncie))
+    if (MIS_TorlofsAxe == LOG_SUCCESS)
     {
     return TRUE;
     };

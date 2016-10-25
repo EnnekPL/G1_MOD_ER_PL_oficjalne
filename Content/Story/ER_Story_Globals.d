@@ -115,6 +115,7 @@ const string CH4_SnafBag 					= "Sakiewka Snafa";
 
 //***Bractwo Œni¹cego***
 //***Zmienne zadañ***
+
 var int MIS_HuntingWithLukor;
 const string CH1_HuntingWithLukor      		= "Agresywne wilki";
 
@@ -265,6 +266,9 @@ const string CH4_RockyArmor      			= "Nowy pancerz dla Bandyty";
 //***Zmienne zadañ*** 
 
 const string CH1_KdWCourier 				= "Kurier Magów Wody";
+
+var int MIS_TorlofsAxe;
+const string CH1_TorlofsAxe      			= "Topór Torlofa";
 
 var int MIS_MapForRatford;
 const string CH1_MapForRatford      		= "Mapa dla Ratforda";
@@ -514,7 +518,8 @@ var int amulet_sprzedany; //OreInOM
 var int hero_explore_aidanquestcave;
 var int Nyras_splacil_Talasa; var int Hero_dogadany_Nyras; var int Hero_donosi_na_Nyras; var int ruda_talasa_odzyskana; //oszukany handlarz
 var int guysay_about_hut;
-var int day_LeftyAndZick;
+
+
 
 //***Pomocnicze***
 //***Wld_GetDay***
@@ -522,6 +527,8 @@ var int NiepokornyKopacz;
 var int UscanDay;
 var int Day_BeliarShrine;
 var int Day_InnosShrine;
+var int Day_LeftyAndZick;
+var int Day_TorlofAxe;
 
 //***Pomocnicze***
 //***Przedmioty***

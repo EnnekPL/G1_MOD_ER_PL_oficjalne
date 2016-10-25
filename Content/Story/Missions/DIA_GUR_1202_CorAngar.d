@@ -1554,14 +1554,14 @@ FUNC VOID DIA_CorAngar_Mixtura156_Info()
     AI_Output (other, self ,"DIA_CorAngar_Mixtura156_15_04"); //Przepis by³ bardzo skomplikowany i wymaga³ wielu sk³adników trudnych do zdobycia.
     AI_Output (self, other ,"DIA_CorAngar_Mixtura156_03_05"); //Udowodni³eœ, ¿e jesteœ godzien nosiæ szatê Guru. Witaj wœród nas. Mo¿esz rozgoœciæ siê w laboratorium Kaloma.
     AI_Output (self, other ,"DIA_CorAngar_Mixtura156_03_06"); //WeŸ upragnion¹ szatê i ten kostur. Niechaj ci s³u¿¹. Bractwo na ciebie liczy.
-    AI_Output (self, other ,"DIA_CorAngar_Mixtura156_03_07"); //Shawn bêdzie twoim asystentem i powie ci czym nale¿y siê zaj¹æ.
+    AI_Output (self, other ,"DIA_CorAngar_Mixtura156_03_07"); //Shan bêdzie twoim asystentem i powie ci czym nale¿y siê zaj¹æ.
     hero.guild = GIL_GUR;
     CreateInvItems (self, GUR_ARMOR_M, 1);
     B_GiveInvItems (self, other, GUR_ARMOR_M, 1);
 	CreateInvItems (self, ItMw_2H_Staff_GuruMage_03, 1);
     B_GiveInvItems (self, other, ItMw_2H_Staff_GuruMage_03, 1);
 	AI_EquipBestArmor	(hero); 
-    B_LogEntry                     (CH3_TestGuru,"Uda³o mi siê. Zosta³em Guru w Obozie Bractwa. Mam zastêpowaæ Cor Kaloma. Moim asystentem jest Shawn, by³y pomocnik Y'Beriona. Od niego dowiem siê, co mam do zrobienia...");
+    B_LogEntry                     (CH3_TestGuru,"Uda³o mi siê. Zosta³em Guru w Obozie Bractwa. Mam zastêpowaæ Cor Kaloma. Moim asystentem jest Shan, by³y pomocnik Y'Beriona. Od niego dowiem siê, co mam do zrobienia...");
     Log_SetTopicStatus       (CH3_TestGuru, LOG_SUCCESS);
     MIS_TestGuru = LOG_SUCCESS;
 	Npc_SetTrueGuild (hero,GIL_GUR);

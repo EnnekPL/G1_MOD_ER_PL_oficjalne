@@ -99,6 +99,7 @@ FUNC INT DIA_Bullit_FIGHT_Condition()
 {
     if (self.aivar[AIV_WASDEFEATEDBYSC] == TRUE)
     && (Npc_KnowsInfo (hero, DIA_Bullit_AufsMAul))
+	&& (!Npc_KnowsInfo (hero, DIA_Bullit_LOSER))
     {
     return TRUE;
     };
@@ -133,6 +134,7 @@ INSTANCE DIA_Bullit_LOSER (C_INFO)
 FUNC INT DIA_Bullit_LOSER_Condition()
 {
     if (self.aivar[AIV_HASDEFEATEDSC] == TRUE)
+	&& (!Npc_KnowsInfo (hero, DIA_Bullit_FIGHT))
     && (Npc_KnowsInfo (hero, DIA_Bullit_AufsMAul))
     {
     return TRUE;

@@ -9,7 +9,7 @@ PROTOTYPE Mst_Default_Skeleton(C_Npc)
 	//REAL ID IN INSTANZEN!
 	level							=	Level_Skeleton;//25
 //----------------------------------------------------------	
-	attribute	[ATR_STRENGTH]		=	80;
+	attribute	[ATR_STRENGTH]		=	115;
 	attribute	[ATR_DEXTERITY]		=	30;
 	
 	attribute	[ATR_HITPOINTS_MAX]	=	300;
@@ -18,8 +18,8 @@ PROTOTYPE Mst_Default_Skeleton(C_Npc)
 	attribute	[ATR_MANA_MAX] 		=	200;
 	attribute	[ATR_MANA] 			=	200;
 
-	protection	[PROT_BLUNT]		=	35;
-	protection	[PROT_EDGE]			=	50;
+	protection	[PROT_BLUNT]		=	40;
+	protection	[PROT_EDGE]			=	75;
 	protection	[PROT_POINT]		=	100; //SN:besonders resistent gegen Pfeile
 	protection	[PROT_FIRE]			=	35;
 	protection	[PROT_FLY]			=	0;

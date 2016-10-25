@@ -9,11 +9,11 @@ func void B_Give_BaalCadarChapter1Runes ()
 	CreateInvItems (npc,ItArScrollLight,10);
 	CreateInvItems (npc,ItArScrollWindfist,4);
 	//-------- Tränke --------	
-	CreateInvItems (npc,ItFo_Potion_Mana_01 ,6);
-	CreateInvItems (npc,ItFo_Potion_Health_01 ,5);
-	CreateInvItems (npc,ItFo_Potion_Water_01 ,12);
+	CreateInvItems (npc,ItFo_Potion_Mana_01 ,3);
+	CreateInvItems (npc,ItFo_Potion_Health_01 ,3);
+	CreateInvItems (npc,ItFo_Potion_Water_01 ,8);
 	CreateInvItems (npc,ItFo_PotionTime_Strength_01 ,1);
-	CreateInvItems (npc,ItFo_PotionTime_Dex_01 ,1);
+	//CreateInvItems (npc,ItFo_PotionTime_Dex_01 ,1);
 	CreateInvItems (npc,ItFo_PotionTime_Mana_01 ,1);
 	//-------- Ringe/Amulette --------
   	CreateInvItem (npc,Schutzring_Waffen1);
@@ -62,19 +62,19 @@ func void B_Give_BaalCadarChapter2Runes ()
 	CreateInvItem (npc,Schutzring_Magie2);
  	CreateInvItem (npc,Schutzring_Waffen1);
  	//-------- Tränke --------
-   CreateInvItems (npc,ItFo_Potion_Mana_01 ,12);
-   CreateInvItems (npc,ItFo_Potion_Mana_02 ,8);
+   CreateInvItems (npc,ItFo_Potion_Mana_01 ,5);
+   CreateInvItems (npc,ItFo_Potion_Mana_02 ,2);
    
-   CreateInvItems (npc,ItFo_Potion_Health_01 ,12);
-   CreateInvItems (npc,ItFo_Potion_Health_02 ,6);
+   CreateInvItems (npc,ItFo_Potion_Health_01 ,4);
+   CreateInvItems (npc,ItFo_Potion_Health_02 ,1);
    
    CreateInvItems (npc,ItFo_Potion_Water_01 ,20);
 	
-   CreateInvItems (npc,ItFo_Potion_Haste_01 ,6);
-   	CreateInvItems (npc,ItFo_PotionTime_Strength_01 ,2);
+   CreateInvItems (npc,ItFo_Potion_Haste_01 ,2);
+   	//CreateInvItems (npc,ItFo_PotionTime_Strength_01 ,2);
 	CreateInvItems (npc,ItFo_PotionTime_Dex_01 ,1);
-	CreateInvItems (npc,ItFo_PotionTime_Mana_01 ,2);
-	CreateInvItems (npc,ItFo_PotionTime_Master_01 ,1);
+	//CreateInvItems (npc,ItFo_PotionTime_Mana_01 ,2);
+	//CreateInvItems (npc,ItFo_PotionTime_Master_01 ,1);
 	CreateInvItems (npc,ItFo_Potion_HealthTime_01 ,1);
 		CreateInvItems (self,ItMi_Bandaz40,20);
  };
@@ -114,28 +114,28 @@ func void B_Give_BaalCadarChapter3Runes ()
 	CreateInvItem (npc,Schutzring_Magie1_Fire1);
 	
   	//-------- Tränke --------
-	CreateInvItems (npc,ItFo_Potion_Mana_01 ,24);
-   CreateInvItems (npc,ItFo_Potion_Mana_02 ,16);
-   CreateInvItems (npc,ItFo_Potion_Mana_03 ,10);
+	CreateInvItems (npc,ItFo_Potion_Mana_01 ,3);
+   CreateInvItems (npc,ItFo_Potion_Mana_02 ,7);
+   CreateInvItems (npc,ItFo_Potion_Mana_03 ,3);
     
-   CreateInvItems (npc,ItFo_Potion_Health_01 ,32);
-   CreateInvItems (npc,ItFo_Potion_Health_02 ,20);
-   CreateInvItems (npc,ItFo_Potion_Health_03 ,12); 
+   CreateInvItems (npc,ItFo_Potion_Health_01 ,1);
+   CreateInvItems (npc,ItFo_Potion_Health_02 ,5);
+   CreateInvItems (npc,ItFo_Potion_Health_03 ,3); 
 	
-   CreateInvItems (npc,ItFo_Potion_Haste_01 ,12);	
-   CreateInvItems (npc,ItFo_Potion_Haste_02 ,6);
-      	CreateInvItems (npc,ItFo_PotionTime_Strength_01 ,2);
-	CreateInvItems (npc,ItFo_PotionTime_Dex_01 ,2);
-	CreateInvItems (npc,ItFo_PotionTime_Mana_01 ,2);
-	CreateInvItems (npc,ItFo_PotionTime_Master_01 ,2);
-	CreateInvItems (npc,ItFo_Potion_HealthTime_01 ,3);
+   CreateInvItems (npc,ItFo_Potion_Haste_01 ,3);	
+   CreateInvItems (npc,ItFo_Potion_Haste_02 ,4);
+      	//CreateInvItems (npc,ItFo_PotionTime_Strength_01 ,2);
+	//CreateInvItems (npc,ItFo_PotionTime_Dex_01 ,2);
+	//CreateInvItems (npc,ItFo_PotionTime_Mana_01 ,2);
+	CreateInvItems (npc,ItFo_PotionTime_Master_01 ,1);
+	CreateInvItems (npc,ItFo_Potion_HealthTime_01 ,2);
 		//------------Misc----Er--------------
 		CreateInvItems(self, ItMi_Tuton, 5);
 	CreateInvItems(self, ItMi_Tuton_1, 3);
 	CreateInvItems(self, ItMi_Tuton_2, 3);
 	CreateInvItems(self, ItMi_Tuton_3, 3);
 	CreateInvItems(self, ItMi_Tuton_4, 3);
-		CreateInvItems (self,ItMi_Bandaz40,20);
+		CreateInvItems (self,ItMi_Bandaz40,10);
 };
 func void B_Give_BaalCadarChapter4Runes ()
 {
@@ -174,30 +174,30 @@ func void B_Give_BaalCadarChapter4Runes ()
 	CreateInvItem (npc,Schutzring_Total2);
 	
 	//-------- Tränke --------
-	 CreateInvItems (npc,ItFo_Potion_Mana_01 ,48);
-   CreateInvItems (npc,ItFo_Potion_Mana_02 ,32);
-   CreateInvItems (npc,ItFo_Potion_Mana_03 ,20);
+	 CreateInvItems (npc,ItFo_Potion_Mana_01 ,3);
+   CreateInvItems (npc,ItFo_Potion_Mana_02 ,6);
+   CreateInvItems (npc,ItFo_Potion_Mana_03 ,4);
     
-   CreateInvItems (npc,ItFo_Potion_Health_01 ,64);
-   CreateInvItems (npc,ItFo_Potion_Health_02 ,40);
-   CreateInvItems (npc,ItFo_Potion_Health_03 ,24); 
+   CreateInvItems (npc,ItFo_Potion_Health_01 ,3);
+   CreateInvItems (npc,ItFo_Potion_Health_02 ,5);
+   CreateInvItems (npc,ItFo_Potion_Health_03 ,6); 
 	
-    CreateInvItems (npc,ItFo_Potion_Haste_01 ,24);	
-    CreateInvItems (npc,ItFo_Potion_Haste_02 ,12); 
-	CreateInvItems (npc,ItFo_Potion_Haste_02 ,6);
+    CreateInvItems (npc,ItFo_Potion_Haste_01 ,1);	
+    CreateInvItems (npc,ItFo_Potion_Haste_02 ,3); 
+	CreateInvItems (npc,ItFo_Potion_Haste_02 ,3);
 	
-	CreateInvItems (npc,ItFo_PotionTime_Strength_01 ,4);
-	CreateInvItems (npc,ItFo_PotionTime_Dex_01 ,4);
-	CreateInvItems (npc,ItFo_PotionTime_Mana_01 ,4);
-	CreateInvItems (npc,ItFo_PotionTime_Master_01 ,2);
-	CreateInvItems (npc,ItFo_Potion_HealthTime_01 ,5);
+	//CreateInvItems (npc,ItFo_PotionTime_Strength_01 ,4);
+	//CreateInvItems (npc,ItFo_PotionTime_Dex_01 ,4);
+	//CreateInvItems (npc,ItFo_PotionTime_Mana_01 ,4);
+	//CreateInvItems (npc,ItFo_PotionTime_Master_01 ,2);
+	CreateInvItems (npc,ItFo_Potion_HealthTime_01 ,1);
 	//------------Misc----Er--------------
 	CreateInvItems(self, ItMi_Tuton, 10);
 	CreateInvItems(self, ItMi_Tuton_1, 5);
 	CreateInvItems(self, ItMi_Tuton_2, 5);
 	CreateInvItems(self, ItMi_Tuton_3, 5);
 	CreateInvItems(self, ItMi_Tuton_4, 5);
-		CreateInvItems (self,ItMi_Bandaz40,20);
+		CreateInvItems (self,ItMi_Bandaz40,5);
 };
 func void B_Give_BaalCadarChapter5Runes ()
 {
@@ -230,24 +230,24 @@ func void B_Give_BaalCadarChapter5Runes ()
 
 	//-------- Bücher --------
 	//-------- Tränke --------
-	CreateInvItems (npc,ItFo_Potion_Mana_01 ,18);
-   CreateInvItems (npc,ItFo_Potion_Mana_02 ,16);
-   CreateInvItems (npc,ItFo_Potion_Mana_03 ,10);
+	CreateInvItems (npc,ItFo_Potion_Mana_01 ,2);
+   CreateInvItems (npc,ItFo_Potion_Mana_02 ,4);
+   CreateInvItems (npc,ItFo_Potion_Mana_03 ,4);
     
-   CreateInvItems (npc,ItFo_Potion_Health_01 ,32);
-   CreateInvItems (npc,ItFo_Potion_Health_02 ,20);
-   CreateInvItems (npc,ItFo_Potion_Health_03 ,48); 
+   CreateInvItems (npc,ItFo_Potion_Health_01 ,2);
+   CreateInvItems (npc,ItFo_Potion_Health_02 ,3);
+   CreateInvItems (npc,ItFo_Potion_Health_03 ,5); 
 	
-    CreateInvItems (npc,ItFo_Potion_Haste_01 ,48);	
-	CreateInvItems (npc,ItFo_Potion_Haste_02 ,24);
-	CreateInvItems (npc,ItFo_Potion_Haste_03 ,12);
+    CreateInvItems (npc,ItFo_Potion_Haste_01 ,2);	
+	CreateInvItems (npc,ItFo_Potion_Haste_02 ,3);
+	CreateInvItems (npc,ItFo_Potion_Haste_03 ,4);
 	
-	CreateInvItems (npc,ItFo_PotionTime_Strength_01 ,8);
-	CreateInvItems (npc,ItFo_PotionTime_Dex_01 ,8);
-	CreateInvItems (npc,ItFo_PotionTime_Mana_01 ,8);
-	CreateInvItems (npc,ItFo_PotionTime_Master_01 ,8);
-	CreateInvItems (npc,ItFo_Potion_HealthTime_01 ,8);
-		CreateInvItems (self,ItMi_Bandaz40,20);
+	CreateInvItems (npc,ItFo_PotionTime_Strength_01 ,1);
+	CreateInvItems (npc,ItFo_PotionTime_Dex_01 ,1);
+	CreateInvItems (npc,ItFo_PotionTime_Mana_01 ,1);
+	CreateInvItems (npc,ItFo_PotionTime_Master_01 ,1);
+	CreateInvItems (npc,ItFo_Potion_HealthTime_01 ,1);
+		CreateInvItems (self,ItMi_Bandaz40,2);
 };
 
 

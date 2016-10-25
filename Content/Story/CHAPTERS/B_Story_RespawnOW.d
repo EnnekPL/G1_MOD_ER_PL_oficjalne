@@ -164,7 +164,7 @@ func void B_Story_RespawnOW_Ch3()
 	Wld_InsertNpc		(Lurker,"SPAWN_OW_NEARBGOBBO_LURKER_A1");
 	Wld_InsertNpc		(Waran,"OW_PATH_WARAN06_SPAWN01");
 	Wld_InsertNpc		(Waran,"OW_PATH_OW_PATH_WARAN05_SPAWN01");
-	Wld_InsertNpc		(BlackGobboMace,"SPAWN_OW_BLACKGOBBO_A1");
+	Wld_InsertNpc		(BlackGobboWarrior,"SPAWN_OW_BLACKGOBBO_A1");
 	Wld_InsertNpc		(Scavenger,"SPAWN_SCAVENGER_PATH_OC_PSI_03");
 	Wld_InsertNpc		(Scavenger,"OW_PATH_SCAVENGER03_SPAWN01");
 	Wld_InsertNpc		(Scavenger,"SPAWN_OW_SCAVENGER_OLDWOOD_C3");
@@ -201,7 +201,7 @@ func void B_Story_RespawnOW_Ch3()
 	Wld_InsertNpc		(Wolf,"SPAWN_OW_WOLF_NEARSHADOW_PSIWOOD_02");
 	Wld_InsertNpc		(BlackWolf,"SPAWN_OW_WOLFL__PSIWOOD_OUT4");
 	Wld_InsertNpc		(BlackWolf,"SPAWN_OW_WOLF_NEARSHAD2_PSIWOOD_OUT");
-	Wld_InsertNpc		(GreenGobboSword,"SPAWN_OW_GOBBO_WATERFALLCAVE_2");
+	Wld_InsertNpc		(BlackGobboWarrior,"SPAWN_OW_GOBBO_WATERFALLCAVE_2");
 	Wld_InsertNpc		(Molerat,"FP_ROAM_OW_MOLERAT_04_PSI");
 	Wld_InsertNpc		(AngryMolerat,"SPAWN_OW_MOLERATN_PSIWOOD_1");
 	Wld_InsertNpc		(Molerat,"SPAWN_OW_MOLERATL__PSIWOOD_01");
@@ -221,7 +221,7 @@ func void B_Story_RespawnOW_Ch3()
 	Wld_InsertNpc		(Snapper,"SPAWN_OW_SNAPPER_OCWOOD1_05_02");
 	Wld_InsertNpc		(Waran,"SPAWN_OW_WARAN_OC_PSI_GOBBOCAVE_01");
 	Wld_InsertNpc		(BlackGobboMace,"SPAWN_GOBBO_LOCATION_29_03");
-	Wld_InsertNpc		(BlackGobboMace,"SPAWN_OW_GOBBO_CAVE03INDOOR_05");
+	Wld_InsertNpc		(BlackGobboWarrior,"SPAWN_OW_GOBBO_CAVE03INDOOR_05");
 	Wld_InsertNpc		(Scavenger,"SPAWN_OW_SCAVENGER_OC_PSI_RUIN1");
 	Wld_InsertNpc		(Scavenger,"SPAWN_OW_SCAVENGER_04_02_1");
 	Wld_InsertNpc		(Scavenger,"SPAWN_OW_SCAVENGER_AL_ORC");
@@ -257,8 +257,8 @@ func void B_Story_RespawnOW_Ch4 ()
 {
 	
 	Wld_InsertNpc		(AngryMolerat,"OW_SAWHUT_MOLERAT_SPAWN01");
-	Wld_InsertNpc		(GreenGobboSword,"PATH_OC_NC_6");
-	Wld_InsertNpc		(GreenGobboSword,"OW_GOBBO_PLACE_SPAWN");
+	Wld_InsertNpc		(BlackGobboWarrior,"PATH_OC_NC_6");
+	Wld_InsertNpc		(BlackGobboWarrior,"OW_GOBBO_PLACE_SPAWN");
 	Wld_InsertNpc		(AngryMolerat,"OW_MOLERAT_CAVE_SPAWN");
 	Wld_InsertNpc		(Dzik,"OW_SCAVENGER_COAST_NEWCAMP_SPAWN");
 	Wld_InsertNpc		(AngryBloodfly,"OW_BLOODFLY_NEW_COAST_SPAWN");
@@ -324,7 +324,7 @@ func void B_Story_RespawnOW_Ch4 ()
 	Wld_InsertNpc		(BlackWolf,"SPAWN_OW_WOLF_NEARSHADOW_PSIWOOD_02");
 	Wld_InsertNpc		(BlackWolf,"SPAWN_OW_WOLFL__PSIWOOD_OUT4");
 	Wld_InsertNpc		(BlackWolf,"SPAWN_OW_WOLF_NEARSHAD2_PSIWOOD_OUT");
-	Wld_InsertNpc		(GreenGobboSword,"SPAWN_OW_GOBBO_WATERFALLCAVE_2");
+	Wld_InsertNpc		(BlackGobboWarrior,"SPAWN_OW_GOBBO_WATERFALLCAVE_2");
 	Wld_InsertNpc		(Molerat,"FP_ROAM_OW_MOLERAT_04_PSI");
 	Wld_InsertNpc		(Molerat,"SPAWN_OW_MOLERATN_PSIWOOD_1");
 	Wld_InsertNpc		(Molerat,"SPAWN_OW_MOLERATL__PSIWOOD_01");
@@ -407,7 +407,7 @@ func void B_Story_RespawnOW_Ch5 ()
 
 Wld_InsertNpc		(AngryMolerat,"OW_SAWHUT_MOLERAT_SPAWN01");
 	Wld_InsertNpc		(GreenGobboSword,"PATH_OC_NC_6");
-	Wld_InsertNpc		(GreenGobboSword,"OW_GOBBO_PLACE_SPAWN");
+	Wld_InsertNpc		(BlackGobboWarrior,"OW_GOBBO_PLACE_SPAWN");
 	Wld_InsertNpc		(AngryMolerat,"OW_MOLERAT_CAVE_SPAWN");
 	Wld_InsertNpc		(Dzik,"OW_SCAVENGER_COAST_NEWCAMP_SPAWN");
 	Wld_InsertNpc		(AngryBloodfly,"OW_BLOODFLY_NEW_COAST_SPAWN");
@@ -436,7 +436,7 @@ Wld_InsertNpc		(AngryMolerat,"OW_SAWHUT_MOLERAT_SPAWN01");
 	Wld_InsertNpc		(Lurker,"SPAWN_OW_NEARBGOBBO_LURKER_A1");
 	Wld_InsertNpc		(Waran,"OW_PATH_WARAN06_SPAWN01");
 	Wld_InsertNpc		(Waran,"OW_PATH_OW_PATH_WARAN05_SPAWN01");
-	Wld_InsertNpc		(BlackGobboMace,"SPAWN_OW_BLACKGOBBO_A1");
+	Wld_InsertNpc		(BlackGobboWarrior,"SPAWN_OW_BLACKGOBBO_A1");
 	Wld_InsertNpc		(Dzik,"SPAWN_SCAVENGER_PATH_OC_PSI_03");
 	Wld_InsertNpc		(Dzik,"OW_PATH_SCAVENGER03_SPAWN01");
 	Wld_InsertNpc		(Dzik,"SPAWN_OW_SCAVENGER_OLDWOOD_C3");
@@ -473,7 +473,7 @@ Wld_InsertNpc		(AngryMolerat,"OW_SAWHUT_MOLERAT_SPAWN01");
 	Wld_InsertNpc		(BlackWolf,"SPAWN_OW_WOLF_NEARSHADOW_PSIWOOD_02");
 	Wld_InsertNpc		(BlackWolf,"SPAWN_OW_WOLFL__PSIWOOD_OUT4");
 	Wld_InsertNpc		(BlackWolf,"SPAWN_OW_WOLF_NEARSHAD2_PSIWOOD_OUT");
-	Wld_InsertNpc		(GreenGobboSword,"SPAWN_OW_GOBBO_WATERFALLCAVE_2");
+	Wld_InsertNpc		(BlackGobboWarrior,"SPAWN_OW_GOBBO_WATERFALLCAVE_2");
 	Wld_InsertNpc		(Molerat,"FP_ROAM_OW_MOLERAT_04_PSI");
 	Wld_InsertNpc		(Molerat,"SPAWN_OW_MOLERATN_PSIWOOD_1");
 	Wld_InsertNpc		(Molerat,"SPAWN_OW_MOLERATL__PSIWOOD_01");

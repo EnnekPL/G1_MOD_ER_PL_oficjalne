@@ -307,7 +307,7 @@ FUNC VOID DIA_Caine_Exposed_Info()
     AI_Output (self, other ,"DIA_Caine_Exposed_03_01"); //Co ty tutaj robisz? Sk¹d wiedzia³eœ, ¿e tu bêdê?
     AI_Output (other, self ,"DIA_Caine_Exposed_15_02"); //Wyda³ ciê jeden z twoich odbiorców. Wystarczy³o go odpowiednio zmotykowaæ...
 	AI_Output (self, other ,"DIA_Caine_Exposed_03_03"); //Dlaczego zacz¹³eœ wokó³ mnie wêszyæ? Na co ci to by³o? Powinieneœ rozumieæ, ¿e tutaj ten, kto nie kombinuje, szybko ginie.
-    AI_Output (other, self ,"DIA_Caine_Exposed_15_04"); //Spraw¹ eliksiru zainteresowali siê Guru. Shawn kaza³ mi to sprawdziæ.
+    AI_Output (other, self ,"DIA_Caine_Exposed_15_04"); //Spraw¹ eliksiru zainteresowali siê Guru. Shan kaza³ mi to sprawdziæ.
     AI_Output (self, other ,"DIA_Caine_Exposed_03_05"); //Zaczekaj! Czy ty powiedzia³eœ Guru?
     AI_Output (self, other ,"DIA_Caine_Exposed_03_06"); //Nie chcê k³opotów.
     AI_Output (other, self ,"DIA_Caine_Exposed_15_07"); //Trochê na to za póŸno.
@@ -317,17 +317,17 @@ FUNC VOID DIA_Caine_Exposed_Info()
 	B_LogEntry     (CH3_SellElixer,"Noc¹, w umówionym miejscu spotka³em nikogo innego jak Caine'a. Mog³em siê tego domyœleæ. Ten Nowicjusz ca³e dnie spêdza z Cor Kalomem. Mia³ ³atwy dostêp do receptury. Zaproponowa³ mi, ¿e jeœli go nie wydam, otrzymam 500 bry³ek rudy. Muszê podj¹æ decyzjê, co z nim zrobiê.");
 	
     Info_ClearChoices	(DIA_Caine_Exposed);
-    Info_AddChoice		(DIA_Caine_Exposed, "Zapomnij. Mistrz Shawn o wszystkim siê dowie!", DIA_Caine_Exposed_Nope);
+    Info_AddChoice		(DIA_Caine_Exposed, "Zapomnij. Mistrz Shan o wszystkim siê dowie!", DIA_Caine_Exposed_Nope);
     Info_AddChoice		(DIA_Caine_Exposed, "Dobra. Umowa stoi.", DIA_Caine_Exposed_Money);
 };
 
 FUNC VOID DIA_Caine_Exposed_Nope()
 {
-    AI_Output (other, self ,"DIA_Caine_Exposed_Nope_15_01"); //Zapomnij. Mistrz Shawn o wszystkim siê dowie!
+    AI_Output (other, self ,"DIA_Caine_Exposed_Nope_15_01"); //Zapomnij. Mistrz Shan o wszystkim siê dowie!
     AI_Output (self, other ,"DIA_Caine_Exposed_Nope_03_02"); //Jesteœ g³upcem. Bêdziesz tego ¿a³owa³, gdy przyciœnie ciê bieda jak mnie!
     AI_Output (other, self ,"DIA_Caine_Exposed_Nope_15_03"); //Skoñcz ju¿ tê paplaninê.
 	
-    B_LogEntry    (CH3_SellElixer,"Zdecydowa³em, ¿e Caine zas³u¿y³ na karê. Mam zamiar powiedzieæ o wszystkim Shawn'owi.");
+    B_LogEntry    (CH3_SellElixer,"Zdecydowa³em, ¿e Caine zas³u¿y³ na karê. Mam zamiar powiedzieæ o wszystkim Shan'owi.");
 	CaineFriend = false;
     Info_ClearChoices		(DIA_Caine_Exposed);
     AI_StopProcessInfos	(self);
@@ -340,7 +340,7 @@ FUNC VOID DIA_Caine_Exposed_Money()
     AI_Output (self, other ,"DIA_Caine_Exposed_Money_03_02"); //Œwietnie. Oto twoja ruda. Jestem ci naprawdê wdziêczny...
     AI_Output (self, other ,"DIA_Caine_Exposed_Money_03_03"); //Tylko nikomu ani s³owa!
 	
-    B_LogEntry    (CH3_SellElixer,"Przyj¹³em rudê od Caine. Kolonia to miejsce, w którym najwa¿niejsza jest ruda. Pe³na sakiewka mo¿e mi kiedyœ uratowaæ ¿ycie. Muszê teraz jakoœ wyt³umaczyæ siê Shawn'owi.");
+    B_LogEntry    (CH3_SellElixer,"Przyj¹³em rudê od Caine. Kolonia to miejsce, w którym najwa¿niejsza jest ruda. Pe³na sakiewka mo¿e mi kiedyœ uratowaæ ¿ycie. Muszê teraz jakoœ wyt³umaczyæ siê Shan'owi.");
 	CaineFriend = true;
     Info_ClearChoices		(DIA_Caine_Exposed);
     AI_StopProcessInfos	(self);

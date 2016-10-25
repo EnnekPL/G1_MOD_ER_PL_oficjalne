@@ -93,7 +93,7 @@ FUNC INT DIA_Snake_CELLAR_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_DungeonGuard_KILL))
     && (MIS_ScarMurder == LOG_RUNNING)
-	&& (Npc_GetDistToNpc(self,hero) < 300)
+	&& (Npc_GetDistToNpc(self,hero) < 200)
     {
     return TRUE;
     };
@@ -103,6 +103,7 @@ FUNC INT DIA_Snake_CELLAR_Condition()
 FUNC VOID DIA_Snake_CELLAR_Info()
 {
     var C_NPC whodie0; 	whodie0 = Hlp_GetNpc(GRD_3932_DungeonGuard);
+	AI_GoToNpc (self,hero);
     AI_Output (self, other ,"DIA_Snake_CELLAR_03_01"); //Dobrze ciê widzieæ.
     AI_Output (self, other ,"DIA_Snake_CELLAR_03_02"); //Czy Stra¿nik gryzie piach?
     if (Npc_IsDead(whodie0))

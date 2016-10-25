@@ -709,7 +709,7 @@ var int Berg_ring_giveday;
 var int zlecil_Thorus;
 var int talk_aboutOpinion_OC;
 
-var int second_d_shawn;
+var int second_d_Shan;
 var int inicjacja_HeroMustHelpBandit;
 var int go_help_torlof;
 /*
