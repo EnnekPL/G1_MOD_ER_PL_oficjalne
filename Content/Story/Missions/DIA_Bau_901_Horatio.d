@@ -423,97 +423,10 @@ FUNC VOID DIA_Horatio_Thanks_Info()
 	AI_Output (self, other,"DIA_Horatio_Thanks_09_01"); //Wykorzystaj tê wiedzê wy³¹cznie w s³usznej sprawie!
 };
 
-//========================================
-//-----------------> TorlofQuest
-//========================================
 
-INSTANCE DIA_Horatio_TorlofQuest (C_INFO)
-{
-   npc          = Bau_901_Horatio;
-   nr           = 1;
-   condition    = DIA_Horatio_TorlofQuest_Condition;
-   information  = DIA_Horatio_TorlofQuest_Info;
-   permanent	= FALSE;
-   description	= "Mam zadanie od Torlofa.";
-};
-
-FUNC INT DIA_Horatio_TorlofQuest_Condition()
-{
-    if ((MIS_BuntZbieraczy != LOG_RUNNING) && (MIS_BuntZbieraczy != LOG_SUCCESS)) //(Npc_KnowsInfo (hero, DIA_Torlof_YourHardQuest))
-    //&& (MIS_OpinionInNewCamp == LOG_RUNNING)
-	 
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Horatio_TorlofQuest_Info()
-{
-    AI_Output (other, self ,"DIA_Horatio_TorlofQuest_15_01"); //Mam zadanie od Torlofa.
-    AI_Output (self, other ,"DIA_Horatio_TorlofQuest_03_02"); //Jakie zadanie? Dlaczego mi to mówisz?
-    AI_Output (other, self ,"DIA_Horatio_TorlofQuest_15_03"); //Zaraz ci wszystko wyjaœniê.
-    AI_Output (self, other ,"DIA_Horatio_TorlofQuest_03_04"); //Zamieniam siê w s³uch.
-    AI_Output (other, self ,"DIA_Horatio_TorlofQuest_15_05"); //Torlofowi nie podoba siê, ¿e jesteœcie wykorzystywani przez Lewusa i tego spaœlaka.
-    AI_Output (other, self ,"DIA_Horatio_TorlofQuest_15_06"); //Mam w jakiœ sposób wam pomóc.
-    AI_Output (self, other ,"DIA_Horatio_TorlofQuest_03_07"); //To bardzo szlachetne, ale wydaje mi siê, ¿e nic nie zrobisz.
-    AI_Output (self, other ,"DIA_Horatio_TorlofQuest_03_08"); //S³ysza³em o planach buntu. Podobno Rufus coœ o tym wie.
-    AI_Output (self, other ,"DIA_Horatio_TorlofQuest_03_09"); //Ja jednak nie lubiê rozwi¹zañ si³owych.
-    AI_Output (self, other ,"DIA_Horatio_TorlofQuest_03_10"); //Musisz z nim pogadaæ.
-    MIS_BuntZbieraczy = LOG_RUNNING;
-
-    Log_CreateTopic          (CH1_BuntZbieraczy, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_BuntZbieraczy, LOG_RUNNING);
-    B_LogEntry               (CH1_BuntZbieraczy,"Horacy powiedzia³ mi, ¿e Rufus planowa³ bunt zbieraczy przeciwko Ry¿owemu Ksiêciu. Muszê z nim pogadaæ.");
-
-    B_GiveXP (50);
-};
-//========================================
-//-----------------> Josep
-//========================================
-
-INSTANCE DIA_Horatio_Josep (C_INFO)
-{
-   npc          = Bau_901_Horatio;
-   nr           = 1;
-   condition    = DIA_Horatio_Josep_Condition;
-   information  = DIA_Horatio_Josep_Info;
-   permanent	= FALSE;
-   description	= "Przysy³a mnie Josep.";
-};
-
-FUNC INT DIA_Horatio_Josep_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Josep_Sorry))
-	&& (MIS_BuntZbieraczy != LOG_SUCCESS)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Horatio_Josep_Info()
-{
-    AI_Output (other, self ,"DIA_Horatio_Josep_15_01"); //Przysy³a mnie Josep.
-    AI_Output (self, other ,"DIA_Horatio_Josep_03_02"); //Ten nowy? Czego chce?
-    AI_Output (other, self ,"DIA_Horatio_Josep_15_03"); //Chcemy ci pomóc w organizacji powstania!
-    AI_Output (self, other ,"DIA_Horatio_Josep_03_04"); //Powstania? Cz³owieku, gadasz z niew³aœciw¹ osob¹. Lepiej znajdŸ Rufusa.
-    AI_Output (other, self ,"DIA_Horatio_Josep_15_05"); //Dziwne, Josep mówi³ o tobie. 
-    AI_Output (self, other ,"DIA_Horatio_Josep_03_06"); //Jest tu od niedawna. Ma³o nas zna. Ja osobiœcie nie popieram takich zrywów, ale nie bêdê wam utrudnia³.
-    AI_Output (self, other ,"DIA_Horatio_Josep_03_07"); //Róbcie sobie, co chcecie. 
-  MIS_BuntZbieraczy = LOG_RUNNING;
-
-    Log_CreateTopic          (CH1_BuntZbieraczy, LOG_MISSION);
-    Log_SetTopicStatus       (CH1_BuntZbieraczy, LOG_RUNNING);
-    B_LogEntry               (CH1_BuntZbieraczy,"Horacy powiedzia³ mi, ¿e Rufus planowa³ bunt zbieraczy przeciwko Ry¿owemu Ksiêciu. Muszê z nim pogadaæ.");
-
-    B_GiveXP (50);
-};
-
-
-//========================================
-//-----------------> Bunt
-//========================================
+////////////////////////////////////////////
+//		 Bunt
+////////////////////////////////////////////
 
 INSTANCE DIA_Horatio_Bunt (C_INFO)
 {
@@ -527,9 +440,8 @@ INSTANCE DIA_Horatio_Bunt (C_INFO)
 
 FUNC INT DIA_Horatio_Bunt_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Rufus_Jestem))
-&& (MIS_BuntZbieraczy == LOG_RUNNING)      
-{
+    if  (MIS_BuntZbieraczy == LOG_RUNNING)      
+	{
     return TRUE;
     };
 };
@@ -538,11 +450,6 @@ FUNC INT DIA_Horatio_Bunt_Condition()
 FUNC VOID DIA_Horatio_Bunt_Info()
 {
     AI_Output (other, self ,"DIA_Horatio_Bunt_15_01"); //Co myœlisz o tym ca³ym buncie?
-    AI_Output (self, other ,"DIA_Horatio_Bunt_03_02"); //Ju¿ mówi³em, ¿e nie przyk³adam do niczego rêki.
-    AI_Output (self, other ,"DIA_Horatio_Bunt_03_03"); //Je¿eli chcecie, to sobie go róbcie.
-    AI_Output (other, self ,"DIA_Horatio_Bunt_15_04"); //Chodzi mi o to czy dochowasz tajemnicy.
-    AI_Output (self, other ,"DIA_Horatio_Bunt_03_05"); //Akurat o to mo¿esz byæ o to spokojny. Nie mam zamiaru broniæ tego wieprza.
-    B_LogEntry                     (CH1_BuntZbieraczy,"Horacy nam nie pomo¿e, ale nie puœci te¿ pary z ust.");
-
-    B_GiveXP (50);
+    AI_Output (self, other ,"DIA_Horatio_Bunt_03_02"); //Mam nadziejê, ¿e ca³a sprawa wkrótce ucichnie i obejdzie siê bez niepotrzebnego rozlewu krwi.
+    AI_Output (self, other ,"DIA_Horatio_Bunt_03_03"); //Nie jestem zwolennikiem rozwi¹zañ si³owych. Ju¿ raz w ¿yciu przesadzi³em.
 };

@@ -52,6 +52,12 @@ FUNC VOID Rtn_goto_930 ()
 	TA_PickRice		(08,35,20,35,"NC_PATH79");
 };
 
+FUNC VOID Rtn_rebel_930 ()
+{
+	TA_SitCampfire	(20,35,08,35,"LIBA1");	
+	TA_SitCampfire	(08,35,20,35,"LIBA1");
+};
+
 
 
 

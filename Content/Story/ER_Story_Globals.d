@@ -186,7 +186,7 @@ var int MIS_EmanuelDelivery;
 const string CH1_EmanuelDelivery     		= "Dostawa dla Emanuela";
 
 var int MIS_EmanuelsDeals;
-const string CH1_EmanuelsDeals      		=   "Handel Emanuela";
+const string CH1_EmanuelsDeals      		= "Handel Emanuela";
 
 var int MIS_BanditCave;
 const string CH1_BanditCave      			= "Dostawa z Nowego Obozu";
@@ -555,6 +555,25 @@ var int HeroKnows_CookingFish; //zupy rybne
 //***Pomocnicze***
 //***Globalne***
 var int Bonus_FirtsBlood;
+
+//***Pomocnicze***
+//***Bunt zbieraczy***
+var int Mod_Story_RunRebelInNC;
+var int Rebel_HerosBoss; const int Boss_Rufus = 1; const int Boss_Lefty = 2;
+//side questy od Lewusa
+var int Quest_TalkWithRufus;
+var int Quest_CorruptRebels;
+var int Quest_TakeWeaponsDelivery;
+var int Quest_EliminateJeremiah;
+var int Quest_KillRufus;
+//side questy od Rufusa
+var int Quest_GiveOffense;
+var int Quest_ChceckLoyality; var int FoggyKilled;
+var int Quest_GetWeaponsDelivery;
+var int Quest_GetAlcoForBandits;
+var int Quest_KillLefty;
+var int Quest_StealRing;
+var int Quest_StealOre;
 
 var int MIS_GamalHelp; //nope
 const string Ch1_GamalHelp		 			= "Propozycja Gamala";

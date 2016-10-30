@@ -57,8 +57,12 @@ FUNC VOID Rtn_bunt_914 ()
 	TA_Stand		(07,20,20,20,"BUNT_Z2");
 };
 
-
-
+// REBEL
+FUNC VOID Rtn_rebel_914 ()
+{
+	TA_Stand		(20,20,07,20,"LIBA3");
+	TA_Stand		(07,20,20,20,"LIBA3");
+};
 
 
 

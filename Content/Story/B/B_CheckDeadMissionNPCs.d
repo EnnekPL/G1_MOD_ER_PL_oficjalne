@@ -23,6 +23,18 @@ func void B_CheckDeadMissionNPCs ()
 	B_LogEntry               (CH1_WheresNek,"Nek nie ¿yje. Mogê wróciæ do Starego Obozu i powiedzieæ o wszystkim Snafowi i Fletcherowi.");	
 	HeroKillNek = true;
 	};
+
+// ======================================================
+// BUNT ZBIERACZY
+// ======================================================
+	if (Hlp_GetInstanceID(BAU_921_Bauer) ==  Hlp_GetInstanceID(self))
+	{
+		if (MIS_BuntZbieraczy == LOG_RUNNING)
+		{
+			B_LogEntry    		(CH1_BuntZbieraczy,"Zabi³em Zbieracza, który by³ uwa¿any przez Rufusa za zdrajcê.");
+			FoggyKilled = TRUE;
+		};
+	};
 // ======================================================
 // GOTHIC EDYCJA ROZSZERZONA
 // BOSSOWIE - WPISY I PREMIE

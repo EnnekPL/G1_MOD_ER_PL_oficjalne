@@ -71,7 +71,7 @@ INSTANCE DIA_Schlaeger_VODKA (C_INFO)
 
 FUNC INT DIA_Schlaeger_VODKA_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Rufus_Vodka))
+    if (Quest_GetAlcoForBandits == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -85,9 +85,9 @@ FUNC VOID DIA_Schlaeger_VODKA_Info()
     AI_Output (self, other ,"DIA_Schlaeger_VODKA_03_03"); //Nie nabierzesz mnie tak ³atwo koleœ!
     AI_Output (other, self ,"DIA_Schlaeger_VODKA_15_04"); //Homer.
     AI_Output (self, other ,"DIA_Schlaeger_VODKA_03_05"); //Dobra, w porz¹dku. Daj to tutaj.
-    if (Npc_HasItems (other, ItMi_Alchemy_Alcohol_01) >=3)
+    if (Npc_HasItems (other, ItMi_SpecialBooze) >=3)
     {
-        B_GiveInvItems (other, self, ItMi_Alchemy_Alcohol_01, 3);
+        B_GiveInvItems (other, self, ItMi_SpecialBooze, 3);
         b_givexp (50);
 		DIA_Schlaeger_VODKA.permanent = false;
     }

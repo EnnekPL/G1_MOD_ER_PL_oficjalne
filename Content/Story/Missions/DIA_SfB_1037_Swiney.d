@@ -327,39 +327,3 @@ func void Info_Swiney_CAVALORN_TEST_FALSE ()
 	Info_ClearChoices(Info_Swiney_CAVALORN_TEST);
 };
 
-//========================================
-//-----------------> Bron
-//========================================
-
-INSTANCE DIA_Swiney_Bron (C_INFO)
-{
-   npc          = SfB_1037_Swiney;
-   nr           = 1;
-   condition    = DIA_Swiney_Bron_Condition;
-   information  = DIA_Swiney_Bron_Info;
-   permanent	= 0;
-   description	= "Podobno obieca³eœ Rufuswoi jak¹œ broñ.";
-};
-
-FUNC INT DIA_Swiney_Bron_Condition()
-{
-if  (Npc_KnowsInfo (hero, DIA_Rufus_HELLO6))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Swiney_Bron_Info()
-{
-    AI_Output (other, self ,"DIA_Swiney_Bron_15_01"); //Podobno obieca³eœ Rufusowi jak¹œ broñ.
-    AI_Output (self, other ,"DIA_Swiney_Bron_03_02"); //Nie tak g³oœno. Mam j¹ tutaj.
-    AI_Output (self, other ,"DIA_Swiney_Bron_03_03"); //Proszê, weŸ j¹. Tylko nikomu nic nie mów.
-    AI_Output (self, other ,"DIA_Swiney_Bron_03_04"); //Powodzenia.
-    AI_Output (other, self ,"DIA_Swiney_Bron_15_05"); //Dziêki. Z pewnoœci¹ siê przyda.
-    B_LogEntry                     (CH1_BuntZbieraczy,"Od Swineya otrzyma³em dwie paczki z broni¹. Muszê na nie uwa¿aæ.");
-
-    CreateInvItems (self, ItMi_PaczkaMiecze1, 2);
-    B_GiveInvItems (self, other, ItMi_PaczkaMiecze1, 2);
-    AI_StopProcessInfos	(self);
-};

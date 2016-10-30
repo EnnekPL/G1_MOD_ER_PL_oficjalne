@@ -67,13 +67,9 @@ FUNC VOID Rtn_start_834 ()
 	TA_GuardWheelOpen	(08,00,23,30,"OW_PATH_067_WHEEL");
 };
 
-
-
-
-
-
-
-
-
-
-
+// REBEL
+FUNC VOID Rtn_rebel_834 ()
+{
+	TA_Smalltalk		(23,30,08,00,"OW_PATH_069");
+	TA_Smalltalk		(08,00,23,30,"OW_PATH_069");
+};

@@ -255,7 +255,7 @@ INSTANCE DIA_Ricelord_ALCO_BUNT (C_INFO)
 
 FUNC INT DIA_Ricelord_ALCO_BUNT_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Rufus_Vodka))
+    if (Quest_GetAlcoForBandits == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -267,10 +267,10 @@ FUNC VOID DIA_Ricelord_ALCO_BUNT_Info()
     AI_Output (other, self ,"DIA_Ricelord_ALCO_BUNT_15_01"); //Przysy³a mnie Homer, mam dla ciebie ry¿ówkê od Jeremiasza.
     AI_Output (self, other ,"DIA_Ricelord_ALCO_BUNT_03_02"); //¯e co? Ten leñ nie móg³ siê sam ruszyæ i teraz wysy³a ch³opca na posy³ki?
     AI_Output (self, other ,"DIA_Ricelord_ALCO_BUNT_03_03"); //Dobra, daj mi trzy butelki. Resztê zanieœ Lewusowi i ch³opakom.
-    if (Npc_HasItems (other, ItMi_Alchemy_Alcohol_01) >=3)
+    if (Npc_HasItems (other, ItMi_SpecialBooze) >=3)
     {
         AI_Output (other, self ,"DIA_Ricelord_ALCO_BUNT_15_04"); //Nie ma sprawy.
-		B_GiveInvItems (other, self, ItMi_Alchemy_Alcohol_01, 3);
+		B_GiveInvItems (other, self, ItMi_SpecialBooze, 3);
 		b_givexp (50);
 		DIA_Ricelord_ALCO_BUNT.permanent = false;
     }

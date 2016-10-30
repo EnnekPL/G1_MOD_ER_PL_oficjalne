@@ -60,10 +60,12 @@ func void rtn_bunt_907 ()
 TA_Stand(06,00,12,00,"NC_RICELORD_SIT");
 TA_Stand (12,00,06,00,"NC_RICELORD_SIT");
 };
-func void rtn_liba_907 ()
+
+// REBEL
+FUNC VOID rtn_rebel_907 ()
 {
-TA_WatchInextremo (06,00,12,00,"NC_PATH83");
-TA_WatchInextremo (12,00,06,00,"NC_PATH83");
+	TA_Smalltalk (06,00,12,00,"BUNT2");//with 916
+	TA_Smalltalk (12,00,06,00,"BUNT2");
 };
 
 

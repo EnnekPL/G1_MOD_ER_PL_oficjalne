@@ -125,12 +125,12 @@ INSTANCE DIA_Jeremiah_HelpMe (C_INFO)
    condition    = DIA_Jeremiah_HelpMe_Condition;
    information  = DIA_Jeremiah_HelpMe_Info;
    permanent	= FALSE;
-   description	= "Potrzebujê alkoholu.";
+   description	= "Potrzebujê twojego specjalnego trunku.";
 };
 
 FUNC INT DIA_Jeremiah_HelpMe_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Rufus_HELLO6))
+    if (Quest_GetAlcoForBandits == LOG_RUNNING)
 	&& (MIS_BuntZbieraczy == LOG_RUNNING)
     {
     return TRUE;
@@ -140,79 +140,38 @@ FUNC INT DIA_Jeremiah_HelpMe_Condition()
 
 FUNC VOID DIA_Jeremiah_HelpMe_Info()
 {
-    AI_Output (other, self ,"DIA_Jeremiah_HelpMe_15_01"); //Potrzebujê alkoholu.
-    AI_Output (self, other ,"DIA_Jeremiah_HelpMe_03_02"); //To sobie kup!
-    AI_Output (other, self ,"DIA_Jeremiah_HelpMe_15_03"); //Nie, nie dla siebie.
-    AI_Output (other, self ,"DIA_Jeremiah_HelpMe_15_04"); //Zbieracze planuj¹ bunt. Chcemy potajemnie w nocy zabiæ Lewusa i Ry¿owego Ksiêcia.
-    AI_Output (other, self ,"DIA_Jeremiah_HelpMe_15_05"); //Potrzebujemy alkoholu, aby uprzednio ich upiæ.
+    AI_Output (other, self ,"DIA_Jeremiah_HelpMe_15_01"); //Potrzebujê twojego specjalnego trunku.
+    AI_Output (self, other ,"DIA_Jeremiah_HelpMe_03_02"); //Podobno na polach ry¿owych zrobi³ siê niez³y ba³agan.
+    AI_Output (other, self ,"DIA_Jeremiah_HelpMe_15_03"); //Tak, nikt nie pracuje.
+    AI_Output (other, self ,"DIA_Jeremiah_HelpMe_15_04"); //To jak bêdzie z tym 'specja³em'? Chcia³em poczêstowaæ kilku 'kolegów'...
     AI_Output (self, other ,"DIA_Jeremiah_HelpMe_03_06"); //Chêtnie bym pomóg³, ale Najemnicy regularnie sprawdzaj¹, czy nie da³em nikomu nic za darmo.
-    AI_Output (self, other ,"DIA_Jeremiah_HelpMe_03_07"); //Podliczaj¹ ka¿d¹ bry³kê zysku. Licz¹ butelki...
-    AI_Output (self, other ,"DIA_Jeremiah_HelpMe_03_08"); //Nie mogê wam pomóc, inaczej zostanê ukarany!
-    AI_Output (other, self ,"DIA_Jeremiah_HelpMe_15_09"); //Którzy Najemnicy ciê rewiduj¹?
-    AI_Output (self, other ,"DIA_Jeremiah_HelpMe_03_10"); //Torlof, z polecenia Lee.
-    AI_Output (other, self ,"DIA_Jeremiah_HelpMe_15_11"); //Spróbujê z nim porozmawiaæ.
-	Jeremiah_AlcoGiv = false;
-    B_LogEntry                     (CH1_BuntZbieraczy,"Jeremiasz nie wyda mi alkoholu, dopóki nie za³atwiê problemu z Najemnikami, którzy licz¹ wszystkie jego dochody. Jeœli odda mi wódkê za darmo, zostanie ukarany. W tym celu muszê pogadaæ z Torlofem.");
-    AI_StopProcessInfos	(self);
-};
-
-//========================================
-//-----------------> GiveMeSomeAlco
-//========================================
-
-INSTANCE DIA_Jeremiah_GiveMeSomeAlco (C_INFO)
-{
-   npc          = Bau_912_Jeremiah;
-   nr           = 1;
-   condition    = DIA_Jeremiah_GiveMeSomeAlco_Condition;
-   information  = DIA_Jeremiah_GiveMeSomeAlco_Info;
-   permanent	= FALSE;
-   description	= "Rozmawia³em z Torlofem. Mo¿esz mi daæ kilka butelek.";
-};
-
-FUNC INT DIA_Jeremiah_GiveMeSomeAlco_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Jeremiah_HelpMe))
-    && (Jeremiah_AlcoGiv == true)
-	&& (MIS_BuntZbieraczy == LOG_RUNNING)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Jeremiah_GiveMeSomeAlco_Info()
-{
-    AI_Output (other, self ,"DIA_Jeremiah_GiveMeSomeAlco_15_01"); //Rozmawia³em z Torlofem. Mo¿esz mi daæ kilka butelek.
-    AI_Output (self, other ,"DIA_Jeremiah_GiveMeSomeAlco_03_02"); //Trzymaj. Ju¿ je uwarzy³em.
-    AI_Output (self, other ,"DIA_Jeremiah_GiveMeSomeAlco_03_03"); //Tylko uwa¿aj z tym. He he...
-    AI_Output (other, self ,"DIA_Jeremiah_GiveMeSomeAlco_15_04"); //Spokojna g³owa.
-	//log
-    B_LogEntry                     (CH1_BuntZbieraczy,"Dosta³em od Jeremiasza kilka butelek czystego alkoholu. Lewusa i jego ludzi mamy ju¿ w garœci.");
-	//items
-    CreateInvItems (self, ItMi_Alchemy_Alcohol_01, 12);
-    B_GiveInvItems (self, other, ItMi_Alchemy_Alcohol_01, 12);
+    AI_Output (self, other ,"DIA_Jeremiah_HelpMe_03_07"); //Podliczaj¹ ka¿d¹ bry³kê zysku. Licz¹ butelki... Jeœli ci pomogê, zostanê ukarany.
+    AI_Output (other, self ,"DIA_Jeremiah_HelpMe_15_09"); //A gdybym zap³aci³?
+    AI_Output (self, other ,"DIA_Jeremiah_HelpMe_03_10"); //Wtedy nie by³oby problemu. Móg³bym ci daæ 12 butelek za 240 bry³ek rudy.
+	
+    B_LogEntry                     (CH1_BuntZbieraczy,"Bêdê musia³ zap³aciæ Jeremiaszowi za alkohol. Najemnicy skrupulatnie podliczaj¹ ka¿d¹ wyprodukowan¹ przez niego butelkê.");
 };
 
 //========================================
 //-----------------> BoughtAlco
 //========================================
 
-INSTANCE DIA_Jeremiah_BoughtAlco (C_INFO) //#todo: perm check
+INSTANCE DIA_Jeremiah_BoughtAlco (C_INFO)
 {
    npc          = Bau_912_Jeremiah;
    nr           = 2;
    condition    = DIA_Jeremiah_BoughtAlco_Condition;
    information  = DIA_Jeremiah_BoughtAlco_Info;
-   permanent	= true;
-   description	= "[Kup alkohol (100 bry³ek rudy)]";
+   permanent	= 0;
+   description	= "Daj mi ten trunek.";
 };
 
 FUNC INT DIA_Jeremiah_BoughtAlco_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Rufus_HELLO6))  
-    && (If_BuyAlco_Jer == false)
+    if (Npc_KnowsInfo (hero, DIA_Jeremiah_HelpMe))  
+    && (Quest_GetAlcoForBandits == LOG_RUNNING)
 	&& (MIS_BuntZbieraczy == LOG_RUNNING)
+	&& (Npc_HasItems (hero, ItMiNugget)>=240)
 	{
     return TRUE;
     };
@@ -221,21 +180,13 @@ FUNC INT DIA_Jeremiah_BoughtAlco_Condition()
 
 FUNC VOID DIA_Jeremiah_BoughtAlco_Info()
 {
-    AI_Output (other, self ,"DIA_Jeremiah_BoughtAlco_15_01"); //Kupiê ten alkohol za swoj¹ rudê.
-    if (Npc_HasItems (hero, ItMiNugget)>=100)
-    {
-        AI_Output (self, other ,"DIA_Jeremiah_BoughtAlco_03_02"); //Proszê bardzo.
-        CreateInvItems (self, ItMi_Alchemy_Alcohol_01, 12);
-        B_GiveInvItems (self, other, ItMi_Alchemy_Alcohol_01, 12);
-        B_GiveInvItems (other, self, ItMiNugget, 100);
-        If_BuyAlco_Jer = true;
-        B_LogEntry                     (CH1_BuntZbieraczy,"Dosta³em od Jeremiasza kilka butelek czystego alkoholu. Lewusa i jego ludzi mamy ju¿ w garœci.");
-    }
-    else
-    {
-        AI_Output (self, other ,"DIA_Jeremiah_BoughtAlco_03_03"); //Nie widzê tu stu bry³ek. Próbujesz mnie oszukaæ?
-        If_BuyAlco_Jer = false;
-    };
+    AI_Output (other, self ,"DIA_Jeremiah_BoughtAlco_15_01"); //Daj mi ten trunek.
+    AI_Output (self, other ,"DIA_Jeremiah_BoughtAlco_03_02"); //Proszê bardzo.
+    CreateInvItems (self, ItMi_SpecialBooze, 12);
+    B_GiveInvItems (self, other, ItMi_SpecialBooze, 12);
+    B_GiveInvItems (other, self, ItMiNugget, 240);
+    
+    B_LogEntry     (CH1_BuntZbieraczy,"Dosta³em od Jeremiasza kilka butelek jego specjalnego trunku. Lewusa i jego ludzi mamy ju¿ w garœci.");
 };
 
 //========================================

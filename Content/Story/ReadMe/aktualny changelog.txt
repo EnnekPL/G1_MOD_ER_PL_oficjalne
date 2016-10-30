@@ -60,3 +60,4 @@
 - znacznie zmniejszone statystyki zbroi stra¿y królewskiej
 - zwiêkszone statystyki potworów z którymi walczymy na trzecim rozdziale (harpia, zêbacz, szkielet)
 - naprawiony b³¹d ze Snake gadaj¹cym przez drzwi w lochach
+- ¿eby uzyskaæ poparcie Torlofa trzeba wykonaæ nowe zadanie "Topór Torlofa"

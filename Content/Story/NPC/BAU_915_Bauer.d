@@ -61,7 +61,12 @@ FUNC VOID Rtn_bunt_915 ()
 	TA_stand		(07,25,20,25,"NC_PATH53");
 };
 
-
+// REBEL
+FUNC VOID Rtn_rebel_915 ()
+{
+	TA_stand		(20,25,07,25,"LIBA1");
+	TA_stand		(07,25,20,25,"LIBA1");
+};
 
 
 

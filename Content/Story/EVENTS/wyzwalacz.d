@@ -223,37 +223,7 @@ B_LogEntry                     (CH1_EmanuelsDeals,"W jaskini znalaz³em cia³o Shi
 PrintScreen ("Mo¿esz tu ³owiæ!", 1, 90, "Font_Old_10_White_Hi.TGA", 2);
 //PrintAndPause("Znajdujesz siê w miejscu \nw którym mo¿na ³owiæ. \n Takie miejsca s¹ oznaczone poprzez \n sieci rybackie. Wybierz WÊDKÊ \n ze swojego ekwipunku,", KEY_RETURN,"Font_Old_10_White_Hi.TGA");
 };
-//************BUNT ZBIERACZY
-if (MIS_BuntZbieraczy == LOG_RUNNING)
-&& (Npc_IsDead(Bau_900_Ricelord))
-&& (Npc_KnowsInfo (hero, DIA_Rufus_ActionGoWhat))
-&& (po_buncie == true)
-{
-Npc_ExchangeRoutine (BAU_928_Bauer,"bunt");
-Npc_ExchangeRoutine (BAU_916_Bauer,"bunt");
-Npc_ExchangeRoutine (BAU_923_Bauer,"bunt");
-Npc_ExchangeRoutine (BAU_907_Bauer,"bunt");
-Npc_ExchangeRoutine (BAU_904_Bauer,"bunt");
-Npc_ExchangeRoutine (BAU_903_Rufus,"bunt");
-B_ChangeGuild    (Org_846_Schlaeger,GIL_DMB);
-B_ChangeGuild    (Org_844_Lefty,GIL_DMB);
-B_ChangeGuild    (Org_845_Schlaeger,GIL_DMB); //1.24
-Npc_ExchangeRoutine (Org_831_Organisator,"bunt");
-B_ChangeGuild    (Org_831_Organisator,GIL_DMB);
-if (Homer_Rozpracowany == false)
-{
-Npc_ExchangeRoutine (BAU_902_Pock,"bunt");
-B_ChangeGuild    (BAU_902_Pock,GIL_DMB);//1.24
-Npc_ExchangeRoutine (BAU_914_Bauer,"bunt");
-BAU_914_Bauer.name = "Pupilek Lewusa";
-B_ChangeGuild    (BAU_914_Bauer,GIL_DMB);
-Npc_ExchangeRoutine (BAU_915_Bauer,"bunt");
-BAU_915_Bauer.name = "Pupilek Lewusa";
-B_ChangeGuild    (BAU_915_Bauer,GIL_DMB);
-Npc_ExchangeRoutine (Org_832_Organisator,"bunt");
-B_ChangeGuild    (Org_832_Organisator,GIL_DMB);
-};
-};
+
 //************UPICIE
 if (bohater_upity)
 {

@@ -114,7 +114,6 @@ FUNC VOID  DIA_Torlof_PERM_Info()
 
 */
 
-
 //========================================
 //-----------------> PoparcieNajemnikow
 //========================================
@@ -247,67 +246,6 @@ FUNC VOID DIA_Torlof_AxeFailed_Info()
 	Npc_SetTarget(self,other);
 	AI_StartState(self,ZS_ATTACK,1,"");
 	self.aivar[AIV_DEALDAY] = Wld_GetDay()+1;
-};
-//========================================
-//-----------------> Jeraemiah
-//========================================
-
-INSTANCE DIA_Torlof_Jeraemiah (C_INFO)
-{
-   npc          = Sld_737_Torlof;
-   nr           = 1;
-   condition    = DIA_Torlof_Jeraemiah_Condition;
-   information  = DIA_Torlof_Jeraemiah_Info;
-   permanent	= FALSE;
-   description	= "Przyszed³em w sprawie gorzelnika Jeremiasza...";
-};
-
-FUNC INT DIA_Torlof_Jeraemiah_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Jeremiah_HelpMe))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Torlof_Jeraemiah_Info()
-{
-    AI_Output (other, self ,"DIA_Torlof_Jeraemiah_15_01"); //Przyszed³em w sprawie gorzelnika Jeremiasza...
-    AI_Output (self, other ,"DIA_Torlof_Jeraemiah_03_02"); //O co chodzi?
-    AI_Output (other, self ,"DIA_Torlof_Jeraemiah_15_03"); //Potrzebujê kilku butelek alkoholu, jednak ten nie chce mi ich wydaæ z twojego powodu.
-    AI_Output (other, self ,"DIA_Torlof_Jeraemiah_15_04"); //Móg³byœ przymkn¹æ oko przy nastêpnej rewizji?
-    AI_Output (self, other ,"DIA_Torlof_Jeraemiah_03_05"); //Po co ci ten alkohol?
-
-    Info_ClearChoices		(DIA_Torlof_Jeraemiah);
-    Info_AddChoice		(DIA_Torlof_Jeraemiah, "Do picia.", DIA_Torlof_Jeraemiah_Picu);
-    Info_AddChoice		(DIA_Torlof_Jeraemiah, "Zbieracze planuj¹ bunt.", DIA_Torlof_Jeraemiah_RyzowaDupa);
-};
-
-FUNC VOID DIA_Torlof_Jeraemiah_Picu()
-{
-    AI_Output (other, self ,"DIA_Torlof_Jeraemiah_Picu_15_01"); //Do picia.
-    AI_Output (self, other ,"DIA_Torlof_Jeraemiah_Picu_03_02"); //W takim razie...
-    AI_Output (self, other ,"DIA_Torlof_Jeraemiah_Picu_03_03"); //...nie.
-    Info_ClearChoices		(DIA_Torlof_Jeraemiah);//ocenzurowa³em g1210
-	Jeremiah_AlcoGiv = false;
-    AI_StopProcessInfos	(self);
-    B_LogEntry                     (CH1_BuntZbieraczy,"K³amstwo nie wysz³o mi na dobre. Teraz muszê sam sko³owaæ trochê czystej.");
-};
-
-FUNC VOID DIA_Torlof_Jeraemiah_RyzowaDupa()
-{
-    AI_Output (other, self ,"DIA_Torlof_Jeraemiah_RyzowaDupa_15_01"); //Zbieracze planuj¹ bunt.
-    AI_Output (self, other ,"DIA_Torlof_Jeraemiah_RyzowaDupa_03_02"); //Po co wam wódka do buntu?
-    AI_Output (self, other ,"DIA_Torlof_Jeraemiah_RyzowaDupa_03_03"); //Ju¿ opijacie zwyciêstwo?
-    AI_Output (other, self ,"DIA_Torlof_Jeraemiah_RyzowaDupa_15_04"); //Nie, nie. Chcemy podmieniæ ry¿ówkê bandziorów na alkohol, ¿eby ³atwiej ich pokonaæ. Upici nie bêd¹ w stanie dobrze walczyæ.
-    AI_Output (self, other ,"DIA_Torlof_Jeraemiah_RyzowaDupa_03_05"); //Rozumiem. Powiedz Jeremiaszowi, ¿e nie ma siê czego baæ.
-    Info_ClearChoices		(DIA_Torlof_Jeraemiah);
-	Jeremiah_AlcoGiv = true;
-    B_LogEntry                     (CH1_BuntZbieraczy,"Dogada³em siê z Torlofem. Mogê wzi¹æ alkohol od Jeremiasza.");
-
-    B_GiveXP (50);
-    AI_StopProcessInfos	(self);
 };
 
 //========================================

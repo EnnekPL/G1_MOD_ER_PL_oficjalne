@@ -63,6 +63,10 @@ CONST STRING MOBNAME_BAUM			= "Pi³a do drewna";
 CONST STRING MOBNAME_GOLD			= "Samorodek z³ota";
 CONST STRING MOBNAME_WORKTABLE		= "Warsztat";
 CONST STRING MOBNAME_OREVEIN		= "¯y³a magicznej rudy";
+CONST STRING MOBNAME_SENYANCHEST	= "Solidna skrzynia";
+
+CONST STRING MOBNAME_SCHLEAGERS_CHEST	= "Skrzynia bandziorów";
+
 
 // *****************************************************************************************
 // Gildennamen
@@ -382,6 +386,9 @@ const string NAME_Mysliwy1      =   "Zmêczony myœliwy";
 const string NAME_Mysliwy2      =   "Myœliwy";
 const string NAME_Mysliwy3      =   "Marudny myœliwy";
 const string NAME_Kusznik       =   "Kusznik";
+const string NAME_Rebeliant     =   "Buntownik";
+const string NAME_LeftysFriend  =   "Stronnik Lewusa";
+
 // *************************************************************
 // DIALOG OPTIONEN
 // *************************************************************

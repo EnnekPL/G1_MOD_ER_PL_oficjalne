@@ -55,6 +55,14 @@ FUNC VOID Rtn_start_900 ()
 	TA_SitAround	(20,00,24,00,"NC_RICELORD_SIT");
 	TA_Sleep		(24,00,07,00,"NC_RICEBUNKER_10");
 };
+
+// REBEL
+FUNC VOID Rtn_rebel_900 () //smalltalk with Lefty
+{
+	TA_Smalltalk	(07,00,20,00,"NC_PATH53");
+	TA_Smalltalk	(20,00,07,00,"NC_PATH53");
+};
+
 FUNC VOID Rtn_bunt_900 ()
 {
 	TA_Boss			(07,00,20,00,"NC_RICELORD");

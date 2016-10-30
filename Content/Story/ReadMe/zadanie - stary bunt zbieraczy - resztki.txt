@@ -1,0 +1,900 @@
+﻿//========================================
+//-----------------> GiveMeSomeAlco
+//========================================
+
+INSTANCE DIA_Jeremiah_GiveMeSomeAlco (C_INFO)
+{
+   npc          = Bau_912_Jeremiah;
+   nr           = 1;
+   condition    = DIA_Jeremiah_GiveMeSomeAlco_Condition;
+   information  = DIA_Jeremiah_GiveMeSomeAlco_Info;
+   permanent	= FALSE;
+   description	= "Daj mi";
+};
+
+FUNC INT DIA_Jeremiah_GiveMeSomeAlco_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Jeremiah_HelpMe))
+    && (Jeremiah_AlcoGiv == true)
+	&& (MIS_BuntZbieraczy == LOG_RUNNING)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Jeremiah_GiveMeSomeAlco_Info()
+{
+    AI_Output (other, self ,"DIA_Jeremiah_GiveMeSomeAlco_15_01"); //Rozmawiałem z Torlofem. Możesz mi dać kilka butelek.
+    AI_Output (self, other ,"DIA_Jeremiah_GiveMeSomeAlco_03_02"); //Trzymaj. Już je uwarzyłem.
+    AI_Output (self, other ,"DIA_Jeremiah_GiveMeSomeAlco_03_03"); //Tylko uważaj z tym. He he...
+    AI_Output (other, self ,"DIA_Jeremiah_GiveMeSomeAlco_15_04"); //Spokojna głowa.
+	//log
+    B_LogEntry                     (CH1_BuntZbieraczy,"Dostałem od Jeremiasza kilka butelek czystego alkoholu. Lewusa i jego ludzi mamy już w garści.");
+	//items
+    CreateInvItems (self, ItMi_Alchemy_Alcohol_01, 12);
+    B_GiveInvItems (self, other, ItMi_Alchemy_Alcohol_01, 12);
+};
+
+//========================================
+//-----------------> Jeraemiah
+//========================================
+
+INSTANCE DIA_Torlof_Jeraemiah (C_INFO)
+{
+   npc          = Sld_737_Torlof;
+   nr           = 1;
+   condition    = DIA_Torlof_Jeraemiah_Condition;
+   information  = DIA_Torlof_Jeraemiah_Info;
+   permanent	= FALSE;
+   description	= "Przyszedłem w sprawie gorzelnika Jeremiasza...";
+};
+
+FUNC INT DIA_Torlof_Jeraemiah_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Jeremiah_HelpMe))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Torlof_Jeraemiah_Info()
+{
+    AI_Output (other, self ,"DIA_Torlof_Jeraemiah_15_01"); //Przyszedłem w sprawie gorzelnika Jeremiasza...
+    AI_Output (self, other ,"DIA_Torlof_Jeraemiah_03_02"); //O co chodzi?
+    AI_Output (other, self ,"DIA_Torlof_Jeraemiah_15_03"); //Potrzebuję kilku butelek alkoholu, jednak ten nie chce mi ich wydać z twojego powodu.
+    AI_Output (other, self ,"DIA_Torlof_Jeraemiah_15_04"); //Mógłbyś przymknąć oko przy następnej rewizji?
+    AI_Output (self, other ,"DIA_Torlof_Jeraemiah_03_05"); //Po co ci ten alkohol?
+
+    Info_ClearChoices		(DIA_Torlof_Jeraemiah);
+    Info_AddChoice		(DIA_Torlof_Jeraemiah, "Do picia.", DIA_Torlof_Jeraemiah_Picu);
+    Info_AddChoice		(DIA_Torlof_Jeraemiah, "Zbieracze planują bunt.", DIA_Torlof_Jeraemiah_RyzowaDupa);
+};
+
+FUNC VOID DIA_Torlof_Jeraemiah_Picu()
+{
+    AI_Output (other, self ,"DIA_Torlof_Jeraemiah_Picu_15_01"); //Do picia.
+    AI_Output (self, other ,"DIA_Torlof_Jeraemiah_Picu_03_02"); //W takim razie...
+    AI_Output (self, other ,"DIA_Torlof_Jeraemiah_Picu_03_03"); //...nie.
+    Info_ClearChoices		(DIA_Torlof_Jeraemiah);//ocenzurowałem g1210
+	Jeremiah_AlcoGiv = false;
+    AI_StopProcessInfos	(self);
+    B_LogEntry                     (CH1_BuntZbieraczy,"Kłamstwo nie wyszło mi na dobre. Teraz muszę sam skołować trochę czystej.");
+};
+
+FUNC VOID DIA_Torlof_Jeraemiah_RyzowaDupa()
+{
+    AI_Output (other, self ,"DIA_Torlof_Jeraemiah_RyzowaDupa_15_01"); //Zbieracze planują bunt.
+    AI_Output (self, other ,"DIA_Torlof_Jeraemiah_RyzowaDupa_03_02"); //Po co wam wódka do buntu?
+    AI_Output (self, other ,"DIA_Torlof_Jeraemiah_RyzowaDupa_03_03"); //Już opijacie zwycięstwo?
+    AI_Output (other, self ,"DIA_Torlof_Jeraemiah_RyzowaDupa_15_04"); //Nie, nie. Chcemy podmienić ryżówkę bandziorów na alkohol, żeby łatwiej ich pokonać. Upici nie będą w stanie dobrze walczyć.
+    AI_Output (self, other ,"DIA_Torlof_Jeraemiah_RyzowaDupa_03_05"); //Rozumiem. Powiedz Jeremiaszowi, że nie ma się czego bać.
+    Info_ClearChoices		(DIA_Torlof_Jeraemiah);
+	Jeremiah_AlcoGiv = true;
+    B_LogEntry                     (CH1_BuntZbieraczy,"Dogadałem się z Torlofem. Mogę wziąć alkohol od Jeremiasza.");
+
+    B_GiveXP (50);
+    AI_StopProcessInfos	(self);
+};
+
+
+/*
+ AI_Output (self, other ,"DIA_Rufus_Rebel_03_06"); //Pamiętam, jak Lewus zabił mojego przyjaciela, Dereka.
+    AI_Output (self, other ,"DIA_Rufus_Rebel_03_07"); //To było trzy lata temu...
+    AI_Output (other, self ,"DIA_Rufus_Rebel_15_08"); //Muszę wam pomóc. Nieważne w jaki sposób. 
+    AI_Output (self, other ,"DIA_Rufus_Rebel_03_09"); //Chcesz ich zabić?
+    AI_Output (other, self ,"DIA_Rufus_Rebel_15_10"); //Jeśli to konieczne.
+    AI_Output (self, other ,"DIA_Rufus_Rebel_03_11"); //Zaczekaj. Muszę to wszystko przemyśleć.
+    AI_Output (self, other ,"DIA_Rufus_Rebel_03_12"); //Przyjdź do mnie o północy.
+    B_LogEntry                     (CH1_BuntZbieraczy,"Rufus faktycznie odpowiada za zaplanowanie rewolucji. Gdy tylko powiedziałem mu, że rozmawiałem z Horacym, natychmiast mi zaufał. Mam zgłosić się do niego o północy, aby dowiedzieć się czegoś więcej o buncie zbieraczy.");
+	DIA_Rufus_Nasi_OFF = false; // 
+	*/
+
+/*
+//========================================
+//-----------------> Nasi
+//========================================
+
+INSTANCE DIA_Rufus_Nasi (C_INFO)
+{
+   npc          = Bau_903_Rufus;
+   nr           = 1;
+   condition    = DIA_Rufus_Nasi_Condition;
+   information  = DIA_Rufus_Nasi_Info;
+   permanent	= false;
+   description	= "Co do naszych ludzi...";
+};
+
+FUNC INT DIA_Rufus_Nasi_Condition()
+{
+ if (Npc_KnowsInfo (hero, DIA_Rufus_Jestem))
+ && (MIS_BuntZbieraczy == LOG_RUNNING)      
+ //&& (DIA_Rufus_Nasi_OFF == false) 
+{
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Rufus_Nasi_Info()
+{
+    AI_Output (other, self ,"DIA_Rufus_Nasi_15_01"); //Co do naszych ludzi...
+    AI_Output (self, other ,"DIA_Rufus_Nasi_03_02"); //Większość jest z nami, a co z pozostałymi?
+
+    Info_ClearChoices		(DIA_Rufus_Nasi);
+	if (Npc_KnowsInfo (hero, DIA_Horatio_Bunt))
+	{
+    Info_AddChoice		(DIA_Rufus_Nasi, "Horacy nam nie pomoże.", DIA_Rufus_Nasi_Horatio);
+	};
+	if (Npc_KnowsInfo (hero, DIA_Homer_PopieraszBunt)) 
+	&& (Homer_Rozpracowany == false)
+	{
+    Info_AddChoice		(DIA_Rufus_Nasi, "Homer nam pomoże.", DIA_Rufus_Nasi_Homer);
+	};
+	if (Npc_KnowsInfo (hero, DIA_Homer_PopieraszBunt)) 
+	&& (Homer_Rozpracowany == true)
+	{
+	Info_AddChoice		(DIA_Rufus_Nasi, "Homer to zdrajca.", DIA_Rufus_Nasi_HomerCipa);
+	};
+	if (Npc_KnowsInfo (hero, DIA_Pock_BuntujeszSie))
+	{
+    Info_AddChoice		(DIA_Rufus_Nasi, "Pock jest podejrzany.", DIA_Rufus_Nasi_Pock);
+	};
+    Info_AddChoice		(DIA_Rufus_Nasi, DIALOG_BACK, DIA_Rufus_Nasi_BACK);
+};
+
+func void DIA_Rufus_Nasi_Horatio ()
+{
+AI_Output (other, self ,"DIA_Rufus_Nasi_Horatio_15_01"); //Horacy nam nie pomoże, ale też nic nie powie.
+AI_Output (self, other ,"DIA_Rufus_Nasi_Horatio_03_02"); //Tego się spodziewałem.
+Horatio_KnowsBunt = true;
+};
+
+func void DIA_Rufus_Nasi_Homer ()
+{
+AI_Output (other, self ,"DIA_Rufus_Nasi_Homer_15_01"); //Homer jest po naszej stronie.
+AI_Output (self, other ,"DIA_Rufus_Nasi_Homer_03_02"); //To świetnie.
+Homer_KnowsBunt = true;
+};
+
+func void DIA_Rufus_Nasi_HomerCipa ()
+{
+AI_Output (other, self ,"DIA_Rufus_Nasi_HomerCipa_15_01"); //Homer to pupilek Ryżowego Księcia. Najlepiej nic mu nie mówić.
+AI_Output (self, other ,"DIA_Rufus_Nasi_HomerCipa_03_02"); //Dobrze, że nas ostrzegłeś.
+B_GiveXP (100);
+Homer_KnowsBunt = true;
+};
+
+func void DIA_Rufus_Nasi_Pock ()
+{
+AI_Output (other, self ,"DIA_Rufus_Nasi_Pock_15_01"); //Pock jest podejrzany. Nic nie wiedział o buncie. Chciał wyciągnąć ode mnie jak najwięcej informacji.
+AI_Output (self, other ,"DIA_Rufus_Nasi_Pock_03_02"); //Dobrze, że nas ostrzegłeś.
+B_GiveXP (100);
+Pock_KnowsBunt = true;
+};
+func void DIA_Rufus_Nasi_BACK ()
+{
+ Info_ClearChoices	(DIA_Rufus_Nasi);
+ DIA_Rufus_Nasi.permanent = true;
+};
+
+
+
+//========================================
+//-----------------> Next
+//========================================
+
+INSTANCE DIA_Rufus_Next (C_INFO)
+{
+   npc          = Bau_903_Rufus;
+   nr           = 1;
+   condition    = DIA_Rufus_Next_Condition;
+   information  = DIA_Rufus_Next_Info;
+   permanent	= FALSE;
+   description	= "Co dalej?";
+};
+
+FUNC INT DIA_Rufus_Next_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Rufus_Nasi))
+   // &&  (DIA_Rufus_Nasi_OFF == false)    
+{
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Rufus_Next_Info()
+{
+    AI_Output (other, self ,"DIA_Rufus_Next_15_01"); //Co dalej?
+    if (Homer_KnowsBunt == true)
+    || (Horatio_KnowsBunt == true)
+    || (Pock_KnowsBunt == true)
+    {
+  
+        AI_Output (self, other ,"DIA_Rufus_Next_03_02"); //Teraz potrzebujemy nieco broni i alkoholu.
+        AI_Output (other, self ,"DIA_Rufus_Next_15_03"); //Alkoholu?
+        AI_Output (self, other ,"DIA_Rufus_Next_03_04"); //Tak. Pomyśleliśmy, że zastąpimy ryżówkę czystym alkoholem.
+        AI_Output (self, other ,"DIA_Rufus_Next_03_05"); //Będziemy mieli przewagę nad przeciwnikami.
+        AI_Output (self, other ,"DIA_Rufus_Next_03_06"); //Upici nie będą w stanie tak dobrze walczyć.
+        AI_Output (other, self ,"DIA_Rufus_Next_15_07"); //Dobry pomysł! Pójdę do karczmy i postaram się coś przynieść.
+        AI_Output (self, other ,"DIA_Rufus_Next_03_08"); //Jeśli chodzi o broń, to idź do Swineya, do Wolnej Kopalni.
+        AI_Output (self, other ,"DIA_Rufus_Next_03_09"); //To mój bliski znajomy. Z pewnością coś ci da.
+        B_LogEntry                     (CH1_BuntZbieraczy,"Pora przygotować broń. Mam przynieść kilka mieczy od Swineya. Po alkohol mam udać się do karczmy.");
+        DIA_Rufus_Nasi_OFF = true;
+        If_BuyAlco_Jer = true;
+    }
+    else
+    {
+        AI_Output (self, other ,"DIA_Rufus_Next_03_10"); //Nie masz jeszcze żadnych informacji. Pogadaj ze zbieraczami.
+        DIA_Rufus_Nasi_OFF = false;
+    };
+};
+*/
+
+/*
+//========================================
+//-----------------> HomerHelp
+//========================================
+
+INSTANCE DIA_Rufus_HomerHelp (C_INFO)
+{
+   npc          = Bau_903_Rufus;
+   nr           = 1;
+   condition    = DIA_Rufus_HomerHelp_Condition;
+   information  = DIA_Rufus_HomerHelp_Info;
+   permanent	= FALSE;
+   description	= "Homer nam pomoże!";
+};
+
+FUNC INT DIA_Rufus_HomerHelp_Condition()
+{
+if (Npc_KnowsInfo (hero, DIA_Homer_PopieraszBunt)) 
+	&& (Homer_Rozpracowany == false)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Rufus_HomerHelp_Info()
+{
+    AI_Output (other, self ,"DIA_Rufus_HomerHelp_15_01"); //Homer nam pomoże!
+    AI_Output (other, self ,"DIA_Rufus_HomerHelp_15_02"); //Rozmawiałem z nim. Zdradziłem mu też nasz plan.
+    AI_Output (self, other ,"DIA_Rufus_HomerHelp_03_03"); //Dobrze. Mamy kolejnego zbieracza po naszej stronie.
+};
+*/
+
+//========================================
+//-----------------> HomerPrzydupas
+//========================================
+
+INSTANCE DIA_Rufus_HomerPrzydupas (C_INFO)
+{
+   npc          = Bau_903_Rufus;
+   nr           = 2;
+   condition    = DIA_Rufus_HomerPrzydupas_Condition;
+   information  = DIA_Rufus_HomerPrzydupas_Info;
+   permanent	= FALSE;
+   description	= "Homer to przydupas Lewusa!";
+};
+
+FUNC INT DIA_Rufus_HomerPrzydupas_Condition()
+{
+	if (Npc_KnowsInfo (hero, DIA_Homer_PopieraszBunt)) 
+	//&& (Homer_Rozpracowany == true) nieużywane od 1.4.6
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Rufus_HomerPrzydupas_Info()
+{
+    AI_Output (other, self ,"DIA_Rufus_HomerPrzydupas_15_01"); //Homer darzy szacunkiem Ryżowego Księcia. Lepiej mu o niczym nie mówić. 
+    AI_Output (self, other ,"DIA_Rufus_HomerPrzydupas_03_02"); //W sumie nigdy nie ukrywał swojej sympatii do niego. 
+	
+    //AI_Output (self, other ,"DIA_Rufus_HomerPrzydupas_03_05"); //Weź tę nagrodę.
+   // CreateInvItems (self, ItMiNugget, 15);
+   // B_GiveInvItems (self, other, ItMiNugget, 15);
+};
+
+//========================================
+//-----------------> HoracyMaWDupie
+//========================================
+
+INSTANCE DIA_Rufus_HoracyMaWDupie (C_INFO)
+{
+   npc          = Bau_903_Rufus;
+   nr           = 3;
+   condition    = DIA_Rufus_HoracyMaWDupie_Condition;
+   information  = DIA_Rufus_HoracyMaWDupie_Info;
+   permanent	= FALSE;
+   description	= "Horacy nie popiera buntu.";
+};
+
+FUNC INT DIA_Rufus_HoracyMaWDupie_Condition()
+{
+if (Npc_KnowsInfo (hero, DIA_Horatio_Bunt))
+	    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Rufus_HoracyMaWDupie_Info()
+{
+    AI_Output (other, self ,"DIA_Rufus_HoracyMaWDupie_15_01"); //Horacy nie popiera buntu, ale nie będzie nam wchodził w drogę.
+    AI_Output (self, other ,"DIA_Rufus_HoracyMaWDupie_03_02"); //To było do przewidzenia. Szkoda, bo jest ponoć bardzo silny.
+    //AI_Output (self, other ,"DIA_Rufus_HoracyMaWDupie_03_03"); //
+};
+
+//========================================
+//-----------------> PockOszust
+//========================================
+
+INSTANCE DIA_Rufus_PockOszust (C_INFO)
+{
+   npc          = Bau_903_Rufus;
+   nr           = 4;
+   condition    = DIA_Rufus_PockOszust_Condition;
+   information  = DIA_Rufus_PockOszust_Info;
+   permanent	= FALSE;
+   description	= "Pock jest konfidentem!";
+};
+
+FUNC INT DIA_Rufus_PockOszust_Condition()
+{
+if (Npc_KnowsInfo (hero, DIA_Pock_BuntujeszSie))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Rufus_PockOszust_Info()
+{
+    AI_Output (other, self ,"DIA_Rufus_PockOszust_15_01"); //Pock jest konfidentem! Donosi na innych zbieraczy. Do tego węszy wokół twojej osoby. 
+    AI_Output (self, other ,"DIA_Rufus_PockOszust_03_02"); //Musimy mieć się na baczności. Nie może się niczego dowiedzieć.
+};
+
+//========================================
+//-----------------> ZbieraczeAll
+//========================================
+
+INSTANCE DIA_Rufus_ZbieraczeAll (C_INFO)
+{
+   npc          = Bau_903_Rufus;
+   nr           = 5;
+   condition    = DIA_Rufus_ZbieraczeAll_Condition;
+   information  = DIA_Rufus_ZbieraczeAll_Info;
+   permanent	= FALSE;
+   description	= "Co do większości zbieraczy...";
+};
+
+FUNC INT DIA_Rufus_ZbieraczeAll_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Rufus_Jestem))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Rufus_ZbieraczeAll_Info()
+{
+    AI_Output (other, self ,"DIA_Rufus_ZbieraczeAll_15_01"); //Co do większości zbieraczy...
+    AI_Output (self, other ,"DIA_Rufus_ZbieraczeAll_03_02"); //Już z nimi rozmawiałem. Większość jest po naszej stronie.
+    AI_Output (self, other ,"DIA_Rufus_ZbieraczeAll_03_03"); //Ty porozmawiaj Horacym, Pockiem i Homerem. 
+    AI_Output (other, self ,"DIA_Rufus_ZbieraczeAll_15_04"); //Dobrze.
+};
+
+//========================================
+//-----------------> HELLO6
+//========================================
+
+INSTANCE DIA_Rufus_HELLO6 (C_INFO)
+{
+   npc          = Bau_903_Rufus;
+   nr           = 6;
+   condition    = DIA_Rufus_HELLO6_Condition;
+   information  = DIA_Rufus_HELLO6_Info;
+   permanent	= FALSE;
+   description	= "Co dalej?";
+};
+
+FUNC INT DIA_Rufus_HELLO6_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Rufus_HomerPrzydupas))
+    && (Npc_KnowsInfo (hero, DIA_Rufus_HoracyMaWDupie))
+    && (Npc_KnowsInfo (hero, DIA_Rufus_PockOszust))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Rufus_HELLO6_Info()
+{
+    AI_Output (other, self ,"DIA_Rufus_HELLO6_15_01"); //Co dalej?
+    AI_Output (self, other ,"DIA_Rufus_HELLO6_03_02"); //Teraz potrzebujemy nieco broni i alkoholu.
+    AI_Output (other, self ,"DIA_Rufus_HELLO6_15_03"); //Alkoholu?
+    AI_Output (self, other ,"DIA_Rufus_HELLO6_03_04"); //Tak. Pomyśleliśmy, że zastąpimy ryżówkę czystym alkoholem.
+    AI_Output (self, other ,"DIA_Rufus_HELLO6_03_05"); //Będziemy mieli przewagę nad przeciwnikami.
+    AI_Output (self, other ,"DIA_Rufus_HELLO6_03_06"); //Upici nie będą w stanie tak dobrze walczyć.
+    AI_Output (other, self ,"DIA_Rufus_HELLO6_15_07"); //Dobry pomysł! Pójdę do karczmy i postaram się coś przynieść.
+    AI_Output (self, other ,"DIA_Rufus_HELLO6_03_08"); //Jeśli chodzi o broń, idź do Swineya, do Wolnej Kopalni.
+    AI_Output (self, other ,"DIA_Rufus_HELLO6_03_09"); //To mój bliski znajomy. Z pewnością coś ci da.
+	
+    B_LogEntry        (CH1_BuntZbieraczy,"Po sprawdzeniu lojalności wszystkich zbieraczy przyszła kolej na zdobycie broni. Mam się zgłosić po dostawę do Swineya z Wolnej Kopalni. Ponadto Rufus chce, abym zdobył czysty alkohol od Jeremiasza.");
+	If_BuyAlco_Jer = true;
+};
+
+
+
+//========================================
+//-----------------> GivePaczki
+//========================================
+
+INSTANCE DIA_Rufus_GivePaczki (C_INFO)
+{
+   npc          = Bau_903_Rufus;
+   nr           = 1;
+   condition    = DIA_Rufus_GivePaczki_Condition;
+   information  = DIA_Rufus_GivePaczki_Info;
+   permanent	= FALSE;
+   description	= "Mam paczki z bronią.";
+};
+
+FUNC INT DIA_Rufus_GivePaczki_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Swiney_Bron))
+    && (Npc_HasItems (other, ItMi_PaczkaMiecze1) >=2) && (Npc_KnowsInfo (hero, DIA_Rufus_HELLO6)) //1.24 
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Rufus_GivePaczki_Info()
+{
+    AI_Output (other, self ,"DIA_Rufus_GivePaczki_15_01"); //Mam paczki z bronią.
+    AI_Output (self, other ,"DIA_Rufus_GivePaczki_03_02"); //To świetnie. Zaraz je rozdam naszym ludziom.
+    B_GiveInvItems (other, self, ItMi_PaczkaMiecze1, 2);
+};
+
+//========================================
+//-----------------> Vodka
+//========================================
+
+INSTANCE DIA_Rufus_Vodka (C_INFO)
+{
+   npc          = Bau_903_Rufus;
+   nr           = 2;
+   condition    = DIA_Rufus_Vodka_Condition;
+   information  = DIA_Rufus_Vodka_Info;
+   permanent	= FALSE;
+   description	= "Mam alkohol.";
+};
+
+FUNC INT DIA_Rufus_Vodka_Condition()
+{
+    if (Npc_HasItems (hero, ItMi_Alchemy_Alcohol_01) >=12) && (Npc_KnowsInfo (hero, DIA_Rufus_HELLO6)) //1.24 
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Rufus_Vodka_Info()
+{
+    AI_Output (other, self ,"DIA_Rufus_Vodka_15_01"); //Mam alkohol.
+    AI_Output (self, other ,"DIA_Rufus_Vodka_03_02"); //Świetnie, ja w międzyczasie opracowałem plan.
+    AI_Output (self, other ,"DIA_Rufus_Vodka_03_03"); //Musimy w jakiś sposób podrzucić ludziom Księcia alkohol tak, aby myśleli że to ryżówka.
+	AI_Output (self, other ,"DIA_Rufus_Vodka_03_04"); //Homer, jeden z przydupasów dostarcza alkohol od Jeremiasza na pola ryżowe.
+	AI_Output (self, other ,"DIA_Rufus_Vodka_03_05"); //Z tego co wiem, robi to codziennie.
+	AI_Output (self, other ,"DIA_Rufus_Vodka_03_06"); //Idź wieczorem na pola i powiedz ludziom Księcia, że przysyła cię Homer. Jestem pewien, że na to pójdą.
+    AI_Output (other, self ,"DIA_Rufus_Vodka_15_07"); //Jasne. Już idę.
+	//1.4
+	  B_LogEntry                     (CH1_BuntZbieraczy,"Po zdobyciu alkoholu Rufus poprosił mnie, bym rozniósł czysty alkohol ludziom Ryżowego Księcia. Mam mówić, że przychodzę z polecenia Homera.");
+};
+
+
+//========================================
+//-----------------> TorlofQuest
+//========================================
+
+INSTANCE DIA_Horatio_TorlofQuest (C_INFO)
+{
+   npc          = Bau_901_Horatio;
+   nr           = 1;
+   condition    = DIA_Horatio_TorlofQuest_Condition;
+   information  = DIA_Horatio_TorlofQuest_Info;
+   permanent	= FALSE;
+   description	= "Mam zadanie od Torlofa.";
+};
+
+FUNC INT DIA_Horatio_TorlofQuest_Condition()
+{
+    if ((MIS_BuntZbieraczy != LOG_RUNNING) && (MIS_BuntZbieraczy != LOG_SUCCESS)) //(Npc_KnowsInfo (hero, DIA_Torlof_YourHardQuest))
+    //&& (MIS_OpinionInNewCamp == LOG_RUNNING)
+	 
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Horatio_TorlofQuest_Info()
+{
+    AI_Output (other, self ,"DIA_Horatio_TorlofQuest_15_01"); //Mam zadanie od Torlofa.
+    AI_Output (self, other ,"DIA_Horatio_TorlofQuest_03_02"); //Jakie zadanie? Dlaczego mi to mówisz?
+    AI_Output (other, self ,"DIA_Horatio_TorlofQuest_15_03"); //Zaraz ci wszystko wyjaśnię.
+    AI_Output (self, other ,"DIA_Horatio_TorlofQuest_03_04"); //Zamieniam się w słuch.
+    AI_Output (other, self ,"DIA_Horatio_TorlofQuest_15_05"); //Torlofowi nie podoba się, że jesteście wykorzystywani przez Lewusa i tego spaślaka.
+    AI_Output (other, self ,"DIA_Horatio_TorlofQuest_15_06"); //Mam w jakiś sposób wam pomóc.
+    AI_Output (self, other ,"DIA_Horatio_TorlofQuest_03_07"); //To bardzo szlachetne, ale wydaje mi się, że nic nie zrobisz.
+    AI_Output (self, other ,"DIA_Horatio_TorlofQuest_03_08"); //Słyszałem o planach buntu. Podobno Rufus coś o tym wie.
+    AI_Output (self, other ,"DIA_Horatio_TorlofQuest_03_09"); //Ja jednak nie lubię rozwiązań siłowych.
+    AI_Output (self, other ,"DIA_Horatio_TorlofQuest_03_10"); //Musisz z nim pogadać.
+    MIS_BuntZbieraczy = LOG_RUNNING;
+
+    Log_CreateTopic          (CH1_BuntZbieraczy, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_BuntZbieraczy, LOG_RUNNING);
+    B_LogEntry               (CH1_BuntZbieraczy,"Horacy powiedział mi, że Rufus planował bunt zbieraczy przeciwko Ryżowemu Księciu. Muszę z nim pogadać.");
+
+    B_GiveXP (50);
+};
+//========================================
+//-----------------> Josep
+//========================================
+
+INSTANCE DIA_Horatio_Josep (C_INFO)
+{
+   npc          = Bau_901_Horatio;
+   nr           = 1;
+   condition    = DIA_Horatio_Josep_Condition;
+   information  = DIA_Horatio_Josep_Info;
+   permanent	= FALSE;
+   description	= "Przysyła mnie Josep.";
+};
+
+FUNC INT DIA_Horatio_Josep_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Josep_Sorry))
+	&& (MIS_BuntZbieraczy != LOG_SUCCESS)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Horatio_Josep_Info()
+{
+    AI_Output (other, self ,"DIA_Horatio_Josep_15_01"); //Przysyła mnie Josep.
+    AI_Output (self, other ,"DIA_Horatio_Josep_03_02"); //Ten nowy? Czego chce?
+    AI_Output (other, self ,"DIA_Horatio_Josep_15_03"); //Chcemy ci pomóc w organizacji powstania!
+    AI_Output (self, other ,"DIA_Horatio_Josep_03_04"); //Powstania? Człowieku, gadasz z niewłaściwą osobą. Lepiej znajdź Rufusa.
+    AI_Output (other, self ,"DIA_Horatio_Josep_15_05"); //Dziwne, Josep mówił o tobie. 
+    AI_Output (self, other ,"DIA_Horatio_Josep_03_06"); //Jest tu od niedawna. Mało nas zna. Ja osobiście nie popieram takich zrywów, ale nie będę wam utrudniał.
+    AI_Output (self, other ,"DIA_Horatio_Josep_03_07"); //Róbcie sobie, co chcecie. 
+  MIS_BuntZbieraczy = LOG_RUNNING;
+
+    Log_CreateTopic          (CH1_BuntZbieraczy, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_BuntZbieraczy, LOG_RUNNING);
+    B_LogEntry               (CH1_BuntZbieraczy,"Horacy powiedział mi, że Rufus planował bunt zbieraczy przeciwko Ryżowemu Księciu. Muszę z nim pogadać.");
+
+    B_GiveXP (50);
+};
+
+
+//========================================
+//-----------------> BuntujeszSie
+//========================================
+
+INSTANCE DIA_Pock_BuntujeszSie (C_INFO)
+{
+   npc          = Bau_902_Pock;
+   nr           = 1;
+   condition    = DIA_Pock_BuntujeszSie_Condition;
+   information  = DIA_Pock_BuntujeszSie_Info;
+   permanent	= FALSE;
+   description	= "Co myślisz o Ryżowym Księciu?";
+};
+
+FUNC INT DIA_Pock_BuntujeszSie_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Rufus_Jestem))
+	&& (MIS_BuntZbieraczy == LOG_RUNNING)    
+{
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Pock_BuntujeszSie_Info()
+{
+    AI_Output (other, self ,"DIA_Pock_BuntujeszSie_15_01"); //Co myślisz o Ryżowym Księciu?
+    AI_Output (self, other ,"DIA_Pock_BuntujeszSie_03_02"); //Jest w porządku. Ostatnio powiedziałem mu o kilku leniwych zbieraczach. Wynagrodził mnie dziesięcioma bryłkami rudy.
+    AI_Output (self, other ,"DIA_Pock_BuntujeszSie_03_03"); //Myślę, że Rufus coś kombinuje. Jeśli dowiem się co, doniosę na niego. W ten sposób zostanę zaufanym człowiekiem Lewusa.
+    AI_Output (self, other ,"DIA_Pock_BuntujeszSie_03_04"); //Chcę dołączyć do jego ekipy. Słuchaj, jesteś tu nowy. Spróbuj dowiedzieć się, co planuje Rufus. Wynagrodzę ci to.
+    AI_Output (other, self ,"DIA_Pock_BuntujeszSie_15_05"); //Czym? Dziesięcioma bryłkami?
+    AI_Output (self, other ,"DIA_Pock_BuntujeszSie_03_06"); //Postaram się do tego czasu zdobyć więcej rudy. Liczę na ciebie. 
+    B_LogEntry                     (CH1_BuntZbieraczy,"Pock to podły donosiciel, który chce zdemaskować Rufusa. Na szczęscie nie jest zbyt bystry i niczego nie zrozumiał. Tak czy inaczej, trzeba na niego uważać. ");
+
+    B_GiveXP (150);
+    AI_StopProcessInfos	(self);
+};
+
+//========================================
+//-----------------> PopieraszBunt
+//========================================
+
+INSTANCE DIA_Homer_PopieraszBunt (C_INFO)
+{
+   npc          = Bau_935_Homer;
+   nr           = 1;
+   condition    = DIA_Homer_PopieraszBunt_Condition;
+   information  = DIA_Homer_PopieraszBunt_Info;
+   permanent	= FALSE;
+   description	= "Jesteś lojalny wobec Ryżowego Księcia?";
+};
+
+FUNC INT DIA_Homer_PopieraszBunt_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Rufus_Jestem))
+	&& (MIS_BuntZbieraczy == LOG_RUNNING)      
+	{
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Homer_PopieraszBunt_Info()
+{
+    AI_Output (other, self ,"DIA_Homer_PopieraszBunt_15_01"); //Jesteś lojalny wobec Ryżowego Księcia?
+    AI_Output (self, other ,"DIA_Homer_PopieraszBunt_03_02"); //Nie bywam zbyt często na dole, ale tak. Ciężko pracowałem nad tą tamą. Ryżowy Książe jako jedyny mnie docenia.
+    AI_Output (self, other ,"DIA_Homer_PopieraszBunt_03_03"); //A czemu pytasz? Przysyła cię Lewus.
+	AI_Output (other, self ,"DIA_Homer_PopieraszBunt_15_04"); //Hmm... Tak...
+	AI_Output (self, other ,"DIA_Homer_PopieraszBunt_03_05"); //Czy on w końcu zrozumie, że nikt już się nie nabiera na te jego sztuczki? Co za człowiek...
+	
+	B_LogEntry                     (CH1_BuntZbieraczy,"Homer jest zwolennikiem Ryżowego Księcia, gdyż ten docenia jego pracę włożoną w budowę tamy.");
+	B_GiveXP (150);
+    //Info_ClearChoices		(DIA_Homer_PopieraszBunt);
+    //Info_AddChoice		(DIA_Homer_PopieraszBunt, "Jesteś lojalny wobec Ryżowego Księcia?", DIA_Homer_PopieraszBunt_lOJALNY);
+    //Info_AddChoice		(DIA_Homer_PopieraszBunt, "Co do tego buntu...", DIA_Homer_PopieraszBunt_PAPLA);
+};
+
+FUNC VOID DIA_Homer_PopieraszBunt_lOJALNY()
+{
+    AI_Output (other, self ,"DIA_Homer_PopieraszBunt_lOJALNY_15_01"); //Jesteś lojalny wobec Ryżowego Księcia?
+    AI_Output (self, other ,"DIA_Homer_PopieraszBunt_lOJALNY_03_02"); //Tak. Dobrze mnie traktuje.
+    B_LogEntry                     (CH1_BuntZbieraczy,"Homer to przydupas Ryżowego Księcia. Z pewnością powiedziałby mu o wszystkim.");
+    Homer_Rozpracowany = true;
+    B_GiveXP (100);
+    Info_ClearChoices		(DIA_Homer_PopieraszBunt);
+    AI_StopProcessInfos	(self);
+};
+
+FUNC VOID DIA_Homer_PopieraszBunt_PAPLA()
+{
+    AI_Output (other, self ,"DIA_Homer_PopieraszBunt_PAPLA_15_01"); //Co do tego buntu...
+    AI_Output (self, other ,"DIA_Homer_PopieraszBunt_PAPLA_03_02"); //Słucham.
+    AI_Output (other, self ,"DIA_Homer_PopieraszBunt_PAPLA_15_03"); //Rufus planuje akcję. Chce, abym zakradł się w nocy i zabił tego spaślaka.
+    AI_Output (other, self ,"DIA_Homer_PopieraszBunt_PAPLA_15_04"); //Zbieracze zajmą się Lewusem i jego ludźmi.
+    AI_Output (self, other ,"DIA_Homer_PopieraszBunt_PAPLA_03_05"); //A więc to tak...
+    AI_Output (self, other ,"DIA_Homer_PopieraszBunt_PAPLA_03_06"); //Dzięki za informacje...
+    AI_Output (other, self ,"DIA_Homer_PopieraszBunt_PAPLA_15_07"); //Czyli jesteś z nami?
+    AI_Output (self, other ,"DIA_Homer_PopieraszBunt_PAPLA_03_08"); //Tak, tak. Muszę już iść.
+    B_LogEntry                     (CH1_BuntZbieraczy,"Homer jest z nami.");
+    Homer_Rozpracowany = false;
+    B_GiveXP (10);
+    Info_ClearChoices		(DIA_Homer_PopieraszBunt);
+    AI_StopProcessInfos	(self);
+};
+
+//========================================
+//-----------------> ActionGoWhat
+//========================================
+
+INSTANCE DIA_Rufus_ActionGoWhat (C_INFO)
+{
+   npc          = Bau_903_Rufus;
+   nr           = 3;
+   condition    = DIA_Rufus_ActionGoWhat_Condition;
+   information  = DIA_Rufus_ActionGoWhat_Info;
+   permanent	= FALSE;
+   description	= "Co teraz? Zaczynamy?";
+};
+
+FUNC INT DIA_Rufus_ActionGoWhat_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Rufus_AlcoDelivery)) //1.4 edited by g1210
+    && (Npc_KnowsInfo (hero, DIA_Rufus_GivePaczki))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Rufus_ActionGoWhat_Info()
+{
+    AI_Output (other, self ,"DIA_Rufus_ActionGoWhat_15_01"); //Co teraz? Zaczynamy?
+   // AI_Output (self, other ,"DIA_Rufus_ActionGoWhat_03_02"); //Poczekaj. Nie tak prędko.
+   // AI_Output (self, other ,"DIA_Rufus_ActionGoWhat_03_03"); //Wyślę najpierw kogoś, by podmienił ryżówkę na nasz przysmak.
+    AI_Output (self, other ,"DIA_Rufus_ActionGoWhat_03_04"); //Ty wkraczasz o północy.
+    AI_Output (self, other ,"DIA_Rufus_ActionGoWhat_03_05"); //Wchodzisz do magazynu, potem zabijasz wieprza i pędzisz do nas.
+    AI_Output (self, other ,"DIA_Rufus_ActionGoWhat_03_06"); //Tylko masz biec, do cholery.
+    AI_Output (self, other ,"DIA_Rufus_ActionGoWhat_03_07"); //Następnie razem wykańczamy Lewusa i jego siepaczy.
+    AI_Output (self, other ,"DIA_Rufus_ActionGoWhat_03_08"); //Rankiem Najemnicy będą musieli znaleźć kogoś na ich miejsce. He he.
+	AI_Output (self, other ,"DIA_Rufus_ActionGoWhat_03_09"); //Razem z moimi ludźmi będę się kręcił w okolicy. A i jeszcze jedno! 
+	AI_Output (self, other ,"DIA_Rufus_ActionGoWhat_03_10"); //Uważaj na Najemników ze strażnicy. Gdy nas zobaczą, zaczną strzelać. Po prostu się wtedy wycofaj.
+	AI_Output (self, other ,"DIA_Rufus_ActionGoWhat_03_11"); //W ciemności na pewno nie rozpoznają twarzy. Nikt nie powinien cię potem ścigać.
+	Npc_ExchangeRoutine (Bau_900_Ricelord,"bunt");
+	Npc_ExchangeRoutine (BAU_928_Bauer,"goto");
+	Npc_ExchangeRoutine (BAU_916_Bauer,"goto");
+	Npc_ExchangeRoutine (BAU_923_Bauer,"goto");
+	Npc_ExchangeRoutine (BAU_907_Bauer,"goto");
+	Npc_ExchangeRoutine (BAU_904_Bauer,"goto");
+	Npc_ExchangeRoutine (BAU_903_rufus,"goto");
+	BAU_903_rufus.flags = 2;
+	Npc_ExchangeRoutine (BAU_902_pock,"goto");
+	Npc_ExchangeRoutine (BAU_914_Bauer,"goto");
+	Npc_ExchangeRoutine (BAU_915_Bauer,"goto");
+	Npc_ExchangeRoutine (BAU_930_Bauer,"goto");
+	Npc_ExchangeRoutine (BAU_919_Bauer,"goto");
+	var C_NPC Ricelord	; Ricelord 	= Hlp_GetNpc (Bau_900_Ricelord	);
+	Npc_ChangeAttribute	(Ricelord,	ATR_HITPOINTS,	275);
+	
+	var C_NPC Lewus	; Lewus 	= Hlp_GetNpc (ORG_844_Lefty	);
+	Npc_ChangeAttribute	(Lewus,	ATR_HITPOINTS,	200);
+
+	
+	// dwóch gości przy bramie to bd przyjaciele Lewusa, przybiegną na pomoc DOPISAĆ
+    B_LogEntry                     (CH1_BuntZbieraczy,"Dziś w nocy zaczynamy. O północy mam wejść przez chatę do magazynu i pozbyć się Ryżowego Księcia raz na zawsze. Potem pora na Lewusa. Podczas walki powinienem uważać na łuczników obsadzających górną bramę. Są bardzo niebezpieczni. Najlepiej, jeśli będę się trzymał blisko magazynu.");
+};
+
+//========================================
+//-----------------> WINWONWON
+//========================================
+
+INSTANCE DIA_Rufus_WINWONWON (C_INFO)
+{
+   npc          = Bau_903_Rufus;
+   nr           = 1;
+   condition    = DIA_Rufus_WINWONWON_Condition;
+   information  = DIA_Rufus_WINWONWON_Info;
+   permanent	= FALSE;
+   description	= "Te sukinsyny nie żyją!";
+};
+
+FUNC INT DIA_Rufus_WINWONWON_Condition()
+{
+    if (MIS_BuntZbieraczy == LOG_RUNNING)
+    && (Npc_IsDead(Bau_900_Ricelord))
+    && (Npc_IsDead(ORG_844_Lefty))
+	&& (Npc_KnowsInfo (hero, DIA_Rufus_ActionGoWhat))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Rufus_WINWONWON_Info()
+{
+    AI_Output (other, self ,"DIA_Rufus_WINWONWON_15_01"); //Te sukinsyny nie żyją!
+    AI_Output (self, other ,"DIA_Rufus_WINWONWON_03_02"); //Masz rację! Udało się nam.
+    AI_Output (self, other ,"DIA_Rufus_WINWONWON_03_03"); //Dobra robota, stary. Bez ciebie nie dalibyśmy rady.
+    AI_Output (other, self ,"DIA_Rufus_WINWONWON_15_04"); //To zasługa wspólnoty.
+	
+	BAU_903_rufus.flags = 0;
+    B_LogEntry               (CH1_BuntZbieraczy,"Ryżowy Książę, Lewus i jego ludzie nie żyją. Zbieracze nie będą już ciemiężeni. Wreszcie udało im się wyswobodzić...");
+    Log_SetTopicStatus       (CH1_BuntZbieraczy, LOG_SUCCESS);
+    MIS_BuntZbieraczy = LOG_SUCCESS;
+	
+	Npc_ExchangeRoutine (BAU_928_Bauer,"liba");
+	Npc_ExchangeRoutine (BAU_916_Bauer,"liba");
+	Npc_ExchangeRoutine (BAU_923_Bauer,"liba");
+	Npc_ExchangeRoutine (BAU_907_Bauer,"liba");
+	Npc_ExchangeRoutine (BAU_904_Bauer,"liba");
+	
+	po_buncie = true;
+    B_GiveXP (XP_BuntZbieraczy);
+	
+	if Lefty_Mission == LOG_RUNNING
+	{
+	Lefty_Mission = LOG_SUCCESS;
+	B_LogEntry			(CH1_CarryWater,	"Lewus gryzie piach. Już nie będzie mi rozkazywał nosić za siebie wodę.");
+	Log_SetTopicStatus	(CH1_CarryWater,	LOG_SUCCESS);
+	};
+};
+
+//========================================
+//-----------------> Bron
+//========================================
+
+INSTANCE DIA_Swiney_Bron (C_INFO)
+{
+   npc          = SfB_1037_Swiney;
+   nr           = 1;
+   condition    = DIA_Swiney_Bron_Condition;
+   information  = DIA_Swiney_Bron_Info;
+   permanent	= 0;
+   description	= "Podobno obiecałeś Rufuswoi jakąś broń.";
+};
+
+FUNC INT DIA_Swiney_Bron_Condition()
+{
+if  (Npc_KnowsInfo (hero, DIA_Rufus_HELLO6))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Swiney_Bron_Info()
+{
+    AI_Output (other, self ,"DIA_Swiney_Bron_15_01"); //Podobno obiecałeś Rufusowi jakąś broń.
+    AI_Output (self, other ,"DIA_Swiney_Bron_03_02"); //Nie tak głośno. Mam ją tutaj.
+    AI_Output (self, other ,"DIA_Swiney_Bron_03_03"); //Proszę, weź ją. Tylko nikomu nic nie mów.
+    AI_Output (self, other ,"DIA_Swiney_Bron_03_04"); //Powodzenia.
+    AI_Output (other, self ,"DIA_Swiney_Bron_15_05"); //Dzięki. Z pewnością się przyda.
+    B_LogEntry                     (CH1_BuntZbieraczy,"Od Swineya otrzymałem dwie paczki z bronią. Muszę na nie uważać.");
+
+    CreateInvItems (self, ItMi_PaczkaMiecze1, 2);
+    B_GiveInvItems (self, other, ItMi_PaczkaMiecze1, 2);
+    AI_StopProcessInfos	(self);
+};
+
+//************BUNT ZBIERACZY
+if (MIS_BuntZbieraczy == LOG_RUNNING)
+&& (Npc_IsDead(Bau_900_Ricelord))
+&& (Npc_KnowsInfo (hero, DIA_Rufus_ActionGoWhat))
+&& (po_buncie == true)
+{
+Npc_ExchangeRoutine (BAU_928_Bauer,"bunt");
+Npc_ExchangeRoutine (BAU_916_Bauer,"bunt");
+Npc_ExchangeRoutine (BAU_923_Bauer,"bunt");
+Npc_ExchangeRoutine (BAU_907_Bauer,"bunt");
+Npc_ExchangeRoutine (BAU_904_Bauer,"bunt");
+Npc_ExchangeRoutine (BAU_903_Rufus,"bunt");
+B_ChangeGuild    (Org_846_Schlaeger,GIL_DMB);
+B_ChangeGuild    (Org_844_Lefty,GIL_DMB);
+B_ChangeGuild    (Org_845_Schlaeger,GIL_DMB); //1.24
+Npc_ExchangeRoutine (Org_831_Organisator,"bunt");
+B_ChangeGuild    (Org_831_Organisator,GIL_DMB);
+if (Homer_Rozpracowany == false)
+{
+Npc_ExchangeRoutine (BAU_902_Pock,"bunt");
+B_ChangeGuild    (BAU_902_Pock,GIL_DMB);//1.24
+Npc_ExchangeRoutine (BAU_914_Bauer,"bunt");
+BAU_914_Bauer.name = "Pupilek Lewusa";
+B_ChangeGuild    (BAU_914_Bauer,GIL_DMB);
+Npc_ExchangeRoutine (BAU_915_Bauer,"bunt");
+BAU_915_Bauer.name = "Pupilek Lewusa";
+B_ChangeGuild    (BAU_915_Bauer,GIL_DMB);
+Npc_ExchangeRoutine (Org_832_Organisator,"bunt");
+B_ChangeGuild    (Org_832_Organisator,GIL_DMB);
+};
+};

@@ -48,14 +48,9 @@ FUNC VOID Rtn_start_905 ()
 	TA_PickRice		(07,25,20,05,"NC_PATH69");
 };
 
-
-
-
-
-
-
-
-
-
-
-
+// REBEL
+FUNC VOID Rtn_rebel_905 ()
+{
+	TA_Stand		(20,05,07,05,"NC_PATH098");
+	TA_Stand		(07,05,20,05,"NC_PATH098");
+};

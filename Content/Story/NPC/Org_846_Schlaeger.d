@@ -65,9 +65,14 @@ FUNC VOID Rtn_start_846 ()
 {
 	TA_SitCampfire 	(20,15,08,15,"NC_PATH86_MOVEMENT");
 	TA_Smalltalk 	(08,15,20,15,"NC_PATH53");
-	
 };
 
+// REBEL
+FUNC VOID Rtn_rebel_846 ()
+{
+	TA_Boss			(07,00,20,00,"NC_RICELORD");
+	TA_Boss			(20,00,07,00,"NC_RICELORD");
+};
 
 
 

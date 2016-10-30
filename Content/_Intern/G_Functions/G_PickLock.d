@@ -27,6 +27,7 @@ func void G_PickLock( var int bSuccess, var int bBrokenOpen  )
 			strMessage	= _STR_MESSAGE_PICKLOCK_BROKEN;
 			strYPos		= _YPOS_MESSAGE_PICKLOCK_BROKEN;
 			print ("Wytrych pêk³.");
+			//Snd_Play ("SVM_15_PickBroke.wav");
 		}
 		else
 		{
@@ -34,6 +35,7 @@ func void G_PickLock( var int bSuccess, var int bBrokenOpen  )
 			strMessage	= _STR_MESSAGE_PICKLOCK_FAILURE;
 			strYPos		= _YPOS_MESSAGE_PICKLOCK_FAILURE;
 			print ("Cholera... nie tak!");
+			//Snd_Play ("SVM_15_DoesntWork.wav");
 		};
 	}
 	else

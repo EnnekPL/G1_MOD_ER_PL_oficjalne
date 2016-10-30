@@ -449,6 +449,7 @@ func VOID STARTUP_SUB_NEWCAMP ()
 	Wld_InsertNpc				(BAU_907_Bauer,"NC_DAM"); //Hut, Peasant3
 	Wld_InsertNpc				(BAU_908_Bauer,"NC_DAM"); //Hut, Peasant3
 	Wld_InsertNpc				(BAU_912_Jeremiah,"NC_DAM"); //GEHILFE von Silas, pennt in Kneipe
+	
 	//er 1.4
 	Wld_InsertNpc				(ORG_952_Riv,"NC_DAM");
 	Wld_InsertNpc				(ORG_951_Organisator,"NC_DAM");

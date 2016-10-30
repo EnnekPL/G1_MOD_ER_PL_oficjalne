@@ -49,6 +49,7 @@ FUNC VOID Rtn_start_904 ()
 	TA_WashSelf		(07,00,07,20,"NC_PATH_PEASANT5");
 	TA_PickRice		(07,20,20,00,"NC_DAM_BOTTOM");
 };
+
 FUNC VOID Rtn_goto_904 ()
 {
 	TA_PickRice		(20,00,07,00,"NC_DAM_BOTTOM");
@@ -64,6 +65,13 @@ func void rtn_liba_904 ()
 {
 TA_WatchInextremo (06,00,12,00,"LIBA1");
 TA_WatchInextremo (12,00,06,00,"LIBA1");
+};
+
+//REBEL
+FUNC VOID Rtn_rebel_904 ()
+{
+	TA_Smalltalk (06,00,12,00,"NC_REBEL_SMALLTALKS");//with 928
+	TA_Smalltalk (12,00,06,00,"NC_REBEL_SMALLTALKS");
 };
 
 

@@ -56,15 +56,18 @@ FUNC VOID Rtn_goto_916 ()
 	TA_PickRice		(20,30,07,30,"NC_PATH81");
 	TA_PickRice		(07,30,20,30,"NC_PATH81");
 };
+
 func void rtn_bunt_916 ()
 {
 TA_Stand (06,00,12,00,"BUNT3");
 TA_Stand (12,00,06,00,"BUNT3");
 };
-func void rtn_liba_916 ()
+
+// REBEL
+FUNC VOID rtn_rebel_916 ()
 {
-TA_WatchInextremo (06,00,12,00,"NC_PATH098");
-TA_WatchInextremo (12,00,06,00,"NC_PATH098");
+	TA_Smalltalk (06,00,12,00,"NC_PATH098");//with 907
+	TA_Smalltalk (12,00,06,00,"NC_PATH098");
 };
 
 

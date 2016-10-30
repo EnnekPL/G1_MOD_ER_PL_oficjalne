@@ -65,6 +65,13 @@ FUNC VOID Rtn_start_845 ()
 	TA_SitCampfire 	(20,20,08,10,"NC_PATH53"); 
 };
 
+//REBEL
+FUNC VOID Rtn_rebel_845 ()
+{	
+	TA_Boss		(08,10,20,20,"NC_PATH86_MOVEMENT");
+	TA_Boss 	(20,20,08,10,"NC_PATH86_MOVEMENT"); 
+};
+
 
 
 

@@ -298,6 +298,12 @@ func void DIA_Lefty_PERM_Nothing()
 	AI_StopProcessInfos	(self);
 };
 
+///////////////////////////////////////////////
+// Rozdzia³ 1
+// Zadanie z Josepem
+// Dialogi kluczowe
+///////////////////////////////////////////////
+
 ///////////////////////////////////////////
 //		WhatDidJosep
 ///////////////////////////////////////////
@@ -444,10 +450,172 @@ FUNC VOID DIA_Lefty_NowFree_Info()
 	Wld_InsertNpc (ORG_896_Organisator,"OW_PATH_066");
 };
  
+/////////////////////////////////////////////////////
+// Rozdzia³ 4
+// Bunt zbieraczy
+// Dialogi kluczowe
+// Zadania
+/////////////////////////////////////////////////////
+
+///////////////////////////////////////////////
+// 			What's up
+///////////////////////////////////////////////
+
+instance DIA_Lefty_AbouRebelion (C_INFO)
+{
+	npc			= Org_844_Lefty;
+	nr			= 1;
+	condition	= DIA_Lefty_AbouRebelion_Condition;
+	information	= DIA_Lefty_AbouRebelion_Info;
+	permanent	= 0;
+	description = "Co siê tutaj dzieje?";
+};                       
+
+FUNC int DIA_Lefty_AbouRebelion_Condition()
+{
+	if	(Mod_Story_RunRebelInNC == TRUE) && (Quest_TalkWithRufus != LOG_RUNNING) && (MIS_BuntZbieraczy != LOG_SUCCESS)
+	{
+		return 1;
+	};
+};
+
+FUNC VOID DIA_Lefty_AbouRebelion_Info()
+{
+	AI_Output (other, self,"DIA_Lefty_AbouRebelion_15_01"); //Co siê tutaj dzieje?
+	AI_Output (self, other,"DIA_Lefty_AbouRebelion_03_02"); //Pytasz co siê tutaj dzieje? Mamy wszyscy du¿e k³opoty, ot co!
+	AI_Output (other, self,"DIA_Lefty_AbouRebelion_15_03"); //Doprawdy? Ja te¿ mam k³opoty?
+	AI_Output (self, other,"DIA_Lefty_AbouRebelion_03_04"); //Przecie¿ powiedzia³em, ¿e wszyscy.
+	AI_Output (self, other,"DIA_Lefty_AbouRebelion_03_05"); //Ostatniego poranka Zbieracze odmówili pracy na polach ry¿owych. Za¿¹dali, aby 'moi siepacze' wynieœli siê z pola.
+	AI_Output (self, other,"DIA_Lefty_AbouRebelion_03_06"); //Dasz wiarê? Nazwali moich ludzi siepaczami.
+	AI_Output (other, self,"DIA_Lefty_AbouRebelion_15_07"); //Wola³bym, ¿ebyœ skupi³ siê na faktach, a swoje komentarze na razie zachowa³ dla siebie.
+	AI_Output (self, other,"DIA_Lefty_AbouRebelion_03_08"); //No, dobra, dobra... Mówi¹c w uproszczeniu domagaj¹ siê tak¿e podwojonych racji ¿ywnoœciowych i krótszego czasu pracy.
+	AI_Output (self, other,"DIA_Lefty_AbouRebelion_03_09"); //Nie mogê na to pozwoliæ. Inaczej te sukinsyny wejd¹ nam na g³owê. 
+	AI_Output (self, other,"DIA_Lefty_AbouRebelion_03_10"); //WyobraŸ sobie co by by³o, gdyby taki nie³ad panowa³ w którejœ z kopalni.
+	AI_Output (other, self,"DIA_Lefty_AbouRebelion_15_11"); //Czyli na razie Zbieracze tylko wstrzymali pracê i przedstawili swoje postulaty? Wci¹¿ nie rozumiem, dlaczego to te¿ mój problem?
+	AI_Output (self, other,"DIA_Lefty_AbouRebelion_03_12"); //Taki stan rzeczy nie mo¿e d³ugo trwaæ. Inaczej w obozie skoñczy siê ¿ywnoœæ. Ry¿ jest podstaw¹ w tej czêœci Kolonii.
+	AI_Output (self, other,"DIA_Lefty_AbouRebelion_03_13"); //Zw³aszcza teraz, gdy jesteœmy odciêci od towarów ze Œwiata Zewnêtrznego. Nie wiadomo, czy kiedykolwiek jeszcze odbêd¹ siê jakiekolwiek napady na konwoje.
+	AI_Output (self, other,"DIA_Lefty_AbouRebelion_03_14"); //To mo¿e wszystkim powa¿nie zaszkodziæ. 
+	AI_Output (self, other,"DIA_Lefty_AbouRebelion_03_15"); //Jeœli nie odci¹gniemy Zbieraczy od tego naiwnego buntu, wkrótce dojdzie do konfrontacji. 
+	AI_Output (self, other,"DIA_Lefty_AbouRebelion_03_16"); //Poleje siê krew, a ja stracê zarówno zaufanych ludzi jak i pracowników. Chcesz na to pozwoliæ?
+	AI_Output (other, self,"DIA_Lefty_AbouRebelion_15_17"); //Za³ó¿my, ¿e masz racjê. Co mia³bym zrobiæ, ¿eby to powstrzymaæ?
+	AI_Output (self, other,"DIA_Lefty_AbouRebelion_03_18"); //Buntownicy wybrali Rufusa jako przywódcê. Porozmawiaj z nim. 
+	AI_Output (self, other,"DIA_Lefty_AbouRebelion_03_19"); //Zaproponuj im dodatkow¹ porcjê miêsa raz w tygodniu, jeœli tylko wróc¹ do pracy. 
+	AI_Output (self, other,"DIA_Lefty_AbouRebelion_03_20"); //Powiedz te¿, ¿e jeœli przystan¹ na nasze warunki, nie wci¹gniemy ¿adnych konsekwencji.
+
+	Quest_TalkWithRufus = LOG_RUNNING;
+	
+	if (MIS_BuntZbieraczy != LOG_RUNNING) || (MIS_BuntZbieraczy != LOG_SUCCESS)
+	{
+	MIS_BuntZbieraczy = LOG_RUNNING;
+	Log_CreateTopic     (CH1_BuntZbieraczy, LOG_MISSION);
+    Log_SetTopicStatus  (CH1_BuntZbieraczy, LOG_RUNNING);
+	B_LogEntry    		(CH1_BuntZbieraczy,"Lewus powiedzia³, ¿e popieraj¹c buntowników pope³niê olbrzymi b³¹d. Jeœli nie chcê dopuœciæ do rozlewu krwi, powinienem porozmawiaæ z Rufusem i przedstawiæ mu pokojow¹ propozycjê Lewusa. Wci¹¿ jeszcze mogê wybraæ, po której stronie konfliktu siê opowiem.");
+	}
+	else if (MIS_BuntZbieraczy == LOG_RUNNING)
+	{
+	B_LogEntry    		(CH1_BuntZbieraczy,"Lewus powiedzia³, ¿e popieraj¹c buntowników pope³niê olbrzymi b³¹d. Jeœli nie chcê dopuœciæ do rozlewu krwi, powinienem porozmawiaæ z Rufusem i przedstawiæ mu pokojow¹ propozycjê Lewusa. Wci¹¿ jeszcze mogê wybraæ, po której stronie konfliktu siê opowiem.");
+	};	
+	
+};
+
+///////////////////////////////////////////
+//		Rufus is my friend
+///////////////////////////////////////////
+
+INSTANCE DIA_Lefty_RufusIsMyFriend (C_INFO)
+{
+   npc          = Org_844_Lefty;
+   nr           = 1;
+   condition    = DIA_Lefty_RufusIsMyFriend_Condition;
+   information  = DIA_Lefty_RufusIsMyFriend_Info;
+   permanent	= FALSE;
+   description	= "Twoje dni s¹ policzone.";
+};
+
+FUNC INT DIA_Lefty_RufusIsMyFriend_Condition()
+{
+    if (Quest_GiveOffense == LOG_RUNNING) && (Rebel_HerosBoss != Boss_Lefty)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Lefty_RufusIsMyFriend_Info()
+{
+    AI_Output (other, self ,"DIA_Lefty_RufusIsMyFriend_15_01"); //Twoje dni s¹ policzone.
+    AI_Output (self, other ,"DIA_Lefty_RufusIsMyFriend_03_02"); //Przyszed³eœ tu ¿eby mi groziæ? A jesteœ chocia¿ w stanie poprzeæ s³owa czynami?
+	Info_ClearChoices	(DIA_Lefty_RufusIsMyFriend );
+	Info_AddChoice		(DIA_Lefty_RufusIsMyFriend,"Jesteœ œmieciem, który zbudowa³ swoj¹ reputacjê na krzywdzie innych...",DIA_Lefty_RufusIsMyFriend_Reputation); //jeœli wybierzemy tê opcjê po wykonaniu zleceñ dla Rufusa Lewus zaatakuje nas za magazynem
+	Info_AddChoice		(DIA_Lefty_RufusIsMyFriend,"A czy ty bez swoich siepaczy by³byœ w stanie zrobiæ to samo?",DIA_Lefty_RufusIsMyFriend_Guys);//jeœli wybierzemy tê opcjê po wykonaniu zleceñ dla Rufusa bêdziemy mogli w³amaæ siê do magazynu (tylko Najemnik) lub okraœæ Ksiêcia i sk³óciæ go z Lewusem
+};
+	
+FUNC VOID DIA_Lefty_RufusIsMyFriend_Reputation ()
+{
+	AI_Output (other, self ,"DIA_Lefty_RufusIsMyFriend_Reputation_15_01"); //Owszem. To ju¿ koniec twojej tyranii. Jesteœ œmieciem, który zbudowa³ swoj¹ reputacjê na krzywdzie innych, s³abszych od siebie.
+	AI_Output (self, other ,"DIA_Lefty_RufusIsMyFriend_Reputation_03_02"); //A¿ dziwne, ¿e jeszcze ¿yjesz... Ty chyba nie zdajesz sobie sprawy gdzie jesteœ.
+	AI_Output (self, other ,"DIA_Lefty_RufusIsMyFriend_Reputation_03_03"); //Ci ludzie to mordercy, z³odzieje i najgorsze szumowiny jakie chodzi³y po Myrtanie. Niby czemu mia³bym siê nad nimi litowaæ?
+	AI_Output (self, other ,"DIA_Lefty_RufusIsMyFriend_Reputation_03_04"); //Dlaczego mia³by mnie obchodziæ los tych sukinsynów?
+	AI_Output (other, self ,"DIA_Lefty_RufusIsMyFriend_Reputation_15_05"); //A pewnie ty trafi³eœ tu bez powodu?
+	AI_Output (self, other ,"DIA_Lefty_RufusIsMyFriend_Reputation_03_06"); //Uwierz mi, ¿e nie jestem tu najgorszy. Zreszt¹, staj¹c po stronie buntowników udowodni³eœ, ¿e jesteœ za g³upi, ¿eby to zrozumieæ.
+	AI_Output (self, other ,"DIA_Lefty_RufusIsMyFriend_Reputation_03_07"); //Altruizm wcale nie pop³aca w tym wielkim wiêzieniu. 
+	
+	Info_ClearChoices	(DIA_Lefty_RufusIsMyFriend );
+	Info_AddChoice		(DIA_Lefty_RufusIsMyFriend,"Masz racjê. (Zostañ stronnikiem Lewusa)",DIA_Lefty_RufusIsMyFriend_LeftyFriend);
+	Info_AddChoice		(DIA_Lefty_RufusIsMyFriend,"Twoje dni s¹ policzone. (Zostañ buntownikiem)",DIA_Lefty_RufusIsMyFriend_Rebeliant);
+};
  
-//========================================
-//-----------------> ALCO_BUNT
-//========================================
+FUNC VOID DIA_Lefty_RufusIsMyFriend_Guys ()
+{
+	AI_Output (other, self ,"DIA_Lefty_RufusIsMyFriend_Reputation_15_01"); //A czy ty bez swoich siepaczy by³byœ w stanie zrobiæ to samo?
+	AI_Output (self, other ,"DIA_Lefty_RufusIsMyFriend_Reputation_03_02"); //Broni¹ jednych s¹ pieœci, a innych - umys³. Dostrze¿ to!
+	
+	Info_ClearChoices	(DIA_Lefty_RufusIsMyFriend );
+	Info_AddChoice		(DIA_Lefty_RufusIsMyFriend,"Masz racjê. (Zostañ stronnikiem Lewusa)",DIA_Lefty_RufusIsMyFriend_LeftyFriend);
+	Info_AddChoice		(DIA_Lefty_RufusIsMyFriend,"Twoje dni s¹ policzone. (Zostañ buntownikiem)",DIA_Lefty_RufusIsMyFriend_Rebeliant);
+};
+
+FUNC VOID DIA_Lefty_RufusIsMyFriend_LeftyFriend ()
+{
+	AI_Output (other, self ,"DIA_Lefty_RufusIsMyFriend_LeftyFriend_15_01"); //Masz racjê.
+	AI_Output (self, other ,"DIA_Lefty_RufusIsMyFriend_LeftyFriend_03_02"); //Dobrze, ¿e to zauwa¿y³eœ. Ale czy to znaczy, ¿e mogê na ciebie liczyæ?
+	AI_Output (other, self ,"DIA_Lefty_RufusIsMyFriend_LeftyFriend_15_03"); //Tak.
+	AI_Output (self, other ,"DIA_Lefty_RufusIsMyFriend_LeftyFriend_03_04"); //W porz¹dku. Spróbujemy to zrobiæ bez niepotrzebnego przelewu krwi. 
+	
+	if (Quest_TalkWithRufus == LOG_RUNNING)
+	{
+	AI_Output (self, other ,"DIA_Lefty_RufusIsMyFriend_LeftyFriend_03_05"); //Pamiêtasz jak ci mówi³em, ¿e powinniœmy pertraktowaæ? Mia³eœ w tym celu pogadaæ z Rufusem. 
+	AI_Output (self, other ,"DIA_Lefty_RufusIsMyFriend_LeftyFriend_03_06"); //Zrób to.
+	
+	B_LogEntry    		(CH1_BuntZbieraczy,"Zdecydowa³em siê stan¹æ po stronie Lewusa. Powinienem teraz wykonaæ zadanie, które niedawno mi powierzy³. Mam przekazaæ propozycjê ugody Rufusowi.");
+	}
+	else
+	{
+	AI_Output (self, other,"DIA_Lefty_AbouRebelion_03_18"); //Buntownicy wybrali Rufusa jako przywódcê. Porozmawiaj z nim. 
+	AI_Output (self, other,"DIA_Lefty_AbouRebelion_03_19"); //Zaproponuj im dodatkow¹ porcjê miêsa raz w tygodniu, jeœli tylko wróc¹ do pracy. 
+	AI_Output (self, other,"DIA_Lefty_AbouRebelion_03_20"); //Powiedz te¿, ¿e jeœli przystan¹ na nasze warunki, nie wci¹gniemy ¿adnych konsekwencji.
+	
+	Quest_TalkWithRufus = LOG_RUNNING;
+	
+	B_LogEntry    		(CH1_BuntZbieraczy,"Zdecydowa³em siê stan¹æ po stronie Lewusa. Bunt powinien zostaæ szybko st³umiony bez rozlewu krwi. Powinienem teraz porozmawiaæ z Rufusem i przedstawiæ mu pokojow¹ propozycjê Lewusa. ");
+	
+	};
+	Quest_GiveOffense = LOG_FAILED;
+};
+
+FUNC VOID DIA_Lefty_RufusIsMyFriend_Rebeliant ()
+{
+	AI_Output (other, self ,"DIA_Lefty_RufusIsMyFriend_Rebeliant_15_01"); //Twoje dni s¹ policzone.
+	AI_Output (self, other ,"DIA_Lefty_RufusIsMyFriend_Rebeliant_03_02"); //Przekonamy siê!
+	
+	Quest_GiveOffense = LOG_SUCCESS;
+	
+	B_LogEntry    		(CH1_BuntZbieraczy,"Stan¹³em po stronie buntowników. Ten wyzysk musi siê w wreszcie zakoñczyæ. Obrazi³em Leuwsa dziêki czemu zyska³em zaufanie Rufusa. Muszê ponownie z nim pogadaæ.");
+};
+
+/////////////////////////////////////////////
+//		Alcohol
+/////////////////////////////////////////////
 
 INSTANCE DIA_Lefty_ALCO_BUNT (C_INFO)
 {
@@ -461,7 +629,7 @@ INSTANCE DIA_Lefty_ALCO_BUNT (C_INFO)
 
 FUNC INT DIA_Lefty_ALCO_BUNT_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Rufus_Vodka))
+    if (Quest_GetAlcoForBandits == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -475,11 +643,12 @@ FUNC VOID DIA_Lefty_ALCO_BUNT_Info()
     AI_Output (self, other ,"DIA_Lefty_ALCO_BUNT_03_03"); //Od kiedy Homer wysy³a ch³opców na posy³ki?
     AI_Output (other, self ,"DIA_Lefty_ALCO_BUNT_15_04"); //Jest bardzo zajêty spraw¹ tamy. S³ysza³eœ na pewno o topielcu.
     AI_Output (self, other ,"DIA_Lefty_ALCO_BUNT_03_05"); //No tak. Niech ci bêdzie.
-    AI_Output (self, other ,"DIA_Lefty_ALCO_BUNT_03_06"); //Dawaj te butelki.
-    if (Npc_HasItems (other, ItMi_Alchemy_Alcohol_01) >=3)
+    AI_Output (self, other ,"DIA_Lefty_ALCO_BUNT_03_06"); //Dawaj te butelki. Mam nadziejê, ¿e zm¹drza³eœ i nie zadajesz siê ju¿ z buntownikami.
+	AI_Output (self, other ,"DIA_Lefty_ALCO_BUNT_03_0X"); //Gdybyœ mi wtedy pomóg³, pi³byœ teraz z nami.
+    if (Npc_HasItems (other, ItMi_SpecialBooze) >=3)
     {
         AI_Output (other, self ,"DIA_Lefty_ALCO_BUNT_15_07"); //Trzymaj.
-        B_GiveInvItems (other, self, ItMi_Alchemy_Alcohol_01, 3);
+        B_GiveInvItems (other, self, ItMi_SpecialBooze, 3);
 		DIA_Lefty_ALCO_BUNT.permanent = false;
         b_givexp (50);
     }
@@ -490,6 +659,53 @@ FUNC VOID DIA_Lefty_ALCO_BUNT_Info()
         AI_Output (other, self ,"DIA_Lefty_ALCO_BUNT_15_10"); //Spokojnie. Pewnie gdzieœ mi wypad³a. Zaraz wrócê. 
 		DIA_Lefty_ALCO_BUNT.permanent = true;
     };
+};
+
+/////////////////////////////////////////////
+//		Last Fight 
+/////////////////////////////////////////////
+
+INSTANCE DIA_Lefty_LastFight (C_INFO)
+{
+   npc          = Org_844_Lefty;
+   nr           = 1;
+   condition    = DIA_Lefty_LastFight_Condition;
+   information  = DIA_Lefty_LastFight_Info;
+   permanent	= FALSE;
+   Important    = TRUE;
+};
+
+FUNC INT DIA_Lefty_LastFight_Condition()
+{
+    if (Quest_KillLefty == LOG_RUNNING)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Lefty_LastFight_Info()
+{
+    AI_Output (self, other ,"DIA_Lefty_LastFight_03_01"); //Niczego siê nie nauczy³eœ. Posun¹³eœ siê za daleko.
+    AI_Output (self, other ,"DIA_Lefty_LastFight_03_02"); //A to oznacza twój koniec.
+    
+	B_ChangeGuild (self, GIL_GRD);
+	
+    AI_StopProcessInfos	(self);
+    Npc_SetTarget (self, other);
+    AI_StartState (self, ZS_ATTACK, 1, "");
+	
+	B_ChangeGuild (Org_846_Schlaeger, GIL_GRD);
+	B_ChangeGuild (Org_845_Schlaeger, GIL_GRD);
+	B_ChangeGuild (BAU_900_Ricelord, GIL_GRD);
+	B_ChangeGuild (BAU_908_Bauer, GIL_GRD);
+	B_ChangeGuild (BAU_902_Pock, GIL_GRD);
+	
+	B_ChangeGuild (BAU_920_Bauer, GIL_GRD);
+	B_ChangeGuild (BAU_922_Bauer, GIL_GRD);
+	B_ChangeGuild (BAU_923_Bauer, GIL_GRD);
+	B_ChangeGuild (BAU_924_Bauer, GIL_GRD);
+	B_ChangeGuild (BAU_927_Bauer, GIL_GRD);
 };
 
 //========================================

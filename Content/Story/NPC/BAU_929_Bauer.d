@@ -50,6 +50,12 @@ FUNC VOID Rtn_start_929 ()
 	TA_PickRice		(08,30,20,30,"NC_PATH80");
 };
 
+// REBEL
+FUNC VOID Rtn_rebel_929 ()
+{
+	TA_SitCampfire  (20,30,08,30,"NC_PATH83"); 
+	TA_SitCampfire	(08,30,20,30,"NC_PATH83");
+};
 
 
 

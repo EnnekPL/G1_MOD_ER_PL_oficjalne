@@ -64,6 +64,7 @@ FUNC VOID Rtn_start_832 ()
 	TA_Smalltalk	(20,00,08,00,"OW_PATH_067");
 	TA_Smalltalk	(08,00,20,00,"OW_PATH_067");
 };
+
 FUNC VOID Rtn_bunt_832 ()
 {
 	TA_Stand	(20,00,08,00,"RUFUS");

@@ -56,10 +56,12 @@ func void rtn_bunt_928 ()
 TA_Stand(06,00,12,00,"BUNT1");
 TA_Stand (12,00,06,00,"BUNT1");
 };
-func void rtn_liba_928 ()
+
+// REBEL
+FUNC VOID rtn_rebel_928 ()
 {
-TA_WatchInextremo (06,00,12,00,"LIBA2");
-TA_WatchInextremo (12,00,06,00,"LIBA2");
+	TA_Smalltalk (06,00,12,00,"NC_REBEL_SMALLTALKS");//with 904
+	TA_Smalltalk (12,00,06,00,"NC_REBEL_SMALLTALKS");
 };
 
 

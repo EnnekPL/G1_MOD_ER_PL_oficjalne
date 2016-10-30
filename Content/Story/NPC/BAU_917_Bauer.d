@@ -49,6 +49,18 @@ FUNC VOID Rtn_start_917 ()
 	TA_PickRice		(07,35,20,35,"NC_PATH80");
 };
 
+// REBEL
+FUNC VOID Rtn_rebel_917 ()
+{
+	TA_Smoke		(20,35,07,35,"NC_PATH54_02");
+	TA_Smoke		(07,35,20,35,"NC_PATH54_02");
+};
+
+FUNC VOID Rtn_watch_917 ()
+{
+	TA_Stand		(20,35,07,35,"PATH_OC_NC_27");
+	TA_Stand		(07,35,20,35,"PATH_OC_NC_27");
+};
 
 
 

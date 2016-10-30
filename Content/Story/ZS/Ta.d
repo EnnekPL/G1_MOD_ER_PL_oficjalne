@@ -35,7 +35,7 @@ func void TA_Smith_Sharp		(var int start_h, var int start_m, var int stop_h, var
 func void TA_Smith_Fire			(var int start_h, var int start_m, var int stop_h, var int stop_m, VAR string waypoint)	{TA_Min		(self,	start_h,start_m, stop_h, stop_m,ZS_Smith_Fire ,			waypoint);};
 func void TA_PracticeBow		(var int start_h, var int start_m, var int stop_h, var int stop_m, VAR string waypoint)	{TA_Min		(self,	start_h,start_m, stop_h, stop_m,ZS_PracticeBow ,		waypoint);};
 func void TA_PracticeSword		(var int start_h, var int start_m, var int stop_h, var int stop_m, VAR string waypoint)	{TA_Min		(self,	start_h,start_m, stop_h, stop_m,ZS_PracticeSword ,		waypoint);};
-// Edycja rozszerzona 
+// Edycja rozszerzona MOD
 func void TA_Helper		(var int start_h, var int start_m, var int stop_h, var int stop_m, VAR string waypoint)	{TA_Min		(self,	start_h,start_m, stop_h, stop_m,ZS_Helper ,		waypoint);};
 func void TA_Angeln		(var int start_h, var int start_m, var int stop_h, var int stop_m, VAR string waypoint)	{TA_Min		(self,	start_h,start_m, stop_h, stop_m,ZS_Angeln ,		waypoint);};
 func void TA_WorkMOB		(var int start_h, var int start_m, var int stop_h, var int stop_m, VAR string waypoint)	{TA_Min		(self,	start_h,start_m, stop_h, stop_m,ZS_WorkMOB ,		waypoint);};
@@ -52,6 +52,7 @@ func void TA_StayIgnoring	(var int start_h, var int start_m, var int stop_h, var
 //func void TA_Teaching_Joru			(var int start_h, var int start_m, var int stop_h, var int stop_m, VAR string waypoint)	{TA_Min		(self,	start_h,start_m, stop_h, stop_m,ZS_Teaching_Joru ,			waypoint);};
 func void TA_FollowPC_Gorn			(var int start_h, var int start_m, var int stop_h, var int stop_m, VAR string waypoint)	{TA_Min		(self,	start_h,start_m, stop_h, stop_m,ZS_FollowPC_Gorn ,			waypoint);};
 func void TA_Stand_Ignorance			(var int start_h, var int start_m, var int stop_h, var int stop_m, VAR string waypoint)	{TA_Min		(self,	start_h,start_m, stop_h, stop_m,ZS_Stand_Ignorance ,			waypoint);};
+func void TA_RebelWithSound			(var int start_h, var int start_m, var int stop_h, var int stop_m, VAR string waypoint)	{TA_Min		(self,	start_h,start_m, stop_h, stop_m,ZS_Rebel ,			waypoint);};
 
 // ********************************************
 // In Extremo
