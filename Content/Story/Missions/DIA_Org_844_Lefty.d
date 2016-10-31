@@ -563,6 +563,8 @@ FUNC VOID DIA_Lefty_RufusIsMyFriend_Reputation ()
 	Info_ClearChoices	(DIA_Lefty_RufusIsMyFriend );
 	Info_AddChoice		(DIA_Lefty_RufusIsMyFriend,"Masz racjê. (Zostañ stronnikiem Lewusa)",DIA_Lefty_RufusIsMyFriend_LeftyFriend);
 	Info_AddChoice		(DIA_Lefty_RufusIsMyFriend,"Twoje dni s¹ policzone. (Zostañ buntownikiem)",DIA_Lefty_RufusIsMyFriend_Rebeliant);
+	
+	LeftyAndLordDeath = TRUE;
 };
  
 FUNC VOID DIA_Lefty_RufusIsMyFriend_Guys ()
@@ -573,6 +575,8 @@ FUNC VOID DIA_Lefty_RufusIsMyFriend_Guys ()
 	Info_ClearChoices	(DIA_Lefty_RufusIsMyFriend );
 	Info_AddChoice		(DIA_Lefty_RufusIsMyFriend,"Masz racjê. (Zostañ stronnikiem Lewusa)",DIA_Lefty_RufusIsMyFriend_LeftyFriend);
 	Info_AddChoice		(DIA_Lefty_RufusIsMyFriend,"Twoje dni s¹ policzone. (Zostañ buntownikiem)",DIA_Lefty_RufusIsMyFriend_Rebeliant);
+	
+	LeftyDeath = TRUE;
 };
 
 FUNC VOID DIA_Lefty_RufusIsMyFriend_LeftyFriend ()
@@ -677,7 +681,7 @@ INSTANCE DIA_Lefty_LastFight (C_INFO)
 
 FUNC INT DIA_Lefty_LastFight_Condition()
 {
-    if (Quest_KillLefty == LOG_RUNNING)
+    if (Quest_KillLefty == LOG_RUNNING) && (LeftyAndLordDeath == TRUE)
     {
     return TRUE;
     };

@@ -67,6 +67,11 @@ FUNC VOID Rtn_rebel_903 ()
 	TA_Boss (12,00,06,00,"NC_PATH83");
 };
 
+FUNC VOID Rtn_boss_903 ()
+{
+	TA_SitCampfire 	(19,00,08,00,"NC_PATH86_MOVEMENT");
+	TA_Smalltalk 	(08,00,19,00,"NC_PATH53");
+};
 
 func void rtn_bunt_903 ()
 {

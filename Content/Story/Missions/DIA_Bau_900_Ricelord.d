@@ -284,4 +284,80 @@ FUNC VOID DIA_Ricelord_ALCO_BUNT_Info()
     
 };
 
+////////////////////////////////////////////
+//	Ring Theft
+////////////////////////////////////////////
 
+INSTANCE DIA_Ricelord_RingTheft (C_INFO)
+{
+   npc          = Bau_900_Ricelord;
+   nr           = 1;
+   condition    = DIA_Ricelord_RingTheft_Condition;
+   information  = DIA_Ricelord_RingTheft_Info;
+   permanent	= FALSE;
+   description	= "Lewus podarowa³ twój pierœcieñ Pock'owi.";
+};
+
+FUNC INT DIA_Ricelord_RingTheft_Condition()
+{
+    if (Quest_StealRing == LOG_SUCCESS)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Ricelord_RingTheft_Info()
+{
+    AI_Output (other, self ,"DIA_Ricelord_RingTheft_15_01"); //Lewus podarowa³ twój pierœcieñ Pock'owi. To mia³ byæ dowód wdziêcznoœci za pomoc.
+    AI_Output (self, other ,"DIA_Ricelord_RingTheft_03_02"); //Co? Ten sukinsyn ju¿ od dawna sadzi³ siê na mój pierœcieñ. Nie widzia³em, ¿e bêdzie na tyle bezczelny!
+    AI_Output (self, other ,"DIA_Ricelord_RingTheft_03_03"); //Ju¿ ja go skasujê.
+    
+	self.flags = 2;
+	
+    AI_StopProcessInfos	(self);
+	
+	Npc_SetTarget (Bau_900_Ricelord, Org_844_Lefty);
+    AI_StartState (Org_844_Lefty, ZS_ATTACK, 1, "");
+	
+	B_ChangeGuild (Org_844_Lefty, GIL_GRD);
+};
+
+////////////////////////////////////////////
+//	Peace
+////////////////////////////////////////////
+
+INSTANCE DIA_Ricelord_Peace (C_INFO)
+{
+   npc          = Bau_900_Ricelord;
+   nr           = 1;
+   condition    = DIA_Ricelord_Peace_Condition;
+   information  = DIA_Ricelord_Peace_Info;
+   permanent	= FALSE;
+   important	= TRUE;
+};
+
+FUNC INT DIA_Ricelord_Peace_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Ricelord_RingTheft)) && (Npc_IsDead(Org_844_Lefty))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Ricelord_Peace_Info()
+{
+    AI_Output (self, other ,"DIA_Ricelord_Peace_03_02"); //Tfu, ten pod³y sukinsyn gryzie piach.
+    AI_Output (self, other ,"DIA_Ricelord_Peace_03_03"); //Skoñczcie ju¿ tê dziecinadê. Przystanê na wszystkie warunki. Dostaniecie lepsze ¿arcie i wiêcej spania.
+	AI_Output (self, other ,"DIA_Ricelord_Peace_03_04"); //Tylko niech ci imbecyle wróc¹ do pracy.
+    AI_Output (other, self ,"DIA_Ricelord_Peace_15_01"); //W porz¹dku. To ju¿ koniec.
+	
+	self.flags = 2;
+	
+    AI_StopProcessInfos	(self);
+	
+	Npc_ExchangeRoutine (self, "start");
+	
+	B_LogEntry                     (CH1_BuntZbieraczy,"To ju¿ koniec rebelii Zbieraczy. Lewus nie ¿yje, a Ry¿owy Ksi¹¿ê przysta³ na warunki buntowników. Najwy¿szy czas pogadaæ z Rufusem.");
+};

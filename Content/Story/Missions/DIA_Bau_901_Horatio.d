@@ -453,3 +453,90 @@ FUNC VOID DIA_Horatio_Bunt_Info()
     AI_Output (self, other ,"DIA_Horatio_Bunt_03_02"); //Mam nadziejê, ¿e ca³a sprawa wkrótce ucichnie i obejdzie siê bez niepotrzebnego rozlewu krwi.
     AI_Output (self, other ,"DIA_Horatio_Bunt_03_03"); //Nie jestem zwolennikiem rozwi¹zañ si³owych. Ju¿ raz w ¿yciu przesadzi³em.
 };
+
+////////////////////////////////////////////
+//		 WithoutBlood
+////////////////////////////////////////////
+
+INSTANCE DIA_Horatio_WithoutBlood (C_INFO)
+{
+   npc          = Bau_901_Horatio;
+   nr           = 1;
+   condition    = DIA_Horatio_WithoutBlood_Condition;
+   information  = DIA_Horatio_WithoutBlood_Info;
+   permanent	= FALSE;
+   description	= "Podobno chcia³eœ ze mn¹ rozmawiaæ.";
+};
+
+FUNC INT DIA_Horatio_WithoutBlood_Condition()
+{
+    if  (Quest_TalkWithHoratio == LOG_RUNNING)      
+	{
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Horatio_WithoutBlood_Info()
+{
+    AI_Output (other, self ,"DIA_Horatio_WithoutBlood_15_01"); //Podobno chcia³eœ ze mn¹ rozmawiaæ.
+    AI_Output (self, other ,"DIA_Horatio_WithoutBlood_03_02"); //Tak, dobrze, ¿e przyszed³eœ. Widzê, ¿e wszyscy powoli trac¹ zimn¹ krew. Chcê ¿ebyœ to w koñcu ukróci³.
+    AI_Output (self, other ,"DIA_Horatio_WithoutBlood_03_03"); //Mam pewien plan.
+	AI_Output (self, other ,"DIA_Horatio_WithoutBlood_03_04"); //Chcê ¿ebyœ w³ama³ siê do magazynu. Za jedn¹ z drabin najdziesz skrzyniê.
+	AI_Output (self, other ,"DIA_Horatio_WithoutBlood_03_05"); //W œrodku znajduje siê ¿o³d dla bandziorów i pierœcieñ Ry¿owego Ksiêcia. To dla niego wa¿na pami¹tka.
+	AI_Output (self, other ,"DIA_Horatio_WithoutBlood_03_06"); //Teraz pozostawiam ci wybór. Mo¿esz ukraœæ tylko pierœcieñ i daæ go Pock'owi. 
+	AI_Output (self, other ,"DIA_Horatio_WithoutBlood_03_07"); //Gdy ju¿ to zrobisz, powiedz Ry¿owemu Ksiêciu, ¿e Lewus ukrad³ jego pierœcieñ i odda³ go swojemu nowemu przyjacielowi.
+	AI_Output (self, other ,"DIA_Horatio_WithoutBlood_03_08"); //To na pewno ich sk³óci. Ry¿owy Ksi¹¿ê zostanie sam i przystanie na warunki buntowników.
+	AI_Output (self, other ,"DIA_Horatio_WithoutBlood_03_09"); //Z kolei, jeœli zabierzesz rudê i pierœcieñ, po czym mi to wszystko przyniesiesz, zadbam, aby bandziory pozby³y siê obydwóch wyzyskiwaczy.
+	AI_Output (self, other ,"DIA_Horatio_WithoutBlood_03_10"); //Wybór pozostawiam tobie.
+	AI_Output (self, other ,"DIA_Horatio_WithoutBlood_03_11"); //A co do kwestii w³amania... Có¿, cz³onkowie Nowego Obozu mog¹ swobodnie chodziæ po magazynie, wiêc nie by³oby k³opotu.
+	AI_Output (self, other ,"DIA_Horatio_WithoutBlood_03_12"); //W innym wypadku musia³byœ siê tam wkraœæ. Od strony domu na pewno nie wejdziesz. Przesiaduje tam Pock, który natychmiast ciê dostrze¿e.
+	AI_Output (self, other ,"DIA_Horatio_WithoutBlood_03_13"); //Wprawdzie drugie wejœcie te¿ jest mocno obstawione, jednak przy odrobinie szczêœcia uda ci siê wœlizgn¹æ.
+	AI_Output (self, other ,"DIA_Horatio_WithoutBlood_03_14"); //Najlepiej oprzeæ siê plecami o œcianê, zapaliæ, udawaæ, ¿e nic siê nie robi. Kiedy wszyscy zaczn¹ cie ignorowaæ po prostu siê przemknij.
+	AI_Output (other, self ,"DIA_Horatio_WithoutBlood_15_15"); //Postaram siê. W koñcu nie pierwszy raz siê skradam.
+	AI_Output (self, other ,"DIA_Horatio_WithoutBlood_03_16"); //Tu masz klucz. Powodzenia! I pamiêtaj, to ty zdecydujesz, ile krwi siê tutaj przeleje. Wybierz m¹drze.
+	
+	Quest_StealRing = LOG_RUNNING;
+	Quest_StealOre = LOG_RUNNING;
+	
+	CreateInvItem (self,ItMi_KeyToChestInStorage);
+	B_GiveInvItems (self, hero, ItMi_KeyToChestInStorage,1);
+	
+	B_LogEntry                     (CH1_BuntZbieraczy,"Horacy chce, ¿ebym w³ama³ siê do magazynu i wykrad³ ze skrzyni bandziorów rudê i pierœcieñ Ry¿owego Ksiêcia. Mogê z nimi zrobiæ dwie rzeczy: oddaæ Horacemu, a wtedy on naœle siepaczy Lewusa na obu tyranów lub podarowaæ pierœcieñ Pockowi, powiedzieæ o tym Ry¿owemu Ksiêciu i tym samym sk³óciæ obu tyranów. Wybór nale¿y do mnie.");
+	
+	Npc_ExchangeRoutine (BAU_902_Pock,"outside");
+};
+
+////////////////////////////////////////////
+//		 KillBoth
+////////////////////////////////////////////
+
+INSTANCE DIA_Horatio_KillBoth (C_INFO)
+{
+   npc          = Bau_901_Horatio;
+   nr           = 1;
+   condition    = DIA_Horatio_KillBoth_Condition;
+   information  = DIA_Horatio_KillBoth_Info;
+   permanent	= FALSE;
+   description	= "Mam tu rudê i pierœcieñ ze skrzyni.";
+};
+
+FUNC INT DIA_Horatio_KillBoth_Condition()
+{
+    if (Quest_StealOre == LOG_RUNNING) && (Quest_StealRing == LOG_RUNNING) && (Npc_HasItems (hero,ItMiNugget) >= 500) && (Npc_HasItems (hero,ItMi_RicelordRing) == 1)
+	{
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Horatio_KillBoth_Info()
+{
+    AI_Output (other, self ,"DIA_Horatio_KillBoth_15_01"); //Mam tu rudê i pierœcieñ ze skrzyni.
+    AI_Output (self, other ,"DIA_Horatio_KillBoth_03_02"); //Powiedz Rufusowi, ¿e ja siê wszystkim zajmê. Niech trzyma w ludzi w ryzach.
+	
+	B_LogEntry                     (CH1_BuntZbieraczy,"Odda³em ³upy Horacemu. Mam o tym powiedzieæ Rufusowi, a w tym czasie Horacy zrobi co trzeba.");
+	
+	Quest_StealRing = LOG_FAILED;
+	Quest_StealOre = LOG_SUCCESS;
+};

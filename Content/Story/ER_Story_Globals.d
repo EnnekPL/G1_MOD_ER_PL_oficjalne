@@ -560,6 +560,7 @@ var int Bonus_FirtsBlood;
 //***Bunt zbieraczy***
 var int Mod_Story_RunRebelInNC;
 var int Rebel_HerosBoss; const int Boss_Rufus = 1; const int Boss_Lefty = 2;
+var int Rebel_Consequences; const int LeftyDeath = 1; const int LeftyAndLordDeath = 2; 
 //side questy od Lewusa
 var int Quest_TalkWithRufus;
 var int Quest_CorruptRebels;
@@ -572,6 +573,7 @@ var int Quest_ChceckLoyality; var int FoggyKilled;
 var int Quest_GetWeaponsDelivery;
 var int Quest_GetAlcoForBandits;
 var int Quest_KillLefty;
+var int Quest_TalkWithHoratio;
 var int Quest_StealRing;
 var int Quest_StealOre;
 

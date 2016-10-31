@@ -662,6 +662,12 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 	{
 		PrintDebugNpc	(PD_MISSION, "---=== DAS FÜNFTE KAPITEL ===---");
 		//B_KillNpc			(NON_3933_Uturiel);//1.4
+		
+		if (Mod_Story_RunRebelInNC == FALSE)
+		{
+		B_Story_BauRebellion ();
+		};
+	
 		//zadanie tylko do 5 rozdzia³u
 		if (MIS_NewLocationForPirates != LOG_SUCCESS)
 		{

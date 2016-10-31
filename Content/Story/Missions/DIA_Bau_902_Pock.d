@@ -197,3 +197,38 @@ FUNC VOID DIA_Pock_ForgotAll_Info()
 	AI_Output (other, self,"DIA_Pock_ForgotAll_15_04"); //Jasne...
 };
 
+///////////////////////////////////////////////////
+//	Gift
+///////////////////////////////////////////////////
+
+INSTANCE DIA_Pock_Gift (C_INFO)
+{
+	npc			= Bau_902_Pock;
+	nr			= 1;
+	condition	= DIA_Pock_Gift_Condition;
+	information	= DIA_Pock_Gift_Info;
+	permanent	= 0;
+	description	= "Mam dla ciebie prezent.";
+};                       
+
+FUNC INT DIA_Pock_Gift_Condition()
+{
+	if (Quest_StealRing == LOG_RUNNING) && (Npc_HasItems (hero,ItMi_RicelordRing) == 1)
+	{
+		return 1;
+	};
+};
+
+FUNC VOID DIA_Pock_Gift_Info()
+{	
+	AI_Output (other, self,"DIA_Pock_Gift_15_00"); //Mam dla ciebie prezent od Lewusa.
+	AI_Output (self, other,"DIA_Pock_Gift_04_01"); //Co? Poka¿ mi to.
+	AI_Output (other, self,"DIA_Pock_Gift_15_02"); //To wyraz jego wdziêcznoœci za wsparcie i agitacjê czêœci Zbieraczy.
+	AI_Output (self, other,"DIA_Pock_Gift_04_03"); //Ca³kiem ³adna b³yskotka. Dziêki!
+	
+	B_GiveInvItems (hero, self, ItMi_RicelordRing,1);
+	
+	Quest_StealRing = LOG_SUCCESS;
+	
+	B_LogEntry                     (CH1_BuntZbieraczy,"Da³em pierœcieñ Pock'owi. Teraz czas powiedzieæ o wszystkim Ry¿owemu Ksiêciu.");
+};

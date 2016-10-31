@@ -373,6 +373,7 @@ FUNC INT DIA_Rufus_AlcoDelivery_Condition()
 	&& (Npc_KnowsInfo (hero, DIA_Schlaeger_ALCO)) 
 	&& (Npc_KnowsInfo (hero, DIA_Ricelord_ALCO_BUNT)) 
 	&& (Npc_KnowsInfo (hero, DIA_Lefty_ALCO_BUNT))
+	&& (LeftyAndLordDeath == TRUE)
     {
     return TRUE;
     };
@@ -394,3 +395,183 @@ FUNC VOID DIA_Rufus_AlcoDelivery_Info()
 	Quest_KillLefty = LOG_RUNNING;
 };
 
+/////////////////////////////////////////////////
+// 	Alco delivery 2 
+/////////////////////////////////////////////////
+
+INSTANCE DIA_Rufus_AlcoDelivery2 (C_INFO)
+{
+   npc          = Bau_903_Rufus;
+   nr           = 1;
+   condition    = DIA_Rufus_AlcoDelivery2_Condition;
+   information  = DIA_Rufus_AlcoDelivery2_Info;
+   permanent	= FALSE;
+   description	= "Rozda³em czysty alkohol Ry¿owemu Ksiêciu i jego oprychom.";
+};
+
+FUNC INT DIA_Rufus_AlcoDelivery2_Condition()
+{
+    if (Quest_GetAlcoForBandits == LOG_RUNNING) 
+	&& (Npc_KnowsInfo (hero, DIA_Schlaeger_VODKA)) 
+	&& (Npc_KnowsInfo (hero, DIA_Schlaeger_ALCO)) 
+	&& (Npc_KnowsInfo (hero, DIA_Ricelord_ALCO_BUNT)) 
+	&& (Npc_KnowsInfo (hero, DIA_Lefty_ALCO_BUNT))
+	&& (LeftyDeath == TRUE)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Rufus_AlcoDelivery2_Info()
+{
+    AI_Output (other, self ,"DIA_Rufus_AlcoDelivery2_15_01"); //Rozda³em czysty alkohol Ry¿owemu Ksiêciu i jego oprychom.
+    AI_Output (self, other ,"DIA_Rufus_AlcoDelivery2_03_02"); //Doskonale! Myœlê, ¿e wkrótce dojdzie do ostatecznej konfrontacji.
+	AI_Output (self, other ,"DIA_Rufus_AlcoDelivery2_03_03"); //Zanim jednak to siê stanie, Horacy chce z tob¹ porozmawiaæ. 
+	AI_Output (self, other ,"DIA_Rufus_AlcoDelivery2_03_04"); //Powiedzia³, ¿e to pilne i ¿ebyœ nie robi³ nic zanim z nim nie pogadasz.
+	
+	B_LogEntry                     (CH1_BuntZbieraczy,"Rozda³em alkohol bandziorom. Rufus powiedzia³ mi, ¿e Horacy chce pilnie ze mn¹ porozmawiaæ. Ciekawe o co mu chodzi.");
+	AI_StopProcessInfos (self);
+	
+	Quest_GetAlcoForBandits = LOG_SUCCESS;
+	
+	Quest_TalkWithHoratio = LOG_RUNNING;
+	
+	Quest_KillLefty = LOG_FAILED;
+};
+
+/////////////////////////////////////////////////
+// 	Hoartio Do Everything
+/////////////////////////////////////////////////
+
+INSTANCE DIA_Rufus_HoratioDoEverything (C_INFO)
+{
+   npc          = Bau_903_Rufus;
+   nr           = 1;
+   condition    = DIA_Rufus_HoratioDoEverything_Condition;
+   information  = DIA_Rufus_HoratioDoEverything_Info;
+   permanent	= FALSE;
+   description	= "Horacy wszystkim siê zajmie.";
+};
+
+FUNC INT DIA_Rufus_HoratioDoEverything_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Horatio_KillBoth))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Rufus_HoratioDoEverything_Info()
+{
+    AI_Output (other, self ,"DIA_Rufus_HoratioDoEverything_15_01"); //Horacy wszystkim siê zajmie.
+    AI_Output (self, other ,"DIA_Rufus_HoratioDoEverything_03_02"); //Jak to?
+	AI_Output (other, self ,"DIA_Rufus_HoratioDoEverything_15_03"); //Mamy pewien plan. Jeœli dobrze pójdzie, bandziory pozbêd¹ siê Lewusa i Ksiêcia za nas.
+	AI_Output (self, other ,"DIA_Rufus_HoratioDoEverything_03_04"); //Spójrz!
+	
+	AI_StopProcessInfos (self);
+	
+	B_LogEntry                     (CH1_BuntZbieraczy,"Gdy rozmawia³em z Rufusem, zaczê³o siê coœ dziaæ...");
+	
+	Npc_SetTarget (Org_846_Schlaeger, Bau_900_Ricelord);
+    AI_StartState (Org_846_Schlaeger, ZS_ATTACK, 1, "");
+	
+	Npc_SetTarget (Org_845_Schlaeger, Org_844_Lefty);
+    AI_StartState (Org_845_Schlaeger, ZS_ATTACK, 1, "");
+	
+	B_ChangeGuild (BAU_900_Ricelord, GIL_GRD);
+	B_ChangeGuild (Org_844_Lefty, GIL_GRD);
+};
+
+/////////////////////////////////////////////////
+// 	Lefty Die
+/////////////////////////////////////////////////
+
+INSTANCE DIA_Rufus_LeftyDie (C_INFO)
+{
+   npc          = Bau_903_Rufus;
+   nr           = 1;
+   condition    = DIA_Rufus_LeftyDie_Condition;
+   information  = DIA_Rufus_LeftyDie_Info;
+   permanent	= FALSE;
+   important	= TRUE;
+};
+
+FUNC INT DIA_Rufus_LeftyDie_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Rufus_HoratioDoEverything)) && (Npc_IsDead (Org_844_Lefty)) && (Npc_IsDead (BAU_900_Ricelord))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Rufus_LeftyDie_Info()
+{
+    AI_Output (self, other ,"DIA_Rufus_LeftyDie_03_01"); //Nie ¿yj¹...
+	AI_Output (other, self ,"DIA_Rufus_LeftyDie_15_02"); //Plan Horacego siê powiód³. 
+	AI_Output (self, other ,"DIA_Rufus_LeftyDie_03_03"); //A wiêc to koniec tyranii.
+	AI_Output (other, self ,"DIA_Rufus_LeftyDie_15_04"); //Najwidoczniej tak.
+	AI_Output (self, other ,"DIA_Rufus_LeftyDie_03_05"); //Kto teraz bêdzie zarz¹dza³ tym wszystkim?
+	AI_Output (other, self ,"DIA_Rufus_LeftyDie_15_06"); //Chyba pora na ciebie.
+	AI_Output (self, other ,"DIA_Rufus_LeftyDie_03_07"); //Horacy... On powinien siê tym wszystkim zaj¹æ. Tak bêdzie najlepiej.
+	AI_Output (self, other ,"DIA_Rufus_LeftyDie_03_08"); //Nie wiem jak ci dziêkowaæ. Od teraz wszystko bêdzie inaczej!
+	AI_Output (other, self ,"DIA_Rufus_LeftyDie_15_09"); //Wszystko bêdzie w porz¹dku...
+	AI_Output (self, other ,"DIA_Rufus_LeftyDie_03_10"); //Dok³adnie! Porozmawiamy póŸniej.
+	
+	AI_StopProcessInfos (self);
+	
+	MIS_BuntZbieraczy = LOG_SUCCESS;
+	Log_SetTopicStatus	(CH1_BuntZbieraczy,	LOG_SUCCESS);
+	B_LogEntry                     (CH1_BuntZbieraczy,"Ry¿owy Ksi¹¿ê i Lewus nie ¿yj¹. Zostali zamordowani przez w³asnych siepaczy. Plan Horacego siê powiód³. To on zostanie nowym naczelnikiem magazynu. Rufus zrezygnowa³ z przywództwa. Chyba chce znów wróciæ do spokojnej pracy.");
+
+	B_Story_AfterBauRebellion ();
+};
+
+/////////////////////////////////////////////////
+// 	Lefty Die, Ricelord stay alive
+/////////////////////////////////////////////////
+
+INSTANCE DIA_Rufus_LeftyDieRicelordAlive (C_INFO)
+{
+   npc          = Bau_903_Rufus;
+   nr           = 1;
+   condition    = DIA_Rufus_LeftyDieRicelordAlive_Condition;
+   information  = DIA_Rufus_LeftyDieRicelordAlive_Info;
+   permanent	= FALSE;
+   important	= TRUE;
+};
+
+FUNC INT DIA_Rufus_LeftyDieRicelordAlive_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Ricelord_Peace))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Rufus_LeftyDieRicelordAlive_Info()
+{
+    AI_Output (self, other ,"DIA_Rufus_LeftyDieRicelordAlive_03_01"); //Lewus nie ¿yje.
+	AI_Output (other, self ,"DIA_Rufus_LeftyDieRicelordAlive_15_02"); //Ale Ry¿owy Ksi¹¿ê tak. I przysta³ na wasze warunki.
+	AI_Output (self, other ,"DIA_Rufus_LeftyDieRicelordAlive_03_03"); //A wiêc to koniec tyranii?
+	AI_Output (other, self ,"DIA_Rufus_LeftyDieRicelordAlive_15_04"); //Myœlê, ¿e tak. Przynajmniej na jakiœ czas.
+	AI_Output (self, other ,"DIA_Rufus_LeftyDieRicelordAlive_03_05"); //Pozosta³o nam wracaæ do pracy i liczyæ na lepsze jutro.
+	AI_Output (other, self ,"DIA_Rufus_LeftyDieRicelordAlive_15_06"); //Ry¿owy Ksi¹¿ê te¿ chyba wyci¹gn¹³ z tego wszystkiego jak¹œ nauczkê.
+	AI_Output (self, other ,"DIA_Rufus_LeftyDieRicelordAlive_03_07"); //Niech tak bêdzie. Zaraz ka¿ê wszystkim wróciæ na pola. 
+	AI_Output (self, other ,"DIA_Rufus_LeftyDieRicelordAlive_03_08"); //Myœlisz, ¿e by³bym w stanie zast¹piæ Lewusa.
+	AI_Output (other, self ,"DIA_Rufus_LeftyDieRicelordAlive_15_09"); //Myœlê, ¿e tak. Wszystko bêdzie w porz¹dku.
+	
+	AI_StopProcessInfos (self);
+	
+	MIS_BuntZbieraczy = LOG_SUCCESS;
+	Log_SetTopicStatus	(CH1_BuntZbieraczy,	LOG_SUCCESS);
+	B_LogEntry                     (CH1_BuntZbieraczy,"Lewus nie ¿yje. Ry¿owy Ksi¹¿ê wróci³ do pracy w magazynie, a Zbieraczami zajmie siê Rufus. Wszystko chyba potoczy³o siê dobrze.");
+
+	B_Story_AfterBauRebellion ();
+	
+	var c_npc rufus; rufus = Hlp_GetNpc (Bau_903_Rufus);
+	Npc_ExchangeRoutine (rufus,"boss");
+};

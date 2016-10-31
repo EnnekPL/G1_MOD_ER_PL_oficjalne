@@ -54,12 +54,6 @@ FUNC VOID Rtn_goto_902 ()
 	TA_PickRice		(07,15,20,15,"NC_PATH54_02");
 };
 
-FUNC VOID Rtn_bunt_902 ()
-{
-	TA_Stand	    (20,15,07,15,"POCK"); //CF2
-	TA_Stand		(07,15,20,15,"POCK");
-};
-
 //REBEL
 FUNC VOID Rtn_rebel_902 ()
 {
@@ -67,6 +61,11 @@ FUNC VOID Rtn_rebel_902 ()
 	TA_Boss		(07,15,20,15,"NC_RICEBUNKER_091");
 };
 
+FUNC VOID Rtn_outside_902 ()
+{
+	TA_SitCampfire	    (20,15,07,15,"NC_PATH86_MOVEMENT"); //CF2
+	TA_SitCampfire		(07,15,20,15,"NC_PATH86_MOVEMENT");
+};
 
 
 
