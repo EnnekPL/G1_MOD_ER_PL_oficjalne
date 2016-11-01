@@ -1,0 +1,315 @@
+/*
+//========================================
+//-----------------> KillCzarnyDebil
+//========================================
+
+INSTANCE DIA_Saturas_KillCzarnyDebil (C_INFO)
+{
+   npc          = KDW_600_Saturas;
+   nr           = 1;
+   condition    = DIA_Saturas_KillCzarnyDebil_Condition;
+   information  = DIA_Saturas_KillCzarnyDebil_Info;
+   permanent	= FALSE;
+   description	= "Walczyłem z Czarnym Magiem!";
+};
+
+FUNC INT DIA_Saturas_KillCzarnyDebil_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Czarny_Mag_IMPORTANT))
+    && (Npc_IsDead(NON_3073_Czarny_Mag))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Saturas_KillCzarnyDebil_Info()
+{
+    AI_Output (other, self ,"DIA_Saturas_KillCzarnyDebil_15_01"); //Walczyłem z Czarnym Magiem!
+    AI_Output (other, self ,"DIA_Saturas_KillCzarnyDebil_15_02"); //Pokonałem go w walce!
+    AI_Output (other, self ,"DIA_Saturas_KillCzarnyDebil_15_03"); //Ten przebiegły czarodziej był wysłannikiem kogoś innego.
+    AI_Output (other, self ,"DIA_Saturas_KillCzarnyDebil_15_04"); //Podejrzewam, że to może mieć związek ze Śniącym.
+    AI_Output (other, self ,"DIA_Saturas_KillCzarnyDebil_15_05"); //Mag chciał przygotować świat na jego przyjście.
+    AI_Output (other, self ,"DIA_Saturas_KillCzarnyDebil_15_06"); //Wykorzystywał do tego dusze ludzi.
+    AI_Output (self, other ,"DIA_Saturas_KillCzarnyDebil_03_07"); //To okropne! Musimy czym prędzej się stąd wydostać.
+    AI_Output (other, self ,"DIA_Saturas_KillCzarnyDebil_15_08"); //Na razie nic nam nie grozi. Zadałem potężny cios Beliarowi.
+    AI_Output (self, other ,"DIA_Saturas_KillCzarnyDebil_03_09"); //Masz rację, ale to, że Czarny Mag nie żyje nie oznacza, że Kolonia jest już bezpieczna!
+    B_LogEntry                     (CH1_WlakaZczarym,"Czarny Mag nie żyje. Poinformowałem o tym Saturasa. Nie zmienia to jednak faktu, że nadal nie jesteśmy całkiem bezpieczni.");
+    Log_SetTopicStatus       (CH1_WlakaZczarym, LOG_SUCCESS);
+    MIS_WlakaZczarym = LOG_SUCCESS;
+
+    B_GiveXP (2500);
+    CreateInvItems (self, ItMiNugget, 1000);
+    B_GiveInvItems (self, other, ItMiNugget, 1000);
+};
+
+*/
+
+/*
+//========================================
+//-----------------> iFindStrangeMap
+//========================================
+
+INSTANCE DIA_Saturas_iFindStrangeMap (C_INFO)
+{
+   npc          = KDW_600_Saturas;
+   nr           = 1;
+   condition    = DIA_Saturas_iFindStrangeMap_Condition;
+   information  = DIA_Saturas_iFindStrangeMap_Info;
+   permanent	= FALSE;
+   description	= "Znalazłem dziwną mapę.";
+};
+
+FUNC INT DIA_Saturas_iFindStrangeMap_Condition()
+{
+    if (Npc_HasItems (other, ItWrWorldmapBlackMage) >=1) && (kapitel == 4)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Saturas_iFindStrangeMap_Info()
+{
+    AI_Output (other, self ,"DIA_Saturas_iFindStrangeMap_15_01"); //Znalazłem dziwną mapę.
+    AI_Output (self, other ,"DIA_Saturas_iFindStrangeMap_03_02"); //Co to za mapa? Pokaż mi ją.
+    B_UseFakeScroll ();
+    AI_Output (self, other ,"DIA_Saturas_iFindStrangeMap_03_03"); //Gdzie to znalazłeś?!
+    AI_Output (other, self ,"DIA_Saturas_iFindStrangeMap_15_04"); //Przy ciele jednego z ożywieńców, przy Opuszczonej Kopalni.
+    AI_Output (self, other ,"DIA_Saturas_iFindStrangeMap_03_05"); //Wygląda mi to bardzo niepokojąco. 
+    AI_Output (self, other ,"DIA_Saturas_iFindStrangeMap_03_06"); //Ta mapa została narysowana przez jakiegoś mrocznego sługę. Świadczą o tym znaki wypalone na papierze.
+    AI_Output (self, other ,"DIA_Saturas_iFindStrangeMap_03_07"); //Czerwony symbol zapewne oznacza miejsce spotkania.
+    AI_Output (self, other ,"DIA_Saturas_iFindStrangeMap_03_08"); //Nowe zagrożenie zawisło nad Kolonią i to ty musisz je powstrzymać.
+    AI_Output (other, self ,"DIA_Saturas_iFindStrangeMap_15_09"); //Akurat tym to mnie nie zaskoczyłeś.
+    AI_Output (self, other ,"DIA_Saturas_iFindStrangeMap_03_10"); //Udaj się w wyznaczone miejsce i sprawdź co tam na ciebie czeka.
+	if (Npc_KnowsInfo(hero,DIA_Xardas_KillBlacMageFix))
+	{
+	AI_Output (other, self ,"DIA_Saturas_iFindStrangeMap_15_11"); //Zaczekaj! 
+	AI_Output (other, self ,"DIA_Saturas_iFindStrangeMap_15_11"); //Coś sobie przypomniałem! O tym zagrożeniu ostrzegał mnie już Xardas.
+	AI_Output (self, other ,"DIA_Saturas_iFindStrangeMap_03_12"); //Uważasz, że jest w to zamieszany?
+	AI_Output (other, self ,"DIA_Saturas_iFindStrangeMap_15_13"); //Nie. Po prostu kazał mi się tym zająć.
+	AI_Output (self, other ,"DIA_Saturas_iFindStrangeMap_03_14"); //Idź więc!
+	};
+    MIS_WlakaZczarym = LOG_RUNNING;
+
+    Log_CreateTopic            (CH1_WlakaZczarym, LOG_MISSION);
+    Log_SetTopicStatus       (CH1_WlakaZczarym, LOG_RUNNING);
+    B_LogEntry                     (CH1_WlakaZczarym,"Okazuje się, że mapa, którą znalazłem zwiastuje nowe zagrożenie ze strony mrocznych sił. Nie pozostaje mi nic innego jak wyjść im na przeciw.");
+    B_LogEntry                     (CH1_blackMage,"Pokazałem mapę Saturasowi. Przyniosła mi nowe wyzwania i kłopoty. Widocznie taki już jest mój los.");
+    Log_SetTopicStatus       (CH1_blackMage, LOG_SUCCESS);
+    MIS_blackMage = LOG_SUCCESS;
+//OW_PATH_ABYSS_4_5 NON_3070_Nidas
+	Wld_InsertNpc				(NON_3070_Nidas  ,"OW_PATH_ABYSS_4_5");
+	
+    B_GiveXP (200);
+	BlackMageStart ();
+    AI_StopProcessInfos	(self);
+};
+
+*/
+/*
+//========================================
+//-----------------> bylekmadas
+//========================================
+
+INSTANCE DIA_Saturas_bylekmadas (C_INFO)
+{
+   npc          = KDW_600_Saturas;
+   nr           = 1;
+   condition    = DIA_Saturas_bylekmadas_Condition;
+   information  = DIA_Saturas_bylekmadas_Info;
+   permanent	= FALSE;
+   description	= "Byłem na miejscu spotkania.";
+};
+
+FUNC INT DIA_Saturas_bylekmadas_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Nidas_HELLO1))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Saturas_bylekmadas_Info()
+{
+    AI_Output (other, self ,"DIA_Saturas_bylekmadas_15_01"); //Byłem na miejscu spotkania.
+    AI_Output (self, other ,"DIA_Saturas_bylekmadas_03_02"); //I? Co tam widziałeś?
+    AI_Output (other, self ,"DIA_Saturas_bylekmadas_15_03"); //Spotkałem Nidasa. To jakiś wysłannik mrocznych sił.
+    AI_Output (other, self ,"DIA_Saturas_bylekmadas_15_04"); //Jest sługą niejakiego Czarnego Maga.
+    AI_Output (self, other ,"DIA_Saturas_bylekmadas_03_05"); //Musimy jak najszybciej dowiedzieć się co planują.
+    AI_Output (self, other ,"DIA_Saturas_bylekmadas_03_06"); //Udało ci się ustalić coś jeszcze?
+    B_LogEntry                     (CH1_WlakaZczarym,"Zaniosłem informację do Saturasa. Musimy jak najszybciej dowiedzieć się co planuje Czarny Mag i go powstrzymać.");
+	
+    B_GiveXP (500);
+
+    Info_ClearChoices		(DIA_Saturas_bylekmadas);
+    Info_AddChoice		(DIA_Saturas_bylekmadas, "Poszukiwacze podlegają Czarnemu Magowi.", DIA_Saturas_bylekmadas_Poszukiwacze);
+    Info_AddChoice		(DIA_Saturas_bylekmadas, "Czarny Mag to trudny przeciwnik.", DIA_Saturas_bylekmadas_CzarnyChuj);
+    Info_AddChoice		(DIA_Saturas_bylekmadas, "Mam tu pewną listę.", DIA_Saturas_bylekmadas_List);
+    Info_AddChoice		(DIA_Saturas_bylekmadas, "Tyle udało mi się ustalić.", DIA_Saturas_bylekmadas_ENDE);
+};
+
+FUNC VOID DIA_Saturas_bylekmadas_Poszukiwacze()
+{
+    AI_Output (other, self ,"DIA_Saturas_bylekmadas_Poszukiwacze_15_01"); //Poszukiwacze podlegają Czarnemu Magowi.
+    AI_Output (other, self ,"DIA_Saturas_bylekmadas_Poszukiwacze_15_02"); //To przez niego zjawili się w Kolonii. 
+    AI_Output (self, other ,"DIA_Saturas_bylekmadas_Poszukiwacze_03_03"); //Wiesz może czego szukają?
+    AI_Output (other, self ,"DIA_Saturas_bylekmadas_Poszukiwacze_15_04"); //Dowiedziałem się, że ich celem jest zbieranie dusz niewiernych.
+    AI_Output (other, self ,"DIA_Saturas_bylekmadas_Poszukiwacze_15_05"); //Nie wiem jednak po co im te dusze. 
+    AI_Output (self, other ,"DIA_Saturas_bylekmadas_Poszukiwacze_03_06"); //Musimy to jak najszybciej ustalić.
+
+    B_GiveXP (100);
+};
+
+FUNC VOID DIA_Saturas_bylekmadas_CzarnyChuj()
+{
+    AI_Output (other, self ,"DIA_Saturas_bylekmadas_CzarnyChuj_15_01"); //Czarny Mag to trudny przeciwnik do pokonania.
+    AI_Output (other, self ,"DIA_Saturas_bylekmadas_CzarnyChuj_15_02"); //Walka z nim nie będzie łatwa.
+    AI_Output (self, other ,"DIA_Saturas_bylekmadas_CzarnyChuj_03_03"); //Beliar zsyła swe sługi tylko, gdy ma to jakiś cel.
+    AI_Output (self, other ,"DIA_Saturas_bylekmadas_CzarnyChuj_03_04"); //Przypuszczam, że Czarny Mag jest wysłannikiem czegoś potężniejszego.
+    AI_Output (other, self ,"DIA_Saturas_bylekmadas_CzarnyChuj_15_05"); //Co masz na myśli?
+    AI_Output (self, other ,"DIA_Saturas_bylekmadas_CzarnyChuj_03_06"); //Ktoś ma nad nim władzę. Możliwe, że przygotowują się na przyjście tego kogoś.
+    AI_Output (other, self ,"DIA_Saturas_bylekmadas_CzarnyChuj_15_07"); //To bardzo prawdopodobne.
+    AI_Output (self, other ,"DIA_Saturas_bylekmadas_CzarnyChuj_03_08"); //Musimy jak najszybciej ustalić gdzie znajduje się Czarny Mag.
+  
+    B_GiveXP (100);
+};
+
+FUNC VOID DIA_Saturas_bylekmadas_List()
+{
+    AI_Output (other, self ,"DIA_Saturas_bylekmadas_List_15_01"); //Mam tu pewną listę.
+    AI_Output (self, other ,"DIA_Saturas_bylekmadas_List_03_02"); //Pokaż mi ją!
+    B_UseFakeScroll ();
+    AI_Output (self, other ,"DIA_Saturas_bylekmadas_List_03_03"); //To lista ofiar. Lista celów dla Poszukiwaczy.
+    AI_Output (self, other ,"DIA_Saturas_bylekmadas_List_03_04"); //Musisz jak najszybciej porozmawiać z tymi osobami.
+    AI_Output (self, other ,"DIA_Saturas_bylekmadas_List_03_05"); //Może dadzą ci jakąś wskazówkę.
+    AI_Output (other, self ,"DIA_Saturas_bylekmadas_List_15_06"); //Natychmiast wyruszę w drogę.
+  
+    B_GiveXP (200);
+};
+
+FUNC VOID DIA_Saturas_bylekmadas_ENDE()
+{
+    AI_Output (other, self ,"DIA_Saturas_bylekmadas_ENDE_15_01"); //Tyle udało mi się ustalić.
+    AI_Output (self, other ,"DIA_Saturas_bylekmadas_ENDE_03_02"); //Musisz jak najszybciej odnaleźć Czarnego Maga i powstrzymać jego działania.
+    B_LogEntry                     (CH1_WlakaZczarym,"Pora odnaleźć Czarnego Maga i stawić mu czoła. Uprzednio jednak muszę znaleźć jego kryjówkę.");
+    Info_ClearChoices		(DIA_Saturas_bylekmadas);
+    AI_StopProcessInfos	(self);
+};
+
+//========================================
+//-----------------> DajMiLek
+//========================================
+
+INSTANCE DIA_Saturas_DajMiLek (C_INFO)
+{
+   npc          = KDW_600_Saturas;
+   nr           = 1;
+   condition    = DIA_Saturas_DajMiLek_Condition;
+   information  = DIA_Saturas_DajMiLek_Info;
+   permanent	= FALSE;
+   description	= "Pilnie potrzebuję leku na zatrucia!";
+};
+
+FUNC INT DIA_Saturas_DajMiLek_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Avallach_Zabity))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Saturas_DajMiLek_Info()
+{
+    AI_Output (other, self ,"DIA_Saturas_DajMiLek_15_01"); //Pilnie potrzebuję leku na zatrucia!
+    AI_Output (self, other ,"DIA_Saturas_DajMiLek_03_02"); //Co takiego się stało?
+    AI_Output (other, self ,"DIA_Saturas_DajMiLek_15_03"); //Jeden z łowców Poszukiwaczy został zraniony zatrutą strzałą.
+    AI_Output (self, other ,"DIA_Saturas_DajMiLek_03_04"); //O, Adanosie! 
+    AI_Output (self, other ,"DIA_Saturas_DajMiLek_03_05"); //Pogadaj z Riordianem. Może coś ci uwarzy.
+
+    B_LogEntry                     (CH1_lekiDlaAva,"Riordian może mi uwarzyć miksturę. Muszę z nim pogadać.");
+
+    B_GiveXP (100);
+    AI_StopProcessInfos	(self);
+};*/
+/*
+//========================================
+//-----------------> OpuszczonaOdbitaNc
+//========================================
+
+INSTANCE DIA_Saturas_OpuszczonaOdbitaNc (C_INFO)
+{
+   npc          = KDW_600_Saturas;
+   nr           = 1;
+   condition    = DIA_Saturas_OpuszczonaOdbitaNc_Condition;
+   information  = DIA_Saturas_OpuszczonaOdbitaNc_Info;
+   permanent	= FALSE;
+   description	= "Odbiłem Opuszczoną Kopalnię.";
+};
+
+FUNC INT DIA_Saturas_OpuszczonaOdbitaNc_Condition()
+{
+    if (MIS_NC_Mine == LOG_RUNNING)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Saturas_OpuszczonaOdbitaNc_Info()
+{
+    AI_Output (other, self ,"DIA_Saturas_OpuszczonaOdbitaNc_15_01"); //Odbiłem Opuszczoną Kopalnię.
+    AI_Output (other, self ,"DIA_Saturas_OpuszczonaOdbitaNc_15_02"); //Cord kazał ci zaproponować, abyśmy wznowili w niej wydobycie.
+    AI_Output (self, other ,"DIA_Saturas_OpuszczonaOdbitaNc_03_03"); //To znacznie by nam pomogło.
+    AI_Output (self, other ,"DIA_Saturas_OpuszczonaOdbitaNc_03_04"); //Potrzebujemy ludzi do kopalni.
+    AI_Output (other, self ,"DIA_Saturas_OpuszczonaOdbitaNc_15_05"); //Wyślijmy kilku Szkodników.
+    AI_Output (self, other ,"DIA_Saturas_OpuszczonaOdbitaNc_03_06"); //Wydaje mi się, że to nie wystarczy. Potrzebujemy więcej rąk do pracy.
+    AI_Output (self, other ,"DIA_Saturas_OpuszczonaOdbitaNc_03_07"); //Może uda się namówić Bandytów do pomocy. 
+    AI_Output (self, other ,"DIA_Saturas_OpuszczonaOdbitaNc_03_08"); //Ich głównym celem jest zarobek. 
+    AI_Output (self, other ,"DIA_Saturas_OpuszczonaOdbitaNc_03_09"); //Idź do Quentina i zaproponuj mu, że jego ludzie dostaną czwartą część urobku.
+    AI_Output (other, self ,"DIA_Saturas_OpuszczonaOdbitaNc_15_10"); //Spróbuję się jakoś z nim dogadać.
+    B_LogEntry                     (CH4_NC_Mine,"Saturas kazał mi iść do Obozu Bandytów i poprosić Quentina o kilku robotników do kopalni.");
+
+    B_GiveXP (300);
+ //   AI_StopProcessInfos	(self);
+};
+//========================================
+//-----------------> PertractacjieDD
+//========================================
+
+INSTANCE DIA_Saturas_PertractacjieDD (C_INFO)
+{
+   npc          = KDW_600_Saturas;
+   nr           = 1;
+   condition    = DIA_Saturas_PertractacjieDD_Condition;
+   information  = DIA_Saturas_PertractacjieDD_Info;
+   permanent	= FALSE;
+   description	= "Dogadałem się z Quentinem.";
+};
+
+FUNC INT DIA_Saturas_PertractacjieDD_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Quentin_NegocjacieNc))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Saturas_PertractacjieDD_Info()
+{
+    AI_Output (other, self ,"DIA_Saturas_PertractacjieDD_15_01"); //Dogadałem się z Quentinem.
+    AI_Output (other, self ,"DIA_Saturas_PertractacjieDD_15_02"); //Nie był zbyt zadowolony, ale się zgodził.
+    AI_Output (self, other ,"DIA_Saturas_PertractacjieDD_03_03"); //Świetnie. 
+    AI_Output (self, other ,"DIA_Saturas_PertractacjieDD_03_04"); //Oto twoja zapłata.
+    CreateInvItems (self, ItMiNugget, 200);
+    B_GiveInvItems (self, other, ItMiNugget, 200);
+    B_LogEntry                     (CH4_NC_Mine,"Nowy Obóz dogadał się z Quentinem. Mamy zapewnione nowe źródło rudy małym kosztem.");
+    Log_SetTopicStatus       (CH4_NC_Mine, LOG_SUCCESS);
+    MIS_NC_Mine = LOG_SUCCESS;
+
+    B_GiveXP (300);
+};
+*/

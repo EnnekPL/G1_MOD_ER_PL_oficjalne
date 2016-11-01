@@ -11,13 +11,16 @@ instance BAU_903_Rufus (Npc_Default)
 	id 			=	903;
 
 	//-------- abilities --------
-	attribute[ATR_STRENGTH] =		20;
+	attribute[ATR_STRENGTH] =		40;
 	attribute[ATR_DEXTERITY] =		10;
 	attribute[ATR_MANA_MAX] =		0;
 	attribute[ATR_MANA] =			0;
-	attribute[ATR_HITPOINTS_MAX] =	88;
-	attribute[ATR_HITPOINTS] =		88;
+	attribute[ATR_HITPOINTS_MAX] =	150;
+	attribute[ATR_HITPOINTS] =		150;
 
+	protection	[PROT_BLUNT]		=	20;
+	protection	[PROT_EDGE]			=	20;
+	
 	//-------- visuals --------
 	// 				animations
 	Mdl_SetVisual		(self,"HUMANS.MDS");

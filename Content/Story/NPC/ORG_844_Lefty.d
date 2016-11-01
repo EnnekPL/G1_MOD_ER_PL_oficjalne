@@ -5,20 +5,23 @@ instance ORG_844_Lefty (Npc_Default)
 	name =						"Lewus";
 	Npctype =					NPCTYPE_MAIN;	
 	guild =						GIL_ORG;      
-	level =						8;
+	level =						10;
 	voice =						7;
 	id =						844;
 
 
 	//-------- abilities --------
 
-	attribute[ATR_STRENGTH] =		45;
+	attribute[ATR_STRENGTH] =		55;
 	attribute[ATR_DEXTERITY] =		45;
 	attribute[ATR_MANA_MAX] =		0;
 	attribute[ATR_MANA] =			0;
-	attribute[ATR_HITPOINTS_MAX] =	200;
-	attribute[ATR_HITPOINTS] =		200;
+	attribute[ATR_HITPOINTS_MAX] =	350;
+	attribute[ATR_HITPOINTS] =		350;
 
+	protection	[PROT_BLUNT]		=	23;
+	protection	[PROT_EDGE]			=	23;
+	
 	//-------- visuals --------
 	// 				animations
 	Mdl_SetVisual		(self,"HUMANS.MDS");
@@ -34,13 +37,13 @@ instance ORG_844_Lefty (Npc_Default)
 	//-------- Talente ----------
 
 	Npc_SetTalentSkill (self, NPC_TALENT_BOW,1);
-	Npc_SetTalentSkill (self, NPC_TALENT_1H,4);
+	Npc_SetTalentSkill (self, NPC_TALENT_1H,5);
 	
 
 	//-------- inventory --------   
 	                                 
 	CreateInvItems (self, ItKeLockpick,3);		
-	CreateInvItems(self, ItMiNugget, 13);
+	CreateInvItems(self, ItMiNugget, 150);
 	CreateInvItems (self, ItFoRice,6);
 	CreateInvItems (self, ItFoBooze, 3);
 	CreateInvItems (self, ItLsTorch, 2);

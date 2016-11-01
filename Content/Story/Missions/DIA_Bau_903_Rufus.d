@@ -572,6 +572,83 @@ FUNC VOID DIA_Rufus_LeftyDieRicelordAlive_Info()
 
 	B_Story_AfterBauRebellion ();
 	
+	B_GiveXP (1000);
+	
 	var c_npc rufus; rufus = Hlp_GetNpc (Bau_903_Rufus);
 	Npc_ExchangeRoutine (rufus,"boss");
+};
+
+/////////////////////////////////////////////////
+// 	Wanna Talk
+/////////////////////////////////////////////////
+
+INSTANCE DIA_Rufus_WannaTalk (C_INFO)
+{
+   npc          = Bau_903_Rufus;
+   nr           = 1;
+   condition    = DIA_Rufus_WannaTalk_Condition;
+   information  = DIA_Rufus_WannaTalk_Info;
+   permanent	= FALSE;
+   description	= "Lewus chce pertraktowaæ.";
+};
+
+FUNC INT DIA_Rufus_WannaTalk_Condition()
+{
+    if (Quest_TalkWithRufus == LOG_RUNNING)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Rufus_WannaTalk_Info()
+{
+    AI_Output (other, self ,"DIA_Rufus_WannaTalk_15_01"); //Lewus chce pertraktowaæ.
+    AI_Output (self, other ,"DIA_Rufus_WannaTalk_03_02"); //Hmm? Przystanie na warunki?
+	AI_Output (other, self ,"DIA_Rufus_WannaTalk_15_03"); //Proponuje ugodê. Dostaniecie dodatkow¹ porcjê miêsa tygodniowo i nie wyci¹gniemy ¿adnych konsekwencji od buntowników.
+	AI_Output (other, self ,"DIA_Rufus_WannaTalk_15_04"); //Wszystko wróci do normy.
+	AI_Output (self, other ,"DIA_Rufus_WannaTalk_03_04"); //Tfu. Nigdy!
+	
+	AI_StopProcessInfos (self);
+	
+	B_LogEntry                     (CH1_BuntZbieraczy,"Rufus odrzuci³ propozycjê pokojow¹ Lewusa. To nie brzmi za dobrze.");
+	
+	Quest_TalkWithRufus = LOG_SUCCESS;
+};
+
+/////////////////////////////////////////////////
+// 	Last Fight
+/////////////////////////////////////////////////
+
+INSTANCE DIA_Rufus_LastFight (C_INFO)
+{
+   npc          = Bau_903_Rufus;
+   nr           = 1;
+   condition    = DIA_Rufus_LastFight_Condition;
+   information  = DIA_Rufus_LastFight_Info;
+   permanent	= FALSE;
+   important	= TRUE;
+};
+
+FUNC INT DIA_Rufus_LastFight_Condition()
+{
+    if (Quest_KillRufus == LOG_RUNNING)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Rufus_LastFight_Info()
+{
+    AI_Output (self, other ,"DIA_Rufus_LastFight_03_01"); //To ty zniszczy³eœ wszystko, co budowa³em! Ty pogr¹¿y³eœ wszystkich Zbieraczy!
+	AI_Output (self, other ,"DIA_Rufus_LastFight_03_02"); //Ju¿ po tobie!
+	
+	AI_StopProcessInfos (self);
+	
+	Npc_SetPermAttitude (self, ATT_HOSTILE);
+    Npc_SetTarget (self, other);
+    AI_StartState (self, ZS_ATTACK, 1, "");
+	
+	B_LogEntry                     (CH1_BuntZbieraczy,"Rufus mnie zaatakowa³. Có¿, muszê wykonaæ polecenie Lewusa. To jedyne wyjœcie.");
 };

@@ -614,6 +614,8 @@ FUNC VOID DIA_Lefty_RufusIsMyFriend_Rebeliant ()
 	
 	Quest_GiveOffense = LOG_SUCCESS;
 	
+	Quest_TalkWithRufus = LOG_FAILED;
+	
 	B_LogEntry    		(CH1_BuntZbieraczy,"Stan¹³em po stronie buntowników. Ten wyzysk musi siê w wreszcie zakoñczyæ. Obrazi³em Leuwsa dziêki czemu zyska³em zaufanie Rufusa. Muszê ponownie z nim pogadaæ.");
 };
 
@@ -711,6 +713,210 @@ FUNC VOID DIA_Lefty_LastFight_Info()
 	B_ChangeGuild (BAU_924_Bauer, GIL_GRD);
 	B_ChangeGuild (BAU_927_Bauer, GIL_GRD);
 };
+
+///////////////////////////////////////////
+//		Rufus refused
+///////////////////////////////////////////
+
+INSTANCE DIA_Lefty_RufusRefused (C_INFO)
+{
+   npc          = Org_844_Lefty;
+   nr           = 1;
+   condition    = DIA_Lefty_RufusRefused_Condition;
+   information  = DIA_Lefty_RufusRefused_Info;
+   permanent	= FALSE;
+   description	= "Rufus odrzuci³ twoj¹ propozycjê.";
+};
+
+FUNC INT DIA_Lefty_RufusRefused_Condition()
+{
+    if (Quest_TalkWithRufus == LOG_SUCCESS)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Lefty_RufusRefused_Info()
+{
+    AI_Output (other, self ,"DIA_Lefty_RufusRefused_15_01"); //Rufus odrzuci³ twoj¹ propozycjê.
+    AI_Output (self, other ,"DIA_Lefty_RufusRefused_03_02"); //Dureñ, œci¹gn¹³ w³aœnie na siebie zgubê. 
+	AI_Output (other, self ,"DIA_Lefty_RufusRefused_15_03"); //Chcesz go zabiæ?
+	AI_Output (self, other ,"DIA_Lefty_RufusRefused_03_04"); //Dam mu jeszcze jedn¹ szansê. Spróbujemy 'rozbroiæ' ten bunt.
+	AI_Output (self, other ,"DIA_Lefty_RufusRefused_03_05"); //Zaczniemy od zredukowania liczby jego przyjació³. Masz tu dwieœcie bry³ek rudy.
+	AI_Output (self, other ,"DIA_Lefty_RufusRefused_03_06"); //Na pocz¹tek przekup czterech goœci. Ciekawe czy to go zmiêkczy.
+	
+	Quest_CorruptRebels = LOG_RUNNING;
+	
+	CreateInvItems (self, itminugget, 200);
+	B_GiveInvItems (self, hero, itminugget, 200);
+	
+	B_LogEntry    		(CH1_BuntZbieraczy,"Lewus da³ mi dwieœcie bry³ek rudy i kaza³ przekupiæ czterech dowolnych Zbieraczy.");
+};
+
+///////////////////////////////////////////
+//		Corrupted
+///////////////////////////////////////////
+
+INSTANCE DIA_Lefty_Corrupted (C_INFO)
+{
+   npc          = Org_844_Lefty;
+   nr           = 1;
+   condition    = DIA_Lefty_Corrupted_Condition;
+   information  = DIA_Lefty_Corrupted_Info;
+   permanent	= FALSE;
+   description	= "Przekupi³em kilku Zbieraczy.";
+};
+
+FUNC INT DIA_Lefty_Corrupted_Condition()
+{
+    if (Quest_CorruptRebels == LOG_SUCCESS) && (CorruptedBauers >= 4)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Lefty_Corrupted_Info()
+{
+    AI_Output (other, self ,"DIA_Lefty_Corrupted_15_01"); //Przekupi³em kilku Zbieraczy.
+    AI_Output (self, other ,"DIA_Lefty_Corrupted_03_02"); //Doskonale, to namiesza buntownikom w g³owach.
+	AI_Output (other, self ,"DIA_Lefty_Corrupted_15_03"); //Czy to wystarczy?
+	AI_Output (self, other ,"DIA_Lefty_Corrupted_03_04"); //Nie s¹dzê. Trzeba im bardziej namieszaæ. Dowiedzia³em siê, ¿e pewien cz³owiek z Kot³a potajemnie gromadzi broñ dla buntowników. 
+	AI_Output (self, other ,"DIA_Lefty_Corrupted_03_05"); //ZnajdŸ go i nastrasz. Powiedz, ¿e ma zniszczyæ ca³¹ dostawê, inaczej bêdzie mia³ k³opoty.
+	AI_Output (self, other ,"DIA_Lefty_Corrupted_03_06"); //Goœæ nazywa siê Senyan. Tak siê sk³ada, ¿e akurat jest w karczmie. Chyba przepija zarobion¹ rudê.
+	AI_Output (self, other ,"DIA_Lefty_Corrupted_03_07"); //To nie powinno byæ trudne.
+	
+	Quest_CorruptRebels = LOG_SUCCESS;
+	
+	Quest_TakeWeaponsDelivery = LOG_RUNNING;
+	
+	B_LogEntry    		(CH1_BuntZbieraczy,"Senyan to cz³owiek, który organizuje dostawy broni dla buntowników. Mam go odwiedziæ i nastraszyæ. Podobno jest w karczmie na jeziorze.");
+};
+
+///////////////////////////////////////////
+//		WeaponsDestroyed
+///////////////////////////////////////////
+
+INSTANCE DIA_Lefty_WeaponsDestroyed (C_INFO)
+{
+   npc          = Org_844_Lefty;
+   nr           = 1;
+   condition    = DIA_Lefty_WeaponsDestroyed_Condition;
+   information  = DIA_Lefty_WeaponsDestroyed_Info;
+   permanent	= FALSE;
+   description	= "Broñ nie trafi do buntowników.";
+};
+
+FUNC INT DIA_Lefty_WeaponsDestroyed_Condition()
+{
+    if (Quest_TakeWeaponsDelivery == LOG_SUCCESS)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Lefty_WeaponsDestroyed_Info()
+{
+    AI_Output (other, self ,"DIA_Lefty_WeaponsDestroyed_15_01"); //Broñ nie trafi do buntowników. Senyan ³atwo da³ siê przekonaæ.
+    AI_Output (self, other ,"DIA_Lefty_WeaponsDestroyed_03_02"); //Mówi³em, ¿e to nie bêdzie trudne. Czeka ciê jeszcze jedna wyprawa do karczmy.
+	AI_Output (other, self ,"DIA_Lefty_WeaponsDestroyed_15_03"); //Po co ty razem?
+	AI_Output (self, other ,"DIA_Lefty_WeaponsDestroyed_03_04"); //A to ciê rozbawi. Jeden z tych, których przekupi³eœ opowiedzia³ mi o planie Rufusa.
+	AI_Output (self, other ,"DIA_Lefty_WeaponsDestroyed_03_05"); //Wiesz, Homer dostarcza nam codziennie po trzy butelki ry¿ówki z karczmy. Buntownicy chcieli tê ry¿ówkê podmieniæ na 'specja³' Jeremiasza.
+	AI_Output (other, self ,"DIA_Lefty_WeaponsDestroyed_15_06"); //Co by tym osi¹gnêli?
+	AI_Output (self, other ,"DIA_Lefty_WeaponsDestroyed_03_07"); //Liczyli, ¿e pijani pójdziemy spaæ, a wtedy oni poder¿n¹ nam gard³a we œnie. Ha! Ha! Ha!
+	AI_Output (self, other ,"DIA_Lefty_WeaponsDestroyed_03_08"); //W ¿yciu wiêkszej g³upoty nie s³ysza³em. Zreszt¹ mam twardsz¹ g³owê, ni¿ im siê wydaje.
+	AI_Output (self, other ,"DIA_Lefty_WeaponsDestroyed_03_09"); //Zrobisz tak: pójdziesz do Torlofa i powiesz mu, ¿e Jeremiasz ma niezgodnoœæ w iloœci towaru.
+	AI_Output (self, other ,"DIA_Lefty_WeaponsDestroyed_03_10"); //Torlof jest Najemnikiem odpowiedzialnym za porz¹dek w karczmie. Gdyby Najemnicy tego nie pilnowali, by³by tam niez³y bajzel.
+	AI_Output (self, other ,"DIA_Lefty_WeaponsDestroyed_03_11"); //Silas kiedyœ czêstowa³ darmowym napitkiem wszystkich swoich kolesi. Ale to stare dzieje...
+	
+	Quest_EliminateJeremiah = LOG_RUNNING;
+	
+	B_LogEntry    		(CH1_BuntZbieraczy,"Buntownicy maj¹ jakiœ œmieszny plan zwi¹zany z alkoholem i upiciem ludzi Lewusa. Mam to ukróciæ wspominaj¹c Torlofowi o nieœcis³oœciach w karczmie.");
+};
+
+///////////////////////////////////////////
+//		TalkWithTorlof
+///////////////////////////////////////////
+
+INSTANCE DIA_Lefty_TalkWithTorlof (C_INFO)
+{
+   npc          = Org_844_Lefty;
+   nr           = 1;
+   condition    = DIA_Lefty_TalkWithTorlof_Condition;
+   information  = DIA_Lefty_TalkWithTorlof_Info;
+   permanent	= FALSE;
+   description	= "Rozmawia³em z Torlofem.";
+};
+
+FUNC INT DIA_Lefty_TalkWithTorlof_Condition()
+{
+    if (Quest_EliminateJeremiah == LOG_SUCCESS)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Lefty_TalkWithTorlof_Info()
+{
+    AI_Output (other, self ,"DIA_Lefty_TalkWithTorlof_15_01"); //Rozmawia³em z Torlofem.
+    AI_Output (self, other ,"DIA_Lefty_TalkWithTorlof_03_02"); //Zajmie siê tym?
+	AI_Output (other, self ,"DIA_Lefty_TalkWithTorlof_15_03"); //Tak.
+	AI_Output (self, other ,"DIA_Lefty_TalkWithTorlof_03_04"); //Wiêc koñczmy ten ca³y bajzel. Buntownicy prawie dali za wygran¹. Jedynie Rufus ich podburza.
+	AI_Output (self, other ,"DIA_Lefty_TalkWithTorlof_03_05"); //Trzeba siê go pozbyæ. Zabij go, a wtedy to wszystko siê wreszcie skoñczy.
+	AI_Output (self, other ,"DIA_Lefty_TalkWithTorlof_03_06"); //Nie chcia³ wykorzystaæ swojej szansy, jego sprawa! No, ruszaj siê. 
+	
+	Quest_KillRufus = LOG_RUNNING;
+	
+	B_LogEntry    		(CH1_BuntZbieraczy,"Moim ostatnim zadaniem jest zabicie Rufusa, przywódcy buntowników. Wed³ug Lewusa to zakoñczy tê ca³¹ farsê.");
+};
+
+///////////////////////////////////////////
+//		RufusDie
+///////////////////////////////////////////
+
+INSTANCE DIA_Lefty_RufusDie (C_INFO)
+{
+   npc          = Org_844_Lefty;
+   nr           = 1;
+   condition    = DIA_Lefty_RufusDie_Condition;
+   information  = DIA_Lefty_RufusDie_Info;
+   permanent	= FALSE;
+   description	= "Rufus nie ¿yje.";
+};
+
+FUNC INT DIA_Lefty_RufusDie_Condition()
+{
+    if (Quest_KillRufus == LOG_SUCCESS)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Lefty_RufusDie_Info()
+{
+    AI_Output (other, self ,"DIA_Lefty_RufusDie_15_01"); //Rufus nie ¿yje.
+    AI_Output (self, other ,"DIA_Lefty_RufusDie_03_02"); //Nareszcie koniec tej œmiesznej rebelii. Przyznam, ¿e mia³eœ swój du¿y wk³ad w tym, ¿e zginê³a tylko jedna osoba.
+	AI_Output (self, other ,"DIA_Lefty_RufusDie_03_03"); //Gdybym da³ moim ch³opcom woln¹ rêkê, pewnie wyr¿nêliby po³owê tych brudasów.
+	AI_Output (self, other ,"DIA_Lefty_RufusDie_03_04"); //A nowych porwalibyœmy z obozu przy Starej Kopalni. To mog³o byæ niez³e.
+	AI_Output (self, other ,"DIA_Lefty_RufusDie_03_05"); //Damy im dodatkow¹ porcjê miêsa w tygodniu i zobaczysz jacy bêd¹ zadowoleni, he he.
+	AI_Output (self, other ,"DIA_Lefty_RufusDie_03_06"); //Pamiêtaj, ¿e co z³ego to nie ja. Masz tu coœ za pomoc, ¿eby ci ³atwiej by³o zapamiêtaæ.
+	
+	CreateInvItems (self, itminugget, 300);
+	B_GiveInvItems (self, hero, itminugget, 300);
+	
+	B_GiveXP (750);
+	
+	MIS_BuntZbieraczy = LOG_SUCCESS;
+	Log_SetTopicStatus	(CH1_BuntZbieraczy,	LOG_SUCCESS);
+	B_LogEntry                     (CH1_BuntZbieraczy,"Po œmierci Rufusa wszyscy wrócili do pracy, a Lewus i Ry¿owy Ksi¹¿ê wci¹¿ zajmuj¹ siê pilnowaniem wszystkiego na polach ry¿owych.");
+
+	B_Story_AfterBauRebellion ();
+};
+
 
 //========================================
 //-----------------> JARVIS_CO_OP

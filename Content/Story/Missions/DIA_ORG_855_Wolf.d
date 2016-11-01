@@ -672,7 +672,7 @@ func VOID Info_Wolf_MCPLATESENOUGH_Info()
 	AI_Output 			(hero,self,"Info_Wolf_MCPLATESENOUGH_15_03"); //Jak d³ugo to zajmie?
 	AI_Output 			(self,hero,"Info_Wolf_MCPLATESENOUGH_09_04"); //Nie mam pojêcia. To coœ zupe³nie nowego. Jeszcze nigdy czegoœ takiego nie robi³em!
 	AI_Output 			(self,hero,"Info_Wolf_MCPLATESENOUGH_09_05"); //Bêdziesz musia³ zagl¹daæ do mnie od czasu do czasu.
-
+/*
 	//mod
 	AI_Output 			(self,hero,"Info_Wolf_MCPLATESENOUGH_09_06"); //Oczekuj¹c mo¿esz te¿ zajrzeæ na pola ry¿owe. Podobno dzieje siê tam coœ niepokoj¹cego.
 	AI_Output 			(self,hero,"Info_Wolf_MCPLATESENOUGH_09_07"); //Lewus nie mo¿e zapanowaæ nad sytuacj¹. Oczywiœcie nie musisz mu pomagaæ.
@@ -682,7 +682,7 @@ func VOID Info_Wolf_MCPLATESENOUGH_Info()
 	{
 	B_Story_BauRebellion ();
 	};
-
+*/
 	MCPlatesDelivered = TRUE;
 
 	B_LogEntry			(CH4_MCPlateArmor,	"Da³em Wilkowi 15 tych p³ytek z pancerzy. Teraz potrzebuje trochê czasu, ¿eby sporz¹dziæ z nich dla mnie now¹ zbrojê.");

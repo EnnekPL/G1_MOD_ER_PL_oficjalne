@@ -17,6 +17,8 @@ instance BAU_900_Ricelord (Npc_Default)
 	attribute[ATR_HITPOINTS_MAX]= 275;
 	attribute[ATR_HITPOINTS] 	= 275;
 
+	protection	[PROT_BLUNT]		=	25;
+	protection	[PROT_EDGE]			=	25;
 	//-------- visuals --------
 	// 				animations
 	Mdl_SetVisual		(self,"HUMANS.MDS");

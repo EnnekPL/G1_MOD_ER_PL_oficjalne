@@ -248,6 +248,45 @@ FUNC VOID DIA_Torlof_AxeFailed_Info()
 	self.aivar[AIV_DEALDAY] = Wld_GetDay()+1;
 };
 
+/////////////////////////////////////////////
+//		Confident
+/////////////////////////////////////////////
+
+INSTANCE DIA_Torlof_Confident (C_INFO)
+{
+   npc          = Sld_737_Torlof;
+   nr           = 1;
+   condition    = DIA_Torlof_Confident_Condition;
+   information  = DIA_Torlof_Confident_Info;
+   permanent	= FALSE;
+   description	= "W karczmie s¹ jakieœ nieœcis³oœci.";
+};
+
+FUNC INT DIA_Torlof_Confident_Condition()
+{
+    if (Quest_EliminateJeremiah == LOG_RUNNING)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Torlof_Confident_Info()
+{
+    AI_Output (other, self ,"DIA_Torlof_Confident_15_01"); //W karczmie s¹ jakieœ nieœcis³oœci.
+    AI_Output (self, other ,"DIA_Torlof_Confident_03_02"); //O czym ty mówisz?
+	AI_Output (other, self ,"DIA_Torlof_Confident_15_03"); //Jeremiasz coœ kombinuje. Wyda³ kilka butelek trunku buntownikom.
+    AI_Output (self, other ,"DIA_Torlof_Confident_03_04"); //Zap³aci mi od tego spory podatek. Dziêki, kolego. Zajmê siê tym.
+    AI_Output (self, other ,"DIA_Torlof_Confident_03_05"); //Masz tu coœ za fatygê. 
+    
+	CreateInvItems (self, itminugget, 25);
+	B_GiveInvItems (self, hero, itminugget, 25);
+	
+	Quest_EliminateJeremiah = LOG_SCUCCESS;
+	
+	B_LogEntry    		(CH1_BuntZbieraczy,"Torlof powiedzia³, ¿e zajmie siê spraw¹ karczmy i alkoholu wydanego buntownikom. Lewus na pewno siê z tego ucieszy. Muszê z nim znów pogadaæ.");
+};
+
 //========================================
 //-----------------> iHelpYou
 //========================================
@@ -327,6 +366,7 @@ FUNC VOID DIA_Torlof_Atack789_Info()
 	//SLD_707_Soeldner.aivar[AIV_PARTYMEMBER] = TRUE;
 	//Npc_ExchangeRoutine (SLD_707_Soeldner,"atak");   
 };
+
 //========================================
 //-----------------> SuccesS
 //========================================

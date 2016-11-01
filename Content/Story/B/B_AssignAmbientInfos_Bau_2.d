@@ -172,6 +172,42 @@ FUNC VOID Info_Bau_2_Wasser_Info()
 };
 	
 // *************************************************************************
+// 									CORRUPTION
+// *************************************************************************
+
+INSTANCE Info_Bau_2_Corruption(C_INFO) 
+{
+	nr			= 800;
+	condition	= Info_Bau_2_Corruption_Condition;
+	information	= Info_Bau_2_Corruption_Info;
+	permanent	= 1;
+	description = "(przekup)";
+};                       
+
+FUNC INT Info_Bau_2_Corruption_Condition()
+{
+	if	(self.aivar[AIV_MISSION2] == FALSE)
+	&& 	(Npc_HasItems(hero, itminugget)>=50)
+	&&  (Quest_CorruptRebels == LOG_RUNNING)
+	{
+		return 1;
+	};
+};
+
+FUNC VOID Info_Bau_2_Corruption_Info()
+{
+	AI_Output(other,self,"Info_Bau_2_Corruption_15_00"); //Mam dla ciebie trochê rudy. Dostaniesz j¹ jeœli od³¹czysz siê od buntowników.
+	AI_Output(self,other,"Info_Bau_2_Corruption_02_01"); //A niech ciê. Pe³na sakiewka. Dawaj j¹.
+	AI_Output(other,self,"Info_Bau_2_Corruption_15_00"); //Wracaj do pracy.
+	
+	B_GiveInvItems (hero,self, itminugget, 50);
+	Npc_RemoveInvItems (self, itminugget,50);
+	
+	self.aivar[AIV_MISSION2] = TRUE;
+	CorruptedBauers = CorruptedBauers + 1;
+};	
+	
+// *************************************************************************
 // -------------------------------------------------------------------------
 
 FUNC VOID B_AssignAmbientInfos_Bau_2(var c_NPC slf)
@@ -182,4 +218,5 @@ FUNC VOID B_AssignAmbientInfos_Bau_2(var c_NPC slf)
 	Info_Bau_2_DieLage.npc				= Hlp_GetInstanceID(slf);
 	
 	Info_Bau_2_Wasser.npc 				= Hlp_GetInstanceID(slf);
+	Info_Bau_2_Corruption.npc 			= Hlp_GetInstanceID(slf);
 };

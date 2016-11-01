@@ -77,6 +77,47 @@ FUNC VOID DIA_Senyan_JustTalk_Info()
 	AI_StopProcessInfos	(self);
 };
 
+//////////////////////////////////////////////
+//		Problems
+//////////////////////////////////////////////
+
+INSTANCE DIA_Senyan_Problems (C_INFO)
+{
+   npc          = SFB_1000_Senyan;
+   nr           = 1;
+   condition    = DIA_Senyan_Problems_Condition;
+   information  = DIA_Senyan_Problems_Info;
+   permanent	= FALSE;
+   description	= "Masz k³opoty.";
+};
+
+FUNC INT DIA_Senyan_Problems_Condition()
+{
+    if (Quest_TakeWeaponsDelivery == LOG_RUNNING)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Senyan_Problems_Info()
+{
+    AI_Output (other, self ,"DIA_Senyan_Problems_15_01"); //Masz k³opoty.
+    AI_Output (self, other ,"DIA_Senyan_Problems_03_02"); //Doprawdy? 
+    AI_Output (other, self ,"DIA_Senyan_Problems_15_03"); //Mówiê powa¿nie. Lewus wie, ¿e zbierasz broñ dla buntowników.
+	AI_Output (self, other ,"DIA_Senyan_Problems_03_04"); //O cholera. Nie rób mi krzywdy.
+	AI_Output (other, self ,"DIA_Senyan_Problems_15_05"); //Zniszcz tê broñ, rozumiesz?
+	AI_Output (self, other ,"DIA_Senyan_Problems_03_06"); //Dobra, zakopiê j¹.
+	AI_Output (other, self ,"DIA_Senyan_Problems_15_07"); //Nie, zniszcz. Oddaj j¹ kowalowi. Niech j¹ przetopi.
+	AI_Output (self, other ,"DIA_Senyan_Problems_03_08"); //W porz¹dku. Nie zostanie po niej nawet œlad. Przeproœ Lewusa ode mnie.
+	
+	Quest_TakeWeaponsDelivery = LOG_SUCCESS;
+	
+	B_LogEntry    		(CH1_BuntZbieraczy,"Uda³o mi siê wymusiæ na Senyanie pozbycie siê broni. Lewus bêdzie zadowolony.");
+};
+
+// GOR NA LIN
+
 //========================================
 //-----------------> GOR_NA_LIN
 //========================================
@@ -107,7 +148,6 @@ FUNC VOID DIA_Senyan_GOR_NA_LIN_Info()
     AI_Output (self, other ,"DIA_Senyan_GOR_NA_LIN_03_02"); //A co mnie on obchodzi? Daj mi spokój. Chcê siê napiæ.
     B_LogEntry                     (CH2_MissedSpy,"Senyan raczej nie jest chêtny do rozmowy. Mo¿e uda mi siê go jakoœ przekonaæ.");
 };
-
 
 //========================================
 //-----------------> ALCO
@@ -395,13 +435,14 @@ FUNC VOID DIA_Senyan_ALCO_CIOS()
     AI_Output (other, self ,"DIA_Senyan_ALCO_CIOS_15_25"); //Dziêki za informacje.
     AI_Output (self, other ,"DIA_Senyan_ALCO_CIOS_03_26"); //Dziêki za wódeczkê brachu. 
 	    B_LogEntry                     (CH2_MissedSpy,"Z trudem uda³o mi siê wyci¹gn¹æ informacje od pijanego jak bela Senyana.  Okazuje siê, ¿e Gor Na Lin za bardzo spoufali³ siê z ludŸmi Laresa. Szkodniki zabra³y mu pancerz i pewnie resztê ekwipunku. Stra¿nik zacz¹³ piæ samotnie. Niestety kret nie wie, sk¹d Lin bierze alkohol. Coœ wiêcej ma mi powiedzieæ Mazin. ");
-DIA_Senyan_ALCO.permanent = 0;
+	DIA_Senyan_ALCO.permanent = 0;
     B_GiveXP (150);
     Info_ClearChoices		(DIA_Senyan_ALCO);
     AI_StopProcessInfos	(self);
 };
 
-// *Script was make in Easy Dialog Maker (EDM)
+
+// CHAPTER 3
 
 //========================================
 //-----------------> Surprised
@@ -433,12 +474,7 @@ FUNC VOID DIA_Senyan_Surprised_Info()
     AI_StopProcessInfos (self);
 };
 
-
-
-
-
-
-
+// NOPE
 
 //========================================
 //-----------------> GoldMine

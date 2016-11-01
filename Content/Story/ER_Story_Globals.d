@@ -563,7 +563,7 @@ var int Rebel_HerosBoss; const int Boss_Rufus = 1; const int Boss_Lefty = 2;
 var int Rebel_Consequences; const int LeftyDeath = 1; const int LeftyAndLordDeath = 2; 
 //side questy od Lewusa
 var int Quest_TalkWithRufus;
-var int Quest_CorruptRebels;
+var int Quest_CorruptRebels; var int CorruptedBauers;
 var int Quest_TakeWeaponsDelivery;
 var int Quest_EliminateJeremiah;
 var int Quest_KillRufus;

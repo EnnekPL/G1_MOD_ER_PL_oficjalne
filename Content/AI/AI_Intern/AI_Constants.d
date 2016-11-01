@@ -70,6 +70,7 @@ const int 	AIV_ITEMSCHWEIN					= 42;   //MH: NSCs, die dieses Flag auf TRUE habe
 
 const int 	AIV_POISON						= 43;
 const int 	AIV_NPCISTRADER					= 44;
+
 const int AIV_TradesmanData = 48; //sprawdü czy ten aivar nie jest juø uøywany
 /********************************************************************
 **					NPC-Typ											*

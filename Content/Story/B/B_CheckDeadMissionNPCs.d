@@ -35,6 +35,15 @@ func void B_CheckDeadMissionNPCs ()
 			FoggyKilled = TRUE;
 		};
 	};
+	
+	if (Hlp_GetInstanceID(Bau_903_Rufus) ==  Hlp_GetInstanceID(self))
+	{
+		if (MIS_BuntZbieraczy == LOG_RUNNING)
+		{
+			B_LogEntry    		(CH1_BuntZbieraczy,"Rufus nie ¿yje. Bez niego buntownicy s¹ skoñczeni.");
+			Quest_KillRufus = LOG_SUCCESS;
+		};
+	};
 // ======================================================
 // GOTHIC EDYCJA ROZSZERZONA
 // BOSSOWIE - WPISY I PREMIE

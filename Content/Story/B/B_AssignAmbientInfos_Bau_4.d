@@ -164,6 +164,41 @@ FUNC VOID Info_Bau_4_Wasser_Info()
 };
 
 // *************************************************************************
+// 									CORRUPTION
+// *************************************************************************
+
+INSTANCE Info_Bau_4_Corruption(C_INFO)
+{
+	nr			= 800;
+	condition	= Info_Bau_4_Corruption_Condition;
+	information	= Info_Bau_4_Corruption_Info;
+	permanent	= 1;
+	description = "(przekup)";
+};                       
+
+FUNC INT Info_Bau_4_Corruption_Condition()
+{
+	if	(self.aivar[AIV_MISSION2] == FALSE)
+	&& 	(Npc_HasItems(hero, itminugget)>=50)
+	&&  (Quest_CorruptRebels == LOG_RUNNING)
+	{
+		return 1;
+	};
+};
+
+FUNC VOID Info_Bau_4_Corruption_Info()
+{
+	AI_Output(other,self,"Info_Bau_4_Corruption_15_00"); //Mam dla ciebie rudê od Lewusa. Dostaniesz j¹, jeœli wrócisz do pracy.
+	AI_Output(self,other,"Info_Bau_4_Corruption_12_02"); //Cholera, za tyle rudy bêdê pi³ z tydzieñ. Dziêki.
+	
+	B_GiveInvItems (hero,self, itminugget, 50);
+	Npc_RemoveInvItems (self, itminugget,50);
+	
+	self.aivar[AIV_MISSION2] = TRUE;
+	CorruptedBauers = CorruptedBauers + 1;
+};
+
+// *************************************************************************
 // -------------------------------------------------------------------------
 
 FUNC VOID B_AssignAmbientInfos_Bau_4(var c_NPC slf)
@@ -174,4 +209,5 @@ FUNC VOID B_AssignAmbientInfos_Bau_4(var c_NPC slf)
 	Info_Bau_4_DieLage.npc				= Hlp_GetInstanceID(slf);
 	
 	Info_Bau_4_Wasser.npc				= Hlp_GetInstanceID(slf);
+	Info_Bau_4_Corruption.npc			= Hlp_GetInstanceID(slf);
 };
