@@ -65,3 +65,4 @@
 - Fisk, Huno i Skorpion (od 4 rozdz.) s¹ nieœmiertelni
 - szept burzy wymaga 50 pkt. si³y
 - zmiany w iloœæi doœwiadczenia za pobicie losowych powtarzalnych npc
+- wskazówki w dialogach co do miejsca zamieszkania Eskela, Lorenzo i Togarda

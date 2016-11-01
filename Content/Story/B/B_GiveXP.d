@@ -118,12 +118,3 @@ func void B_UnconciousXP()
 		};
 	};
 };
-
-
-
-
-
-
-
-
-

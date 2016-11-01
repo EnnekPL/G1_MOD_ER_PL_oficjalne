@@ -344,11 +344,14 @@ FUNC VOID DIA_Snaf_LookingForWorkers_Info()
 	AI_Output (self, other ,"DIA_Snaf_LookingForWorkers_03_07"); //Wstêpnie przegl¹da je Lorenzo. Potem trafiaj¹ do Bartholo i Gomeza. Jeœli znaleziono coœ w Kopalni, raport z pewnoœci¹ to zawiera.
 	AI_Output (self, other ,"DIA_Snaf_LookingForWorkers_03_08"); //Móg³byœ zaryzykowaæ i wykraœæ ten raport z chaty Lorenzo ¿eby samemu siê przekonaæ. O z³odziejstwie to najlepiej pogadaæ z R¹czk¹.
 	AI_Output (other, self ,"DIA_Snaf_LookingForWorkers_15_09"); //To doœæ ryzykowne, a i ma³o pewne przy okazji. Mo¿e jakaœ alternatywna œcie¿ka?
-	AI_Output (self, other ,"DIA_Snaf_LookingForWorkers_03_10"); //IdŸ do Huno i poproœ go o pomoc. Za niewielk¹ op³at¹ mo¿e doda jakiegoœ gówna do odlewu, które zmieni odcieñ rudy na inny.
-	AI_Output (self, other ,"DIA_Snaf_LookingForWorkers_03_11"); //Stary Togard powinien siê nabraæ.
+	AI_Output (self, other ,"DIA_Snaf_LookingForWorkers_03_10"); //IdŸ do Huno i poproœ go o pomoc. Za niewielk¹ op³at¹ mo¿e doda jakiegoœ gówna do odlewu, które zmieni odcieñ rudy na inny. Stary Togard powinien siê nabraæ.
+	AI_Output (self, other ,"DIA_Snaf_LookingForWorkers_03_11"); //Togard pewnie krêci siê gdzieœ nieopodal swojej chaty. Idziesz po prostu do Po³udniowej Bramy i przechodzisz przez tê wyrwê co to jest w bramie po lewej stronie. 
 	AI_Output (other, self ,"DIA_Snaf_LookingForWorkers_15_12"); //Dziêki za pomoc.
-	B_LogEntry               (CH1_ZmianaLorenza,"Snaf zaproponowa³ mi Togarda jako nowego cz³owieka do Kopalni. Ponoæ jest on ekspertem od minera³ów i bardzo go interesuj¹. Muszê mu pokazaæ, ¿e w Kopalni jest coœ wartego jego uwagi. Mogê spróbowaæ oszukaæ go prosz¹c Huno o pomoc, albo iœæ do R¹czki i spróbowaæ ukraœæ raport z Kopalni od Lorenzo. Mo¿e w Kopalni faktycznie jest coœ ciekawego?");	
+	
+	B_LogEntry               (CH1_ZmianaLorenza,"Snaf zaproponowa³ mi Togarda jako nowego cz³owieka do Kopalni. Ponoæ jest on ekspertem od minera³ów i bardzo go one interesuj¹. Muszê mu pokazaæ, ¿e w Kopalni jest coœ wartego jego uwagi. Togard ma chatê tu¿ przy po³udniowej bramie Starego Obozu. Do chaty prowadzi wyrwa w œcianie owej bramy. Mogê spróbowaæ oszukaæ Togarda prosz¹c Huno o pomoc, albo iœæ do R¹czki i spróbowaæ ukraœæ raport z Kopalni od Lorenzo. Mo¿e w Kopalni faktycznie jest coœ ciekawego?"); 
 };
+
+
 
 //========================================
 //-----------------> INFOS

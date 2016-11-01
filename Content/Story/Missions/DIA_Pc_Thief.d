@@ -983,7 +983,7 @@ FUNC VOID Info_Diego_BringList_Offer_Info()
     
     Log_CreateTopic 	(CH1_BringList,LOG_MISSION);
     Log_SetTopicStatus	(CH1_BringList,LOG_RUNNING);
-    B_LogEntry    		(CH1_BringList,"Diego wys³a³ mnie do Starej Kopalni. Tam, od cz³owieka imieniem Ian, dostanê bardzo wa¿n¹ listê, która pod ¿adnym pozorem nie mo¿e wpaœæ w ³apy ludzi z Nowego Obozu. Zanim jednak siê tam udam, muszê zdobyæ przepustkê od Lorenzo.");
+    B_LogEntry    		(CH1_BringList,"Diego wys³a³ mnie do Starej Kopalni. Tam, od cz³owieka imieniem Ian, dostanê bardzo wa¿n¹ listê, która pod ¿adnym pozorem nie mo¿e wpaœæ w ³apy ludzi z Nowego Obozu. Zanim jednak siê tam udam, muszê zdobyæ przepustkê od Lorenzo. Jego chata znajduje siê tu¿ przy chacie Diego.");
     
 	VAR C_NPC Ian; Ian = Hlp_GetNpc (STT_301_IAN);	
 	CreateInvItem (STT_301_IAN, TheList);
