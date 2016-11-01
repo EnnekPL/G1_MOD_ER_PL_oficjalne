@@ -92,12 +92,12 @@ func void B_DeathXP()
 		// SN: keine XP für Finishing-Move!!!
 	}
 	else if (!self.aivar[AIV_WASDEFEATEDBYSC])
-	{
+	{	
 		PrintDebugNpc	(PD_ZS_CHECK,	"...Opfer ist entweder nicht bewußtlos oder kein Mensch!");
-		B_GiveXP (self.level * XP_PER_LEVEL_DEAD);
+		B_GiveXP (self.level * XP_PER_LEVEL_DEAD); 
 	};
 };
-
+		
 func void B_UnconciousXP()
 {
 	PrintDebugNpc	(PD_ZS_FRAME,	"B_UnconciousXP");
@@ -108,7 +108,14 @@ func void B_UnconciousXP()
 	||	!self.aivar[AIV_WASDEFEATEDBYSC]
 	{
 		PrintDebugNpc	(PD_ZS_CHECK,	"...erster Sieg!");
+		if (self.npctype == npctype_ambient) && (Npc_GetGuildAttitude (self,hero) != ATT_HOSTILE)
+		{
+		B_GiveXP (self.level);
+		}
+		else
+		{
 		B_GiveXP (self.level * XP_PER_LEVEL_DEAD);		// die vollen XP beim Sieg vergeben, da finishing-Move keine XPs mehr ergibt!
+		};
 	};
 };
 

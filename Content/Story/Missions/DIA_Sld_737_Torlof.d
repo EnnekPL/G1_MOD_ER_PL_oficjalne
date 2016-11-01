@@ -282,7 +282,7 @@ FUNC VOID DIA_Torlof_Confident_Info()
 	CreateInvItems (self, itminugget, 25);
 	B_GiveInvItems (self, hero, itminugget, 25);
 	
-	Quest_EliminateJeremiah = LOG_SCUCCESS;
+	Quest_EliminateJeremiah = LOG_SUCCESS;
 	
 	B_LogEntry    		(CH1_BuntZbieraczy,"Torlof powiedzia³, ¿e zajmie siê spraw¹ karczmy i alkoholu wydanego buntownikom. Lewus na pewno siê z tego ucieszy. Muszê z nim znów pogadaæ.");
 };

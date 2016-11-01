@@ -7,7 +7,7 @@ instance VLK_538_Huno (Npc_Default)
 	guild =							GIL_VLK;      
 	level =							12;
 	
-	
+	flags		= NPC_FLAG_IMMORTAL;
 	voice =							9;
 	id =							538;
 

@@ -243,9 +243,13 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		Log_SetTopicStatus       (CH3_ScarMurder, LOG_FAILED);
 		MIS_ScarMurder = LOG_FAILED;
 		};
-		B_ExchangeRoutine (GRD_205_Scorpio,"BANNISHED");
-		B_ChangeGuild    (GRD_205_Scorpio,GIL_NONE);  
-		B_SetPermAttitude	(GRD_205_Scorpio,	ATT_NEUTRAL);
+		
+		var C_NPC scorpio; scorpio 	= Hlp_GetNpc (GRD_205_Scorpio);
+		
+		B_ExchangeRoutine (scorpio,"BANNISHED");
+		B_ChangeGuild    (scorpio,GIL_NONE);  
+		B_SetPermAttitude	(scorpio,	ATT_NEUTRAL);
+		scorpio.flags = NPC_FLAG_IMMORTAL;
 		
 		
 		B_ChangeGuild    (STT_336_Cavalorn,GIL_NONE);

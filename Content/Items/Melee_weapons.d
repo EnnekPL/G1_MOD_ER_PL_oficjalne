@@ -1926,7 +1926,7 @@ INSTANCE ItMw_1H_Sword_Broad_03 (C_Item)
 	range    			=  	61;		
 
 	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	28;
+	cond_value[2]  		= 	50;
 	visual 				=	"ItMw_1H_Sword_Broad_03.3DS";
 
 	description			= name;

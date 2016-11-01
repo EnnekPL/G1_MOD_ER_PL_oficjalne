@@ -5,7 +5,7 @@ instance STT_311_Fisk (Npc_Default)
 	npctype 	=		NPCTYPE_MAIN;
 	guild 		=		GIL_STT;
 	level 		=		7;
-		
+	flags 		= 		NPC_FLAG_IMMORTAL;	
 	voice 		=		12;
 	id 			=		311;
 		
