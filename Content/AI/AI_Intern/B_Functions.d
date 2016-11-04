@@ -294,6 +294,40 @@ func void B_DropWeapon(var C_NPC slf)
 //	Guckt sich um und sammelt die Waffe, die am nächsten liegt wieder auf.
 //	VORSICHT: Löscht die globale Variable 'item' !
 //////////////////////////////////////////////////////////////////////////
+
+func void B_RegainDroppedWeapon(var C_Npc slf)
+{
+	Npc_PerceiveAll(slf);
+	if(Wld_DetectItem(slf,ITEM_KAT_NF))
+	{
+		if(!Npc_IsPlayer(slf) && Npc_CanSeeItem(slf,item) && !Npc_HasEquippedMeleeWeapon(slf))
+		{
+			PrintDebugNpc(PD_ZS_Check,"...NSC hebt seine Waffen wieder auf!");
+			AI_TakeItem(slf,item);
+			AI_EquipBestMeleeWeapon(slf);
+		};
+	};
+	Npc_PerceiveAll(slf);
+	if(Wld_DetectItem(slf,ITEM_KAT_FF))
+	{
+		if(!Npc_IsPlayer(slf) && Npc_CanSeeItem(slf,item) && !Npc_HasEquippedRangedWeapon(slf))
+		{
+			PrintDebugNpc(PD_ZS_Check,"...NSC hebt seine Waffen wieder auf!");
+			AI_TakeItem(slf,item);
+			AI_EquipBestRangedWeapon(slf);
+		};
+	};
+	Npc_PerceiveAll(slf);
+	if(Wld_DetectItem(slf,ITEM_KAT_MUN))
+	{
+		if(!Npc_IsPlayer(slf) && Npc_CanSeeItem(slf,item))
+		{
+			PrintDebugNpc(PD_ZS_Check,"...NSC hebt seine Waffen wieder auf!");
+			AI_TakeItem(slf,item);
+		};
+	};
+};
+/*
 func void B_RegainDroppedWeapon(var C_NPC slf)
 {
 	//-------- fallgelassene Waffe aufheben... --------
@@ -310,7 +344,7 @@ func void B_RegainDroppedWeapon(var C_NPC slf)
 		};
 	};
 };
-
+*/
 //////////////////////////////////////////////////////////////////////////
 //	B_RegainDroppedArmor
 //	=====================

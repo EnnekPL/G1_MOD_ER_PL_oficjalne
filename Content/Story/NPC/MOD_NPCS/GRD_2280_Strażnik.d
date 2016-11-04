@@ -45,5 +45,5 @@ daily_routine = Rtn_start_2280;
 FUNC VOID Rtn_start_2280 ()
 {
 TA_GuardPatrol (09,00,12,45,"LOCATION_11_09");
-TA_GuardPatrol (12,45,06,00,"LOCATION_11_09");
+TA_GuardPatrol (12,45,09,00,"LOCATION_11_09");
 };

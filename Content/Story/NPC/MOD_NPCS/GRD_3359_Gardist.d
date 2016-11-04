@@ -43,8 +43,6 @@ daily_routine = Rtn_start_3359;
 };
 FUNC VOID Rtn_start_3359 ()
 {
-TA_Guard (09,00,12,45,"PIC4");
-TA_GuardPassage (09,00,12,45,"PIC4");
-TA_GuardPatrol (09,00,12,45,"PIC4");
-TA_BodyGuard (09,00,12,45,"PIC4");
+TA_Guard (09,00,18,00,"PIC4");
+TA_Guard (18,00,09,00,"PIC4");
 };

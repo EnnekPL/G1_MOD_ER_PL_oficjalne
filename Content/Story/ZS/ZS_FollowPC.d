@@ -45,6 +45,26 @@ func void ZS_FollowPC()
 
 func int ZS_FollowPC_Loop()
 {
+	PrintDebugNpc(PD_TA_LOOP,"ZS_FollowPC_Loop");
+	PrintGlobals(PD_MST_DETAIL);
+	if(C_BodyStateContains(hero,BS_WALK))
+	{
+		AI_SetWalkMode(self,NPC_WALK);
+	}
+	else if(!C_BodyStateContains(self,BS_SWIM))
+	{
+		AI_SetWalkMode(self,NPC_RUN);
+	};
+	if(Npc_GetDistToNpc(self,hero) > HAI_DIST_FOLLOWPC)
+	{
+		AI_GotoNpc(self,hero);
+	}
+	else
+	{
+		B_SmartTurnToNpc(self,hero);
+	};
+	return LOOP_CONTINUE;
+/*
 	PrintDebugNpc		(PD_TA_LOOP,	"ZS_FollowPC_Loop");
 	PrintGlobals		(PD_MST_DETAIL);
 
@@ -64,6 +84,7 @@ func int ZS_FollowPC_Loop()
 	
 	AI_Wait				(self,	1);
 	return				LOOP_CONTINUE;
+	*/
 };
 
 func void ZS_FollowPC_End()

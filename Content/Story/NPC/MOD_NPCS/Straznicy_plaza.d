@@ -159,7 +159,7 @@ FUNC VOID Rtn_start_5030 ()
 {
 B_KillNPC (GRD_5030_Gardist);
 TA_StandAround (09,00,12,45,"OW_PATH_200");
-TA_StandAround (09,00,12,45,"OW_PATH_200");
+TA_StandAround (12,45,09,00,"OW_PATH_200");
 };
 instance GRD_5031_Gardist (Npc_Default)
 {
@@ -207,5 +207,5 @@ daily_routine = Rtn_start_5031;
 FUNC VOID Rtn_start_5031 ()
 {
 TA_StandAround (09,00,12,45,"PATH_FOGTOWER_CLIFF01");
-TA_StandAround (09,00,12,45,"PATH_FOGTOWER_CLIFF01");
+TA_StandAround (12,45,09,00,"PATH_FOGTOWER_CLIFF01");
 };

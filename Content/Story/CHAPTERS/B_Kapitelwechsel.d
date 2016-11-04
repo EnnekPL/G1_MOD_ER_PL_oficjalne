@@ -535,6 +535,20 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		//-----------------ARTO ***fix*** 1.2
 		Npc_ExchangeRoutine (EBR_102_Arto,"kox");
 		B_KillNpc			(EBR_102_Arto);
+		
+		//------ MUD --------
+		var C_NPC mud; mud 	= Hlp_GetNpc (Vlk_574_Mud);
+		
+		B_ExchangeRoutine (mud,"away");
+		B_ChangeGuild    (mud,GIL_NONE);  
+		B_SetPermAttitude	(mud,	ATT_NEUTRAL);
+		
+		var C_NPC jim; jim 	= Hlp_GetNpc (STT_2077_Jim);
+		
+		B_ExchangeRoutine (jim,"away");
+		B_ChangeGuild    (jim,GIL_NONE);  
+		B_SetPermAttitude	(jim,	ATT_NEUTRAL);
+		
 		//-------------------- Poszukiwacze ---------------------------
 		// NIEAKTUALNE ---------------------------------------------
 		/*

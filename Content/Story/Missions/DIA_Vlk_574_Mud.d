@@ -49,7 +49,7 @@ INSTANCE DIA_Mud_FirstEXIT (C_INFO)
 
 FUNC INT DIA_Mud_FirstEXIT_Condition()
 {
-	if (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist)
+	if (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (kapitel < 4)
 	{
 		return 1;
 	};
@@ -99,7 +99,7 @@ INSTANCE DIA_Mud_ShutUp (C_INFO)
 FUNC INT DIA_Mud_ShutUp_Condition()
 {
 	
-	if (Mud_NerveRealized == TRUE)
+	if (Mud_NerveRealized == TRUE) && (kapitel < 4)
 	{
 		return 1;
 	};
@@ -128,7 +128,10 @@ INSTANCE DIA_Mud_GetLost (C_INFO)
 
 FUNC INT DIA_Mud_GetLost_Condition()
 {
+	if (kapitel < 4)
+	{
 	return 1;
+	};
 };
 
 FUNC VOID DIA_Mud_GetLost_Info()
@@ -153,7 +156,7 @@ INSTANCE DIA_Mud_Defeated (C_INFO)
 
 FUNC INT DIA_Mud_Defeated_Condition()
 {
-	if (self.aivar[AIV_WASDEFEATEDBYSC]==TRUE)
+	if (self.aivar[AIV_WASDEFEATEDBYSC]==TRUE) && (kapitel < 4)
 	{
 		return 1;
 	};
@@ -185,7 +188,7 @@ INSTANCE DIA_Mud_Nerve_0 (C_INFO)
 
 FUNC INT DIA_Mud_Nerve_0_Condition()
 {
-	if ( (Mud_Nerve==0) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE ))	{	return 1;	};
+	if ( (Mud_Nerve==0) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE )) && (kapitel < 4)	{	return 1;	};
 };
 
 FUNC VOID DIA_Mud_Nerve_0_Info()
@@ -212,7 +215,7 @@ INSTANCE DIA_Mud_Nerve_1 (C_INFO)
 
 FUNC INT DIA_Mud_Nerve_1_Condition()
 {
-	if ( (Mud_Nerve==1) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE ))	{	return 1;	};
+	if ( (Mud_Nerve==1) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE )) && (kapitel < 4)	{	return 1;	};
 };
 
 FUNC VOID DIA_Mud_Nerve_1_Info()
@@ -240,7 +243,7 @@ INSTANCE DIA_Mud_Nerve_2 (C_INFO)
 
 FUNC INT DIA_Mud_Nerve_2_Condition()
 {
-	if ( (Mud_Nerve==2) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE ))	{	return 1;	};
+	if ( (Mud_Nerve==2) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE )) && (kapitel < 4)	{	return 1;	};
 };
 
 FUNC VOID DIA_Mud_Nerve_2_Info()
@@ -267,7 +270,7 @@ INSTANCE DIA_Mud_Nerve_3 (C_INFO)
 
 FUNC INT DIA_Mud_Nerve_3_Condition()
 {
-	if ( (Mud_Nerve==3) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE ))	{	return 1;	};
+	if ( (Mud_Nerve==3) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE )) && (kapitel < 4)	{	return 1;	};
 };
 
 FUNC VOID DIA_Mud_Nerve_3_Info()
@@ -294,7 +297,7 @@ INSTANCE DIA_Mud_Nerve_4 (C_INFO)
 
 FUNC INT DIA_Mud_Nerve_4_Condition()
 {
-	if ( (Mud_Nerve==4) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE ))	{	return 1;	};
+	if ( (Mud_Nerve==4) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE ))	&& (kapitel < 4) {	return 1;	};
 };
 
 FUNC VOID DIA_Mud_Nerve_4_Info()
@@ -321,7 +324,7 @@ INSTANCE DIA_Mud_Nerve_5 (C_INFO)
 
 FUNC INT DIA_Mud_Nerve_5_Condition()
 {
-	if ( (Mud_Nerve==5) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE ))	{	return 1;	};
+	if ( (Mud_Nerve==5) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE )) && (kapitel < 4)	{	return 1;	};
 };
 
 FUNC VOID DIA_Mud_Nerve_5_Info()
@@ -348,7 +351,7 @@ INSTANCE DIA_Mud_Nerve_6 (C_INFO)
 
 FUNC INT DIA_Mud_Nerve_6_Condition()
 {
-	if ( (Mud_Nerve==6) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE ))	{	return 1;	};
+	if ( (Mud_Nerve==6) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE ))	&& (kapitel < 4) {	return 1;	};
 };
 
 FUNC VOID DIA_Mud_Nerve_6_Info()
@@ -375,7 +378,7 @@ INSTANCE DIA_Mud_Nerve_7 (C_INFO)
 
 FUNC INT DIA_Mud_Nerve_7_Condition()
 {
-	if ( (Mud_Nerve==7) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE ))	{	return 1;	};
+	if ( (Mud_Nerve==7) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE ))	&& (kapitel < 4) {	return 1;	};
 };
 
 FUNC VOID DIA_Mud_Nerve_7_Info()
@@ -403,7 +406,7 @@ INSTANCE DIA_Mud_Nerve_8 (C_INFO)
 
 FUNC INT DIA_Mud_Nerve_8_Condition()
 {
-	if ( (Mud_Nerve==8) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE ))	{	return 1;	};
+	if ( (Mud_Nerve==8) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE )) && (kapitel < 4)	{	return 1;	};
 };
 
 FUNC VOID DIA_Mud_Nerve_8_Info()
@@ -430,7 +433,7 @@ INSTANCE DIA_Mud_Nerve_9 (C_INFO)
 
 FUNC INT DIA_Mud_Nerve_9_Condition()
 {
-	if ( (Mud_Nerve==9) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE ))	{	return 1;	};
+	if ( (Mud_Nerve==9) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE )) && (kapitel < 4)	{	return 1;	};
 };
 
 FUNC VOID DIA_Mud_Nerve_9_Info()
@@ -457,7 +460,7 @@ INSTANCE DIA_Mud_Nerve_10 (C_INFO)
 
 FUNC INT DIA_Mud_Nerve_10_Condition()
 {
-	if ( (Mud_Nerve==10) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE ))	{	return 1;	};
+	if ( (Mud_Nerve==10) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE ))	&& (kapitel < 4) {	return 1;	};
 };
 
 FUNC VOID DIA_Mud_Nerve_10_Info()
@@ -484,7 +487,7 @@ INSTANCE DIA_Mud_Nerve_11 (C_INFO)
 
 FUNC INT DIA_Mud_Nerve_11_Condition()
 {
-	if ( (Mud_Nerve==11) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE ))	{	return 1;	};
+	if ( (Mud_Nerve==11) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE ))	&& (kapitel < 4) {	return 1;	};
 };
 
 FUNC VOID DIA_Mud_Nerve_11_Info()
@@ -511,7 +514,7 @@ INSTANCE DIA_Mud_Nerve_12 (C_INFO)
 
 FUNC INT DIA_Mud_Nerve_12_Condition()
 {
-	if ( (Mud_Nerve==12) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE ))	{	return 1;	};
+	if ( (Mud_Nerve==12) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE ))	&& (kapitel < 4) {	return 1;	};
 };
 
 FUNC VOID DIA_Mud_Nerve_12_Info()
@@ -538,7 +541,7 @@ INSTANCE DIA_Mud_Nerve_13 (C_INFO)
 
 FUNC INT DIA_Mud_Nerve_13_Condition()
 {
-	if ( (Mud_Nerve==13) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE ))	{	return 1;	};
+	if ( (Mud_Nerve==13) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE )) && (kapitel < 4)	{	return 1;	};
 };
 
 FUNC VOID DIA_Mud_Nerve_13_Info()
@@ -565,7 +568,7 @@ INSTANCE DIA_Mud_Nerve_14 (C_INFO)
 
 FUNC INT DIA_Mud_Nerve_14_Condition()
 {
-	if ( (Mud_Nerve==14) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE ))	{	return 1;	};
+	if ( (Mud_Nerve==14) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE ))	&& (kapitel < 4) {	return 1;	};
 };
 
 FUNC VOID DIA_Mud_Nerve_14_Info()
@@ -593,7 +596,7 @@ INSTANCE DIA_Mud_Nerve_15 (C_INFO)
 
 FUNC INT DIA_Mud_Nerve_15_Condition()
 {
-	if ( (Mud_Nerve==15) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE ))	{	return 1;	};
+	if ( (Mud_Nerve==15) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE )) && (kapitel < 4)	{	return 1;	};
 };
 
 FUNC VOID DIA_Mud_Nerve_15_Info()
@@ -620,7 +623,7 @@ INSTANCE DIA_Mud_Nerve_16 (C_INFO)
 
 FUNC INT DIA_Mud_Nerve_16_Condition()
 {
-	if ( (Mud_Nerve==16) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE ))	{	return 1;	};
+	if ( (Mud_Nerve==16) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE ))	&& (kapitel < 4) {	return 1;	};
 };
 
 FUNC VOID DIA_Mud_Nerve_16_Info()
@@ -647,7 +650,7 @@ INSTANCE DIA_Mud_Nerve_17 (C_INFO)
 
 FUNC INT DIA_Mud_Nerve_17_Condition()
 {
-	if ( (Mud_Nerve==17) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE ))	{	return 1;	};
+	if ( (Mud_Nerve==17) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE ))	&& (kapitel < 4) {	return 1;	};
 };
 
 FUNC VOID DIA_Mud_Nerve_17_Info()
@@ -674,7 +677,7 @@ INSTANCE DIA_Mud_Nerve_18 (C_INFO)
 
 FUNC INT DIA_Mud_Nerve_18_Condition()
 {
-	if ( (Mud_Nerve==18) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE ))	{	return 1;	};
+	if ( (Mud_Nerve==18) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE ))	&& (kapitel < 4) {	return 1;	};
 };
 
 FUNC VOID DIA_Mud_Nerve_18_Info()
@@ -701,7 +704,7 @@ INSTANCE DIA_Mud_Nerve_19 (C_INFO)
 
 FUNC INT DIA_Mud_Nerve_19_Condition()
 {
-	if ( (Mud_Nerve==19) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE ))	{	return 1;	};
+	if ( (Mud_Nerve==19) && (Npc_RefuseTalk(self)==FALSE) && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (self.aivar[AIV_WASDEFEATEDBYSC] == FALSE )) && (kapitel < 4)	{	return 1;	};
 };
 
 FUNC VOID DIA_Mud_Nerve_19_Info()
@@ -710,4 +713,46 @@ FUNC VOID DIA_Mud_Nerve_19_Info()
 	Npc_SetRefuseTalk(self, NerveSec);
 	Mud_Nerve = 0;
 	AI_StopProcessInfos	( self );
+};
+
+///////////////////////////////////////////////
+// Chapter 4
+///////////////////////////////////////////////
+
+INSTANCE DIA_Mud_FirstIn4Ch (C_INFO)
+{
+	npc			= Vlk_574_Mud;
+	nr 			= 1;
+	condition	= DIA_Mud_FirstIn4Ch_Condition;
+	information	= DIA_Mud_FirstIn4Ch_Info;
+	permanent	= 0;
+	important 	= 1;
+};                       
+
+FUNC INT DIA_Mud_FirstIn4Ch_Condition()
+{
+	if (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist) && (kapitel >= 4)
+	{
+		return 1;
+	};
+};
+
+FUNC VOID DIA_Mud_FirstIn4Ch_Info()
+{
+	AI_Output (self, other,"DIA_Mud_FirstIn4Ch_07_00"); //Hej, kolego! Dobrze ciê widzieæ ¿ywego.
+	if (Npc_KnowsInfo (hero,DIA_Mud_Defeated))
+	{
+	AI_Output (self, other,"DIA_Mud_FirstIn4Ch_07_01"); //Zapomnijmy o naszej dawnej sprzeczce. Nie ¿ywiê urazy.
+	}
+	else
+	{
+	AI_Output (self, other,"DIA_Mud_FirstIn4Ch_07_02"); //Pamiêtasz jak siê kiedyœ przyjaŸniliœmy? Ale by³o fajnie. 
+	};
+	AI_Output (self, other,"DIA_Mud_FirstIn4Ch_07_03"); //Tym razem nie bêdê ci móg³ towarzyszyæ. W tym paskudnym miejscu zrobi³o siê zbyt groŸnie. 
+	AI_Output (self, other,"DIA_Mud_FirstIn4Ch_07_04"); //Myœlê, ¿e sam sobie poradzisz... skoro ¿yjesz. 
+	AI_Output (self, other,"DIA_Mud_FirstIn4Ch_07_05"); //To naprawdê fajne!
+	AI_Output (self, other,"DIA_Mud_FirstIn4Ch_07_06"); //Ja tu jeszcze trochê zostanê. Pomyœlê, popatrzê... No wiesz! 
+	AI_Output (other, self,"DIA_Mud_FirstIn4Ch_12_07"); //Jasne. Powodzenia.
+	
+	AI_StopProcessInfos	(self);
 };

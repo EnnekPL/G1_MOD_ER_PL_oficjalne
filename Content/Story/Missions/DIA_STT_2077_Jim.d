@@ -38,7 +38,10 @@ INSTANCE DIA_JIM_Hello (C_INFO)
 
 FUNC INT DIA_JIM_Hello_Condition()
 {
+	if (kapitel < 4)
+	{
 	return 1;
+	};
 };
 
 FUNC VOID DIA_JIM_Hello_Info()
@@ -68,7 +71,7 @@ INSTANCE DIA_JIM_Frau (C_INFO)
 
 FUNC INT DIA_JIM_Frau_Condition()
 {
-	if (Npc_KnowsInfo (hero,DIA_JIM_Hello)) &&  (Npc_GetTrueGuild(hero) != GIL_KDF) 
+	if (Npc_KnowsInfo (hero,DIA_JIM_Hello)) &&  (Npc_GetTrueGuild(hero) != GIL_KDF) && (kapitel < 4)
 	{
 		return 1;
 	};
@@ -106,7 +109,7 @@ INSTANCE DIA_JIM_PERM (C_INFO)
 
 FUNC INT DIA_JIM_PERM_Condition()
 {
-	if (Npc_KnowsInfo (hero,DIA_JIM_Hello))
+	if (Npc_KnowsInfo (hero,DIA_JIM_Hello)) && (kapitel < 4)
 	{
 		return 1;
 	};
@@ -193,7 +196,7 @@ INSTANCE DIA_Jim_HELP_WARRIOR (C_INFO)
 
 FUNC INT DIA_Jim_HELP_WARRIOR_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Gerard_HELP)) && (Npc_KnowsInfo (hero,DIA_JIM_Hello))
+    if (Npc_KnowsInfo (hero, DIA_Gerard_HELP)) && (Npc_KnowsInfo (hero,DIA_JIM_Hello)) && (kapitel < 4)
     {
     return TRUE;
     };
@@ -256,7 +259,7 @@ INSTANCE DIA_Jim_Church (C_INFO)
 FUNC INT DIA_Jim_Church_Condition()
 {
     if (Jim_odrzucilem == FALSE)
-    && (Npc_KnowsInfo (hero, DIA_Jim_HELP_WARRIOR))
+    && (Npc_KnowsInfo (hero, DIA_Jim_HELP_WARRIOR)) && (kapitel < 4)
     {
     return TRUE;
     };
@@ -390,7 +393,7 @@ INSTANCE DIA_Jim_Zlecenie (C_INFO)
 
 FUNC INT DIA_Jim_Zlecenie_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_JIM_Hello))
+    if (Npc_KnowsInfo (hero, DIA_JIM_Hello)) && (kapitel < 4)
     {
     return TRUE;
     };
@@ -437,6 +440,7 @@ FUNC INT DIA_Jim_QUEST_END1_Condition()
     && (Npc_IsDead(NON_7504_Opetany_Kopacz))
     && (Npc_IsDead(NON_7503_Opetany_Kopacz))
 	&& (Npc_IsDead(NON_7502_Opetany_Kopacz))
+	&& (kapitel < 4)
 	
     {
     return TRUE;
@@ -503,4 +507,39 @@ B_LogEntry   (CH1_ZlecenieJima,"Ledwie wspomnia³em o kamieniu, który znalaz³em n
  B_GiveInvItems (other, self, StoneOfKnowledge, 1);
  Npc_RemoveInvItems (self, StoneOfKnowledge, 1);
  Info_ClearChoices		(DIA_Jim_QUEST_END1);
+};
+
+/////////////////////////////////////////////////
+//	Hi Again
+/////////////////////////////////////////////////
+
+INSTANCE DIA_JIM_HiAgain (C_INFO)
+{
+	npc			= STT_2077_Jim;
+	nr			= 1;
+	condition	= DIA_JIM_HiAgain_Condition;
+	information	= DIA_JIM_HiAgain_Info;
+	permanent	= 0;
+	description = "Co tu robisz?";
+};                       
+
+FUNC INT DIA_JIM_HiAgain_Condition()
+{
+	if (kapitel >= 4)
+	{
+	return 1;
+	};
+};
+
+FUNC VOID DIA_JIM_HiAgain_Info()
+{	
+	AI_Output (other, self,"DIA_JIM_HiAgain_15_00"); //Co tu robisz?
+	AI_Output (self, other,"DIA_JIM_HiAgain_08_01"); //Uciekam przed œmierci¹. To chyba jasne!
+	AI_Output (self, other,"DIA_JIM_HiAgain_08_02"); //Nie mam zamiaru skoñczyæ jak Magowie Ognia. 
+	AI_Output (self, other,"DIA_JIM_HiAgain_08_03"); //Zreszt¹, nie chcê o tym mówiæ. To co siê sta³o mn¹ wstrz¹snê³o. 
+	AI_Output (self, other,"DIA_JIM_HiAgain_08_04"); //Ten akt barbarzyñstwa... nie wiem jak o tym mówiæ.
+	AI_Output (self, other,"DIA_JIM_HiAgain_08_05"); //Zabra³em z obozu co siê da³o. Jeœli chcesz, sprzedam ci co nieco za niewygórowan¹ cenê.
+	
+	Log_CreateTopic (GE_TraderOW,LOG_NOTE);
+	B_LogEntry		(GE_TraderOW,"Jim wyniós³ siê ze Starego Obozu. Od teraz przebywa w ma³ym obozie myœliwskim Toma. Wci¹¿ ma nieco towaru na handel. Warto o nim pamiêtaæ."); 
 };

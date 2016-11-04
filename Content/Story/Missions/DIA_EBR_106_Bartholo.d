@@ -315,9 +315,9 @@ FUNC VOID DIA_Bartholo_HANDEL_ZEW_Info()
     AI_Output (other, self ,"DIA_Bartholo_HANDEL_ZEW_15_01"); //Rzekomo odpowiadasz za handel ze Œwiatem Zewnêtrznym.
     AI_Output (self, other ,"DIA_Bartholo_HANDEL_ZEW_03_02"); //To prawda, potrzebujesz czegoœ?
     AI_Output (other, self ,"DIA_Bartholo_HANDEL_ZEW_15_03"); //Mam pewne pazury topielca, których kupnem móg³by byæ zainteresowany kupiec Lutero z Khorinis...
-    AI_Output (self, other ,"DIA_Bartholo_HANDEL_ZEW_03_04"); //Przynieœ mi butelkê jakiegoœ porz¹dnego trunku, wtedy zajmê siê twoj¹ spraw¹.
+    AI_Output (self, other ,"DIA_Bartholo_HANDEL_ZEW_03_04"); //Przynieœ mi butelkê jakiegoœ porz¹dnego trunku, wtedy zajmê siê twoj¹ spraw¹. Byle nie tego œwiñstwa z bagien.  
     AI_Output (other, self ,"DIA_Bartholo_HANDEL_ZEW_15_05"); //Postaram siê coœ za³atwiæ. 
-    B_LogEntry                     (CH1_SzponyTopielca,"Bartholo przeka¿e informacje kupcowi Lutero, jeœli przyniosê mu jakiœ wyj¹tkowy trunek.");
+    B_LogEntry                     (CH1_SzponyTopielca,"Bartholo przeka¿e informacje kupcowi Lutero, jeœli przyniosê mu jakiœ wyj¹tkowy trunek. WyraŸnie jednak nie chcia³ s³yszeæ o winie produkowanym na bagnach. Lepiej chyba spróbowaæ w Nowym Obozie.");
     AI_StopProcessInfos	(self);
 };
 

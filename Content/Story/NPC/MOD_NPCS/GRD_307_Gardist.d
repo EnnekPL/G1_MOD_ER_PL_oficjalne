@@ -43,8 +43,8 @@ daily_routine = Rtn_start_307;
 };
 FUNC VOID Rtn_start_307 ()
 {
-TA_Guard (09,00,12,45,"OC_ROUND_22_CF_1"); 
-TA_GuardPassage (09,00,12,45,"OC_ROUND_22_CF_1");
-TA_GuardPatrol (09,00,12,45,"OC_ROUND_22_CF_1");
-TA_Stand (09,00,12,45,"OC_ROUND_22_CF_1");
+TA_Guard 		(09,00,12,45,"OC_ROUND_22_CF_1"); 
+TA_GuardPassage (12,45,09,00,"OC_ROUND_22_CF_1");
+//TA_GuardPatrol (09,00,12,45,"OC_ROUND_22_CF_1");
+//TA_Stand (09,00,12,45,"OC_ROUND_22_CF_1");
 };

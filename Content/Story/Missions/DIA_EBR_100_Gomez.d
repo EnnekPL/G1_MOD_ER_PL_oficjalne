@@ -559,7 +559,7 @@ instance  DIA_EBR_100_Gomez_Wait4SC (C_INFO)
 
 FUNC int  DIA_EBR_100_Gomez_Wait4SC_Condition()
 {	
-	if	ExploreSunkenTower
+	if	ExploreSunkenTower && (Npc_GetDistToNpc(self,hero) < ZivilAnquatschDist)
 	{
 		return TRUE;
 	};

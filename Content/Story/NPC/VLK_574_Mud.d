@@ -59,6 +59,11 @@ func void Rtn_Follow_574 ()
 	TA_FollowPC	(16,00,23,00,"OCR_HUT_13");
 };
 
+func void rtn_away_574 ()
+{
+	TA_SitCampfire	(23,00,16,00,"OW_HUN_TOM_MUD_CH4");
+	TA_SitCampfire	(16,00,23,00,"OW_HUN_TOM_MUD_CH4");
+};
 
 
 

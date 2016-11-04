@@ -66,3 +66,6 @@
 - szept burzy wymaga 50 pkt. si³y
 - zmiany w iloœæi doœwiadczenia za pobicie losowych powtarzalnych npc
 - wskazówki w dialogach co do miejsca zamieszkania Eskela, Lorenzo i Togarda
+- UP: NPC u¿ywaj¹ drzwi w³aœciwie
+- UP: NPC zbieraj¹ swoje bronie, jeœli odzyskaj¹ przytomnoœæ po przegranej walce
+- UP: NPC nie ka¿¹ siê przepuszczaæ, jeœli zostali wczeœniej pokonani przez gracza

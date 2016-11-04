@@ -1,3 +1,35 @@
+
+
+func void B_MoveMob()
+{
+	var string door;
+	PrintDebugNpc(PD_ZS_FRAME,"B_MoveMob");
+	door = Npc_GetDetectedMob(self);
+	PrintDebugNpc(PD_ZS_Check,ConcatStrings("...mob: ",door));
+	if(Hlp_StrCmp(door,"DOOR"))
+	{
+		PrintDebugNpc(PD_ZS_Check,"...mob is a door!");
+		if(Wld_GetMobState(self,door) == 0)
+		{
+			PrintDebugNpc(PD_ZS_Check,"...Türe wurde noch NICHT versucht zu öffnen!");
+			Npc_ClearAIQueue(self);
+			AI_UseMob(self,door,1);
+			AI_UseMob(self,door,-1);
+		}
+		else
+		{
+			PrintDebugNpc(PD_ZS_Check,"...Türe wird schon versucht zu öffnen -> geht wohl nicht!");
+			Npc_PercDisable(self,PERC_MOVEMOB);
+			self.aivar[AIV_MOVINGMOB] = 0;
+			AI_StartState(self,ZS_WaitForPassage,0,"");
+		};
+		AI_ContinueRoutine(self);
+	};
+};
+
+
+
+/*
 func void B_MoveMob ()
 // 5.5.00 Hier muß noch die Abfrage auf Türen rein, wenn sie fertig ist
 {
@@ -31,4 +63,4 @@ func void B_MoveMob ()
 			AI_StartState	(self,	ZS_WaitForPassage ,0, "");
 		};
 	};
-};
+};*/

@@ -1268,7 +1268,9 @@ FUNC VOID INIT_SUB_FREEMINECAMP ()
 //*******************************************************************************
 FUNC VOID STARTUP_SUB_SURFACE ()
 {
-
+	Wld_InsertNpc				(Outlander,"WP_INTRO_WI16");
+	Wld_InsertNpc				(Radex,"WP_INTRO_WI16");
+	
 	//nowe potwory ER 1.4.5
 	Wld_InsertNpc				(DarkGolem,"OW_PATH_07_06");
 	Wld_InsertNpc				(youngtroll,"ER_YOUNGTROLL1");

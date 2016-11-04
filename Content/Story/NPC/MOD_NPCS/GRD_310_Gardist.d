@@ -43,8 +43,8 @@ daily_routine = Rtn_start_7788;
 };
 FUNC VOID Rtn_start_7788 ()
 {
-TA_Guard (09,00,12,45,"SPAWN_GRD9");
-TA_GuardPassage (09,00,12,45,"SPAWN_GRD9");
-TA_GuardPatrol (09,00,12,45,"SPAWN_GRD9");
-TA_BodyGuard (09,00,12,45,"SPAWN_GRD9");
+TA_Guard 		(09,00,12,45,"SPAWN_GRD9");
+TA_GuardPassage (12,45,09,00,"SPAWN_GRD9");
+//TA_GuardPatrol (09,00,12,45,"SPAWN_GRD9");
+//TA_BodyGuard (09,00,12,45,"SPAWN_GRD9");
 };

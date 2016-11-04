@@ -567,6 +567,11 @@ FUNC VOID Info_BaalLukor_DOOR_Info()
 	AI_Output			(self, other,"Info_BaalLukor_DOOR_13_02"); //Moje moce magiczne s¹ wci¹¿ bardzo os³abione.
 	AI_Output			(self, other,"Info_BaalLukor_DOOR_13_03"); //U¿yj orkowego zaklêcia teleportacji! W³aœnie tutaj, przed t¹ œcian¹.
 	
+	AI_Output			(self, other,"Info_BaalLukor_DOOR_13_04"); //WeŸ ten zwój przeciwko o¿ywieñcom! Nie wiadomo co czeka za œcian¹.
+	
+	CreateInvItem (self,ItArScrollDestroyUndead );
+	B_GiveInvItems (self, hero, ItArScrollDestroyUndead,1);
+	
 	AI_StopProcessInfos	(self);
 };
 

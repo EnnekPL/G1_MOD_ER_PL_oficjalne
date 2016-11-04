@@ -50,10 +50,8 @@ TA_SitAround (18,00,09,99,"MOROK");
 };
 FUNC VOID Rtn_atak_7894 ()
 {
-TA_GuidePC (09,00,12,45,"TPL_ALCHEMY");
-TA_GuidePC (12,45,15,22,"TPL_ALCHEMY");
-TA_GuidePC (15,22,18,00,"TPL_ALCHEMY");
-TA_GuidePC (18,00,09,99,"TPL_ALCHEMY");
+TA_GuidePC (09,00,18,00,"TPL_ALCHEMY");
+TA_GuidePC (18,00,09,00,"TPL_ALCHEMY");
 };
 instance GRD_7895_Patter (Npc_Default)
 {
@@ -108,9 +106,7 @@ TA_SitAround (18,00,09,00,"MOROK4");
 FUNC VOID Rtn_atak_7895 ()
 {
 TA_FollowPC (09,00,12,45,"MOROK3");
-TA_FollowPC (12,45,15,22,"MOROK3");
-TA_FollowPC (15,22,18,00,"MOROK3");
-TA_FollowPC (18,00,09,00,"MOROK4");
+TA_FollowPC (12,45,09,00,"MOROK3");
 };
 // pipl 1, 2, 3
 instance GRD_7896_Gardist (Npc_Default)
@@ -166,9 +162,8 @@ TA_PlayTune (18,00,09,00,"PIPL2"); //fp dodany
 FUNC VOID Rtn_atak_7896 ()
 {
 TA_FollowPC (09,00,12,45,"PIPL2");
-TA_FollowPC (12,45,15,22,"PIPL2");
-TA_FollowPC (15,22,18,00,"PIPL2");
-TA_FollowPC (18,00,09,00,"PIPL2");
+TA_FollowPC (12,45,09,00,"PIPL2");
+
 };
 instance GRD_7897_Gardist (Npc_Default)
 {
@@ -223,9 +218,7 @@ TA_Sleep (18,00,09,00,"SPAC2");
 FUNC VOID Rtn_atak_7897 ()
 {
 TA_FollowPC (09,00,12,45,"PIPL1");
-TA_FollowPC (12,45,15,22,"PIPL3");
-TA_FollowPC (15,22,18,00,"PIPL3");
-TA_FollowPC (18,00,09,00,"SPAC2");
+TA_FollowPC (12,45,09,00,"PIPL1");
 };
 instance GRD_7898_Gardist (Npc_Default)
 {
@@ -279,10 +272,8 @@ TA_Sleep (18,00,09,00,"SPAC1");
 };
 FUNC VOID Rtn_atak_7898 ()
 {
-TA_FollowPC (09,00,12,45,"PIPL3");
-TA_FollowPC (12,45,15,22,"PIPL1");
-TA_FollowPC (15,22,18,00,"PIPL1");
-TA_FollowPC (18,00,09,00,"SPAC1");
+TA_FollowPC (09,00,12,45,"PIPL1");
+TA_FollowPC (12,45,09,00,"PIPL1");
 };
 instance TPL_7899_Templer (Npc_Default)
 {

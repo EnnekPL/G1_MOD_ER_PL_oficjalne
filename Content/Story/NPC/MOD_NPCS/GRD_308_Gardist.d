@@ -43,8 +43,8 @@ daily_routine = Rtn_start_308;
 };
 FUNC VOID Rtn_start_308 ()
 {
-TA_Guard (09,00,12,45,"OC_ROUND_22_CF_1");  //OC_ROUND_22_CF_2_MOVMENT
-TA_GuardPatrol (09,00,12,45,"OC_ROUND_22_CF_1");
-TA_BodyGuard (09,00,12,45,"OC_ROUND_22_CF_1");
-TA_GuardPalisade (09,00,12,45,"OC_ROUND_22_CF_1");
+TA_Guard 		(09,00,12,45,"OC_ROUND_22_CF_1");  //OC_ROUND_22_CF_2_MOVMENT
+TA_GuardPatrol 	(12,45,09,00,"OC_ROUND_22_CF_1");
+//TA_BodyGuard (09,00,12,45,"OC_ROUND_22_CF_1");
+//TA_GuardPalisade (09,00,12,45,"OC_ROUND_22_CF_1");
 };
