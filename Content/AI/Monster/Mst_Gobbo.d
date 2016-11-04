@@ -88,7 +88,7 @@ INSTANCE GreenGobboSword (Mst_Default_GreenGobbo)
 
 INSTANCE YGobbo (Mst_Default_GreenGobbo)
 {
-	name							=	"MÅ‚ody goblin";
+	name							=	"M³ody goblin";
 	Set_GreenGobbo_Visuals();
 	level							=	Level_FirtsMonester;
 	fight_tactic					=	FAI_MONSTER_COWARD;
