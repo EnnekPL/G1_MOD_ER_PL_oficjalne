@@ -7,7 +7,10 @@ func void ZS_Dead ()
 
 	self.aivar[AIV_PLUNDERED] = FALSE;
 	
-
+	if (Hlp_GetInstanceID(Outlander) ==  Hlp_GetInstanceID(self))
+	{
+	ExitGame();
+	};
 	
 	//-------- Erfahrungspunkte für den Spieler ? --------
 	//SN: VORSICHT, auch in B_MagicHurtNpc() vorhanden!
