@@ -198,7 +198,7 @@ FUNC VOID Info_Bau_2_Corruption_Info()
 {
 	AI_Output(other,self,"Info_Bau_2_Corruption_15_00"); //Mam dla ciebie trochê rudy. Dostaniesz j¹ jeœli od³¹czysz siê od buntowników.
 	AI_Output(self,other,"Info_Bau_2_Corruption_02_01"); //A niech ciê. Pe³na sakiewka. Dawaj j¹.
-	AI_Output(other,self,"Info_Bau_2_Corruption_15_00"); //Wracaj do pracy.
+	AI_Output(other,self,"Info_Bau_2_Corruption_15_02"); //Wracaj do pracy.
 	
 	B_GiveInvItems (hero,self, itminugget, 50);
 	Npc_RemoveInvItems (self, itminugget,50);

@@ -5,7 +5,7 @@ instance STT_2077_Jim (Npc_Default)
 	npctype 	=		NPCTYPE_MAIN;
 	guild 		=		GIL_STT;
 	level 		=		10;
-	
+	flags		= NPC_FLAG_IMMORTAL;
 	
 	voice 		=		12;
 	id 			=		2077;
