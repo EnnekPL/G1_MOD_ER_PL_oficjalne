@@ -473,7 +473,7 @@ instance DIA_Lefty_AbouRebelion (C_INFO)
 
 FUNC int DIA_Lefty_AbouRebelion_Condition()
 {
-	if	(Mod_Story_RunRebelInNC == TRUE) && (Quest_TalkWithRufus != LOG_RUNNING) && (MIS_BuntZbieraczy != LOG_SUCCESS)
+	if	(Mod_Story_RunRebelInNC == TRUE) && (Quest_TalkWithRufus != LOG_RUNNING) && (MIS_BuntZbieraczy != LOG_SUCCESS) && (!Npc_KnowsInfo (hero,DIA_Rufus_Rebel))
 	{
 		return 1;
 	};
@@ -569,8 +569,8 @@ FUNC VOID DIA_Lefty_RufusIsMyFriend_Reputation ()
  
 FUNC VOID DIA_Lefty_RufusIsMyFriend_Guys ()
 {
-	AI_Output (other, self ,"DIA_Lefty_RufusIsMyFriend_Reputation_15_01"); //A czy ty bez swoich siepaczy by³byœ w stanie zrobiæ to samo?
-	AI_Output (self, other ,"DIA_Lefty_RufusIsMyFriend_Reputation_03_02"); //Broni¹ jednych s¹ pieœci, a innych - umys³. Dostrze¿ to!
+	AI_Output (other, self ,"DIA_Lefty_RufusIsMyFriend_Guys_15_01"); //A czy ty bez swoich siepaczy by³byœ w stanie zrobiæ to samo?
+	AI_Output (self, other ,"DIA_Lefty_RufusIsMyFriend_Guys_03_02"); //Broni¹ jednych s¹ pieœci, a innych - umys³. Dostrze¿ to!
 	
 	Info_ClearChoices	(DIA_Lefty_RufusIsMyFriend );
 	Info_AddChoice		(DIA_Lefty_RufusIsMyFriend,"Masz racjê. (Zostañ stronnikiem Lewusa)",DIA_Lefty_RufusIsMyFriend_LeftyFriend);
@@ -605,6 +605,8 @@ FUNC VOID DIA_Lefty_RufusIsMyFriend_LeftyFriend ()
 	
 	};
 	Quest_GiveOffense = LOG_FAILED;
+	
+	Info_ClearChoices	(DIA_Lefty_RufusIsMyFriend );
 };
 
 FUNC VOID DIA_Lefty_RufusIsMyFriend_Rebeliant ()
@@ -617,6 +619,8 @@ FUNC VOID DIA_Lefty_RufusIsMyFriend_Rebeliant ()
 	Quest_TalkWithRufus = LOG_FAILED;
 	
 	B_LogEntry    		(CH1_BuntZbieraczy,"Stan¹³em po stronie buntowników. Ten wyzysk musi siê w wreszcie zakoñczyæ. Obrazi³em Leuwsa dziêki czemu zyska³em zaufanie Rufusa. Muszê ponownie z nim pogadaæ.");
+	
+	Info_ClearChoices	(DIA_Lefty_RufusIsMyFriend );
 };
 
 /////////////////////////////////////////////
@@ -770,7 +774,7 @@ INSTANCE DIA_Lefty_Corrupted (C_INFO)
 
 FUNC INT DIA_Lefty_Corrupted_Condition()
 {
-    if (Quest_CorruptRebels == LOG_SUCCESS) && (CorruptedBauers >= 4)
+    if (Quest_CorruptRebels == LOG_RUNNING) && (CorruptedBauers >= 4)
     {
     return TRUE;
     };

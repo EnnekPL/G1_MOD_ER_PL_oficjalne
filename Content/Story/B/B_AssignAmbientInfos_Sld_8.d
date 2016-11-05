@@ -14,7 +14,7 @@ INSTANCE Info_Sld_8_EXIT(C_INFO)
 	condition	= Info_Sld_8_EXIT_Condition;
 	information	= Info_Sld_8_EXIT_Info;
 	permanent	= 1;
-	description = "KONIEC";
+	description = DIALOG_ENDE;
 };                       
 
 FUNC INT Info_Sld_8_EXIT_Condition()

@@ -14,7 +14,7 @@ INSTANCE Info_Stt_12_EXIT(C_INFO)
 	condition	= Info_Stt_12_EXIT_Condition;
 	information	= Info_Stt_12_EXIT_Info;
 	permanent	= 1;
-	description = "KONIEC";
+	description = DIALOG_ENDE;
 };                       
 
 FUNC INT Info_Stt_12_EXIT_Condition()

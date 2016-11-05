@@ -14,7 +14,7 @@ INSTANCE Info_Mine_Org_13_EXIT(C_INFO)
 	condition	= Info_Mine_Org_13_EXIT_Condition;
 	information	= Info_Mine_Org_13_EXIT_Info;
 	permanent	= 1;
-	description = "KONIEC";
+	description = DIALOG_ENDE;
 };                       
 
 FUNC INT Info_Mine_Org_13_EXIT_Condition()

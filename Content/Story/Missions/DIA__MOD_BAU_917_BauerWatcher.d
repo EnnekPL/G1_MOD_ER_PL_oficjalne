@@ -1,3 +1,27 @@
+// ************************************************************
+// 			  				   EXIT 
+// ************************************************************
+
+INSTANCE Info_BauerWatcher_EXIT(C_INFO)
+{
+	npc			= BAU_921_Bauer ;
+	nr			= 999;
+	condition	= Info_BauerWatcher_EXIT_Condition;
+	information	= Info_BauerWatcher_EXIT_Info;
+	permanent	= 1;
+	description = DIALOG_ENDE;
+};                       
+
+FUNC INT Info_BauerWatcher_EXIT_Condition()
+{
+	return 1;
+};
+
+FUNC VOID Info_BauerWatcher_EXIT_Info()
+{	
+	AI_StopProcessInfos	(self);
+};
+
 ///////////////////////////////////////////
 //		Unnecessary Death
 ///////////////////////////////////////////

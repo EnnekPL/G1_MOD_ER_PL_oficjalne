@@ -14,7 +14,7 @@ INSTANCE Info_SFB_1_EXIT(C_INFO)
 	condition	= Info_SFB_1_EXIT_Condition;
 	information	= Info_SFB_1_EXIT_Info;
 	permanent	= 1;
-	description = "KONIEC";
+	description = DIALOG_ENDE;
 };                       
 
 FUNC INT Info_SFB_1_EXIT_Condition()

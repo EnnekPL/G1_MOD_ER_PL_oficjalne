@@ -69,3 +69,13 @@
 - UP: NPC u¿ywaj¹ drzwi w³aœciwie
 - UP: NPC zbieraj¹ swoje bronie, jeœli odzyskaj¹ przytomnoœæ po przegranej walce
 - UP: NPC nie ka¿¹ siê przepuszczaæ, jeœli zostali wczeœniej pokonani przez gracza
+- UP: NPC wybiera broñ bia³¹, jeœli jego broñ dystansowa jest zbyt s³aba ¿eby przebiæ pancerz gracza
+- UP: NPC ju¿ nie trenuj¹ walki bez broni
+- UP: NPC nie zachowuj¹ siê ju¿ dziwnie, jeœli próbuj¹ podejœæ do ogniska, przy którym ktoœ ju¿ jest
+- UP: NPC rzadziej zatrzymuj¹ siê podczas ucieczki (problem nie zosta³ jednak w ca³oœci wyeliminowany)
+- UP: jeœli gracz idzie powoli, towarzysze równie¿
+- UP: Gomez nie bêdzie ju¿ nas zagadywa³ przez œciany (rozdzia³ 6)
+- UP: Miecz "RzeŸnik" ma ju¿ poprawn¹ informacjê "broñ jednorêczna" w ekwipunku
+- usprawniony wpis do zadania z przyniesieniem alkoholu dla Bartholo
+- Baal Lukor daje nam zwój œmieræ o¿ywieñcom zanim przeteleportujemy siê za ruchom¹ œcianê na cmentarzysku
+- Wrzód i Jim uciekaj¹ ze Starego Obozu na czwartym rozdziale

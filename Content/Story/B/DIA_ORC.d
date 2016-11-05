@@ -10,7 +10,7 @@ INSTANCE DIA_Orc_EXIT(C_INFO)
 	condition	= DIA_ORC_EXIT_Condition;
 	information	= DIA_ORC_EXIT_Info;
 	permanent	= TRUE;
-	description     = "KONIEC";
+	description     = DIALOG_ENDE;
 };
 
 FUNC INT DIA_ORC_EXIT_Condition()

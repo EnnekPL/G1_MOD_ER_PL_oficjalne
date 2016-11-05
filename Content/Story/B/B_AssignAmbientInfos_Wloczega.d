@@ -15,7 +15,7 @@ INSTANCE Info_wczg_2_EXIT(C_INFO)
 	condition	= Info_wczg_2_EXIT_Condition;
 	information	= Info_wczg_2_EXIT_Info;
 	permanent	= 1;
-	description = "KONIEC";
+	description = DIALOG_ENDE;
 };                       
 
 FUNC INT Info_wczg_2_EXIT_Condition()

@@ -3,7 +3,7 @@ instance BAU_917_Bauer (Npc_Default)
 	//-------- primary data --------
 	
 	name 		=	name_Bauer;
-	npctype		=	npctype_ambient;
+	npctype		=	npctype_main;
 	guild 		=	GIL_SFB;      
 	level 		=	2;
 	voice 		=	9;

@@ -14,7 +14,7 @@ INSTANCE Info_Vlk_1_EXIT(C_INFO)
 	condition	= Info_Vlk_1_EXIT_Condition;
 	information	= Info_Vlk_1_EXIT_Info;
 	permanent	= 1;
-	description = "KONIEC";
+	description = DIALOG_ENDE;
 };                       
 
 FUNC INT Info_Vlk_1_EXIT_Condition()

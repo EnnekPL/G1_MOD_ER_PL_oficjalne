@@ -14,7 +14,7 @@ INSTANCE Info_Org_7_EXIT(C_INFO)
 	condition	= Info_Org_7_EXIT_Condition;
 	information	= Info_Org_7_EXIT_Info;
 	permanent	= 1;
-	description = "KONIEC";
+	description = DIALOG_ENDE;
 };                       
 
 FUNC INT Info_Org_7_EXIT_Condition()

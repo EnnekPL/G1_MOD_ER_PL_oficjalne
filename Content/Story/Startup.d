@@ -14,7 +14,6 @@ UseFunc1Skills ();
 
 func VOID STARTUP_SUB_PSICAMP ()
 {	
-	B_Story_BauRebellion ();
 	bohater_upity = 0;//do przeniesienia
 	
 	//-----------OLD MINE-----------------------------------------

@@ -205,7 +205,7 @@ instance  Swiney_START_LEARN (C_INFO)
 	important			= 0;
 	permanent		= 1;
 	nr 					= 800;
-	description		= "Naucz mnie kopaæ rudê. (5 punktów nauki, 50 bry³ek)"; 
+	description		= "Naucz mnie kopaæ rudê."; 
 };
 
 FUNC int  Swiney_START_LEARN_Condition()

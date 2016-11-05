@@ -8,7 +8,7 @@ INSTANCE Info_BANDYCI_SZKODNIKI_EXIT(C_INFO)
 	condition	= Info_BANDYCI_SZKODNIKI_EXIT_Condition;
 	information	= Info_BANDYCI_SZKODNIKI_EXIT_Info;
 	permanent	= 1;
-	description = "KONIEC";
+	description = DIALOG_ENDE;
 };                       
 
 FUNC INT Info_BANDYCI_SZKODNIKI_EXIT_Condition()
