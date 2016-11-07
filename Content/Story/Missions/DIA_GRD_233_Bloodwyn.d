@@ -279,7 +279,7 @@ INSTANCE Info_Bloodwyn_PayForJesse (C_INFO)
 
 FUNC INT Info_Bloodwyn_PayForJesse_Condition()
 {
-	if (Jesse_PayForMe == LOG_RUNNING) && (Kapitel <= 1) 
+	if (Jesse_PayForMe == LOG_RUNNING)// && (Kapitel <= 1) 
 	{	
 		return 1;
 	};
