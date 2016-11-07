@@ -1,10 +1,10 @@
 //*******************************************************************************
 //*********** GOTHIC EDYCJA ROZSZERZONA 1.4
-//*********** PRZEDMIOTY ZADAÅƒ - ROZDZIAÅ‚ 5
+//*********** PRZEDMIOTY ZADAÑ - ROZDZIA³ 5
 //*******************************************************************************
 
 ////////////////////////////////////////////////////////
-// KLUCZ DO SKRYZNI Z BRONIÄ„ DLA BUNTOWNIKÃ“W
+// KLUCZ DO SKRYZNI Z BRONI¥ DLA BUNTOWNIKÓW
 // KLUCZ OTRZYMUJEMY OD RUFUSA
 ////////////////////////////////////////////////////////
 
@@ -21,7 +21,7 @@ INSTANCE ItMi_KeyFromRufus (C_Item)
 	material 			=	MAT_METAL;
 
 	description			= 	name;	
-	TEXT[1]				= 	"Otwiera skrzyniÄ™ w chacie w Kotle.";
+	TEXT[1]				= 	"Otwiera skrzyniê w chacie w Kotle.";
 };
 
 INSTANCE ItMi_NoteFromSenyan (C_Item)
@@ -39,7 +39,7 @@ INSTANCE ItMi_NoteFromSenyan (C_Item)
 	scemeName			=	"MAP";
 	description			=   name;
 	TEXT[1]				= 	"Notatki znalezione w skrzyni  ";
-	TEXT[2]				= 	"z broniÄ… dla buntownikÃ³w.";
+	TEXT[2]				= 	"z broni¹ dla buntowników.";
 };
 
 func void Use_NoteFromSenyan ()
@@ -52,13 +52,13 @@ func void Use_NoteFromSenyan ()
 					Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
 					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"	   			); 	// -1 -> all pages 
 					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
-					Doc_PrintLines	( nDocID,  0, "DogadaÅ‚em siÄ™ z Okylem i pozwoliÅ‚ mi skÅ‚adowaÄ‡ stare kilofy i miecze. PowiedziaÅ‚em mu, Å¼e chcÄ™ je pÃ³Åºniej wysÅ‚aÄ‡ do kowala w celu naprawy. To naprawdÄ™ dobra przykrywka. Nic lepszego nie mogÅ‚em dla was zdobyÄ‡. Gdybym podkradaÅ‚ rynsztunek Najemnikom, natychmiast by mnie zabili.");
+					Doc_PrintLines	( nDocID,  0, "Dogada³em siê z Okylem i pozwoli³ mi sk³adowaæ stare kilofy i miecze. Powiedzia³em mu, ¿e chcê je póŸniej wys³aæ do kowala w celu naprawy. To naprawdê dobra przykrywka. Nic lepszego nie mog³em dla was zdobyæ. Gdybym podkrada³ rynsztunek Najemnikom, natychmiast by mnie zabili.");
 					Doc_PrintLine	( nDocID,  0, "");
 					Doc_PrintLine	( nDocID,  0, "");
 					Doc_PrintLine	( nDocID,  0, "");
 					Doc_PrintLine	( nDocID,  0, "");
 					Doc_PrintLine	( nDocID,  0, "Senyan");
-					Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den RÃ¤nder des TGAs aus
+					Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
 				
 					Doc_Show		( nDocID );
 					
@@ -66,7 +66,7 @@ func void Use_NoteFromSenyan ()
 
 INSTANCE ItMi_SpecialBooze(C_Item)
 {	
-	name 				=	"Specjalna ryÅ¼Ã³wka";
+	name 				=	"Specjalna ry¿ówka";
 
 	mainflag 			=	ITEM_KAT_FOOD;
 	flags 				=	ITEM_MULTI;
@@ -90,7 +90,7 @@ INSTANCE ItMi_SpecialBooze(C_Item)
 	
 INSTANCE ItMi_KeyToChestInStorage (C_Item)
 {
-	name 				=	"Klucz bandziorÃ³w";
+	name 				=	"Klucz bandziorów";
 
 	mainflag 			=	ITEM_KAT_NONE;
 	flags 				=	ITEM_MISSION;
@@ -101,7 +101,7 @@ INSTANCE ItMi_KeyToChestInStorage (C_Item)
 	material 			=	MAT_METAL;
 
 	description			= 	name;	
-	TEXT[1]				= 	"Otwiera skrzyniÄ™ w magazynie ryÅ¼u.";
+	TEXT[1]				= 	"Otwiera skrzyniê w magazynie ry¿u.";
 };
 
 instance ItMi_RicelordRing(C_Item)
@@ -120,7 +120,7 @@ instance ItMi_RicelordRing(C_Item)
 	on_equip				=	Equip_RicelordRing;
 	on_unequip				=	UnEquip_RicelordRing;
 
-	description		= " PierÅ›cieÅ„ RyÅ¼owego KsiÄ™cia";
+	description		= " Pierœcieñ Ry¿owego Ksiêcia";
 	//TEXT[0]			= "";
 	//TEXT[1]			= "";
 	////COUNT[1]		= ;

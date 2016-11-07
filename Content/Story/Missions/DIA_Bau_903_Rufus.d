@@ -480,8 +480,8 @@ FUNC VOID DIA_Rufus_HoratioDoEverything_Info()
 	Npc_SetTarget (Org_845_Schlaeger, Org_844_Lefty);
     AI_StartState (Org_845_Schlaeger, ZS_ATTACK, 1, "");
 	
-	B_ChangeGuild (BAU_900_Ricelord, GIL_GRD);
-	B_ChangeGuild (Org_844_Lefty, GIL_GRD);
+	B_ChangeGuild (BAU_900_Ricelord, GIL_DMB);
+	B_ChangeGuild (Org_844_Lefty, GIL_DMB);
 };
 
 /////////////////////////////////////////////////
