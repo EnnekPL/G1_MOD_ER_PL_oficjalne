@@ -16,11 +16,11 @@ instance ORG_844_Lefty (Npc_Default)
 	attribute[ATR_DEXTERITY] =		45;
 	attribute[ATR_MANA_MAX] =		0;
 	attribute[ATR_MANA] =			0;
-	attribute[ATR_HITPOINTS_MAX] =	350;
-	attribute[ATR_HITPOINTS] =		350;
+	attribute[ATR_HITPOINTS_MAX] =	220;
+	attribute[ATR_HITPOINTS] =		220;
 
-	protection	[PROT_BLUNT]		=	23;
-	protection	[PROT_EDGE]			=	23;
+	//protection	[PROT_BLUNT]		=	23;
+	//protection	[PROT_EDGE]			=	23;
 	
 	//-------- visuals --------
 	// 				animations

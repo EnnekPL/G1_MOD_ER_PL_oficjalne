@@ -311,16 +311,17 @@ FUNC VOID DIA_Ricelord_RingTheft_Info()
 {
     AI_Output (other, self ,"DIA_Ricelord_RingTheft_15_01"); //Lewus podarowa³ twój pierœcieñ Pock'owi. To mia³ byæ dowód wdziêcznoœci za pomoc.
     AI_Output (self, other ,"DIA_Ricelord_RingTheft_03_02"); //Co? Ten sukinsyn ju¿ od dawna sadzi³ siê na mój pierœcieñ. Nie widzia³em, ¿e bêdzie na tyle bezczelny!
-    AI_Output (self, other ,"DIA_Ricelord_RingTheft_03_03"); //Ju¿ ja go skasujê.
+    AI_Output (self, other ,"DIA_Ricelord_RingTheft_03_03"); //LEWUS, ZDRAJCA! BRAÆ GO!
     
-	self.flags = 2;
-	
-    AI_StopProcessInfos	(self);
+	Bau_900_Ricelord.flags = 2;
+
+    AI_StopProcessInfos	(Bau_900_Ricelord);
+	AI_GotoNpc(Bau_900_Ricelord, Org_844_Lefty);
 	
 	Npc_SetTarget (Bau_900_Ricelord, Org_844_Lefty);
     AI_StartState (Org_844_Lefty, ZS_ATTACK, 1, "");
 	
-	B_ChangeGuild (Org_844_Lefty, GIL_GRD);
+	B_ChangeGuild (Org_844_Lefty, GIL_DMB);
 };
 
 ////////////////////////////////////////////
