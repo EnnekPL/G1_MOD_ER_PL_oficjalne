@@ -87,7 +87,7 @@ FUNC VOID DIA_Huno_HowLong_Info()
 	AI_Output (self,other,"DIA_Huno_HowLong_09_05"); //Nie, wrêcz przeciwnie. Za swój ostatni miecz da³ mi 150 bry³ek rudy.
 	AI_Output (self,other,"DIA_Huno_HowLong_09_06"); //Ale facet lubi bogate zdobienia i takie tam babskie fanaberie, a to oczywiœcie kosztuje!
 	AI_Output (self,other,"DIA_Huno_HowLong_09_07"); //Hej, ciekawski z ciebie facet, kolego!
-	B_LogEntry (CH1_JoinOC,"Huno wyrabia miecze dla cz³onków Obozu. Podobno Œwistak zamówi³ u niego specjalne ostrze.");
+	//B_LogEntry (CH1_JoinOC,"Huno wyrabia miecze dla cz³onków Obozu. Podobno Œwistak zamówi³ u niego specjalne ostrze.");
 };
 
 // **************************************************
