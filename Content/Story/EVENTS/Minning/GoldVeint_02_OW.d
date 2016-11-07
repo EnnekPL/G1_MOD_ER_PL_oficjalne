@@ -86,7 +86,7 @@ if (all_dug_Gold2 < Gold_limit2)
 dug_Gold2 = Hlp_Random (4);
 if (dug_Gold2 == 0)
 {
-PrintS_Ext("Nie uda³o ci siê nic wydobyæ!", COL_RED);
+PrintScreen	("Nie uda³o ci siê nic wydobyæ!", -1,-1,"FONT_OLD_20_WHITE.TGA",1);
 power_goldstrike_progress2 = power_goldstrike_progress2 + 4;
 };
 if (dug_Gold2 == 1)

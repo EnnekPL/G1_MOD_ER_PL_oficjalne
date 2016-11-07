@@ -86,7 +86,7 @@ if (all_dug_ore10 < ore_limit10)
 dug_ore10 = Hlp_Random (4);
 if (dug_ore10 == 0)
 {
-PrintS_Ext("Nie uda³o ci siê nic wydobyæ!", COL_RED);
+PrintScreen	("Nie uda³o ci siê nic wydobyæ!", -1,-1,"FONT_OLD_20_WHITE.TGA",1);
 power_strike_progress10 = power_strike_progress10 + 4;
 };
 if (dug_ore10 == 1)
