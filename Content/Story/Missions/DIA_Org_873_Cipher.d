@@ -248,6 +248,8 @@ FUNC VOID DIA_Cipher_WhoSellElixier_Info()
     B_LogEntry                     (CH3_SellElixer,"Cipher wreszcie da³ mi jak¹œ wskazówkê. Nie zna on to¿samoœci swojego wspólnika, jednak zdradzi³ mi, ¿e dochodzi miêdzy nimi do wymiany pod starym mostem dziêki, któremu mo¿na siê ³atwo dostaæ do obozowiska Aidana. Znam to miejsce. Widzia³em tam niegdyœ dwóch rabusiów. Pod owym mostem mam szukaæ starej skrzyni. To w niej Cipher zostawia rudê, a jego wspólnik eliksiry. Muszê siê tam udaæ póŸn¹ noc¹ i spróbowaæ przy³apaæ handlarza.");
 
     AI_StopProcessInfos	(self);
+	
+	Npc_ExchangeRoutine (NOV_1301_Caine,"badguy");
 };
 
 //////////////////////////////////////////////
