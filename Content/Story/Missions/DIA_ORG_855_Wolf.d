@@ -869,7 +869,8 @@ FUNC VOID DIA_Wolf_FindSword_Info()
     MIS_KilnagaWolfa = LOG_SUCCESS;
 	CreateInvItems (self, ItRw_Bow_Long_03, 1);
     B_GiveInvItems (self, other, ItRw_Bow_Long_03, 1);
-	B_GiveInvItems (other, self, ItMi_OzdobnaKlinga, 1);
+	B_GiveInvItems (hero, self, ItMi_OzdobnaKlinga, 1);
+	Npc_RemoveInvItems (self, ItMi_OzdobnaKlinga,1);
     B_GiveXP (175);
 };
 

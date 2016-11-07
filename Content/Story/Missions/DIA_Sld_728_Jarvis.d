@@ -484,8 +484,7 @@ FUNC INT DIA_Jarvis_TorlofPoprze_Condition()
 FUNC VOID DIA_Jarvis_TorlofPoprze_Info()
 {
     AI_Output (other, self ,"DIA_Jarvis_TorlofPoprze_15_01"); //Torlof mnie poprze!
-    AI_Output (self, other ,"DIA_Jarvis_TorlofPoprze_03_02"); //Zabi³eœ Lewusa i Ry¿owego Ksiêcia. Wiele osób siê teraz ciebie boi!
-    AI_Output (other, self ,"DIA_Jarvis_TorlofPoprze_15_03"); //Po trupach do celu.
+    AI_Output (self, other ,"DIA_Jarvis_TorlofPoprze_03_02"); //Podobno pomog³eœ naprawiæ jego topór. Dobra robota.
 };
 
 //========================================
@@ -593,7 +592,7 @@ FUNC VOID DIA_Jarvis_PoBuncie_Info()
 {
     AI_Output (self, other ,"DIA_Jarvis_PoBuncie_03_01"); //No nieŸle, ch³opcze. Rozjeba³eœ nam pó³ Obozu.
     AI_Output (other, self ,"DIA_Jarvis_PoBuncie_15_02"); //Tak ju¿ mam.
-    AI_Output (self, other ,"DIA_Jarvis_PoBuncie_03_03"); //Idê to wszystko ogarn¹æ, bo ci zbieracze zaraz pójd¹ na Lee, albo Gomeza.
+    AI_Output (self, other ,"DIA_Jarvis_PoBuncie_03_03"); //Idê to wszystko ogarn¹æ, bo ci Zbieracze zaraz pójd¹ na Lee, albo Gomeza.
     AI_Output (other, self ,"DIA_Jarvis_PoBuncie_15_04"); //Miejmy nadziejê, ¿e nie.
 	//exp
     B_GiveXP (100);
@@ -601,12 +600,12 @@ FUNC VOID DIA_Jarvis_PoBuncie_Info()
 	Npc_ExchangeRoutine (Sld_728_Jarvis,"boss");
 	AI_StopProcessInfos	(Sld_728_Jarvis);
 	//zbieracze
-	Npc_ExchangeRoutine (BAU_928_Bauer,"start");
-	Npc_ExchangeRoutine (BAU_916_Bauer,"start");
-	Npc_ExchangeRoutine (BAU_923_Bauer,"start");
-	Npc_ExchangeRoutine (BAU_907_Bauer,"start");
-	Npc_ExchangeRoutine (BAU_904_Bauer,"start");
-	Npc_ExchangeRoutine (BAU_903_Rufus,"start");
+	//Npc_ExchangeRoutine (BAU_928_Bauer,"start");
+	//Npc_ExchangeRoutine (BAU_916_Bauer,"start");
+	//Npc_ExchangeRoutine (BAU_923_Bauer,"start");
+	//Npc_ExchangeRoutine (BAU_907_Bauer,"start");
+	//Npc_ExchangeRoutine (BAU_904_Bauer,"start");
+	//Npc_ExchangeRoutine (BAU_903_Rufus,"start");
     
 };
 

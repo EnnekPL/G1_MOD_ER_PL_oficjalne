@@ -103,6 +103,8 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		var C_NPC blizna; blizna 	= Hlp_GetNpc (EBR_101_Scar);
 		blizna.flags = 0;
 		
+		B_ExchangeRoutine	(Sld_728_Jarvis,"start"); 
+		
 		//znikanie ze œwiata NPC Er.14.
 		B_ExchangeRoutine	(TPL_1406_Templer,"flee"); //ochroniarz kaloma
 		//B_ExchangeRoutine	(TPL_1455_GorBoba,"flee"); //gor boba

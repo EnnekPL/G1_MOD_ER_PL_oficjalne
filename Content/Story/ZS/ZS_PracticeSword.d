@@ -28,5 +28,6 @@ func void ZS_PracticeSword_End()
 	PrintDebugNpc(PD_TA_FRAME,"ZS_PracticeSword_End");
 	B_FullStop(self);
 	B_RemoveWeapon(self);
+	AI_StandUpQuick (self);
 };
 

@@ -160,7 +160,7 @@ INSTANCE DIA_Josep_Truth (C_INFO)
 
 FUNC INT DIA_Josep_Truth_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Josep_Angry))
+    if (Npc_KnowsInfo (hero, DIA_Lefty_WhatDidJosep))
     {
     return TRUE;
     };

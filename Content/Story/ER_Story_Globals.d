@@ -361,7 +361,7 @@ var int MIS_HunterHugo;
 const string CH1_HunterHugo     	 		= "£owca Hugo";
 
 var int MIS_MissedJosep;
-const string CH1_MissedJosep    			= "Zaginiêce Josepa";
+const string CH1_MissedJosep    			= "Zaginiêcie Josepa";
 
 var int MIS_SpikeLoser;
 const string CH1_SpikeLoser      			= "Problem Spike'a";

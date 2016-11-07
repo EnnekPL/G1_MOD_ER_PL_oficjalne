@@ -361,8 +361,8 @@ FUNC INT DIA_Lares_PoparcieCzterech_Condition()
 FUNC VOID DIA_Lares_PoparcieCzterech_Info()
 {
     AI_Output (other, self ,"DIA_Lares_PoparcieCzterech_15_01"); //Mam poparcie czterech Najemników!
-    AI_Output (self, other ,"DIA_Lares_PoparcieCzterech_03_02"); //S³ysza³em ju¿ o twoich dokonaniach, ch³opcze. Kawa³ z ciebie sukinsyna.
-	AI_Output (self, other ,"DIA_Lares_PoparcieCzterech_03_03"); //Podobno rozwali³eœ ³eb samemu Ry¿owemu Ksiêciu, do tego znalaz³eœ star¹ klingê Wilka. Jestem pod wra¿eniem.
+    AI_Output (self, other ,"DIA_Lares_PoparcieCzterech_03_02"); //S³ysza³em ju¿ o twoich dokonaniach, ch³opcze. 
+	AI_Output (self, other ,"DIA_Lares_PoparcieCzterech_03_03"); //Najemnicy s¹ zadowoleni z twojej pomocy. To dobrze o tobie œwiadczy.
 	Points_NC = Points_NC + 30;
 	B_LogEntry               (CH1_OpinionInNewCamp,"Lares nie mia³ zamiaru dyskutowaæ z zasad¹ poparcia wymyœlon¹ ponoæ przez samego Lee. Jeszcze tylko kilka formalnoœci i zostanê cz³onkiem Nowego Obozu. ");
 	

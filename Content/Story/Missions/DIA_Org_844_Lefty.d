@@ -75,6 +75,7 @@ FUNC int DIA_Lefty_First_Condition()
 	if	(Wld_IsTime(08,00,19,00))
 	&&	(self.aivar[AIV_WASDEFEATEDBYSC]==FALSE)
 	&&  (SLD_704_Blade.aivar[AIV_PARTYMEMBER] != TRUE)
+	&&	(Rebel_HerosBoss != Boss_Lefty)
 	{
 		return 1;
 	};
@@ -148,6 +149,7 @@ FUNC int DIA_Lefty_WorkDay_Condition()
 	if	(Wld_IsTime(08,00,19,00) || (Lefty_Mission == LOG_SUCCESS))				// wenn Wasser verteilt, dann auch abends am Lagerfeuer!
 	&&	(self.aivar[AIV_WASDEFEATEDBYSC]==FALSE)
 	&&	((Lefty_WorkDay <= Wld_GetDay()-1) || (Lefty_Mission == LOG_SUCCESS))	// wenn Wasser verteilt, dann auch noch am selben Tag! 
+	&&	(Rebel_HerosBoss != Boss_Lefty)
 	{
 		return 1;
 	};
@@ -214,7 +216,7 @@ instance DIA_Lefty_NeverAgain (C_INFO)
 
 FUNC int DIA_Lefty_NeverAgain_Condition()
 {
-	if ( (Lefty_Mission == LOG_RUNNING) && (self.aivar[AIV_WASDEFEATEDBYSC]==FALSE) )
+	if ( (Lefty_Mission == LOG_RUNNING) && (self.aivar[AIV_WASDEFEATEDBYSC]==FALSE) ) &&	(Rebel_HerosBoss != Boss_Lefty)
 	{
 		return 1;
 	};
@@ -607,6 +609,14 @@ FUNC VOID DIA_Lefty_RufusIsMyFriend_LeftyFriend ()
 	Quest_GiveOffense = LOG_FAILED;
 	
 	Info_ClearChoices	(DIA_Lefty_RufusIsMyFriend );
+	
+	Rebel_HerosBoss = Boss_Lefty;
+	if !LeftyWasBeaten
+	{
+	B_LogEntry			(CH1_CarryWater,	"ZaprzyjaŸni³em siê z Lewusem, wiêc nie bêdê ju¿ musia³ nosiæ za niego wody.");
+	Log_SetTopicStatus	(CH1_CarryWater,	LOG_SUCCESS);
+	B_GiveXP			(XP_LeftyConfronted);
+	};
 };
 
 FUNC VOID DIA_Lefty_RufusIsMyFriend_Rebeliant ()
@@ -621,6 +631,8 @@ FUNC VOID DIA_Lefty_RufusIsMyFriend_Rebeliant ()
 	B_LogEntry    		(CH1_BuntZbieraczy,"Stan¹³em po stronie buntowników. Ten wyzysk musi siê w wreszcie zakoñczyæ. Obrazi³em Leuwsa dziêki czemu zyska³em zaufanie Rufusa. Muszê ponownie z nim pogadaæ.");
 	
 	Info_ClearChoices	(DIA_Lefty_RufusIsMyFriend );
+	
+	Rebel_HerosBoss = Boss_Rufus;
 };
 
 /////////////////////////////////////////////

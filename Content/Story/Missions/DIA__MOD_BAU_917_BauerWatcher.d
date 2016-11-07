@@ -4,7 +4,7 @@
 
 INSTANCE Info_BauerWatcher_EXIT(C_INFO)
 {
-	npc			= BAU_921_Bauer ;
+	npc			= BAU_917_Bauer ;
 	nr			= 999;
 	condition	= Info_BauerWatcher_EXIT_Condition;
 	information	= Info_BauerWatcher_EXIT_Info;
@@ -28,7 +28,7 @@ FUNC VOID Info_BauerWatcher_EXIT_Info()
 
 INSTANCE DIA_BauerWatcher_UnnecessaryDeath (C_INFO)
 {
-	npc			= BAU_921_Bauer;
+	npc			= BAU_917_Bauer;
 	nr			= 1;
 	condition	= DIA_BauerWatcher_UnnecessaryDeath_Condition;
 	information	= DIA_BauerWatcher_UnnecessaryDeath_Info;
@@ -38,7 +38,7 @@ INSTANCE DIA_BauerWatcher_UnnecessaryDeath (C_INFO)
 
 FUNC INT DIA_BauerWatcher_UnnecessaryDeath_Condition()
 {
-	if (Quest_ChceckLoyality == LOG_RUNNING) && (FoggyKilled)
+	if (Quest_ChceckLoyality == LOG_RUNNING) && (FoggyKilled == TRUE)
 	{
 		return 1;
 	};

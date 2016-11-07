@@ -51,13 +51,13 @@ INSTANCE Info_Outlander_Help(C_INFO)
 
 FUNC INT Info_Outlander_Help_Condition()
 {
-	if (Npc_KnowsInfo (hero,Info_Outlander_Hello)
+	if (Npc_KnowsInfo (hero,Info_Outlander_Hello))
 	{
 	return 1;
 	};
 };
 
-FUNC VOID Info_Outlander_Hello_Info()
+FUNC VOID Info_Outlander_Help_Info()
 {	
 	AI_Output (other, self,"Info_Outlander_Help_15_00"); //Szukam jakichœ wskazówek na pocz¹tek gry.
 	AI_Output (self, other,"Info_Outlander_Help_09_01"); //Przede wszystkim nie zbli¿aj siê do Bariery, he he.
