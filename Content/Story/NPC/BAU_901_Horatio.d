@@ -52,7 +52,12 @@ FUNC VOID Rtn_start_901 ()
 	TA_PickRice		(06,00,20,00,"NC_PATH78_A");
 };
 
-
+FUNC VOID Rtn_boss_901 ()
+{
+	TA_Boss			(07,00,20,00,"NC_RICELORD");
+	TA_SitAround	(20,00,24,00,"NC_RICELORD_SIT");
+	TA_Sleep		(24,00,07,00,"NC_RICEBUNKER_10");
+};
 
 
 

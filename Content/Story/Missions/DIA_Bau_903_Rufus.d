@@ -527,6 +527,8 @@ FUNC VOID DIA_Rufus_LeftyDie_Info()
 	B_LogEntry                     (CH1_BuntZbieraczy,"Ry¿owy Ksi¹¿ê i Lewus nie ¿yj¹. Zostali zamordowani przez w³asnych siepaczy. Plan Horacego siê powiód³. To on zostanie nowym naczelnikiem magazynu. Rufus zrezygnowa³ z przywództwa. Chyba chce znów wróciæ do spokojnej pracy.");
 
 	B_Story_AfterBauRebellion ();
+	
+	Npc_ExchangeRoutine (BAU_901_Horatio, "boss");
 };
 
 /////////////////////////////////////////////////
