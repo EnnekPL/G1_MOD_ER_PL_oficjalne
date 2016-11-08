@@ -278,7 +278,7 @@ INSTANCE DIA_Josep_Camp (C_INFO)
 
 FUNC INT DIA_Josep_Camp_Condition()
 {
-    if (Npc_KnowsInfo (hero,DIA_Josep_GoAway)) && (self.aivar[AIV_PARTYMEMBER] == TRUE) && (Npc_GetDistToWP (hero, "OW_PATH_066") < 1000) 
+    if (Npc_KnowsInfo (hero,DIA_Josep_GoAway)) && (self.aivar[AIV_PARTYMEMBER] == TRUE) && (Npc_GetDistToWP (hero, "PACZ2") < 1000) 
     {
     return TRUE;
     };
