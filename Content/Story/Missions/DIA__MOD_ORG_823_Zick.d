@@ -132,7 +132,7 @@ INSTANCE DIA_Zick_ComeWithUs (C_INFO)
 
 FUNC INT DIA_Zick_ComeWithUs_Condition()
 {
- 	if (Npc_KnowsInfo (hero, DIA_Zick_ValuableInfo)) && (Npc_KnowsInfo (hero, DIA_Josep_Truth))
+ 	if (Npc_KnowsInfo (hero, DIA_Rene_HateZick))
 	{
     return TRUE;
 	};
