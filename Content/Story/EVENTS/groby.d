@@ -50,7 +50,7 @@ INSTANCE DIA_PC_HERO_EXIT_grob1(C_INFO)
 	condition	= DIA_PC_HERO_EXIT_grob1_Condition;
 	information	= DIA_PC_HERO_EXIT_grob1_Info;
 	permanent	= TRUE;
-	description     = "KONIEC";
+	description     = DIALOG_ENDE;
 };
 
 FUNC INT DIA_PC_HERO_EXIT_grob1_Condition()

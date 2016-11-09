@@ -483,7 +483,7 @@ INSTANCE ItFo_Plants_Berrys_01(C_Item)
 
 	description			= name;
 	TEXT[1]				= NAME_Bonus_HP;				COUNT[1]	= HP_Waldbeeren;
-	TEXT[1]				= "Owoc.";
+	TEXT[2]				= "Owoc.";
 	TEXT[5]				= NAME_Value;					COUNT[5]	= Value_Waldbeeren;
 };
 

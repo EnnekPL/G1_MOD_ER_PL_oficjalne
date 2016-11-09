@@ -28,7 +28,7 @@ INSTANCE DIA_PC_Hero_ENDEWOOD (C_INFO)
    condition    = DIA_PC_Hero_ENDEWOOD_Condition;
    information  = DIA_PC_Hero_ENDEWOOD_Info;
    permanent	= true;
-   description	= "ZAKOÑCZ";
+   description	= DIALOG_ENDE;
 };
 
 FUNC INT DIA_PC_Hero_ENDEWOOD_Condition()

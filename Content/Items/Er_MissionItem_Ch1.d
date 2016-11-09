@@ -1583,7 +1583,7 @@ func void UseOWorekG10()
     CreateInvItems (self, ItMiGwozdz, 10);
     if (Npc_IsPlayer(self))
 	{
-	PrintScreen	("Znaleziono 10 gwoüdzi!", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
+	PrintS_Ext	("Znaleziono 10 gwoüdzi",COL_WHITE);
 	};
 
 };

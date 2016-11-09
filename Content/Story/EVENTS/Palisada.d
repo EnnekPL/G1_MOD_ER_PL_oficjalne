@@ -28,7 +28,7 @@ INSTANCE DIA_PC_Hero_PrzerwijR (C_INFO)
    condition    = DIA_PC_Hero_PrzerwijR_Condition;
    information  = DIA_PC_Hero_PrzerwijR_Info;
    permanent	= true;
-   description	= "ZAKOÑCZ";
+   description	= DIALOG_ENDE;
 };
 
 FUNC INT DIA_PC_Hero_PrzerwijR_Condition()
@@ -57,7 +57,7 @@ INSTANCE DIA_PC_Hero_NAPRAWAM1 (C_INFO)
    condition    = DIA_PC_Hero_NAPRAWAM1_Condition;
    information  = DIA_PC_Hero_NAPRAWAM1_Info;
    permanent	= false;
-   description	= "Naprawiaj...";
+   description	= "(Naprawiaj)";
 };
 
 FUNC INT DIA_PC_Hero_NAPRAWAM1_Condition()
@@ -97,7 +97,7 @@ INSTANCE DIA_PC_Hero_NAPRAWAM2 (C_INFO)
    condition    = DIA_PC_Hero_NAPRAWAM2_Condition;
    information  = DIA_PC_Hero_NAPRAWAM2_Info;
    permanent	= FALSE;
-   description	= "Naprawiaj...";
+   description	= "(Naprawiaj)";
 };
 
 FUNC INT DIA_PC_Hero_NAPRAWAM2_Condition()
@@ -136,7 +136,7 @@ INSTANCE DIA_PC_Hero_NAPRAWAM3 (C_INFO)
    condition    = DIA_PC_Hero_NAPRAWAM3_Condition;
    information  = DIA_PC_Hero_NAPRAWAM3_Info;
    permanent	= FALSE;
-   description	= "Naprawiaj...";
+   description	= "(Naprawiaj)";
 };
 
 FUNC INT DIA_PC_Hero_NAPRAWAM3_Condition()
@@ -175,7 +175,7 @@ INSTANCE DIA_PC_Hero_NAPRAWAM4 (C_INFO)
    condition    = DIA_PC_Hero_NAPRAWAM4_Condition;
    information  = DIA_PC_Hero_NAPRAWAM4_Info;
    permanent	= FALSE;
-   description	= "Naprawiaj...";
+   description	= "(Naprawiaj)";
 };
 
 FUNC INT DIA_PC_Hero_NAPRAWAM4_Condition()
@@ -214,7 +214,7 @@ INSTANCE DIA_PC_Hero_NAPRAWAM5 (C_INFO)
    condition    = DIA_PC_Hero_NAPRAWAM5_Condition;
    information  = DIA_PC_Hero_NAPRAWAM5_Info;
    permanent	= FALSE;
-   description	= "Naprawiaj...";
+   description	= "(Naprawiaj)";
 };
 
 FUNC INT DIA_PC_Hero_NAPRAWAM5_Condition()
@@ -253,7 +253,7 @@ INSTANCE DIA_PC_Hero_NAPRAWAM6 (C_INFO)
    condition    = DIA_PC_Hero_NAPRAWAM6_Condition;
    information  = DIA_PC_Hero_NAPRAWAM6_Info;
    permanent	= FALSE;
-   description	= "Naprawiaj...";
+   description	= "(Naprawiaj)";
 };
 
 FUNC INT DIA_PC_Hero_NAPRAWAM6_Condition()
@@ -271,7 +271,7 @@ FUNC VOID DIA_PC_Hero_NAPRAWAM6_Info()
 {
 Palisada_Mysliwych = true;
 PrintScreen ("Ukoñczono 6/6",-1,1,"font_old_10_white.tga",1);
-Print ("Robota skoñczona!");
+PrintScreen ("Robota skoñczona!",-1,1,"font_old_10_green.tga",1);
 Npc_RemoveInvItems (hero, ItMiGwozdz, 5);
 if (hero.attribute[ATR_HITPOINTS] == hero.attribute[ATR_HITPOINTS_MAX]) && (hero.attribute[ATR_MANA] == hero.attribute[ATR_MANA_MAX])
 {
