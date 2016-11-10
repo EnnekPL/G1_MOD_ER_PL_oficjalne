@@ -235,7 +235,7 @@ INSTANCE DIA_Rufus_GotOffenceToLefty (C_INFO)
    condition    = DIA_Rufus_GotOffenceToLefty_Condition;
    information  = DIA_Rufus_GotOffenceToLefty_Info;
    permanent	= FALSE;
-   description	= "Wygarn¹³em Leuwsowi.";
+   description	= "Wygarn¹³em Lewusowi.";
 };
 
 FUNC INT DIA_Rufus_GotOffenceToLefty_Condition()
@@ -249,7 +249,7 @@ FUNC INT DIA_Rufus_GotOffenceToLefty_Condition()
 
 FUNC VOID DIA_Rufus_GotOffenceToLefty_Info()
 {
-    AI_Output (other, self ,"DIA_Rufus_GotOffenceToLefty_15_01"); //Wygarn¹³em Leuwsowi.
+    AI_Output (other, self ,"DIA_Rufus_GotOffenceToLefty_15_01"); //Wygarn¹³em Lewusowi.
     AI_Output (self, other ,"DIA_Rufus_GotOffenceToLefty_03_02"); //S³ysza³em! Przez chwilê w ogóle nie wiedzia³ co ci odpowiedzieæ.
 	AI_Output (self, other ,"DIA_Rufus_GotOffenceToLefty_03_03"); //Raczej nie zostaniecie ju¿ przyjació³mi. Powiem ci wiêc co dalej.
     AI_Output (other, self ,"DIA_Rufus_GotOffenceToLefty_15_03"); //Zamieniam siê w s³uch.

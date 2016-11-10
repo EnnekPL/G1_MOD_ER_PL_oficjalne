@@ -165,7 +165,7 @@ func VOID DIA_Ralph_Past_Info()
 	AI_Output (other, self,"DIA_Ralph_Past_15_12"); //A powiedz mi jeszcze jak dosta³eœ siê do królewskiej spó³ki? 
 	AI_Output (self, other,"DIA_Ralph_Past_04_13"); //By³em czeladnikiem u najlepszych kupców w Khorinis. PóŸniej pracowa³em nieco w Ardei. Nauczy³em siê wiec sporo o kupieckim fachu.
 	AI_Output (other, self,"DIA_Ralph_Past_15_14"); //Nie powinieneœ wiêc byæ teraz jakimœ doradc¹ Magnatów?
-	AI_Output (self, other,"DIA_Ralph_Past_04_15"); //W sumie nigdy im siê nie oferowa³em. I raczej nie mam zamiaru. Gdy by³ym dzieckiem, pracowa³em raz u stolarza. To u niego nauczy³em siê tego, co robiê dziœ. Nie chcê ju¿ nic zmieniaæ.
+	AI_Output (self, other,"DIA_Ralph_Past_04_15"); //W sumie nigdy im siê nie oferowa³em. I raczej nie mam zamiaru. Gdy by³em dzieckiem, pracowa³em raz u stolarza. To u niego nauczy³em siê tego, co robiê dziœ. Nie chcê ju¿ nic zmieniaæ.
 };
 
 //========================================

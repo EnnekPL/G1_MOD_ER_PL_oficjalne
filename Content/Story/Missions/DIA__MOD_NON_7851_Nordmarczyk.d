@@ -95,8 +95,11 @@ INSTANCE DIA_Nordmarczyk_OLDORESTAB (C_INFO)
 };
 
 FUNC INT DIA_Nordmarczyk_OLDORESTAB_Condition()
-{
+{	
+	if (Npc_KnowsInfo (hero,DIA_Huan_FixMyAxe))
+	{
     return TRUE;
+	};
 };
 
 FUNC VOID DIA_Nordmarczyk_OLDORESTAB_Info()

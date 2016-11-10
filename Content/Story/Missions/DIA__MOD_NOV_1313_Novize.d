@@ -26,6 +26,8 @@ FUNC VOID DIA_Student_AboutJoru_Info()
     CreateInvItem (self, ItMis_LetterFromStudent);
 	B_GiveInvItems (self, hero, ItMis_LetterFromStudent,1);
 	AI_StopProcessInfos	(self);
+	
+	B_LogEntry          (CH2_KalomsNewWeed,"Tu¿ po rozmowie z Joru jego uczeñ wsun¹³ mi w kieszeñ list. Muszê go przeczytaæ.");
 };
 
 //========================================

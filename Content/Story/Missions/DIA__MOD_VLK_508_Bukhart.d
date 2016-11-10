@@ -29,7 +29,7 @@ INSTANCE DIA_Bukhart_Hello (C_INFO)
 	condition	= DIA_Bukhart_Hello_Condition;
 	information	= DIA_Bukhart_Hello_Info;
 	permanent	= 0;
-	description = "CzeÅ›Ä‡.";
+	description = "Czeœæ.";
 };                       
 
 FUNC INT DIA_Bukhart_Hello_Condition()
@@ -39,8 +39,8 @@ FUNC INT DIA_Bukhart_Hello_Condition()
 
 FUNC VOID DIA_Bukhart_Hello_Info()
 {
-	AI_Output (other, self,"DIA_Bukhart_Hello_15_00"); //CzeÅ›Ä‡.
-	AI_Output (self, other,"DIA_Bukhart_Hello_01_01"); //Nowa twarz. MiÅ‚o ciÄ™ poznaÄ‡. Jestem Bukhart.
+	AI_Output (other, self,"DIA_Bukhart_Hello_15_00"); //Czeœæ.
+	AI_Output (self, other,"DIA_Bukhart_Hello_01_01"); //Nowa twarz. Mi³o ciê poznaæ. Jestem Bukhart.
 };
 
 INSTANCE DIA_Bukhart_WhereFrom (C_INFO)
@@ -50,7 +50,7 @@ INSTANCE DIA_Bukhart_WhereFrom (C_INFO)
 	condition	= DIA_Bukhart_WhereFrom_Condition;
 	information	= DIA_Bukhart_WhereFrom_Info;
 	permanent	= 0;
-	description = "Jak tu trafiÅ‚eÅ›?";
+	description = "Jak tu trafi³eœ?";
 };                       
 
 FUNC INT DIA_Bukhart_WhereFrom_Condition()
@@ -63,17 +63,17 @@ FUNC INT DIA_Bukhart_WhereFrom_Condition()
 
 FUNC VOID DIA_Bukhart_WhereFrom_Info()
 {
-	AI_Output (other, self,"DIA_Bukhart_WhereFrom_15_00"); //Jak tu trafiÅ‚eÅ›?
-	AI_Output (self, other,"DIA_Bukhart_WhereFrom_01_01"); //Przez morze, z kontynentu. ByÅ‚em farmerem, Å¼yÅ‚em nieopodal Silden, choÄ‡ moi przodkowie przywÄ™drowali tam z mroÅºnego Nordmaru. 
-	AI_Output (self, other,"DIA_Bukhart_WhereFrom_01_02"); //Pewnie dalej bym sobie siedziaÅ‚ na swojej farmie, gdyby nie ten durny wieprz.
-	AI_Output (other, self,"DIA_Bukhart_WhereFrom_15_03"); //Problemy z sÄ…siadem?
-	AI_Output (self, other,"DIA_Bukhart_WhereFrom_01_04"); //Raczej z wieprzem sÄ…siada. Wszystko byÅ‚o w porzÄ…dku dopÃ³ki sÄ…siad nie kupiÅ‚ tej Å›wini.
-	AI_Output (self, other,"DIA_Bukhart_WhereFrom_01_05"); //PonoÄ‡ jakiÅ› krewniak wyjawiÅ‚ mu przepis na paszÄ™, ktÃ³ra pozwoli utuczyÄ‡ wieprza do rozmiarÃ³w cieniostwora.
-	AI_Output (self, other,"DIA_Bukhart_WhereFrom_01_06"); //Nie wiem, czym ten sÄ…siad karmiÅ‚ tÄ… Å›winiÄ™ i co z niÄ… robiÅ‚, lecz ta wredna bestia godzinami potrafiÅ‚a kwiczeÄ‡ i kwiczeÄ‡. 
-	AI_Output (self, other,"DIA_Bukhart_WhereFrom_01_07"); //PrÃ³bowaÅ‚em to zaÅ‚atwiÄ‡ z sÄ…siadem, lecz ten zbyÅ‚ mnie tym, Å¼e Å›winia jest od tego, by kwiczaÅ‚a.
-	AI_Output (self, other,"DIA_Bukhart_WhereFrom_01_08"); //Nie mogÅ‚em juÅ¼ znieÅ›Ä‡ tego ciÄ…gÅ‚ego zawodzenia. Pewnej nocy wziÄ…Å‚em siekierÄ™ i zrobiÅ‚em porzÄ…dek z tÄ… Å›winiÄ….
-	AI_Output (self, other,"DIA_Bukhart_WhereFrom_01_09"); //Szkoda, Å¼e nie zrobiÅ‚em tego samego z sÄ…siadem, bo menda nastÄ™pnego dnia doniosÅ‚a na mnie straÅ¼om.
-	AI_Output (self, other,"DIA_Bukhart_WhereFrom_01_10"); //Tak wÅ‚aÅ›nie tutaj trafiÅ‚em.
+	AI_Output (other, self,"DIA_Bukhart_WhereFrom_15_00"); //Jak tu trafi³eœ?
+	AI_Output (self, other,"DIA_Bukhart_WhereFrom_01_01"); //Przez morze, z kontynentu. By³em farmerem, ¿y³em nieopodal Silden, choæ moi przodkowie przywêdrowali tam z mroŸnego Nordmaru. 
+	AI_Output (self, other,"DIA_Bukhart_WhereFrom_01_02"); //Pewnie dalej bym sobie siedzia³ na swojej farmie, gdyby nie ten durny wieprz.
+	AI_Output (other, self,"DIA_Bukhart_WhereFrom_15_03"); //Problemy z s¹siadem?
+	AI_Output (self, other,"DIA_Bukhart_WhereFrom_01_04"); //Raczej z wieprzem s¹siada. Wszystko by³o w porz¹dku dopóki s¹siad nie kupi³ tej œwini.
+	AI_Output (self, other,"DIA_Bukhart_WhereFrom_01_05"); //Ponoæ jakiœ krewniak wyjawi³ mu przepis na paszê, która pozwoli utuczyæ wieprza do rozmiarów cieniostwora.
+	AI_Output (self, other,"DIA_Bukhart_WhereFrom_01_06"); //Nie wiem, czym ten s¹siad karmi³ t¹ œwiniê i co z ni¹ robi³, lecz ta wredna bestia godzinami potrafi³a kwiczeæ i kwiczeæ. 
+	AI_Output (self, other,"DIA_Bukhart_WhereFrom_01_07"); //Próbowa³em to za³atwiæ z s¹siadem, lecz ten zby³ mnie tym, ¿e œwinia jest od tego, by kwicza³a.
+	AI_Output (self, other,"DIA_Bukhart_WhereFrom_01_08"); //Nie mog³em ju¿ znieœæ tego ci¹g³ego zawodzenia. Pewnej nocy wzi¹³em siekierê i zrobi³em porz¹dek z t¹ œwini¹.
+	AI_Output (self, other,"DIA_Bukhart_WhereFrom_01_09"); //Szkoda, ¿e nie zrobi³em tego samego z s¹siadem, bo menda nastêpnego dnia donios³a na mnie stra¿om.
+	AI_Output (self, other,"DIA_Bukhart_WhereFrom_01_10"); //Tak w³aœnie tutaj trafi³em.
 };
 
 INSTANCE DIA_Bukhart_HowAreYou (C_INFO)
@@ -83,7 +83,7 @@ INSTANCE DIA_Bukhart_HowAreYou (C_INFO)
 	condition	= DIA_Bukhart_HowAreYou_Condition;
 	information	= DIA_Bukhart_HowAreYou_Info;
 	permanent	= 1;
-	description = "Co sÅ‚ychaÄ‡?";
+	description = "Co s³ychaæ?";
 };                       
 
 FUNC INT DIA_Bukhart_HowAreYou_Condition()
@@ -96,8 +96,8 @@ FUNC INT DIA_Bukhart_HowAreYou_Condition()
 
 FUNC VOID DIA_Bukhart_HowAreYou_Info()
 {
-	AI_Output (other, self,"DIA_Bukhart_HowAreYou_15_00"); //Co sÅ‚ychaÄ‡?
-	AI_Output (self, other,"DIA_Bukhart_HowAreYou_01_01"); //Raczej czego nie sÅ‚ychaÄ‡. A mÃ³wiÄ™ o tym cholernym kwiczeniu. Jeszcze trochÄ™ i bym chyba zwariowaÅ‚. 
+	AI_Output (other, self,"DIA_Bukhart_HowAreYou_15_00"); //Co s³ychaæ?
+	AI_Output (self, other,"DIA_Bukhart_HowAreYou_01_01"); //Raczej czego nie s³ychaæ. A mówiê o tym cholernym kwiczeniu. Jeszcze trochê i bym chyba zwariowa³. 
 };
 
 INSTANCE DIA_Bukhart_AnyAdvice (C_INFO)
@@ -107,7 +107,7 @@ INSTANCE DIA_Bukhart_AnyAdvice (C_INFO)
 	condition	= DIA_Bukhart_AnyAdvice_Condition;
 	information	= DIA_Bukhart_AnyAdvice_Info;
 	permanent	= 0;
-	description = "MoÅ¼esz mi coÅ› doradziÄ‡?";
+	description = "Mo¿esz mi coœ doradziæ?";
 };                       
 
 FUNC INT DIA_Bukhart_AnyAdvice_Condition()
@@ -120,11 +120,11 @@ FUNC INT DIA_Bukhart_AnyAdvice_Condition()
 
 FUNC VOID DIA_Bukhart_AnyAdvice_Info()
 {
-	AI_Output (other, self,"DIA_Bukhart_AnyAdvice_15_00"); //MoÅ¼esz mi coÅ› doradziÄ‡?
-	AI_Output (self, other,"DIA_Bukhart_AnyAdvice_01_01"); //Wieczorami Gomez opuszcza swÄ… siedzibÄ™ i udaje siÄ™ na arenÄ™.
-	AI_Output (self, other,"DIA_Bukhart_AnyAdvice_01_02"); //Rzecz jasna nie walczy. Ma przygotowanÄ… loÅ¼Ä™, z ktÃ³rej obserwuje walki i pokazy.
-	AI_Output (self, other,"DIA_Bukhart_AnyAdvice_01_03"); //Na twoim miejscu jednak nie prÃ³bowaÅ‚bym podchodziÄ‡ wtedy do szefa MagnatÃ³w. 
-	AI_Output (self, other,"DIA_Bukhart_AnyAdvice_01_04"); //Snaf kiedyÅ› opowiadaÅ‚ jak jakiÅ› gÅ‚upiec postanowiÅ‚ wejÅ›Ä‡ do loÅ¼y i zaoferowaÄ‡ Gomezowi swe usÅ‚ugi. Thorus na miejscu rozÅ‚upaÅ‚ temu kretynowi czaszkÄ™.
+	AI_Output (other, self,"DIA_Bukhart_AnyAdvice_15_00"); //Mo¿esz mi coœ doradziæ?
+	AI_Output (self, other,"DIA_Bukhart_AnyAdvice_01_01"); //Wieczorami Gomez opuszcza sw¹ siedzibê i udaje siê na arenê.
+	AI_Output (self, other,"DIA_Bukhart_AnyAdvice_01_02"); //Rzecz jasna nie walczy. Ma przygotowan¹ lo¿ê, z której obserwuje walki i pokazy.
+	AI_Output (self, other,"DIA_Bukhart_AnyAdvice_01_03"); //Na twoim miejscu jednak nie próbowa³bym podchodziæ wtedy do szefa Magnatów. 
+	AI_Output (self, other,"DIA_Bukhart_AnyAdvice_01_04"); //Snaf kiedyœ opowiada³ jak jakiœ g³upiec postanowi³ wejœæ do lo¿y i zaoferowaæ Gomezowi swe us³ugi. Thorus na miejscu roz³upa³ temu kretynowi czaszkê.
 };
 
 //========================================
@@ -139,7 +139,7 @@ INSTANCE DIA_Bukhart_UscanPlan (C_INFO)
 	condition	= DIA_Bukhart_UscanPlan_Condition;
 	information	= DIA_Bukhart_UscanPlan_Info;
 	permanent	= 0;
-	description = "PrzysyÅ‚a mnie Uscan.";
+	description = "Przysy³a mnie Uscan.";
 };                       
 
 FUNC INT DIA_Bukhart_UscanPlan_Condition()
@@ -152,19 +152,19 @@ FUNC INT DIA_Bukhart_UscanPlan_Condition()
 
 FUNC VOID DIA_Bukhart_UscanPlan_Info()
 {
-	AI_Output (other, self,"DIA_Bukhart_UscanPlan_15_00"); //PrzysyÅ‚a mnie Uscan. Ma pewien plan zemsty na Eskelu.
-	AI_Output (self, other,"DIA_Bukhart_UscanPlan_01_01"); //Ja nie wiem o niczym. Poza tym jestem zajÄ™ty.
+	AI_Output (other, self,"DIA_Bukhart_UscanPlan_15_00"); //Przysy³a mnie Uscan. Ma pewien plan zemsty na Eskelu.
+	AI_Output (self, other,"DIA_Bukhart_UscanPlan_01_01"); //Ja nie wiem o niczym. Poza tym jestem zajêty.
 	AI_Output (other, self,"DIA_Bukhart_UscanPlan_15_02"); //Czerwona Latarnia.
-	AI_Output (self, other,"DIA_Bukhart_UscanPlan_01_03"); //PrzecieÅ¼ to burdel w dzielnicy portowej w Khorinis. Ano tak, chodzi o to hasÅ‚o co to je ustaliliÅ›my z Uscanem.
- 	AI_Output (self, other,"DIA_Bukhart_UscanPlan_01_04"); //Ile to juÅ¼ lat tam nie byÅ‚em? Jeszcze chyba jak za mÅ‚odu. A niech mnie, kiedyÅ› muszÄ™ znÃ³w odwiedziÄ‡ to miasto! No dobrze, bo siÄ™ rozgadaÅ‚em...
- 	AI_Output (other, self,"DIA_Bukhart_UscanPlan_15_05"); //Uscan powiedziaÅ‚, Å¼e potrafisz dobrze wymieszaÄ‡ mÄ…kÄ™ z piaskiem, by Eskel nic nie zauwaÅ¼yÅ‚ i upiekÅ‚ z tego chleb.
- 	AI_Output (self, other,"DIA_Bukhart_UscanPlan_01_06"); //Znam siÄ™ na tym. PamiÄ™tam teÅ¼ tego zÅ‚oÅ›liwca Eskela. Ludzie opowiadali o nim w portowej karczmie, jak tracili przez niego zÄ™by.
- 	AI_Output (self, other,"DIA_Bukhart_UscanPlan_01_07"); //Mam mÄ…kÄ™, muszÄ™ jÄ… jeszcze odpowiednio wymieszaÄ‡ z piaskiem. WrÃ³Ä‡ do mnie za 2 godziny.
-	AI_Output (other, self,"DIA_Bukhart_UscanPlan_15_08"); //Tak zrobiÄ™.
+	AI_Output (self, other,"DIA_Bukhart_UscanPlan_01_03"); //Przecie¿ to burdel w dzielnicy portowej w Khorinis. Ano tak, chodzi o to has³o co to je ustaliliœmy z Uscanem.
+ 	AI_Output (self, other,"DIA_Bukhart_UscanPlan_01_04"); //Ile to ju¿ lat tam nie by³em? Jeszcze chyba jak za m³odu. A niech mnie, kiedyœ muszê znów odwiedziæ to miasto! No dobrze, bo siê rozgada³em...
+ 	AI_Output (other, self,"DIA_Bukhart_UscanPlan_15_05"); //Uscan powiedzia³, ¿e potrafisz dobrze wymieszaæ m¹kê z piaskiem, by Eskel nic nie zauwa¿y³ i upiek³ z tego chleb.
+ 	AI_Output (self, other,"DIA_Bukhart_UscanPlan_01_06"); //Znam siê na tym. Pamiêtam te¿ tego z³oœliwca Eskela. Ludzie opowiadali o nim w portowej karczmie, jak tracili przez niego zêby.
+ 	AI_Output (self, other,"DIA_Bukhart_UscanPlan_01_07"); //Mam m¹kê, muszê j¹ jeszcze odpowiednio wymieszaæ z piaskiem. Wróæ do mnie za 2 godziny.
+	AI_Output (other, self,"DIA_Bukhart_UscanPlan_15_08"); //Tak zrobiê.
 	
 	BukhartTime = Wld_GetDay() * 24 + Wld_GetHour() + 2;
 	
-	B_LogEntry(CH1_WhoeverPoursSand, "Bukhart wymiesza mÄ…kÄ™ z piaskiem. Mam wrÃ³ciÄ‡ do niego za dwie godziny.");
+	B_LogEntry(CH1_WhoeverPoursSand, "Bukhart wymiesza m¹kê z piaskiem. Mam wróciæ do niego za dwie godziny.");
 };
 
 INSTANCE DIA_Bukhart_TwoHoursLater (C_INFO)
@@ -188,11 +188,11 @@ FUNC INT DIA_Bukhart_TwoHoursLater_Condition()
 FUNC VOID DIA_Bukhart_TwoHoursLater_Info()
 {
 	AI_Output (other, self,"DIA_Bukhart_TwoHoursLater_15_00"); //No i jak, wszystko gotowe?
-	AI_Output (self, other,"DIA_Bukhart_TwoHoursLater_01_01"); //Tak, bierz ten worek. Teraz ostroÅ¼nie podrzuÄ‡ go do chaty Eskela, a rÃ³wnoczeÅ›nie gwizdnij worek z dobrÄ… mÄ…kÄ….
-	AI_Output (self, other,"DIA_Bukhart_TwoHoursLater_01_02"); //I niech ten gnojek poczuje wreszcie prawdziwy smak wÅ‚asnych wyrobÃ³w!
-	AI_Output (other, self,"DIA_Bukhart_TwoHoursLater_15_03"); //ZÅ‚oÅ¼Ä™ mu teraz niezapowiedzianÄ… wizytÄ™.
+	AI_Output (self, other,"DIA_Bukhart_TwoHoursLater_01_01"); //Tak, bierz ten worek. Teraz ostro¿nie podrzuæ go do chaty Eskela, a równoczeœnie gwizdnij worek z dobr¹ m¹k¹.
+	AI_Output (self, other,"DIA_Bukhart_TwoHoursLater_01_02"); //I niech ten gnojek poczuje wreszcie prawdziwy smak w³asnych wyrobów!
+	AI_Output (other, self,"DIA_Bukhart_TwoHoursLater_15_03"); //Z³o¿ê mu teraz niezapowiedzian¹ wizytê.
 	
-	B_LogEntry(CH1_WhoeverPoursSand, "Mam worek mÄ…ki z piaskiem. Czas udaÄ‡ siÄ™ do Eskela.");
+	B_LogEntry(CH1_WhoeverPoursSand, "Mam worek m¹ki z piaskiem. Czas udaæ siê do Eskela.");
 	
 	B_GiveInvItems (self,other, ItMi_FlourBagWithSand, 2);
 	

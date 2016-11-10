@@ -275,7 +275,7 @@ FUNC VOID DIA_Briam_NewWeedRun_Info()
     AI_Output (self, other ,"DIA_Briam_NewWeedRun_03_02"); //Rozmawia³em ostatnio z moim przyjacielem z Nowego Obozu.
     AI_Output (self, other ,"DIA_Briam_NewWeedRun_03_03"); //Nazywa siê Sharky. Mo¿liwe, ¿e go znasz.
     AI_Output (self, other ,"DIA_Briam_NewWeedRun_03_04"); //W ka¿dym razie dowiedzia³em siê od niego, ¿e niejaki Cor Kalom opracowa³ przepis na niesamowite ziele.
-    AI_Output (self, other ,"DIA_Briam_NewWeedRun_03_05"); //Podobno skrêty s¹ perfekcyjne, jednak nie trafi³y na sprzeda¿. Kalom uzna³, ¿e bêd¹ je paliæ wy³¹cznie najwyŸsi cz³onkiwie Sekty.
+    AI_Output (self, other ,"DIA_Briam_NewWeedRun_03_05"); //Podobno skrêty s¹ perfekcyjne, jednak nie trafi³y na sprzeda¿. Kalom uzna³, ¿e bêd¹ je paliæ wy³¹cznie najwy¿si cz³onkowie Sekty.
 	AI_Output (self, other ,"DIA_Briam_NewWeedRun_03_06"); //To gówno musi nieŸle dawaæ w czaszkê, skoro elity trzymaj¹ je wy³¹cznie da siebie.
     AI_Output (self, other ,"DIA_Briam_NewWeedRun_03_07"); //Chcia³bym, abyœ zdoby³ dla mnie ten przepis. Moglibyœmy na tym sporo zarobiæ.
     AI_Output (self, other ,"DIA_Briam_NewWeedRun_03_08"); //Niestety nie mam pojêcia jak dotrzeæ do osoby, która ma przepis na skrêty. 

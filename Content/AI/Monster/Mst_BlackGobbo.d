@@ -112,7 +112,7 @@ INSTANCE BlackGobboWarrior	(Mst_Default_BlackGobbo)
 INSTANCE Gol_Umik	(Mst_Default_BlackGobbo)
 {
 	level							=	40;
-	name							=	"Herszt goblinÃ³w Gol-Umik ";
+	name							=	"Herszt goblinów Gol-Umik ";
 	Set_BlackGobbo3_Visuals();
 	Npc_SetToFightMode (self, ItMw_1H_Mace_04);
 	

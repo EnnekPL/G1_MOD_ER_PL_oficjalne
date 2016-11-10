@@ -536,7 +536,7 @@ INSTANCE DIA_Lefty_RufusIsMyFriend (C_INFO)
 
 FUNC INT DIA_Lefty_RufusIsMyFriend_Condition()
 {
-    if (Quest_GiveOffense == LOG_RUNNING) && (Rebel_HerosBoss != Boss_Lefty)
+    if (Quest_GiveOffense == LOG_RUNNING) && (Rebel_HerosBoss != Boss_Lefty) && (MIS_BuntZbieraczy == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -628,7 +628,7 @@ FUNC VOID DIA_Lefty_RufusIsMyFriend_Rebeliant ()
 	
 	Quest_TalkWithRufus = LOG_FAILED;
 	
-	B_LogEntry    		(CH1_BuntZbieraczy,"Stan¹³em po stronie buntowników. Ten wyzysk musi siê w wreszcie zakoñczyæ. Obrazi³em Leuwsa dziêki czemu zyska³em zaufanie Rufusa. Muszê ponownie z nim pogadaæ.");
+	B_LogEntry    		(CH1_BuntZbieraczy,"Stan¹³em po stronie buntowników. Ten wyzysk musi siê w wreszcie zakoñczyæ. Obrazi³em Lewusa dziêki czemu zyska³em zaufanie Rufusa. Muszê ponownie z nim pogadaæ.");
 	
 	Info_ClearChoices	(DIA_Lefty_RufusIsMyFriend );
 	
@@ -837,7 +837,7 @@ FUNC VOID DIA_Lefty_WeaponsDestroyed_Info()
 {
     AI_Output (other, self ,"DIA_Lefty_WeaponsDestroyed_15_01"); //Broñ nie trafi do buntowników. Senyan ³atwo da³ siê przekonaæ.
     AI_Output (self, other ,"DIA_Lefty_WeaponsDestroyed_03_02"); //Mówi³em, ¿e to nie bêdzie trudne. Czeka ciê jeszcze jedna wyprawa do karczmy.
-	AI_Output (other, self ,"DIA_Lefty_WeaponsDestroyed_15_03"); //Po co ty razem?
+	AI_Output (other, self ,"DIA_Lefty_WeaponsDestroyed_15_03"); //Po co tym razem?
 	AI_Output (self, other ,"DIA_Lefty_WeaponsDestroyed_03_04"); //A to ciê rozbawi. Jeden z tych, których przekupi³eœ opowiedzia³ mi o planie Rufusa.
 	AI_Output (self, other ,"DIA_Lefty_WeaponsDestroyed_03_05"); //Wiesz, Homer dostarcza nam codziennie po trzy butelki ry¿ówki z karczmy. Buntownicy chcieli tê ry¿ówkê podmieniæ na 'specja³' Jeremiasza.
 	AI_Output (other, self ,"DIA_Lefty_WeaponsDestroyed_15_06"); //Co by tym osi¹gnêli?
