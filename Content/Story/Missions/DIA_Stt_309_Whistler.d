@@ -848,6 +848,8 @@ func void Stt_309_Whistler_SFB_ARMOR_M()
 		B_GiveInvItems	(hero,	self,	ItMinugget, 500);
 		CreateInvItem	(self,			SFB_ARMOR_M);
 		B_GiveInvItems	(self,	hero,	SFB_ARMOR_M, 1);
+		
+		Npc_RemoveInvItems (self,ItMinugget,500);
 	}
 	else
 	{
@@ -864,6 +866,8 @@ func void Stt_309_Whistler_HEREK_ARMOR()
 	B_GiveInvItems	(hero, self, ItMinugget, VALUE_SFB_ARMOR_L+120);
 	CreateInvItem	(self, HEREK_ARMOR);
 	B_GiveInvItems	(self,hero, HEREK_ARMOR, 1);
+	
+	Npc_RemoveInvItems (self,ItMinugget,VALUE_SFB_ARMOR_L+120);
 	}
 	else
 	{
@@ -880,6 +884,8 @@ func void Stt_309_Whistler_GRAVO_ARMOR()
 		B_GiveInvItems	(hero, self, ItMinugget, VALUE_SFB_ARMOR_L+150);
 		CreateInvItem	(self, GRAVO_ARMOR);
 		B_GiveInvItems	(self,hero, GRAVO_ARMOR, 1);
+		
+		Npc_RemoveInvItems (self,ItMinugget,VALUE_SFB_ARMOR_L+150);
 			}
 	else
 	{
@@ -896,6 +902,8 @@ func void Stt_309_Whistler_SFB_ARMOR_DARK()
 		B_GiveInvItems	(hero, self, ItMinugget, 650);
 		CreateInvItem	(self, SFB_ARMOR_DARK);
 		B_GiveInvItems	(self,hero, SFB_ARMOR_DARK, 1);
+		
+		Npc_RemoveInvItems (self,ItMinugget,650);
 	}
 	else
 	{
@@ -912,6 +920,8 @@ func void Stt_309_Whistler_VLK_ARMOR_H()
 		B_GiveInvItems	(hero, self, ItMinugget, 1000);
 		CreateInvItem	(self, VLK_ARMOR_H);
 		B_GiveInvItems	(self,hero, VLK_ARMOR_H, 1);
+		
+		Npc_RemoveInvItems (self,ItMinugget,1000);
 	}
 	else
 	{

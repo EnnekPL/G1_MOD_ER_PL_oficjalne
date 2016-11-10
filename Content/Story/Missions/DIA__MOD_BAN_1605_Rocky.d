@@ -700,40 +700,6 @@ FUNC VOID DIA_Rocky_WIN_O_Info()
     B_GiveXP (XP_AtakNaKonwoj);
 };
 
-
-//========================================
-//-----------------> GiveSwords
-//========================================
-
-INSTANCE DIA_Rocky_GiveSwords (C_INFO)
-{
-   npc          = BAN_1605_Rocky;
-   nr           = 2;
-   condition    = DIA_Rocky_GiveSwords_Condition;
-   information  = DIA_Rocky_GiveSwords_Info;
-   permanent	= TRUE;
-   description	= "Mam kolejne paczki z broni¹. ";
-};
-
-FUNC INT DIA_Rocky_GiveSwords_Condition()
-{
-    if (Npc_HasItems (other, ItMi_PaczkaMiecze1) >=1)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Rocky_GiveSwords_Info()
-{
-    AI_Output (other, self ,"DIA_Rocky_GiveSwords_15_01"); //Mam kolejne paczki z broni¹.
-	AI_Output (self, other ,"DIA_Rocky_GiveSwords_03_02"); //Œwietnie. Dawaj je tu!
-	var int ilosc_paczek;
-	ilosc_paczek = Npc_hasitems (hero, ItMi_PaczkaMiecze1);
-    B_GiveInvItems (other, self, ItMi_PaczkaMiecze1, ilosc_paczek);
-	B_Givexp (25*ilosc_paczek);
-};
-
 //========================================
 //-----------------> GivEq
 //========================================

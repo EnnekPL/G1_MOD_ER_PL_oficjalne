@@ -234,7 +234,7 @@ FUNC VOID DIA_Huno_FakeMagicOre_Info()
 	AI_Output (other,self,"DIA_Huno_FakeMagicOre_15_00"); //Potrzebujê czegoœ, co przypomina czarn¹ rudê.
 	AI_Output (self,other,"DIA_Huno_FakeMagicOre_09_01"); //Po co ci coœ takiego?
 	AI_Output (other,self,"DIA_Huno_FakeMagicOre_15_02"); //Powiedzmy, ¿e chcê zrobiæ koledze dowcip. Umiesz coœ takiego zrobiæ?
-	AI_Output (self,other,"DIA_Huno_FakeMagicOre_09_03"); //No dobra, bêdê siê musia³ z tym pobawiæ, ale tylko za CZTERDZEIEŒÆI bry³ek rudy, jasne?
+	AI_Output (self,other,"DIA_Huno_FakeMagicOre_09_03"); //No dobra, bêdê siê musia³ z tym pobawiæ, ale tylko za CZTERDZIEŒÆI bry³ek rudy, jasne?
 	AI_Output (self,other,"DIA_Huno_FakeMagicOre_09_04"); //A, i jeszcze jedno! Efekt nie bêdzie trwa³y. Po jakimœ czasie wyjdzie na jaw, ¿e to ¿art. Jeœli ten twój kole¿ka zacznie za bardzo d³ubaæ...
 	AI_Output (self,other,"DIA_Huno_FakeMagicOre_09_05"); //... to mo¿e siê dokopaæ do prawdy. Miej to na uwadze. 
 	B_LogEntry               (CH1_ZmianaLorenza,"Zapyta³em Huno, czy móg³by stworzyæ coœ co bêdzie przypominaæ czarn¹ rud¹. Zrobi to za czterdzieœci bry³ek rudy. To pozwoli mi przekonaæ Togarda do przy³¹czania siê do organizowanej zmiany do Kopalni.");	

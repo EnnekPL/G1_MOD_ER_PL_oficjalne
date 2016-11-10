@@ -73,7 +73,7 @@ attribute[ATR_HITPOINTS_MAX] = 1000;
 attribute[ATR_HITPOINTS] = 1000;
 
 //----------Wyglad----------
-
+damagetype 						=	DAM_FLY;
 Mdl_SetVisual		(self,"HUMANS.MDS");
 Mdl_ApplyOverlayMds	(self,"Humans_Militia.mds");
 Mdl_SetVisualBody (self,"hum_body_naked0",0, 3,"Hum_Head_Fighter",10, 3,GRD_ARMOR_I);
@@ -86,8 +86,8 @@ Npc_SetTalentSkill (self, NPC_TALENT_1H,10);
 Npc_SetTalentSkill (self, NPC_TALENT_CROSSBOW,2);
 
 //----------Ekwipunek----------
-EquipItem		(self, ItMw_1H_Sword_04);
-EquipItem		(self, ItRw_Crossbow_01);
+//EquipItem		(self, ItMw_1H_Sword_04);
+//EquipItem		(self, ItRw_Crossbow_01);
 //----------Pozostale----------
 fight_tactic	=	FAI_HUMAN_Strong;
 daily_routine = Rtn_start_156;

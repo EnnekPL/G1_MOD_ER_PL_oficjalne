@@ -129,6 +129,8 @@ FUNC VOID DIA_Jens_ArmorLeather_Info()
         B_GiveInvItems (other, self, ItMiNugget, 750);
 		AI_EquipBestArmor	(hero); 
 		Jens_SellArmor_OneTime = TRUE;
+		
+		Npc_RemoveInvItems	(self, ItMiNugget,750);
     }
     else
     {

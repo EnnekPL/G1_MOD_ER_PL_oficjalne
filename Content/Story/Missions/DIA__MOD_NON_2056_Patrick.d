@@ -49,11 +49,11 @@ FUNC INT DIA_Patrick_HELLO1_Condition()
 FUNC VOID DIA_Patrick_HELLO1_Info()
 {
     AI_Output (other, self ,"DIA_Patrick_HELLO1_15_01"); //Co tu robisz?
-    AI_Output (self, other ,"DIA_Patrick_HELLO1_03_02"); //Czekam na wejÅ›cie do kopalni. Artegor nie chce nas wpuÅ›ciÄ‡.
-    AI_Output (self, other ,"DIA_Patrick_HELLO1_03_03"); //Ja juÅ¼ tu kiedyÅ› byÅ‚em, ale tych dwÃ³ch jest nowych.
-    AI_Output (other, self ,"DIA_Patrick_HELLO1_15_04"); //Trudno jest siÄ™ dostaÄ‡ do kopalni?
-    AI_Output (self, other ,"DIA_Patrick_HELLO1_03_05"); //Nie, trzeba pogadaÄ‡ z miejscowymi, Å¼eby ciÄ™ poparli.
-    AI_Output (self, other ,"DIA_Patrick_HELLO1_03_06"); //Artegor, mimo swojej powierzchownoÅ›ci, nie jest zbyt wymagajÄ…cy.
+    AI_Output (self, other ,"DIA_Patrick_HELLO1_03_02"); //Czekam na wejœcie do kopalni. Artegor nie chce nas wpuœciæ.
+    AI_Output (self, other ,"DIA_Patrick_HELLO1_03_03"); //Ja ju¿ tu kiedyœ by³em, ale tych dwóch jest nowych.
+    AI_Output (other, self ,"DIA_Patrick_HELLO1_15_04"); //Trudno jest siê dostaæ do kopalni?
+    AI_Output (self, other ,"DIA_Patrick_HELLO1_03_05"); //Nie, trzeba pogadaæ z miejscowymi, ¿eby ciê poparli.
+    AI_Output (self, other ,"DIA_Patrick_HELLO1_03_06"); //Artegor, mimo swojej powierzchownoœci, nie jest zbyt wymagaj¹cy.
 };
 
 //========================================
@@ -67,7 +67,7 @@ INSTANCE DIA_Patrick_HELLO2 (C_INFO)
    condition    = DIA_Patrick_HELLO2_Condition;
    information  = DIA_Patrick_HELLO2_Info;
    permanent	= FALSE;
-   description	= "DÅ‚ugo juÅ¼ tu czekasz?";
+   description	= "D³ugo ju¿ tu czekasz?";
 };
 
 FUNC INT DIA_Patrick_HELLO2_Condition()
@@ -80,7 +80,7 @@ FUNC INT DIA_Patrick_HELLO2_Condition()
 
 FUNC VOID DIA_Patrick_HELLO2_Info()
 {
-    AI_Output (other, self ,"DIA_Patrick_HELLO2_15_01"); //DÅ‚ugo juÅ¼ tu czekasz?
+    AI_Output (other, self ,"DIA_Patrick_HELLO2_15_01"); //D³ugo ju¿ tu czekasz?
     AI_Output (self, other ,"DIA_Patrick_HELLO2_03_02"); //Kilka dni. 
 };
 
@@ -121,36 +121,36 @@ FUNC VOID DIA_Patrick_HELLO3_Info()
 FUNC VOID DIA_Patrick_HELLO3_Artegor()
 {
     AI_Output (other, self ,"DIA_Patrick_HELLO3_Artegor_15_01"); //...Artegorze.
-    AI_Output (self, other ,"DIA_Patrick_HELLO3_Artegor_03_02"); //Pilnuje wejÅ›cia do kopalni. To trudny czÅ‚owiek. 
-    AI_Output (self, other ,"DIA_Patrick_HELLO3_Artegor_03_03"); //Nie jednego Kopacza juÅ¼ powiesiÅ‚.
-    AI_Output (self, other ,"DIA_Patrick_HELLO3_Artegor_03_04"); //Pewnego dnia dwÃ³ch robotnikÃ³w postanowiÅ‚o wleÅºÄ‡ na palisadÄ™ i szybko pobiec do kopalni.
-    AI_Output (self, other ,"DIA_Patrick_HELLO3_Artegor_03_05"); //Gdy zeskakiwali, dorwaÅ‚ ich i zmiaÅ¼dÅ¼yÅ‚ im czaszki. 
-    AI_Output (self, other ,"DIA_Patrick_HELLO3_Artegor_03_06"); //To byÅ‚ straszny widok. 
-    AI_Output (other, self ,"DIA_Patrick_HELLO3_Artegor_15_07"); //Lepiej z nim nie zadzieraÄ‡.
-    AI_Output (self, other ,"DIA_Patrick_HELLO3_Artegor_03_08"); //DokÅ‚adnie. ChoÄ‡ teraz jest spokojniejszy.
+    AI_Output (self, other ,"DIA_Patrick_HELLO3_Artegor_03_02"); //Pilnuje wejœcia do kopalni. To trudny cz³owiek. 
+    AI_Output (self, other ,"DIA_Patrick_HELLO3_Artegor_03_03"); //Nie jednego Kopacza ju¿ powiesi³.
+    AI_Output (self, other ,"DIA_Patrick_HELLO3_Artegor_03_04"); //Pewnego dnia dwóch robotników postanowi³o wleŸæ na palisadê i szybko pobiec do kopalni.
+    AI_Output (self, other ,"DIA_Patrick_HELLO3_Artegor_03_05"); //Gdy zeskakiwali, dorwa³ ich i zmia¿d¿y³ im czaszki. 
+    AI_Output (self, other ,"DIA_Patrick_HELLO3_Artegor_03_06"); //To by³ straszny widok. 
+    AI_Output (other, self ,"DIA_Patrick_HELLO3_Artegor_15_07"); //Lepiej z nim nie zadzieraæ.
+    AI_Output (self, other ,"DIA_Patrick_HELLO3_Artegor_03_08"); //Dok³adnie. Choæ teraz jest spokojniejszy.
 };
 
 FUNC VOID DIA_Patrick_HELLO3_Matt()
 {
     AI_Output (other, self ,"DIA_Patrick_HELLO3_Matt_15_01"); //...Macie.
     AI_Output (self, other ,"DIA_Patrick_HELLO3_Matt_03_02"); //Matt to nasz kucharz.
-    AI_Output (self, other ,"DIA_Patrick_HELLO3_Matt_03_03"); //MoÅ¼na u niego kupiÄ‡ coÅ› ciepÅ‚ego.
-    AI_Output (self, other ,"DIA_Patrick_HELLO3_Matt_03_04"); //Jest miÅ‚y dla nowych.
+    AI_Output (self, other ,"DIA_Patrick_HELLO3_Matt_03_03"); //Mo¿na u niego kupiæ coœ ciep³ego.
+    AI_Output (self, other ,"DIA_Patrick_HELLO3_Matt_03_04"); //Jest mi³y dla nowych.
 };
 
 FUNC VOID DIA_Patrick_HELLO3_Gamal()
 {
     AI_Output (other, self ,"DIA_Patrick_HELLO3_Gamal_15_01"); //...Petro.
-    AI_Output (self, other ,"DIA_Patrick_HELLO3_Gamal_03_02"); //Petro? To pupilek Lorenzo. Wykonuje dla niego rÃ³Å¼ne Å›mieciowe zlecenia.
-    AI_Output (self, other ,"DIA_Patrick_HELLO3_Gamal_03_03"); //Ale jego gÅ‚Ã³wnym zadaniem jest pilnowanie, aby nowi Kopacze dotarli do Kopalni w jednym kawaÅ‚ku. 
-    AI_Output (self, other ,"DIA_Patrick_HELLO3_Gamal_03_04"); //ZarozumiaÅ‚y typ. Nie przepadam za nim. 
+    AI_Output (self, other ,"DIA_Patrick_HELLO3_Gamal_03_02"); //Petro? To pupilek Lorenzo. Wykonuje dla niego ró¿ne œmieciowe zlecenia.
+    AI_Output (self, other ,"DIA_Patrick_HELLO3_Gamal_03_03"); //Ale jego g³ównym zadaniem jest pilnowanie, aby nowi Kopacze dotarli do Kopalni w jednym kawa³ku. 
+    AI_Output (self, other ,"DIA_Patrick_HELLO3_Gamal_03_04"); //Zarozumia³y typ. Nie przepadam za nim. 
 };
 
 FUNC VOID DIA_Patrick_HELLO3_Spike()
 {
     AI_Output (other, self ,"DIA_Patrick_HELLO3_Spike_15_01"); //...Spike'u.
     AI_Output (self, other ,"DIA_Patrick_HELLO3_Spike_03_02"); //Nie znam go za dobrze.
-    AI_Output (self, other ,"DIA_Patrick_HELLO3_Spike_03_03"); //Wiem tylko, Å¼e czegoÅ› tam pilnuje.
+    AI_Output (self, other ,"DIA_Patrick_HELLO3_Spike_03_03"); //Wiem tylko, ¿e czegoœ tam pilnuje.
 };
 FUNC VOID DIA_Patrick_HELLO3_back()
 {
@@ -168,7 +168,7 @@ INSTANCE DIA_Patrick_IanQuest (C_INFO)
    condition    = DIA_Patrick_IanQuest_Condition;
    information  = DIA_Patrick_IanQuest_Info;
    permanent	= FALSE;
-   description	= "Co moÅ¼esz mi powiedzieÄ‡ o Artchu i Mirzo?";
+   description	= "Co mo¿esz mi powiedzieæ o Artchu i Mirzo?";
 };
 
 FUNC INT DIA_Patrick_IanQuest_Condition()
@@ -182,21 +182,21 @@ FUNC INT DIA_Patrick_IanQuest_Condition()
 
 FUNC VOID DIA_Patrick_IanQuest_Info()
 {
-    AI_Output (other, self ,"DIA_Patrick_IanQuest_15_01"); //Co moÅ¼esz mi powiedziea o Artchu i Mirzo?
-    AI_Output (self, other ,"DIA_Patrick_IanQuest_03_02"); //Co nieco moge ci o nich powiedzieÄ‡.
-    AI_Output (self, other ,"DIA_Patrick_IanQuest_03_03"); //Artch bardzo dokÅ‚adnie wykonuje swojÄ… pracÄ™. MyÅ›lÄ™, Å¼e obawia sie MagnatÃ³w.
-    AI_Output (self, other ,"DIA_Patrick_IanQuest_03_04"); //Jego poprzednik nie skonczyÅ‚ zbyt dobrze.
-    AI_Output (self, other ,"DIA_Patrick_IanQuest_03_05"); //MyÅ›lÄ™, Å¼e jest lojalny wzglÄ™dem Starego Obozu.
+    AI_Output (other, self ,"DIA_Patrick_IanQuest_15_01"); //Co mo¿esz mi powiedziea o Artchu i Mirzo?
+    AI_Output (self, other ,"DIA_Patrick_IanQuest_03_02"); //Co nieco moge ci o nich powiedzieæ.
+    AI_Output (self, other ,"DIA_Patrick_IanQuest_03_03"); //Artch bardzo dok³adnie wykonuje swoj¹ pracê. Myœlê, ¿e obawia sie Magnatów.
+    AI_Output (self, other ,"DIA_Patrick_IanQuest_03_04"); //Jego poprzednik nie skonczy³ zbyt dobrze.
+    AI_Output (self, other ,"DIA_Patrick_IanQuest_03_05"); //Myœlê, ¿e jest lojalny wzglêdem Starego Obozu.
     AI_Output (other, self ,"DIA_Patrick_IanQuest_15_06"); //A Mirzo?
-    AI_Output (self, other ,"DIA_Patrick_IanQuest_03_07"); //Hmm... Ten czÅ‚owiek na mile Å›mierdzi brudnymi sprawkami.
-    AI_Output (self, other ,"DIA_Patrick_IanQuest_03_08"); //Kilka nocy temu nie mogÅ‚em zasnÄ…Ä‡. PostanowiÅ‚em wiÄ™c przejÅ›Ä‡ siÄ™ po obozie.
-    AI_Output (self, other ,"DIA_Patrick_IanQuest_03_09"); //WidziaÅ‚em jak Mirzo obudziÅ‚ siÄ™, rozejrzaÅ‚ nerwowo i cichaczem opuociÅ‚ obÃ³z.
-    AI_Output (self, other ,"DIA_Patrick_IanQuest_03_10"); //Wiesz, dokÄ…d mÃ³gÅ‚ siÄ™ udaÄ‡?
-    AI_Output (self, other ,"DIA_Patrick_IanQuest_03_11"); //Nie, ale jak chcesz sie tego dowiedzieÄ‡, to lepiej poczekaj aÅ¼ zapadnie zmrok.
-    AI_Output (self, other ,"DIA_Patrick_IanQuest_03_12"); //Zaczaj sie gdzieÅ› i jak zobaczysz, Å¼e Mirzo opuszcza obÃ³z, idÅº za nim.
-    AI_Output (other, self ,"DIA_Patrick_IanQuest_15_13"); //DziÄ™ki za radÄ™.
+    AI_Output (self, other ,"DIA_Patrick_IanQuest_03_07"); //Hmm... Ten cz³owiek na mile œmierdzi brudnymi sprawkami.
+    AI_Output (self, other ,"DIA_Patrick_IanQuest_03_08"); //Kilka nocy temu nie mog³em zasn¹æ. Postanowi³em wiêc przejœæ siê po obozie.
+    AI_Output (self, other ,"DIA_Patrick_IanQuest_03_09"); //Widzia³em jak Mirzo obudzi³ siê, rozejrza³ nerwowo i cichaczem opuoci³ obóz.
+    AI_Output (self, other ,"DIA_Patrick_IanQuest_03_10"); //Wiesz, dok¹d móg³ siê udaæ?
+    AI_Output (self, other ,"DIA_Patrick_IanQuest_03_11"); //Nie, ale jak chcesz sie tego dowiedzieæ, to lepiej poczekaj a¿ zapadnie zmrok.
+    AI_Output (self, other ,"DIA_Patrick_IanQuest_03_12"); //Zaczaj sie gdzieœ i jak zobaczysz, ¿e Mirzo opuszcza obóz, idŸ za nim.
+    AI_Output (other, self ,"DIA_Patrick_IanQuest_15_13"); //Dziêki za radê.
     AI_Output (self, other ,"DIA_Patrick_IanQuest_03_14"); //Nie ma sprawy.
-    B_LogEntry                     (CH1_FoodForOldMine,"W koÅ„cu jakieÅ› konkrety. Patrick twierdzi, Å¼e widziaÅ‚ jak Mirzo opuszczaÅ‚ obÃ³z po zmroku. Lepiej poczekam, aÅ¼ siÄ™ Å›ciemni.");
+    B_LogEntry                     (CH1_FoodForOldMine,"W koñcu jakieœ konkrety. Patrick twierdzi, ¿e widzia³ jak Mirzo opuszcza³ obóz po zmroku. Lepiej poczekam, a¿ siê œciemni.");
 	Npc_ExchangeRoutine (GRD_7007_Mirzo, "spisek");
 };
 
@@ -227,48 +227,48 @@ FUNC INT DIA_Patrick_Nieidz_Condition()
 
 FUNC VOID DIA_Patrick_Nieidz_Info()
 {
-    AI_Output (self, other ,"DIA_Patrick_Nieidz_03_01"); //Nie idÅº tam.
+    AI_Output (self, other ,"DIA_Patrick_Nieidz_03_01"); //Nie idŸ tam.
     AI_Output (other, self ,"DIA_Patrick_Nieidz_15_02"); //Niby dlaczego?
-    AI_Output (self, other ,"DIA_Patrick_Nieidz_03_03"); //StraÅ¼nicy atakujÄ… kogo popadnie.
-    AI_Output (self, other ,"DIA_Patrick_Nieidz_03_04"); //Stara Kopalnia zostaÅ‚a zalana przez podziemnÄ… rzekÄ™.
+    AI_Output (self, other ,"DIA_Patrick_Nieidz_03_03"); //Stra¿nicy atakuj¹ kogo popadnie.
+    AI_Output (self, other ,"DIA_Patrick_Nieidz_03_04"); //Stara Kopalnia zosta³a zalana przez podziemn¹ rzekê.
     if (Npc_KnowsInfo (hero, Info_Diego_OCWARN))
     {
-        AI_Output (other, self ,"DIA_Patrick_Nieidz_15_05"); //Znam juÅ¼ tÄ™ historiÄ™. Powiedz mi lepiej, co dzieje siÄ™ w obozie.
-        AI_Output (self, other ,"DIA_Patrick_Nieidz_03_06"); //Co tu duÅ¼o mÃ³wiÄ‡, to wszystko to jakiÅ› obÅ‚Ä™d. W ogÃ³le od jakiegoÅ› czasu w obozie przed kopalniÄ… nie dziaÅ‚o siÄ™ najlepiej. 
-        AI_Output (self, other ,"DIA_Patrick_Nieidz_03_07"); //Gdy wyszÅ‚o na jaw, Å¼e dostawy nie dochodzÄ… w caÅ‚oÅ›ci Gomez przysÅ‚aÅ‚ tu Arto by przejÄ…Å‚ zarzÄ…d nad obozem i by wszystkiego dopilnowaÅ‚.
-        AI_Output (self, other ,"DIA_Patrick_Nieidz_03_08"); //Nasi nie byli zachwyceni, Å¼e przydzielono im kogoÅ› kto miaÅ‚ ich nadzorowaÄ‡. Tym bardziej, Å¼e byÅ‚ z zewnÄ…trz, a oni dotÄ…d rzÄ…dzili siÄ™ liczyÄ‡ sami. 
-        AI_Output (self, other ,"DIA_Patrick_Nieidz_03_09"); //Wszystko jednak jakoÅ› siÄ™ trzymaÅ‚o i pewnie trzymaÅ‚oby siÄ™ nadal gdyby nie zawaliÅ‚a siÄ™ kopalnia. Potem juÅ¼ wszystko potoczyÅ‚o siÄ™ lawinowo.
-        AI_Output (self, other ,"DIA_Patrick_Nieidz_03_10"); //Artegor korzystajÄ…c z zamieszania zebraÅ‚ lojalnych mu straÅ¼nikÃ³w i zabiÅ‚ Arto, samemu przejmujÄ…c wÅ‚adzÄ™. Chyba dÄ…Å¼y do stworzenia wÅ‚asnego obozu. 
-        AI_Output (other, self ,"DIA_Patrick_Nieidz_15_11"); //Gomez juÅ¼ wie, Å¼e straciÅ‚ wÅ‚adzÄ™ nad obozem przy kopalni?
-        AI_Output (self, other ,"DIA_Patrick_Nieidz_03_12"); //Na szczÄ™Å›cie nie. Gdy siÄ™ o tym dowie, rozpÄ™ta siÄ™ tu piekÅ‚o!
-        AI_Output (self, other ,"DIA_Patrick_Nieidz_03_13"); //Po tym caÅ‚ym buncie zrobiÅ‚o siÄ™ tu cholernie niebezpiecznie, a ja nie zamierzam ginÄ…Ä‡ ani za Artegora ani tym bardziej za Gomeza. 
-        AI_Output (other, self ,"DIA_Patrick_Nieidz_15_14"); //Co wiÄ™c teraz zrobisz? 
-        AI_Output (self, other ,"DIA_Patrick_Nieidz_03_15"); //Nie wiem. Na razie pokrÄ™cÄ™ siÄ™ tu i tam, a potem zobaczymy. 
-        AI_Output (self, other ,"DIA_Patrick_Nieidz_03_16"); //Na pewno nie wrÃ³cÄ™ jednak tam, gdzie moÅ¼na straciÄ‡ Å¼ycie. 
+        AI_Output (other, self ,"DIA_Patrick_Nieidz_15_05"); //Znam ju¿ tê historiê. Powiedz mi lepiej, co dzieje siê w obozie.
+        AI_Output (self, other ,"DIA_Patrick_Nieidz_03_06"); //Co tu du¿o mówiæ, to wszystko to jakiœ ob³êd. W ogóle od jakiegoœ czasu w obozie przed kopalni¹ nie dzia³o siê najlepiej. 
+        AI_Output (self, other ,"DIA_Patrick_Nieidz_03_07"); //Gdy wysz³o na jaw, ¿e dostawy nie dochodz¹ w ca³oœci Gomez przys³a³ tu Arto by przej¹³ zarz¹d nad obozem i by wszystkiego dopilnowa³.
+        AI_Output (self, other ,"DIA_Patrick_Nieidz_03_08"); //Nasi nie byli zachwyceni, ¿e przydzielono im kogoœ kto mia³ ich nadzorowaæ. Tym bardziej, ¿e by³ z zewn¹trz, a oni dot¹d rz¹dzili siê liczyæ sami. 
+        AI_Output (self, other ,"DIA_Patrick_Nieidz_03_09"); //Wszystko jednak jakoœ siê trzyma³o i pewnie trzyma³oby siê nadal gdyby nie zawali³a siê kopalnia. Potem ju¿ wszystko potoczy³o siê lawinowo.
+        AI_Output (self, other ,"DIA_Patrick_Nieidz_03_10"); //Artegor korzystaj¹c z zamieszania zebra³ lojalnych mu stra¿ników i zabi³ Arto, samemu przejmuj¹c w³adzê. Chyba d¹¿y do stworzenia w³asnego obozu. 
+        AI_Output (other, self ,"DIA_Patrick_Nieidz_15_11"); //Gomez ju¿ wie, ¿e straci³ w³adzê nad obozem przy kopalni?
+        AI_Output (self, other ,"DIA_Patrick_Nieidz_03_12"); //Na szczêœcie nie. Gdy siê o tym dowie, rozpêta siê tu piek³o!
+        AI_Output (self, other ,"DIA_Patrick_Nieidz_03_13"); //Po tym ca³ym buncie zrobi³o siê tu cholernie niebezpiecznie, a ja nie zamierzam gin¹æ ani za Artegora ani tym bardziej za Gomeza. 
+        AI_Output (other, self ,"DIA_Patrick_Nieidz_15_14"); //Co wiêc teraz zrobisz? 
+        AI_Output (self, other ,"DIA_Patrick_Nieidz_03_15"); //Nie wiem. Na razie pokrêcê siê tu i tam, a potem zobaczymy. 
+        AI_Output (self, other ,"DIA_Patrick_Nieidz_03_16"); //Na pewno nie wrócê jednak tam, gdzie mo¿na straciæ ¿ycie. 
     }
     else
     {
-        AI_Output (other, self ,"DIA_Patrick_Nieidz_15_17"); //Nie sÅ‚yszaÅ‚em o tym! MÃ³w dalej.
-        AI_Output (self, other ,"DIA_Patrick_Nieidz_03_18"); //Jeden z Kopaczy, ktÃ³remu udaÅ‚o siÄ™ uratowaÄ‡, powiedziaÅ‚, Å¼e kopiÄ…c na najniÅ¼szym poziomie, trafili na podziemnÄ… rzekÄ™.
-        AI_Output (self, other ,"DIA_Patrick_Nieidz_03_19"); //Kiedy woda wdarÅ‚a sie do szybÃ³w, popekaÅ‚y podpory i runÄ™Å‚a caÅ‚a gÃ³rna czÄ™Å›Ä‡.
-        AI_Output (self, other ,"DIA_Patrick_Nieidz_03_20"); //Tylko garstce ludzi udaÅ‚o sie wydostaÄ‡ na powierzchniÄ™.
+        AI_Output (other, self ,"DIA_Patrick_Nieidz_15_17"); //Nie s³ysza³em o tym! Mów dalej.
+        AI_Output (self, other ,"DIA_Patrick_Nieidz_03_18"); //Jeden z Kopaczy, któremu uda³o siê uratowaæ, powiedzia³, ¿e kopi¹c na najni¿szym poziomie, trafili na podziemn¹ rzekê.
+        AI_Output (self, other ,"DIA_Patrick_Nieidz_03_19"); //Kiedy woda wdar³a sie do szybów, popeka³y podpory i runê³a ca³a górna czêœæ.
+        AI_Output (self, other ,"DIA_Patrick_Nieidz_03_20"); //Tylko garstce ludzi uda³o sie wydostaæ na powierzchniê.
         AI_Output (other, self ,"DIA_Patrick_Nieidz_15_21"); //A co dzieje sie w Starym Obozie?
-        AI_Output (self, other ,"DIA_Patrick_Nieidz_03_22"); //Tego nie wiem. Nie byÅ‚em tam. Nie mamy Å¼adnych wieÅ›ci.
+        AI_Output (self, other ,"DIA_Patrick_Nieidz_03_22"); //Tego nie wiem. Nie by³em tam. Nie mamy ¿adnych wieœci.
     AI_Output (other, self ,"DIA_Patrick_Nieidz_15_23"); //Co z obozem przy kopalni?
-    AI_Output (self, other ,"DIA_Patrick_Nieidz_03_24"); //Co tu duÅ¼o mÃ³wiÄ‡, to wszystko to jakiÅ› obÅ‚Ä™d. W ogÃ³le od jakiegoÅ› czasu w obozie przed kopalniÄ… nie dziaÅ‚o siÄ™ najlepiej. 
-    AI_Output (self, other ,"DIA_Patrick_Nieidz_03_25"); //Gdy wyszÅ‚o na jaw, Å¼e dostawy nie dochodzÄ… w caÅ‚oÅ›ci Gomez przysÅ‚aÅ‚ tu Arto by przejÄ…Å‚ zarzÄ…d nad obozem i by wszystkiego dopilnowaÅ‚.
-    AI_Output (self, other ,"DIA_Patrick_Nieidz_03_26"); //Nasi nie byli zachwyceni, Å¼e przydzielono im kogoÅ› kto miaÅ‚ ich nadzorowaÄ‡. Tym bardziej, Å¼e byÅ‚ z zewnÄ…trz, a oni dotÄ…d rzÄ…dzili siÄ™ liczyÄ‡ sami. 
-    AI_Output (self, other ,"DIA_Patrick_Nieidz_03_27"); //Wszystko jednak jakoÅ› siÄ™ trzymaÅ‚o i pewnie trzymaÅ‚oby siÄ™ nadal gdyby nie zawaliÅ‚a siÄ™ kopalnia. Potem juÅ¼ wszystko potoczyÅ‚o siÄ™ lawinowo.
-    AI_Output (other, self ,"DIA_Patrick_Nieidz_15_28"); //Co siÄ™ dokÅ‚adnie staÅ‚o?
-    AI_Output (self, other ,"DIA_Patrick_Nieidz_03_29"); //Artegor korzystajÄ…c z zamieszania zebraÅ‚ lojalnych mu straÅ¼nikÃ³w i zabiÅ‚ Arto, samemu przejmujÄ…c wÅ‚adzÄ™. Chyba dÄ…Å¼y do stworzenia wÅ‚asnego obozu. 
-    AI_Output (other, self ,"DIA_Patrick_Nieidz_15_30"); //Gomez juÅ¼ wie, Å¼e straciÅ‚ wÅ‚adzÄ™ nad obozem przy kopalni?
-    AI_Output (self, other ,"DIA_Patrick_Nieidz_03_31"); //Na szczÄ™Å›cie nie. Gdy siÄ™ o tym dowie, rozpÄ™ta siÄ™ tu piekÅ‚o! ZresztÄ… i bez tego po caÅ‚ym tym buncie zrobiÅ‚o siÄ™ tam cholernie niebezpiecznie. 
-    AI_Output (self, other ,"DIA_Patrick_Nieidz_03_32"); //A ja nie zamierzam ginÄ…Ä‡ ani za Artegora ani tym bardziej za Gomeza. 
+    AI_Output (self, other ,"DIA_Patrick_Nieidz_03_24"); //Co tu du¿o mówiæ, to wszystko to jakiœ ob³êd. W ogóle od jakiegoœ czasu w obozie przed kopalni¹ nie dzia³o siê najlepiej. 
+    AI_Output (self, other ,"DIA_Patrick_Nieidz_03_25"); //Gdy wysz³o na jaw, ¿e dostawy nie dochodz¹ w ca³oœci Gomez przys³a³ tu Arto by przej¹³ zarz¹d nad obozem i by wszystkiego dopilnowa³.
+    AI_Output (self, other ,"DIA_Patrick_Nieidz_03_26"); //Nasi nie byli zachwyceni, ¿e przydzielono im kogoœ kto mia³ ich nadzorowaæ. Tym bardziej, ¿e by³ z zewn¹trz, a oni dot¹d rz¹dzili siê liczyæ sami. 
+    AI_Output (self, other ,"DIA_Patrick_Nieidz_03_27"); //Wszystko jednak jakoœ siê trzyma³o i pewnie trzyma³oby siê nadal gdyby nie zawali³a siê kopalnia. Potem ju¿ wszystko potoczy³o siê lawinowo.
+    AI_Output (other, self ,"DIA_Patrick_Nieidz_15_28"); //Co siê dok³adnie sta³o?
+    AI_Output (self, other ,"DIA_Patrick_Nieidz_03_29"); //Artegor korzystaj¹c z zamieszania zebra³ lojalnych mu stra¿ników i zabi³ Arto, samemu przejmuj¹c w³adzê. Chyba d¹¿y do stworzenia w³asnego obozu. 
+    AI_Output (other, self ,"DIA_Patrick_Nieidz_15_30"); //Gomez ju¿ wie, ¿e straci³ w³adzê nad obozem przy kopalni?
+    AI_Output (self, other ,"DIA_Patrick_Nieidz_03_31"); //Na szczêœcie nie. Gdy siê o tym dowie, rozpêta siê tu piek³o! Zreszt¹ i bez tego po ca³ym tym buncie zrobi³o siê tam cholernie niebezpiecznie. 
+    AI_Output (self, other ,"DIA_Patrick_Nieidz_03_32"); //A ja nie zamierzam gin¹æ ani za Artegora ani tym bardziej za Gomeza. 
     };
 
     if (MIS_BackToOldMine == LOG_RUNNING)
     {
-        B_LogEntry                     (CH4_BackToOldMine,"Od Patricka dowiedziaÅ‚em siÄ™, Å¼e Gomez wysÅ‚aÅ‚ Arto do obozu przy kopalni. Magnat miaÅ‚ tam osobiÅ›cie sprawowaÄ‡ wÅ‚adzÄ™ i nadzorowaÄ‡ sytuacje, jednak podstÄ™pny szef StraÅ¼nikÃ³w, Artegor, postanowiÅ‚ go zabiÄ‡ i sam objÄ…Å‚ wÅ‚adzÄ™ w obozie. Gdy Gomez dowie siÄ™, Å¼e utraciÅ‚ wpÅ‚ywy takÅ¼e w obozie przed StarÄ… kopalniÄ…, wÅ›cieknie siÄ™.");
+        B_LogEntry                     (CH4_BackToOldMine,"Od Patricka dowiedzia³em siê, ¿e Gomez wys³a³ Arto do obozu przy kopalni. Magnat mia³ tam osobiœcie sprawowaæ w³adzê i nadzorowaæ sytuacje, jednak podstêpny szef Stra¿ników, Artegor, postanowi³ go zabiæ i sam obj¹³ w³adzê w obozie. Gdy Gomez dowie siê, ¿e utraci³ wp³ywy tak¿e w obozie przed Star¹ kopalni¹, wœcieknie siê.");
 
         B_GiveXP (150);
     };
@@ -286,7 +286,7 @@ INSTANCE DIA_Patrick_Brothers (C_INFO)
    condition    = DIA_Patrick_Brothers_Condition;
    information  = DIA_Patrick_Brothers_Info;
    permanent	= FALSE;
-   description	= "Wiesz coÅ› o StraÅ¼nikach z Bractwa?";
+   description	= "Wiesz coœ o Stra¿nikach z Bractwa?";
 };
 
 FUNC INT DIA_Patrick_Brothers_Condition()
@@ -300,20 +300,20 @@ FUNC INT DIA_Patrick_Brothers_Condition()
 
 FUNC VOID DIA_Patrick_Brothers_Info()
 {
-    AI_Output (other, self ,"DIA_Patrick_Brothers_15_01"); //Wiesz coÅ› o StraÅ¼nikach z Bractwa?
+    AI_Output (other, self ,"DIA_Patrick_Brothers_15_01"); //Wiesz coœ o Stra¿nikach z Bractwa?
     AI_Output (self, other ,"DIA_Patrick_Brothers_03_02"); //Chodzi ci o tych podobnych tobie?
-    AI_Output (self, other ,"DIA_Patrick_Brothers_03_03"); //Zostali uwiÄ™zieni za bramÄ… do kopalni.
-    AI_Output (self, other ,"DIA_Patrick_Brothers_03_04"); //WidziaÅ‚em tylko trzech.   
-    AI_Output (self, other ,"DIA_Patrick_Brothers_03_06"); //Masz zamiar ich odbiÄ‡?
-    AI_Output (self, other ,"DIA_Patrick_Brothers_03_07"); //Zapomnij o tym! StraÅ¼nicy od razu ciÄ™ poszatkujÄ….
-    AI_Output (other, self ,"DIA_Patrick_Brothers_15_08"); //Co wiÄ™c mam zrobiÄ‡?
-    AI_Output (self, other ,"DIA_Patrick_Brothers_03_09"); //Podobno Bandyci chcÄ… poinformowaÄ‡ Gomeza o tym, co siÄ™ tutaj staÅ‚o.
-    AI_Output (self, other ,"DIA_Patrick_Brothers_03_10"); //JeÅ¼eli Magnat dowie siÄ™, Å¼e do reszty straciÅ‚ kontrolÄ™ nad tym miejscem, zaatakuje buntownikÃ³w.
-    AI_Output (self, other ,"DIA_Patrick_Brothers_03_11"); //Przy odrobinie szczÄ™Å›cia powybijajÄ… sie nawzajem.
-    AI_Output (other, self ,"DIA_Patrick_Brothers_15_12"); //Gdzie znajdÄ™ tych BandytÃ³w?
-    AI_Output (self, other ,"DIA_Patrick_Brothers_03_13"); //Jeden z nich stoi przy jaskini i bada sytuacjÄ™. 
-    AI_Output (self, other ,"DIA_Patrick_Brothers_03_14"); //SprÃ³buj zaoferowaÄ‡ mu swojÄ… pomoc.
-    B_LogEntry                     (CH1_HelpBrothersBra,"Kopacz Patrick zdradziÅ‚ mi, Å¼e moi Bracia z obozu na bagnie Å¼yjÄ…, jednak sÄ… uwiÄ™zieni przez ludzi Artegora. Jedynym sposobem na dostanie siÄ™ do StraÅ¼nikÃ³w ÅšwiÄ…tynnych jest pozbycie siÄ™ Artegora i caÅ‚ej tej jego bandy. Podobno Bandyci majÄ… na to jakiÅ› sposÃ³b.");
+    AI_Output (self, other ,"DIA_Patrick_Brothers_03_03"); //Zostali uwiêzieni za bram¹ do kopalni.
+    AI_Output (self, other ,"DIA_Patrick_Brothers_03_04"); //Widzia³em tylko trzech.   
+    AI_Output (self, other ,"DIA_Patrick_Brothers_03_06"); //Masz zamiar ich odbiæ?
+    AI_Output (self, other ,"DIA_Patrick_Brothers_03_07"); //Zapomnij o tym! Stra¿nicy od razu ciê poszatkuj¹.
+    AI_Output (other, self ,"DIA_Patrick_Brothers_15_08"); //Co wiêc mam zrobiæ?
+    AI_Output (self, other ,"DIA_Patrick_Brothers_03_09"); //Podobno Bandyci chc¹ poinformowaæ Gomeza o tym, co siê tutaj sta³o.
+    AI_Output (self, other ,"DIA_Patrick_Brothers_03_10"); //Je¿eli Magnat dowie siê, ¿e do reszty straci³ kontrolê nad tym miejscem, zaatakuje buntowników.
+    AI_Output (self, other ,"DIA_Patrick_Brothers_03_11"); //Przy odrobinie szczêœcia powybijaj¹ sie nawzajem.
+    AI_Output (other, self ,"DIA_Patrick_Brothers_15_12"); //Gdzie znajdê tych Bandytów?
+    AI_Output (self, other ,"DIA_Patrick_Brothers_03_13"); //Jeden z nich stoi przy jaskini i bada sytuacjê. 
+    AI_Output (self, other ,"DIA_Patrick_Brothers_03_14"); //Spróbuj zaoferowaæ mu swoj¹ pomoc.
+    B_LogEntry                     (CH1_HelpBrothersBra,"Kopacz Patrick zdradzi³ mi, ¿e moi Bracia z obozu na bagnie ¿yj¹, jednak s¹ uwiêzieni przez ludzi Artegora. Jedynym sposobem na dostanie siê do Stra¿ników Œwi¹tynnych jest pozbycie siê Artegora i ca³ej tej jego bandy. Podobno Bandyci maj¹ na to jakiœ sposób.");
 
     B_GiveXP (50);
 
