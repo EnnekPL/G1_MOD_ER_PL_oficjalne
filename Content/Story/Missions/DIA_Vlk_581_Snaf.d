@@ -540,7 +540,7 @@ FUNC VOID DIA_Snaf_SellInfos_Ciekawostki()
     AI_Output (other, self ,"DIA_Snaf_SellInfos_Ciekawostki_15_01"); //Masz coœ ciekawego?
     AI_Output (self, other ,"DIA_Snaf_SellInfos_Ciekawostki_03_02"); //W karczmie w zawalonej wie¿y siedzi Stra¿nik, który nic nie robi. 
     AI_Output (self, other ,"DIA_Snaf_SellInfos_Ciekawostki_03_03"); //Dziwi mnie, ¿e Thorus jeszcze go nie dorwa³. 
-	if (Npc_KnowsInfo (hero,DIA_Trip_GoToWork)
+	if (Npc_KnowsInfo (hero,DIA_Trip_GoToWork))
 	{
 	AI_Output (other, self ,"DIA_Snaf_SellInfos_Ciekawostki_15_04"); //Ju¿ o tym wiem. Stra¿nik wróci³ do pracy.
 	AI_Output (self, other ,"DIA_Snaf_SellInfos_Ciekawostki_03_05"); //To chyba dobrze.

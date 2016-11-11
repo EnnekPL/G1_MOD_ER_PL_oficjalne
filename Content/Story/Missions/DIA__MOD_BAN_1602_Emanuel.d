@@ -67,7 +67,7 @@ INSTANCE DIA_Emanuel_QUEST1 (C_INFO)
 
 FUNC INT DIA_Emanuel_QUEST1_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Emanuel_HELLO))
+    if (Npc_KnowsInfo (hero, DIA_Emanuel_HELLO)) && (kapitel <= 2)
     {
     return TRUE;
     };

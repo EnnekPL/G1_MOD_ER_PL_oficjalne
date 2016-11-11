@@ -30,6 +30,16 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 	{
 		PrintDebugNpc	(PD_MISSION, "---=== DAS ZWEITE KAPITEL ===---");
 
+		//////////////////////////////////////////////////////////
+		// ANULOWANE ZADANIA
+		//////////////////////////////////////////////////////////
+		if (MIS_DraxTest == LOG_RUNNING)
+		{
+		B_LogEntry               (CH1_DraxTest,"Nie wykna³em testu Draxa na czas. Teraz jest ju¿ za póŸno na takie sprawy.");
+		Log_SetTopicStatus       (CH1_DraxTest, LOG_FAILED);
+		MIS_DraxTest = LOG_FAILED;
+		};
+		
 		if (Mod_Story_RunRebelInNC == FALSE) && (LeftyDead == FALSE)
 		{
 		B_Story_BauRebellion ();
@@ -201,6 +211,29 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 	{
 		PrintDebugNpc	(PD_MISSION, "---=== DAS VIERTE KAPITEL ===---");
 		
+		//////////////////////////////////////////////////////////
+		// ANULOWANE ZADANIA
+		//////////////////////////////////////////////////////////
+		if (MIS_EmanuelDelivery == LOG_RUNNING)
+		{
+		B_LogEntry               (CH1_EmanuelDelivery,"Na tê sprawê jest ju¿ po prostu za póŸno.");
+		Log_SetTopicStatus       (CH1_EmanuelDelivery, LOG_FAILED);
+		MIS_EmanuelDelivery = LOG_FAILED;
+		};
+		
+		if (MIS_Food_Patter == LOG_RUNNING)
+		{
+		B_LogEntry               (CH1_Food_Patter,"Stra¿nicy zaatakuj¹ mnie, jeœli zbli¿ê siê do nich choæby na krok. To zadanie nie ma ju¿ szans na powodzenie.");
+		Log_SetTopicStatus       (CH1_Food_Patter, LOG_FAILED);
+		MIS_Food_Patter = LOG_FAILED;
+		};
+		
+		if (MIS_ActionOM == LOG_RUNNING)
+		{
+		B_LogEntry               (CH1_ActionOM,"Czas na wykonanie tego zadania dobieg³ koñca. Spapra³em robotê.");
+		Log_SetTopicStatus       (CH1_ActionOM, LOG_FAILED);
+		MIS_ActionOM = LOG_FAILED;
+		};
 		//////////////////////////////////////////////////////////
 		// ZABÓJCA-SNAKE RUTYNA
 		//////////////////////////////////////////////////////////

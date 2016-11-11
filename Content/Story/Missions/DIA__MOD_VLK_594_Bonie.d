@@ -118,7 +118,7 @@ INSTANCE Info_BereitsAufsMaulBonie (C_INFO)
 FUNC INT Info_BereitsAufsMaulBonie_Condition()
 {
 	if ((self.aivar[AIV_HAS_ERPRESSED]==2)
-	&&	(self.aivar[AIV_WASDEFEATEDBYSC]==FALSE) 
+	&&	(self.aivar[AIV_WASDEFEATEDBYSC]==TRUE) 
 	&&  (Npc_IsInState(self,ZS_Talk)) )
 	{
 		return 1;
