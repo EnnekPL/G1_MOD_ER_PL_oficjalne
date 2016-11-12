@@ -52,46 +52,57 @@ func void B_Story_BauRebellion ()
 	var c_npc rebeliant916; rebeliant916 = Hlp_GetNpc (BAU_916_Bauer);
 	rebeliant916.name = "Buntownik";
 	Npc_ExchangeRoutine (rebeliant916,"rebel");
+	rebeliant916.aivar[AIV_MISSION3] = TRUE;
 	
 	var c_npc rebeliant907; rebeliant907 = Hlp_GetNpc (BAU_907_Bauer);
 	rebeliant907.name = "Buntownik";
 	Npc_ExchangeRoutine (rebeliant907,"rebel");
+	rebeliant907.aivar[AIV_MISSION3] = TRUE;
 
 	var c_npc rebeliant928; rebeliant928 = Hlp_GetNpc (BAU_928_Bauer);
 	rebeliant928.name = "Buntownik";
 	Npc_ExchangeRoutine (rebeliant928,"rebel");
+	rebeliant928.aivar[AIV_MISSION3] = TRUE;
 	
 	var c_npc rebeliant904; rebeliant904 = Hlp_GetNpc (BAU_904_Bauer);
 	rebeliant904.name = "Buntownik";
 	Npc_ExchangeRoutine (rebeliant904,"rebel");
+	rebeliant904.aivar[AIV_MISSION3] = TRUE;
 	
 	var c_npc rebeliant905; rebeliant905 = Hlp_GetNpc (BAU_905_Bauer);
 	rebeliant905.name = "Buntownik";
 	Npc_ExchangeRoutine (rebeliant905,"rebel");
+	rebeliant905.aivar[AIV_MISSION3] = TRUE;
 	
 	var c_npc rebeliant914; rebeliant914 = Hlp_GetNpc (BAU_914_Bauer);
 	rebeliant914.name = "Buntownik";
 	Npc_ExchangeRoutine (rebeliant914,"rebel");
+	rebeliant914.aivar[AIV_MISSION3] = TRUE;
 	
 	var c_npc rebeliant915; rebeliant915 = Hlp_GetNpc (BAU_915_Bauer);
 	rebeliant915.name = "Buntownik";
 	Npc_ExchangeRoutine (rebeliant915,"rebel");
+	rebeliant915.aivar[AIV_MISSION3] = TRUE;
 	
 	var c_npc rebeliant917; rebeliant917 = Hlp_GetNpc (BAU_917_Bauer);
 	rebeliant917.name = "Buntownik";
 	Npc_ExchangeRoutine (rebeliant917,"rebel");
+	rebeliant917.aivar[AIV_MISSION3] = TRUE;
 	
 	var c_npc rebeliant919; rebeliant919 = Hlp_GetNpc (BAU_919_Bauer);
 	rebeliant919.name = "Buntownik";
 	Npc_ExchangeRoutine (rebeliant919,"rebel");
+	rebeliant919.aivar[AIV_MISSION3] = TRUE;
 	
 	var c_npc rebeliant929; rebeliant929 = Hlp_GetNpc (BAU_929_Bauer);
 	rebeliant929.name = "Buntownik";
 	Npc_ExchangeRoutine (rebeliant929,"rebel");
+	rebeliant929.aivar[AIV_MISSION3] = TRUE;
 	
 	var c_npc rebeliant930; rebeliant930 = Hlp_GetNpc (BAU_930_Bauer);
 	rebeliant930.name = "Buntownik";
 	Npc_ExchangeRoutine (rebeliant930,"rebel");
+	rebeliant930.aivar[AIV_MISSION3] = TRUE;
 	
 	// MGLISTY
 	var c_npc foggy; foggy = Hlp_GetNpc (BAU_921_Bauer);

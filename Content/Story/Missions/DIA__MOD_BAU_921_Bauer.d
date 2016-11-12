@@ -33,6 +33,8 @@ FUNC VOID DIA_BauerTraitor_Kill_Info()
 	
 	AI_StopProcessInfos	(self); 
 	
+	B_ChangeGuild    (self,GIL_NONE);  
+	self.guild = GIL_NONE;
 	Npc_SetPermAttitude (self, ATT_HOSTILE);
 	Npc_SetTarget (self,hero);
     AI_StartState (self,ZS_ATTACK,1,"");

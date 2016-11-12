@@ -616,6 +616,8 @@ FUNC VOID DIA_Rufus_WannaTalk_Info()
 	B_LogEntry                     (CH1_BuntZbieraczy,"Rufus odrzuci³ propozycjê pokojow¹ Lewusa. To nie brzmi za dobrze.");
 	
 	Quest_TalkWithRufus = LOG_SUCCESS;
+	
+	Rebel_HerosBoss = Boss_Lefty;
 };
 
 /////////////////////////////////////////////////

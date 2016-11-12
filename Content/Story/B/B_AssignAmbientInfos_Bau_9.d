@@ -172,6 +172,7 @@ FUNC INT Info_Bau_9_Corruption_Condition()
 	if	(self.aivar[AIV_MISSION2] == FALSE)
 	&& 	(Npc_HasItems(hero, itminugget)>=50)
 	&&  (Quest_CorruptRebels == LOG_RUNNING)
+	&&  (self.aivar[AIV_MISSION3] == TRUE)
 	{
 		return 1;
 	};
