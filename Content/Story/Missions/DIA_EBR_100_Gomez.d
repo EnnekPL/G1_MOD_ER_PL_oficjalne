@@ -222,7 +222,12 @@ func void DIA_Gomez_Hello_Kontakte()
 	{
 	Info_AddChoice		(DIA_Gomez_Hello,"Z kilkoma ³obuzami z Nowego Obozu."	,DIA_Gomez_Hello_Kontakte_NLHehler);
 	};
-	if (Npc_KnowsInfo (hero, ORG_801_Lares_YouHere)) || (Npc_KnowsInfo (hero, ORG_801_Lares_MordragSentMe)) || (Npc_KnowsInfo (hero, ORG_801_Lares_Vorbeigemogelt)) || (Npc_KnowsInfo (hero, DIA_Lares_OkylQuestOk))  || (Npc_KnowsInfo (hero, DIA_Lares_PoparcieCzterech)) || (Npc_KnowsInfo (hero, ORG_801_Lares_400Ore))
+	if (Npc_KnowsInfo (hero, ORG_801_Lares_YouHere)) 
+	|| (Npc_KnowsInfo (hero, ORG_801_Lares_MordragSentMe)) 
+	|| (Npc_KnowsInfo (hero, ORG_801_Lares_Vorbeigemogelt)) 
+	|| (Npc_KnowsInfo (hero, DIA_Lares_OkylQuestOk))  
+	|| (Npc_KnowsInfo (hero, DIA_Lares_PoparcieCzterech)) 
+	|| (Npc_KnowsInfo (hero, ORG_801_Lares_400Ore))
 	{
 	Info_AddChoice		(DIA_Gomez_Hello,"Z Laresem."	,DIA_Gomez_Hello_Kontakte_Lares);
 	};
