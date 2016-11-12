@@ -566,7 +566,7 @@ FUNC VOID DIA_Lefty_RufusIsMyFriend_Reputation ()
 	Info_AddChoice		(DIA_Lefty_RufusIsMyFriend,"Masz racjê. (Zostañ stronnikiem Lewusa)",DIA_Lefty_RufusIsMyFriend_LeftyFriend);
 	Info_AddChoice		(DIA_Lefty_RufusIsMyFriend,"Twoje dni s¹ policzone. (Zostañ buntownikiem)",DIA_Lefty_RufusIsMyFriend_Rebeliant);
 	
-	LeftyAndLordDeath = TRUE;
+	Rebel_Consequences = LeftyAndLordDeath;
 };
  
 FUNC VOID DIA_Lefty_RufusIsMyFriend_Guys ()
@@ -578,7 +578,7 @@ FUNC VOID DIA_Lefty_RufusIsMyFriend_Guys ()
 	Info_AddChoice		(DIA_Lefty_RufusIsMyFriend,"Masz racjê. (Zostañ stronnikiem Lewusa)",DIA_Lefty_RufusIsMyFriend_LeftyFriend);
 	Info_AddChoice		(DIA_Lefty_RufusIsMyFriend,"Twoje dni s¹ policzone. (Zostañ buntownikiem)",DIA_Lefty_RufusIsMyFriend_Rebeliant);
 	
-	LeftyDeath = TRUE;
+	Rebel_Consequences = LeftyDeath;
 };
 
 FUNC VOID DIA_Lefty_RufusIsMyFriend_LeftyFriend ()

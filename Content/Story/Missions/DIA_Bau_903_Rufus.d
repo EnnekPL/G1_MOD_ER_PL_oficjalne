@@ -466,9 +466,9 @@ FUNC INT DIA_Rufus_HoratioDoEverything_Condition()
 FUNC VOID DIA_Rufus_HoratioDoEverything_Info()
 {
     AI_Output (other, self ,"DIA_Rufus_HoratioDoEverything_15_01"); //Horacy wszystkim siê zajmie.
-    AI_Output (self, other ,"DIA_Rufus_HoratioDoEverything_03_02"); //Jak to?
-	AI_Output (other, self ,"DIA_Rufus_HoratioDoEverything_15_03"); //Mamy pewien plan. Jeœli dobrze pójdzie, bandziory pozbêd¹ siê Lewusa i Ksiêcia za nas.
-	AI_Output (self, other ,"DIA_Rufus_HoratioDoEverything_03_04"); //Spójrz!
+    AI_Output (self, other ,"DIA_Rufus_HoratioDoEverything_03_02"); //Spójrz! Coœ zaczyna siê dziaæ!
+	//AI_Output (other, self ,"DIA_Rufus_HoratioDoEverything_15_03"); //Mamy pewien plan. Jeœli dobrze pójdzie, bandziory pozbêd¹ siê Lewusa i Ksiêcia za nas.
+	//AI_Output (self, other ,"DIA_Rufus_HoratioDoEverything_03_04"); //
 	
 	AI_StopProcessInfos (self);
 	

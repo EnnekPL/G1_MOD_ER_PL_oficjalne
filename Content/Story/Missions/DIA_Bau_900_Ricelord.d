@@ -310,8 +310,8 @@ FUNC INT DIA_Ricelord_RingTheft_Condition()
 FUNC VOID DIA_Ricelord_RingTheft_Info()
 {
     AI_Output (other, self ,"DIA_Ricelord_RingTheft_15_01"); //Lewus podarowa³ twój pierœcieñ Pock'owi. To mia³ byæ dowód wdziêcznoœci za pomoc.
-    AI_Output (self, other ,"DIA_Ricelord_RingTheft_03_02"); //Co? Ten sukinsyn ju¿ od dawna sadzi³ siê na mój pierœcieñ. Nie widzia³em, ¿e bêdzie na tyle bezczelny!
-    AI_Output (self, other ,"DIA_Ricelord_RingTheft_03_03"); //LEWUS, ZDRAJCA! BRAÆ GO!
+    AI_Output (self, other ,"DIA_Ricelord_RingTheft_03_02"); //Ten sukinsyn ju¿ od dawna sadzi³ siê na mój pierœcieñ. LEWUS, ZDRAJCA! BRAÆ GO!
+    //AI_Output (self, other ,"DIA_Ricelord_RingTheft_03_03"); //
     
 	Bau_900_Ricelord.flags = 2;
 

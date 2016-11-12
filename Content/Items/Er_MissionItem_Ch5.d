@@ -52,6 +52,8 @@ func void Use_NoteFromSenyan ()
 					Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
 					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"	   			); 	// -1 -> all pages 
 					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
+					Doc_PrintLine	( nDocID,  0, "");
+					Doc_PrintLine	( nDocID,  0, "");
 					Doc_PrintLines	( nDocID,  0, "Dogada³em siê z Okylem i pozwoli³ mi sk³adowaæ stare kilofy i miecze. Powiedzia³em mu, ¿e chcê je póŸniej wys³aæ do kowala w celu naprawy. To naprawdê dobra przykrywka. Nic lepszego nie mog³em dla was zdobyæ. Gdybym podkrada³ rynsztunek Najemnikom, natychmiast by mnie zabili.");
 					Doc_PrintLine	( nDocID,  0, "");
 					Doc_PrintLine	( nDocID,  0, "");

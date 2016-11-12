@@ -555,17 +555,21 @@ INSTANCE RezepturenFish (C_ITEM)
 					Doc_PrintLine	( nDocID,  0, "   rybne");
 					Doc_PrintLine	( nDocID,  0, "");
 					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"	   			); 	// -1 -> all pages 
- 					Doc_PrintLines	( nDocID,  0, "Pstr¹g têczowy"					);			
+ 					Doc_PrintLines	( nDocID,  0, "Pstr¹g têczowy"					);		
+Doc_PrintLine	( nDocID,  0, "");					
 					Doc_PrintLines	( nDocID,  0, "Ta niezwykle silna ryba jest cennym ³upem. Trudno j¹ z³owiæ. Jednak zupa z dwóch sztuk mo¿e znacznie podnieœæ nasz¹ magiczn¹ moc. Warto dodaæ do takiej zupy tak¿e ry¿.");
 					Doc_PrintLines	( nDocID,  0, "Pstr¹g pospolity"	);	
+					Doc_PrintLine	( nDocID,  0, "");
 					Doc_PrintLines	( nDocID,  0, "Do zupy z pstr¹ga nale¿y dodaæ du¿¹ iloœæ soli. Mo¿na j¹ tak¿e doprawiæ odrobin¹ wina. ");
 
 					//2.Seite
 					Doc_SetMargins	( nDocID, -1, 30, 20, 275, 20, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus, links,oben,rechts,unten)
 					Doc_PrintLines	( nDocID,  1, "Sandacz"					);
+					Doc_PrintLine	( nDocID,  1, "");
 					Doc_PrintLines	( nDocID,  1, "Zupê z sandacza warto przygotowaæ wraz z zio³ami leczniczymi. Ponoæ spo¿ycie kilku takich zup podnosi wytrzyma³oœæ."	);
-					Doc_PrintLines	( nDocID,  1, "Karaœ"					);
-					Doc_PrintLines	( nDocID,  1, "Zupa z karasi najlepiej smakuje z suchym chlebem. ");
+					Doc_PrintLine	( nDocID,  1, "Karaœ"					);
+					Doc_PrintLine	( nDocID,  1, "");
+					Doc_PrintLines	( nDocID,  1, "Zupa z karasi najlepiej smakuje z suchym chlebem. Trzeba pamiêtaæ, aby nie gotowaæ jej z byt d³ugo.");
 					Doc_Show		( nDocID );
 					
 					if (HeroKnows_CookingFish == FALSE)

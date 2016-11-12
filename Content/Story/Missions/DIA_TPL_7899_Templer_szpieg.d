@@ -61,9 +61,9 @@ FUNC VOID DIA_Templer_HELLO1_Info()
     AI_Output (self, other ,"DIA_Templer_HELLO1_03_10"); //CO?!
     AI_Output (other, self ,"DIA_Templer_HELLO1_15_11"); //Wszystko okaza³o siê fiaskiem. Œni¹cy to demon! A mistrz Y"Berion zgin¹³.
     AI_Output (self, other ,"DIA_Templer_HELLO1_03_12"); //To... to nie mo¿e byæ prawd¹. K³amiesz, chcesz mnie oszukaæ!
-    AI_Output (other, self ,"DIA_Templer_HELLO1_15_11"); //Przekonaj siê sam. Wracaj do Bractwa i zobacz, co siê tam dzieje.
+    AI_Output (other, self ,"DIA_Templer_HELLO1_15_13"); //Przekonaj siê sam. Wracaj do Bractwa i zobacz, co siê tam dzieje.
     AI_Output (self, other ,"DIA_Templer_HELLO1_03_14"); //Nie mogê! Musisz mi pomóc. W nocy pods³ucha³em rozmowê Stra¿ników.
-    AI_Output (self, other ,"DIA_Templer_HELLO1_03_16"); //Jeden z nich powiedzia³, ¿e je¿eli jestem szpiegiem z bagna, to mnie zabij¹.
+    AI_Output (self, other ,"DIA_Templer_HELLO1_03_15"); //Jeden z nich powiedzia³, ¿e je¿eli jestem szpiegiem z bagna, to mnie zabij¹.
 
     Info_ClearChoices	(DIA_Templer_HELLO1);
     Info_AddChoice		(DIA_Templer_HELLO1, "Jeœli nie oni, to ja!", DIA_Templer_HELLO1_ZGINIESZ);
