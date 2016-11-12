@@ -163,7 +163,7 @@ FUNC VOID  DIA_Grim_AtOCdraussen_Info()
 	{
 		AI_Output (self, other,"DIA_Grim_AtOCdraussen_06_02"); //Mam ci przekazaæ pozdrowienia od Bloodwyna!
 			Log_SetTopicStatus	(CH1_GrimAmulet,LOG_SUCCESS);
-	B_LogEntry (CH1_GrimAmulet,"Grim mnie oszuka³. Ponadto odwa¿y³ siê mnie zaatakowaæ. Dobrze, ¿e nie mia³ nikogo do pomocy. Podobno wynaj¹³ go Bloodwyn... Na przysz³oœæ nie powinienem byæ tak ³atwowierny.");
+	B_LogEntry (CH1_GrimAmulet,"Grim mnie oszuka³. Ponadto odwa¿y³ siê mnie zaatakowaæ. Podobno wynaj¹³ go Bloodwyn... Na przysz³oœæ nie powinienem byæ tak ³atwowierny.");
 	};
 
  

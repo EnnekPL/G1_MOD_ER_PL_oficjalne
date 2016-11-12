@@ -28,6 +28,8 @@ FUNC VOID DIA_Student_AboutJoru_Info()
 	AI_StopProcessInfos	(self);
 	
 	B_LogEntry          (CH2_KalomsNewWeed,"Tu¿ po rozmowie z Joru jego uczeñ wsun¹³ mi w kieszeñ list. Muszê go przeczytaæ.");
+	
+	Npc_ExchangeRoutine (NOV_1313_Novize,"secret");
 };
 
 //========================================
@@ -103,4 +105,6 @@ FUNC VOID DIA_Student_LetsTrade_Info()
 	B_GiveInvItems (self, hero, ItMis_JoruKey,1);
 	
 	B_LogEntry          (CH2_KalomsNewWeed,"Uczeñ da³ mi klucz, dziêki któremu dostanê siê do zawartoœci skrzyni w chacie Joru. Mam tam znaleŸæ przepisy, które Joru wykrad³ wczeœniej Guru. Dziêki temu bêdê móg³ go zaszanta¿owaæ.");
+	
+	Npc_ExchangeRoutine (NOV_1313_Novize,"start");
 };

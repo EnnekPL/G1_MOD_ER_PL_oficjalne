@@ -236,7 +236,7 @@ INSTANCE DIA_STT_336_cavalorn_HELLO1 (C_INFO)
 
 FUNC INT DIA_STT_336_cavalorn_HELLO1_Condition()
 {
-    if ((Npc_GetTrueGuild (hero) == GIL_NONE) || (Npc_GetTrueGuild (hero) == GIL_VLK)) && (Kapitel < 4) && Fingers_Wherecavalorn == true
+    if ((Npc_GetTrueGuild (hero) == GIL_NONE) || (Npc_GetTrueGuild (hero) == GIL_VLK)) && (Kapitel < 4) //&& Fingers_Wherecavalorn == true
     {
     return TRUE;
     };

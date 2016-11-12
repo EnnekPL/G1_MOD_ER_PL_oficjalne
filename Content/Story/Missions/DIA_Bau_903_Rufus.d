@@ -373,7 +373,7 @@ FUNC INT DIA_Rufus_AlcoDelivery_Condition()
 	&& (Npc_KnowsInfo (hero, DIA_Schlaeger_ALCO)) 
 	&& (Npc_KnowsInfo (hero, DIA_Ricelord_ALCO_BUNT)) 
 	&& (Npc_KnowsInfo (hero, DIA_Lefty_ALCO_BUNT))
-	&& (LeftyAndLordDeath == TRUE)
+	&& (Rebel_Consequences == LeftyAndLordDeath)
     {
     return TRUE;
     };
@@ -387,7 +387,7 @@ FUNC VOID DIA_Rufus_AlcoDelivery_Info()
 	AI_Output (self, other ,"DIA_Rufus_AlcoDelivery_03_03"); //Teraz zosta³o nam tylko obserwowaæ bandziorów i czekaæ na odpowiedni moment. Wkrótce wszystko siê zacznie.
 	AI_Output (self, other ,"DIA_Rufus_AlcoDelivery_03_04"); //To ty powinieneœ zrobiæ pierwszy krok. Zaatakuj Lewusa. My pójdziemy za tob¹.
 	
-	B_LogEntry                     (CH1_BuntZbieraczy,"Podarowanie alkoholu bandziorom to pestka. Jesteœmy ju¿ prawie gotowi. Wkrótce Rufus da mi kolejne instrukcje. ");
+	B_LogEntry                     (CH1_BuntZbieraczy,"Podarowanie alkoholu bandziorom to pestka. Jesteœmy ju¿ prawie gotowi. To ja powinienem zaatakowaæ Lewusa.");
 	AI_StopProcessInfos (self);
 	
 	Quest_GetAlcoForBandits = LOG_SUCCESS;
@@ -416,7 +416,7 @@ FUNC INT DIA_Rufus_AlcoDelivery2_Condition()
 	&& (Npc_KnowsInfo (hero, DIA_Schlaeger_ALCO)) 
 	&& (Npc_KnowsInfo (hero, DIA_Ricelord_ALCO_BUNT)) 
 	&& (Npc_KnowsInfo (hero, DIA_Lefty_ALCO_BUNT))
-	&& (LeftyDeath == TRUE)
+	&& (Rebel_Consequences == LeftyDeath)
     {
     return TRUE;
     };
@@ -646,6 +646,7 @@ FUNC VOID DIA_Rufus_LastFight_Info()
     AI_Output (self, other ,"DIA_Rufus_LastFight_03_01"); //To ty zniszczy³eœ wszystko, co budowa³em! Ty pogr¹¿y³eœ wszystkich Zbieraczy!
 	AI_Output (self, other ,"DIA_Rufus_LastFight_03_02"); //Ju¿ po tobie!
 	
+	self.flags = 0;
 	AI_StopProcessInfos (self);
 	B_ChangeGuild    (self,GIL_NONE);  
 	self.guild = GIL_NONE;

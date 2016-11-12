@@ -699,7 +699,7 @@ INSTANCE DIA_Lefty_LastFight (C_INFO)
 
 FUNC INT DIA_Lefty_LastFight_Condition()
 {
-    if (Quest_KillLefty == LOG_RUNNING) && (LeftyAndLordDeath == TRUE)
+    if (Quest_KillLefty == LOG_RUNNING) && (Rebel_Consequences == LeftyAndLordDeath)
     {
     return TRUE;
     };

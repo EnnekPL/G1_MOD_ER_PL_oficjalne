@@ -208,7 +208,7 @@ FUNC VOID Info_Thorus_TryMeICanDoIt_Info()
 // 							MISSION MORDRAG KO
 // **************************************************************************
 VAR INT Thorus_MordragKo;
-
+var int HeroKnowWhereIsMordrag;
 // **************************************************************************
 // 							MISSION MORDRAG KO VERGABE
 // **************************************************************************
@@ -257,7 +257,10 @@ FUNC VOID Info_Thorus_MordragKo_Offer_Info()
 	Info_ClearChoices(Info_Thorus_MordragKo_Offer);
 	Info_AddChoice   (Info_Thorus_MordragKo_Offer, "Zajmê siê tym." 							,Info_Thorus_MordragKo_OFFER_BACK);
 	Info_AddChoice	 (Info_Thorus_MordragKo_Offer, "Chcesz, ¿ebym go zabi³, tak?" 						,Info_Thorus_MordragKo_KillHim);
+	if (HeroKnowWhereIsMordrag == FALSE)
+	{
 	Info_AddChoice	 (Info_Thorus_MordragKo_Offer, "Gdzie znajdê Mordraga?" 								,Info_Thorus_MordragKo_Where);
+	};
 	Info_AddChoice	 (Info_Thorus_MordragKo_Offer, "Dlaczego Magowie broni¹ Mordraga?"		,Info_Thorus_MordragKo_MagesProtect);
 	Info_AddChoice	 (Info_Thorus_MordragKo_Offer, "Widzê, ¿e masz trochê problemów z Magami..."	,Info_Thorus_MordragKo_MageProblem);
 	
@@ -289,6 +292,7 @@ FUNC VOID Info_Thorus_MordragKo_Where()
 	AI_Output (other, self,"Info_Thorus_MordragKo_Where_15_00"); //Gdzie znajdê Mordraga?
 	AI_Output (self, other,"Info_Thorus_MordragKo_Where_09_01"); //Krêci siê przy po³udniowej bramie, po przeciwnej stronie zamku, tu¿ za wejœciem. Sukinsyn boi siê pojawiaæ bli¿ej centrum.
 	B_LogEntry(CH1_MordragKO, "Mordrag urzêduje przy po³udniowej bramie, za zamkiem.");
+	HeroKnowWhereIsMordrag = TRUE;
 };
 
 FUNC VOID Info_Thorus_MordragKo_MagesProtect()
