@@ -1,6 +1,6 @@
 - w ofercie Stanleya pojawi³y siê sk³adniki alchemiczne uzupe³niane co rozdzia³ (drobne iloœci)
 - wzrost cen sk³adników alchemicznych
-- ¿eby pochwaliæ siê kontaktami Gomezowi trzeba je faktycznie mieæ
+- naprawiony b³¹d z przeciwnikami nie atakuj¹cymi Guru w œwi¹tyni œni¹cego
 - spadek cen najpopularniejszych zió³ 
 - Fortuno nie daje prezentów jeœli do³¹czymy do innego obozu ni¿ bractwo
 - naprawiony b³¹d z podan¹ z³¹ iloœci¹ PN za naukê po przeskoczeniu progu

@@ -31,7 +31,7 @@ Mdl_SetModelFatness(self,0);
 //----------Umiejetnasci----------
 
 Npc_SetTalentSkill (self, NPC_TALENT_1H,4);
-Npc_SetTalentSkill (self, NPC_TALENT_2H,1);
+Npc_SetTalentSkill (self, NPC_TALENT_2H,4);
 
 //----------Ekwipunek----------
 EquipItem		(self, ItMw_1H_Sword_Short_03);

@@ -33,7 +33,7 @@ instance NONE_13Mage (Npc_Default)
 	fight_tactic	=	FAI_HUMAN_mage; 
 
 	//-------- Talents  --------                                    
-	Npc_SetTalentSkill (self, NPC_TALENT_2H,2);
+	Npc_SetTalentSkill (self, NPC_TALENT_2H,7);
 	Npc_SetTalentSkill (self, NPC_TALENT_MAGE,6);
 	//-------- inventory --------                                    
 

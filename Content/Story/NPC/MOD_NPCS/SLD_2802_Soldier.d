@@ -31,7 +31,7 @@ attribute[ATR_HITPOINTS] = 350;
 
 //----------Umiejetnasci----------
 
-Npc_SetTalentSkill (self, NPC_TALENT_2H,2);
+Npc_SetTalentSkill (self, NPC_TALENT_2H,7);
 Npc_SetTalentSkill (self, NPC_TALENT_CROSSBOW,2);
 
 //----------Ekwipunek----------

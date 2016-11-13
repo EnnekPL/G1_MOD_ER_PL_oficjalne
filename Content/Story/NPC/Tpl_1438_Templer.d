@@ -33,7 +33,7 @@ instance TPL_1438_Templer (Npc_Default)
 
 	//-------- Talente -------- 
 
-	Npc_SetTalentSkill (self, NPC_TALENT_2H,1);
+	Npc_SetTalentSkill (self, NPC_TALENT_2H,4);
 	
 	//-------- inventory --------
 	

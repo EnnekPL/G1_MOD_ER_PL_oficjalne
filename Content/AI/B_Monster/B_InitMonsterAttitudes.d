@@ -489,6 +489,8 @@ func void B_InitMonsterAttitudes ()
 	B_SetGuildAttitude	(GIL_SEPERATOR_HUM,	ATT_FRIENDLY,	GIL_ORCSLAVE		);
 
 	//-------- GIL_GUR wird den Gegnern im Alten Tempel verpasst --------
+	// ER 1.4.8: Wy³¹czone, gdy¿ gracz mo¿e byæ GIL_GUR, a Œwi¹tynni maj¹ GIL_UNDEADORC
+	/*
 	B_SetGuildAttitude	(GIL_GUR,			ATT_FRIENDLY,	GIL_DEMON			);
 	B_SetGuildAttitude	(GIL_GUR,			ATT_NEUTRAL,	GIL_MINECRAWLER		);
 	B_SetGuildAttitude	(GIL_GUR,			ATT_NEUTRAL,	GIL_SKELETON		);
@@ -500,6 +502,7 @@ func void B_InitMonsterAttitudes ()
 	B_SetGuildAttitude	(GIL_SKELETON	,	ATT_NEUTRAL,	GIL_GUR				);
 	B_SetGuildAttitude	(GIL_UNDEADORC	,	ATT_NEUTRAL,	GIL_GUR				);
 	B_SetGuildAttitude	(GIL_ZOMBIE		,	ATT_NEUTRAL,	GIL_GUR				);
+	*/
 
 	//-------- ORKS --------
 	B_SetGuildAttitude	(GIL_ORCSHAMAN	,	ATT_HOSTILE,	GIL_SEPERATOR_HUM	);

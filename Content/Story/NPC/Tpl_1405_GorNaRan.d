@@ -32,7 +32,7 @@ instance TPL_1405_GorNaRan (Npc_Default)
 
 	//-------- Talente -------- 
 
-	Npc_SetTalentSkill (self, NPC_TALENT_2H,1);
+	Npc_SetTalentSkill (self, NPC_TALENT_2H,8);
 	Npc_SetTalentSkill (self, NPC_TALENT_CROSSBOW,2);
 	
 	//-------- inventory --------

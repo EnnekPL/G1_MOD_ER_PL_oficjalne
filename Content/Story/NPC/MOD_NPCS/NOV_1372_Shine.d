@@ -30,7 +30,7 @@ instance NOV_1372_Novize (Npc_Default)
 	fight_tactic	=	FAI_HUMAN_STRONG;
 
 	//-------- Talente --------
-	Npc_SetTalentSkill (self, NPC_TALENT_2H,2);
+	Npc_SetTalentSkill (self, NPC_TALENT_2H,7);
 		
 	//-------- inventory --------
 

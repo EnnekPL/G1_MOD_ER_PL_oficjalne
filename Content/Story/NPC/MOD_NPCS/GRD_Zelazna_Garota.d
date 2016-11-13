@@ -35,7 +35,7 @@ instance GRD_8800_Gardist (Npc_Default)
 				
 	Npc_SetTalentSkill (self, NPC_TALENT_1H,7);
 	Npc_SetTalentSkill (self, NPC_TALENT_1H,7);
-	Npc_SetTalentSkill (self, NPC_TALENT_2H,2);
+	Npc_SetTalentSkill (self, NPC_TALENT_2H,7);
 	Npc_SetTalentSkill (self, NPC_TALENT_CROSSBOW,2);		
 			
 	//-------- inventory --------
@@ -98,7 +98,7 @@ instance GRD_8801_Gardist (Npc_Default)
 				
 	Npc_SetTalentSkill (self, NPC_TALENT_1H,7);
 	Npc_SetTalentSkill (self, NPC_TALENT_1H,7);
-	Npc_SetTalentSkill (self, NPC_TALENT_2H,2);
+	Npc_SetTalentSkill (self, NPC_TALENT_2H,7);
 	Npc_SetTalentSkill (self, NPC_TALENT_CROSSBOW,2);		
 			
 	//-------- inventory --------

@@ -37,7 +37,7 @@ instance ORG_823_Zick (Npc_Default)
 	//-------- Talente ----------
 
 	Npc_SetTalentSkill (self, NPC_TALENT_BOW,1);
-	Npc_SetTalentSkill (self, NPC_TALENT_1H,2);
+	Npc_SetTalentSkill (self, NPC_TALENT_1H,9);
 	
 
 	//-------- inventory --------   

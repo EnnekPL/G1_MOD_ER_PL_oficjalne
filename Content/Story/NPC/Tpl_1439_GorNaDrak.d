@@ -31,7 +31,7 @@ instance TPL_1439_GorNaDrak (Npc_Default)
 
 	//-------- Talente -------- 
 
-	Npc_SetTalentSkill (self, NPC_TALENT_2H,2);
+	Npc_SetTalentSkill (self, NPC_TALENT_2H,7);
 	
 	//-------- inventory --------
 	EquipItem (self, ItMw_2H_Sword_Light_04);

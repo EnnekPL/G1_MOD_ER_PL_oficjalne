@@ -32,7 +32,7 @@ Mdl_SetModelFatness(self,0);
 
 Npc_SetTalentSkill (self, NPC_TALENT_CROSSBOW,2);
 Npc_SetTalentSkill (self, NPC_TALENT_BOW,2);
-Npc_SetTalentSkill (self, NPC_TALENT_2H,1);
+Npc_SetTalentSkill (self, NPC_TALENT_2H,4);
 Npc_SetTalentSkill (self, NPC_TALENT_MAGE,2);
 
 //----------Ekwipunek----------

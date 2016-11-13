@@ -170,7 +170,7 @@ B_Scale (self);
 Mdl_SetModelFatness(self,0);
 //----------Umiejetnasci----------
 Npc_SetTalentSkill (self, NPC_TALENT_BOW,2);
-Npc_SetTalentSkill (self, NPC_TALENT_2H,2);
+Npc_SetTalentSkill (self, NPC_TALENT_2H,7);
 //----------Ekwipunek----------
 EquipItem		(self, ItMw_2H_Sword_03);
 EquipItem		(self, ItRw_Bow_Long_05);
@@ -308,7 +308,7 @@ Mdl_SetModelFatness(self,0);
 //----------Umiejetnasci----------
 
 Npc_SetTalentSkill (self, NPC_TALENT_BOW,2);
-Npc_SetTalentSkill (self, NPC_TALENT_2H,2);
+Npc_SetTalentSkill (self, NPC_TALENT_2H,7);
 
 //----------Ekwipunek----------
 //EquipItem		(self, ItMw_2H_Sword_02);

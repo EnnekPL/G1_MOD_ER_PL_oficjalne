@@ -37,7 +37,7 @@ instance ORG_810_Organisator (Npc_Default)
 	//-------- Talente ----------
 
 	Npc_SetTalentSkill (self, NPC_TALENT_BOW,2);
-	Npc_SetTalentSkill (self, NPC_TALENT_2H,2);
+	Npc_SetTalentSkill (self, NPC_TALENT_2H,7);
 	Npc_SetTalentSkill (self, NPC_TALENT_1H,4);
 
 	//------- Inventory ---------

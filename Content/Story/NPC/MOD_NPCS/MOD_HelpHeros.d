@@ -32,7 +32,7 @@ instance ArmorMaster (Npc_Default)
 	fight_tactic	=	FAI_HUMAN_STRONG;
 	//-------- Talente -------- 
 
-	Npc_SetTalentSkill (self, NPC_TALENT_2H,1);
+	Npc_SetTalentSkill (self, NPC_TALENT_2H,4);
 	
 	//-------- inventory --------
 	//kopacze, robotnicy
@@ -111,7 +111,7 @@ instance PotionMaster (Npc_Default)
 	fight_tactic	=	FAI_HUMAN_STRONG;
 	//-------- Talente -------- 
 
-	Npc_SetTalentSkill (self, NPC_TALENT_2H,1);
+	Npc_SetTalentSkill (self, NPC_TALENT_2H,4);
 	
 	//-------- inventory --------
 	//tymczasowe
@@ -159,7 +159,7 @@ instance FoodMaster (Npc_Default)
 	fight_tactic	=	FAI_HUMAN_STRONG;
 	//-------- Talente -------- 
 
-	Npc_SetTalentSkill (self, NPC_TALENT_2H,1);
+	Npc_SetTalentSkill (self, NPC_TALENT_2H,4);
 	
 	//-------- inventory --------
 	//tymczasowe
@@ -225,7 +225,7 @@ instance QuestMaster (Npc_Default)
 	fight_tactic	=	FAI_HUMAN_STRONG;
 	//-------- Talente -------- 
 
-	Npc_SetTalentSkill (self, NPC_TALENT_2H,1);
+	Npc_SetTalentSkill (self, NPC_TALENT_2H,4);
 	
 	//-------- inventory --------
 	//ch1
@@ -337,7 +337,7 @@ instance BookMaster (Npc_Default)
 	fight_tactic	=	FAI_HUMAN_STRONG;
 	//-------- Talente -------- 
 
-	Npc_SetTalentSkill (self, NPC_TALENT_2H,1);
+	Npc_SetTalentSkill (self, NPC_TALENT_2H,4);
 	
 	//-------- inventory --------
 	//ch1
@@ -417,7 +417,7 @@ instance MiscMaster (Npc_Default)
 	fight_tactic	=	FAI_HUMAN_STRONG;
 	//-------- Talente -------- 
 
-	Npc_SetTalentSkill (self, NPC_TALENT_2H,1);
+	Npc_SetTalentSkill (self, NPC_TALENT_2H,4);
 	
 	//-------- inventory --------
 	//ch1

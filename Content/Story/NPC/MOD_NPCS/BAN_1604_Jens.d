@@ -32,7 +32,7 @@ Mdl_SetModelFatness(self,0);
 
 Npc_SetTalentSkill (self, NPC_TALENT_BOW,2);
 Npc_SetTalentSkill (self, NPC_TALENT_1H,4);
-Npc_SetTalentSkill (self, NPC_TALENT_2H,2);
+Npc_SetTalentSkill (self, NPC_TALENT_2H,7);
 
 //----------Ekwipunek----------
 EquipItem		(self, ItMw_1H_Sword_Broad_01);

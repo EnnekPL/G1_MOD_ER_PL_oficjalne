@@ -34,7 +34,7 @@ instance VLK_7018_Buddler (Npc_Default)
 	fight_tactic	=	FAI_HUMAN_COWARD; 
 	//-------- Talents  --------                                    
 
-	Npc_SetTalentSkill (self, NPC_TALENT_1H,1);
+	Npc_SetTalentSkill (self, NPC_TALENT_1H,4);
 	
 	//-------- inventory --------                                    
 

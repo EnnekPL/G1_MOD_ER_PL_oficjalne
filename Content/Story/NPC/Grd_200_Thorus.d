@@ -35,9 +35,9 @@ instance Grd_200_Thorus (Npc_Default)
 	//-------- Talente -------- 
 
 				
-	Npc_SetTalentSkill	(self,NPC_TALENT_1H,2);			
-	Npc_SetTalentSkill	(self,NPC_TALENT_2H,2);			
-	Npc_SetTalentSkill	(self,NPC_TALENT_CROSSBOW,1);			
+	Npc_SetTalentSkill	(self,NPC_TALENT_1H,10);			
+	Npc_SetTalentSkill	(self,NPC_TALENT_2H,10);			
+	Npc_SetTalentSkill	(self,NPC_TALENT_CROSSBOW,2);			
 			
         
 	//-------- inventory --------

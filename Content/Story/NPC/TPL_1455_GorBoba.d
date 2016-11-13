@@ -38,7 +38,7 @@ instance TPL_1455_GorBoba (Npc_Default)
 	fight_tactic	=	FAI_HUMAN_STRONG;
 	//-------- Talente -------- 
 
-	Npc_SetTalentSkill (self, NPC_TALENT_2H,1);
+	Npc_SetTalentSkill (self, NPC_TALENT_2H,4);
 	
 	//-------- inventory --------
 	

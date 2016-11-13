@@ -32,7 +32,7 @@ instance TPL_3928_GorNaLin (Npc_Default)
 	fight_tactic	=	FAI_HUMAN_STRONG;
 	//-------- Talente -------- 
 
-	Npc_SetTalentSkill (self, NPC_TALENT_2H,1);
+	Npc_SetTalentSkill (self, NPC_TALENT_2H,4);
 	
 	//-------- inventory --------
 	

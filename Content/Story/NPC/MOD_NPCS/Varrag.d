@@ -51,7 +51,7 @@ instance Boss_Varrag (Npc_Default)
 	aivar[AIV_MM_RestStart] 	= OnlyRoutine;
 	
 	//-------- Talente --------  	
-	Npc_SetTalentSkill (self, NPC_TALENT_2H,2);
+	Npc_SetTalentSkill (self, NPC_TALENT_2H,7);
 	Npc_SetTalentSkill (self, NPC_TALENT_1H,7);
 	Npc_SetTalentSkill (self, NPC_TALENT_BOW,2);
 			

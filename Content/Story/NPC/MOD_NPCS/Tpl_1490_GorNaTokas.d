@@ -33,7 +33,7 @@ instance TPL_1490_GorNaTokas (Npc_Default)
 	//-------- Talente -------- 
 
 	Npc_SetTalentSkill (self, NPC_TALENT_1H,7);
-	Npc_SetTalentSkill (self, NPC_TALENT_2H,1);
+	Npc_SetTalentSkill (self, NPC_TALENT_2H,4);
 	//-------- inventory --------					
 	EquipItem (self, Tokas_Sword);
 	
@@ -91,7 +91,7 @@ instance TPL_1491_GorNaTokasOT (Npc_Default)
 	//-------- Talente -------- 
 
 	Npc_SetTalentSkill (self, NPC_TALENT_1H,9);
-	Npc_SetTalentSkill (self, NPC_TALENT_2H,1);
+	Npc_SetTalentSkill (self, NPC_TALENT_2H,4);
 	//-------- inventory --------					
 	EquipItem (self, Tokas_Sword);
 	

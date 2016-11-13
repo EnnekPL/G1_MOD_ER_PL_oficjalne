@@ -38,7 +38,7 @@ instance SLD_705_Soeldner (Npc_Default)
 	//-------- Talente --------
 	
 	Npc_SetTalentSkill (self, NPC_TALENT_1H,4);
-	Npc_SetTalentSkill (self, NPC_TALENT_2H,1);
+	Npc_SetTalentSkill (self, NPC_TALENT_2H,4);
 	Npc_SetTalentSkill (self, NPC_TALENT_BOW,1);
 
 	//-------- inventory --------                                    
