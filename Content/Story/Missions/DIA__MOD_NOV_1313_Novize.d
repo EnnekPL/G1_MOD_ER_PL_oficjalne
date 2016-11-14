@@ -23,13 +23,16 @@ FUNC INT DIA_Student_AboutJoru_Condition()
 
 FUNC VOID DIA_Student_AboutJoru_Info()
 {
+	AI_Output (self, other,"DIA_Student_AboutJoru_01_01"); //EKHEM...
     CreateInvItem (self, ItMis_LetterFromStudent);
-	B_GiveInvItems (self, hero, ItMis_LetterFromStudent,1);
-	AI_StopProcessInfos	(self);
+	B_GiveInvItems (self, other, ItMis_LetterFromStudent,1);
+	
 	
 	B_LogEntry          (CH2_KalomsNewWeed,"Tu¿ po rozmowie z Joru jego uczeñ wsun¹³ mi w kieszeñ list. Muszê go przeczytaæ.");
 	
-	Npc_ExchangeRoutine (NOV_1313_Novize,"secret");
+	Npc_ExchangeRoutine (self, "secret");
+	Npc_ExchangeRoutine (self, "prestart");
+	AI_StopProcessInfos	(self);
 };
 
 //========================================
@@ -48,7 +51,7 @@ INSTANCE DIA_Student_Night (C_INFO)
 
 FUNC INT DIA_Student_Night_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Student_AboutJoru)) && (ItemUsed_LetterFromStudent == TRUE)  && (MIS_KalomsNewWeed == LOG_RUNNING)
+    if (Npc_KnowsInfo (hero, DIA_Student_AboutJoru)) && (ItemUsed_LetterFromStudent == TRUE)  && (MIS_KalomsNewWeed == LOG_RUNNING) && (Npc_GetDistToWP (self, "PSI_FORTUNO_CLIENT1") < 1000)
     {
     return TRUE;
     };

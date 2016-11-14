@@ -116,8 +116,8 @@ INSTANCE ItMis_LetterFromStudent (C_ITEM)
 	scemeName				=	"MAP";
 	description				= 	name;
 
-	TEXT[1] 				=	"Nowicjusz da³ mi tê kartkê";
-	TEXT[1] 				=	"bez s³owa wyjaœnieñ";
+	TEXT[2] 				=	"Nowicjusz da³ mi tê kartkê";
+	TEXT[3] 				=	"bez s³owa wyjaœnieñ";
 	on_state[0]				=	Use_LetterFromStudent;
 };
 
@@ -133,7 +133,7 @@ FUNC VOID Use_LetterFromStudent()
 	Doc_PrintLines	( nDocID,  0, "");
 	Doc_PrintLines	( nDocID,  0, "");
 	Doc_PrintLines	( nDocID,  0, "");
-	Doc_PrintLines	( nDocID,  0, "Oko³o pó³nocy przy stoisku Fortuno.");
+	Doc_PrintLines	( nDocID,  0, "Spotkajmy siê przy stoisku Fortuno.");
 	Doc_PrintLines	( nDocID,  0, "");
 	Doc_PrintLines	( nDocID,  0, "");
 	Doc_Show		( nDocID );

@@ -232,7 +232,7 @@ INSTANCE DIA_Briam_NewWeedAlert (C_INFO)
 
 FUNC INT DIA_Briam_NewWeedAlert_Condition()
 {
-    if (Kapitel == 2)
+    if (Kapitel == 10)
     && (Npc_GetTrueGuild(hero) == GIL_BAU)
     {
     return TRUE;
