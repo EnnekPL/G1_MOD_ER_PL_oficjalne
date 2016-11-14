@@ -24,18 +24,18 @@ FUNC INT DIA_Soldier_WARN_FLINT_Condition()
 
 FUNC VOID DIA_Soldier_WARN_FLINT_Info()
 {
-    AI_Output (self, other ,"DIA_Soldier_WARN_FLINT_03_01"); //Hej! A co to za goÅ›Ä‡?
+    AI_Output (self, other ,"DIA_Soldier_WARN_FLINT_03_01"); //Hej! A co to za goœæ?
     AI_Output (self, other ,"DIA_Soldier_WARN_FLINT_03_02"); //Gdzie go prowadzisz?
 
     Info_ClearChoices		(DIA_Soldier_WARN_FLINT);
-    Info_AddChoice		(DIA_Soldier_WARN_FLINT, "To wyrzucony z kopalni Kret. Ma trafiÄ‡ do na pola ryÅ¼owe.", DIA_Soldier_WARN_FLINT_KRET);
-    Info_AddChoice		(DIA_Soldier_WARN_FLINT, "To zbieg z pÃ³l ryÅ¼owych. UdaÅ‚o mi siÄ™ go zÅ‚apaÄ‡.", DIA_Soldier_WARN_FLINT_ZBIEG);
+    Info_AddChoice		(DIA_Soldier_WARN_FLINT, "To wyrzucony z kopalni Kret. Ma trafiæ do na pola ry¿owe.", DIA_Soldier_WARN_FLINT_KRET);
+    Info_AddChoice		(DIA_Soldier_WARN_FLINT, "To zbieg z pól ry¿owych. Uda³o mi siê go z³apaæ.", DIA_Soldier_WARN_FLINT_ZBIEG);
 };
 
 FUNC VOID DIA_Soldier_WARN_FLINT_KRET()
 {
-    AI_Output (other, self ,"DIA_Soldier_WARN_FLINT_KRET_15_01"); //To wyrzucony z kopalni Kret. Ma trafiÄ‡ na pola ryÅ¼owe.
-    AI_Output (self, other ,"DIA_Soldier_WARN_FLINT_KRET_03_02"); //Rozumiem, przechodÅºcie.
+    AI_Output (other, self ,"DIA_Soldier_WARN_FLINT_KRET_15_01"); //To wyrzucony z kopalni Kret. Ma trafiæ na pola ry¿owe.
+    AI_Output (self, other ,"DIA_Soldier_WARN_FLINT_KRET_03_02"); //Rozumiem, przechodŸcie.
 
     B_GIVEXP (50);
     Info_ClearChoices		(DIA_Soldier_WARN_FLINT);
@@ -44,10 +44,10 @@ FUNC VOID DIA_Soldier_WARN_FLINT_KRET()
 
 FUNC VOID DIA_Soldier_WARN_FLINT_ZBIEG()
 {
-    AI_Output (other, self ,"DIA_Soldier_WARN_FLINT_ZBIEG_15_01"); //To zbieg z pÃ³l ryÅ¼owych. UdaÅ‚o mi siÄ™ go zÅ‚apaÄ‡.
+    AI_Output (other, self ,"DIA_Soldier_WARN_FLINT_ZBIEG_15_01"); //To zbieg z pól ry¿owych. Uda³o mi siê go z³apaæ.
     AI_Output (self, other ,"DIA_Soldier_WARN_FLINT_ZBIEG_03_02"); //Zbieg? Doprawdy?
-    AI_Output (self, other ,"DIA_Soldier_WARN_FLINT_ZBIEG_03_03"); //StojÄ™ tu caÅ‚y, cholerny dzieÅ„ i nikogo nie widziaÅ‚em. 
-	AI_Output (self, other ,"DIA_Soldier_WARN_FLINT_ZBIEG_03_04"); //Chyba prÃ³bujesz mnie oszukaÄ‡! Bardzo tego nie lubiÄ™!
+    AI_Output (self, other ,"DIA_Soldier_WARN_FLINT_ZBIEG_03_03"); //Stojê tu ca³y, cholerny dzieñ i nikogo nie widzia³em. 
+	AI_Output (self, other ,"DIA_Soldier_WARN_FLINT_ZBIEG_03_04"); //Chyba próbujesz mnie oszukaæ! Bardzo tego nie lubiê!
 	Info_ClearChoices		(DIA_Soldier_WARN_FLINT);
 	AI_StopProcessInfos	(self);
     Npc_SetTarget (self, other);
