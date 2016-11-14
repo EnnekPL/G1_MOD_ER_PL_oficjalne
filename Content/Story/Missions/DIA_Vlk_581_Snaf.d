@@ -484,7 +484,7 @@ FUNC VOID DIA_Snaf_SellInfos_Emil()
 	AI_Output (other, self ,"DIA_Snaf_SellInfos_Emil_15_06"); //Wiesz mo¿e gdzie siê uda³?
 	AI_Output (self, other ,"DIA_Snaf_SellInfos_Emil_03_07"); //Opuœci³ Obóz przez po³udniow¹ bramê. Byæ mo¿e uda³ siê w stronê Ziem Orków. Najlepiej zapytaj Pacho, Stra¿nika, który ma wyznaczony patrol w tamtej okolicy. 
 	AI_Output (other, self ,"DIA_Snaf_SellInfos_Emil_15_08"); //W porz¹dku. Dziêki za informacje.
-	AI_Output (self, other ,"DIA_Snaf_SellInfos_Emil_03_09"); //Dpuki p³acisz, nie musisz mi dziêkowaæ.
+	AI_Output (self, other ,"DIA_Snaf_SellInfos_Emil_03_09"); //Dopóki p³acisz, nie musisz mi dziêkowaæ.
 	B_GiveInvItems (other, self, ItMiNugget, 10);
 	heroknow_Emil = true;
 	B_LogEntry                     (CH2_CourierFireMage,"Rozmawia³em ze Snafem, ten gruby kucharzyna twierdzi, ¿e Emila móg³ pójœæ w stronê Terytorium Orków. Powinienem porozmawiaæ z Pacho, jednym ze Stra¿ników, który patroluje tamt¹ okolicê.");

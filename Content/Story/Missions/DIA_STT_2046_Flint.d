@@ -487,6 +487,8 @@ FUNC VOID DIA_Flint_Emil_Help ()
 	//exit
 	Info_ClearChoices		(DIA_Flint_Emil);
     AI_StopProcessInfos	(self);
+	
+	hero_knows_RatfordKiller = TRUE;
 };
 
 //========================================

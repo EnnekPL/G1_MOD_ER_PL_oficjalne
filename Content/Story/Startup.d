@@ -2960,6 +2960,7 @@ FUNC VOID STARTUP_WORLD ()
     Wld_SendTrigger("WYZWALACZ"); //wyzwalacz co 2 sekundy
 	//die folgende Zeile gilt nur, bis die INIT_...-Funktionen von Ulf unterstützt werden.
 	INIT_WORLD					();
+	PlayVideo ("er_warns.bik");
 	PlayVideo ("intro.bik");
 };
 
