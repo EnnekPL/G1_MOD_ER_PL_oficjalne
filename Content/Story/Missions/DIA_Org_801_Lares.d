@@ -505,6 +505,7 @@ FUNC VOID  ORG_801_Lares_Reicht_Info()
 		AI_Output (self, other,"ORG_801_Lares_Reicht_AUFNAHME_11_00"); //Myœlê, ¿e tak!
 		AI_Output (self, other,"ORG_801_Lares_Reicht_AUFNAHME_11_01"); //I mam dla ciebie ma³y prezent! Lepszy pancerz. Mo¿e nie jest to szczyt marzeñ, ale zas³u¿y³eœ na niego.
 	
+	
 		hero.guild = GIL_ORG;
 		Npc_SetTrueGuild	(hero,GIL_ORG );
 		CreateInvItem		(hero,ORG_ARMOR_L);
@@ -553,6 +554,7 @@ FUNC VOID  ORG_801_Lares_Reicht_Info()
 		Log_SetTopicStatus	(CH1_EasyJoinOC,	LOG_FAILED);
 		B_LogEntry				(CH1_EasyJoinOC,	"Nic nie wysz³o z mojego u³atwionego przyjêcia do Starego Obozu. Zosta³em cz³onkiem bany Laresa.");
 		
+
 		/*
 		MIS_Fire_Novize = LOG_FAILED;
 		Log_SetTopicStatus       (CH1_Fire_Novize, LOG_FAILED);
@@ -578,7 +580,14 @@ FUNC VOID  ORG_801_Lares_Reicht_Info()
 		};
 		AI_Output (self, other,"ORG_801_Lares_Reicht_11_04"); //Ale nie jesteœ gotowy. Popracuj nad sob¹ jeszcze trochê.
 		
+		if (hero.level < 5)
+		{
 		B_PrintGuildCondition(5);
+		}
+		else
+		{
+		PrintScreen	("Zbyt ma³a reputacja!", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
+		};
 	};
 };
 
