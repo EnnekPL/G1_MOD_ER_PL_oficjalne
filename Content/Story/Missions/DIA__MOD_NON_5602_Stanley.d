@@ -96,7 +96,7 @@ instance  DIA_Stanley_Teach_2H (C_INFO)
 	npc				= NON_5602_Stanley;
 	condition		= DIA_Stanley_Teach_2H_Condition;
 	information		= DIA_Stanley_Teach_2H_Info;
-	permanent		= 1;
+	permanent		= 667;
 	description		= "Zacznijmy trening broni dwurêcznej."; 
 };
 //
@@ -306,7 +306,7 @@ INSTANCE DIA_Stanley_START_TRAIN (C_INFO)
 	nr			= 700;
 	condition	= DIA_Stanley_START_TRAIN_Condition;
 	information	= DIA_Stanley_START_TRAIN_Info;
-	permanent	= 1;
+	permanent	= 555;
 	description = "Zacznijmy trening broni jednorêcznej.";
 };                       
 

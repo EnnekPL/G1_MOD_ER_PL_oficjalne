@@ -145,11 +145,12 @@ FUNC VOID DIA_Firn_OtherTeacher_Info()
     AI_Output (self, other ,"DIA_Firn_OtherTeacher_03_02"); //Jasne. Nauczycieli, handlarzy, byæ mo¿e nawet jak¹œ robotê. 
 	AI_Output (self, other ,"DIA_Firn_OtherTeacher_03_03"); //Stanley mo¿e ciê nauczyæ machaæ mieczem. Warto z nim pogadaæ, bo w innych obozach nikt ciê nie nauczy nawet podstaw dopóki nie do³¹czysz do gildii.
 	AI_Output (other, self ,"DIA_Firn_OtherTeacher_15_04"); //Dlaczego?
-	AI_Output (self, other ,"DIA_Firn_OtherTeacher_03_05"); //Trening bojowy wymaga du¿ego nak³adu pracy i daje niez³e efekty. Jeœli nauczysz siê porz¹dnie machaæ mieczem, to stajesz siê nagle cennym nabytkiem dla Gomeza, Lee lub Guru. Dlatego nikt nie chce szkoliæ nie swoich ludzi. 
-	AI_Output (self, other ,"DIA_Firn_OtherTeacher_03_06"); //WyobraŸ sobie, ¿e pobiera³byœ nauki od Thorusa, a póŸniej zosta³byœ Szkodnikiem. 
-	AI_Output (other, self ,"DIA_Firn_OtherTeacher_15_07"); //Rozumiem. Ktoœ jeszcze warty jest rozmowy?
-	AI_Output (self, other ,"DIA_Firn_OtherTeacher_03_08"); //Alex mo¿e ci daæ pracê, Claw pouczyæ alchemii, a Mil ma sporo rzeczy na sprzeda¿. 
-	AI_Output (other, self ,"DIA_Firn_OtherTeacher_15_09"); //Dziêki. 
+	AI_Output (self, other ,"DIA_Firn_OtherTeacher_03_05"); //Trening bojowy wymaga du¿ego nak³adu pracy i daje niez³e efekty. 
+	AI_Output (self, other ,"DIA_Firn_OtherTeacher_03_06"); //Jeœli nauczysz siê porz¹dnie machaæ mieczem, to stajesz siê nagle cennym nabytkiem dla Gomeza, Lee lub Guru. Dlatego nikt nie chce szkoliæ nie swoich ludzi. 
+	AI_Output (self, other ,"DIA_Firn_OtherTeacher_03_07"); //WyobraŸ sobie, ¿e pobiera³byœ nauki od Thorusa, a póŸniej zosta³byœ Szkodnikiem. 
+	AI_Output (other, self ,"DIA_Firn_OtherTeacher_15_08"); //Rozumiem. Ktoœ jeszcze warty jest rozmowy?
+	AI_Output (self, other ,"DIA_Firn_OtherTeacher_03_09"); //Alex mo¿e ci daæ pracê, Claw pouczyæ alchemii, a Mil ma sporo rzeczy na sprzeda¿. 
+	AI_Output (other, self ,"DIA_Firn_OtherTeacher_15_10"); //Dziêki. 
 };
 
 //========================================
@@ -162,7 +163,7 @@ INSTANCE DIA_Firn_TEACH (C_INFO)
    nr           = 3;
    condition    = DIA_Firn_TEACH_Condition;
    information  = DIA_Firn_TEACH_Info;
-   permanent	= 1;
+   permanent	= 800;
    description	= "No dobrze. Ucz mnie.";
 };
 

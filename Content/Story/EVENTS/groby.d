@@ -4,7 +4,7 @@ func void grob1_S1 ()
 	var C_NPC her; 	her = Hlp_GetNpc(PC_Hero); 
 	var C_NPC rock; rock = Hlp_GetNpc(PC_Rockefeller);
 	
-	//***ALT** if	(Hlp_GetInstanceID (self)== Hlp_GetInstanceID (Hero)) // MH: geÃ¤ndert, damit kontrollierte NSCs nicht schlafen kÃ¶nnen!
+	//***ALT** if	(Hlp_GetInstanceID (self)== Hlp_GetInstanceID (Hero)) // MH: geändert, damit kontrollierte NSCs nicht schlafen können!
 	if ( (Hlp_GetInstanceID(self)==Hlp_GetInstanceID(her))||(Hlp_GetInstanceID(self)==Hlp_GetInstanceID(rock)) ) 
 	{	
 	monolog = grob1;
@@ -17,7 +17,7 @@ func void grob2_S1 ()
 	var C_NPC her; 	her = Hlp_GetNpc(PC_Hero); 
 	var C_NPC rock; rock = Hlp_GetNpc(PC_Rockefeller);
 	
-	//***ALT** if	(Hlp_GetInstanceID (self)== Hlp_GetInstanceID (Hero)) // MH: geÃ¤ndert, damit kontrollierte NSCs nicht schlafen kÃ¶nnen!
+	//***ALT** if	(Hlp_GetInstanceID (self)== Hlp_GetInstanceID (Hero)) // MH: geändert, damit kontrollierte NSCs nicht schlafen können!
 	if ( (Hlp_GetInstanceID(self)==Hlp_GetInstanceID(her))||(Hlp_GetInstanceID(self)==Hlp_GetInstanceID(rock)) ) 
 	{	
 	monolog = grob2;
@@ -30,7 +30,7 @@ func void grob3_S1 ()
 	var C_NPC her; 	her = Hlp_GetNpc(PC_Hero); 
 	var C_NPC rock; rock = Hlp_GetNpc(PC_Rockefeller);
 	
-	//***ALT** if	(Hlp_GetInstanceID (self)== Hlp_GetInstanceID (Hero)) // MH: geÃ¤ndert, damit kontrollierte NSCs nicht schlafen kÃ¶nnen!
+	//***ALT** if	(Hlp_GetInstanceID (self)== Hlp_GetInstanceID (Hero)) // MH: geändert, damit kontrollierte NSCs nicht schlafen können!
 	if ( (Hlp_GetInstanceID(self)==Hlp_GetInstanceID(her))||(Hlp_GetInstanceID(self)==Hlp_GetInstanceID(rock)) ) 
 	{	
 	monolog = grob3;
@@ -93,7 +93,7 @@ FUNC INT DIA_PC_HERO_C45_CLEAR_K1_Condition()
 
 FUNC VOID DIA_PC_HERO_C45_CLEAR_K1_Info()
 {
-    print ("Oczyœci³eœ grób");
+    print ("Oczyszczono grób.");
     b_givexp (200);
 };
 //========================================
@@ -107,7 +107,7 @@ INSTANCE DIA_PC_HERO_EXIT_grob2(C_INFO)
 	condition	= DIA_PC_HERO_EXIT_grob2_Condition;
 	information	= DIA_PC_HERO_EXIT_grob2_Info;
 	permanent	= TRUE;
-	description     = "KONIEC";
+	description     = DIALOG_ENDE;
 };
 
 FUNC INT DIA_PC_HERO_EXIT_grob2_Condition()
@@ -120,6 +120,7 @@ if (monolog == grob2)
 
 FUNC VOID DIA_PC_HERO_EXIT_grob2_Info()
 {
+self.aivar[AIV_INVINCIBLE]=FALSE;
 	AI_StopProcessInfos	(self);
 };
 //========================================
@@ -133,7 +134,7 @@ INSTANCE DIA_PC_HERO_C42_CLEAR_K1 (C_INFO)
    condition    = DIA_PC_HERO_C42_CLEAR_K1_Condition;
    information  = DIA_PC_HERO_C42_CLEAR_K1_Info;
    permanent	= FALSE;
-   description	= "Oczyœæ grób";
+   description	= "Oczyœæ grób.";
 };
 
 FUNC INT DIA_PC_HERO_C42_CLEAR_K1_Condition()
@@ -149,7 +150,7 @@ FUNC INT DIA_PC_HERO_C42_CLEAR_K1_Condition()
 
 FUNC VOID DIA_PC_HERO_C42_CLEAR_K1_Info()
 {
-    print ("Oczyœci³eœ grób");
+    print ("Oczyszczono grób.");
     b_givexp (200);
 };
 //========================================
@@ -177,6 +178,7 @@ if (monolog == grob3)
 FUNC VOID DIA_PC_HERO_EXIT_grob3_Info()
 {
 	AI_StopProcessInfos	(self);
+	self.aivar[AIV_INVINCIBLE]=FALSE;
 };
 //========================================
 //-----------------> CLEAR_K1
@@ -189,7 +191,7 @@ INSTANCE DIA_PC_HERO_C41_CLEAR_K1 (C_INFO)
    condition    = DIA_PC_HERO_C41_CLEAR_K1_Condition;
    information  = DIA_PC_HERO_C41_CLEAR_K1_Info;
    permanent	= FALSE;
-   description	= "Oczyœæ grób";
+   description	= "Oczyœæ grób.";
 };
 
 FUNC INT DIA_PC_HERO_C41_CLEAR_K1_Condition()
@@ -205,6 +207,6 @@ FUNC INT DIA_PC_HERO_C41_CLEAR_K1_Condition()
 
 FUNC VOID DIA_PC_HERO_C41_CLEAR_K1_Info()
 {
-    print ("Oczyœci³eœ grób");
+    print ("Oczyszczono grób.");
     b_givexp (200);
 };

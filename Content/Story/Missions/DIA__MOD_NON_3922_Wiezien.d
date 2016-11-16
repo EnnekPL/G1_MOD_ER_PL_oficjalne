@@ -174,7 +174,7 @@ func void DIA_Jaredd_ABOUT_FELGOR_WHAT ()
 	AI_Output (other, self ,"DIA_Jaredd_ABOUT_FELGOR_WHAT_15_08"); //Wierzysz w tê historiê? 
 	AI_Output (self, other ,"DIA_Jaredd_ABOUT_FELGOR_WHAT_03_09"); //Sam nie wiem. Wydawa³o siê, ¿e tamten cz³owiek œwiêcie wierzy³ w to co mówi³. Z drugiej strony nie jednemu ju¿ tu odebra³o rozum. 
 	AI_Output (self, other ,"DIA_Jaredd_ABOUT_FELGOR_WHAT_03_10"); //Ostatnie dni skazañca z którym tu siedzia³em by³y dla niego mêczarni¹. Popad³ w ob³êd.  
-	AI_Output (self, other ,"DIA_Jaredd_ABOUT_FELGOR_WHAT_03_11"); //Nie móg³ sobie poradziæ z samym sob¹. Zadawa³ sobie ból, kaleczy³ siê o ostrze przedmioty, gada³ sam do siebie.
+	AI_Output (self, other ,"DIA_Jaredd_ABOUT_FELGOR_WHAT_03_11"); //Nie móg³ sobie poradziæ z samym sob¹. Zadawa³ sobie ból, kaleczy³ siê o ostre przedmioty, gada³ sam do siebie.
 	AI_Output (self, other ,"DIA_Jaredd_ABOUT_FELGOR_WHAT_03_12"); //Mo¿e i to faktycznie by³ Felgor... 
 };
 

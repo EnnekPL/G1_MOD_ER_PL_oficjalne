@@ -40,6 +40,13 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		MIS_DraxTest = LOG_FAILED;
 		};
 		
+		if (Diego_BringList == LOG_RUNNING)
+		{
+		Diego_BringList = LOG_FAILED; 
+		Log_SetTopicStatus	(CH1_BringList,LOG_FAILED);
+		B_LogEntry    		(CH1_BringList,"Raczej nie uda mi siê ju¿ wykonaæ tego zadania.");
+		};
+		
 		if (Mod_Story_RunRebelInNC == FALSE) && (LeftyDead == FALSE)
 		{
 		B_Story_BauRebellion ();

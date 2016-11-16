@@ -352,12 +352,14 @@ FUNC VOID DIA_Jarvis_Poparcie_Info()
     AI_Output (other, self ,"DIA_Jarvis_Poparcie_15_01"); //Dobra. Mogê liczyæ na twoje poparcie?
     AI_Output (self, other ,"DIA_Jarvis_Poparcie_03_02"); //Nie tak prêdko. Nie wszystko jest za darmo. Moje poparcie kosztuje 200 bry³ek rudy.
     AI_Output (self, other ,"DIA_Jarvis_Poparcie_03_03"); //Akurat mam problemy finansowe. Tym drobnym datkiem pomo¿esz mi je rozwi¹zaæ.
+	AI_Output (self, other ,"DIA_Jarvis_Poparcie_03_04"); //Gdy zdobêdziesz poparcie innych Najemników przyjdŸ do mnie, a ja wszystko zweryfikujê.
+	AI_Output (self, other ,"DIA_Jarvis_Poparcie_03_05"); //Dopiero potem odeœlê ciê do Laresa.
     MIS_OpinionInNewCamp = LOG_RUNNING;
 
     //Log_CreateTopic            (CH1_OpinionInNewCamp, LOG_MISSION);
     //Log_SetTopicStatus       (CH1_OpinionInNewCamp, LOG_RUNNING);
     //B_LogEntry                     (CH1_OpinionInNewCamp,"Jarvis powiedzia³, ¿e pomo¿e mi do³¹czyæ do Obozu, jeœli przyniosê mu 200 bry³ek rudy. Poza tym muszê sobie zjednaæ jeszcze trzech innych.");
-	B_LogEntry     (CH1_AwansJakoKret,"¯eby uzyskaæ poparcie Jarvisa muszê mu po prostu zap³aciæ 200 bry³ek rudy.");
+	B_LogEntry     (CH1_AwansJakoKret,"¯eby uzyskaæ poparcie Jarvisa muszê mu po prostu zap³aciæ 200 bry³ek rudy. Gdy ju¿ zdobêdê poparcie innych Najemników, mam siê zg³osiæ ponownie do Jarvisa.");
 };
 
 //========================================

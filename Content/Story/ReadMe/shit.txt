@@ -1,4 +1,311 @@
 ﻿
+func void armor_zuzycie ()
+{
+print(IntToString(Npc_GetBodyState(hero)));
+print ("trafiono bohatera");
+
+var int lastHeroHP;
+//func void zs_heroassessdamage ()
+if (hero.attribute[0] == lastHeroHP) 
+{ 
+return; 
+};
+lastHeroHP = hero.attribute[0];
+
+
+if (Hlp_GetInstanceID(other) != 0)
+{
+var c_item zbroja; 
+zbroja = Npc_GetEquippedArmor(hero);
+print ("WARUNEK AVA SPEŁNIONY!");
+
+//odejmowanie
+if (!C_BodyStateContains(hero, BS_PARADE)) 
+{
+print(IntToString(Npc_GetBodyState(hero)));
+if (zbroja.protection [PROT_EDGE] > 1) 
+{
+zbroja.protection [PROT_EDGE] = zbroja.protection [PROT_EDGE] - 1;
+hero.protection [PROT_EDGE] = hero.protection [PROT_EDGE] - 1;
+};
+if (zbroja.protection [PROT_BLUNT] > 1)
+{
+zbroja.protection [PROT_BLUNT] = zbroja.protection [PROT_BLUNT] - 1;
+hero.protection [PROT_BLUNT] = hero.protection [PROT_BLUNT] - 1;
+};
+if (zbroja.protection [PROT_POINT] > 1)
+{
+zbroja.protection [PROT_POINT] = zbroja.protection [PROT_POINT] - 1;
+hero.protection [PROT_POINT] = hero.protection [PROT_POINT] - 1;
+};
+if (zbroja.protection [PROT_FIRE] > 1)
+{
+zbroja.protection [PROT_FIRE] = zbroja.protection [PROT_FIRE] - 1;
+hero.protection [PROT_FIRE] = hero.protection [PROT_FIRE] - 1;
+};
+if (zbroja.protection [PROT_MAGIC] > 1)
+{
+zbroja.protection [PROT_MAGIC] = zbroja.protection [PROT_MAGIC] - 1;
+hero.protection [PROT_MAGIC] = hero.protection [PROT_MAGIC] - 1;
+};
+};
+PrintScreen (ConcatStrings ("Zużycie pancerza: ", IntToString(zbroja.protection [PROT_EDGE])),2,91,"Font_Old_10_White_Hi.TGA",3);
+	//opis
+zbroja.text[0]="Zużycie:";
+//zbroja.protection [PROT_EDGE] -= 1;
+//hero.protection [PROT_EDGE] -= 1;
+zbroja.count[0]=zbroja.protection [PROT_EDGE];
+
+if (zbroja.protection [PROT_EDGE] == 1) || (zbroja.protection [PROT_BLUNT] == 1)
+{
+AI_UnequipArmor  (hero);
+Print ("Zbroja zniszczona!");
+};
+};
+};
+
+//========================================
+//-----------------> NoCookPan
+//========================================
+
+INSTANCE DIA_PC_Hero_NoCookPan (C_INFO)
+{
+   npc          		= PC_Hero;
+   nr           		= 999;
+   condition    	= NoCookPan_Condition;
+   information  	= DIA_PC_Hero_NoCookPan_Info;
+   permanent	= 1;
+   description		= DIALOG_ENDE;
+};
+func int NoCookPan_Condition ()
+{
+ if (monolog==CookPan)
+    {
+    return TRUE;
+    };
+};
+
+FUNC VOID DIA_PC_Hero_NoCookPan_Info()
+{
+    AI_StopProcessInfos	(self);
+    self.aivar[AIV_INVINCIBLE]=FALSE;
+};
+
+//========================================
+//-----------------> 1MUTTON
+//========================================
+
+INSTANCE DIA_PC_Hero_1MUTTON (C_INFO)
+{
+   npc          = PC_Hero;
+   nr           = 1;
+   condition    = DIA_PC_Hero_1MUTTON_Condition;
+   information  = DIA_PC_Hero_1MUTTON_Info;
+   permanent	= 1;
+   description	= "Usmaż 1 sztukę mięsa.";
+};
+
+FUNC INT DIA_PC_Hero_1MUTTON_Condition()
+{
+    if (monolog==CookPan)
+    && (Npc_HasItems (other, ItFoMuttonRaw) >=1)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_PC_Hero_1MUTTON_Info()
+{
+Npc_RemoveInvItems(hero,ItFoMuttonRaw,1);
+CreateInvItems	(hero,ItFoMutton,1);
+ self.aivar[AIV_INVINCIBLE]=FALSE;
+};
+
+//========================================
+//-----------------> 2MUTTON
+//========================================
+
+INSTANCE DIA_PC_Hero_2MUTTON (C_INFO)
+{
+   npc          = PC_Hero;
+   nr           = 2;
+   condition    = DIA_PC_Hero_2MUTTON_Condition;
+   information  = DIA_PC_Hero_2MUTTON_Info;
+   permanent	= 1;
+   description	= "Usmaż 2 sztuki mięsa.";
+};
+
+FUNC INT DIA_PC_Hero_2MUTTON_Condition()
+{
+    if (monolog==CookPan)
+    && (Npc_HasItems (other, ItFoMuttonRaw) >=2)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_PC_Hero_2MUTTON_Info()
+{
+Npc_RemoveInvItems(hero,ItFoMuttonRaw,2);
+	CreateInvItems	(hero,ItFoMutton,2);
+	 self.aivar[AIV_INVINCIBLE]=FALSE;
+};
+
+//========================================
+//-----------------> 5MUTTON
+//========================================
+
+INSTANCE DIA_PC_Hero_5MUTTON (C_INFO)
+{
+   npc          = PC_Hero;
+   nr           = 3;
+   condition    = DIA_PC_Hero_5MUTTON_Condition;
+   information  = DIA_PC_Hero_5MUTTON_Info;
+   permanent	= 1;
+   description	= "Usmaż 5 sztuk mięsa.";
+};
+
+FUNC INT DIA_PC_Hero_5MUTTON_Condition()
+{
+    if (monolog==CookPan)
+    && (Npc_HasItems (other, ItFoMuttonRaw) >=5)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_PC_Hero_5MUTTON_Info()
+{
+Npc_RemoveInvItems(hero,ItFoMuttonRaw,5);
+	CreateInvItems	(hero,ItFoMutton,5);
+	 self.aivar[AIV_INVINCIBLE]=FALSE;
+};
+
+//========================================
+//-----------------> 10MUTTON
+//========================================
+
+INSTANCE DIA_PC_Hero_10MUTTON (C_INFO)
+{
+   npc          = PC_Hero;
+   nr           = 4;
+   condition    = DIA_PC_Hero_10MUTTON_Condition;
+   information  = DIA_PC_Hero_10MUTTON_Info;
+   permanent	= 1;
+   description	= "Usmaż 10 sztuk mięsa.";
+};
+
+FUNC INT DIA_PC_Hero_10MUTTON_Condition()
+{
+    if (monolog==CookPan)
+    && (Npc_HasItems (other, ItFoMuttonRaw) >=10)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_PC_Hero_10MUTTON_Info()
+{
+Npc_RemoveInvItems(hero,ItFoMuttonRaw,10);
+	CreateInvItems	(hero,ItFoMutton,10);
+	 self.aivar[AIV_INVINCIBLE]=FALSE;
+};
+
+//========================================
+//-----------------> 50MUTTON
+//========================================
+
+INSTANCE DIA_PC_Hero_50MUTTON (C_INFO)
+{
+   npc          = PC_Hero;
+   nr           = 5;
+   condition    = DIA_PC_Hero_50MUTTON_Condition;
+   information  = DIA_PC_Hero_50MUTTON_Info;
+   permanent	= 1;
+   description	= "Usmaż 50 sztuk mięsa.";
+};
+
+FUNC INT DIA_PC_Hero_50MUTTON_Condition()
+{
+    if (monolog==CookPan)
+    && (Npc_HasItems (other, ItFoMuttonRaw) >=50)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_PC_Hero_50MUTTON_Info()
+{
+Npc_RemoveInvItems(hero,ItFoMuttonRaw,50);
+	CreateInvItems	(hero,ItFoMutton,50);
+	 self.aivar[AIV_INVINCIBLE]=FALSE;
+};
+
+//========================================
+//-----------------> 1MUTTON
+//========================================
+
+INSTANCE DIA_PC_Hero_MOLW (C_INFO)
+{
+   npc          = PC_Hero;
+   nr           = 1;
+   condition    = DIA_PC_Hero_MOLW_Condition;
+   information  = DIA_PC_Hero_MOLW_Info;
+   permanent	= 1;
+   description	= "Usmaż wątróbkę kretoszczura.";
+};
+
+FUNC INT DIA_PC_Hero_MOLW_Condition()
+{
+    if (monolog==CookPan)
+    && (Npc_HasItems (other, ItFo_MoleratW) >=1)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_PC_Hero_MOLW_Info()
+{
+Npc_RemoveInvItems(hero,ItFo_MoleratW,1);
+CreateInvItems	(hero,ItFo_MoleratWS,1);
+ self.aivar[AIV_INVINCIBLE]=FALSE;
+};
+//========================================
+//-----------------> 1MUTTON
+//========================================
+
+INSTANCE DIA_PC_Hero_MOLW2 (C_INFO)
+{
+   npc          = PC_Hero;
+   nr           = 1;
+   condition    = DIA_PC_Hero_MOLW2_Condition;
+   information  = DIA_PC_Hero_MOLW2_Info;
+   permanent	= 1;
+   description	= "Usmaż 10 wątróbek kretoszczura.";
+};
+
+FUNC INT DIA_PC_Hero_MOLW2_Condition()
+{
+    if (monolog==CookPan)
+    && (Npc_HasItems (other, ItFo_MoleratW) >=10)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_PC_Hero_MOLW2_Info()
+{
+Npc_RemoveInvItems(hero,ItFo_MoleratW,10);
+CreateInvItems	(hero,ItFo_MoleratWS,10);
+ self.aivar[AIV_INVINCIBLE]=FALSE;
+};
 //========================================
 //-----------------> GiveSwords
 //========================================

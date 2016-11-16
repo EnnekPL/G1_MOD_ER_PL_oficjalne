@@ -1,68 +1,4 @@
 
-func void armor_zuzycie ()
-{
-print(IntToString(Npc_GetBodyState(hero)));
-print ("trafiono bohatera");
-
-var int lastHeroHP;
-//func void zs_heroassessdamage ()
-if (hero.attribute[0] == lastHeroHP) 
-{ 
-return; 
-};
-lastHeroHP = hero.attribute[0];
-
-
-if (Hlp_GetInstanceID(other) != 0)
-{
-var c_item zbroja; 
-zbroja = Npc_GetEquippedArmor(hero);
-print ("WARUNEK AVA SPE£NIONY!");
-
-//odejmowanie
-if (!C_BodyStateContains(hero, BS_PARADE)) 
-{
-print(IntToString(Npc_GetBodyState(hero)));
-if (zbroja.protection [PROT_EDGE] > 1) 
-{
-zbroja.protection [PROT_EDGE] = zbroja.protection [PROT_EDGE] - 1;
-hero.protection [PROT_EDGE] = hero.protection [PROT_EDGE] - 1;
-};
-if (zbroja.protection [PROT_BLUNT] > 1)
-{
-zbroja.protection [PROT_BLUNT] = zbroja.protection [PROT_BLUNT] - 1;
-hero.protection [PROT_BLUNT] = hero.protection [PROT_BLUNT] - 1;
-};
-if (zbroja.protection [PROT_POINT] > 1)
-{
-zbroja.protection [PROT_POINT] = zbroja.protection [PROT_POINT] - 1;
-hero.protection [PROT_POINT] = hero.protection [PROT_POINT] - 1;
-};
-if (zbroja.protection [PROT_FIRE] > 1)
-{
-zbroja.protection [PROT_FIRE] = zbroja.protection [PROT_FIRE] - 1;
-hero.protection [PROT_FIRE] = hero.protection [PROT_FIRE] - 1;
-};
-if (zbroja.protection [PROT_MAGIC] > 1)
-{
-zbroja.protection [PROT_MAGIC] = zbroja.protection [PROT_MAGIC] - 1;
-hero.protection [PROT_MAGIC] = hero.protection [PROT_MAGIC] - 1;
-};
-};
-PrintScreen (ConcatStrings ("Zu¿ycie pancerza: ", IntToString(zbroja.protection [PROT_EDGE])),2,91,"Font_Old_10_White_Hi.TGA",3);
-	//opis
-zbroja.text[0]="Zu¿ycie:";
-//zbroja.protection [PROT_EDGE] -= 1;
-//hero.protection [PROT_EDGE] -= 1;
-zbroja.count[0]=zbroja.protection [PROT_EDGE];
-
-if (zbroja.protection [PROT_EDGE] == 1) || (zbroja.protection [PROT_BLUNT] == 1)
-{
-AI_UnequipArmor  (hero);
-Print ("Zbroja zniszczona!");
-};
-};
-};
 
 INSTANCE Alter_Ego(NPC_DEFAULT)
 
@@ -99,7 +35,7 @@ INSTANCE PC_Hero(NPC_DEFAULT)
 
 {
 	//-------- primary data --------		
-	name 			= "Nieznany";
+	name 			= "Bezimienny";
 	Npctype			= NPCTYPE_MAIN;
 	guild			= GIL_NONE;
 	level			= 0;

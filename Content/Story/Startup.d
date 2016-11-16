@@ -10,7 +10,14 @@ UseFunc1Skills ();
 //print ("pause");
 };
 
-
+func void Mod_FixAivarHero ()
+{
+if (MEM_KeyState (KEY_P) == KEY_PRESSED) && (InfoManager_HasFinished ()) && (hero.aivar[AIV_INVINCIBLE]== TRUE)
+{
+hero.aivar[AIV_INVINCIBLE]=FALSE;
+print ("aivar INVINCIBLE fixed!");
+};
+};
 
 func VOID STARTUP_SUB_PSICAMP ()
 {	
@@ -2937,6 +2944,7 @@ FUNC VOID INIT_WORLD ()
 	// Na GG moge wytlumaczyc ich dzialanie i jak je uzywac.
 	FF_ApplyOnce(SetColors); 
 	FF_ApplyOnce(Mod_Menu_HSkills);
+	FF_ApplyOnce(Mod_FixAivarHero);
 	
 	//FF_ApplyOnce(ExpBarFunc); 
 	
