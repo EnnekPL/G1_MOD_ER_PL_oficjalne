@@ -163,7 +163,7 @@ FUNC VOID Info_Saturas_YBERION_Info()
 	B_LogEntry		(CH3_EscapePlanNC,	"Opowiedzia³em Saturasowi o wydarzeniach z obozu na bagnie. Wyrazi³ zadowolenie z faktu, ¿e Cor Angar zosta³ przywódc¹ Bractwa.");
 	
 	Npc_ExchangeRoutine (GUR_1200_YBerion,"tot");
-	Npc_ExchangeRoutine (GUR_1200_YBerion,"chef");
+	Npc_ExchangeRoutine (GUR_1202_CorAngar,"chef");
 };
 
 //***************************************************************************

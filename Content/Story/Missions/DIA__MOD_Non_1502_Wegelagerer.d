@@ -54,6 +54,8 @@ FUNC VOID DIA_Wegelagerer_Work_Info()
     AI_Output (self, other ,"DIA_Wegelagerer_Work_03_05"); //Hmm. Ten œrodek lasu nie brzmi zbyt zachêcaj¹co, ale có¿.
     AI_Output (self, other ,"DIA_Wegelagerer_Work_03_06"); //Lepsze to ni¿ tu siedzieæ bezczynnie.
     RobotnicyWhistlera = RobotnicyWhistlera +1;
-	 Npc_ExchangeRoutine (self, "szwalnia");
+	Npc_ExchangeRoutine (self, "szwalnia");
+	 
+	B_LogEntry     (CH1_SprawaFirna,"W³óczêga z obozu myœliwych zgodzi³ siê pracowaæ w szwalni.");
 };
 

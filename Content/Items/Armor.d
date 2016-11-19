@@ -245,9 +245,9 @@ INSTANCE GRD_ARMOR_H(C_Item)
 	mainflag 				=	ITEM_KAT_ARMOR;
 	flags 					=	0;
 
-	protection [PROT_EDGE] 	=	43;
-	protection [PROT_BLUNT] = 	43;
-	protection [PROT_POINT] = 	8;
+	protection [PROT_EDGE] 	=	45;
+	protection [PROT_BLUNT] = 	45;
+	protection [PROT_POINT] = 	15;
 	protection [PROT_FIRE] 	= 	20;
 	protection [PROT_MAGIC] = 	0;
 
@@ -1100,11 +1100,11 @@ INSTANCE CRW_ARMOR_H(C_Item)
 	mainflag 				=	ITEM_KAT_ARMOR;
 	flags 					=	0;
 
-	protection [PROT_EDGE] 	= 	60;
-	protection [PROT_BLUNT] = 	60;
-	protection [PROT_POINT] = 	15;
-	protection [PROT_FIRE] 	= 	30;
-	protection [PROT_MAGIC] = 	5;
+	protection [PROT_EDGE] 	= 	72;
+	protection [PROT_BLUNT] = 	72;
+	protection [PROT_POINT] = 	45;
+	protection [PROT_FIRE] 	= 	40;
+	protection [PROT_MAGIC] = 	10;
 
 	value 					=	protection [PROT_EDGE] * ARMOR_VALUE_MULTIPLIER;
 
@@ -1115,6 +1115,7 @@ INSTANCE CRW_ARMOR_H(C_Item)
 	material 				=	MAT_WOOD;
 
 	description				=	name;
+	TEXT[0]					=	"Strza³y praktycznie jej nie przebijaj¹.";
 	TEXT[1]					=	NAME_Prot_Edge;			COUNT[1]	= protection	[PROT_EDGE];
 	TEXT[2]					=	NAME_Prot_Point;		COUNT[2]	= protection	[PROT_POINT];
 	TEXT[3] 				=	NAME_Prot_Fire;			COUNT[3]	= protection	[PROT_FIRE];
@@ -1133,9 +1134,9 @@ INSTANCE ORE_ARMOR_M(C_Item)
 	mainflag 				=	ITEM_KAT_ARMOR;
 	flags 					=	0;
 
-	protection [PROT_EDGE] 	= 	65;
-	protection [PROT_BLUNT] = 	65;
-	protection [PROT_POINT] = 	25;
+	protection [PROT_EDGE] 	= 	74;
+	protection [PROT_BLUNT] = 	74;
+	protection [PROT_POINT] = 	35;
 	protection [PROT_FIRE] 	= 	40;
 	protection [PROT_MAGIC] = 	10;
 
@@ -1164,9 +1165,9 @@ INSTANCE ORE_ARMOR_H(C_Item)
 	mainflag 				=	ITEM_KAT_ARMOR;
 	flags 					=	0;
 
-	protection [PROT_EDGE] 	= 	75;
-	protection [PROT_BLUNT] = 	75;
-	protection [PROT_POINT] = 	30;
+	protection [PROT_EDGE] 	= 	80;
+	protection [PROT_BLUNT] = 	80;
+	protection [PROT_POINT] = 	40;
 	protection [PROT_FIRE] 	= 	45;
 	protection [PROT_MAGIC] = 	15;
 

@@ -83,5 +83,7 @@ FUNC VOID DIA_Wegelagerer_WorkInProgres_Info()
 	AI_Output (self, other ,"DIA_Wegelagerer_WorkInProgres_03_06"); //Ju¿ wiem o jakim miejscu mówisz. Nazywamy je Wilczym Do³em. Trafiê tam, nie ma obawy. Jeœli szukasz jeszcze kogoœ, to myœlê, ¿e mój kompan mo¿e byæ zainteresowany. 
     RobotnicyWhistlera = RobotnicyWhistlera + 1;
 	Npc_ExchangeRoutine (self, "szwalnia");
+	
+	B_LogEntry     (CH1_SprawaFirna,"Jeden z w³óczêgów z obozu myœliwych zgodzi³ siê pracowaæ w szwalni. Poradzi³ mi te¿, abym pogada³ z jego kompanem.");
 };
 

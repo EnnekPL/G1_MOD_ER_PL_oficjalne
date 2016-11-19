@@ -190,7 +190,7 @@ INSTANCE DIA_Rufus_Rebel (C_INFO)
 
 FUNC INT DIA_Rufus_Rebel_Condition()
 {
-    if (Mod_Story_RunRebelInNC == TRUE) && (MIS_BuntZbieraczy != LOG_SUCCESS)
+    if (Mod_Story_RunRebelInNC == TRUE) && (MIS_BuntZbieraczy != LOG_SUCCESS) && (!Npc_KnowsInfo(hero, DIA_Lefty_AbouRebelion))
     {
     return TRUE;
     };

@@ -32,7 +32,7 @@ func void COOKPAN_S1 ()
 			CreateInvItems (hero, ItFo_MoleratWS,ilosc_wotrobki);
 			var string napis_watr;
 			napis_watr = ConcatStrings (InttoString (ilosc_wotrobki)," sztuk w¹tróbki kretoszczura usma¿ono.");
-			PrintScreen (napis_mieso,-1,75,"font_old_20_white.tga",3);
+			PrintScreen (napis_watr,-1,75,"font_old_20_white.tga",3);
 		};
 	};
 	};

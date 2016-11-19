@@ -419,9 +419,9 @@ else if (Huno_drugs_level == 3)
     CreateInvItems (self, ItMiNugget, 100);
     B_GiveInvItems (self, other, ItMiNugget, 100);
 };
-B_LogEntry                     (CH1_Druggy,"No dobra, sprawê z Huno mam ju¿ za³atwion¹.");
+//B_LogEntry                     (CH1_Druggy,"No dobra, sprawê z Huno mam ju¿ za³atwion¹.");
 
-B_GiveXP (200);
+//B_GiveXP (200);
 };
 //========================================
 //-----------------> GRAVO_PALACZ
@@ -485,7 +485,7 @@ FUNC VOID DIA_BaalTaran_GRAVO_END_Info()
     AI_Output (other, self ,"DIA_BaalTaran_GRAVO_END_15_01"); //Gravo bêdzie twoim nowym klientem.
     AI_Output (self, other ,"DIA_BaalTaran_GRAVO_END_03_02"); //Dobra robota. Czym go przyci¹gn¹³eœ?
     AI_Output (other, self ,"DIA_BaalTaran_GRAVO_END_15_03"); //Miodowym skrêtem. Bardzo przypad³ mu do gustu.
-    B_givexp (150);
+    //B_givexp (150);
 };
 
 //========================================
@@ -525,7 +525,7 @@ FUNC VOID DIA_BaalTaran_SZAKAL_PALI_Info()
 
     CreateInvItems (self, ItMiNugget, 40);
     B_GiveInvItems (self, other, ItMiNugget, 40);
-    B_GiveXP (50);
+    //B_GiveXP (22);
     }
     else if (jackal_ore == 2)
     {
@@ -535,7 +535,7 @@ FUNC VOID DIA_BaalTaran_SZAKAL_PALI_Info()
     CreateInvItems (self, ItMiNugget, 80);
     B_GiveInvItems (self, other, ItMiNugget, 80);
 
-    B_GiveXP (100);
+    B_GiveXP (50);
 
     }
     else if (jackal_ore == 5)
@@ -591,7 +591,7 @@ FUNC VOID DIA_BaalTaran_END_WORK_Info()
     Log_SetTopicStatus       (CH1_Druggy, LOG_SUCCESS);
     MIS_Druggy = LOG_SUCCESS;
 
-    B_GiveXP (250);
+    B_GiveXP (300);
     AI_StopProcessInfos	(self);
 };
 

@@ -626,17 +626,17 @@ const string NAME_LearnAlchemia		=	"Alchemia (10 punktów nauki)";
 const string NAME_CorristoHighRobe	= 	"Mistrzu, chcia³bym nosiæ szatê Arcymaga Ognia.";
 const string NAME_SaturasHighRobe	= 	"Szata Arcymaga";
 const string NAME_DiegoHeavyShadows	=	"Ciê¿ka Zbroja Cienia. Broñ 30, Pociski 5, Ogieñ 17";
-const string NAME_StoneHeavyGuards	= 	"Ciê¿ka Zbroja Stra¿nika. Broñ 43, Pociski 8, Ogieñ 20";
+const string NAME_StoneHeavyGuards	= 	"Ciê¿ka Zbroja Stra¿nika. Broñ 45, Pociski 15, Ogieñ 20";
 const string NAME_StoneGuards		= 	"Zbroja Stra¿nika. Broñ 40, Pociski 10, Ogieñ 20";
 const string NAME_WolfBandits		= 	"Pancerz Szkodnika. Broñ 25, Pociski 5, Ogieñ 10"; 
-const string NAME_WolfHeavyBandits	= 	"Ciê¿ki Pancerz Szkodnika. Broñ 25, Pociski 5, Ogieñ 15";
+const string NAME_WolfHeavyBandits	= 	"Ciê¿ki Pancerz Szkodnika. Broñ 30, Pociski 5, Ogieñ 17";
 const string NAME_LeeMercs			= 	"Pancerz Najemnika. Broñ 40, Pociski 10, Ogieñ 20";
 const string NAME_LeeHeavyMercs		= 	"Ciê¿ki Pancerz Najemnika. Broñ 45, Pociski 10, Ogieñ 30";
-const string NAME_FiskLightDiggers	= 	"Lekkie Spodnie Kopacza. Broñ 2";
-const string NAME_FiskDiggers		= 	"Spodnie Kopacza. Broñ 4, Ogieñ 1";
+const string NAME_FiskLightDiggers	= 	"Lekkie Spodnie Kopacza. Broñ 8";
+const string NAME_FiskDiggers		= 	"Spodnie Kopacza. Broñ 16, Ogieñ 1";
 const string NAME_GorNaTothHeavyTpl = 	"Ciê¿ka Zbroja Œwi¹tynna. Broñ 45, Pociski 10, Ogieñ 30";
 const string NAME_GorNaTothTpl 		=	"Zbroja Œwi¹tynna. Broñ 40, Pociski 10, Ogieñ 20";
-const string NAME_TorwachenPsiRock	=	"Przepaska. Broñ 3, Ogieñ 1";
+const string NAME_TorwachenPsiRock	=	"Przepaska. Broñ 5, Ogieñ 1";
 
 
 

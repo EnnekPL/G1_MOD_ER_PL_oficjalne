@@ -315,7 +315,7 @@ FUNC VOID DIA_Firn_WhistlerSpotkanie_Info()
     AI_Output (other, self ,"DIA_Firn_WhistlerSpotkanie_15_01"); //Masz siê spotkaæ ze Œwistakiem. 
     AI_Output (self, other ,"DIA_Firn_WhistlerSpotkanie_03_02"); //Wreszcie. Moje skrzynie ze skórami s¹ ju¿ pe³ne.
     AI_Output (self, other ,"DIA_Firn_WhistlerSpotkanie_03_03"); //Dziêkujê za pomoc.
-    B_LogEntry                     (CH1_SprawaFirna,"Firn mo¿e siê ju¿ spotkaæ ze Œwistakiem.");
+    B_LogEntry                     (CH1_SprawaFirna,"Powiadomi³em Firna, ¿e mo¿e siê ju¿ spotkaæ ze Œwistakiem.");
     Log_SetTopicStatus       (CH1_SprawaFirna, LOG_SUCCESS);
     MIS_SprawaFirna = LOG_SUCCESS;
 

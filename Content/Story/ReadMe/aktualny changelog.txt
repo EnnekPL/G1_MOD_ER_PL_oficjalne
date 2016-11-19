@@ -80,3 +80,6 @@
 - Baal Lukor daje nam zwój œmieræ o¿ywieñcom zanim przeteleportujemy siê za ruchom¹ œcianê na cmentarzysku
 - Wrzód i Jim uciekaj¹ ze Starego Obozu na czwartym rozdziale
 - poprawiony b³¹d u Flinta gdy prosimy go o wydanie Ratforda (jeœli wczeœniej mu pomogliœmy)
+- naprawiony b³¹d z "¿yj¹cym Yberionem"
+- ulepszone wpisy do zadania "Sprawa Firna"
+- mo¿liwoœæ sma¿enia w¹tróbki kretoszczura na patelni

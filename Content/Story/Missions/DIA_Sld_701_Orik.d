@@ -74,7 +74,7 @@ FUNC INT DIA_Orik_QUEST1_Condition()
 FUNC VOID DIA_Orik_QUEST1_Info()
 {
     AI_Output (other, self ,"DIA_Orik_QUEST1_15_01"); //Jak siê maj¹ sprawy Obozu?
-	if (Npc_GetTrueGuild (hero) == GIL_SLD)
+	if (Npc_GetTrueGuild (hero) == GIL_SLD) || (Npc_GetTrueGuild (hero) == GIL_KDW)
 	{
     AI_Output (self, other ,"DIA_Orik_QUEST1_03_02"); //Szkodniki coraz bardziej mnie irytuj¹. Ostatnio w Obozie mia³a miejsce kradzie¿.
     AI_Output (other, self ,"DIA_Orik_QUEST1_15_03"); //Jaka kradzie¿?

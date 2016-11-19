@@ -328,5 +328,6 @@ FUNC VOID DIA_Silas_Cyrus_Dostawa_Info()
     silas_day = wld_getday();
     AI_StopProcessInfos	(self);
     B_GiveInvItems (other, self, dostawa_cyrusa, 1);
+	B_GiveXP (75);
 };
 

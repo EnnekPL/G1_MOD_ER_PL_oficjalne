@@ -562,10 +562,10 @@ FUNC VOID DIA_Whistler_FrinSprawa_Info()
     AI_Output (self, other ,"DIA_Whistler_FrinSprawa_03_08"); //A zreszt¹ niewa¿ne. 
     AI_Output (self, other ,"DIA_Whistler_FrinSprawa_03_09"); //IdŸ do nich i sprawdŸ jak robota.
     AI_Output (other, self ,"DIA_Whistler_FrinSprawa_15_10"); //No dobra, a gdzie jest ta ca³a szwalnia?
-    AI_Output (self, other ,"DIA_Whistler_FrinSprawa_03_11"); //W jaskini w œrodku lasu. Co kilka dni przechodz¹ obok niej konwoje z rud¹ z kopalni.
+    AI_Output (self, other ,"DIA_Whistler_FrinSprawa_03_11"); //W jaskini w œrodku lasu. Co kilka dni przechodz¹ obok niej konwoje z rud¹ z kopalni. Nazywaj¹ to miejsce Wilczym Do³em.
     AI_Output (other, self ,"DIA_Whistler_FrinSprawa_15_12"); //Sprawdzê co siê tam dzieje.
     AI_Output (self, other ,"DIA_Whistler_FrinSprawa_03_13"); //Powodzenia.
-    B_LogEntry                     (CH1_SprawaFirna,"Czeka mnie wizyta w prowizorycznej szwalni. Ponoæ znajduje siê w jaskini w œrodku lasu.");
+    B_LogEntry                     (CH1_SprawaFirna,"Rozmawia³em ze Œwistakiem na temat Firna. Okaza³o siê, ¿e Cieñ od jakiegoœ czasu nie ma kontaktu ze swoimi pracownikami. Czeka mnie wiêc wizyta w prowizorycznej szwalni i sprawdzenie co u nich. Mam odszukaæ jaskiniê w lesie pomiêdzy Starym Obozem, a Star¹ Kopalni¹.");
 	Wld_InsertNpc				(VLK_5607_Szwacz,"OC1");	
 	B_killnpc (VLK_5607_Szwacz);
 	Wld_InsertNpc				(VLK_5604_Szwacz,"OC1");	
@@ -606,7 +606,7 @@ FUNC VOID DIA_Whistler_GoToSzwalnia_Info()
     AI_Output (other, self ,"DIA_Whistler_GoToSzwalnia_15_07"); //A niby dlaczego ja?
     AI_Output (self, other ,"DIA_Whistler_GoToSzwalnia_03_08"); //Dobra. WeŸ te kilka bry³ek za fatygê.
     AI_Output (self, other ,"DIA_Whistler_GoToSzwalnia_03_09"); //Reszta jak bêdê mia³ ludzi.
-    B_LogEntry                     (CH1_SprawaFirna,"Mam znaleŸæ dwóch nowych robotników do szwalni. ");
+    B_LogEntry                     (CH1_SprawaFirna,"Ludzie Œwistaka nie ¿yj¹. Gdy mu o tym powiedzia³em, poprosi³ mnie o znalezienie dwóch nowych szwaczy.");
 
     B_GiveXP (100);
     CreateInvItems (self, ItMiNugget, 50);
@@ -646,7 +646,7 @@ FUNC VOID DIA_Whistler_RobotnicyNowi_Info()
     AI_Output (self, other ,"DIA_Whistler_RobotnicyNowi_03_04"); //Ach tak. Trzymaj.
     CreateInvItems (self, ItMiNugget, 50);
     B_GiveInvItems (self, other, ItMiNugget, 50);
-    B_LogEntry                     (CH1_SprawaFirna,"Pora powiadomiæ Firna o spotkaniu. ");
+    B_LogEntry                     (CH1_SprawaFirna,"Œwistak dowiedzia³ siê ode mnie o swoich nowych robotnikach. Najwy¿szy czas wróciæ do Firna i powiedzieæ mu o spotkaniu z Cieniem.");
 
     B_GiveXP (100);
     AI_StopProcessInfos	(self);

@@ -971,4 +971,6 @@ FUNC VOID DIA_Corristo_MamSkalke_Info()
 	
     Log_SetTopicStatus       (CH4_CorristoEvil, LOG_SUCCESS);
     MIS_CorristoEvil = LOG_SUCCESS;
+	
+	Npc_ExchangeRoutine (self,"monestry");
 };

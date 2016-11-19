@@ -207,7 +207,7 @@ FUNC VOID DIA_Lefty_WorkDay_Info()
 instance DIA_Lefty_NeverAgain (C_INFO)
 {
 	npc			= Org_844_Lefty;
-	nr			= 1;
+	nr			= 800;
 	condition	= DIA_Lefty_NeverAgain_Condition;
 	information	= DIA_Lefty_NeverAgain_Info;
 	permanent	= 1;
@@ -495,7 +495,7 @@ FUNC VOID DIA_Lefty_AbouRebelion_Info()
 	AI_Output (self, other,"DIA_Lefty_AbouRebelion_03_10"); //WyobraŸ sobie co by by³o, gdyby taki nie³ad panowa³ w którejœ z kopalni.
 	AI_Output (other, self,"DIA_Lefty_AbouRebelion_15_11"); //Czyli na razie Zbieracze tylko wstrzymali pracê i przedstawili swoje postulaty? Wci¹¿ nie rozumiem, dlaczego to te¿ mój problem?
 	AI_Output (self, other,"DIA_Lefty_AbouRebelion_03_12"); //Taki stan rzeczy nie mo¿e d³ugo trwaæ. Inaczej w obozie skoñczy siê ¿ywnoœæ. Ry¿ jest podstaw¹ w tej czêœci Kolonii.
-	AI_Output (self, other,"DIA_Lefty_AbouRebelion_03_13"); //Zw³aszcza teraz, gdy jesteœmy odciêci od towarów ze Œwiata Zewnêtrznego. Nie wiadomo, czy kiedykolwiek jeszcze odbêd¹ siê jakiekolwiek napady na konwoje.
+	AI_Output (self, other,"DIA_Lefty_AbouRebelion_03_13"); //Zw³aszcza teraz, gdy jesteœmy prawie odciêci od towarów ze Œwiata Zewnêtrznego. Stra¿nicy coraz lepiej zabezpieczaj¹ konwoje, znaj¹ nasze œcie¿ki...
 	AI_Output (self, other,"DIA_Lefty_AbouRebelion_03_14"); //To mo¿e wszystkim powa¿nie zaszkodziæ. 
 	AI_Output (self, other,"DIA_Lefty_AbouRebelion_03_15"); //Jeœli nie odci¹gniemy Zbieraczy od tego naiwnego buntu, wkrótce dojdzie do konfrontacji. 
 	AI_Output (self, other,"DIA_Lefty_AbouRebelion_03_16"); //Poleje siê krew, a ja stracê zarówno zaufanych ludzi jak i pracowników. Chcesz na to pozwoliæ?

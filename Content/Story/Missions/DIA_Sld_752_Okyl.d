@@ -490,7 +490,7 @@ FUNC INT DIA_OKYL_WORK_FIND_Condition()
 FUNC VOID DIA_OKYL_WORK_FIND_Info()
 {
     AI_Output (other, self ,"DIA_OKYL_WORK_FIND_15_01"); //Szukam roboty.
-	if (Npc_GetTrueGuild(hero) != GIL_SLD) || (Npc_GetTrueGuild(hero) != GIL_ORG)
+	if (Npc_GetTrueGuild(hero) != GIL_SLD) || (Npc_GetTrueGuild(hero) != GIL_ORG) || (Npc_GetTrueGuild(hero) != GIL_KDW)
 	{
     AI_Output (self, other ,"DIA_OKYL_WORK_FIND_03_02"); //Mam coœ, jednak nie zaufam byle komu w tak wa¿nej sprawie. 
 	AI_Output (self, other ,"DIA_OKYL_WORK_FIND_03_03"); //Wróæ, gdy ju¿ zostaniesz jednym z ludzi Laresa lub Lee. Ha ha ha ha...
