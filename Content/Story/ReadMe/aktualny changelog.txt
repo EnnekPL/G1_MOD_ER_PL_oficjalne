@@ -83,3 +83,5 @@
 - naprawiony b³¹d z "¿yj¹cym Yberionem"
 - ulepszone wpisy do zadania "Sprawa Firna"
 - mo¿liwoœæ sma¿enia w¹tróbki kretoszczura na patelni
+- dodajemy doœwiadczenie za wykonywanie dostaw Cyrusa
+- wzmocniony pancerz z p³ytek pe³zaczy i pancerze z rudy
