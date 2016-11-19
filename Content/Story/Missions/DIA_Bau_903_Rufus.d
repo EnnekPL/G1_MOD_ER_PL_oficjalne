@@ -296,7 +296,6 @@ FUNC VOID DIA_Rufus_KilledFoggy_Info()
     AI_Output (other, self ,"DIA_Rufus_KilledFoggy_15_01"); //Zabi³em Mglistego.
     AI_Output (self, other ,"DIA_Rufus_KilledFoggy_03_02"); //Wiem, jego œmieræ by³a zbêdna. Jak mog³em siê tak pomyliæ...
 	AI_Output (self, other ,"DIA_Rufus_KilledFoggy_03_03"); //Musimy dzia³aæ dalej. Swego czasu umówi³em siê z pewnym Kretem z Wolnej Kopalni, ¿e bêdzie zbiera³ dla nas broñ.
-    AI_Output (other, self ,"DIA_Rufus_KilledFoggy_15_03"); //Wolna Kopalnia jest...
     AI_Output (self, other ,"DIA_Rufus_KilledFoggy_03_04"); //Wiem. Broñ mia³a byæ sk³adowana w skrzyni w jednej z chat w Kotle. Do skrzyni dwa klucze. Jeden mam przy sobie.
     AI_Output (self, other ,"DIA_Rufus_KilledFoggy_03_05"); //WeŸ go, znajdŸ skrzyniê i przynieœ nam broñ.
 	
@@ -529,6 +528,8 @@ FUNC VOID DIA_Rufus_LeftyDie_Info()
 	B_Story_AfterBauRebellion ();
 	
 	Npc_ExchangeRoutine (BAU_901_Horatio, "boss");
+	
+	B_GiveXP (750);
 };
 
 /////////////////////////////////////////////////

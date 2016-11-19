@@ -22,8 +22,7 @@ instance BAU_917_Bauer (Npc_Default)
 	Mdl_SetVisual		(self,"HUMANS.MDS");
 	Mdl_ApplyOverlayMds	(self,"Humans_Tired.mds");
 	//			body mesh     ,bdytex,skin,head mesh     ,headtex,teethtex,ruestung	
-	Mdl_SetVisualBody (self,"hum_body_Naked0",2,2,"Hum_Head_Bald", 2, 1, -1);
-	
+	Mdl_SetVisualBody (self,"hum_body_Naked0",2,1,"Hum_Head_Bald", 68,  1, -1);
 	B_Scale (self);
 	Mdl_SetModelFatness(self,0);
 	
