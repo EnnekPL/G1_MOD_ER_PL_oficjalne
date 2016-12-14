@@ -245,14 +245,16 @@ FUNC INT DIA_Flint_NewCamRulez_Condition()
 
 FUNC VOID DIA_Flint_NewCamRulez_Info()
 {
+	self.guild = GIL_NONE;
+	Npc_SetTrueGuild (self,GIL_NONE);
+	
     AI_Output (other, self ,"DIA_Flint_NewCamRulez_15_01"); //Zginiesz w imiê Nowego Obozu!
     AI_Output (self, other ,"DIA_Flint_NewCamRulez_03_02"); //Co za g³upiec! Walczmy wiêc!
     AI_StopProcessInfos	(self);
     Npc_SetPermAttitude (self, ATT_HOSTILE);
     Npc_SetTarget (self, other);
     AI_StartState (self, ZS_ATTACK, 1, "");
-	self.guild = GIL_NONE;
-	Npc_SetTrueGuild (self,GIL_NONE);
+	
     B_LogEntry               (CH1_OkylQuest,"Odnalaz³em szpiega w górach. By³ zagubiony i zmêczony, postanowi³em wiec wyzwaæ go na pojedynek.");
 	B_LogEntry               (CH1_FlintsOffer,"Odrzuci³em propozycjê Flinta. Chcê do³¹czyæ do Nowego Obozu. Tak postanowi³em.");
     Log_SetTopicStatus       (CH1_FlintsOffer, LOG_FAILED);

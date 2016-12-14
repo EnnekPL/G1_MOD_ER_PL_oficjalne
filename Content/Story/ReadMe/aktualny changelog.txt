@@ -1,3 +1,8 @@
+1.4.82
+- Lukor dzieli siê z nami punktami XP za przeciwników pokonanych na cmentarzysku orków
+- u Gravera nie powinno ju¿ siê kumulowaæ tyle rudy z zak³adów 
+- zadanie od Okyla powinna ju¿ byæ zlecane prawid³owo jeœli jesteœmy cz³onkiem Nowego Obozu
+1.4.8
 - w ofercie Stanleya pojawi³y siê sk³adniki alchemiczne uzupe³niane co rozdzia³ (drobne iloœci)
 - wzrost cen sk³adników alchemicznych
 - naprawiony b³¹d z przeciwnikami nie atakuj¹cymi Guru w œwi¹tyni œni¹cego

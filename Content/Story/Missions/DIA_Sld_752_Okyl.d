@@ -490,14 +490,9 @@ FUNC INT DIA_OKYL_WORK_FIND_Condition()
 FUNC VOID DIA_OKYL_WORK_FIND_Info()
 {
     AI_Output (other, self ,"DIA_OKYL_WORK_FIND_15_01"); //Szukam roboty.
-	if (Npc_GetTrueGuild(hero) != GIL_SLD) || (Npc_GetTrueGuild(hero) != GIL_ORG) || (Npc_GetTrueGuild(hero) != GIL_KDW)
-	{
-    AI_Output (self, other ,"DIA_OKYL_WORK_FIND_03_02"); //Mam coœ, jednak nie zaufam byle komu w tak wa¿nej sprawie. 
-	AI_Output (self, other ,"DIA_OKYL_WORK_FIND_03_03"); //Wróæ, gdy ju¿ zostaniesz jednym z ludzi Laresa lub Lee. Ha ha ha ha...
-	AI_Output (other, self ,"DIA_OKYL_WORK_FIND_15_04"); //Co ciê tak bawi?
-	AI_Output (self, other ,"DIA_OKYL_WORK_FIND_03_05"); //To raczej niemo¿liwe.
-	}
-	else
+	
+	
+	if (Npc_GetTrueGuild(hero) == GIL_SLD) || (Npc_GetTrueGuild(hero) == GIL_ORG) || (Npc_GetTrueGuild(hero) == GIL_KDW)
 	{
 	AI_Output (self, other ,"DIA_OKYL_WORK_FIND_03_06"); //Jest jedna rzecz...
     AI_Output (other, self ,"DIA_OKYL_WORK_FIND_15_07"); //Co mam zrobiæ?
@@ -514,6 +509,13 @@ FUNC VOID DIA_OKYL_WORK_FIND_Info()
     Log_SetTopicStatus       (CH1_Scams, LOG_RUNNING);
     B_LogEntry               (CH1_Scams,"Dostawy zasobów z obozu myœliwych do Kot³a zawsze siê opóŸniaj¹. Mam ustaliæ dlaczego Cyrus, mimo próœb Okyla przysy³a dostawy póŸniej.");
 	
+	}
+	else
+	{
+    AI_Output (self, other ,"DIA_OKYL_WORK_FIND_03_02"); //Mam coœ, jednak nie zaufam byle komu w tak wa¿nej sprawie. 
+	AI_Output (self, other ,"DIA_OKYL_WORK_FIND_03_03"); //Wróæ, gdy ju¿ zostaniesz jednym z ludzi Laresa lub Lee. Ha ha ha ha...
+	AI_Output (other, self ,"DIA_OKYL_WORK_FIND_15_04"); //Co ciê tak bawi?
+	AI_Output (self, other ,"DIA_OKYL_WORK_FIND_03_05"); //To raczej niemo¿liwe.
 	};
 	AI_StopProcessInfos	(self);
 };

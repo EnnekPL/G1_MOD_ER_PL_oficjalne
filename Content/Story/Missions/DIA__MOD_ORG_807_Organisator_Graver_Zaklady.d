@@ -142,6 +142,7 @@ if (gra4 == true)
 		{
 		AI_Output (self, other ,"DIA_Organisator_Obstawiaj_Baal_03_02"); //No, nie uda³o siê!
 		B_GiveInvItems (other, self, ItMiNugget, 50);
+		Npc_RemoveInvItems (self, ItMiNugget, 50);
 		Npc_SetTarget(Org_851_Butch,ORG_817_Organisator);
 		AI_StartState(Org_851_Butch,ZS_ATTACK,1,"");
 };
@@ -164,6 +165,7 @@ if (gra4 == true)
 		{
 		AI_Output (self, other ,"DIA_Organisator_Obstawiaj_Handlarz_03_02"); //No, nie uda³o siê!
 		B_GiveInvItems (other, self, ItMiNugget, 50);
+		Npc_RemoveInvItems (self, ItMiNugget, 50);
 		Npc_SetTarget(Org_851_Butch,Nov_1332_BaalKagan);
 		AI_StartState(Org_851_Butch,ZS_ATTACK,1,"");
 };
@@ -186,6 +188,7 @@ if (gra4 == true)
 		{
 		AI_Output (self, other ,"DIA_Organisator_Obstawiaj_Ktos1_03_02"); //No, nie uda³o siê!
 		B_GiveInvItems (other, self, ItMiNugget, 50);
+		Npc_RemoveInvItems (self, ItMiNugget, 50);
 		Npc_SetTarget(Org_851_Butch,Nov_1332_BaalKagan);
 		AI_StartState(Org_851_Butch,ZS_ATTACK,1,"");
 };
@@ -208,6 +211,7 @@ if (gra4 == true)
 		{
 		AI_Output (self, other ,"DIA_Organisator_Obstawiaj_Ktos2_03_02"); //No, nie uda³o siê!
 		B_GiveInvItems (other, self, ItMiNugget, 50);
+		Npc_RemoveInvItems (self, ItMiNugget, 50);
 		Npc_SetTarget(Org_851_Butch,ORG_822_Organisator);
 		AI_StartState(Org_851_Butch,ZS_ATTACK,1,"");
 };
@@ -254,15 +258,15 @@ FUNC VOID DIA_Organisator_HELLO3_Info()
 	};
 	if (Npc_HasItems (hero, ItMiNugget)>=15)
 	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "15 bry³ek", DIA_Organisator_HELLO3_60ORE);
+    Info_AddChoice		(DIA_Organisator_HELLO3, "15 bry³ek rudy", DIA_Organisator_HELLO3_60ORE);
 	};
 	if (Npc_HasItems (hero, ItMiNugget)>=30)
 	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "30 bry³ek", DIA_Organisator_HELLO3_150ORE);
+    Info_AddChoice		(DIA_Organisator_HELLO3, "30 bry³ek rudy", DIA_Organisator_HELLO3_150ORE);
 	};
 	if (Npc_HasItems (hero, ItMiNugget)>=50)
 	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "50 bry³ek", DIA_Organisator_HELLO3_300ore);
+    Info_AddChoice		(DIA_Organisator_HELLO3, "50 bry³ek rudy", DIA_Organisator_HELLO3_300ore);
 	};
 //	if (Npc_HasItems (hero, ItMiNugget)>=500)
 //	{
@@ -292,15 +296,15 @@ B_GiveInvItems (self, other, ItMiNugget, 5);
 	};
 	if (Npc_HasItems (hero, ItMiNugget)>=15)
 	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "15 bry³ek", DIA_Organisator_HELLO3_60ORE);
+    Info_AddChoice		(DIA_Organisator_HELLO3, "15 bry³ek rudy", DIA_Organisator_HELLO3_60ORE);
 	};
 	if (Npc_HasItems (hero, ItMiNugget)>=30)
 	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "30 bry³ek", DIA_Organisator_HELLO3_150ORE);
+    Info_AddChoice		(DIA_Organisator_HELLO3, "30 bry³ek rudy", DIA_Organisator_HELLO3_150ORE);
 	};
 	if (Npc_HasItems (hero, ItMiNugget)>=50)
 	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "50 bry³ek", DIA_Organisator_HELLO3_300ore);
+    Info_AddChoice		(DIA_Organisator_HELLO3, "50 bry³ek rudy", DIA_Organisator_HELLO3_300ore);
 	};
 //	if (Npc_HasItems (hero, ItMiNugget)>=500)
 //	{
@@ -316,10 +320,11 @@ if (gra1 == 1)
 {
 Print ("Przegra³eœ!");
 B_GiveInvItems (other, self, ItMiNugget, 15);
+Npc_RemoveInvItems (self, ItMiNugget, 15);
 }
 else
 {
-Print ("Wygra³eœ 15 bry³ek!");
+Print ("Wygra³eœ 15 bry³ek rudy!");
 CreateInvItems (self, ItMiNugget, 15);
 B_GiveInvItems (self, other, ItMiNugget, 15);
 };
@@ -330,15 +335,15 @@ B_GiveInvItems (self, other, ItMiNugget, 15);
 	};
 	if (Npc_HasItems (hero, ItMiNugget)>=15)
 	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "15 bry³ek", DIA_Organisator_HELLO3_60ORE);
+    Info_AddChoice		(DIA_Organisator_HELLO3, "15 bry³ek rudy", DIA_Organisator_HELLO3_60ORE);
 	};
 	if (Npc_HasItems (hero, ItMiNugget)>=30)
 	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "30 bry³ek", DIA_Organisator_HELLO3_150ORE);
+    Info_AddChoice		(DIA_Organisator_HELLO3, "30 bry³ek rudy", DIA_Organisator_HELLO3_150ORE);
 	};
 	if (Npc_HasItems (hero, ItMiNugget)>=50)
 	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "50 bry³ek", DIA_Organisator_HELLO3_300ore);
+    Info_AddChoice		(DIA_Organisator_HELLO3, "50 bry³ek rudy", DIA_Organisator_HELLO3_300ore);
 	};
 //	if (Npc_HasItems (hero, ItMiNugget)>=500)
 //	{
@@ -354,10 +359,11 @@ if (gra1 == 1)
 {
 Print ("Przegra³eœ!");
 B_GiveInvItems (other, self, ItMiNugget, 30);
+Npc_RemoveInvItems (self, ItMiNugget, 30);
 };
 if (gra1 == 2)
 {
-Print ("Wygra³eœ 30 bry³ek!");
+Print ("Wygra³eœ 30 bry³ek rudy!");
 CreateInvItems (self, ItMiNugget, 30);
 B_GiveInvItems (self, other, ItMiNugget, 30);
 };
@@ -365,6 +371,7 @@ if (gra1 == 3)
 {
 Print ("Przegra³eœ!");
 B_GiveInvItems (other, self, ItMiNugget, 30);
+Npc_RemoveInvItems (self, ItMiNugget, 30);
 };
  Info_ClearChoices		(DIA_Organisator_HELLO3);
 	if (Npc_HasItems (hero, ItMiNugget)>=5)
@@ -373,15 +380,15 @@ B_GiveInvItems (other, self, ItMiNugget, 30);
 	};
 	if (Npc_HasItems (hero, ItMiNugget)>=15)
 	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "15 bry³ek", DIA_Organisator_HELLO3_60ORE);
+    Info_AddChoice		(DIA_Organisator_HELLO3, "15 bry³ek rudy", DIA_Organisator_HELLO3_60ORE);
 	};
 	if (Npc_HasItems (hero, ItMiNugget)>=30)
 	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "30 bry³ek", DIA_Organisator_HELLO3_150ORE);
+    Info_AddChoice		(DIA_Organisator_HELLO3, "30 bry³ek rudy", DIA_Organisator_HELLO3_150ORE);
 	};
 	if (Npc_HasItems (hero, ItMiNugget)>=50)
 	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "50 bry³ek", DIA_Organisator_HELLO3_300ore);
+    Info_AddChoice		(DIA_Organisator_HELLO3, "50 bry³ek rudy", DIA_Organisator_HELLO3_300ore);
 	};
 //	if (Npc_HasItems (hero, ItMiNugget)>=500)
 //	{
@@ -397,10 +404,11 @@ if (gra1 == 1)
 {
 Print ("Przegra³eœ!");
 B_GiveInvItems (other, self, ItMiNugget, 50);
+Npc_RemoveInvItems (self, ItMiNugget, 50);
 };
 if (gra1 == 2)
 {
-Print ("Wygra³eœ 50 bry³ek!");
+Print ("Wygra³eœ 50 bry³ek rudy!");
 CreateInvItems (self, ItMiNugget, 50);
 B_GiveInvItems (self, other, ItMiNugget, 50);
 };
@@ -408,6 +416,7 @@ if (gra1 == 3)
 {
 Print ("Przegra³eœ!");
 B_GiveInvItems (other, self, ItMiNugget, 50);
+Npc_RemoveInvItems (self, ItMiNugget, 50);
 };
  Info_ClearChoices		(DIA_Organisator_HELLO3);
 	if (Npc_HasItems (hero, ItMiNugget)>=5)
@@ -416,15 +425,15 @@ B_GiveInvItems (other, self, ItMiNugget, 50);
 	};
 	if (Npc_HasItems (hero, ItMiNugget)>=15)
 	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "15 bry³ek", DIA_Organisator_HELLO3_60ORE);
+    Info_AddChoice		(DIA_Organisator_HELLO3, "15 bry³ek rudy", DIA_Organisator_HELLO3_60ORE);
 	};
 	if (Npc_HasItems (hero, ItMiNugget)>=30)
 	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "30 bry³ek", DIA_Organisator_HELLO3_150ORE);
+    Info_AddChoice		(DIA_Organisator_HELLO3, "30 bry³ek rudy", DIA_Organisator_HELLO3_150ORE);
 	};
 	if (Npc_HasItems (hero, ItMiNugget)>=50)
 	{
-    Info_AddChoice		(DIA_Organisator_HELLO3, "50 bry³ek", DIA_Organisator_HELLO3_300ore);
+    Info_AddChoice		(DIA_Organisator_HELLO3, "50 bry³ek rudy", DIA_Organisator_HELLO3_300ore);
 	};
 //	if (Npc_HasItems (hero, ItMiNugget)>=500)
 //	{
