@@ -136,6 +136,7 @@ FUNC VOID Info_BaalLukor_HELP_Info()
 
 	AI_StopProcessInfos	(self);
 	Npc_ExchangeRoutine	(self, "Follow");
+	self.aivar[AIV_PARTYMEMBER] = TRUE;
 };
 
 //**************************************************************************
@@ -668,11 +669,12 @@ FUNC VOID Info_BaalLukor_ALTAR_Info()
 
 	self.flags = 0;
 	self.npctype = NPCTYPE_MAIN;
+	self.aivar[AIV_PARTYMEMBER] = FALSE;
 	BaalLukor_BringParchment = 4;
 	Npc_SetTempAttitude	(self,	ATT_HOSTILE);
 	Npc_SetPermAttitude	(self,	ATT_HOSTILE);
 	//CreateInvItems		(self,	ItArScrollPyrokinesis,	3);
-
+	
 	B_LogEntry		(CH3_OrcGraveyard,	"Gdy Baal Lukor zrozumia³, ¿e nie ma tu absolutnie nic, puœci³y mu nerwy. Szaleniec nawet rzuci³ siê na mnie miotaj¹c bezpodstawne oskar¿enia. Cor Angar nie bêdzie zadowolony, gdy dowie siê o tych wydarzeniach.");
 
 	AI_StopProcessInfos	(self);

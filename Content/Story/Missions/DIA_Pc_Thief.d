@@ -2148,7 +2148,7 @@ FUNC VOID DIA_PC_Thief_Quest_DeadHand_Info()
 	
 	var C_NPC reka;
 	reka = Hlp_GetNpc(STT_331_Fingers);
-	AI_teleport (reka,"GAME_START");
+	AI_teleport (reka,"NC_DAM");
 	Npc_ExchangeRoutine (reka,"ded");
 };
 

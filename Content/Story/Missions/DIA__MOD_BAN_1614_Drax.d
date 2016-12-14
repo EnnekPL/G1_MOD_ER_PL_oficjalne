@@ -783,7 +783,7 @@ INSTANCE DIA_Drax_ENDEDD (C_INFO)
 
 FUNC INT DIA_Drax_ENDEDD_Condition()
 {
-    if (Npc_HasItems (other, itmi_joshpocket) >=1)
+    if (Npc_HasItems (hero, itmi_joshpocket) >=1)
 	&& (MIS_OreInOM == LOG_RUNNING)
     //|| (part1p2 == true))
     {
@@ -811,7 +811,7 @@ FUNC VOID DIA_Drax_ENDEDD_Info()
 	};
 	AI_Output (self, other ,"DIA_Drax_ENDEDD_03_10"); //Tak czy inaczej, dobrze siê spisa³eœ. 
 		
-		B_GiveInvItems (other, self, itmi_joshpocket, 1);
+		B_GiveInvItems (hero, self, itmi_joshpocket, 1);
 		B_LogEntry               (CH1_OreInOM,"Zanios³em  Draxowi znalezion¹ rudê. Nie by³ zadowolony ze œmierci Josha, ale nic nie mog³em z tym zrobiæ.");
 		Log_SetTopicStatus       (CH1_OreInOM, LOG_SUCCESS);
 		MIS_OreInOM = LOG_SUCCESS;

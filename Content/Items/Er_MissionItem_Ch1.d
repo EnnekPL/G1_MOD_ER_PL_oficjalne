@@ -1321,7 +1321,7 @@ INSTANCE lukor_amulet(C_Item)
 func void Equip_lukoram ()
 {
 hero_regeneruje_mana = true;
-print ("Czujê, ¿e moja energia magiczna siê regeneruje");
+//print ("Czujê, ¿e moja energia magiczna siê regeneruje");
 };
 func void UnEquip_lukoram ()
 {
