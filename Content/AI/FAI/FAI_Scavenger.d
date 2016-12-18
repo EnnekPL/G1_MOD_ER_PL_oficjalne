@@ -1,161 +1,112 @@
-// *************************
-// Kampf - AI Scavenger (15)
-// *************************
+// ****************************
+// Nahkampf - AI Scavenger (15)
+// ****************************
 
 /*
-MOVE_RUN				
-MOVE_RUNBACK			wie Jumpback ohne Parade-Fenster
-MOVE_JUMPBACK			
-MOVE_TURN				
-MOVE_STRAFE				
+CONST INT	MOVE_RUN			=	 1;	// Gegner in meinem Fokus + steht wer dazwischen? (G)
+CONST INT	MOVE_JUMPBACK		=	 3;	// löst t_ParadeJumpB aus (Attacke wird nur pariert, wenn man schnell genug aus der W-Reichweite kommt!
+CONST INT	MOVE_TURN			= 	 4;	// Immer bis Gegner im Fokus (also nie durch neue Aktion unterbrochen, höchstens durch Gegner-Attacke)
+CONST INT	MOVE_STRAFE			=	 5; // (Richtung wird vom Programm entschieden)
 
-MOVE_ATTACK				
+CONST INT 	MOVE_ATTACK			=	 6;	// in ComboZone = Combo / im Rennen = Sturmattacke?
+CONST INT	MOVE_PARADE			=	17;	// (keine Attacke = oben)
 
-MOVE_PARADE			
-MOVE_STANDUP		
-MOVE_WAIT				200 ms
+CONST INT 	MOVE_WAIT			=	19; // 200 ms
 */
 
 
-// ************************************
-// Meine Reaktionen auf Gegner-Aktionen
-// ************************************
+// W  - Waffen-Reichweite (FIGHT_RANGE_FIST * 3)
+// G  - Gehen-Reichweite (3 * W). Puffer für Fernkämpfer in dem sie zur NK-Waffe wechseln sollten
+// FK - Fernkampf-Reichweite (30m)
 
-// ------ Gegner attackiert mich ------
+
+//////////////////////////////////////////////////
+// Meine Reaktionen auf Gegner-Aktionen:
+//////////////////////////////////////////////////
+
+// Gegner attackiert mich
 INSTANCE FA_ENEMY_PREHIT_15 (C_FightAI)
 {
-	move[0] = MOVE_JUMPBACK;
+	move[0] = MOVE_ATTACK;
 };
 
-// ------ Gegner macht Sturmattacke ------
+// Gegner macht Sturmattacke
 INSTANCE FA_ENEMY_STORMPREHIT_15 (C_FightAI)
 {
+// FIXME: Auch wenn ich einfach so auf das Monster zurenne, macht es eine ParadeJumpB!
 	move[0] = MOVE_STRAFE;
 };
 
 
-// *******************************************
-// Gegner in W-Reichweite (Treffer-Reichweite)
-// *******************************************
+//////////////////////////////////////////////////
+// Meine Aktionen wenn Gegner in Waffenreichweite:
+//////////////////////////////////////////////////
 
-// ------ Ich bin im Combo-Fenster ------
-INSTANCE FA_MY_W_COMBO_15 (C_FightAI)
-{
-	// --- Wird nie erreicht (Neue FAI-Bewertung erst wenn Ani zuende gespielt) ---
-};
-
-// ------ Ich renne auf den Gegner zu ------
+// was tun, wenn ich gerade auf den Gegner zurenne?
 INSTANCE FA_MY_W_RUNTO_15 (C_FightAI)
 {
-	move[0] = MOVE_TURN; // --- STANDARDEINTRAG (Stehenbleiben) ---
+	move[0] = MOVE_ATTACK;
+	move[1] = MOVE_WAIT;
 };
 
-// ------- Ich Strafe gerade ------
+// was tun, wenn ich gerade Strafe?
 INSTANCE FA_MY_W_STRAFE_15 (C_FightAI)
 {
-	// --- Wird nie erreicht (Neue FAI-Bewertung erst wenn Ani zuende gespielt) ---
+	move[0] = MOVE_ATTACK;
+	move[1] = MOVE_WAIT;
 };
 
-// ------- Ich habe Gegner im Fokus (kann treffen) -------
+// was tun, wenn ich den Gegner im Focus habe?
 INSTANCE FA_MY_W_FOCUS_15 (C_FightAI)
 {
 	move[0] = MOVE_ATTACK;
 	move[1] = MOVE_WAIT;
 };
 
-// ------- Ich habe Gegner NICHT im Fokus -------
+// was tun, wenn ich den Gegner nicht im Focus habe?
 INSTANCE FA_MY_W_NOFOCUS_15 (C_FightAI)
 {
-	move[0] = MOVE_TURN; // --- STANDARDEINTRAG ---
+	move[0] = MOVE_TURN;
 };
 
 
-// *************************************************
-// Gegner in G-Reichweite (Sturmattacken-Reichweite)
-// *************************************************
+////////////////////////////////////////////////////////////
+// Meine Aktionen wenn Gegner Waffenreichweite * 3 entfernt:
+////////////////////////////////////////////////////////////
 
-// ------ Ich bin im Combo-Fenster ------
-INSTANCE FA_MY_G_COMBO_15 (C_FightAI)
-{
-	// --- Wird nie erreicht (Neue FAI-Bewertung erst wenn Ani zuende gespielt) ---
-};
-
-// ------ Ich renne auf den Gegner zu (kann Sturmattacke machen) ------
+// was tun, wenn ich gerade auf den Gegner zurenne?
 INSTANCE FA_MY_G_RUNTO_15 (C_FightAI)
 {
-	move[0] = MOVE_ATTACK; //Sturmattacke
+	move[0] = MOVE_RUN;
 };
 
-// ------- Ich Strafe gerade ------
+// was tun, wenn ich gerade Strafe?
+// FIXME: wenn hier ATTACK eingetragen ist, müsste dann nicht nach jedem Strafe eine Attack kommen??
 INSTANCE FA_MY_G_STRAFE_15 (C_FightAI)
 {
-	// --- Wird nie erreicht (Neue FAI-Bewertung erst wenn Ani zuende gespielt) ---
+	move[0] = MOVE_ATTACK;
+	move[1] = MOVE_WAIT;
 };
 
-// ------- Ich habe Gegner im Fokus -------
+// was tun, wenn ich den Gegner im Focus habe?
 INSTANCE FA_MY_G_FOCUS_15 (C_FightAI)
 {
-	move[0] = MOVE_RUN; // --- STANDARDEINTRAG ---
+	move[0] = MOVE_RUN; 
 };
 
 
-// ***************************************
-// Gegner in FK-Reichweite (weit entfernt)
-// ***************************************
+////////////////////////////////////
+// Gegner weiter als Waffenreichweite * 3 entfernt
+////////////////////////////////////
 
-// ------- Ich habe Gegner im Fokus -------
+// was tun, wenn ich den Gegner im Focus habe?
 INSTANCE FA_MY_FK_FOCUS_15 (C_FightAI)
 {
-	move[0] = MOVE_RUN; // --- STANDARDEINTRAG ---
+	move[0] = MOVE_RUN;
 };
 
-// ------- Ich habe Gegner NICHT im Fokus (gilt auch für G-Distanz!) -------
+// was tun, wenn ich den Gegner nicht im Focus habe? (gilt auch für G-Distanz!)
 INSTANCE FA_MY_G_FK_NOFOCUS_15 (C_FightAI)
 {
-	move[0] = MOVE_TURN; // --- STANDARDEINTRAG ---
+	move[0] = MOVE_TURN;
 };
-
-
-// ***********************************
-// FAI für Fernkampf 
-// ---------------------------
-// (wird bei jeder Entfernung benutzt)
-// ***********************************
-
-// ------ Gegner im Fokus ------
-INSTANCE FA_MY_FK_FOCUS_FAR_15 (C_FightAI)
-{
-	move[0] = MOVE_ATTACK; // --- STANDARDEINTRAG ---
-};
-
-// ------ Gegner NICHT im Fokus ------
-INSTANCE FA_MY_FK_NOFOCUS_FAR_15 (C_FightAI)
-{
-	move[0] = MOVE_TURN; // --- STANDARDEINTRAG ---
-};
-
-
-// ***********************************
-// FAI für Magie
-// ---------------------------
-// (wird bei jeder Entfernung benutzt)
-// ***********************************
-
-// ------ Gegner im Fokus ------
-INSTANCE FA_MY_FK_FOCUS_MAG_15 (C_FightAI)
-{
-	move[0] = MOVE_ATTACK; // --- STANDARDEINTRAG ---
-	move[1] = MOVE_WAIT;
-	move[2] = MOVE_WAIT;
-	move[3] = MOVE_WAIT;
-	move[4] = MOVE_WAIT;
-	move[5] = MOVE_WAIT;
-};
-
-// ------ Gegner NICHT im Fokus -------
-INSTANCE FA_MY_FK_NOFOCUS_MAG_15 (C_FightAI)
-{
-	move[0] = MOVE_TURN; // --- STANDARDEINTRAG ---
-};
-
-
