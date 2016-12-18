@@ -9,18 +9,18 @@ PROTOTYPE Mst_Default_Scavenger(C_Npc)
 	aivar[AIV_MM_REAL_ID]			= 	ID_SCAVENGER;
 	level							=	Level_Scavenger;
 //---------------------------------------------------------
-	attribute	[ATR_STRENGTH]		=	35;
-	attribute	[ATR_DEXTERITY]		=	35;
+	attribute	[ATR_STRENGTH]		=	15;
+	attribute	[ATR_DEXTERITY]		=	15;
 	
-	attribute	[ATR_HITPOINTS_MAX]	=	60;
-	attribute	[ATR_HITPOINTS]		=	60;
+	attribute	[ATR_HITPOINTS_MAX]	=	40;
+	attribute	[ATR_HITPOINTS]		=	40;
 
 	attribute	[ATR_MANA_MAX] 		=	0;
 	attribute	[ATR_MANA] 			=	0;
 //---------------------------------------------------------
-	protection	[PROT_BLUNT]		=	8;
-	protection	[PROT_EDGE]			=	8;
-	protection	[PROT_POINT]		=	5;
+	protection	[PROT_BLUNT]		=	5;
+	protection	[PROT_EDGE]			=	5;
+	protection	[PROT_POINT]		=	0;
 	protection	[PROT_FIRE]			=	0;
 	protection	[PROT_FLY]			=	0;
 	protection	[PROT_MAGIC]		=	0;
@@ -115,21 +115,21 @@ INSTANCE YScavenger	(Mst_Default_Scavenger)
 	name							=	"M³ody œcierwojad";
 	level							=	Level_FirtsMonester;
 
-	attribute	[ATR_STRENGTH]		=	6;
-	attribute	[ATR_DEXTERITY]		=	6;
+	attribute	[ATR_STRENGTH]		=	10;
+	attribute	[ATR_DEXTERITY]		=	10;
 
-	attribute	[ATR_HITPOINTS_MAX]	=	35;
-	attribute	[ATR_HITPOINTS]		=	35;
+	attribute	[ATR_HITPOINTS_MAX]	=	20;
+	attribute	[ATR_HITPOINTS]		=	20;
 
 //------------------------------------------------------------
-	protection	[PROT_BLUNT]		=	8;
-	protection	[PROT_EDGE]			=	8;
+	protection	[PROT_BLUNT]		=	2;
+	protection	[PROT_EDGE]			=	2;
 
 
 	fight_tactic					=	FAI_MONSTER_COWARD;
 
 	Set_Scavenger_Visuals();
-	Mdl_SetModelScale(self, 0.9, 0.9, 0.9);
+	Mdl_SetModelScale(self, 0.8, 0.8, 0.8);
 
 	Npc_SetToFistMode(self);
 

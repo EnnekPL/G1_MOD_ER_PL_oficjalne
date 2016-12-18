@@ -314,7 +314,8 @@ else
 {
 AI_Output (self, other,"DIA_Rodriguez_Konsekracja_Kon_NoOre"); //Konsekracja wymaga z³o¿enia wspomo¿enia koœcio³a Innosa darem. 
 };
-Info_ClearChoices	(DIA_Rodriguez_Konsekracja);
+	Info_ClearChoices	(DIA_Rodriguez_Konsekracja);
+	Info_AddChoice		(DIA_Rodriguez_Konsekracja, DIALOG_BACK, DIA_Rodriguez_Konsekracja_01_Back); 
 	if Npc_HasItems (hero, ItMw_2H_Staff_FireMage_01)
 	{
     Info_AddChoice		(DIA_Rodriguez_Konsekracja, "Konsekruj podstawowy kostur (500 bry³ek rudy, wzrost wym. mana: 35, obra¿enia: 45 + 3 od ognia)", DIA_Rodriguez_Konsekracja_01); 
@@ -327,6 +328,10 @@ Info_ClearChoices	(DIA_Rodriguez_Konsekracja);
 	{
 	Info_AddChoice		(DIA_Rodriguez_Konsekracja, "Konsekruj kostur Maga Ognia(1500 bry³ek rudy, wzrost wym. mana: 60, si³a: 45 obra¿enia: 60 + 8 od ognia)", DIA_Rodriguez_Konsekracja_03);
 	};
+};
+func void DIA_Rodriguez_Konsekracja_01_Back ()
+{
+	Info_ClearChoices	(DIA_Rodriguez_Konsekracja);
 };
 
 func void DIA_Rodriguez_Konsekracja_03 ()

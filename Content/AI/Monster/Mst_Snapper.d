@@ -12,14 +12,14 @@ PROTOTYPE Mst_Default_Snapper(C_Npc)
 	attribute	[ATR_STRENGTH]		=	110;
 	attribute	[ATR_DEXTERITY]		=	110;
 	
-	attribute	[ATR_HITPOINTS_MAX]	=	240;//+20
-	attribute	[ATR_HITPOINTS]		=	240;
+	attribute	[ATR_HITPOINTS_MAX]	=	200;//+20
+	attribute	[ATR_HITPOINTS]		=	200;
 
 	attribute	[ATR_MANA_MAX] 		=	0;
 	attribute	[ATR_MANA] 			=	0;
 //---------------------------------------------------------	
-	protection	[PROT_BLUNT]		=	70;
-	protection	[PROT_EDGE]			=	70;
+	protection	[PROT_BLUNT]		=	100;
+	protection	[PROT_EDGE]			=	100;
 	protection	[PROT_POINT]		=	40;		
 	protection	[PROT_FIRE]			=	40;
 	protection	[PROT_FLY]			=	20;

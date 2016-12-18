@@ -2,6 +2,10 @@
 - Lukor dzieli siê z nami punktami XP za przeciwników pokonanych na cmentarzysku orków
 - u Gravera nie powinno ju¿ siê kumulowaæ tyle rudy z zak³adów 
 - zadanie od Okyla powinna ju¿ byæ zlecane prawid³owo jeœli jesteœmy cz³onkiem Nowego Obozu
+- dodana opcja wstecz u Rodrigueza przy konsekracji kostura
+- nauka zrêcznoœci: próg PN zmienia siê przy zdobyciu 50 pkt. (2PN nauki za 1pkt. atrybutu) i póŸniej ju¿ nie wzrasta
+- nauka zrêcznoœci: próg PN nie wzratsta póŸniej do wartroœci 3PN za 1pkt atrybutu lecz zatrzymuje siê na wartoœci 2
+
 1.4.8
 - w ofercie Stanleya pojawi³y siê sk³adniki alchemiczne uzupe³niane co rozdzia³ (drobne iloœci)
 - wzrost cen sk³adników alchemicznych
