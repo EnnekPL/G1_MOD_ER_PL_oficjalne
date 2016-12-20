@@ -82,7 +82,7 @@ FUNC VOID DIA_Chris_Hey_Info()
 //========================================
 //-----------------> HELLO3
 //========================================
-//edit by Nocturn
+
 INSTANCE DIA_Chris_HELLO3 (C_INFO)
 {
    npc          = BAN_1607_Chris;
@@ -90,7 +90,7 @@ INSTANCE DIA_Chris_HELLO3 (C_INFO)
    condition    = DIA_Chris_HELLO3_Condition;
    information  = DIA_Chris_HELLO3_Info;
    permanent	= TRUE;
-   description	= "No, dobrze... Zagrajmy.";
+   description	= "Zagrajmy w koœci.";
 };
 
 FUNC INT DIA_Chris_HELLO3_Condition()
@@ -104,30 +104,30 @@ FUNC INT DIA_Chris_HELLO3_Condition()
 
 FUNC VOID DIA_Chris_HELLO3_Info()
 {
-    AI_Output (other, self ,"DIA_Chris_HELLO3_15_01"); //No dobrze... Zagrajmy.
+    AI_Output (other, self ,"DIA_Chris_HELLO3_15_01"); //Zagrajmy w koœci.
     AI_Output (self, other ,"DIA_Chris_HELLO3_03_02"); //Zaczynamy. Ile stawiasz?
 
     Info_ClearChoices		(DIA_Chris_HELLO3);
-	if (Npc_HasItems (hero, ItMiNugget)>=20)
+	if (Npc_HasItems (hero, ItMiNugget)>=5)
 	{
-    Info_AddChoice		(DIA_Chris_HELLO3, "20 bry³ek", DIA_Chris_HELLO3_20ORE);
+    Info_AddChoice		(DIA_Chris_HELLO3, "5 bry³ek rudy", DIA_Chris_HELLO3_20ORE);
 	};
-	if (Npc_HasItems (hero, ItMiNugget)>=60)
+	if (Npc_HasItems (hero, ItMiNugget)>=15)
 	{
-    Info_AddChoice		(DIA_Chris_HELLO3, "60 bry³ek", DIA_Chris_HELLO3_60ORE);
+    Info_AddChoice		(DIA_Chris_HELLO3, "15 bry³ek rudy", DIA_Chris_HELLO3_60ORE);
 	};
-	//if (Npc_HasItems (hero, ItMiNugget)>=150)
-	//{
-   // Info_AddChoice		(DIA_Chris_HELLO3, "150 bry³ek", DIA_Chris_HELLO3_150ORE);
-	//};
-	//if (Npc_HasItems (hero, ItMiNugget)>=300)
-	//{
-   // Info_AddChoice		(DIA_Chris_HELLO3, "300 bry³ek", DIA_Chris_HELLO3_300ore);
-	//};
-	//if (Npc_HasItems (hero, ItMiNugget)>=500)
-	//{
-   // Info_AddChoice		(DIA_Chris_HELLO3, "A co mi tam! 500 bry³ek", DIA_Chris_HELLO3_500Ore);
-	//};
+	if (Npc_HasItems (hero, ItMiNugget)>=30)
+	{
+    Info_AddChoice		(DIA_Chris_HELLO3, "30 bry³ek rudy", DIA_Chris_HELLO3_150ORE);
+	};
+	if (Npc_HasItems (hero, ItMiNugget)>=50)
+	{
+    Info_AddChoice		(DIA_Chris_HELLO3, "50 bry³ek rudy", DIA_Chris_HELLO3_300ore);
+	};
+//	if (Npc_HasItems (hero, ItMiNugget)>=500)
+//	{
+//    Info_AddChoice		(DIA_Chris_HELLO3, "A co mi tam! 500 bry³ek", DIA_Chris_HELLO3_500Ore);
+//	};
     Info_AddChoice		(DIA_Chris_HELLO3, "Jednak zrezygnujê.", DIA_Chris_HELLO3_BACK);
 };
 
@@ -136,36 +136,37 @@ FUNC VOID DIA_Chris_HELLO3_20ORE()
 gra1 = Hlp_Random (2);
 if (gra1 == 1)
 {
-Print ("Przegra³eœ!");
-B_GiveInvItems (other, self, ItMiNugget, 20);
+AI_Output (self, other ,"DIA_Chris_HELLO3_LOSE"); //No niestety. Nie uda³o siê. Ruda trafia do mnie!
+B_GiveInvItems (other, self, ItMiNugget, 5);
+Npc_RemoveInvItems (self, ItMiNugget, 5);
 }
 else
 {
-Print ("Wygra³eœ 20 bry³ek!");
-CreateInvItems (self, ItMiNugget, 20);
-B_GiveInvItems (self, other, ItMiNugget, 20);
+AI_Output (self, other ,"DIA_Chris_HELLO3_WIN"); //Wygrana nale¿y do ciebie.
+CreateInvItems (self, ItMiNugget, 5);
+B_GiveInvItems (self, other, ItMiNugget, 5);
 };
-   Info_ClearChoices		(DIA_Chris_HELLO3);
-	if (Npc_HasItems (hero, ItMiNugget)>=20)
+ Info_ClearChoices		(DIA_Chris_HELLO3);
+	if (Npc_HasItems (hero, ItMiNugget)>=5)
 	{
-    Info_AddChoice		(DIA_Chris_HELLO3, "20 bry³ek", DIA_Chris_HELLO3_20ORE);
+    Info_AddChoice		(DIA_Chris_HELLO3, "5 bry³ek rudy", DIA_Chris_HELLO3_20ORE);
 	};
-	if (Npc_HasItems (hero, ItMiNugget)>=60)
+	if (Npc_HasItems (hero, ItMiNugget)>=15)
 	{
-    Info_AddChoice		(DIA_Chris_HELLO3, "60 bry³ek", DIA_Chris_HELLO3_60ORE);
+    Info_AddChoice		(DIA_Chris_HELLO3, "15 bry³ek rudy", DIA_Chris_HELLO3_60ORE);
 	};
-	//if (Npc_HasItems (hero, ItMiNugget)>=150)
-	//{
-   // Info_AddChoice		(DIA_Chris_HELLO3, "150 bry³ek", DIA_Chris_HELLO3_150ORE);
-	//};
-	//if (Npc_HasItems (hero, ItMiNugget)>=300)
-	//{
-   // Info_AddChoice		(DIA_Chris_HELLO3, "300 bry³ek", DIA_Chris_HELLO3_300ore);
-	//};
-	//if (Npc_HasItems (hero, ItMiNugget)>=500)
-	//{
-   // Info_AddChoice		(DIA_Chris_HELLO3, "A co mi tam! 500 bry³ek", DIA_Chris_HELLO3_500Ore);
-	//};
+	if (Npc_HasItems (hero, ItMiNugget)>=30)
+	{
+    Info_AddChoice		(DIA_Chris_HELLO3, "30 bry³ek rudy", DIA_Chris_HELLO3_150ORE);
+	};
+	if (Npc_HasItems (hero, ItMiNugget)>=50)
+	{
+    Info_AddChoice		(DIA_Chris_HELLO3, "50 bry³ek rudy", DIA_Chris_HELLO3_300ore);
+	};
+//	if (Npc_HasItems (hero, ItMiNugget)>=500)
+//	{
+//    Info_AddChoice		(DIA_Chris_HELLO3, "A co mi tam! 500 bry³ek", DIA_Chris_HELLO3_500Ore);
+//	};
     Info_AddChoice		(DIA_Chris_HELLO3, "Jednak zrezygnujê.", DIA_Chris_HELLO3_BACK);
 };
 
@@ -174,36 +175,37 @@ FUNC VOID DIA_Chris_HELLO3_60ORE()
 gra1 = Hlp_Random (2);
 if (gra1 == 1)
 {
-Print ("Przegra³eœ!");
-B_GiveInvItems (other, self, ItMiNugget, 60);
+AI_Output (self, other ,"DIA_Chris_HELLO3_LOSE"); //No niestety. Nie uda³o siê. Ruda trafia do mnie!
+B_GiveInvItems (other, self, ItMiNugget, 15);
+Npc_RemoveInvItems (self, ItMiNugget, 15);
 }
 else
 {
-Print ("Wygra³eœ 60 bry³ek!");
-CreateInvItems (self, ItMiNugget, 60);
-B_GiveInvItems (self, other, ItMiNugget, 60);
+AI_Output (self, other ,"DIA_Chris_HELLO3_WIN"); //Wygrana nale¿y do ciebie.
+CreateInvItems (self, ItMiNugget, 15);
+B_GiveInvItems (self, other, ItMiNugget, 15);
 };
-  Info_ClearChoices		(DIA_Chris_HELLO3);
-	if (Npc_HasItems (hero, ItMiNugget)>=20)
+ Info_ClearChoices		(DIA_Chris_HELLO3);
+	if (Npc_HasItems (hero, ItMiNugget)>=5)
 	{
-    Info_AddChoice		(DIA_Chris_HELLO3, "20 bry³ek", DIA_Chris_HELLO3_20ORE);
+    Info_AddChoice		(DIA_Chris_HELLO3, "5 bry³ek rudy", DIA_Chris_HELLO3_20ORE);
 	};
-	if (Npc_HasItems (hero, ItMiNugget)>=60)
+	if (Npc_HasItems (hero, ItMiNugget)>=15)
 	{
-    Info_AddChoice		(DIA_Chris_HELLO3, "60 bry³ek", DIA_Chris_HELLO3_60ORE);
+    Info_AddChoice		(DIA_Chris_HELLO3, "15 bry³ek rudy", DIA_Chris_HELLO3_60ORE);
 	};
-	//if (Npc_HasItems (hero, ItMiNugget)>=150)
-	//{
-   // Info_AddChoice		(DIA_Chris_HELLO3, "150 bry³ek", DIA_Chris_HELLO3_150ORE);
-	//};
-	//if (Npc_HasItems (hero, ItMiNugget)>=300)
-	//{
-   // Info_AddChoice		(DIA_Chris_HELLO3, "300 bry³ek", DIA_Chris_HELLO3_300ore);
-	//};
-	//if (Npc_HasItems (hero, ItMiNugget)>=500)
-	//{
-   // Info_AddChoice		(DIA_Chris_HELLO3, "A co mi tam! 500 bry³ek", DIA_Chris_HELLO3_500Ore);
-	//};
+	if (Npc_HasItems (hero, ItMiNugget)>=30)
+	{
+    Info_AddChoice		(DIA_Chris_HELLO3, "30 bry³ek rudy", DIA_Chris_HELLO3_150ORE);
+	};
+	if (Npc_HasItems (hero, ItMiNugget)>=50)
+	{
+    Info_AddChoice		(DIA_Chris_HELLO3, "50 bry³ek rudy", DIA_Chris_HELLO3_300ore);
+	};
+//	if (Npc_HasItems (hero, ItMiNugget)>=500)
+//	{
+//    Info_AddChoice		(DIA_Chris_HELLO3, "A co mi tam! 500 bry³ek", DIA_Chris_HELLO3_500Ore);
+//	};
     Info_AddChoice		(DIA_Chris_HELLO3, "Jednak zrezygnujê.", DIA_Chris_HELLO3_BACK);
 };
 
@@ -212,41 +214,43 @@ FUNC VOID DIA_Chris_HELLO3_150ORE()
 gra1 = Hlp_Random (3);
 if (gra1 == 1)
 {
-Print ("Przegra³eœ!");
-B_GiveInvItems (other, self, ItMiNugget, 150);
+AI_Output (self, other ,"DIA_Chris_HELLO3_LOSE"); //No niestety. Nie uda³o siê. Ruda trafia do mnie!
+B_GiveInvItems (other, self, ItMiNugget, 30);
+Npc_RemoveInvItems (self, ItMiNugget, 30);
 };
 if (gra1 == 2)
 {
-Print ("Wygra³eœ!");
-CreateInvItems (self, ItMiNugget, 150);
-B_GiveInvItems (self, other, ItMiNugget, 150);
+AI_Output (self, other ,"DIA_Chris_HELLO3_WIN"); //Wygrana nale¿y do ciebie.
+CreateInvItems (self, ItMiNugget, 30);
+B_GiveInvItems (self, other, ItMiNugget, 30);
 };
 if (gra1 == 3)
 {
-Print ("Przegra³eœ!");
-B_GiveInvItems (other, self, ItMiNugget, 150);
+AI_Output (self, other ,"DIA_Chris_HELLO3_LOSE"); //No niestety. Nie uda³o siê. Ruda trafia do mnie!
+B_GiveInvItems (other, self, ItMiNugget, 30);
+Npc_RemoveInvItems (self, ItMiNugget, 30);
 };
-  Info_ClearChoices		(DIA_Chris_HELLO3);
-	if (Npc_HasItems (hero, ItMiNugget)>=20)
+ Info_ClearChoices		(DIA_Chris_HELLO3);
+	if (Npc_HasItems (hero, ItMiNugget)>=5)
 	{
-    Info_AddChoice		(DIA_Chris_HELLO3, "20 bry³ek", DIA_Chris_HELLO3_20ORE);
+    Info_AddChoice		(DIA_Chris_HELLO3, "5 bry³ek rudy", DIA_Chris_HELLO3_20ORE);
 	};
-	if (Npc_HasItems (hero, ItMiNugget)>=60)
+	if (Npc_HasItems (hero, ItMiNugget)>=15)
 	{
-    Info_AddChoice		(DIA_Chris_HELLO3, "60 bry³ek", DIA_Chris_HELLO3_60ORE);
+    Info_AddChoice		(DIA_Chris_HELLO3, "15 bry³ek rudy", DIA_Chris_HELLO3_60ORE);
 	};
-	if (Npc_HasItems (hero, ItMiNugget)>=150)
+	if (Npc_HasItems (hero, ItMiNugget)>=30)
 	{
-    Info_AddChoice		(DIA_Chris_HELLO3, "150 bry³ek", DIA_Chris_HELLO3_150ORE);
+    Info_AddChoice		(DIA_Chris_HELLO3, "30 bry³ek rudy", DIA_Chris_HELLO3_150ORE);
 	};
-	if (Npc_HasItems (hero, ItMiNugget)>=300)
+	if (Npc_HasItems (hero, ItMiNugget)>=50)
 	{
-    Info_AddChoice		(DIA_Chris_HELLO3, "300 bry³ek", DIA_Chris_HELLO3_300ore);
+    Info_AddChoice		(DIA_Chris_HELLO3, "50 bry³ek rudy", DIA_Chris_HELLO3_300ore);
 	};
-	if (Npc_HasItems (hero, ItMiNugget)>=500)
-	{
-    Info_AddChoice		(DIA_Chris_HELLO3, "A co mi tam! 500 bry³ek", DIA_Chris_HELLO3_500Ore);
-	};
+//	if (Npc_HasItems (hero, ItMiNugget)>=500)
+//	{
+//    Info_AddChoice		(DIA_Chris_HELLO3, "A co mi tam! 500 bry³ek", DIA_Chris_HELLO3_500Ore);
+//	};
     Info_AddChoice		(DIA_Chris_HELLO3, "Jednak zrezygnujê.", DIA_Chris_HELLO3_BACK);
 };
 
@@ -255,41 +259,43 @@ FUNC VOID DIA_Chris_HELLO3_300ore()
 gra1 = Hlp_Random (3);
 if (gra1 == 1)
 {
-Print ("Przegra³eœ!");
-B_GiveInvItems (other, self, ItMiNugget, 300);
+AI_Output (self, other ,"DIA_Chris_HELLO3_LOSE"); //No niestety. Nie uda³o siê. Ruda trafia do mnie!
+B_GiveInvItems (other, self, ItMiNugget, 50);
+Npc_RemoveInvItems (self, ItMiNugget, 50);
 };
 if (gra1 == 2)
 {
-Print ("Wygra³eœ!");
-CreateInvItems (self, ItMiNugget, 300);
-B_GiveInvItems (self, other, ItMiNugget, 300);
+AI_Output (self, other ,"DIA_Chris_HELLO3_WIN"); //Wygrana nale¿y do ciebie.
+CreateInvItems (self, ItMiNugget, 50);
+B_GiveInvItems (self, other, ItMiNugget, 50);
 };
 if (gra1 == 3)
 {
-Print ("Przegra³eœ!");
-B_GiveInvItems (other, self, ItMiNugget, 300);
+AI_Output (self, other ,"DIA_Chris_HELLO3_LOSE"); //No niestety. Nie uda³o siê. Ruda trafia do mnie!
+B_GiveInvItems (other, self, ItMiNugget, 50);
+Npc_RemoveInvItems (self, ItMiNugget, 50);
 };
-  Info_ClearChoices		(DIA_Chris_HELLO3);
-	if (Npc_HasItems (hero, ItMiNugget)>=20)
+ Info_ClearChoices		(DIA_Chris_HELLO3);
+	if (Npc_HasItems (hero, ItMiNugget)>=5)
 	{
-    Info_AddChoice		(DIA_Chris_HELLO3, "20 bry³ek", DIA_Chris_HELLO3_20ORE);
+    Info_AddChoice		(DIA_Chris_HELLO3, "5 bry³ek rudy", DIA_Chris_HELLO3_20ORE);
 	};
-	if (Npc_HasItems (hero, ItMiNugget)>=60)
+	if (Npc_HasItems (hero, ItMiNugget)>=15)
 	{
-    Info_AddChoice		(DIA_Chris_HELLO3, "60 bry³ek", DIA_Chris_HELLO3_60ORE);
+    Info_AddChoice		(DIA_Chris_HELLO3, "15 bry³ek rudy", DIA_Chris_HELLO3_60ORE);
 	};
-	if (Npc_HasItems (hero, ItMiNugget)>=150)
+	if (Npc_HasItems (hero, ItMiNugget)>=30)
 	{
-    Info_AddChoice		(DIA_Chris_HELLO3, "150 bry³ek", DIA_Chris_HELLO3_150ORE);
+    Info_AddChoice		(DIA_Chris_HELLO3, "30 bry³ek rudy", DIA_Chris_HELLO3_150ORE);
 	};
-	if (Npc_HasItems (hero, ItMiNugget)>=300)
+	if (Npc_HasItems (hero, ItMiNugget)>=50)
 	{
-    Info_AddChoice		(DIA_Chris_HELLO3, "300 bry³ek", DIA_Chris_HELLO3_300ore);
+    Info_AddChoice		(DIA_Chris_HELLO3, "50 bry³ek rudy", DIA_Chris_HELLO3_300ore);
 	};
-	if (Npc_HasItems (hero, ItMiNugget)>=500)
-	{
-    Info_AddChoice		(DIA_Chris_HELLO3, "A co mi tam! 500 bry³ek", DIA_Chris_HELLO3_500Ore);
-	};
+//	if (Npc_HasItems (hero, ItMiNugget)>=500)
+//	{
+//    Info_AddChoice		(DIA_Chris_HELLO3, "A co mi tam! 500 bry³ek", DIA_Chris_HELLO3_500Ore);
+//	};
     Info_AddChoice		(DIA_Chris_HELLO3, "Jednak zrezygnujê.", DIA_Chris_HELLO3_BACK);
 };
 
@@ -297,12 +303,12 @@ FUNC VOID DIA_Chris_HELLO3_500Ore()
 {
     AI_Output (other, self ,"DIA_Chris_HELLO3_500Ore_15_01"); //A co mi tam! 500 bry³ek.
     AI_Output (self, other ,"DIA_Chris_HELLO3_500Ore_03_02"); //No nieŸle! 
-  //  B_GiveXP (150);
+    B_GiveXP (150);
 	
 gra1 = Hlp_Random (7);
 if (gra1 == 1)
 {
-Print ("Przegra³eœ!");
+AI_Output (self, other ,"DIA_Chris_HELLO3_LOSE"); //No niestety. Nie uda³o siê. Ruda trafia do mnie!
 B_GiveInvItems (other, self, ItMiNugget, 500);
 };
 if (gra1 == 2)
@@ -313,7 +319,7 @@ B_GiveInvItems (self, other, ItMiNugget, 500);
 };
 if (gra1 == 3)
 {
-Print ("Przegra³eœ!");
+AI_Output (self, other ,"DIA_Chris_HELLO3_LOSE"); //No niestety. Nie uda³o siê. Ruda trafia do mnie!
 B_GiveInvItems (other, self, ItMiNugget, 500);
 };
 if (gra1 == 4)
@@ -330,43 +336,20 @@ B_GiveInvItems (self, other, ItMiNugget, 500);
 };
 if (gra1 == 6)
 {
-Print ("Przegra³eœ!");
+AI_Output (self, other ,"DIA_Chris_HELLO3_LOSE"); //No niestety. Nie uda³o siê. Ruda trafia do mnie!
 B_GiveInvItems (other, self, ItMiNugget, 500);
 };
 if (gra1 == 7)
 {
-Print ("Przegra³eœ!");
+AI_Output (self, other ,"DIA_Chris_HELLO3_LOSE"); //No niestety. Nie uda³o siê. Ruda trafia do mnie!
 B_GiveInvItems (other, self, ItMiNugget, 500);
 };
-  Info_ClearChoices		(DIA_Chris_HELLO3);
-	if (Npc_HasItems (hero, ItMiNugget)>=20)
-	{
-    Info_AddChoice		(DIA_Chris_HELLO3, "20 bry³ek", DIA_Chris_HELLO3_20ORE);
-	};
-	if (Npc_HasItems (hero, ItMiNugget)>=60)
-	{
-    Info_AddChoice		(DIA_Chris_HELLO3, "60 bry³ek", DIA_Chris_HELLO3_60ORE);
-	};
-	if (Npc_HasItems (hero, ItMiNugget)>=150)
-	{
-    Info_AddChoice		(DIA_Chris_HELLO3, "150 bry³ek", DIA_Chris_HELLO3_150ORE);
-	};
-	if (Npc_HasItems (hero, ItMiNugget)>=300)
-	{
-    Info_AddChoice		(DIA_Chris_HELLO3, "300 bry³ek", DIA_Chris_HELLO3_300ore);
-	};
-	if (Npc_HasItems (hero, ItMiNugget)>=500)
-	{
-    Info_AddChoice		(DIA_Chris_HELLO3, "A co mi tam! 500 bry³ek", DIA_Chris_HELLO3_500Ore);
-	};
-    Info_AddChoice		(DIA_Chris_HELLO3, "Jednak zrezygnujê.", DIA_Chris_HELLO3_BACK);
 };
 
 FUNC VOID DIA_Chris_HELLO3_BACK()
 {
     Info_ClearChoices	(DIA_Chris_HELLO3);
 };
-
 //========================================
 //-----------------> GoToAbMine
 //========================================

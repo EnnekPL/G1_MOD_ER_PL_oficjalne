@@ -1910,13 +1910,13 @@ FUNC VOID STARTUP_SUB_SURFACE ()
 	Wld_InsertNpc		(YScavenger,"SPAWN_OW_BLOODFLY_E_3");
 
 	// bei Ratford und Drax am Zaun
-	Wld_InsertNpc		(YScavenger,"SPAWN_GOBBO_OW_PATH_1_6");
-	Wld_InsertNpc		(YScavenger,"SPAWN_GOBBO_OW_PATH_1_6");
-	Wld_InsertNpc		(YScavenger,"SPAWN_GOBBO_OW_PATH_1_6");
+	Wld_InsertNpc		(YScavenger,"ER_NEWSPAWN_YSCA");
+	Wld_InsertNpc		(YScavenger,"ER_NEWSPAWN_YSCA");
+	Wld_InsertNpc		(YScavenger,"ER_NEWSPAWN_YSCA");
 
 	// zwischen Jägern und Brücke zum OC
 	Wld_InsertNpc		(YScavenger,"SPAWN_OW_STARTSCAVNGERBO_01_02");
-	Wld_InsertNpc		(YScavenger,"SPAWN_OW_STARTSCAVENGER_02_01");
+	Wld_InsertNpc		(YScavenger,"SPAWN_GRD1");
 
 
 	//------------Mordrags Weg vom Al ins NL-------------------------------//

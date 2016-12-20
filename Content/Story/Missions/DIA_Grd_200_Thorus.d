@@ -1298,6 +1298,9 @@ Info_ClearChoices	(GRD_200_Thorus_TEACH_2H_START);
 func void GRD_200_Thorus_TEACH_2H_STARTBACK ()
 {
 	Info_ClearChoices	(GRD_200_Thorus_TEACH_2H_START);
+	var int ilosc;
+	ilosc = Npc_hasitems (self, itminugget);
+	Npc_RemoveInvItems (self, itminugget, ilosc);
 };
 
 FUNC VOID Thorus_teach_2h1 ()

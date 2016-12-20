@@ -139,7 +139,8 @@ func void B_Give_DarrionChapter5Weapons ()
 //	CreateInvItem (npc,Plan5c); 
 //	CreateInvItem (npc,Plan7b); 
 //	CreateInvItem (npc,Plan8); 
-
+	CreateInvItem 	(npc,	Miecz1H_P_1); 
+	CreateInvItem 	(npc,	Miecz1H_P_2); 
   
 };
 
@@ -153,7 +154,8 @@ func void B_Give_DarrionChapter6Weapons ()
 	CreateInvItems (npc,ItMiNugget,550);
 	//-------- Fernkampfwaffen --------
 	
-
+CreateInvItem 	(npc,	Axe1H_P_1);
+	CreateInvItem 	(npc,	Miecz1H_P_3);	
 	//-------- Munition --------
   
   CreateInvItem (npc,Plan7b); 

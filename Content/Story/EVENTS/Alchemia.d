@@ -997,12 +997,13 @@ FUNC VOID DIA_PC_Hero_SpecialPotions_DEX()
    };
 FUNC VOID DIA_PC_Hero_SpecialPotions_HP()
 {
-    if (Npc_HasItems (hero, ItFo_Plants_RavenHerb_01) >=1) && (Npc_HasItems (hero, ItFo_Plants_Herb_03) >=3) && (Npc_HasItems (hero, ItMi_Alchemy_Syrianoil_01) >=1)
+    if (Npc_HasItems (hero, ItFo_Plants_RavenHerb_01) >=8) && (Npc_HasItems (hero, ItFo_Plants_Herb_03) >=3) && (Npc_HasItems (hero, ItMi_Alchemy_Syrianoil_01) >=1) && (Npc_HasItems (hero, ItFo_Plants_Nightshadow_01) >=2)
     {
 	CreateInvItem (hero,ItFo_Potion_Health_Perma_02);
-    Npc_RemoveInvItem (hero, ItFo_Plants_RavenHerb_01);
+    Npc_RemoveInvItems (hero, ItFo_Plants_RavenHerb_01,8);
     Npc_RemoveInvItems (hero, ItFo_Plants_Herb_03, 3);
 	Npc_RemoveInvItems (hero, ItMi_Alchemy_Syrianoil_01, 1);
+	Npc_RemoveInvItems (hero, ItFo_Plants_Nightshadow_01, 2);
 	Print ("Uwarzy³eœ miksturê");
 	B_giveXP (50);
 	    Info_ClearChoices		(DIA_PC_Hero_SpecialPotions);
@@ -1051,11 +1052,11 @@ FUNC VOID DIA_PC_Hero_SpecialPotions_HP()
    };
  FUNC VOID DIA_PC_Hero_SpecialPotions_EN()
 {
-    if (Npc_HasItems (hero, ItFo_Plants_Stoneroot_02) >=1) && (Npc_HasItems (hero, ItFo_Plants_RavenHerb_02) >=1) && (Npc_HasItems (hero, ItMi_Alchemy_Syrianoil_01) >=1)
+    if (Npc_HasItems (hero, ItFo_Plants_Stoneroot_02) >=2) && (Npc_HasItems (hero, ItFo_Plants_RavenHerb_02) >=5) && (Npc_HasItems (hero, ItMi_Alchemy_Syrianoil_01) >=1)
     {
 	CreateInvItem (hero,ItFo_Potion_Mana_Perma_02);
-    Npc_RemoveInvItem (hero, ItFo_Plants_Stoneroot_02);
-    Npc_RemoveInvItems (hero, ItFo_Plants_RavenHerb_02, 1);
+    Npc_RemoveInvItems (hero, ItFo_Plants_Stoneroot_02,2);
+    Npc_RemoveInvItems (hero, ItFo_Plants_RavenHerb_02, 5);
 	Npc_RemoveInvItems (hero, ItMi_Alchemy_Syrianoil_01, 1);
 	Print ("Uwarzy³eœ miksturê");
 	B_giveXP (50);

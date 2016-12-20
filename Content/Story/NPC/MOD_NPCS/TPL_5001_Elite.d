@@ -38,7 +38,7 @@ Npc_SetTalentSkill (self, NPC_TALENT_MAGE,3);
 //----------Ekwipunek----------
 //edit by Nocturn
 EquipItem		(self, ItMw_2H_Sword_02);
-EquipItem		(self, ItRw_Crossbow_02);
+EquipItem		(self, ItRw_Crossbow_02_Z);
 CreateInvItems  (self,ItAt_Wolf_01,1);
 CreateInvItems  (self,ItAt_Shadow_02,1);
 CreateInvItems  (self,ItArRuneLight,1);

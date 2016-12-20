@@ -329,7 +329,7 @@ CONST STRING TXT_TALENTS_SKILLS [NPC_TALENT_MAX] =
 	"Nie|adept|mistrz",								//NPC_TALENT_CROSSBOW    
 	"Nie|adept|mistrz",								//NPC_TALENT_PICKLOCK   
 	"Nie|adept|mistrz",								//NPC_TALENT_PICKPOCKET
-	"Nie|Kr퉓 1 (reg. +0)|Kr퉓 2 (reg. +1)|Kr퉓 3 (reg. +1)|Kr퉓 4 (reg. +2)|Kr퉓 5 (reg. +2)|Kr퉓 6 (reg. +3)",	//NPC_TALENT_MAGE         
+	"Nie|Kr퉓 1 |Kr퉓 2 |Kr퉓 3 (reg. +1)|Kr퉓 4 (reg. +1)|Kr퉓 5 (reg. +2)|Kr퉓 6 (reg. +2)",	//NPC_TALENT_MAGE         
 	"Nie|Tak|",                                          //NPC_TALENT_SNEAK       
 	"Nie|Tak",                                      		    //NPC_TALENT_REGENERATE 
 	"Nie|adept|mistrz",                                          		//NPC_TALENT_FIREMASTER   

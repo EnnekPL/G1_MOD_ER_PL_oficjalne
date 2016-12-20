@@ -50,7 +50,7 @@ INSTANCE Innos_Zorn (C_Item)
 	range    			=  	160;
 
 	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	90;
+	cond_value[2]  		= 	100;
 
 	owner 				= 	EBR_100_GOMEZ;
 	visual 				=	"ItMw_2H_Sword_Heavy_03.3DS";
@@ -111,7 +111,7 @@ INSTANCE Artos_Schwert (C_Item)
 	range    			=  	100;
 
 	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	50;
+	cond_value[2]  		= 	65;
 
 	owner 				= 	EBR_102_ARTO;
 	visual 				=	"ItMw_1H_Sword_Long_02.3DS";
@@ -136,12 +136,12 @@ INSTANCE Rabenrecht (C_Item)
 
 	value 				=	400;
 
-	damageTotal			= 	70;
+	damageTotal			= 	60;
 	damagetype 			= 	DAM_EDGE;
 	range    			=  	130;
 
 	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	55;
+	cond_value[2]  		= 	58;
 
 	owner 				= 	EBR_105_RAVEN;
 	visual 				=	"ItMw_1H_Sword_Broad_04.3DS";
@@ -171,7 +171,7 @@ INSTANCE Prankenhieb (C_Item)
 	range    			=  	100;
 
 	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	40;
+	cond_value[2]  		= 	55;
 
 	owner 				= 	EBR_106_BARTHOLO;
 	visual 				=	"ItMw_1H_Sword_Long_05.3DS";
@@ -293,7 +293,7 @@ INSTANCE Kaloms_Schwert (C_Item)
 	range    			=  	100;
 
 	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	55;
+	cond_value[2]  		= 	70;
 
 	owner 				=   GUR_1201_CORKALOM;
 	visual 				=	"ItMw_1H_Sword_05.3DS";
@@ -353,7 +353,7 @@ INSTANCE Roter_Wind (C_Item)
 	range    			=  	140;
 
 	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	80;
+	cond_value[2]  		= 	100;
 
 	owner 				= 	GUR_1202_CORANGAR;
 	visual 				=	"ItMw_2H_Sword_02.3DS";
@@ -383,7 +383,7 @@ INSTANCE Namibs_Keule (C_Item)
 	range    			=  	90;
 
 	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	40;
+	cond_value[2]  		= 	55;
 
 	owner 				= 	GUR_1204_BAALNAMIB;
 	visual 				=	"ItMw_1H_Mace_01.3DS";
@@ -413,7 +413,7 @@ INSTANCE Oruns_Keule (C_Item)
 	range    			=  	90;
 
 	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	50;
+	cond_value[2]  		= 	60;
 
 	owner 				= 	GUR_1209_BAALORUN;
 	visual 				=	"ItMw_1H_Mace_02.3DS";
@@ -561,7 +561,7 @@ INSTANCE Cords_Spalter (C_Item)
 
 	value 				=	310;
 
-	damageTotal			=   60;
+	damageTotal			=   53;
 	damagetype			=	DAM_EDGE;
 	range    			=  	100;
 
@@ -626,7 +626,7 @@ INSTANCE Lares_Axt (C_Item)
 	range    			=  	100;
 
 	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	45;
+	cond_value[2]  		= 	63;
 
 	owner 				= 	ORG_801_LARES;
 	visual 				=	"ItMw_1H_Axe_02.3DS";
@@ -685,7 +685,7 @@ INSTANCE Silas_Axt (C_Item)
 	range    			=  	100;
 
 	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	40;
+	cond_value[2]  		= 	55;
 
 	owner 				=   ORG_841_SILAS;
 	visual 				=	"ItMw_1H_Axe_03.3DS";

@@ -64,12 +64,12 @@ INSTANCE Miecz1H3 (C_Item) //Quentin
 
 	value 				=	900;
 	
-	damageTotal			= 	66;
+	damageTotal			= 	70;
 	damagetype			=	DAM_EDGE;
 	range    			=  	110;		
 	owner 				= 	BAN_1610_Quentin;
 	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	40;
+	cond_value[2]  		= 	70;
 	visual 				=	"DB_ItMw_1h_Sword_Broad_Rep_01.3DS";
 
 	description			= name;
@@ -94,7 +94,7 @@ INSTANCE Miecz1H4 (C_Item) //Doyle
 	range    			=  	110;		
 	owner 				= 	BAN_1613_Doyle;
 	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	40;
+	cond_value[2]  		= 	65;
 	visual 				=	"DB_ItMw_1h_Sword_Broad_Rep_02.3DS";
 
 	description			= name;
@@ -273,7 +273,7 @@ INSTANCE Miecz2H6 (C_Item) //Hector -- Skelden
 	range    			=  	60;		
 
 	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	120;
+	cond_value[2]  		= 	74;
 	owner 				= 	GRD_3935_Hector;
 	visual 				=	"DB_ItMw_2H_Sword_Smith_02.3DS";
 

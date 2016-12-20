@@ -36,7 +36,7 @@ Npc_SetTalentSkill (self, NPC_TALENT_1H,7);
 
 //----------Ekwipunek----------
 EquipItem		(self, ItMw_1H_Mace_War_02);
-EquipItem		(self, ItRw_Bow_Long_07);
+EquipItem		(self, ItRw_Bow_Long_05_Z);
 CreateInvItems  (self,ItMiNugget,300);
 CreateInvItems  (self,ItMi_Stuff_OldCoin_01,300);
 CreateInvItems  (self,ItMi_Stuff_Cup_02,2);

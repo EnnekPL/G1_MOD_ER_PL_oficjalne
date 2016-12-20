@@ -36,9 +36,9 @@ Npc_SetTalentSkill (self, NPC_TALENT_1H,7);
 
 //----------Ekwipunek----------
 EquipItem		(self, ItMw_1H_Mace_War_04);
-EquipItem		(self, ItRw_Bow_War_01);
-CreateInvItems  (self,ItMiNugget,300);
-CreateInvItems  (self,ItMi_Stuff_OldCoin_01,300);
+EquipItem		(self, ItRw_Bow_War_02_Z);
+CreateInvItems  (self,ItMiNugget,80);
+CreateInvItems  (self,ItMi_Stuff_OldCoin_01,25);
 CreateInvItems  (self,ItMi_Stuff_Cup_02,2);
 CreateInvItems  (self,ItFo_Potion_Health_01,3);
 CreateInvItems  (self,ItFoMuttonRaw,3);

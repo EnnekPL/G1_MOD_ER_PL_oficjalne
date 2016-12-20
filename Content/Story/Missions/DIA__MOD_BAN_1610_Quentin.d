@@ -2617,6 +2617,9 @@ FUNC VOID DIA_Quentin_START_TRAIN_Info()
 func void DIA_Quentin_START_TRAINBACK ()
 {
 	Info_ClearChoices	(DIA_Quentin_START_TRAIN);
+	var int ilosc;
+	ilosc = Npc_hasitems (self, itminugget);
+	Npc_RemoveInvItems (self, itminugget, ilosc);
 };
 
 FUNC VOID Quentin_nauka1h1 ()

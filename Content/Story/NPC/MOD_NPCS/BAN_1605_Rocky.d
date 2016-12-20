@@ -37,7 +37,7 @@ Npc_SetTalentSkill (self, NPC_TALENT_2H,9);
 
 //----------Ekwipunek----------
 EquipItem		(self, ItMw_2H_Axe_Old_02);
-EquipItem		(self, ItRw_Bow_Long_07);
+EquipItem		(self, ItRw_Bow_Long_05_Z);
 CreateInvItems  (self,ItFoApple,1);
 CreateInvItems  (self,ItFoLoaf,1);
 CreateInvItems  (self,ItForice,1);

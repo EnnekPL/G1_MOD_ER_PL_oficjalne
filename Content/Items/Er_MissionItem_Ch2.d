@@ -385,7 +385,7 @@ INSTANCE ItWr_MessengerList (C_Item)
 	scemeName		=	"MAP";
 	description		= 	name;
 	TEXT[2]				= "Te rzeczy s¹ potrzebne,";
-	TEXT[2]				= "aby przywo³aæ pos³añca Œni¹cego.";
+	TEXT[3]				= "aby przywo³aæ pos³añca Œni¹cego.";
 	//TEXT[5]			= NAME_Value;
 	//COUNT[5]		= value;
 	

@@ -37,7 +37,7 @@ Npc_SetTalentSkill (self, NPC_TALENT_MAGE,4);
 
 //----------Ekwipunek----------
 EquipItem		(self, ItMw_1H_Sword_Long_04);
-EquipItem		(self, ItRw_Bow_War_01);
+EquipItem		(self, ItRw_Bow_War_02_Z);
 CreateInvItems  (self,ItAt_Wolf_01,3);
 CreateInvItems  (self,ItAt_Claws_01,2);
 CreateInvItems  (self,ItFo_wineberrys_01,2);

@@ -37,13 +37,13 @@ const int	Value_StrDex_Macht		=	800;	const int	StrDex_Macht		=	2;
 // Trank der Herrschaft
 const int	Value_StrDex_Herrschaft	=	1200;	const int	StrDex_Herrschaft	=	3;
 
-const int	Value_HpMaxEssenz		=	500;	const int	HPMax_Essenz		=	3;
-const int	Value_HpMaxExtrakt		=	1000;	const int	HPMax_Extrakt		=	7;
-const int	Value_HpMaxElixier		=	1500;	const int	HPMax_Elixier		=	10;
+const int	Value_HpMaxEssenz		=	500;	const int	HPMax_Essenz		=	2;
+const int	Value_HpMaxExtrakt		=	1000;	const int	HPMax_Extrakt		=	5;
+const int	Value_HpMaxElixier		=	1500;	const int	HPMax_Elixier		=	8;
 
-const int	Value_ManaMaxEssenz		=	500;	const int	ManaMax_Essenz		=	3;
-const int	Value_ManaMaxExtrakt	=	1000;	const int	ManaMax_Extrakt		=	7;
-const int	Value_ManaMaxElixier	=	1500;	const int	ManaMax_Elixier		=	10;
+const int	Value_ManaMaxEssenz		=	500;	const int	ManaMax_Essenz		=	2;
+const int	Value_ManaMaxExtrakt	=	1000;	const int	ManaMax_Extrakt		=	4;
+const int	Value_ManaMaxElixier	=	1500;	const int	ManaMax_Elixier		=	6;
 
 // Speed-Potions
 const int	Value_Haste1			=	100;	const int	Time_Haste1			=	60000;	// 1 min.

@@ -95,7 +95,7 @@ instance GRD_5029_Gardist (Npc_Default)
 	//-------- inventory --------
 	
 	EquipItem	(self, ItMw_1H_Sword_03_Old);
-	EquipItem	(self, ItRw_Crossbow_02);
+	EquipItem	(self, ItRw_Crossbow_02_Z);
 	CreateInvItems	(self, ItAmBolt, 30);
 	CreateInvItem	(self, ItFoMutton);
 	CreateInvItems	(self, ItMiNugget,20);
@@ -149,7 +149,7 @@ Npc_SetTalentSkill (self, NPC_TALENT_CROSSBOW,2);
 
 //----------Ekwipunek----------
 EquipItem		(self, ItMw_1H_Sword_03_Old);
-EquipItem		(self, ItRw_Crossbow_02);
+EquipItem		(self, ItRw_Crossbow_02_Z);
 //----------Pozostale----------
 fight_tactic	=	FAI_HUMAN_Strong;
 daily_routine = Rtn_start_5030;

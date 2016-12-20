@@ -180,7 +180,7 @@ INSTANCE ItWr_AlchemyPermPotions2(C_Item)
 					Doc_PrintLine	( nDocID,  0, "Mikstura ¿ycia");
 					Doc_PrintLine	( nDocID,  0, "");
 					Doc_PrintLines	( nDocID,  0, "Ta mikstura potrafi zwiêkszyæ energiê ¿yciow¹ wojownika.");
-					Doc_PrintLines	( nDocID,  0, "W przeciwieñstwie do innych mikstur wszystkie sk³adniki dodajemy dopiero, gdy olej syrianiczny zacznie wrzeæ. Pierwszym sk³adnikiem jest ususzone i zmielone krucze ziele. Nastêpnie dodajemy 3 œwie¿e, silne zio³a uzdrawiaj¹ce. Gotujemy po czym dodajemy psiankê.");
+					Doc_PrintLines	( nDocID,  0, "W przeciwieñstwie do innych mikstur wszystkie sk³adniki dodajemy dopiero, gdy olej syrianiczny zacznie wrzeæ. Pierwszym sk³adnikiem jest ususzone i zmielone krucze ziele (8 sztuk). Nastêpnie dodajemy 3 œwie¿e, silne zio³a uzdrawiaj¹ce. Gotujemy po czym dodajemy dwie psianki.");
 					
 					//2.Seite
 					Doc_SetMargins	( nDocID, -1, 30, 20, 275, 20, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus, links,oben,rechts,unten)
@@ -188,7 +188,7 @@ INSTANCE ItWr_AlchemyPermPotions2(C_Item)
 					Doc_PrintLine	( nDocID,  1, "");
 					Doc_PrintLine	( nDocID,  1, "Mikstura energii");
 					Doc_PrintLine	( nDocID,  1, "");
-					Doc_PrintLines	( nDocID,  1, "Mag znaj¹cy sztukê alchemii mo¿e wzmocniæ sw¹ magiczn¹ moc za pomoc¹ tej mikstury. Podstawowym jej sk³adnikiem jest dragot, który uwalnia esencjê czarnego ziela. Obydwa sk³adniki nale¿y uprzednio zasuszyæ. Na koniec nale¿y dorzuciæ kilka liœci psianki. Wywar powstaje na oleju syrianicznym.");	
+					Doc_PrintLines	( nDocID,  1, "Mag znaj¹cy sztukê alchemii mo¿e wzmocniæ sw¹ magiczn¹ moc za pomoc¹ tej mikstury. Podstawowym jej sk³adnikiem jest dragot (niezbêdne s¹ 2 sztuki), który uwalnia esencjê czarnego ziela (potrzeba 5 sztuk). Obydwa sk³adniki nale¿y uprzednio zasuszyæ. Wywar powstaje na oleju syrianicznym.");	
 					Doc_PrintLine	( nDocID,  1, "");
 					Doc_PrintLine	( nDocID,  1, "");
 					Doc_Show		( nDocID );	

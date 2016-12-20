@@ -60,8 +60,8 @@ instance BAN_1609_Smith (Npc_Default)
 	CreateInvItem (self, ItRw_Bow_Long_02);
 	CreateInvItem (self, ItRw_Bow_Long_03);
 	CreateInvItem (self, ItRw_Bow_Long_04);
-	CreateInvItem (self, ItRw_Bow_Long_05);
-	CreateInvItem (self, ItRw_Bow_Long_07);
+	//CreateInvItem (self, ItRw_Bow_Long_05);
+	//CreateInvItem (self, ItRw_Bow_Long_07);
 	CreateInvItems (self, ItAmArrow, 1000);
 	//-------------Daily Routine-------------
 	daily_routine = Rtn_start_1609;

@@ -34,7 +34,7 @@ Npc_SetTalentSkill (self, NPC_TALENT_CROSSBOW,2);
 Npc_SetTalentSkill (self, NPC_TALENT_1H,7);
 //----------Ekwipunek----------
 EquipItem		(self, ItMw_1H_Sword_03);
-EquipItem		(self, ItRw_Crossbow_02);
+EquipItem		(self, ItRw_Crossbow_02_Z);
 CreateInvItems  (self,ItMiNugget,30);
 //----------Pozostale----------
 fight_tactic	=	FAI_HUMAN_Ranged;

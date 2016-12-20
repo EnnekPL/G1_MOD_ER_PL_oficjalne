@@ -35,7 +35,7 @@ Npc_SetTalentSkill (self, NPC_TALENT_CROSSBOW,2);
 
 //----------Ekwipunek----------
 EquipItem		(self, ItMw_1H_Sword_02);
-EquipItem		(self, ItRw_Crossbow_02);
+EquipItem		(self, ItRw_Crossbow_02_Z);
 CreateInvItems  (self,ItMiNugget,300);
 CreateInvItems  (self,ItLsTorch,2);
 CreateInvItems  (self,ItMi_Stuff_Pipe_01,2);

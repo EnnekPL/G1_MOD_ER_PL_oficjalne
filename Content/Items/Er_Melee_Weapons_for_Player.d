@@ -1050,8 +1050,8 @@ INSTANCE Miecz1H7 (C_Item)
 	visual 				=	"DB_ItMw_1H_Sword_Broad_Smith_02.3DS";
 
 	description			= name;
-	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
-	TEXT[2]				= NAME_Dam_Fire;				COUNT[2]	= damage[DAM_INDEX_FIRE];
+	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
+	//TEXT[2]				= NAME_Dam_Edge;				COUNT[2]	= damage[DAM_EDGE];
 	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
 	TEXT[4] 			= NAME_Mana_needed;				COUNT[4]	= cond_value[1];
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
@@ -1180,6 +1180,130 @@ INSTANCE Plan_Miecz1H9(C_Item) //do znalezienia w skrzyni w Wie¿y Mgie³
 					Doc_PrintLines	( nDocID,  0, "1x pazury trolla ziemnego"					);
 					Doc_Show		( nDocID 	);
 	};
+	
+/****************************************************
+******* Ostrze myrtañskiego ¿o³nierza		
+******* Opis: U handlarzy na rozdzia³ 5.
+*****************************************************/
+INSTANCE Miecz1H_P_1 (C_Item) 
+{	
+	name 				=	"Ostrze myrtañskiego ¿o³nierza";  
+
+	mainflag 			=	ITEM_KAT_NF;
+	flags 				=	ITEM_SWD;	
+	material 			=	MAT_METAL;
+
+	value 				=	2200;
+	
+	damageTotal			= 	80;
+	damagetype			=	DAM_EDGE;
+	range    			=  	115;		
+
+	cond_atr[2]   		= 	ATR_STRENGTH;
+	cond_value[2]  		= 	85;
+	
+	visual 				=	"new_stl_mastersword.3DS";
+
+	description			= name;
+	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
+	//TEXT[2]				= NAME_Dam_Fire;				COUNT[2]	= damage[DAM_INDEX_FIRE];
+	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[4] 			= NAME_Mana_needed;				COUNT[4]	= cond_value[1];
+	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
+};
+
+/****************************************************
+******* Prastary paladyn		
+******* Opis: U handlarzy na rozdzia³ 5.
+*****************************************************/
+INSTANCE Miecz1H_P_2 (C_Item) 
+{	
+	name 				=	"Prastary paladyn";  
+
+	mainflag 			=	ITEM_KAT_NF;
+	flags 				=	ITEM_SWD;	
+	material 			=	MAT_METAL;
+
+	value 				=	3500;
+	
+	damageTotal			= 	90;
+	damagetype			=	DAM_EDGE;
+	range    			=  	115;		
+
+	cond_atr[2]   		= 	ATR_STRENGTH;
+	cond_value[2]  		= 	89;
+	
+	visual 				=	"new_stl_claymore.3DS";
+
+	description			= name;
+	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
+	//TEXT[2]				= NAME_Dam_Fire;				COUNT[2]	= damage[DAM_INDEX_FIRE];
+	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[4] 			= NAME_Mana_needed;				COUNT[4]	= cond_value[1];
+	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
+};
+
+/****************************************************
+******* Miecz krwawego barbarzyñcy		
+******* Opis: U handlarzy na rozdzia³ 6.
+*****************************************************/
+INSTANCE Miecz1H_P_3 (C_Item) 
+{	
+	name 				=	"Miecz krwawego barbarzyñcy";  
+
+	mainflag 			=	ITEM_KAT_NF;
+	flags 				=	ITEM_SWD;	
+	material 			=	MAT_METAL;
+
+	value 				=	4880;
+	
+	damageTotal			= 	100;
+	damagetype			=	DAM_EDGE;
+	range    			=  	120;		
+
+	cond_atr[2]   		= 	ATR_STRENGTH;
+	cond_value[2]  		= 	98;
+	
+	visual 				=	"new_stl_greatsword.3DS"; 
+
+	description			= name;
+	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
+	//TEXT[2]				= NAME_Dam_Fire;				COUNT[2]	= damage[DAM_INDEX_FIRE];
+	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[4] 			= NAME_Mana_needed;				COUNT[4]	= cond_value[1];
+	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
+};
+
+/****************************************************
+******* Topór krwawego barbarzyñcy		
+******* Opis: U handlarzy na rozdzia³ 6.
+*****************************************************/
+INSTANCE Axe1H_P_1 (C_Item) 
+{	
+	name 				=	"Topór krwawego barbarzyñcy";  
+
+	mainflag 			=	ITEM_KAT_NF;
+	flags 				=	ITEM_AXE;	
+	material 			=	MAT_METAL;
+
+	value 				=	5000;
+	
+	damageTotal			= 	102;
+	damagetype			=	DAM_EDGE;
+	range    			=  	115;		
+
+	cond_atr[2]   		= 	ATR_STRENGTH;
+	cond_value[2]  		= 	100;
+	
+	visual 				=	"new_stl_waraxe.3DS";
+
+	description			= name;
+	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
+	//TEXT[2]				= NAME_Dam_Fire;				COUNT[2]	= damage[DAM_INDEX_FIRE];
+	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[2];
+	TEXT[4] 			= NAME_Mana_needed;				COUNT[4]	= cond_value[1];
+	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
+};
 /****************************************************
 ******* JEDNORÊCZNY URIZIEL		
 ******* Opis: s¹ to ró¿ne wersje jednorêcznego URIZIELA    

@@ -259,14 +259,14 @@ if (Npc_GetTalentSkill(hero, NPC_TALENT_MAGE) == 1)
          hero.attribute[ATR_MANA] = hero.attribute[ATR_MANA] + 0;
     };
 	};
-if (Npc_GetTalentSkill(hero, NPC_TALENT_MAGE) == 2) || (hero_regeneruje_mana == true)
+if (Npc_GetTalentSkill(hero, NPC_TALENT_MAGE) == 2) 
 {
      if (hero.attribute[ATR_MANA] < hero.attribute[ATR_MANA_MAX])
     {
-         hero.attribute[ATR_MANA] = hero.attribute[ATR_MANA] + 1;
+         hero.attribute[ATR_MANA] = hero.attribute[ATR_MANA] + 0;
     };
 	};
-if (Npc_GetTalentSkill(hero, NPC_TALENT_MAGE) == 3)
+if (Npc_GetTalentSkill(hero, NPC_TALENT_MAGE) == 3) || (hero_regeneruje_mana == true)
 {
      if (hero.attribute[ATR_MANA] < hero.attribute[ATR_MANA_MAX])
     {
@@ -277,7 +277,7 @@ if (Npc_GetTalentSkill(hero, NPC_TALENT_MAGE) == 3)
 {
      if (hero.attribute[ATR_MANA] < hero.attribute[ATR_MANA_MAX])
     {
-         hero.attribute[ATR_MANA] = hero.attribute[ATR_MANA] + 2;
+         hero.attribute[ATR_MANA] = hero.attribute[ATR_MANA] + 1;
     };
 	};
 	if (Npc_GetTalentSkill(hero, NPC_TALENT_MAGE) == 5)
@@ -291,7 +291,7 @@ if (Npc_GetTalentSkill(hero, NPC_TALENT_MAGE) == 3)
 {
      if (hero.attribute[ATR_MANA] < hero.attribute[ATR_MANA_MAX])
     {
-         hero.attribute[ATR_MANA] = hero.attribute[ATR_MANA] + 3;
+         hero.attribute[ATR_MANA] = hero.attribute[ATR_MANA] + 2;
     };
 	};
 //************PALISADA W OB	

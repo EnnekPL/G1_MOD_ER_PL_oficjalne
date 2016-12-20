@@ -247,7 +247,7 @@ INSTANCE ItFo_Plants_RavenHerb_01(C_Item)
 
 	description			= name;
 	
-	TEXT[1]				= NAME_Bonus_HpMax;				COUNT[1]	= 2;
+	TEXT[1]				= NAME_Bonus_HP;				COUNT[1]	= 25;
 	TEXT[2]				= "Cenny sk³adnik alchemiczny.";
 	TEXT[3]				= "Sk³adnik bazowy mikstury ¿ycia.";	
 	TEXT[5]				= NAME_Value;					COUNT[5]	= Value_Rabenkraut;
@@ -255,7 +255,7 @@ INSTANCE ItFo_Plants_RavenHerb_01(C_Item)
 
 		func void Useraven ()
 		{
-			B_RaiseAttribute	(ATR_HITPOINTS_MAX,	2);
+			B_RaiseAttribute	(ATR_HITPOINTS,	25);
 			PrintDebugNpc 		(PD_ITEM_MOBSI, "Ich esse Rabenkraut");
 		}; 	
 

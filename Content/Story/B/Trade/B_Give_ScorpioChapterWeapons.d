@@ -59,6 +59,8 @@ func void B_Give_ScorpioChapter5Weapons ()
 	CreateInvItem 	(npc,	ItMw_2H_Sword_Heavy_03); 
 	CreateInvItem 	(npc,	ItMw_2H_Sword_Heavy_04); 
 	
+	CreateInvItem 	(npc,	Miecz1H_P_1); 
+	CreateInvItem 	(npc,	Miecz1H_P_2); 
 	CreateInvItems (npc,ItMiNugget,500);
 	//-------- Fernkampfwaffen --------
 	
@@ -80,5 +82,9 @@ func void B_Give_ScorpioChapter6Weapons ()
 
 
 	//-------- Munition --------
-  CreateInvItem (npc,Plan7b); 
+	CreateInvItem (npc,Plan7b); 
+  
+	CreateInvItem 	(npc,	Axe1H_P_1);
+	CreateInvItem 	(npc,	Miecz1H_P_3);	
+	
 };

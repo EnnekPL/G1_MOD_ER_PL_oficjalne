@@ -184,6 +184,9 @@ FUNC VOID DIA_Cord_START_TRAIN_Info()
 func void DIA_Cord_START_TRAINBACK ()
 {
 	Info_ClearChoices	(DIA_Cord_START_TRAIN);
+	var int ilosc;
+	ilosc = Npc_hasitems (self, itminugget);
+	Npc_RemoveInvItems (self, itminugget, ilosc);
 };
 
 FUNC VOID Cord_nauka1h1 ()

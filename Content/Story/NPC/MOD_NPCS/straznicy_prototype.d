@@ -26,7 +26,7 @@ Npc_SetTalentSkill (self,NPC_TALENT_CROSSBOW,2);
 //-------- inventory -------- 
 
 EquipItem (self, ItMw_1H_Sword_04); 
-EquipItem (self, ItRw_Crossbow_02); 
+EquipItem (self, ItRw_Crossbow_02_Z); 
 CreateInvItems (self, ItAmBolt, 100); 
 CreateInvItem (self, ItLsTorch); 
 CreateInvItem (self, ItFo_Potion_Health_02); 

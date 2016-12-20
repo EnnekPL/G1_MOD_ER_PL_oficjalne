@@ -686,6 +686,9 @@ FUNC VOID DIA_Scatty_TRAIN_Info()
 func void DIA_Scatty_TRAIN_BACK()
 {
 	Info_ClearChoices	(DIA_Scatty_TRAIN );
+	var int ilosc;
+	ilosc = Npc_hasitems (self, itminugget);
+	Npc_RemoveInvItems (self, itminugget, ilosc);
 };
 
 func void DIA_Scatty_TRAIN_1h()
@@ -705,6 +708,7 @@ func void DIA_Scatty_TRAIN_1h()
 			AI_Output (self,other,"DIA_Scatty_TRAIN_1h_01_06"); //A, i jeszcze coœ! Niektóre ciosy powoduj¹ wiêksze obra¿enia ni¿ zwykle. Oczywiœcie, jako pocz¹tkuj¹cy masz raczej niewielkie szanse na zadanie krytycznego uderzenia.
 			AI_Output (self,other,"DIA_Scatty_TRAIN_1h_01_07"); //Ale to siê zmieni w miarê czynienia przez ciebie postêpów.
 			B_GiveInvItems(other,self,itminugget,50);
+			
 		};
 	}
 	else

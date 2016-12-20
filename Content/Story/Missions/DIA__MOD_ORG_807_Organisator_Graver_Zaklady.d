@@ -280,12 +280,13 @@ FUNC VOID DIA_Organisator_HELLO3_20ORE()
 gra1 = Hlp_Random (2);
 if (gra1 == 1)
 {
-Print ("Przegra³eœ!");
+AI_Output (self, other ,"DIA_Organisator_HELLO3_LOSE"); //No niestety. Nie uda³o siê. Ruda trafia do mnie!
 B_GiveInvItems (other, self, ItMiNugget, 5);
+Npc_RemoveInvItems (self, ItMiNugget, 5);
 }
 else
 {
-Print ("Wygra³eœ 5 bry³ek!");
+AI_Output (self, other ,"DIA_Organisator_HELLO3_WIN"); //Wygrana nale¿y do ciebie.
 CreateInvItems (self, ItMiNugget, 5);
 B_GiveInvItems (self, other, ItMiNugget, 5);
 };
@@ -318,13 +319,13 @@ FUNC VOID DIA_Organisator_HELLO3_60ORE()
 gra1 = Hlp_Random (2);
 if (gra1 == 1)
 {
-Print ("Przegra³eœ!");
+AI_Output (self, other ,"DIA_Organisator_HELLO3_LOSE"); //No niestety. Nie uda³o siê. Ruda trafia do mnie!
 B_GiveInvItems (other, self, ItMiNugget, 15);
 Npc_RemoveInvItems (self, ItMiNugget, 15);
 }
 else
 {
-Print ("Wygra³eœ 15 bry³ek rudy!");
+AI_Output (self, other ,"DIA_Organisator_HELLO3_WIN"); //Wygrana nale¿y do ciebie.
 CreateInvItems (self, ItMiNugget, 15);
 B_GiveInvItems (self, other, ItMiNugget, 15);
 };
@@ -357,19 +358,19 @@ FUNC VOID DIA_Organisator_HELLO3_150ORE()
 gra1 = Hlp_Random (3);
 if (gra1 == 1)
 {
-Print ("Przegra³eœ!");
+AI_Output (self, other ,"DIA_Organisator_HELLO3_LOSE"); //No niestety. Nie uda³o siê. Ruda trafia do mnie!
 B_GiveInvItems (other, self, ItMiNugget, 30);
 Npc_RemoveInvItems (self, ItMiNugget, 30);
 };
 if (gra1 == 2)
 {
-Print ("Wygra³eœ 30 bry³ek rudy!");
+AI_Output (self, other ,"DIA_Organisator_HELLO3_WIN"); //Wygrana nale¿y do ciebie.
 CreateInvItems (self, ItMiNugget, 30);
 B_GiveInvItems (self, other, ItMiNugget, 30);
 };
 if (gra1 == 3)
 {
-Print ("Przegra³eœ!");
+AI_Output (self, other ,"DIA_Organisator_HELLO3_LOSE"); //No niestety. Nie uda³o siê. Ruda trafia do mnie!
 B_GiveInvItems (other, self, ItMiNugget, 30);
 Npc_RemoveInvItems (self, ItMiNugget, 30);
 };
@@ -402,19 +403,19 @@ FUNC VOID DIA_Organisator_HELLO3_300ore()
 gra1 = Hlp_Random (3);
 if (gra1 == 1)
 {
-Print ("Przegra³eœ!");
+AI_Output (self, other ,"DIA_Organisator_HELLO3_LOSE"); //No niestety. Nie uda³o siê. Ruda trafia do mnie!
 B_GiveInvItems (other, self, ItMiNugget, 50);
 Npc_RemoveInvItems (self, ItMiNugget, 50);
 };
 if (gra1 == 2)
 {
-Print ("Wygra³eœ 50 bry³ek rudy!");
+AI_Output (self, other ,"DIA_Organisator_HELLO3_WIN"); //Wygrana nale¿y do ciebie.
 CreateInvItems (self, ItMiNugget, 50);
 B_GiveInvItems (self, other, ItMiNugget, 50);
 };
 if (gra1 == 3)
 {
-Print ("Przegra³eœ!");
+AI_Output (self, other ,"DIA_Organisator_HELLO3_LOSE"); //No niestety. Nie uda³o siê. Ruda trafia do mnie!
 B_GiveInvItems (other, self, ItMiNugget, 50);
 Npc_RemoveInvItems (self, ItMiNugget, 50);
 };
@@ -451,7 +452,7 @@ FUNC VOID DIA_Organisator_HELLO3_500Ore()
 gra1 = Hlp_Random (7);
 if (gra1 == 1)
 {
-Print ("Przegra³eœ!");
+AI_Output (self, other ,"DIA_Organisator_HELLO3_LOSE"); //No niestety. Nie uda³o siê. Ruda trafia do mnie!
 B_GiveInvItems (other, self, ItMiNugget, 500);
 };
 if (gra1 == 2)
@@ -462,7 +463,7 @@ B_GiveInvItems (self, other, ItMiNugget, 500);
 };
 if (gra1 == 3)
 {
-Print ("Przegra³eœ!");
+AI_Output (self, other ,"DIA_Organisator_HELLO3_LOSE"); //No niestety. Nie uda³o siê. Ruda trafia do mnie!
 B_GiveInvItems (other, self, ItMiNugget, 500);
 };
 if (gra1 == 4)
@@ -479,12 +480,12 @@ B_GiveInvItems (self, other, ItMiNugget, 500);
 };
 if (gra1 == 6)
 {
-Print ("Przegra³eœ!");
+AI_Output (self, other ,"DIA_Organisator_HELLO3_LOSE"); //No niestety. Nie uda³o siê. Ruda trafia do mnie!
 B_GiveInvItems (other, self, ItMiNugget, 500);
 };
 if (gra1 == 7)
 {
-Print ("Przegra³eœ!");
+AI_Output (self, other ,"DIA_Organisator_HELLO3_LOSE"); //No niestety. Nie uda³o siê. Ruda trafia do mnie!
 B_GiveInvItems (other, self, ItMiNugget, 500);
 };
 };

@@ -138,7 +138,7 @@ INSTANCE ItRw_Bow_Long_01 (C_Item)
 	flags 				=	ITEM_BOW|ITEM_MULTI;
 	material 			=	MAT_WOOD;
 
-	value 				=	240;//120;
+	value 				=	300;//120;
 
 	damageTotal			=	40;
 	damagetype			=	DAM_POINT;
@@ -162,7 +162,7 @@ INSTANCE ItRw_Bow_Long_02 (C_Item)
 	flags 				=	ITEM_BOW|ITEM_MULTI;
 	material 			=	MAT_WOOD;
 
-	value 				=	280;//140;
+	value 				=	370;//140;
 
 	damageTotal			=	44;
 	damagetype			=	DAM_POINT;
@@ -186,7 +186,7 @@ INSTANCE ItRw_Bow_Long_03 (C_Item)
 	flags 				=	ITEM_BOW|ITEM_MULTI;
 	material 			=	MAT_WOOD;
 
-	value 				=	320;//160;
+	value 				=	650;//160;
 
 	damageTotal			=	48;
 	damagetype			=	DAM_POINT;
@@ -210,7 +210,7 @@ INSTANCE ItRw_Bow_Long_04 (C_Item)
 	flags 				=	ITEM_BOW|ITEM_MULTI;
 	material 			=	MAT_WOOD;
 
-	value 				=	360;//180;
+	value 				=	800;//180;
 
 	damageTotal			=	52;
 	damagetype			=	DAM_POINT;
@@ -234,7 +234,7 @@ INSTANCE ItRw_Bow_Long_05 (C_Item)
 	flags 				=	ITEM_BOW|ITEM_MULTI;
 	material 			=	MAT_WOOD;
 
-	value 				=	440;//220;
+	value 				=	1150;//220;
 
 	damageTotal			=	56;
 	damagetype			=	DAM_POINT;
@@ -249,6 +249,28 @@ INSTANCE ItRw_Bow_Long_05 (C_Item)
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
 
+INSTANCE ItRw_Bow_Long_05_Z (C_Item)
+{
+	name 				=	"Zu¿yte wilcze k³y";
+
+	mainflag 			=	ITEM_KAT_FF;
+	flags 				=	ITEM_BOW|ITEM_MULTI;
+	material 			=	MAT_WOOD;
+
+	value 				=	25;//220;
+
+	damageTotal			=	56;
+	damagetype			=	DAM_POINT;
+	munition			=	ItAmArrow;
+	cond_atr[2]   		= 	ATR_DEXTERITY;
+	cond_value[2]  		= 	44;
+	visual 				=	"ItRw_Bow_Long_05.mms";
+
+	description			= name;
+	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
+	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
+	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
+};
 /******************************************************************************************/
 INSTANCE ItRw_Bow_Long_06 (C_Item)
 {
@@ -258,7 +280,7 @@ INSTANCE ItRw_Bow_Long_06 (C_Item)
 	flags 				=	ITEM_BOW|ITEM_MULTI;
 	material 			=	MAT_WOOD;
 
-	value 				=	480;//240;
+	value 				=	1450;//240;
 
 	damageTotal			=	60;
 	damagetype			=	DAM_POINT;
@@ -281,7 +303,7 @@ INSTANCE ItRw_Bow_Long_07 (C_Item)
 	flags 				=	ITEM_BOW|ITEM_MULTI;
 	material 			=	MAT_WOOD;
 
-	value 				=	520;//260;
+	value 				=	1896;//260;
 
 	damageTotal			=	64;
 	damagetype			=	DAM_POINT;
@@ -305,7 +327,7 @@ INSTANCE ItRw_Bow_Long_08 (C_Item)
 	flags 				=	ITEM_BOW|ITEM_MULTI;
 	material 			=	MAT_WOOD;
 
-	value 				=	560;//280;
+	value 				=	2250;//280;
 
 	damageTotal			=	68;
 	damagetype			=	DAM_POINT;
@@ -329,7 +351,7 @@ INSTANCE ItRw_Bow_Long_09 (C_Item)
 	flags 				=	ITEM_BOW|ITEM_MULTI;
 	material 			=	MAT_WOOD;
 
-	value 				=	600;//300;
+	value 				=	2999;//300;
 
 	damageTotal			=	72;
 	damagetype			=	DAM_POINT;
@@ -355,7 +377,7 @@ INSTANCE ItRw_Bow_War_01 (C_Item)
 	flags 				=	ITEM_BOW|ITEM_MULTI;
 	material 			=	MAT_WOOD;
 
-	value 				=	640;//320;
+	value 				=	3500;//320;
 
 	damageTotal			=	76;
 	damagetype			=	DAM_POINT;
@@ -379,7 +401,31 @@ INSTANCE ItRw_Bow_War_02 (C_Item)
 	flags 				=	ITEM_BOW|ITEM_MULTI;
 	material 			=	MAT_WOOD;
 
-	value 				=	680;//340;
+	value 				=	3980;//340;
+
+	damageTotal			=	79;
+	damagetype			=	DAM_POINT;
+	munition			=	ItAmArrow;
+	cond_atr[2]   		= 	ATR_DEXTERITY;
+	cond_value[2]  		= 	63;
+	visual 				=	"ItRw_Bow_War_02.mms";
+
+	description			= name;
+	TEXT[2]				= NAME_Damage;					COUNT[2]	= damageTotal;
+	TEXT[3] 			= NAME_Dex_needed;				COUNT[3]	= cond_value[2];
+	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
+};
+
+/******************************************************************************************/
+INSTANCE ItRw_Bow_War_02_Z (C_Item)
+{
+	name 				=	"Zu¿yty pogromca orków";
+
+	mainflag 			=	ITEM_KAT_FF;
+	flags 				=	ITEM_BOW|ITEM_MULTI;
+	material 			=	MAT_WOOD;
+
+	value 				=	25;//340;
 
 	damageTotal			=	79;
 	damagetype			=	DAM_POINT;
@@ -403,7 +449,7 @@ INSTANCE ItRw_Bow_War_03 (C_Item)
 	flags 				=	ITEM_BOW|ITEM_MULTI;
 	material 			=	MAT_WOOD;
 
-	value 				=	720;//360;
+	value 				=	4200;//360;
 
 	damageTotal			=	82;
 	damagetype			=	DAM_POINT;
@@ -427,7 +473,7 @@ INSTANCE ItRw_Bow_War_04 (C_Item)
 	flags 				=	ITEM_BOW|ITEM_MULTI;
 	material 			=	MAT_WOOD;
 
-	value 				=	760;//380;
+	value 				=	4500;//380;
 
 	damageTotal			=	85;
 	damagetype			=	DAM_POINT;
@@ -451,7 +497,7 @@ INSTANCE ItRw_Bow_War_05 (C_Item)
 	flags 				=	ITEM_BOW|ITEM_MULTI;
 	material 			=	MAT_WOOD;
 
-	value 				=	1000;//500;
+	value 				=	5000;//500;
 
 	damageTotal			=	88;
 	damagetype			=	DAM_POINT;
@@ -479,7 +525,7 @@ INSTANCE ItRw_Crossbow_01(C_Item)
 	flags 				=	ITEM_CROSSBOW|ITEM_MULTI;
 	material 			=	MAT_WOOD;
 
-	value 				=	180;
+	value 				=	600;
 
 	damageTotal			= 	50;
 	damagetype			=	DAM_POINT;
@@ -540,7 +586,7 @@ INSTANCE ItRw_Crossbow_02(C_Item)
 	flags 				=	ITEM_CROSSBOW|ITEM_MULTI;
 	material 			=	MAT_WOOD;
 
-	value 				=	780;//390;
+	value 				=	3400;//390;
 
 	damageTotal			= 	75;
 	damagetype			=	DAM_POINT;
@@ -560,6 +606,33 @@ INSTANCE ItRw_Crossbow_02(C_Item)
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
 
+INSTANCE ItRw_Crossbow_02_Z(C_Item)
+{
+	name 				=	"Zu¿yta kusza";
+
+	mainflag 			=	ITEM_KAT_FF;
+	flags 				=	ITEM_CROSSBOW|ITEM_MULTI;
+	material 			=	MAT_WOOD;
+
+	value 				=	10;//390;
+
+	damageTotal			= 	75;
+	damagetype			=	DAM_POINT;
+	munition			=	ItAmBolt;
+	cond_atr[2]   		= 	ATR_DEXTERITY;
+	cond_value[2]  		= 	45;
+	
+	cond_atr[1]   		= 	ATR_STRENGTH;
+	cond_value[1]  		= 	50;
+	visual 				=	"ItRwCrossbow2.mms";
+
+	description			= name;
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Dex_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[1];
+	TEXT[4] 			= "Kusza lekka";
+	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
+};
 /******************************************************************************************/
 //edit by Nocturn
 
@@ -571,7 +644,7 @@ INSTANCE ItRw_Crossbow_03(C_Item)
 	flags 				=	ITEM_CROSSBOW|ITEM_MULTI;
 	material 			=	MAT_WOOD;
 
-	value 				=	1500;//500;
+	value 				=	4000;//500;
 
 	damageTotal			= 	85;
 	damagetype			=	DAM_POINT;
@@ -591,6 +664,36 @@ INSTANCE ItRw_Crossbow_03(C_Item)
 	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
 };
 
+
+INSTANCE ItRw_Crossbow_03_Z(C_Item)
+{
+	name 				=	"Zu¿yta ciê¿ka kusza";
+
+	mainflag 			=	ITEM_KAT_FF;
+	flags 				=	ITEM_CROSSBOW|ITEM_MULTI;
+	material 			=	MAT_WOOD;
+
+	value 				=	25;//500;
+
+	damageTotal			= 	85;
+	damagetype			=	DAM_POINT;
+	munition			=	ItAmBolt;
+	cond_atr[2]   		= 	ATR_DEXTERITY;
+	cond_value[2]  		= 	60;
+	
+	cond_atr[1]   		= 	ATR_STRENGTH;
+	cond_value[1]  		= 	70;
+	visual 				=	"ItRwCrossbow3.mms";
+
+	description			= name;
+	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;
+	TEXT[2] 			= NAME_Dex_needed;				COUNT[2]	= cond_value[2];
+	TEXT[3] 			= NAME_Str_needed;				COUNT[3]	= cond_value[1];
+	TEXT[4] 			= "Kusza ciê¿ka";
+	TEXT[5]				= NAME_Value;					COUNT[5]	= value;
+};
+
+
 /******************************************************************************************/
 //edit by Nocturn
 
@@ -602,7 +705,7 @@ INSTANCE ItRw_Crossbow_04(C_Item)
 	flags 				=	ITEM_CROSSBOW|ITEM_MULTI;
 	material 			=	MAT_WOOD;
 
-	value 				=	2000;//650;
+	value 				=	6000;//650;
 
 	damageTotal			= 	100;
 	damagetype			=	DAM_POINT;
@@ -681,18 +784,18 @@ INSTANCE BowFire1 (C_Item)
 	flags 				=	ITEM_BOW|ITEM_MULTI;
 	material 			=	MAT_WOOD;
 
-	value 				=	1500;
+	value 				=	2000;
 
 	damageTotal			=	50;
-	damage[DAM_INDEX_FIRE]	=	 25;
+	damage[DAM_INDEX_FIRE]	=	 5;
 	damagetype			=	DAM_POINT|DAM_FIRE;
 	munition			=	ItAmArrow;
 	
 	cond_atr[2]   		= 	ATR_DEXTERITY;
-	cond_value[2]  		= 	40;
+	cond_value[2]  		= 	55;
 	
 	cond_atr[1]   		= 	ATR_MANA_MAX;
-	cond_value[1]  		= 	50;
+	cond_value[1]  		= 	15;
 	
 	
 	visual 				=	"ItRw_Bow_Long_08.mms";
@@ -712,18 +815,18 @@ INSTANCE BowFire2 (C_Item)
 	flags 				=	ITEM_BOW|ITEM_MULTI;
 	material 			=	MAT_WOOD;
 
-	value 				=	2300;
+	value 				=	2500;
 
-	damageTotal			=	70;
+	damageTotal			=	60;
 	damagetype			=	DAM_POINT|DAM_FIRE;
 	munition			=	ItAmArrow;
 	cond_atr[2]   		= 	ATR_DEXTERITY;
-	cond_value[2]  		= 	30;
+	cond_value[2]  		= 	65;
 	
-	damage[DAM_INDEX_FIRE]	=	 30;
+	damage[DAM_INDEX_FIRE]	=	 10;
 	
 	cond_atr[1]   		= 	ATR_MANA_MAX;
-	cond_value[1]  		= 	60;
+	cond_value[1]  		= 	20;
 	
 	visual 				=	"ItRw_Bow_Long_07.mms";
 
@@ -748,11 +851,11 @@ INSTANCE BowFire3 (C_Item)
 	damagetype			=	DAM_POINT|DAM_FIRE;
 	munition			=	ItAmArrow;
 	cond_atr[2]   		= 	ATR_DEXTERITY;
-	cond_value[2]  		= 	110;
-	damage[DAM_INDEX_FIRE]	=	 35;
+	cond_value[2]  		= 	85;
+	damage[DAM_INDEX_FIRE]	=	 15;
 	
 	cond_atr[1]   		= 	ATR_MANA_MAX;
-	cond_value[1]  		= 	100;
+	cond_value[1]  		= 	25;
 	
 	visual 				=	"ItRw_Bow_Long_06.mms";
 
@@ -771,19 +874,19 @@ INSTANCE BowMagic1 (C_Item)
 	flags 				=	ITEM_BOW|ITEM_MULTI;
 	material 			=	MAT_WOOD;
 
-	value 				=	600;
+	value 				=	3000;
 
-	damageTotal			=	90;
+	damageTotal			=	65;
 	damagetype			=	DAM_POINT|DAM_MAGIC;
 	munition			=	ItAmArrow;
 	cond_atr[2]   		= 	ATR_DEXTERITY;
-	cond_value[2]  		= 	100;
-	damage[DAM_INDEX_MAGIC]	=	 10;
+	cond_value[2]  		= 	70;
+	damage[DAM_INDEX_MAGIC]	=	 5;
 	visual 				=	"ItRw_Bow_Long_04.mms";
 	spell				= 	SPL_THUNDERBALL;
 	
 	cond_atr[1]   		= 	ATR_MANA_MAX;
-	cond_value[1]  		= 	130;
+	cond_value[1]  		= 	20;
 
 	description			= name;
 	TEXT[1]				= NAME_Damage;					COUNT[1]	= damageTotal;

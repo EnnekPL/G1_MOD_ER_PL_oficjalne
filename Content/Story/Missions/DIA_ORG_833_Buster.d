@@ -61,7 +61,10 @@ INSTANCE DIA_ORG_833_Buster3 (C_INFO)
 
 FUNC INT DIA_ORG_833_Buster3_Condition()
 {	
-	return Npc_KnowsInfo(hero,DIA_ORG_833_Buster);
+	if (Npc_GetTalentSkill(other, NPC_TALENT_ACROBAT) != 1) && Npc_KnowsInfo(hero,DIA_ORG_833_Buster)
+	{
+	return TRUE; 
+	};
 };
 
 func VOID DIA_ORG_833_Buster3_Info()
@@ -70,7 +73,7 @@ func VOID DIA_ORG_833_Buster3_Info()
 
 	Info_ClearChoices	( DIA_ORG_833_Buster3 );
 	Info_AddChoice		( DIA_ORG_833_Buster3, DIALOG_BACK													, DIA_ORG_833_Buster_Back );
-	Info_AddChoice		( DIA_ORG_833_Buster3, B_BuildLearnString(NAME_LearnAcrobat, LPCOST_TALENT_ACROBAT,0)	, DIA_ORG_833_Buster_Train1 );
+	Info_AddChoice		( DIA_ORG_833_Buster3, B_BuildLearnString(NAME_LearnAcrobat, LPCOST_TALENT_ACROBAT,500)	, DIA_ORG_833_Buster_Train1 );
 	var int wpis_akrobatyka;
 	
 	if (wpis_akrobatyka == false)
@@ -86,6 +89,8 @@ func VOID DIA_ORG_833_Buster3_Info()
 FUNC void DIA_ORG_833_Buster_Train1()
 {
 	Info_ClearChoices	( DIA_ORG_833_Buster3 );
+	if (Npc_HasItems (hero, itminugget) >=500)
+	{
 	
 	if (B_GiveSkill(other,NPC_TALENT_ACROBAT , 1, LPCOST_TALENT_ACROBAT))
 	{
@@ -94,6 +99,13 @@ FUNC void DIA_ORG_833_Buster_Train1()
 		AI_Output (self, other,"DIA_ORG_833_Buster3_02_03"); //Poka¿ê ci w jaki sposób mo¿na z³agodziæ efekt upadku z du¿ej wysokoœci. Tylko nie myœl sobie, ¿e bêdziesz móg³ skakaæ bóg wie sk¹d!
 		AI_Output (self, other,"DIA_ORG_833_Buster3_02_04"); //Akrobatyka przyda ci siê równie¿ w trakcie walki. Poka¿ê ci jak bardzo szybko zmniejszyæ lub zwiêkszyæ odleg³oœæ dziel¹c¹ ciê od przeciwnika. Powodzenia! 
 	};		
+	B_GiveInvItems (hero, self, itminugget, 500);
+	Npc_RemoveInvItems (self, itminugget, 500);
+	}
+	else
+	{
+	AI_Output (self, other,"DIA_ORG_833_Buster3_02_NO_ORE"); //Musisz mi zap³aciæ. Inaczej niczego ciê nie nauczê!
+	};
 };  
 
 

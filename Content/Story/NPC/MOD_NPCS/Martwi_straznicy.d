@@ -86,7 +86,7 @@ Npc_SetTalentSkill (self, NPC_TALENT_CROSSBOW,2);
 
 //----------Ekwipunek----------
 EquipItem		(self, ItMw_1H_LightGuardsSword_03);
-EquipItem		(self, ItRw_Crossbow_02);
+EquipItem		(self, ItRw_Crossbow_02_Z);
 CreateInvItems  (self,ItFoApple,5);
 CreateInvItems  (self,ItFocheese,3);
 CreateInvItems  (self,ItFoMutton,3);
@@ -138,7 +138,7 @@ Npc_SetTalentSkill (self, NPC_TALENT_CROSSBOW,2);
 
 //----------Ekwipunek----------
 EquipItem		(self, ItMw_1H_LightGuardsSword_03);
-EquipItem		(self, ItRw_Crossbow_02);
+EquipItem		(self, ItRw_Crossbow_02_Z);
 CreateInvItems  (self,ItFoApple,5);
 CreateInvItems  (self,ItFocheese,3);
 CreateInvItems  (self,ItFoMutton,3);
@@ -190,7 +190,7 @@ Npc_SetTalentSkill (self, NPC_TALENT_CROSSBOW,2);
 
 //----------Ekwipunek----------
 EquipItem		(self, ItMw_1H_LightGuardsSword_03);
-EquipItem		(self, ItRw_Crossbow_02);
+EquipItem		(self, ItRw_Crossbow_02_Z);
 CreateInvItems  (self,ItFoApple,5);
 CreateInvItems  (self,ItFocheese,3);
 CreateInvItems  (self,ItFoMutton,3);
@@ -242,7 +242,7 @@ Npc_SetTalentSkill (self, NPC_TALENT_CROSSBOW,2);
 
 //----------Ekwipunek----------
 EquipItem		(self, ItMw_1H_LightGuardsSword_03);
-EquipItem		(self, ItRw_Crossbow_02);
+EquipItem		(self, ItRw_Crossbow_02_Z);
 CreateInvItems  (self,ItFoApple,5);
 CreateInvItems  (self,ItFocheese,3);
 CreateInvItems  (self,ItFoMutton,3);

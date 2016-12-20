@@ -52,7 +52,7 @@ instance BAN_1613_Doyle (Npc_Default)
 	CreateInvItem (self, ItFoLoaf);
 	CreateInvItem (self, ItAt_Claws_01);
 	EquipItem (self, Miecz1H4);
-	EquipItem (self, ItRw_Bow_War_03);
+	EquipItem (self, ItRw_Bow_War_02_Z);
 	CreateInvItems (self, ItAmArrow, 20);
 
 	//-------------Daily Routine-------------

@@ -35,7 +35,7 @@ Npc_SetTalentSkill (self, NPC_TALENT_BOW,2);
 
 //----------Ekwipunek----------
 EquipItem		(self, ItMw_1H_LightGuardsSword_03_Old);
-EquipItem		(self, ItRw_Bow_Long_04);
+EquipItem		(self, ItRw_Bow_Long_05_Z);
 CreateInvItems  (self,ItFocheese,3);
 CreateInvItems  (self,ItForice,2);
 CreateInvItems  (self,ItFoMutton,3);

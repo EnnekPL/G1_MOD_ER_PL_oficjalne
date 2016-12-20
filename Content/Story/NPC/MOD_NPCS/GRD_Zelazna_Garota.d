@@ -41,7 +41,7 @@ instance GRD_8800_Gardist (Npc_Default)
 	//-------- inventory --------
 	
 	EquipItem	(self, ItMw_1H_Sword_04);
-	EquipItem	(self, ItRw_Crossbow_03);
+	EquipItem	(self, ItRw_Crossbow_03_Z);
 	CreateInvItems	(self, ItAmBolt, 50);
 	CreateInvItem	(self, ItFoCheese);
 	CreateInvItem	(self, ItFoApple);
@@ -104,7 +104,7 @@ instance GRD_8801_Gardist (Npc_Default)
 	//-------- inventory --------
 	
 	EquipItem	(self, ItMw_1H_Sword_05);
-	EquipItem	(self, ItRw_Crossbow_02);
+	EquipItem	(self, ItRw_Crossbow_02_Z);
 	CreateInvItems	(self, ItAmBolt, 50);
 	CreateInvItem	(self, ItFoCheese);
 	CreateInvItem	(self, ItFoApple);

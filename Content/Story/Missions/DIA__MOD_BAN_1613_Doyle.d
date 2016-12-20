@@ -1842,6 +1842,9 @@ Info_ClearChoices	(ORG_867_Doyle_TEACH_2H_START);
 func void ORG_867_Doyle_TEACH_2H_STARTBACK ()
 {
 	Info_ClearChoices	(ORG_867_Doyle_TEACH_2H_START);
+	var int ilosc;
+	ilosc = Npc_hasitems (self, itminugget);
+	Npc_RemoveInvItems (self, itminugget, ilosc);
 };
 
 FUNC VOID Doyle_teach_2h1 ()

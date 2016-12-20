@@ -388,8 +388,7 @@ INSTANCE DIA_BaalIsidro_NAPASC (C_INFO)
 
 FUNC INT DIA_BaalIsidro_NAPASC_Condition()
 {
-    if (zastraszenie_isidro == true)
-    && (Npc_KnowsInfo (hero, DIA_Butch_CzasZaplaty))
+    if (Npc_KnowsInfo (hero, DIA_Butch_CzasZaplaty)) && (Butch_Choice == Butch_TakeQuest)
     {
     return TRUE;
     };

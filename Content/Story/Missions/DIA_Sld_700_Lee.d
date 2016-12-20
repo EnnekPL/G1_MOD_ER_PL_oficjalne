@@ -712,6 +712,9 @@ Info_ClearChoices	(SLD_700_Lee_TEACH_2H_START);
 func void SLD_700_Lee_TEACH_2H_STARTBACK ()
 {
 	Info_ClearChoices	(SLD_700_Lee_TEACH_2H_START);
+	var int ilosc;
+	ilosc = Npc_hasitems (self, itminugget);
+	Npc_RemoveInvItems (self, itminugget, ilosc);
 };
 
 FUNC VOID Lee_teach_2h1 ()

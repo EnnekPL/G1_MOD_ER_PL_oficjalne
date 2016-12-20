@@ -263,8 +263,8 @@ INSTANCE PC_Rockefeller(NPC_DEFAULT)
 	CreateInvItem(self,ItRw_Bow_War_05);
 	//Armbrust
 	CreateInvItem(self,ItRw_Crossbow_01);
-	CreateInvItem(self,ItRw_Crossbow_02);
-	CreateInvItem(self,ItRw_Crossbow_03);
+	CreateInvItem(self,ItRw_Crossbow_02_Z);
+	CreateInvItem(self,ItRw_Crossbow_03_Z);
 	CreateInvItem(self,ItRw_Crossbow_04);
 
 	//Orc

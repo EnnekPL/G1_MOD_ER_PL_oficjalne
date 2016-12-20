@@ -44,7 +44,7 @@ Npc_SetTalentSkill (self, NPC_TALENT_1H,7);
 
 //----------Ekwipunek----------
 EquipItem		(self, Miecz1H2);
-EquipItem		(self, ItRw_Bow_Long_08);
+EquipItem		(self, ItRw_Bow_Long_05_Z);
 CreateInvItems  (self,ItFoApple,5);
 CreateInvItems  (self,ItFoLoaf,1);
 CreateInvItems  (self,ItFoMutton,12);
@@ -116,7 +116,7 @@ Npc_SetTalentSkill (self, NPC_TALENT_1H,7);
 
 EquipItem		(self, Helmet1);
 EquipItem		(self, ItMw_1H_Sword_03);
-EquipItem		(self, ItRw_Bow_Long_08);
+EquipItem		(self, ItRw_Bow_Long_05_Z);
 CreateInvItems  (self,ItAt_Teeth_01,5);
 CreateInvItems  (self,ItAt_Wolf_01,5);
 CreateInvItems  (self,ItAt_Claws_01,14);
@@ -173,7 +173,7 @@ Npc_SetTalentSkill (self, NPC_TALENT_BOW,2);
 Npc_SetTalentSkill (self, NPC_TALENT_2H,7);
 //----------Ekwipunek----------
 EquipItem		(self, ItMw_2H_Sword_03);
-EquipItem		(self, ItRw_Bow_Long_05);
+EquipItem		(self, ItRw_Bow_Long_05_Z);
 CreateInvItems  (self,ItAt_Teeth_01,5);
 CreateInvItems  (self,ItFoLoaf,3);
 CreateInvItems  (self,ItFoMutton,3);
@@ -245,7 +245,7 @@ Npc_SetTalentSkill (self, NPC_TALENT_1H,7);
 
 //----------Ekwipunek----------
 EquipItem		(self, ItMw_2H_Sword_03);
-//EquipItem		(self, ItRw_Bow_Long_08);
+//EquipItem		(self, ItRw_Bow_Long_05_Z);
 CreateInvItems  (self,ItAt_Teeth_01,5);
 CreateInvItems  (self,ItAt_Wolf_01,5);
 CreateInvItems  (self,ItAt_Claws_01,33);
@@ -312,7 +312,7 @@ Npc_SetTalentSkill (self, NPC_TALENT_2H,7);
 
 //----------Ekwipunek----------
 //EquipItem		(self, ItMw_2H_Sword_02);
-//EquipItem		(self, ItRw_Bow_Long_08);
+//EquipItem		(self, ItRw_Bow_Long_05_Z);
 CreateInvItems  (self,ItAt_Teeth_01,5);
 CreateInvItems  (self,ItFoApple,5);
 CreateInvItems  (self,ItFoLoaf,3);
@@ -371,7 +371,7 @@ Npc_SetTalentSkill (self, NPC_TALENT_1H,7);
 
 //EquipItem		(self, Helmet1);
 EquipItem		(self, ItMw_1H_Sword_03);
-EquipItem		(self, ItRw_Bow_Long_05);
+EquipItem		(self, ItRw_Bow_Long_05_Z);
 CreateInvItems  (self,ItAt_Teeth_01,5);
 CreateInvItems  (self,ItMiNugget,145);
 //----------Pozostale----------
@@ -429,7 +429,7 @@ Npc_SetTalentSkill (self, NPC_TALENT_1H,7);
 
 //----------Ekwipunek----------
 EquipItem		(self, ItMw_1H_Sword_02);
-EquipItem		(self, ItRw_Bow_Long_06);
+EquipItem		(self, ItRw_Bow_Long_05_Z);
 CreateInvItems  (self,ItAt_Teeth_01,5);
 CreateInvItems  (self,ItFoApple,5);
 CreateInvItems  (self,ItMI_saw,2);

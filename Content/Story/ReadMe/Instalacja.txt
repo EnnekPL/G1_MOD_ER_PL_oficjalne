@@ -1,0 +1,3 @@
+Nale¿y podmieniæ pliki znajduj¹ce siê w katalogu z gra Gothic wraz z zainstalowan¹ ER 1.4.8. 
+Œcie¿ka plików mod gothic/data/modvdf
+Œcie¿ka pliku ini gothic/system

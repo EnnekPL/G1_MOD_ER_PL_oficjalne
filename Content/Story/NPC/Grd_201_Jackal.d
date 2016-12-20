@@ -38,7 +38,7 @@ instance GRD_201_Jackal (Npc_Default)
 			
 	//-------- inventory --------
 	EquipItem		(self, ItMw_1H_Axe_03);
-	EquipItem		(self, ItRw_Crossbow_03);
+	EquipItem		(self, ItRw_Crossbow_03_Z);
 	CreateInvItems	(self, ItAmBolt, 15);
 
 	//-------------Daily Routine-------------

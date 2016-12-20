@@ -1477,6 +1477,9 @@ FUNC VOID DIA_Bula_SKILLS1H_Info()
 func void DIA_Bula_SKILLS1HBACK ()
 {
 	Info_ClearChoices	(DIA_Bula_SKILLS1H);
+	var int ilosc;
+	ilosc = Npc_hasitems (self, itminugget);
+	Npc_RemoveInvItems (self, itminugget, ilosc);
 };
 
 FUNC VOID testy_1h1 ()

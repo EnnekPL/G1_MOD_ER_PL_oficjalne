@@ -420,17 +420,17 @@ const int	LPCOST_TALENT_1H_2			=	40;
 const int	LPCOST_TALENT_2H_1			=	20;	
 const int	LPCOST_TALENT_2H_2			=	40;	
 
-const int	LPCOST_TALENT_BOW_1			=	20;	
-const int	LPCOST_TALENT_BOW_2			=	40;	
-const int	LPCOST_TALENT_CROSSBOW_1	=	20;	
-const int	LPCOST_TALENT_CROSSBOW_2	=	40;	
+const int	LPCOST_TALENT_BOW_1			=	10;	
+const int	LPCOST_TALENT_BOW_2			=	20;	
+const int	LPCOST_TALENT_CROSSBOW_1	=	10;	
+const int	LPCOST_TALENT_CROSSBOW_2	=	20;	
 
-const int	LPCOST_TALENT_ACROBAT		=	10;	
-const int	LPCOST_TALENT_SNEAK			=	10;	
-const int	LPCOST_TALENT_PICKLOCK_1	=	10;	
-const int	LPCOST_TALENT_PICKLOCK_2	=	20;	
-const int	LPCOST_TALENT_PICKPOCKET_1	=	10;	
-const int	LPCOST_TALENT_PICKPOCKET_2	=	20;	
+const int	LPCOST_TALENT_ACROBAT		=	5;	
+const int	LPCOST_TALENT_SNEAK			=	0;	
+const int	LPCOST_TALENT_PICKLOCK_1	=	0;	
+const int	LPCOST_TALENT_PICKLOCK_2	=	0;	
+const int	LPCOST_TALENT_PICKPOCKET_1	=	0;	
+const int	LPCOST_TALENT_PICKPOCKET_2	=	0;	
 
 const int   LPCOST_TALENT_LIFE_1        =   8;
 const int   LPCOST_TALENT_LIFE_2        =   15;

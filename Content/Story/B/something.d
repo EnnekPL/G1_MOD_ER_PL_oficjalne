@@ -81,8 +81,8 @@ func void Mod_KupAtrybut (var C_NPC typ, var int ATR, var int AtrPlus)
 	//wyliczanie kosztów atrybutu MANA MAX
 	if (typ.attribute[ATR_MANA_MAX] >= 90)
 	{
-	koszt_punktu_mana = 2;
-	public_man_cost = 2;
+	koszt_punktu_mana = 3;
+	public_man_cost = 3;
 	}
 	else if (typ.attribute[ATR_MANA_MAX] >= 75)
 	{
@@ -114,6 +114,7 @@ func void Mod_KupAtrybut (var C_NPC typ, var int ATR, var int AtrPlus)
 				if (Npc_HasItems (hero, ItmiNugget) >=AtrPlus*koszt_punktu_str*10) 
 				{
 				B_GiveInvItems  (hero, self, itminugget, AtrPlus*koszt_punktu_str*10);
+				Npc_RemoveInvItems (self, itminugget, AtrPlus*koszt_punktu_str*10);
 		
 				typ.lp = typ.lp - AtrPlus*koszt_punktu_str;
 				
@@ -166,7 +167,7 @@ var string pri4;
 				if (Npc_HasItems (hero, ItmiNugget) >=AtrPlus*koszt_punktu_dex*10) 
 				{
 				B_GiveInvItems  (hero, self, itminugget, AtrPlus*koszt_punktu_dex*10);
-		
+				Npc_RemoveInvItems (self, itminugget, AtrPlus*koszt_punktu_dex*10);
 				typ.lp = typ.lp - AtrPlus*koszt_punktu_dex;
 				
 				typ.attribute[ATR_DEXTERITY] = typ.attribute[ATR_DEXTERITY] + AtrPlus;
@@ -216,7 +217,7 @@ var string pri4d;
 				if (Npc_HasItems (hero, ItmiNugget) >=AtrPlus*koszt_punktu_mana*10) 
 				{
 				B_GiveInvItems  (hero, self, itminugget, AtrPlus*koszt_punktu_mana*10);
-		
+				Npc_RemoveInvItems (self, itminugget, AtrPlus*koszt_punktu_mana*10);
 				typ.lp = typ.lp - AtrPlus*koszt_punktu_mana;
 				
 				typ.attribute[ATR_MANA_MAX] = typ.attribute[ATR_MANA_MAX] + AtrPlus;

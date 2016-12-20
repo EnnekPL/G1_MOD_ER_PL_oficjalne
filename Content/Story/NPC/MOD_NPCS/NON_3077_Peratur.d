@@ -35,7 +35,7 @@ Npc_SetTalentSkill (self, NPC_TALENT_BOW,2);
 
 //----------Ekwipunek----------
 EquipItem		(self, ItMw_1H_LightGuardsSword_03_Old);
-EquipItem		(self, ItRw_Crossbow_02);
+EquipItem		(self, ItRw_Crossbow_02_Z);
 CreateInvItems  (self,ItFoMuttonRaw,2);
 CreateInvItems  (self,ItFoBooze,3);
 //----------Pozostale----------

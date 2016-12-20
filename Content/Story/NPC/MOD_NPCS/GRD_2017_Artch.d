@@ -35,7 +35,7 @@ Npc_SetTalentSkill (self, NPC_TALENT_CROSSBOW,2);
 
 //----------Ekwipunek----------
 EquipItem		(self, ItMw_1H_Sword_Bastard_01);
-EquipItem		(self, ItRw_Crossbow_03);
+EquipItem		(self, ItRw_Crossbow_03_Z);
 CreateInvItems  (self,ItFoLoaf,2);
 CreateInvItems  (self,ItFocheese,3);
 CreateInvItems  (self,ItFo_Potion_Health_01,5);

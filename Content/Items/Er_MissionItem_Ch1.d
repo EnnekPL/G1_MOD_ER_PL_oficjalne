@@ -467,8 +467,8 @@ INSTANCE ZapiskiScattego(C_Item)
 	visual 				=	"ItWr_Scroll_01.3ds";
 	material 			=	MAT_CLAY;
 
-	description			= name;
-	TEXT[2]				= "To dowód na oszustwa Scatty'ego.";
+	description			= 	name;
+	TEXT[2]				= 	"Znaleziony w chacie Scatty'ego.";
 };
 /******************************************************************************************/
 INSTANCE ItMi_EbrTips (C_Item)

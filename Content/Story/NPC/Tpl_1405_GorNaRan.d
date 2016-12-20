@@ -38,7 +38,7 @@ instance TPL_1405_GorNaRan (Npc_Default)
 	//-------- inventory --------
 	
 	EquipItem (self, ItMw_2H_Sword_Light_02);
-	EquipItem	(self, ItRw_Crossbow_02);//### Palisadenwache
+	EquipItem	(self, ItRw_Crossbow_02_Z);//### Palisadenwache
 	CreateInvItems	(self, ItAmBolt, 30);
 	CreateInvItem (self, ItFoSoup);
 	CreateInvItem (self, ItMiJoint_1);

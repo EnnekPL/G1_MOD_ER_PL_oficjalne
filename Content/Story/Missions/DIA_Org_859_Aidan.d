@@ -127,7 +127,7 @@ func void Org_859_Aidan_Creatures_Zahn()
 			other.lp = other.lp - 1;
 			
 			B_GiveInvItems	(other, self,itminugget,50);
-			
+			Npc_RemoveInvItems (self, itminugget,50);
 			PrintScreen	("Nowa umiejêtnoœæ: Zdobywanie k³ów", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 					
 			AI_Output (self, other,"Org_859_Aidan_Creatures_Zahn_13_01"); //Przede wszystkim musisz uwa¿aæ, ¿eby k³y nie popêka³y podczas wyci¹gania. W tym celu wbij nó¿ w pobli¿u œrodka zêba i delikatnie go podwa¿aj.
@@ -160,7 +160,7 @@ func void Org_859_Aidan_Creatures_Fell()
 			other.lp = other.lp - 1;
 			
 			B_GiveInvItems	(other, self,itminugget,100);
-			
+			Npc_RemoveInvItems (self, itminugget,100);
 			PrintScreen	("Nowa umiejêtnoœæ: Œci¹ganie futer", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 		
 			AI_Output (self, other,"Org_859_Aidan_Creatures_Fell_13_01"); //Zaczynaj skórowanie od zadu, przesuwaj¹c siê stopniowo ku g³owie. Spróbuj kilka razy. To nie jest takie trudne, a futra potrafi¹ byæ bardzo cenne!
@@ -191,7 +191,7 @@ func void Org_859_Aidan_Creatures_Kralle()
 			other.lp = other.lp - 1;
 			
 			B_GiveInvItems	(other, self,itminugget,50);
-			
+			Npc_RemoveInvItems (self, itminugget,50);
 			PrintScreen	("Nowa umiejêtnoœæ: Zdobywanie pazurów", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 			
 			AI_Output (other, self,"Org_859_Aidan_Creatures_Kralle_15_00"); //Poka¿ mi jak zdobyæ pazury upolowanej zwierzyny.
@@ -223,7 +223,7 @@ func void Org_859_Aidan_Creatures_Haut()
 			other.lp = other.lp - 1;
 						
 			B_GiveInvItems	(other, self,itminugget,100);
-			
+			Npc_RemoveInvItems (self, itminugget,100);
 			PrintScreen	("Nowa umiejêtnoœæ: Skórowanie jaszczurów", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 				
 			AI_Output (other, self,"Org_859_Aidan_Creatures_Haut_15_00"); //Na co powinienem zwracaæ uwagê zdzieraj¹c skórê z gadów?

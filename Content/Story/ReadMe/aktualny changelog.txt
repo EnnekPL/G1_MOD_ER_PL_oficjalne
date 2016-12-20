@@ -1,10 +1,27 @@
 1.4.82
 - Lukor dzieli siê z nami punktami XP za przeciwników pokonanych na cmentarzysku orków
-- u Gravera nie powinno ju¿ siê kumulowaæ tyle rudy z zak³adów 
-- zadanie od Okyla powinna ju¿ byæ zlecane prawid³owo jeœli jesteœmy cz³onkiem Nowego Obozu
+- u Gravera i Chrisa nie powinno ju¿ siê kumulowaæ tyle rudy z zak³adów 
+- zadanie od Okyla powinno ju¿ byæ zlecane prawid³owo jeœli jesteœmy cz³onkiem Nowego Obozu
 - dodana opcja wstecz u Rodrigueza przy konsekracji kostura
 - nauka zrêcznoœci: próg PN zmienia siê przy zdobyciu 50 pkt. (2PN nauki za 1pkt. atrybutu) i póŸniej ju¿ nie wzrasta
-- nauka zrêcznoœci: próg PN nie wzratsta póŸniej do wartroœci 3PN za 1pkt atrybutu lecz zatrzymuje siê na wartoœci 2
+- nauka many (zmodyfikowane wartoœæi wymaganych PN)
+- dodane 4 nowe bronie jednorêczne na 5 i 6 rozdzia³ (dostêpne u handlarzy)
+- bronie wa¿nych NPC nie s¹ ju¿ a¿ tak wyj¹tkowe (nie daj¹ ju¿ tak du¿ych korzyœci na pocz¹tkowych etapach gry)
+- napoje many daj¹ mniejsze bonusy
+- niekótrym nauczycielom kasuje siê ruda, któr¹ zap³aciliœmy za naukê
+- nauka umiejêtnoœci z³odziejskich nie wymaga PN, op³acamy j¹ wy³¹cznie rud¹
+- poprawiony b³¹d powoduj¹cy zawieszenie siê zadania "Bunt zbieraczy" w pewnych okolicznoœciach
+- mniejsze ceny (w PN) nauki akrobatyki i ³ucznictwa
+- naprawiony b³¹d w zadaniu "¿ywnoœæ dla ³owców" (jeœli zdecydujemy siê dogadaæ z Butchem)
+- znacznie mniej rudy w skrzyniach mieszkañców obozów
+- przywórcone AI œcierwojada z G1
+- œcierwojada i kretoszczura mo¿na ju¿ pokonaæ jeœli nie wybierze siê bonusu do si³y na pocz¹tku gry (spokojnie mo¿na graæ z 5 pkt si³y)
+- m³ode œcierwojady zosta³y odsuniête od NPC tak ¿eby ich nie zabija³y (lub zabija³y rzadziej)
+- magiczne i ogniste ³uki maj¹ inne wymagania
+- zwiêkszone wymagane iloœci sk³adników do mikstur trwa³ych many i ¿ycia
+- regeneracja many dzia³a dopiero od 3 krêgu i wynosi 1pkt/s dla krêgów 3 i 4 oraz 2pkt/s dla krêgów 5 i 6
+- Will ma s³abszy miecz oraz mniej rudy
+
 
 1.4.8
 - w ofercie Stanleya pojawi³y siê sk³adniki alchemiczne uzupe³niane co rozdzia³ (drobne iloœci)

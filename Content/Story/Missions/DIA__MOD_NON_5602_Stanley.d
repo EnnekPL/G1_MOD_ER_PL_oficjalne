@@ -136,6 +136,9 @@ FUNC void  DIA_Stanley_Teach_2H_Info()
 func void DIA_Stanley_Teach_2HBACK ()
 {
 	Info_ClearChoices	(DIA_Stanley_Teach_2H);
+	var int ilosc;
+	ilosc = Npc_hasitems (self, itminugget);
+	Npc_RemoveInvItems (self, itminugget, ilosc);
 };
 
 FUNC VOID Stanley_teach_2h1 ()
@@ -346,6 +349,9 @@ FUNC VOID DIA_Stanley_START_TRAIN_Info()
 func void DIA_Stanley_START_TRAINBACK ()
 {
 	Info_ClearChoices	(DIA_Stanley_START_TRAIN);
+	var int ilosc;
+	ilosc = Npc_hasitems (self, itminugget);
+	Npc_RemoveInvItems (self, itminugget, ilosc);
 };
 
 FUNC VOID Stanley_nauka1h1 ()

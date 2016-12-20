@@ -332,6 +332,9 @@ Info_ClearChoices	(GUR_1202_CorAngar_TEACH_2H_START);
 func void GUR_1202_CorAngar_TEACH_2H_STARTBACK ()
 {
 	Info_ClearChoices	(GUR_1202_CorAngar_TEACH_2H_START);
+	var int ilosc;
+	ilosc = Npc_hasitems (self, itminugget);
+	Npc_RemoveInvItems (self, itminugget, ilosc);
 };
 
 FUNC VOID CorAngar_teach_2h1 ()

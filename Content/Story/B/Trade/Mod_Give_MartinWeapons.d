@@ -93,7 +93,8 @@ func void B_GiveMartinItemsCH5 ()
 	CreateInvItem 	(npc,	ItMw_2H_Sword_Heavy_02); 
 	CreateInvItem 	(npc,	ItMw_2H_Sword_Heavy_03); 
 	CreateInvItem 	(npc,	ItMw_2H_Sword_Heavy_04); 
-	
+	CreateInvItem 	(npc,	Miecz1H_P_1); 
+	CreateInvItem 	(npc,	Miecz1H_P_2); 
 	CreateInvItems (npc,ItMiNugget,550);
 };
 
@@ -101,6 +102,7 @@ func void B_GiveMartinItemsCH6 ()
 {
 	var C_NPC npc;
 	npc = Hlp_GetNpc(BAN_1603_Martin);
-	
+	CreateInvItem 	(npc,	Axe1H_P_1);
+	CreateInvItem 	(npc,	Miecz1H_P_3);	
 	CreateInvItem (npc,Plan7b); 
 };

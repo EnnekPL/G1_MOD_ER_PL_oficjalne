@@ -32,7 +32,7 @@ Npc_SetTalentSkill (self, NPC_TALENT_CROSSBOW,2);
 
 //----------Ekwipunek----------
 EquipItem		(self, ItMw_1H_Sword_04);
-EquipItem		(self, ItRw_Crossbow_03);
+EquipItem		(self, ItRw_Crossbow_03_Z);
 CreateInvItems  (self,itminugget,150);
 CreateInvItems  (self,ItAmBolt,50);
 //----------Pozostale----------

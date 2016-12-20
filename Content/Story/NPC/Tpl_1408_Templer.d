@@ -36,7 +36,7 @@ instance TPL_1408_Templer (Npc_Default)
 	//-------- inventory --------
 	
 	EquipItem (self, ItMw_2H_Sword_Light_03);
-	EquipItem	(self, ItRw_Crossbow_03);//### Palisadenwache
+	EquipItem	(self, ItRw_Crossbow_03_Z);//### Palisadenwache
 	CreateInvItems	(self, ItAmBolt, 50);
 	CreateInvItem (self, ItFoSoup);
 	CreateInvItem (self, ItMiJoint_1);

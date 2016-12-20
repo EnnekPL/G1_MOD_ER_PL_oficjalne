@@ -40,7 +40,7 @@ Npc_SetTalentSkill (self, NPC_TALENT_2H,7);
 
 //----------Ekwipunek----------
 EquipItem		(self, ItMw_2H_Sword_03);
-EquipItem		(self, ItRw_Bow_Long_08);
+//EquipItem		(self, ItRw_Bow_Long_08);
 CreateInvItems  (self,ItAt_Teeth_01,15);
 CreateInvItems  (self,ItAt_Wolf_01,15);
 CreateInvItems  (self,ItAt_Claws_01,12);

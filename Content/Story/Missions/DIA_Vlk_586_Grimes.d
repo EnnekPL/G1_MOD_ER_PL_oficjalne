@@ -189,6 +189,7 @@ FUNC void  VLK_586_Grimes_START_LEARN_Info()
 	AI_Output (self, other,"VLK_586_Grimes_START_LEARN_Info_04_06"); //Je¿eli bêdziesz mia³ trochê szczêœcia szybko wydobêdziesz bry³ki.
 	AI_Output (self, other,"VLK_586_Grimes_START_LEARN_Info_04_07"); //Jeszcze jedno, pamiêtaj, ¿e ka¿da ¿y³a rudy kiedyœ siê skoñczy.
 	B_GiveInvItems (other,self, itminugget, 60);
+	Npc_RemoveInvItems (self, itminugget,50);
 	VLK_586_Grimes_START_LEARN.permanent = false;	
 	hero.lp = hero.lp - 5;
 	Npc_SetTalentSkill(hero, NPC_TALENT_REGENERATE, 1);

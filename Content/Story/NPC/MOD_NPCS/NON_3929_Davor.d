@@ -37,7 +37,7 @@ Npc_SetTalentSkill (self, NPC_TALENT_BOW,2);
 
 //----------Ekwipunek----------
 EquipItem		(self, ItMw_1H_Sword_Broad_02);
-EquipItem		(self, ItRw_Bow_War_02);
+EquipItem		(self, ItRw_Bow_War_02_Z);
 CreateInvItems  (self, ItAmArrow, 50);
 CreateInvItems  (self, ItKeLockpick,1);		
 CreateInvItems  (self, ItMiNugget, 30);

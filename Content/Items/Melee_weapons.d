@@ -2145,7 +2145,7 @@ INSTANCE ItMw_1H_Sword_Bastard_04 (C_Item)
 
 	value 				=	1760;//880;//442
 
-	damageTotal			= 	66;
+	damageTotal			= 	70;
 	damagetype 			= 	DAM_EDGE;
 	range    			=  	130;		
 

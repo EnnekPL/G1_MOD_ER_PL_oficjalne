@@ -7,7 +7,7 @@ instance NON_5635_Will (Npc_Default)
 name = "Will";
 Npctype = Npctype_Main;
 guild = GIL_NONE;
-level = 40;
+level = 25;
 voice = 11;
 id = 5635;
 
@@ -34,12 +34,10 @@ Npc_SetTalentSkill (self, NPC_TALENT_BOW,2);
 Npc_SetTalentSkill (self, NPC_TALENT_2H,7);
 
 //----------Ekwipunek----------
-EquipItem		(self, Miecz2H2);
-CreateInvItems  (self,ItAt_Teeth_01,5);
+EquipItem		(self, ItMw_2H_Axe_Big_03);
 CreateInvItems  (self,ItFoLoaf,3);
 CreateInvItems  (self,ItFoMutton,3);
-CreateInvItems  (self,Schutzring_Waffen1,1);
-CreateInvItems  (self,ItMiNugget,50);
+CreateInvItems  (self,ItMiNugget,30);
 //----------Pozostale----------
 fight_tactic	=	FAI_HUMAN_Strong;
 daily_routine = Rtn_start_5635;
@@ -73,7 +71,7 @@ instance NON_5636_Thompson (Npc_Default)
 name = "Thompson";
 Npctype = Npctype_Main;
 guild = GIL_NONE;
-level = 40;
+level = 20;
 voice = 11;
 id = 5636;
 
@@ -101,11 +99,8 @@ Npc_SetTalentSkill (self, NPC_TALENT_1H,7);
 
 //----------Ekwipunek----------
 EquipItem		(self, ItMw_1H_Sword_04);
-CreateInvItems  (self,ItAt_Teeth_01,5);
-CreateInvItems  (self,ItFoLoaf,3);
-CreateInvItems  (self,ItFoMutton,3);
-CreateInvItems  (self,Schutzring_Waffen1,1);
-CreateInvItems  (self,ItMiNugget,200);
+CreateInvItems  (self,ItAt_Teeth_01,2);
+CreateInvItems  (self,ItMiNugget,75);
 //----------Pozostale----------
 fight_tactic	=	FAI_HUMAN_Strong;
 daily_routine = Rtn_start_5636;

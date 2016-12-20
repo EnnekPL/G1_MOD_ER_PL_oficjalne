@@ -117,6 +117,8 @@ func void B_Give_SharkyChapter5Weapons ()
 	CreateInvItem (npc,ItMw_2H_Axe_Heavy_04);
 	CreateInvItems (npc,ItMiNugget,400);
 	CreateInvItems	(npc, ItKeLockpick,10);
+	CreateInvItem 	(npc,	Miecz1H_P_1); 
+	CreateInvItem 	(npc,	Miecz1H_P_2); 
 	//-------- Fernkampfwaffen --------
 	CreateInvItems  (self,itmiflask,30);
 	//-------- Munition --------
@@ -135,6 +137,8 @@ func void B_Give_SharkyChapter6Weapons ()
 	//-------- Fernkampfwaffen --------
 	
 
+	CreateInvItem 	(npc,	Axe1H_P_1);
+	CreateInvItem 	(npc,	Miecz1H_P_3);	
 	//-------- Munition --------
   CreateInvItem (npc,Plan7b); 
 };
