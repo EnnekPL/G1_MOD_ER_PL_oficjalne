@@ -155,10 +155,10 @@ FUNC VOID DIA_Mazin_GOR_NA_LIN_Info()
     AI_Output (other, self ,"DIA_Mazin_GOR_NA_LIN_15_01"); //Potrzebujê informacji o Gor Na Linie.
     AI_Output (self, other ,"DIA_Mazin_GOR_NA_LIN_03_02"); //Co konkretnie?
     AI_Output (other, self ,"DIA_Mazin_GOR_NA_LIN_15_03"); //Co siê z nim sta³o? Jakim cudem ze Stra¿nika Œwi¹tynnego zosta³ popychad³em? Co tu siê dzia³o w ogóle?
-    AI_Output (self, other ,"DIA_Mazin_GOR_NA_LIN_03_04"); //170 bry³ek rudy. Oto cena tej informacji.
+    AI_Output (self, other ,"DIA_Mazin_GOR_NA_LIN_03_04"); //200 bry³ek rudy. Oto cena tej informacji.
     AI_Output (other, self ,"DIA_Mazin_GOR_NA_LIN_15_05"); //Czemu tak drogo?
     AI_Output (self, other ,"DIA_Mazin_GOR_NA_LIN_03_06"); //Sporo ryzykujê. Taka sytuacja jest komuœ wp³ywowemu na rêkê. 
-    B_LogEntry                     (CH2_MissedSpy,"Mazin za 170 bry³ek rudy sprzeda mi informacjê o tym co siê dzia³o z Gor Na Linem przez ostatnie tygodnie. ");
+    B_LogEntry                     (CH2_MissedSpy,"Mazin za 200 bry³ek rudy sprzeda mi informacjê o tym co siê dzia³o z Gor Na Linem przez ostatnie tygodnie. ");
 };
 
 //========================================
@@ -179,7 +179,7 @@ FUNC INT DIA_Mazin_BUY_INFO_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Mazin_GOR_NA_LIN))
     && (MIS_MissedSpy == LOG_RUNNING)
-    && (Npc_HasItems (hero, ItMiNugget)>=170)
+    && (Npc_HasItems (hero, ItMiNugget)>=200)
     {
     return TRUE;
     };
@@ -207,7 +207,7 @@ FUNC VOID DIA_Mazin_BUY_INFO_Info()
     AI_Output (self, other ,"DIA_Mazin_BUY_INFO_03_17"); //To ciê bêdzie kosztowaæ dodatkowe 50 bry³ek. 
     AI_Output (other, self ,"DIA_Mazin_BUY_INFO_15_18"); //No jasne...
 	B_LogEntry                     (CH2_MissedSpy,"Kupi³em informacjê o Gor Na Linie od Mazina. Okazuje siê, ¿e Gor Na Lin za bardzo spoufali³ siê z ludŸmi Laresa. Szkodniki zabra³y mu pancerz i pewnie resztê ekwipunku. Stra¿nik zacz¹³ piæ samotnie. Niestety za informacjê sk¹d bierze alkohol bêdê musia³ dop³aciæ. ");
-	B_GiveInvItems (hero, self, ItMiNugget, 170);
+	B_GiveInvItems (hero, self, ItMiNugget, 200);
     B_GiveXP (270);
 };
 
@@ -244,8 +244,8 @@ FUNC VOID DIA_Mazin_ALCO_Info()
 	 DIA_Mazin_ALCO.permanent = false; 
 	 B_GiveInvItems (hero, self, ItMiNugget, 50);
         AI_Output (self, other ,"DIA_Mazin_ALCO_03_02"); //Ostatnio bra³ go od Szkodników w jaskini. 
-if (Npc_IsDead(ORG_860_Renyu)) && (Npc_IsDead(ORG_861_Killian)) && (Npc_IsDead(ORG_862_Jacko))
-{
+		if (Npc_IsDead(ORG_860_Renyu)) && (Npc_IsDead(ORG_861_Killian)) && (Npc_IsDead(ORG_862_Jacko))
+		{
        /* if (Npc_KnowsInfo (hero, DIA_Mazin_DelteOrg))
         {
             AI_Output (other, self ,"DIA_Mazin_ALCO_15_03"); //Przecie¿ sam kaza³eœ mi siê pozbyæ mieszaczy! K³amiesz.
@@ -258,20 +258,22 @@ if (Npc_IsDead(ORG_860_Renyu)) && (Npc_IsDead(ORG_861_Killian)) && (Npc_IsDead(O
             AI_StartState (self, ZS_ATTACK, 1, "");
         }*/
         //else 
-		if (Kalom_DrugMonopol == LOG_SUCCESS) || ((Kalom_DrugMonopol == LOG_RUNNING) && (Npc_IsDead(ORG_860_Renyu)) && (Npc_IsDead(ORG_861_Killian)) && (Npc_IsDead(ORG_862_Jacko)))
-        {
+			//if (Kalom_DrugMonopol == LOG_SUCCESS) || ((Kalom_DrugMonopol == LOG_RUNNING) && (Npc_IsDead(ORG_860_Renyu)) && (Npc_IsDead(ORG_861_Killian)) && (Npc_IsDead(ORG_862_Jacko)))
+			//{
             AI_Output (other, self ,"DIA_Mazin_ALCO_15_07"); //Mieszacze nie ¿yj¹ ju¿ od dawna.
             AI_Output (self, other ,"DIA_Mazin_ALCO_03_08"); //Co? Jjj... jak to?
             AI_Output (other, self ,"DIA_Mazin_ALCO_15_09"); //Nie udawaj niewini¹tka. Nie mów mi, ¿e nie wiedzia³eœ. 
             AI_Output (other, self ,"DIA_Mazin_ALCO_15_10"); //Gadaj, kto daje alkohol temu Stra¿nikowi!
-            AI_Output (self, other ,"DIA_Mazin_ALCO_03_11"); //Nie bêdziesz mi grozi³! To ty zabi³eœ mieszaczy! To ty! Dla tych skurwysynów z bagien. 
-            AI_Output (self, other ,"DIA_Mazin_ALCO_03_12"); //Zaraz poznasz moj¹ stal.
+            AI_Output (self, other ,"DIA_Mazin_ALCO_03_11"); //To ty ich zabi³eœ! Ju¿ po tobie!
             AI_StopProcessInfos	(self);
             B_LogEntry                     (CH2_MissedSpy,"Mazin uleg³ emocjom i odwa¿y³ siê mnie zaatakowaæ. Z pewnoœci¹ ma coœ do ukrycia.");
             Npc_SetTarget (self, other);
             AI_StartState (self, ZS_ATTACK, 1, "");
-        };
-		} else {
+			//};
+		
+		} 
+		else 
+		{
         AI_Output (other, self ,"DIA_Mazin_ALCO_15_13"); //Dziêki. Pójdê to sprawdziæ.
         AI_Output (self, other ,"DIA_Mazin_ALCO_03_14"); //Aha. IdŸ noc¹. W dzieñ ten twój kole¿ka tam nie chodzi.
         AI_Output (self, other ,"DIA_Mazin_ALCO_03_15"); //Jeszcze jedno: Cronos sprzeda ci herbatkê, która pomaga na kaca. 
@@ -283,6 +285,9 @@ if (Npc_IsDead(ORG_860_Renyu)) && (Npc_IsDead(ORG_861_Killian)) && (Npc_IsDead(O
         B_GiveXP (200);
         AI_StopProcessInfos	(self);
     };
+	
+	
+	
 }
 else
 {

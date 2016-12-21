@@ -104,7 +104,7 @@ INSTANCE DIA_HELLO2_BRACTWO (C_INFO)
 
 FUNC INT DIA_HELLO2_BRACTWO_Condition()
 {
-    if (Npc_HasItems (hero, It_HerbatkaNaKaca) >=1) && ( Hlp_StrCmp(Npc_GetNearestWP(self),"LIN_CAVE") ) && herbatka_crnonos == true
+    if (Npc_HasItems (hero, It_HerbatkaNaKaca) >=1) && ( Hlp_StrCmp(Npc_GetNearestWP(self),"LIN_CAVE") ) && (herbatka_crnonos == true)
     {
     return TRUE;
     };
