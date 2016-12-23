@@ -120,23 +120,23 @@ FUNC VOID DIA_Fingers_Lehrer_Info()
 
 	Info_ClearChoices	(DIA_Fingers_Lehrer);
 	Info_AddChoice		(DIA_Fingers_Lehrer,DIALOG_BACK																	,DIA_Fingers_Lehrer_BACK);
-	if (Npc_GetTalentSkill(other, NPC_TALENT_PICKPOCKET) != 2) 
+if	(Npc_GetTalentSkill(hero, NPC_TALENT_PICKPOCKET) == 1) 
 	{
 	Info_AddChoice		(DIA_Fingers_Lehrer,B_BuildLearnString(NAME_LearnPickpocket_2	,	LPCOST_TALENT_PICKPOCKET_2,500)	,DIA_Fingers_Lehrer_Pickpocket2);
 	};
-	if (Npc_GetTalentSkill(other, NPC_TALENT_PICKPOCKET) != 1) && (Npc_GetTalentSkill(other, NPC_TALENT_PICKPOCKET) == 2) 
+	if	(Npc_GetTalentSkill(hero, NPC_TALENT_PICKPOCKET) == 0) 
 	{
 	Info_AddChoice		(DIA_Fingers_Lehrer,B_BuildLearnString(NAME_LearnPickpocket_1	,	LPCOST_TALENT_PICKPOCKET_1,250)	,DIA_Fingers_Lehrer_Pickpocket);
 	};
-	if (Npc_GetTalentSkill(other, NPC_TALENT_PICKLOCK) != 2) 
+	if	(Npc_GetTalentSkill(hero, NPC_TALENT_PICKLOCK) == 1) 
 	{
 	Info_AddChoice		(DIA_Fingers_Lehrer,B_BuildLearnString(NAME_LearnPicklock_2		,	LPCOST_TALENT_PICKLOCK_2,600)	,DIA_Fingers_Lehrer_Lockpick2);
 	};
-	if (Npc_GetTalentSkill(other, NPC_TALENT_PICKLOCK) != 1) && (Npc_GetTalentSkill(other, NPC_TALENT_PICKLOCK) == 2) 
+	if	(Npc_GetTalentSkill(hero, NPC_TALENT_PICKLOCK) == 0) 
 	{
 	Info_AddChoice		(DIA_Fingers_Lehrer,B_BuildLearnString(NAME_LearnPicklock_1		,	LPCOST_TALENT_PICKLOCK_1,300)	,DIA_Fingers_Lehrer_Lockpick);
-	};
-	if (Npc_GetTalentSkill(other, NPC_TALENT_SNEAK) != 1) && (Fingers_Wherecavalorn == FALSE)
+	}; 
+	if (Npc_GetTalentSkill(hero, NPC_TALENT_SNEAK) == 0) && (Fingers_Wherecavalorn == FALSE)
 	{
 	Info_AddChoice		(DIA_Fingers_Lehrer,"Chcia³bym umieæ poruszaæ siê niepostrze¿enie." 								,DIA_Fingers_Lehrer_Schleichen);
 	};
