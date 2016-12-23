@@ -395,6 +395,54 @@ FUNC VOID DIA_Rufus_AlcoDelivery_Info()
 };
 
 /////////////////////////////////////////////////
+// 	Lefty Killed by Hero
+/////////////////////////////////////////////////
+
+INSTANCE DIA_Rufus_LeftyKilledByHero (C_INFO)
+{
+   npc          = Bau_903_Rufus;
+   nr           = 1;
+   condition    = DIA_Rufus_LeftyKilledByHero_Condition;
+   information  = DIA_Rufus_LeftyKilledByHero_Info;
+   permanent	= FALSE;
+   description	= "Lewus nie ¿yje.";
+};
+
+FUNC INT DIA_Rufus_LeftyKilledByHero_Condition()
+{
+    if (Quest_KillLefty == LOG_SUCCESS) 
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Rufus_LeftyKilledByHero_Info()
+{
+    AI_Output (other, self ,"DIA_Rufus_LeftyKilledByHero_15_01"); //Lewus nie ¿yje.
+    AI_Output (self, other ,"DIA_Rufus_LeftyDie_03_03"); //A wiêc to koniec tyranii.
+	AI_Output (other, self ,"DIA_Rufus_LeftyDie_15_04"); //Najwidoczniej tak.
+	AI_Output (self, other ,"DIA_Rufus_LeftyDie_03_05"); //Kto teraz bêdzie zarz¹dza³ tym wszystkim?
+	AI_Output (other, self ,"DIA_Rufus_LeftyDie_15_06"); //Chyba pora na ciebie.
+	AI_Output (self, other ,"DIA_Rufus_LeftyKilledByHero_03_02"); //Myœlê, ¿e temu podo³am. Nie zawiod¹ siê na mnie.
+	AI_Output (other, self ,"DIA_Rufus_LeftyKilledByHero_15_03"); //A wiêc, powodzenia.
+	AI_Output (self, other ,"DIA_Rufus_LeftyKilledByHero_03_04"); //Tobie równie¿, trzymaj siê!
+	
+	AI_StopProcessInfos (self);
+	
+	MIS_BuntZbieraczy = LOG_SUCCESS;
+	Log_SetTopicStatus	(CH1_BuntZbieraczy,	LOG_SUCCESS);
+	B_LogEntry          (CH1_BuntZbieraczy,"Lewus nie ¿yje. Zbieraczami zajmie siê Rufus. Wszystko chyba potoczy³o siê dobrze.");
+
+	B_Story_AfterBauRebellion ();
+	
+	B_GiveXP (800);
+	
+	var c_npc rufus; rufus = Hlp_GetNpc (Bau_903_Rufus);
+	Npc_ExchangeRoutine (rufus,"boss");
+};
+
+/////////////////////////////////////////////////
 // 	Alco delivery 2 
 /////////////////////////////////////////////////
 

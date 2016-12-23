@@ -290,23 +290,23 @@ var string pri4m;
 	//wyliczanie kosztów atrybutu ZRÊCZNOŒÆ
 	if (typ.attribute[ATR_DEXTERITY] >= 90)
 	{
-	koszt_punktu_dex = 5;
-	public_dex_cost = 5;
+	koszt_punktu_dex = 2;
+	public_dex_cost = 2;
 	}
 	else if (typ.attribute[ATR_DEXTERITY] >= 75)
 	{
-	koszt_punktu_dex = 4;
-	public_dex_cost = 4;
+	koszt_punktu_dex = 2;
+	public_dex_cost = 2;
 	}
 	else if (typ.attribute[ATR_DEXTERITY] >= 50)
 	{
-	koszt_punktu_dex = 3;
-	public_dex_cost = 3;
+	koszt_punktu_dex = 2;
+	public_dex_cost = 2;
 	}
 	else if (typ.attribute[ATR_DEXTERITY] >= 25)
 	{
-	koszt_punktu_dex = 2;
-	public_dex_cost = 2;
+	koszt_punktu_dex = 1;
+	public_dex_cost = 1;
 	}
 	else if (typ.attribute[ATR_DEXTERITY] < 25)
 	{

@@ -699,7 +699,7 @@ INSTANCE DIA_Lefty_LastFight (C_INFO)
 
 FUNC INT DIA_Lefty_LastFight_Condition()
 {
-    if (Quest_KillLefty == LOG_RUNNING) //&& (Rebel_Consequences == LeftyAndLordDeath)
+    if (Quest_KillLefty == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -728,6 +728,8 @@ FUNC VOID DIA_Lefty_LastFight_Info()
 	B_ChangeGuild (BAU_923_Bauer, GIL_GRD);
 	B_ChangeGuild (BAU_924_Bauer, GIL_GRD);
 	B_ChangeGuild (BAU_927_Bauer, GIL_GRD);
+	
+	B_LogEntry   (CH1_BuntZbieraczy,"Wœciek³y Lewus rzuci³ siê na mnie. Pora siê z nim zmierzyæ.");
 };
 
 ///////////////////////////////////////////

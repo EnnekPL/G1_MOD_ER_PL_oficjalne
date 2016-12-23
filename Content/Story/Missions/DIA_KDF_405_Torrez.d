@@ -339,8 +339,8 @@ FUNC void  KDF_405_Torrez_MANA_Info()
 	
 	Info_ClearChoices	(KDF_405_Torrez_MANA);
 	Info_AddChoice		(KDF_405_Torrez_MANA,DIALOG_BACK							,KDF_405_Torrez_MANA_BACK);
-	Info_AddChoice		(KDF_405_Torrez_MANA,"Zwiêksz mana o 5 (koszt: 5 punktów umiejêtnoœci)"		,KDF_405_Torrez_MANA_MAN_5);
-	Info_AddChoice		(KDF_405_Torrez_MANA,"Zwiêksz mana o 1 (koszt: 1 punkt umiejêtnoœci)"		,KDF_405_Torrez_MANA_MAN_1);
+	Info_AddChoice		(KDF_405_Torrez_MANA,B_BuildLearnString(NAME_LearnMana_5,5*LPCOST_ATTRIBUTE_MANA,0)	,KDF_405_Torrez_MANA_MAN_5);
+	Info_AddChoice		(KDF_405_Torrez_MANA,B_BuildLearnString(NAME_LearnMana_1,LPCOST_ATTRIBUTE_MANA,0)	,KDF_405_Torrez_MANA_MAN_1);
 };  
 func void KDF_405_Torrez_MANA_BACK()
 {
@@ -350,20 +350,20 @@ func void KDF_405_Torrez_MANA_BACK()
 func void KDF_405_Torrez_MANA_MAN_1()
 {
 	Mod_KupAtrybut (hero, ATR_MANA_MAX, 1);
-	Info_ClearChoices	(KDF_405_Torrez_MANA);
-	Info_AddChoice		(KDF_405_Torrez_MANA,DIALOG_BACK								,KDF_405_Torrez_MANA_BACK);
-	Info_AddChoice		(KDF_405_Torrez_MANA,"Zwiêksz mana o 5 (koszt: 5 punktów umiejêtnoœci)"		,KDF_405_Torrez_MANA_MAN_5);
-	Info_AddChoice		(KDF_405_Torrez_MANA,"Zwiêksz mana o 1 (koszt: 1 punkt umiejêtnoœci)"		,KDF_405_Torrez_MANA_MAN_1);
+		Info_ClearChoices	(KDF_405_Torrez_MANA);
+	Info_AddChoice		(KDF_405_Torrez_MANA,DIALOG_BACK							,KDF_405_Torrez_MANA_BACK);
+	Info_AddChoice		(KDF_405_Torrez_MANA,B_BuildLearnString(NAME_LearnMana_5,5*LPCOST_ATTRIBUTE_MANA,0)	,KDF_405_Torrez_MANA_MAN_5);
+	Info_AddChoice		(KDF_405_Torrez_MANA,B_BuildLearnString(NAME_LearnMana_1,LPCOST_ATTRIBUTE_MANA,0)	,KDF_405_Torrez_MANA_MAN_1);
 
 };
 
 func void KDF_405_Torrez_MANA_MAN_5()
 {
 	Mod_KupAtrybut (hero, ATR_MANA_MAX, 5);
-	Info_ClearChoices	(KDF_405_Torrez_MANA);
-	Info_AddChoice		(KDF_405_Torrez_MANA,DIALOG_BACK								,KDF_405_Torrez_MANA_BACK);
-	Info_AddChoice		(KDF_405_Torrez_MANA,"Zwiêksz mana o 5 (koszt: 5 punktów umiejêtnoœci)"		,KDF_405_Torrez_MANA_MAN_5);
-	Info_AddChoice		(KDF_405_Torrez_MANA,"Zwiêksz mana o 1 (koszt: 1 punkt umiejêtnoœci)"		,KDF_405_Torrez_MANA_MAN_1);
+		Info_ClearChoices	(KDF_405_Torrez_MANA);
+	Info_AddChoice		(KDF_405_Torrez_MANA,DIALOG_BACK							,KDF_405_Torrez_MANA_BACK);
+	Info_AddChoice		(KDF_405_Torrez_MANA,B_BuildLearnString(NAME_LearnMana_5,5*LPCOST_ATTRIBUTE_MANA,0)	,KDF_405_Torrez_MANA_MAN_5);
+	Info_AddChoice		(KDF_405_Torrez_MANA,B_BuildLearnString(NAME_LearnMana_1,LPCOST_ATTRIBUTE_MANA,0)	,KDF_405_Torrez_MANA_MAN_1);
 
 };
 /*------------------------------------------------------------------------

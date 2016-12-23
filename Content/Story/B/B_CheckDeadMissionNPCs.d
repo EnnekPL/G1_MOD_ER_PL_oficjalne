@@ -9,6 +9,11 @@ func void B_CheckDeadMissionNPCs ()
 			Log_SetTopicStatus	(CH1_CarryWater,	LOG_SUCCESS);
 			LeftyDead = TRUE;
 		};
+		if (Quest_KillLefty == LOG_RUNNING)
+		{
+		Quest_KillLefty = LOG_SUCCESS;
+		B_LogEntry   (CH1_BuntZbieraczy,"Lewus nie ¿yje. Nasz plan siê powiód³. Muszê porozmawiaæ z Rufusem.");
+		};
 	};
 	if (Hlp_GetInstanceID(NOV_1373_Novize) ==  Hlp_GetInstanceID(self))
 	{
