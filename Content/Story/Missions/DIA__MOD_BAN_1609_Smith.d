@@ -152,6 +152,8 @@ func void DIA_Smith_Lehrer_Bow()
 
 func void DIA_Smith_Lehrer_Schleichen()
 {
+	if (Npc_HasItems (hero, itminugget) >=200)
+		{
 	if (B_GiveSkill(other, NPC_TALENT_SNEAK, 1, LPCOST_TALENT_SNEAK))
 	{		
 		AI_Output (other, self,"DIA_Smith_Lehrer_Schleichen_15_00"); //Chcia³bym poruszaæ siê bezszelestnie.
@@ -160,6 +162,11 @@ func void DIA_Smith_Lehrer_Schleichen()
 		AI_Output (self, other,"DIA_Smith_Lehrer_Schleichen_12_03"); //Oczywiœcie ktoœ obserwuj¹cy ciê z boku natychmiast nabierze podejrzeñ, wiêc skradaj siê zawsze nie bêd¹c widzianym przez osoby trzecie.
 		AI_Output (self, other,"DIA_Smith_Lehrer_Schleichen_12_04"); //Zapamiêtaj sobie dobrze co ci powiedzia³em, i przede wszystkim nie daj siê z³apaæ!
 	};
+	}
+		else
+		{
+		AI_Output (self, other,"DIA_Smith_Lehrer_NOORE"); //Nie ma nic za darmo!
+		};
 };
 func void DIA_Smith_Lehrer_Bow_2()
 {
