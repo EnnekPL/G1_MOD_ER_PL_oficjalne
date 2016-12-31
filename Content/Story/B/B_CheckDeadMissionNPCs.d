@@ -61,17 +61,17 @@ if (Hlp_GetInstanceID(EBR_100_Gomez) ==  Hlp_GetInstanceID(self)) && (kapitel >=
 //bonus atrybutu
 if Npc_HasReadiedMeleeWeapon (other)
 {
-	other.attribute[ATR_STRENGTH] = other.attribute[ATR_STRENGTH] + 1;
+	hero.attribute[ATR_STRENGTH] = hero.attribute[ATR_STRENGTH] + 1;
 	PrintScreen	("Si³a + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 }
 else if Npc_HasReadiedRangedWeapon (other)
 {
-	other.attribute[ATR_DEXTERITY] = other.attribute[ATR_DEXTERITY] + 1;
+	hero.attribute[ATR_DEXTERITY] = hero.attribute[ATR_DEXTERITY] + 1;
 	PrintScreen	("Zrêcznoœæ + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 }
 else if Npc_GetActiveSpell (other) 
 {
-	other.attribute[ATR_MANA_MAX] = other.attribute[ATR_MANA_MAX] + 1;
+	hero.attribute[ATR_MANA_MAX] = hero.attribute[ATR_MANA_MAX] + 1;
 	PrintScreen	("Mana + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 };
 //koniec bonusu
@@ -86,17 +86,17 @@ if (Hlp_GetInstanceID(GRD_201_Jackal) ==  Hlp_GetInstanceID(self)) && (kapitel >
 //bonus atrybutu
 if Npc_HasReadiedMeleeWeapon (other)
 {
-	other.attribute[ATR_STRENGTH] = other.attribute[ATR_STRENGTH] + 1;
+	hero.attribute[ATR_STRENGTH] = hero.attribute[ATR_STRENGTH] + 1;
 	PrintScreen	("Si³a + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 }
 else if Npc_HasReadiedRangedWeapon (other)
 {
-	other.attribute[ATR_DEXTERITY] = other.attribute[ATR_DEXTERITY] + 1;
+	hero.attribute[ATR_DEXTERITY] = hero.attribute[ATR_DEXTERITY] + 1;
 	PrintScreen	("Zrêcznoœæ + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 }
 else if Npc_GetActiveSpell (other) 
 {
-	other.attribute[ATR_MANA_MAX] = other.attribute[ATR_MANA_MAX] + 1;
+	hero.attribute[ATR_MANA_MAX] = hero.attribute[ATR_MANA_MAX] + 1;
 	PrintScreen	("Mana + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 };
 //koniec bonusu
@@ -112,17 +112,17 @@ if (Hlp_GetInstanceID(Ur_Gran) ==  Hlp_GetInstanceID(self))
 //bonus atrybutu
 if Npc_HasReadiedMeleeWeapon (other)
 {
-	other.attribute[ATR_STRENGTH] = other.attribute[ATR_STRENGTH] + 1;
+	hero.attribute[ATR_STRENGTH] = hero.attribute[ATR_STRENGTH] + 1;
 	PrintScreen	("Si³a + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 }
 else if Npc_HasReadiedRangedWeapon (other)
 {
-	other.attribute[ATR_DEXTERITY] = other.attribute[ATR_DEXTERITY] + 1;
+	hero.attribute[ATR_DEXTERITY] = hero.attribute[ATR_DEXTERITY] + 1;
 	PrintScreen	("Zrêcznoœæ + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 }
 else if Npc_GetActiveSpell (other) 
 {
-	other.attribute[ATR_MANA_MAX] = other.attribute[ATR_MANA_MAX] + 1;
+	hero.attribute[ATR_MANA_MAX] = hero.attribute[ATR_MANA_MAX] + 1;
 	PrintScreen	("Mana + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 };
 //koniec bonusu
@@ -137,17 +137,17 @@ if (Hlp_GetInstanceID(Ur_Na_Kurvok) ==  Hlp_GetInstanceID(self))
 //bonus atrybutu
 if Npc_HasReadiedMeleeWeapon (other)
 {
-	other.attribute[ATR_STRENGTH] = other.attribute[ATR_STRENGTH] + 1;
+	hero.attribute[ATR_STRENGTH] = hero.attribute[ATR_STRENGTH] + 1;
 	PrintScreen	("Si³a + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 }
 else if Npc_HasReadiedRangedWeapon (other)
 {
-	other.attribute[ATR_DEXTERITY] = other.attribute[ATR_DEXTERITY] + 1;
+	hero.attribute[ATR_DEXTERITY] = hero.attribute[ATR_DEXTERITY] + 1;
 	PrintScreen	("Zrêcznoœæ + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 }
 else if Npc_GetActiveSpell (other) 
 {
-	other.attribute[ATR_MANA_MAX] = other.attribute[ATR_MANA_MAX] + 1;
+	hero.attribute[ATR_MANA_MAX] = hero.attribute[ATR_MANA_MAX] + 1;
 	PrintScreen	("Mana + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 };
 //koniec bonusu
@@ -162,17 +162,17 @@ if (Hlp_GetInstanceID(Varrag_Harosh) ==  Hlp_GetInstanceID(self))
 //bonus atrybutu
 if Npc_HasReadiedMeleeWeapon (other)
 {
-	other.attribute[ATR_STRENGTH] = other.attribute[ATR_STRENGTH] + 1;
+	hero.attribute[ATR_STRENGTH] = hero.attribute[ATR_STRENGTH] + 1;
 	PrintScreen	("Si³a + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 }
 else if Npc_HasReadiedRangedWeapon (other)
 {
-	other.attribute[ATR_DEXTERITY] = other.attribute[ATR_DEXTERITY] + 1;
+	hero.attribute[ATR_DEXTERITY] = hero.attribute[ATR_DEXTERITY] + 1;
 	PrintScreen	("Zrêcznoœæ + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 }
 else if Npc_GetActiveSpell (other) 
 {
-	other.attribute[ATR_MANA_MAX] = other.attribute[ATR_MANA_MAX] + 1;
+	hero.attribute[ATR_MANA_MAX] = hero.attribute[ATR_MANA_MAX] + 1;
 	PrintScreen	("Mana + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 };
 //koniec bonusu
@@ -187,17 +187,17 @@ if (Hlp_GetInstanceID(NOV_1303_Nyras) ==  Hlp_GetInstanceID(self)) && (YBerion_B
 //bonus atrybutu
 if Npc_HasReadiedMeleeWeapon (other)
 {
-	other.attribute[ATR_STRENGTH] = other.attribute[ATR_STRENGTH] + 1;
+	hero.attribute[ATR_STRENGTH] = hero.attribute[ATR_STRENGTH] + 1;
 	PrintScreen	("Si³a + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 }
 else if Npc_HasReadiedRangedWeapon (other)
 {
-	other.attribute[ATR_DEXTERITY] = other.attribute[ATR_DEXTERITY] + 1;
+	hero.attribute[ATR_DEXTERITY] = hero.attribute[ATR_DEXTERITY] + 1;
 	PrintScreen	("Zrêcznoœæ + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 }
 else if Npc_GetActiveSpell (other) 
 {
-	other.attribute[ATR_MANA_MAX] = other.attribute[ATR_MANA_MAX] + 1;
+	hero.attribute[ATR_MANA_MAX] = hero.attribute[ATR_MANA_MAX] + 1;
 	PrintScreen	("Mana + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 };
 //koniec bonusu
@@ -212,17 +212,17 @@ if (Hlp_GetInstanceID(MinecrawlerQueen) ==  Hlp_GetInstanceID(self)) //fix
 //bonus atrybutu
 if Npc_HasReadiedMeleeWeapon (other)
 {
-	other.attribute[ATR_STRENGTH] = other.attribute[ATR_STRENGTH] + 1;
+	hero.attribute[ATR_STRENGTH] = hero.attribute[ATR_STRENGTH] + 1;
 	PrintScreen	("Si³a + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 }
 else if Npc_HasReadiedRangedWeapon (other)
 {
-	other.attribute[ATR_DEXTERITY] = other.attribute[ATR_DEXTERITY] + 1;
+	hero.attribute[ATR_DEXTERITY] = hero.attribute[ATR_DEXTERITY] + 1;
 	PrintScreen	("Zrêcznoœæ + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 }
 else if Npc_GetActiveSpell (other) 
 {
-	other.attribute[ATR_MANA_MAX] = other.attribute[ATR_MANA_MAX] + 1;
+	hero.attribute[ATR_MANA_MAX] = hero.attribute[ATR_MANA_MAX] + 1;
 	PrintScreen	("Mana + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 };
 //koniec bonusu
@@ -237,17 +237,17 @@ if (Hlp_GetInstanceID(Gol_Umik) ==  Hlp_GetInstanceID(self))
 //bonus atrybutu
 if Npc_HasReadiedMeleeWeapon (other)
 {
-	other.attribute[ATR_STRENGTH] = other.attribute[ATR_STRENGTH] + 1;
+	hero.attribute[ATR_STRENGTH] = hero.attribute[ATR_STRENGTH] + 1;
 	PrintScreen	("Si³a + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 }
 else if Npc_HasReadiedRangedWeapon (other)
 {
-	other.attribute[ATR_DEXTERITY] = other.attribute[ATR_DEXTERITY] + 1;
+	hero.attribute[ATR_DEXTERITY] = hero.attribute[ATR_DEXTERITY] + 1;
 	PrintScreen	("Zrêcznoœæ + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 }
 else if Npc_GetActiveSpell (other) 
 {
-	other.attribute[ATR_MANA_MAX] = other.attribute[ATR_MANA_MAX] + 1;
+	hero.attribute[ATR_MANA_MAX] = hero.attribute[ATR_MANA_MAX] + 1;
 	PrintScreen	("Mana + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 };
 //koniec bonusu
@@ -262,17 +262,17 @@ if (Hlp_GetInstanceID(BigSnapper) ==  Hlp_GetInstanceID(self))
 //bonus atrybutu
 if Npc_HasReadiedMeleeWeapon (other)
 {
-	other.attribute[ATR_STRENGTH] = other.attribute[ATR_STRENGTH] + 1;
+	hero.attribute[ATR_STRENGTH] = hero.attribute[ATR_STRENGTH] + 1;
 	PrintScreen	("Si³a + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 }
 else if Npc_HasReadiedRangedWeapon (other)
 {
-	other.attribute[ATR_DEXTERITY] = other.attribute[ATR_DEXTERITY] + 1;
+	hero.attribute[ATR_DEXTERITY] = hero.attribute[ATR_DEXTERITY] + 1;
 	PrintScreen	("Zrêcznoœæ + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 }
 else if Npc_GetActiveSpell (other) 
 {
-	other.attribute[ATR_MANA_MAX] = other.attribute[ATR_MANA_MAX] + 1;
+	hero.attribute[ATR_MANA_MAX] = hero.attribute[ATR_MANA_MAX] + 1;
 	PrintScreen	("Mana + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 };
 //koniec bonusu
@@ -287,17 +287,17 @@ if (Hlp_GetInstanceID(MadHarpie) ==  Hlp_GetInstanceID(self))
 //bonus atrybutu
 if Npc_HasReadiedMeleeWeapon (other)
 {
-	other.attribute[ATR_STRENGTH] = other.attribute[ATR_STRENGTH] + 1;
+	hero.attribute[ATR_STRENGTH] = hero.attribute[ATR_STRENGTH] + 1;
 	PrintScreen	("Si³a + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 }
 else if Npc_HasReadiedRangedWeapon (other)
 {
-	other.attribute[ATR_DEXTERITY] = other.attribute[ATR_DEXTERITY] + 1;
+	hero.attribute[ATR_DEXTERITY] = hero.attribute[ATR_DEXTERITY] + 1;
 	PrintScreen	("Zrêcznoœæ + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 }
 else if Npc_GetActiveSpell (other) 
 {
-	other.attribute[ATR_MANA_MAX] = other.attribute[ATR_MANA_MAX] + 1;
+	hero.attribute[ATR_MANA_MAX] = hero.attribute[ATR_MANA_MAX] + 1;
 	PrintScreen	("Mana + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 };
 //koniec bonusu
@@ -312,17 +312,17 @@ if (Hlp_GetInstanceID(MadTroll) ==  Hlp_GetInstanceID(self))
 //bonus atrybutu
 if Npc_HasReadiedMeleeWeapon (other)
 {
-	other.attribute[ATR_STRENGTH] = other.attribute[ATR_STRENGTH] + 1;
+	hero.attribute[ATR_STRENGTH] = hero.attribute[ATR_STRENGTH] + 1;
 	PrintScreen	("Si³a + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 }
 else if Npc_HasReadiedRangedWeapon (other)
 {
-	other.attribute[ATR_DEXTERITY] = other.attribute[ATR_DEXTERITY] + 1;
+	hero.attribute[ATR_DEXTERITY] = hero.attribute[ATR_DEXTERITY] + 1;
 	PrintScreen	("Zrêcznoœæ + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 }
 else if Npc_GetActiveSpell (other) 
 {
-	other.attribute[ATR_MANA_MAX] = other.attribute[ATR_MANA_MAX] + 1;
+	hero.attribute[ATR_MANA_MAX] = hero.attribute[ATR_MANA_MAX] + 1;
 	PrintScreen	("Mana + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 };
 //koniec bonusu
@@ -337,17 +337,17 @@ if (Hlp_GetInstanceID(ZombieTheKeeper) ==  Hlp_GetInstanceID(self))
 //bonus atrybutu
 if Npc_HasReadiedMeleeWeapon (other)
 {
-	other.attribute[ATR_STRENGTH] = other.attribute[ATR_STRENGTH] + 1;
+	hero.attribute[ATR_STRENGTH] = hero.attribute[ATR_STRENGTH] + 1;
 	PrintScreen	("Si³a + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 }
 else if Npc_HasReadiedRangedWeapon (other)
 {
-	other.attribute[ATR_DEXTERITY] = other.attribute[ATR_DEXTERITY] + 1;
+	hero.attribute[ATR_DEXTERITY] = hero.attribute[ATR_DEXTERITY] + 1;
 	PrintScreen	("Zrêcznoœæ + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 }
 else if Npc_GetActiveSpell (other) 
 {
-	other.attribute[ATR_MANA_MAX] = other.attribute[ATR_MANA_MAX] + 1;
+	hero.attribute[ATR_MANA_MAX] = hero.attribute[ATR_MANA_MAX] + 1;
 	PrintScreen	("Mana + 1", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 };
 //koniec bonusu

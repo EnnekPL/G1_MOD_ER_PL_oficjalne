@@ -132,7 +132,7 @@ func void DIA_Smith_LehrerDEX5()
 };
 func void DIA_Smith_Lehrer_Bow()
 {
-	if (hero.attribute[ATR_Dexterity] >= 30)
+	if (hero.attribute[ATR_Dexterity] >= 15)
 	{
 	if (B_GiveSkill(other, NPC_TALENT_BOW, 1, LPCOST_TALENT_BOW_1))
 	{		
@@ -146,7 +146,7 @@ func void DIA_Smith_Lehrer_Bow()
 	else
 	{
 	AI_Output			(self,other,"DIA_Smith_NO_ENOUGHT_STR_1"); //Popracuj jeszcze nad swoj¹ zrêcznoœci¹.
-	PrintScreen	("Warunek: Zrêcznoœæ 30", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
+	PrintScreen	("Warunek: Zrêcznoœæ 15", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 	};
 };
 
@@ -163,7 +163,7 @@ func void DIA_Smith_Lehrer_Schleichen()
 };
 func void DIA_Smith_Lehrer_Bow_2()
 {
-	if (hero.attribute[ATR_Dexterity] >= 60)
+	if (hero.attribute[ATR_Dexterity] >= 30)
 	{
 	if (B_GiveSkill(other, NPC_TALENT_BOW, 2, LPCOST_TALENT_BOW_2))
 	{		
@@ -176,7 +176,7 @@ func void DIA_Smith_Lehrer_Bow_2()
 	else
 	{
 	AI_Output			(self,other,"DIA_Smith_NO_ENOUGHT_STR_1"); //Popracuj jeszcze nad swoj¹ zrêcznoœci¹.
-	PrintScreen	("Warunek: Zrêcznoœæ 60", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
+	PrintScreen	("Warunek: Zrêcznoœæ 30", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 	};
 };
 

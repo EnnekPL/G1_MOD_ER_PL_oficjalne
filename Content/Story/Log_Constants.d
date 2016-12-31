@@ -117,17 +117,17 @@ const string	GE_TeacherOW			=	"Niezale¿ny nauczyciel";
 
 
 //notatki
-const string  	Bossowie 					= 	"Bossowie";
-const string  	Lokacje 						= 	"Lokacje";
+const string  	Bossowie 					= 	"Znamienici przeciwnicy";
+const string  	Lokacje 					= 	"Lokacje";
 const string	GE_Games					=	"Rozrywki";
-const string  	OtherInfos 				= 	"Przydatne informacje";
-const string	GE_AnimalTrophies	=	"Oprawianie zwierzyny";
-const string   GE_InfosOC              =  "Informatorzy w Starym Obozie";
-const string   GE_Cook                  =  "Nauka gotowania";
-const string 	CH1_AllWorks      		= 	"Moje prace";
+const string  	OtherInfos 					= 	"Przydatne informacje";
+const string	GE_AnimalTrophies			=	"Oprawianie zwierzyny";
+const string   GE_InfosOC              		=  	"Informatorzy w Starym Obozie";
+const string   GE_Cook                  	=	"Nauka gotowania";
+const string 	CH1_AllWorks      			= 	"Moje prace";
 
 //nieu¿ywane
-const string    GE_Food                 =   "Sprzedawcy jedzenia";
+const string    GE_Food                 	=   "Sprzedawcy jedzenia";
 
 //---------------------------------------------------------------------
 //	KAPITEL 1

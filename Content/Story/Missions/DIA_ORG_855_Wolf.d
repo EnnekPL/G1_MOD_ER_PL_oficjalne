@@ -322,7 +322,7 @@ FUNC int  ORG_855_Wolf_TRAIN_Condition()
 FUNC void  ORG_855_Wolf_TRAIN_Info()
 {
 	AI_Output (other, self,"ORG_855_Wolf_TRAIN_Info_15_01"); //Naucz mnie strzelaæ z ³uku.
-	if (hero.attribute[ATR_Dexterity] >= 30)
+	if (hero.attribute[ATR_Dexterity] >= 15)
 	{
 	if (Npc_HasItems (hero,ItMiNugget) >= 50) 
 	{
@@ -345,7 +345,7 @@ FUNC void  ORG_855_Wolf_TRAIN_Info()
 	else
 	{
 	AI_Output			(self,other,"DIA_Wolf_NO_ENOUGHT_STR_1"); //Popracuj jeszcze nad swoj¹ zrêcznoœci¹.
-	PrintScreen	("Warunek: Zrêcznoœæ 30", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
+	PrintScreen	("Warunek: Zrêcznoœæ 15", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 	};
 	
 };  
@@ -376,7 +376,7 @@ FUNC int  ORG_855_Wolf_TRAINAGAIN_Condition()
 FUNC void  ORG_855_Wolf_TRAINAGAIN_Info()
 {
 	AI_Output (other, self,"ORG_855_Wolf_TRAINAGAIN_Info_15_01"); //Chcia³bym sprawniej pos³ugiwaæ siê ³ukiem.
-		if (hero.attribute[ATR_Dexterity] >= 60)
+		if (hero.attribute[ATR_Dexterity] >= 30)
 	{
 	if (Npc_HasItems (hero,ItMiNugget) >= 50) 
 	{
@@ -403,7 +403,7 @@ FUNC void  ORG_855_Wolf_TRAINAGAIN_Info()
 	else
 	{
 	AI_Output			(self,other,"DIA_Wolf_NO_ENOUGHT_STR_1"); //Popracuj jeszcze nad swoj¹ zrêcznoœci¹.
-	PrintScreen	("Warunek: Zrêcznoœæ 60", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
+	PrintScreen	("Warunek: Zrêcznoœæ 30", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 	};
 }; 
 //---------------------------------------------------------------

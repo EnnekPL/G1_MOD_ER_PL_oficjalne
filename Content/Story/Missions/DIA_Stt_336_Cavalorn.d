@@ -99,7 +99,7 @@ FUNC VOID DIA_cavalorn_Lehrer_Info()
 	
 	if	(Npc_GetTalentSkill (hero,NPC_TALENT_SNEAK) == 0)
 	{
-		Info_AddChoice		(DIA_cavalorn_Lehrer,B_BuildLearnString(NAME_LearnSneak, 		LPCOST_TALENT_SNEAK,0)	,DIA_cavalorn_Lehrer_Schleichen);
+		Info_AddChoice		(DIA_cavalorn_Lehrer,B_BuildLearnString(NAME_LearnSneak, 		LPCOST_TALENT_SNEAK,200)	,DIA_cavalorn_Lehrer_Schleichen);
 	};
 };
 
@@ -110,7 +110,7 @@ func void DIA_cavalorn_Lehrer_BACK()
 
 func void DIA_Cavalorn_Lehrer_Bow()
 {
-	if (hero.attribute[ATR_Dexterity] >= 30)
+	if (hero.attribute[ATR_Dexterity] >= 15)
 	{
 	if (B_GiveSkill(other, NPC_TALENT_BOW, 1, LPCOST_TALENT_BOW_1))
 	{		
@@ -124,12 +124,14 @@ func void DIA_Cavalorn_Lehrer_Bow()
 	else
 	{
 	AI_Output			(self,other,"DIA_cavalorn_NO_ENOUGHT_STR_1"); //Nie jesteœ jeszcze wystarczaj¹co zrêczny!
-	PrintScreen	("Warunek: Zrêcznoœæ 30", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
+	PrintScreen	("Warunek: Zrêcznoœæ 15", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 	};
 };
 
 func void DIA_Cavalorn_Lehrer_Schleichen()
 {
+	if (Npc_HasItems (hero,ItMiNugget) >= 200) 
+	{
 	if (B_GiveSkill(other, NPC_TALENT_SNEAK, 1, LPCOST_TALENT_SNEAK))
 	{		
 		AI_Output (other, self,"DIA_cavalorn_Lehrer_Schleichen_15_00"); //Chcia³bym poruszaæ siê bezszelestnie.
@@ -138,10 +140,16 @@ func void DIA_Cavalorn_Lehrer_Schleichen()
 		AI_Output (self, other,"DIA_cavalorn_Lehrer_Schleichen_12_03"); //Oczywiœcie ktoœ obserwuj¹cy ciê z boku natychmiast nabierze podejrzeñ, wiêc skradaj siê zawsze nie bêd¹c widzianym przez osoby trzecie.
 		AI_Output (self, other,"DIA_cavalorn_Lehrer_Schleichen_12_04"); //Zapamiêtaj sobie dobrze co ci powiedzia³em, i przede wszystkim nie daj siê z³apaæ!
 	};
+	B_GiveInvItems (hero, self, ItMiNugget,200);
+	}
+	else
+	{
+	AI_Output (self, other,"DIA_cavalorn_Lehrer_Schleichen_NOORE"); //Brakuje ci rudy.
+	};
 };
 func void DIA_Cavalorn_Lehrer_Bow_2()
 {
-	if (hero.attribute[ATR_Dexterity] >= 60)
+	if (hero.attribute[ATR_Dexterity] >= 30)
 	{
 	if (B_GiveSkill(other, NPC_TALENT_BOW, 2, LPCOST_TALENT_BOW_2))
 	{		
@@ -154,7 +162,7 @@ func void DIA_Cavalorn_Lehrer_Bow_2()
 	else
 	{
 	AI_Output			(self,other,"DIA_cavalorn_NO_ENOUGHT_STR_1"); //Nie jesteœ jeszcze wystarczaj¹co zrêczny!
-	PrintScreen	("Warunek: Zrêcznoœæ 60", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
+	PrintScreen	("Warunek: Zrêcznoœæ 30", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 	};
 };
 /*------------------------------------------------------------------------

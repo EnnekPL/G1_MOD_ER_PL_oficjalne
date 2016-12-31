@@ -210,7 +210,7 @@ func void DIA_davor_LehrerDEX5()
 };
 func void DIA_davor_Lehrer_Bow()
 {
-	if (hero.attribute[ATR_Dexterity] >= 30)
+	if (hero.attribute[ATR_Dexterity] >= 15)
 	{
 	if (Npc_HasItems (hero, ItMiNugget) >=100)
 	{
@@ -232,14 +232,14 @@ func void DIA_davor_Lehrer_Bow()
 	else
 	{
 	AI_Output			(self,other,"DIA_Davor_NO_ENOUGHT_STR_1"); //Popracuj jeszcze nad swoj¹ zrêcznoœci¹.
-	PrintScreen	("Warunek: Zrêcznoœæ 30", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
+	PrintScreen	("Warunek: Zrêcznoœæ 15", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 	};
 };
 
 
 func void DIA_davor_Lehrer_Bow_2()
 {
-		if (hero.attribute[ATR_Dexterity] >= 60)
+		if (hero.attribute[ATR_Dexterity] >= 30)
 	{
 if (Npc_HasItems (hero, ItMiNugget) >=200)
 {
@@ -260,7 +260,7 @@ if (Npc_HasItems (hero, ItMiNugget) >=200)
 	else
 	{
 	AI_Output			(self,other,"DIA_Davor_NO_ENOUGHT_STR_1"); //Popracuj jeszcze nad swoj¹ zrêcznoœci¹.
-	PrintScreen	("Warunek: Zrêcznoœæ 60", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
+	PrintScreen	("Warunek: Zrêcznoœæ 30", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 	};
 };
 

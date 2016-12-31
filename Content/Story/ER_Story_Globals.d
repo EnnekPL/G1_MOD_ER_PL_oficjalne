@@ -328,7 +328,7 @@ var int MIS_TreasureOldGuard;
 const string CH2_TreasureOldGuard 			= "Skarb starego Stra¿nika";
 
 var int MIS_ScarMurder;
-const string CH3_ScarMurder  				= "Blizna na sumieniu";
+const string CH3_ScarMurder  				= "Blizna na sumieniu";//*kopalnia z³ota
 
 var int MIS_ThreeLords;
 const string CH4_ThreeLords     			= "Trzej Lordowie";
@@ -451,7 +451,7 @@ var int MIS_StevesEquipment;
 const string CH4_StevesEquipment      		= "Ekwipunek Steve'a";
 
 var int MIS_TreasureSeeking;
-const string CH4_TreasureSeeking     		= "Poszukiwanie skarbu";
+const string CH4_TreasureSeeking     		= "Poszukiwanie skarbu";//*kopalnia z³ota
 
 var int MIS_NewLocationForPirates;
 const string CH4_NewLocationForPirates  	= "Spokojniejsze miejsce dla piratów";

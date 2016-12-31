@@ -217,7 +217,7 @@ func void GRD_205_Scorpio_CROSSBOW_BACK()
 func void GRD_205_Scorpio_CROSSBOW_OK()
 {
 	AI_Output (other, self,"GRD_205_Scorpio_CROSSBOW_OK_15_01"); //Umowa stoi. Poka¿ mi jak obchodziæ siê z kusz¹.
-	if (hero.attribute[ATR_Dexterity] >= 50)
+	if (hero.attribute[ATR_Dexterity] >= 20)
 	{
 	if (Npc_HasItems (hero,ItMiNugget)>= 200)
 	{
@@ -240,7 +240,7 @@ func void GRD_205_Scorpio_CROSSBOW_OK()
 	else
 	{
 	AI_Output			(self,other,"DIA_Scorpio_NO_ENOUGHT_STR_1"); //Musisz byæ znacznie zrêczniejszy!
-	PrintScreen	("Warunek: Zrêcznoœæ 50", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
+	PrintScreen	("Warunek: Zrêcznoœæ 20", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 	};
 };
 
@@ -285,7 +285,7 @@ func void GRD_205_Scorpio_CROSSBOW2_BACK()
 func void GRD_205_Scorpio_CROSSBOW2_OK()
 {
 	AI_Output (other, self,"GRD_205_Scorpio_CROSSBOW2_OK_15_01"); //Zaczynajmy.
-		if (hero.attribute[ATR_Dexterity] >= 100)
+		if (hero.attribute[ATR_Dexterity] >= 40)
 	{
 	if (Npc_HasItems (hero,ItMiNugget)>= 300)
 	{
@@ -308,7 +308,7 @@ func void GRD_205_Scorpio_CROSSBOW2_OK()
 	else
 	{
 	AI_Output			(self,other,"DIA_Scorpio_NO_ENOUGHT_STR_1"); //Musisz byæ znacznie zrêczniejszy!
-	PrintScreen	("Warunek: Zrêcznoœæ 100", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
+	PrintScreen	("Warunek: Zrêcznoœæ 40", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 	};
 };
 /*------------------------------------------------------------------------
