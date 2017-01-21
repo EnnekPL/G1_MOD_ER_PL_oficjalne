@@ -330,6 +330,8 @@ FUNC void  non_205_davor_CROSSBOW_Info()
 {
 
 	AI_Output (other, self,"non_205_davor_CROSSBOW_Info_15_01"); //Poka¿ mi podstawy strzelania z kuszy.
+	if (hero.attribute[ATR_Dexterity] >= 20)
+	{
 		if (Npc_HasItems (hero, ItMiNugget) >=100)
 		{
 		if (B_GiveSkill(other,NPC_TALENT_CROSSBOW , 1, LPCOST_TALENT_CROSSBOW_1))
@@ -346,6 +348,13 @@ FUNC void  non_205_davor_CROSSBOW_Info()
 		else
 		{
 		AI_Output (self, other,"non_205_davor_CROSSBOW_Info_13_07"); //Je¿eli chcesz poznaæ podstawy musisz mi zap³aciæ 100 bry³ek rudy!
+		non_205_davor_CROSSBOW.permanent = 1;
+		};
+		}
+		else
+		{
+		AI_Output (self, other,"non_205_davor_CROSSBOW_Info_13_08_DEX"); //Musisz byæ zrêczniejszy!
+		PrintScreen	("Warunek: Zrêcznoœæ 20", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 		non_205_davor_CROSSBOW.permanent = 1;
 		};
 };
@@ -376,6 +385,8 @@ FUNC int  non_205_davor_CROSSBOW2_Condition()
 FUNC void  non_205_davor_CROSSBOW2_Info()
 {
 	AI_Output (other, self,"non_205_davor_CROSSBOW2_Info_15_01"); //Chcia³bym dowiedzieæ siê czegoœ wiêcej o strzelaniu z kuszy.
+	if (hero.attribute[ATR_Dexterity] >= 40)
+	{
 		if (Npc_HasItems (hero, ItMiNugget) >=200)
 		{
 		if (B_GiveSkill(other,NPC_TALENT_CROSSBOW , 2, LPCOST_TALENT_CROSSBOW_2))
@@ -393,6 +404,13 @@ FUNC void  non_205_davor_CROSSBOW2_Info()
 		else
 		{
 		AI_Output (self, other,"non_205_davor_CROSSBOW2_OK_13_08"); //Chcia³bym ¿ebyœ najpierw mi zap³aci³ 200 bry³ek rudy.
+		non_205_davor_CROSSBOW2.permanent = 1;
+		};
+		}
+		else
+		{
+		AI_Output (self, other,"non_205_davor_CROSSBOW_Info_13_08_DEX"); //Musisz byæ zrêczniejszy!
+		PrintScreen	("Warunek: Zrêcznoœæ 40", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
 		non_205_davor_CROSSBOW2.permanent = 1;
 		};
 };

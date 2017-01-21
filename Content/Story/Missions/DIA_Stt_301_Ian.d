@@ -460,20 +460,20 @@ FUNC VOID DIA_IAN_SZPIEG_Info()
 };
 
 //========================================
-//-----------------> NextToAwansCienQuest
+//-----------------> Start_FoodForOldMine
 //========================================
 
-INSTANCE DIA_IAN_NextToAwansCienQuest (C_INFO)
+INSTANCE DIA_IAN_Start_FoodForOldMine (C_INFO)
 {
    npc          = STT_301_IAN;
    nr           = 1;
-   condition    = DIA_IAN_NextToAwansCienQuest_Condition;
-   information  = DIA_IAN_NextToAwansCienQuest_Info;
+   condition    = DIA_IAN_Start_FoodForOldMine_Condition;
+   information  = DIA_IAN_Start_FoodForOldMine_Info;
    permanent	= FALSE;
    Important    = TRUE;
 };
 
-FUNC INT DIA_IAN_NextToAwansCienQuest_Condition()
+FUNC INT DIA_IAN_Start_FoodForOldMine_Condition()
 {
     if (Npc_KnowsInfo (hero, STT_301_IAN_GETLIST))
     {
@@ -482,18 +482,18 @@ FUNC INT DIA_IAN_NextToAwansCienQuest_Condition()
 };
 
 
-FUNC VOID DIA_IAN_NextToAwansCienQuest_Info()
+FUNC VOID DIA_IAN_Start_FoodForOldMine_Info()
 {
-    AI_Output (self, other ,"DIA_IAN_NextToAwansCienQuest_03_01"); //Zaczekaj. Jak ju¿ wybierasz siê na zewn¹trz, to bêdê mia³ dla ciebie zadanie.
-    AI_Output (self, other ,"DIA_IAN_NextToAwansCienQuest_03_02"); //Mamy problem z dostawami ¿ywnoœci do Kopalni.
-    AI_Output (self, other ,"DIA_IAN_NextToAwansCienQuest_03_03"); //To co dostajemy z Obozu nie zgadza siê z tym, co zamawiamy.
-    AI_Output (self, other ,"DIA_IAN_NextToAwansCienQuest_03_04"); //Nikt z moich ludzi nie chcia³ sobie babraæ tym r¹k.
-    AI_Output (self, other ,"DIA_IAN_NextToAwansCienQuest_03_05"); //Móg³byœ wyjaœniæ tê sprawê?
-    AI_Output (other, self ,"DIA_IAN_NextToAwansCienQuest_15_06"); //Jasne. Od czego mam zacz¹æ?
-    AI_Output (self, other ,"DIA_IAN_NextToAwansCienQuest_03_07"); //IdŸ do Starego Obozu i porozmawiaj z kucharzem Snafem.
-    AI_Output (self, other ,"DIA_IAN_NextToAwansCienQuest_03_08"); //On przygotowuje ¿ywnoœæ, która jest nam dostarczana.
-    AI_Output (other, self ,"DIA_IAN_NextToAwansCienQuest_15_09"); //Wkrótce siê tym zajmê. 
-    AI_Output (self, other ,"DIA_IAN_NextToAwansCienQuest_03_10"); //Pospiesz siê.
+    AI_Output (self, other ,"DIA_IAN_Start_FoodForOldMine_03_01"); //Zaczekaj. Jak ju¿ wybierasz siê na zewn¹trz, to bêdê mia³ dla ciebie zadanie.
+    AI_Output (self, other ,"DIA_IAN_Start_FoodForOldMine_03_02"); //Mamy problem z dostawami ¿ywnoœci do Kopalni.
+    AI_Output (self, other ,"DIA_IAN_Start_FoodForOldMine_03_03"); //To co dostajemy z Obozu nie zgadza siê z tym, co zamawiamy.
+    AI_Output (self, other ,"DIA_IAN_Start_FoodForOldMine_03_04"); //Nikt z moich ludzi nie chcia³ sobie babraæ tym r¹k.
+    AI_Output (self, other ,"DIA_IAN_Start_FoodForOldMine_03_05"); //Móg³byœ wyjaœniæ tê sprawê?
+    AI_Output (other, self ,"DIA_IAN_Start_FoodForOldMine_15_06"); //Jasne. Od czego mam zacz¹æ?
+    AI_Output (self, other ,"DIA_IAN_Start_FoodForOldMine_03_07"); //IdŸ do Starego Obozu i porozmawiaj z kucharzem Snafem.
+    AI_Output (self, other ,"DIA_IAN_Start_FoodForOldMine_03_08"); //On przygotowuje strawê, która jest nam dostarczana.
+    AI_Output (other, self ,"DIA_IAN_Start_FoodForOldMine_15_09"); //Wkrótce siê tym zajmê. 
+    AI_Output (self, other ,"DIA_IAN_Start_FoodForOldMine_03_10"); //Mam tak¹ nadziejê.
     MIS_FoodForOldMine = LOG_RUNNING;
 
     Log_CreateTopic          (CH1_FoodForOldMine, LOG_MISSION);
@@ -518,7 +518,7 @@ INSTANCE DIA_IAN_QuestEndAll (C_INFO)
 
 FUNC INT DIA_IAN_QuestEndAll_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Arto_Succes_Ian_Arto_Quest))
+    if (Npc_KnowsInfo (hero, DIA_Artegor_QuestIan_Succes))
     {
     return TRUE;
     };
@@ -529,15 +529,15 @@ FUNC VOID DIA_IAN_QuestEndAll_Info()
 {
     AI_Output (other, self ,"DIA_IAN_QuestEndAll_15_01"); //Problem zosta³ rozwi¹zany.
     AI_Output (other, self ,"DIA_IAN_QuestEndAll_15_02"); //Mirzo odprowadza³ czêœæ dostaw do Nowego Obozu. NieŸle przy tym zarobi³.
-    AI_Output (self, other ,"DIA_IAN_QuestEndAll_03_03"); //A to gnida! Mam nadzieje, ¿e zrobi³eœ z nim porz¹dek?
-    AI_Output (other, self ,"DIA_IAN_QuestEndAll_15_04"); //Nie musia³em, do obozu przyby³ Arto, który wszystkim siê zaj¹³.
+    AI_Output (self, other ,"DIA_IAN_QuestEndAll_03_03"); //A to gnida! Mam nadzieje, ¿e ju¿ nie bêdzie przeszkadza³?
+    AI_Output (other, self ,"DIA_IAN_QuestEndAll_15_04"); //Nie bêdzie.
     AI_Output (self, other ,"DIA_IAN_QuestEndAll_03_05"); //Bardzo dobrze. Œwietnie siê spisa³eœ, jak na nowego.
     B_LogEntry               (CH1_FoodForOldMine,"Powiedzia³em o wszystkim Ianowi. Moja rola skoñczona. ");
     Log_SetTopicStatus       (CH1_FoodForOldMine, LOG_SUCCESS);
     MIS_FoodForOldMine = LOG_SUCCESS;
 
-    B_GiveXP (400);
-    CreateInvItems (self, ItMiNugget, 200);
-    B_GiveInvItems (self, other, ItMiNugget, 200);
+    B_GiveXP (255);
+    CreateInvItems (self, ItMiNugget, 150);
+    B_GiveInvItems (self, other, ItMiNugget, 150);
     AI_StopProcessInfos	(self);
 };

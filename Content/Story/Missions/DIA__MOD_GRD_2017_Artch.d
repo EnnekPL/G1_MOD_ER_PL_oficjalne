@@ -121,7 +121,7 @@ FUNC VOID DIA_Artch_KROLOWA_Info()
 {
     AI_Output (self, other ,"DIA_Artch_KROLOWA_03_01"); //Ch³opcze, odwali³eœ kawa³ naprawdê dobrej roboty.
     AI_Output (self, other ,"DIA_Artch_KROLOWA_03_02"); //Pe³zacze by³y powa¿nym zagro¿eniem dla pracuj¹cych tutaj ludzi.
-    AI_Output (self, other ,"DIA_Artch_KROLOWA_03_03"); //Cieszê siê, ¿e teraz kopalnia jest bezpieczna.
+    AI_Output (self, other ,"DIA_Artch_KROLOWA_03_03"); //Stra¿nicy bêd¹ mieæ teraz mniej pracy. Jesteœ w porz¹dku.
     AI_Output (other, self ,"DIA_Artch_KROLOWA_15_04"); //Cieszê siê, ¿e mog³em pomóc. Muszê jednak ruszaæ w dalsz¹ drogê.
     AI_Output (self, other ,"DIA_Artch_KROLOWA_03_05"); //Jasne. Nie bêdê ciê zatrzymywa³. 
     AI_StopProcessInfos	(self);
@@ -158,9 +158,9 @@ FUNC VOID DIA_Artch_ianQuest_Spy_Info()
     AI_Output (self, other ,"DIA_Artch_ianQuest_Spy_03_04"); //Boimy siê ryzykowaæ. Osoby, które uprzednio siê tym zajmowa³y nie skoñczy³y zbyt dobrze.
     AI_Output (self, other ,"DIA_Artch_ianQuest_Spy_03_05"); //Pewnego dnia wpad³ Arto i zrobi³ z nimi porz¹dek.
     AI_Output (other, self ,"DIA_Artch_ianQuest_Spy_15_06"); //Hmm... Rozumiem.
-    B_LogEntry                     (CH1_FoodForOldMine,"Artch twierdzi, ¿e wszystko jest w porz¹dku.");
+    B_LogEntry                     (CH1_FoodForOldMine,"Artch twierdzi, ¿e wszystko jest w porz¹dku. Jeœli któryœ z nich coœ kombinuje, bêdê go musia³ przy³apaæ na gor¹cym uczynku.");
 
-    B_GiveXP (50);
+   // B_GiveXP (50);
     AI_StopProcessInfos	(self);
 };
 

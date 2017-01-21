@@ -1272,7 +1272,7 @@ FUNC VOID DIA_Rocky_THX_ZA_ROBOTE_Info()
     AI_Output (self, other ,"DIA_Rocky_THX_ZA_ROBOTE_03_01"); //Stary, kolejny raz ratujesz nam ty³ek. Odda³eœ niecenion¹ pomoc Bandytom.
     AI_Output (self, other ,"DIA_Rocky_THX_ZA_ROBOTE_03_02"); //Wielkie dziêki. Kopalnia jest nasza: Bandytów i Najemników, nie Gomeza. Dobra robota. 
     AI_Output (self, other ,"DIA_Rocky_THX_ZA_ROBOTE_03_03"); //Masz tu trochê rudy.
-    CreateInvItems (self, ItMiNugget, 350);
-    B_GiveInvItems (self, other, ItMiNugget, 350);
+    CreateInvItems (self, ItMiNugget, 100);
+    B_GiveInvItems (self, other, ItMiNugget, 100);
     AI_StopProcessInfos	(self);
 };

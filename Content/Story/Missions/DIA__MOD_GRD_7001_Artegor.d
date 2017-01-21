@@ -307,17 +307,17 @@ INSTANCE DIA_Artegor_Lizusek (C_INFO)
 
 FUNC INT DIA_Artegor_Lizusek_Condition()
 {
-   if Npc_KnowsInfo (hero, DIA_Gamal_DOTARLISMY) //&& (pogadajGamal == true) // po questa kurwo!!!
+   if Npc_KnowsInfo (hero, DIA_Gamal_DOTARLISMY)
    && (GoToOM == false)
-	{
-    return TRUE;
+   {
+   return TRUE;
    };
 };
 
 
 FUNC VOID DIA_Artegor_Lizusek_Info()
 {
-     AI_Output (other, self ,"DIA_Artegor_WEJSCIE_PRZYJECIE_15_01"); //Przyszed³em z Petro i trzema ludŸmi do Kopalni. Mam tam pracowaæ. 
+    AI_Output (other, self ,"DIA_Artegor_WEJSCIE_PRZYJECIE_15_01"); //Przyszed³em z Petro i trzema ludŸmi do Kopalni. Mam tam pracowaæ. 
     AI_Output (self, other ,"DIA_Artegor_WEJSCIE_PRZYJECIE_03_02"); //Faktycznie, widzia³em trzy znajome twarze. PrzechodŸ i nie rób k³opotów.
 	GoToOM = true;
 	AI_StopProcessInfos	(self);
@@ -392,10 +392,10 @@ FUNC INT DIA_Artegor_SZKODNIK_Condition()
 FUNC VOID DIA_Artegor_SZKODNIK_Info()
 {
     AI_Output (self, other ,"DIA_Artegor_SZKODNIK_03_01"); //Czekaj!
-    AI_Output (self, other ,"DIA_Artegor_SZKODNIK_03_02"); //Czego tu szukasz szubrawco?
+    AI_Output (self, other ,"DIA_Artegor_SZKODNIK_03_02"); //Czego tu szukasz, szubrawco?
     AI_Output (self, other ,"DIA_Artegor_SZKODNIK_03_03"); //Znudzi³y wam siê napady na konwoje? Teraz Lares przysy³a szpiegów?
     AI_Output (other, self ,"DIA_Artegor_SZKODNIK_15_04"); //To nie tak. Mam wa¿ne interesy do za³atwienia w kopalni. Jestem nastawiony pokojowo.
-    AI_Output (self, other ,"DIA_Artegor_SZKODNIK_03_05"); //Niech ci bêdzie, ale mam ciê na oku. Jeden z³y ruch i wyprujê ci flaki!
+    AI_Output (self, other ,"DIA_Artegor_SZKODNIK_03_05"); //Niech ci bêdzie, ale mam ciê na oku. Jeden fa³szywy ruch i wyprujê ci flaki!
     AI_StopProcessInfos	(self);
 	GoToOM = true;
 };
@@ -426,9 +426,9 @@ FUNC INT DIA_Artegor_BANDYTA_Condition()
 FUNC VOID DIA_Artegor_BANDYTA_Info()
 {
     AI_Output (self, other ,"DIA_Artegor_BANDYTA_03_01"); //STÓJ, szujo!
-    AI_Output (self, other ,"DIA_Artegor_BANDYTA_03_02"); //Czego na Beliara tu szukasz? ¯ycie ci nie mi³e?
+    AI_Output (self, other ,"DIA_Artegor_BANDYTA_03_02"); //Czego tu chcesz? ¯ycie ci nie mi³e?
     AI_Output (other, self ,"DIA_Artegor_BANDYTA_15_03"); //Mam sprawê do za³atwienia w kopalni. Pozwól mi przejœæ. 
-    AI_Output (self, other ,"DIA_Artegor_BANDYTA_03_04"); //Tylko zaczniesz sprawiaæ k³opoty brudny Bandyto, a po¿a³ujesz. 
+    AI_Output (self, other ,"DIA_Artegor_BANDYTA_03_04"); //Jeœli tylko zaczniesz sprawiaæ k³opoty, brudny Bandyto, po¿a³ujesz. 
     AI_Output (self, other ,"DIA_Artegor_BANDYTA_03_05"); //Nie mogê siê doczekaæ, a¿ znajdziemy ten wasz zapchlony Obóz. 
     AI_Output (self, other ,"DIA_Artegor_BANDYTA_03_06"); //W³aŸ!
     AI_StopProcessInfos	(self);
@@ -472,34 +472,32 @@ FUNC VOID DIA_Artegor_NOVIZE_Info()
 
 
 //========================================
-//-----------------> EXITKURWA
+//-----------------> GO_OUT
 //========================================
 
-INSTANCE DIA_Artegor_EXITKURWA (C_INFO)
+INSTANCE DIA_Artegor_GO_OUT (C_INFO)
 {
    npc          = GRD_7001_Artegor;
    nr           = 1;
-   condition    = DIA_Artegor_EXITKURWA_Condition;
-   information  = DIA_Artegor_EXITKURWA_Info;
+   condition    = DIA_Artegor_GO_OUT_Condition;
+   information  = DIA_Artegor_GO_OUT_Info;
    permanent	= TRUE;
    Important    = TRUE;
 };
 
-FUNC INT DIA_Artegor_EXITKURWA_Condition()
+FUNC INT DIA_Artegor_GO_OUT_Condition()
 {
     if (GoToOM == false) && (Npc_GetDistToWP (hero, "ENTER1") < 1000) && (Npc_KnowsInfo (hero, DIA_Artegor_GoAway))  
-
     {
     return TRUE;
     };
 };
 
 
-FUNC VOID DIA_Artegor_EXITKURWA_Info()
+FUNC VOID DIA_Artegor_GO_OUT_Info()
 {
-    AI_Output (self, other ,"DIA_Artegor_EXITKURWA_03_01"); //Ej, ty! Nie mo¿esz wejœæ do kopalni. Spadaj!
+    AI_Output (self, other ,"DIA_Artegor_GO_OUT_03_01"); //Ej, ty! Nie mo¿esz wejœæ do kopalni. Spadaj!
 };
-
 
 //========================================
 //-----------------> QuestIan_Succes
@@ -512,7 +510,7 @@ INSTANCE DIA_Artegor_QuestIan_Succes (C_INFO)
    condition    = DIA_Artegor_QuestIan_Succes_Condition;
    information  = DIA_Artegor_QuestIan_Succes_Info;
    permanent	= FALSE;
-   description	= "Mirzo to zdrajca. Potajemnie sprzedawa³ jedzenie z konwojów w Nowym Obozie.";
+   description	= "Mirzo potajemnie sprzedawa³ jedzenie z dostaw.";
 };
 
 FUNC INT DIA_Artegor_QuestIan_Succes_Condition()
@@ -526,18 +524,24 @@ FUNC INT DIA_Artegor_QuestIan_Succes_Condition()
 
 FUNC VOID DIA_Artegor_QuestIan_Succes_Info()
 {
-    AI_Output (other, self ,"DIA_Artegor_QuestIan_Succes_15_01"); //Mirzo to zdrajca. Potajemnie sprzedawa³ jedzenie z konwojów w Nowym Obozie.
-    AI_Output (self, other ,"DIA_Artegor_QuestIan_Succes_03_02"); //Czy¿by? A masz na to jakiœ dowód?
-    AI_Output (other, self ,"DIA_Artegor_QuestIan_Succes_15_03"); //Tak, œledzi³em go i widzia³em jak targowa³ siê z kilkoma Szkodnikami.
+    AI_Output (other, self ,"DIA_Artegor_QuestIan_Succes_15_01"); //Mirzo potajemnie sprzedawa³ jedzenie z dostaw.
+    AI_Output (self, other ,"DIA_Artegor_QuestIan_Succes_03_02"); //Czy¿by? Jak siê tego dowiedzia³eœ?
+    AI_Output (other, self ,"DIA_Artegor_QuestIan_Succes_15_03"); //Œledzi³em go i widzia³em jak targowa³ siê z kilkoma Szkodnikami przy wejœciu do Nowego Obozu.
     AI_Output (other, self ,"DIA_Artegor_QuestIan_Succes_15_04"); //Kopacz Patrick twierdzi, ¿e widzia³ Mirzo wymykaj¹cego siê noc¹ z obozu.
-    AI_Output (other, self ,"DIA_Artegor_QuestIan_Succes_15_05"); //Wszystko wydaje siê jasne.
-    AI_Output (self, other ,"DIA_Artegor_QuestIan_Succes_03_06"); //Ach tak. A wiêc to prawda, co mówi³ Snaf.
-    AI_Output (self, other ,"DIA_Artegor_QuestIan_Succes_03_07"); //Dostawy ¿ywnoœci by³y niezgodne.
-    AI_Output (other, self ,"DIA_Artegor_QuestIan_Succes_15_08"); //Zgadza siê.
-	AI_Output (self, other ,"DIA_Artegor_QuestIan_Succes_03_09"); //Arto ju¿ tutaj idzie, by rozwi¹zaæ ca³¹ sprawê. Opowiedz mu o wszystkim. Znajdziesz go w tym wielkim namiocie. 
-    B_LogEntry                     (CH1_FoodForOldMine,"Powiedzia³em Artegorowi, co uda³o mi siê ustaliæ. Podobno do obozu przyby³ Magnat Arto. Chyba pomówiê z nim osobiœcie.");
-	Npc_ExchangeRoutine (EBR_102_Arto, "kox");
-    B_GiveXP (200);
+    AI_Output (other, self ,"DIA_Artegor_QuestIan_Succes_15_05"); //Wszystko uk³ada siê w ca³oœæ. 
+	if (Npc_IsDead(GRD_7007_Mirzo))
+	{
+	AI_Output (other, self ,"DIA_Artegor_QuestIan_Succes_15_07"); //Mirzo nie ¿yje. Rzuci³ siê na mnie, a ja nie mia³em zamiaru zostawiaæ go przy ¿yciu.
+	AI_Output (self, other ,"DIA_Artegor_QuestIan_Succes_03_08"); //Nastêpnym razem nie zgrywaj twardziela. Zabijanie naszych ludzi nie jest mile widziane. Przeka¿ Ianowi, ¿e przy nastêpnej dostawie wszystko bêdzie w porz¹dku.
+	}
+	else
+	{
+	AI_Output (self, other ,"DIA_Artegor_QuestIan_Succes_03_06"); //W porz¹dku. Zajmiemy siê nim. Przeka¿ Ianowi, ¿e przy nastêpnej dostawie wszystko bêdzie w porz¹dku.
+	};
+    
+    B_LogEntry                     (CH1_FoodForOldMine,"Artegor powiedzia³, ¿e jego ludzi zajm¹ siê Mirzo. Mi pozosta³o zameldowaæ Ianowi o wykonaniu zadania.");
+	//Npc_ExchangeRoutine (EBR_102_Arto, "kox");
+    //B_GiveXP (200);
 	GRD_7007_Mirzo.flags = 0;
 	Npc_ExchangeRoutine (GRD_7007_Mirzo, "paka");
 	GRD_7007_Mirzo.guild = GIL_NONE;

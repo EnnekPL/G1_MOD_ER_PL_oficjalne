@@ -77,12 +77,13 @@ FUNC INT DIA_Alex_Skup_Condition()
 FUNC VOID DIA_Alex_Skup_Info()
 {
     AI_Output (other, self ,"DIA_Alex_Skup_15_01"); //Skupujecie trofea?
-    AI_Output (self, other ,"DIA_Alex_Skup_03_02"); //Jasne! Je¿eli masz na sprzeda¿ skóry wilków lub miêso, mo¿esz je tutaj przynieœæ.
-    AI_Output (self, other ,"DIA_Alex_Skup_03_03"); //Miêso skupujemy tylko w wiêkszych iloœciach.
-    AI_Output (self, other ,"DIA_Alex_Skup_03_04"); //50 sztuk miêsa za 100 bry³ek rudy.
+    AI_Output (self, other ,"DIA_Alex_Skup_03_02"); //Jasne! Je¿eli masz na sprzeda¿ skóry wilków to mo¿esz je tutaj przynieœæ.
+    //AI_Output (self, other ,"DIA_Alex_Skup_03_03"); //Miêso skupujemy tylko w wiêkszych iloœciach.
+    //AI_Output (self, other ,"DIA_Alex_Skup_03_04"); //50 sztuk miêsa za 100 bry³ek rudy.
 	AI_Output (self, other ,"DIA_Alex_Skup_03_05"); //Jeœli chodzi o skóry, to p³acê 200 bry³ek za 30 sztuk.
 	Log_CreateTopic 	(GE_Skup,LOG_NOTE);
-	B_LogEntry			(GE_Skup,"Alex skupuje futra (200 bry³ek za 30 sztuk) i miêso (100 bry³ek za 50 sztuk. Mo¿na go znaleŸæ w obozie myœliwych.");
+	//B_LogEntry			(GE_Skup,"Alex skupuje futra (200 bry³ek za 30 sztuk) i miêso (100 bry³ek za 50 sztuk. Mo¿na go znaleŸæ w obozie myœliwych.");
+    B_LogEntry			(GE_Skup,"Alex skupuje futra (200 bry³ek za 30 sztuk).Mo¿na go znaleŸæ w obozie myœliwych.");
     
 };
 
@@ -140,7 +141,7 @@ FUNC INT DIA_Alex_SellMeat_Condition()
     if (Npc_KnowsInfo (hero, DIA_Alex_Skup))
     && (Npc_HasItems (other, ItFoMuttonRaw) >=50)
     {
-    return TRUE;
+    return FALSE;
     };
 };
 

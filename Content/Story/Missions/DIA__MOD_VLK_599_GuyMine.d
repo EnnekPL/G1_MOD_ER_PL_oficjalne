@@ -230,8 +230,8 @@ FUNC VOID DIA_GuyMine_OdnalezionyPamietnik_Info()
     B_UseFakeScroll ();
     AI_Output (self, other ,"DIA_GuyMine_OdnalezionyPamietnik_03_03"); //Ach, w tej kopalni jest za ma³o œwiat³a.
     AI_Output (self, other ,"DIA_GuyMine_OdnalezionyPamietnik_03_04"); //PóŸniej nad tym posiedzê. Dziêki, ch³opcze. WeŸ to za pomoc.
-    CreateInvItems (self, ItMiNugget, 100);
-    B_GiveInvItems (self, other, ItMiNugget, 100);
+    CreateInvItems (self, ItMiNugget, 50);
+    B_GiveInvItems (self, other, ItMiNugget, 50);
     B_GiveInvItems (other, self, ItMis_PamietnikGrimesa1, 1);
     B_GiveInvItems (other, self, ItMis_PamietnikGrimesa2, 1);
     B_GiveInvItems (other, self, ItMis_PamietnikGrimesa3, 1);

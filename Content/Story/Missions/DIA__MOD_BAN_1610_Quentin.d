@@ -781,8 +781,8 @@ FUNC VOID DIA_Quentin_HELLORINGS_Info()
 	B_GiveInvItems (hero,self, EBR_Ring2, 1);
 	B_GiveInvItems (hero,self, EBR_Ring3, 1);
 	//PrintScreen	("3 przedmioty oddane", -1,_YPOS_MESSAGE_GIVEN,"FONT_OLD_20_WHITE.TGA",_TIME_MESSAGE_GIVEN);
-    CreateInvItems (self, ItMiNugget, 200);
-    B_GiveInvItems (self, other, ItMiNugget, 200);
+    CreateInvItems (self, ItMiNugget, 300);
+    B_GiveInvItems (self, other, ItMiNugget, 300);
     AI_StopProcessInfos	(self);
 };
 
@@ -975,8 +975,8 @@ FUNC VOID DIA_Quentin_HELLO112_Info()
     Log_SetTopicStatus       (CH1_PSIcampWORK, LOG_SUCCESS);
     MIS_PSIcampWORK = LOG_SUCCESS;
 	//prize
-	B_GiveInvItems (other, self, ItMiNugget, 155);
-    CreateInvItems (self, ItMiNugget, 155);
+	B_GiveInvItems (other, self, ItMiNugget, 130);
+    CreateInvItems (self, ItMiNugget, 130);
     B_GiveXP (XP_JobInOldMine);
 };
 
@@ -1135,8 +1135,8 @@ FUNC VOID DIA_Quentin_Kalom2_Info()
 	//experience
     B_GiveXP (XP_AboutKalom);
 	//prize
-    CreateInvItems (self, ItMiNugget, 200);
-    B_GiveInvItems (self, other, ItMiNugget, 200);
+    CreateInvItems (self, ItMiNugget, 50);
+    B_GiveInvItems (self, other, ItMiNugget, 50);
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -2087,8 +2087,8 @@ FUNC VOID DIA_Quentin_GuyWork_Info()
 	};
 	//log
 	MIS_NewEnginer = LOG_SUCCESS;
-    CreateInvItems (self, ItMiNugget, 200);
-    B_GiveInvItems (self, other, ItMiNugget, 200);
+    CreateInvItems (self, ItMiNugget, 50);
+    B_GiveInvItems (self, other, ItMiNugget, 50);
     B_LogEntry               (CH4_NewEnginer,"Powiedzia³em Quentinowi, ¿e Guy bêdzie dla niego pracowa³. Ten cz³owiek ma du¿e doœwiadczenie.");
 	Log_SetTopicStatus       (CH4_NewEnginer, LOG_SUCCESS);
 	//npc
@@ -2399,8 +2399,8 @@ FUNC VOID DIA_Quentin_KordelasJest_Info()
     AI_Output (self, other ,"DIA_Quentin_KordelasJest_03_03"); //Wspania³e ostrze.
     AI_Output (self, other ,"DIA_Quentin_KordelasJest_03_04"); //Masz jaja, ch³opcze. Dziêki.
     AI_Output (self, other ,"DIA_Quentin_KordelasJest_03_05"); //Trzymaj swoj¹ dzia³kê.
-    CreateInvItems (self, ItMiNugget, 350);
-    B_GiveInvItems (self, other, ItMiNugget, 350);
+    CreateInvItems (self, ItMiNugget, 75);
+    B_GiveInvItems (self, other, ItMiNugget, 75);
 	B_GiveInvItems (other, self, Kordelas, 1);
     AI_StopProcessInfos	(self);
 };

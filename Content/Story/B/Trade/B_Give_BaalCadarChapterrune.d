@@ -29,7 +29,10 @@ func void B_Give_BaalCadarChapter1Runes ()
 	CreateInvItems(self, ItMi_Tuton_2, 5);
 	CreateInvItems(self, ItMi_Tuton_3, 5);
 	CreateInvItems(self, ItMi_Tuton_4, 5);
-		CreateInvItems (self,ItMi_Bandaz40,20);
+	CreateInvItems (self,ItMi_Bandaz40,20);
+	
+	CreateInvItems (npc,ItFo_Potion_Haste_01 ,5);
+   CreateInvItems (npc,ItFo_Potion_Haste_01 ,4);
 	
 };
 func void B_Give_BaalCadarChapter2Runes ()
@@ -70,7 +73,8 @@ func void B_Give_BaalCadarChapter2Runes ()
    
    CreateInvItems (npc,ItFo_Potion_Water_01 ,20);
 	
-   CreateInvItems (npc,ItFo_Potion_Haste_01 ,2);
+   CreateInvItems (npc,ItFo_Potion_Haste_01 ,5);
+   CreateInvItems (npc,ItFo_Potion_Haste_01 ,4);
    	//CreateInvItems (npc,ItFo_PotionTime_Strength_01 ,2);
 	CreateInvItems (npc,ItFo_PotionTime_Dex_01 ,1);
 	//CreateInvItems (npc,ItFo_PotionTime_Mana_01 ,2);

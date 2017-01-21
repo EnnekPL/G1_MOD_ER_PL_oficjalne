@@ -111,8 +111,7 @@ FUNC INT DIA_DungeonGuard_HELLO3_Condition()
 FUNC VOID DIA_DungeonGuard_HELLO3_Info()
 {
     AI_Output (other, self ,"DIA_DungeonGuard_HELLO3_15_01"); //Proszê, oto 100 bry³ek.
-    CreateInvItems (self, ItMiNugget, 100);
-    B_GiveInvItems (self, other, ItMiNugget, 100);
+    B_GiveInvItems (hero, self, ItMiNugget, 100);
     AI_Output (self, other ,"DIA_DungeonGuard_HELLO3_03_02"); //No dobra, przymknê oko na wejœcie do piwnic, ale i tak nie uda ci siê tego dokonaæ bez klucza. 
     AI_Output (other, self ,"DIA_DungeonGuard_HELLO3_15_03"); //Sk¹d mogê wzi¹æ klucz?
     AI_Output (self, other ,"DIA_DungeonGuard_HELLO3_03_04"); //Maj¹ go tylko trzy osoby; ja, Stra¿nik Berg oraz Gomez. Ja jednak nie oddam ci klucza. Jeœli coœ zniknie i Magnaci mnie przeszukaj¹, nie znajduj¹c klucza, wpadnê w nie lada tarapaty.

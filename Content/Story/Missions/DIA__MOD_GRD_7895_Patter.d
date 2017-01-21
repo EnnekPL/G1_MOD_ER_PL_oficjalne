@@ -343,8 +343,8 @@ FUNC VOID DIA_Patter_HaveFood_Info()
     AI_Output (self, other ,"DIA_Patter_HaveFood_03_02"); //Wielkie dziêki.
     AI_Output (self, other ,"DIA_Patter_HaveFood_03_03"); //W zamian weŸ tê rudê.
 	//prize
-    CreateInvItems (self, ItMiNugget, 50);
-    B_GiveInvItems (self, other, ItMiNugget, 50);
+    CreateInvItems (self, ItMiNugget, 25);
+    B_GiveInvItems (self, other, ItMiNugget, 25);
 	//items
     B_GiveInvItems (other, self, ItFo_muttonLurker, 10);
     B_GiveInvItems (other, self, ItFo_MoleratW, 5);

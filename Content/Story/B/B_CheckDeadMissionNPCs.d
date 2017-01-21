@@ -130,7 +130,7 @@ wpis_ur_gran = true;
 Log_CreateTopic(Bossowie, LOG_NOTE);
 B_LogEntry (Bossowie, "Pokona³em wielkiego orkowego pu³kownika Ur-Grana. Walka z nim nie by³a ³atwa. Nie doœæ, ¿e sam by³ potê¿ny, to otoczy³ siê swoimi najlepszymi wojownikami. Zapamiêtam tê walkê na d³ugo.");
 };
-
+/*
 var int wpis_kurvok;
 if (Hlp_GetInstanceID(Ur_Na_Kurvok) ==  Hlp_GetInstanceID(self))
 {
@@ -155,7 +155,7 @@ wpis_kurvok = true;
 Log_CreateTopic(Bossowie, LOG_NOTE);
 B_LogEntry (Bossowie, "Zabi³em potê¿nego orkowego gladiatora Ur-Na-Kurvoka - jednego z najniebezpieczniejszych orków w Górniczej Dolinie.");
 };
-
+*/
 var int wpis_varrag;
 if (Hlp_GetInstanceID(Varrag_Harosh) ==  Hlp_GetInstanceID(self))
 {
@@ -180,7 +180,7 @@ wpis_varrag = true;
 Log_CreateTopic(Bossowie, LOG_NOTE);
 B_LogEntry (Bossowie, "W g³ównej sali Cmentarzyska Orków spotka³em orkowego szamana Varraga-Harosha Potê¿nego. Walka z nim nie by³a ³atwa. To potê¿ny wojownik.");
 };
-
+/*
 var int wpis_nyras;
 if (Hlp_GetInstanceID(NOV_1303_Nyras) ==  Hlp_GetInstanceID(self)) && (YBerion_BringFocus == LOG_RUNNING)
 {
@@ -205,7 +205,8 @@ wpis_nyras = true;
 Log_CreateTopic(Bossowie, LOG_NOTE);
 B_LogEntry (Bossowie, "Nyras zupe³nie oszala³. Widocznie si³a Œni¹cego prze¿ar³a mu mózg. Postanowi³ mnie zaatakowaæ. S¹dzi³em, ¿e walka nie bêdzie trudna, jednak w jego uderzeniu by³o coœ, czego siê nie spodziewa³em. By³o znacznie silniejsze, a sam Nyras bardziej wytrzymalszy. Œni¹cy musia³ podzieliæ siê z nim swoj¹ moc¹, albo to wp³yw jakiegoœ artefaktu.");
 };
-
+*/
+/*
 var int wpis_crawelqueen;
 if (Hlp_GetInstanceID(MinecrawlerQueen) ==  Hlp_GetInstanceID(self)) //fix
 {
@@ -354,5 +355,6 @@ else if Npc_GetActiveSpell (other)
 wpis_zombiethekeeper = true;
 Log_CreateTopic(Bossowie, LOG_NOTE);
 B_LogEntry (Bossowie, "Przeszukuj¹c z Miltenem star¹ kryptê napotka³em na Nadzorcê. Z tego co mówi³ Milten ta umêczona dusza nale¿a³a ongiœ do Magnata ze Starego Obozu. Có¿, pomimo up³ywu lat si³y mu nie brakowa³o. ");
+};*/
 };
-};
+

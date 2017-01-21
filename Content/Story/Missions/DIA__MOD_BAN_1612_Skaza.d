@@ -361,7 +361,7 @@ FUNC VOID DIA_Skaza_PART1_Info()
     AI_Output (self, other ,"DIA_Skaza_PART1_03_02"); //Jak posz³o?
 	AI_Output (other, self ,"DIA_Skaza_PART1_15_03"); //Dowiedzia³em siê od Bartholo, co zosta³o skradzione, a póŸniej zacz¹³em szukaæ tych rzeczy w chacie Œwistaka.
 	AI_Output (other, self ,"DIA_Skaza_PART1_15_04"); //Uda³o mi siê znaleŸæ kilka przedmiotów zgodnych z opisami Magnata. Pos³u¿y³y mi one za dowody.
-	AI_Output (self, other ,"DIA_Skaza_PART1_03_05"); //Cholera, zaskakujesz mnie.
+	AI_Output (self, other ,"DIA_Skaza_PART1_03_05"); //No nieŸle! Zaskakujesz mnie.
 };
 
 //========================================
@@ -392,7 +392,7 @@ FUNC VOID DIA_Skaza_PART2_Info()
 {
     AI_Output (other, self ,"DIA_Skaza_PART2_15_01"); //Z³y ju¿ nie bêdzie ci przeszkadza³.
     AI_Output (self, other ,"DIA_Skaza_PART2_03_02"); //Uda³o ci siê znaleŸæ na niego dowody?
-    AI_Output (other, self ,"DIA_Skaza_PART2_15_03"); //Tak. O jego wystêpku wiedzia³a dosyæ du¿a liczba Kopaczy. Jednak byli oni szanta¿owani przez siepaczy Cienia.
+    AI_Output (other, self ,"DIA_Skaza_PART2_15_03"); //Tak. O jego grzeszkach wiedzia³a dosyæ du¿a liczba Kopaczy. Jednak jednak jego siepacze skutecznie pilnowali, ¿eby nikt niczego siê nie dowiedzia³.
     AI_Output (other, self ,"DIA_Skaza_PART2_15_04"); //Pozby³em siê ochroniarzy Z³ego i wtedy zaczêli mówiæ.
     AI_Output (self, other ,"DIA_Skaza_PART2_03_05"); //Œwietnie to sobie wykombinowa³eœ.
     AI_Output (self, other ,"DIA_Skaza_PART2_03_06"); //Moim zdaniem zas³ugujesz ju¿ na miano Bandyty.

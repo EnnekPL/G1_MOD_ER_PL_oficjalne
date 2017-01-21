@@ -82,7 +82,7 @@ INSTANCE MENUITEM_GRA_MODEL_DETAIL(C_MENU_ITEM_DEF)
 {
 	backpic		=	MENU_ITEM_BACK_PIC;
 	text[0]		=	"Modele";
-	text[1]		= 	"Szczegó³owoœæ modeli 3D."; // Kommentar
+	text[1]		= 	"Szczegó³owoœæ modeli 3D (LOD)."; // Kommentar
 	// Position und Dimension	
 	posx		=	1000;	posy		=	MENU_START_Y + MENU_DY*1;
 	dimx		=	3000;	dimy		=	750;

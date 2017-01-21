@@ -119,7 +119,7 @@ FUNC INT DIA_Bandyta_FindSwordElement_Condition()
 FUNC VOID DIA_Bandyta_FindSwordElement_Info()
 {
     AI_Output (other, self ,"DIA_Bandyta_FindSwordElement_15_01"); //Znalaz³em fragment miecza. Faktycznie z tob¹ Ÿle. Jest ca³kiem du¿y. Nie wiem jak mog³eœ go nie zauwa¿yæ.
-    AI_Output (self, other ,"DIA_Bandyta_FindSwordElement_03_02"); //Poka¿ mi to. Mam taki podobny fragment. Nawet do siebie pasuj¹. Równie¿ zna³em go przy grobie. 
+    AI_Output (self, other ,"DIA_Bandyta_FindSwordElement_03_02"); //Poka¿ mi to. Mam podobny fragment. Nawet do siebie pasuj¹. Te¿ zna³em go przy grobie. 
     AI_Output (other, self ,"DIA_Bandyta_FindSwordElement_15_03"); //Co to mo¿e znaczyæ?
     AI_Output (self, other ,"DIA_Bandyta_FindSwordElement_03_04"); //Ktoœ widocznie niszczy grób przy u¿yciu swojej broni. To jakiœ kretyn. Po uderzeniu w kamieñ ostrze musia³o pêkn¹æ. 
 	AI_Output (self, other ,"DIA_Bandyta_FindSwordElement_03_05"); //IdŸ do Puna i zapytaj czy pamiêta komu sprzedawa³ taki miecz. Mo¿e to bêdzie jakaœ wskazówka.

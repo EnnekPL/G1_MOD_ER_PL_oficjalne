@@ -61,7 +61,7 @@ INSTANCE DIA_KUCHARZ_FOOD (C_INFO)
    nr           = 1;
    condition    = DIA_KUCHARZ_FOOD_Condition;
    information  = DIA_KUCHARZ_FOOD_Info;
-   permanent	= false;
+   permanent	= FALSE;
    description	= "Mo¿esz daæ mi coœ do jedzenia?";
 };
 
@@ -140,7 +140,7 @@ FUNC VOID DIA_KUCHARZ_ZADANIE_Info()
     AI_Output (other, self ,"DIA_KUCHARZ_ZADANIE_15_01"); //Co mam zrobiæ?
     AI_Output (self, other ,"DIA_KUCHARZ_ZADANIE_03_02"); //Chcia³bym pozbyæ siê pewnej osoby w obozie. Nie musisz wiedzieæ, kogo.
     AI_Output (self, other ,"DIA_KUCHARZ_ZADANIE_03_03"); //Jednak do tego potrzebujê silnej trucizny, któr¹ dodam do jedzenia.
-    AI_Output (self, other ,"DIA_KUCHARZ_ZADANIE_03_04"); //Sporz¹dŸ dla mnie odpowiedni¹ miksturê. Mo¿esz te¿ j¹ ukraœæ albo od kogoœ odkupiæ.
+    AI_Output (self, other ,"DIA_KUCHARZ_ZADANIE_03_04"); //Za³atw j¹, a dam ci magiczny napój.
     MIS_Poison = LOG_RUNNING;
 
     Log_CreateTopic          (CH1_Poison, LOG_MISSION);
@@ -180,34 +180,45 @@ FUNC VOID DIA_KUCHARZ_TRUTKA_Info()
 	{
 	AI_Output (other, self ,"DIA_KUCHARZ_TRUTKA_15_03"); //Oto s³aba trucizna.
 	AI_Output (self, other ,"DIA_KUCHARZ_TRUTKA_03_04"); //Dobrze siê spisa³eœ. Tyle mi wystarczy.
-	B_LogEntry               (CH1_Poison,"Przynios³em s³ab¹ truciznê kucharzowi.");
+	B_LogEntry               (CH1_Poison,"Przynios³em s³ab¹ truciznê kucharzowi. W nagrodê dosta³em ma³y napój szybkoœci.");
     Log_SetTopicStatus       (CH1_Poison, LOG_SUCCESS);
     MIS_Poison = LOG_SUCCESS;
 
     B_GiveXP (25);
 	DIA_KUCHARZ_TRUTKA.permanent = false;
 	B_GiveInvItems (other, self, ItMi_Alchemy_trucizna_01, 1);
+	
+	CreateInvItems (self, ItFo_Potion_Haste_01,1);
+	B_GiveInvItems (self, hero, ItFo_Potion_Haste_01, 1);
 	}
 	else if (Npc_HasItems (other, ItMi_Alchemy_trucizna_02) >=1)
 	{
 	AI_Output (other, self ,"DIA_KUCHARZ_TRUTKA_15_05"); //Oto œrednia trucizna.
 	AI_Output (self, other ,"DIA_KUCHARZ_TRUTKA_03_06"); //Œwietnie. Szybko podzia³a.
-	    B_LogEntry               (CH1_Poison,"Przynios³em œredni¹ truciznê kucharzowi.");
+	    B_LogEntry               (CH1_Poison,"Przynios³em œredni¹ truciznê kucharzowi. W nagrodê dosta³em œredni napój szybkoœci.");
         Log_SetTopicStatus       (CH1_Poison, LOG_SUCCESS);
         MIS_Poison = LOG_SUCCESS;
 		B_GiveInvItems (other, self, ItMi_Alchemy_trucizna_02, 1);
         B_GiveXP (50);
+		
+		CreateInvItems (self, ItFo_Potion_Haste_02,1);
+		B_GiveInvItems (self, hero, ItFo_Potion_Haste_02, 1);
+	
 		DIA_KUCHARZ_TRUTKA.permanent = false;
 	}
 	else if (Npc_HasItems (other, ItMi_Alchemy_trucizna_03) >=1)
 	{
 	AI_Output (other, self ,"DIA_KUCHARZ_TRUTKA_15_07"); //Oto silna trucizna.
 	AI_Output (self, other ,"DIA_KUCHARZ_TRUTKA_03_08"); //No, no. NieŸle!
-	B_LogEntry               (CH1_Poison,"Przynios³em siln¹ truciznê kucharzowi. Na pewno nie bêdzie mia³ k³opotów z pozbyciem siê ofiary.");
+	B_LogEntry               (CH1_Poison,"Przynios³em siln¹ truciznê kucharzowi. Na pewno nie bêdzie mia³ k³opotów z pozbyciem siê ofiary. W nagrodê dosta³em du¿y napój szybkoœci.");
     Log_SetTopicStatus       (CH1_Poison, LOG_SUCCESS);
     MIS_Poison = LOG_SUCCESS;
     B_GiveXP (100);
 	B_GiveInvItems (other, self, ItMi_Alchemy_trucizna_03, 1);
+	
+	CreateInvItems (self, ItFo_Potion_Haste_03,1);
+	B_GiveInvItems (self, hero, ItFo_Potion_Haste_03, 1);
+	
 	DIA_KUCHARZ_TRUTKA.permanent = false;
 	}
 	else
@@ -273,20 +284,20 @@ FUNC VOID DIA_KUCHARZ_UMOWA_Info()
 };
 */
 //========================================
-//-----------------> KopaczToChuje
+//-----------------> Presure
 //========================================
 
-INSTANCE DIA_KUCHARZ_KopaczToChuje (C_INFO)
+INSTANCE DIA_KUCHARZ_Presure (C_INFO)
 {
    npc          = GRD_7002_KUCHARZ;
    nr           = 1;
-   condition    = DIA_KUCHARZ_KopaczToChuje_Condition;
-   information  = DIA_KUCHARZ_KopaczToChuje_Info;
+   condition    = DIA_KUCHARZ_Presure_Condition;
+   information  = DIA_KUCHARZ_Presure_Info;
    permanent	= FALSE;
    description	= "Mo¿esz jakoœ wp³yn¹æ na Kopaczy w obozie?";
 };
 
-FUNC INT DIA_KUCHARZ_KopaczToChuje_Condition()
+FUNC INT DIA_KUCHARZ_Presure_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Joel_Wazne))
     {
@@ -295,14 +306,14 @@ FUNC INT DIA_KUCHARZ_KopaczToChuje_Condition()
 };
 
 
-FUNC VOID DIA_KUCHARZ_KopaczToChuje_Info()
+FUNC VOID DIA_KUCHARZ_Presure_Info()
 {
-    AI_Output (other, self ,"DIA_KUCHARZ_KopaczToChuje_15_01"); //Mo¿esz jakoœ wp³yn¹æ na Kopaczy w obozie?
-    AI_Output (self, other ,"DIA_KUCHARZ_KopaczToChuje_03_02"); //Wp³yn¹æ? O co chodzi?
-    AI_Output (other, self ,"DIA_KUCHARZ_KopaczToChuje_15_03"); //Rozdajesz im jedzenie. Pewnie mo¿esz te¿ do czegoœ ich namówiæ.
-    AI_Output (self, other ,"DIA_KUCHARZ_KopaczToChuje_03_04"); //Hmm... Mów dalej.
-    AI_Output (other, self ,"DIA_KUCHARZ_KopaczToChuje_15_05"); //Zap³acê ci, jeœli te gnojki odczepi¹ siê od Spike'a.
-    AI_Output (self, other ,"DIA_KUCHARZ_KopaczToChuje_03_07"); //Ach, ju¿ rozumiem. To ciê bêdzie kosztowaæ 40 bry³ek rudy.
+    AI_Output (other, self ,"DIA_KUCHARZ_Presure_15_01"); //Mo¿esz jakoœ wp³yn¹æ na Kopaczy w obozie?
+    AI_Output (self, other ,"DIA_KUCHARZ_Presure_03_02"); //Wp³yn¹æ? O co chodzi?
+    AI_Output (other, self ,"DIA_KUCHARZ_Presure_15_03"); //Rozdajesz im jedzenie. Pewnie mo¿esz te¿ do czegoœ ich namówiæ.
+    AI_Output (self, other ,"DIA_KUCHARZ_Presure_03_04"); //Hmm... Mów dalej.
+    AI_Output (other, self ,"DIA_KUCHARZ_Presure_15_05"); //Zap³acê ci, jeœli te gnojki odczepi¹ siê od Spike'a.
+    AI_Output (self, other ,"DIA_KUCHARZ_Presure_03_07"); //Ach, ju¿ rozumiem. To ciê bêdzie kosztowaæ 40 bry³ek rudy.
     B_LogEntry                     (CH1_SpikeLoser,"Za 40 bry³ek rudy Matt wp³ynie na Kopaczy.");
 };
 
@@ -322,7 +333,7 @@ INSTANCE DIA_KUCHARZ_OreGiveZaplata (C_INFO)
 
 FUNC INT DIA_KUCHARZ_OreGiveZaplata_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_KUCHARZ_KopaczToChuje))
+    if (Npc_KnowsInfo (hero, DIA_KUCHARZ_Presure))
     && (Npc_HasItems (hero, ItMiNugget)>=40)
     {
     return TRUE;
@@ -349,7 +360,7 @@ INSTANCE DIA_KUCHARZ_QuestIan (C_INFO)
    condition    = DIA_KUCHARZ_QuestIan_Condition;
    information  = DIA_KUCHARZ_QuestIan_Info;
    permanent	= FALSE;
-   description	= "Czy wiesz, kto w obozie zajmuje siê transportowaniem konwojów do kopalni?";
+   description	= "Czy wiesz, kto w obozie zajmuje siê przyjmowaniem konwojów do kopalni?";
 };
 
 FUNC INT DIA_KUCHARZ_QuestIan_Condition()
@@ -363,11 +374,11 @@ FUNC INT DIA_KUCHARZ_QuestIan_Condition()
 
 FUNC VOID DIA_KUCHARZ_QuestIan_Info()
 {
-    AI_Output (other, self ,"DIA_KUCHARZ_QuestIan_15_01"); //Czy wiesz, kto w obozie zajmuje siê transportowaniem konwojów do kopalni?
+    AI_Output (other, self ,"DIA_KUCHARZ_QuestIan_15_01"); //Czy wiesz, kto w obozie zajmuje siê przyjmowaniem konwojów do kopalni?
     AI_Output (self, other ,"DIA_KUCHARZ_QuestIan_03_02"); //Jasne. Zajmuj¹ siê tym Artch i Mirzo.
-    AI_Output (self, other ,"DIA_KUCHARZ_QuestIan_03_03"); //Sprawdzaj¹ ka¿dy konwój i przekazuj¹ go Ianowi. 
+    AI_Output (self, other ,"DIA_KUCHARZ_QuestIan_03_03"); //Sprawdzaj¹ ka¿d¹ dostawê i przekazuj¹ do wnêtrza kopalni.
     AI_Output (other, self ,"DIA_KUCHARZ_QuestIan_15_04"); //Dziêki, tylko tyle chcia³em wiedzieæ. 
-    B_LogEntry                     (CH1_FoodForOldMine,"Matt zdradzi³ mi, ¿e ¿ywnoœæ jest dostarczana przez Artcha i Mirzo.");
+    B_LogEntry                     (CH1_FoodForOldMine,"Matt zdradzi³ mi, ¿e ¿ywnoœæ jest przyjmowana przez Artcha i Mirzo. Któryœ z nich musi mieæ coœ na sumieniu.");
 
     B_GiveXP (50);
     AI_StopProcessInfos	(self);

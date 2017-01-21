@@ -46,9 +46,9 @@ const int	Value_ManaMaxExtrakt	=	1000;	const int	ManaMax_Extrakt		=	4;
 const int	Value_ManaMaxElixier	=	1500;	const int	ManaMax_Elixier		=	6;
 
 // Speed-Potions
-const int	Value_Haste1			=	100;	const int	Time_Haste1			=	60000;	// 1 min.
-const int	Value_Haste2			=	150;	const int	Time_Haste2			=	120000;	// 2 min.
-const int	Value_Haste3			=	200;	const int	Time_Haste3			=	300000;	// 5 min.
+const int	Value_Haste1			=	15;	const int	Time_Haste1			=	60000;	// 1 min.
+const int	Value_Haste2			=	30;	const int	Time_Haste2			=	120000;	// 2 min.
+const int	Value_Haste3			=	75;	const int	Time_Haste3			=	300000;	// 5 min.
 
 
 /******************************************************************************************/

@@ -320,8 +320,8 @@ FUNC VOID DIA_Firn_WhistlerSpotkanie_Info()
     MIS_SprawaFirna = LOG_SUCCESS;
 
     B_GiveXP (100);
-    CreateInvItems (self, ItMiNugget, 150);
-    B_GiveInvItems (self, other, ItMiNugget, 150);
+    CreateInvItems (self, ItMiNugget, 50);
+    B_GiveInvItems (self, other, ItMiNugget, 50);
 };
 
 //========================================
@@ -485,11 +485,11 @@ FUNC VOID DIA_Firn_palisadaSkonczone_Info()
     AI_Output (self, other ,"DIA_Firn_palisadaSkonczone_03_02"); //I dobrze. Przyda ci siê. 
     AI_Output (other, self ,"DIA_Firn_palisadaSkonczone_15_03"); //Cholera, mia³eœ mi pomóc.
     AI_Output (self, other ,"DIA_Firn_palisadaSkonczone_03_04"); //No dobrze. Wynagrodzê ci to. Mo¿esz sobie wzi¹æ tê rudê. 
-    CreateInvItems (self, ItMiNugget, 50);
-    B_GiveInvItems (self, other, ItMiNugget, 50);
-    B_LogEntry                     (CH1_JobInHuntersCamp,"Naprawi³em zniszczony wa³. Otrzyma³em 50 bry³ek rudy w nagrodê. ");
+    CreateInvItems (self, ItMiNugget, 20);
+    B_GiveInvItems (self, other, ItMiNugget, 20);
+    B_LogEntry                     (CH1_JobInHuntersCamp,"Naprawi³em zniszczony wa³. Otrzyma³em 20 bry³ek rudy w nagrodê. ");
 
-    B_GiveXP (100);
+    B_GiveXP (75);
 };
 
 //========================================

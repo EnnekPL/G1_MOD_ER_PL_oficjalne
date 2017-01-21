@@ -188,20 +188,20 @@ FUNC VOID DIA_Arto_LetsGo_Info()
 };
 
 //========================================
-//-----------------> Doszlem
+//-----------------> Journey
 //========================================
 
-INSTANCE DIA_Arto_Doszlem (C_INFO)
+INSTANCE DIA_Arto_Journey (C_INFO)
 {
    npc          = Ebr_102_Arto;
    nr           = 3;
-   condition    = DIA_Arto_Doszlem_Condition;
-   information  = DIA_Arto_Doszlem_Info;
+   condition    = DIA_Arto_Journey_Condition;
+   information  = DIA_Arto_Journey_Info;
    permanent	= FALSE;
    Important    = TRUE;
 };
 
-FUNC INT DIA_Arto_Doszlem_Condition()
+FUNC INT DIA_Arto_Journey_Condition()
 {
     if (Npc_GetDistToWP (self, "OW_OM_ENTRANCE01") < 1000)
     && (Npc_KnowsInfo (hero, DIA_Arto_LetsGo))
@@ -211,21 +211,22 @@ FUNC INT DIA_Arto_Doszlem_Condition()
 };
 
 
-FUNC VOID DIA_Arto_Doszlem_Info()
+FUNC VOID DIA_Arto_Journey_Info()
 {
-    AI_Output (self, other ,"DIA_Arto_Doszlem_03_01"); //Jesteœmy!
-    AI_Output (self, other ,"DIA_Arto_Doszlem_03_02"); //Dobra robota, Stra¿niku!
+    AI_Output (self, other ,"DIA_Arto_Journey_03_01"); //Jesteœmy!
+    AI_Output (self, other ,"DIA_Arto_Journey_03_02"); //Dobra robota, Stra¿niku!
     B_LogEntry                     (CH3_ArtosSafeGuard,"Odprowadzi³em Arto do obozu. Uda³ siê w kierunku swojego namiotu.");
     Log_SetTopicStatus       (CH3_ArtosSafeGuard, LOG_SUCCESS);
     MIS_ArtosSafeGuard = LOG_SUCCESS;
 	Npc_ExchangeRoutine (self,"kox");
     B_GiveXP (150); //1.25 zrównowa¿one
-    AI_Output (self, other ,"DIA_Arto_Doszlem_03_03"); //Je¿eli bêdziesz czegoœ potrzebowaæ, to jestem w swoim namiocie.
+    AI_Output (self, other ,"DIA_Arto_Journey_03_03"); //Je¿eli bêdziesz czegoœ potrzebowaæ, to jestem w swoim namiocie.
     CreateInvItems (self, ItMiNugget, 100); //1.25
     B_GiveInvItems (self, other, ItMiNugget, 100);
     AI_StopProcessInfos	(self);
 };
 
+/*
 //========================================
 //-----------------> Succes_Ian_Arto_Quest
 //========================================
@@ -270,7 +271,7 @@ FUNC VOID DIA_Arto_Succes_Ian_Arto_Quest_Info()
 
     B_GiveXP (100);
     Npc_ExchangeRoutine (self, "START");
-Npc_ExchangeRoutine (GRD_7007_Mirzo, "lochy");
+	Npc_ExchangeRoutine (GRD_7007_Mirzo, "lochy");
     AI_StopProcessInfos	(self);
 };
-
+*/

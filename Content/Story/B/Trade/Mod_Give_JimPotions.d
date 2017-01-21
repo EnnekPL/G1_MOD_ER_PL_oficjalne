@@ -18,7 +18,7 @@ func void B_GiveJimItemsCH1 ()
 	CreateInvItems (npc,ItFo_Potion_Mana_01 ,6);
 	CreateInvItems (npc,ItFo_Potion_Health_01 ,4);
 	CreateInvItems (npc,ItFo_Potion_Water_01 ,10);
-	//CreateInvItems (npc,ItFo_PotionTime_Mana_01 ,2);
+	CreateInvItems (npc,ItFo_Potion_Haste_01 ,10);
 	CreateInvItems (npc,ItFo_PotionTime_Dex_01 ,2);
 	CreateInvItems (npc,ItFo_PotionTime_Strength_01 ,2);
 	//CreateInvItems (npc,ItFo_PotionTime_Master_01 ,1);
@@ -57,7 +57,7 @@ func void B_GiveJimItemsCH2 ()
    
    CreateInvItems (npc,ItFo_Potion_Water_01 ,10);
 	
-   CreateInvItems (npc,ItFo_Potion_Haste_01 ,2);
+   CreateInvItems (npc,ItFo_Potion_Haste_02 ,5);
    	CreateInvItems (npc,ItFo_PotionTime_Mana_01 ,3);
 	//CreateInvItems (npc,ItFo_PotionTime_Dex_01 ,3);
 	//CreateInvItems (npc,ItFo_PotionTime_Strength_01 ,3);
@@ -96,8 +96,8 @@ func void B_GiveJimItemsCH3 ()
    CreateInvItems (npc,ItFo_Potion_Health_02 ,2);
    //CreateInvItems (npc,ItFo_Potion_Health_03 ,12); 
 	
-   CreateInvItems (npc,ItFo_Potion_Haste_01 ,2);	
-   CreateInvItems (npc,ItFo_Potion_Haste_02 ,1);
+   CreateInvItems (npc,ItFo_Potion_Haste_01 ,4);	
+   CreateInvItems (npc,ItFo_Potion_Haste_02 ,6);
    	CreateInvItems (npc,ItFo_PotionTime_Mana_01 ,2);
 	//CreateInvItems (npc,ItFo_PotionTime_Dex_01 ,5);
 	//CreateInvItems (npc,ItFo_PotionTime_Strength_01 ,5);

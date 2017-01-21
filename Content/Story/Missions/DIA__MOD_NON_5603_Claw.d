@@ -441,8 +441,8 @@ FUNC VOID DIA_Claw_Antybiotyk_Info()
     AI_Output (self, other ,"DIA_Claw_Antybiotyk_03_06"); //Je¿eli chcesz, abym pomóg³ ci w polowaniu, wal œmia³o. 
     AI_Output (other, self ,"DIA_Claw_Antybiotyk_15_07"); //Dziêki. Bêdê pamiêta³. 
     AI_Output (other, self ,"DIA_Claw_Antybiotyk_15_08"); //Trzymaj siê.
-    CreateInvItems (self, ItMiNugget, 250);
-    B_GiveInvItems (self, other, ItMiNugget, 250);
+    CreateInvItems (self, ItMiNugget, 129);
+    B_GiveInvItems (self, other, ItMiNugget, 129);
 };
 
 

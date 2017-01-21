@@ -218,10 +218,10 @@ FUNC INT DIA_Balam_LookingForRings_Condition()
 FUNC VOID DIA_Balam_LookingForRings_Info()
 {
     AI_Output (other, self ,"DIA_Balam_LookingForRings_15_01"); //Wiesz coœ o pierœcieniach Magnatów?
-    AI_Output (self, other ,"DIA_Balam_LookingForRings_03_02"); //Hej, kolego. Wiem, co ci chodzi po g³owie. Moja cena to 500 bry³ek rudy.
-    AI_Output (other, self ,"DIA_Balam_LookingForRings_15_03"); //Oszala³eœ?!
+    AI_Output (self, other ,"DIA_Balam_LookingForRings_03_02"); //Hej, kolego. Wiem, co ci chodzi po g³owie. Moja cena to 60 bry³ek rudy.
+    AI_Output (other, self ,"DIA_Balam_LookingForRings_15_03"); //Nie za du¿o?
 	AI_Output (self, other ,"DIA_Balam_LookingForRings_03_04"); //Mo¿esz szukaæ sam...
-	B_LogEntry    (CH1_BaronsRings,"Balam wie coœ o trzecim pierœcieniu, jednak ta informacja jest doœæ droga. 500 bry³ek rudy to nie byle co.");
+	B_LogEntry    (CH1_BaronsRings,"Balam wie coœ o trzecim pierœcieniu, jednak ta informacja kosztuje 60 bry³ek rudy.");
 };
 
 //========================================
@@ -235,12 +235,12 @@ INSTANCE DIA_Balam_PayForInfo (C_INFO)
    condition    = DIA_Balam_PayForInfo_Condition;
    information  = DIA_Balam_PayForInfo_Info;
    permanent	= FALSE;
-   description	= "Dobra, mów co wiesz. (Zap³aæ 500 bry³ek)";
+   description	= "Dobra, mów co wiesz. (Zap³aæ 60 bry³ek)";
 };
 
 FUNC INT DIA_Balam_PayForInfo_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Balam_LookingForRings)) && (MIS_BaronsRings == LOG_RUNNING) && (Npc_HasItems (hero, ItMiNugget)>=500)
+    if (Npc_KnowsInfo (hero, DIA_Balam_LookingForRings)) && (MIS_BaronsRings == LOG_RUNNING) && (Npc_HasItems (hero, ItMiNugget)>=60)
     {
     return TRUE;
     };
@@ -250,9 +250,9 @@ FUNC INT DIA_Balam_PayForInfo_Condition()
 FUNC VOID DIA_Balam_PayForInfo_Info()
 {
     AI_Output (other, self ,"DIA_Balam_PayForInfo_15_01"); //Dobra, mów co wiesz.
-    AI_Output (self, other ,"DIA_Balam_PayForInfo_03_02"); //Poszukaj w naszej kuchni.
+    AI_Output (self, other ,"DIA_Balam_PayForInfo_03_02"); //Poszukaj w naszej kuchni. Tej w wie¿y. 
     AI_Output (other, self ,"DIA_Balam_PayForInfo_15_03"); //Naprawdê? W kuchni? Chyba sobie ze mnie nie ¿artujesz.
 	AI_Output (self, other ,"DIA_Balam_PayForInfo_03_04"); //Nie, mówiê powa¿nie. Te¿ bym go schowa³ gdzieœ indziej, ale Gomez to têpak.
-	B_GiveInvItems (hero,self,itminugget,500);
-	B_LogEntry    (CH1_BaronsRings,"Balam powiedzia³ mi, ¿ebym szuka³ pierœcienia w kuchni Magnatów.");
+	B_GiveInvItems (hero,self,itminugget,60);
+	B_LogEntry    (CH1_BaronsRings,"Balam powiedzia³ mi, ¿ebym szuka³ pierœcienia w kuchni Magnatów, która znajduje siê w wie¿y.");
 };

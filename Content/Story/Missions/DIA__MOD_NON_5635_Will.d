@@ -195,8 +195,8 @@ FUNC VOID DIA_Will_ThompsonDED_Info()
     MIS_WillQuest = LOG_SUCCESS;
 
     B_GiveXP (200);
-    CreateInvItems (self, ItMiNugget, 150);
-    B_GiveInvItems (self, other, ItMiNugget, 150);
+    CreateInvItems (self, ItMiNugget, 75);
+    B_GiveInvItems (self, other, ItMiNugget, 75);
     MIS_GoldMine = LOG_RUNNING;
 
     Log_CreateTopic          (CH2_GoldMine, LOG_MISSION);
@@ -636,8 +636,8 @@ FUNC VOID DIA_Will_PrzystanekZamosc_Info()
     AI_Output (other, self ,"DIA_Will_PrzystanekZamosc_15_03"); //A co z zap³at¹ i podzia³em zysków?
     AI_Output (self, other ,"DIA_Will_PrzystanekZamosc_03_04"); //Racja. Te bry³ki rudy s¹ dla ciebie za dobr¹ robotê.
 	AI_Output (self, other ,"DIA_Will_PrzystanekZamosc_03_05"); //Teraz musimy porozmawiaæ o kryjówce na z³oto i o ewentualnej wymianie. 
-    CreateInvItems (self, ItMiNugget, 300);
-    B_GiveInvItems (self, other, ItMiNugget, 300);
+    CreateInvItems (self, ItMiNugget, 200);
+    B_GiveInvItems (self, other, ItMiNugget, 200);
     
     B_LogEntry               (CH2_GoldMine,"Zadanie wykonane. Stanêliœmy przed kopalni¹. Pora zacz¹æ pracê... Przypuszczam, ¿e dla mnie znajdzie siê coœ specjalnego. ");
     Log_SetTopicStatus       (CH2_GoldMine, LOG_SUCCESS);

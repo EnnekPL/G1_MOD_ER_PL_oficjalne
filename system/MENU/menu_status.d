@@ -299,7 +299,7 @@ INSTANCE MENU_ITEM_ATTRIBUTE_3_TITLE(C_MENU_ITEM_DEF)
 INSTANCE MENU_ITEM_ATTRIBUTE_4_TITLE(C_MENU_ITEM_DEF)
 {
 	posx = STAT_A_X1;	posy = STAT_ATR_Y + 4*STAT_DY;
-	text[0]		=	"P¯";
+	text[0]		=	"¯ycie";
 	fontName	=	STAT_FONT_DEFAULT;
 	flags		=	flags & ~IT_SELECTABLE;
 };
@@ -337,7 +337,7 @@ INSTANCE MENU_ITEM_ATTRIBUTE_4(C_MENU_ITEM_DEF)
 
 INSTANCE MENU_ITEM_ARMOR_HEADING(C_MENU_ITEM_DEF)
 {
-	text[0]	= "OCHRONA";
+	text[0]	= "OCHRONA PRZED";
 	fontName	=	STAT_FONT_TITLE;
 	posx =  STAT_A_X1; posy = STAT_ARM_Y + 0*STAT_DY;
 	flags = flags & ~IT_SELECTABLE;
@@ -345,21 +345,21 @@ INSTANCE MENU_ITEM_ARMOR_HEADING(C_MENU_ITEM_DEF)
 
 INSTANCE MENU_ITEM_ARMOR_1_TITLE(C_MENU_ITEM_DEF)
 {
-	text[0]	= "przed broni¹";
+	text[0]	= "broni¹";
 	posx =  STAT_A_X1; posy = STAT_ARM_Y + 1*STAT_DY;	fontName = STAT_FONT_DEFAULT;
 	flags = flags & ~IT_SELECTABLE;
 };
 
 INSTANCE MENU_ITEM_ARMOR_2_TITLE(C_MENU_ITEM_DEF)
 {
-	text[0]	= "przed pociskami";
+	text[0]	= "pociskami";
 	posx =  STAT_A_X1; posy = STAT_ARM_Y + 2*STAT_DY;	fontName = STAT_FONT_DEFAULT;
 	flags = flags & ~IT_SELECTABLE;
 };
 
 INSTANCE MENU_ITEM_ARMOR_3_TITLE(C_MENU_ITEM_DEF)
 {
-	text[0]	= "przed ogniem";
+	text[0]	= "ogniem";
 	posx =  STAT_A_X1; posy = STAT_ARM_Y + 3*STAT_DY;	fontName = STAT_FONT_DEFAULT;
 	flags = flags & ~IT_SELECTABLE;
 };
@@ -367,7 +367,7 @@ INSTANCE MENU_ITEM_ARMOR_3_TITLE(C_MENU_ITEM_DEF)
 
 INSTANCE MENU_ITEM_ARMOR_4_TITLE(C_MENU_ITEM_DEF)
 {
-	text[0]	= "przed magi¹";
+	text[0]	= "magi¹";
 	posx =  STAT_A_X1; posy = STAT_ARM_Y + 4*STAT_DY;	fontName = STAT_FONT_DEFAULT;
 	flags = flags & ~IT_SELECTABLE;
 };

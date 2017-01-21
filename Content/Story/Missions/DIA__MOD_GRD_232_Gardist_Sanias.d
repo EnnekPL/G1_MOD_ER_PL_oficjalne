@@ -104,8 +104,8 @@ FUNC VOID DIA_Gardist_NIEPOKORNY2_Info()
     Log_SetTopicStatus       (CH1_Niepokorny_Kopacz, LOG_SUCCESS);
     MIS_Niepokorny_Kopacz = LOG_SUCCESS;
 
-	CreateInvItems (self, itminugget,100);
-	B_GiveInvItems (self,other,itminugget,100);
+	CreateInvItems (self, itminugget,40);
+	B_GiveInvItems (self,other,itminugget,40);
     B_GiveXP (100);
 };
 

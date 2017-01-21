@@ -8,10 +8,10 @@ INSTANCE DIA_Bandyta32_EXIT(C_INFO)
 {
 	npc             = NON_3032_Bandyta;
 	nr              = 999;
-	condition	= DIA_Bandyta32_EXIT_Condition;
-	information	= DIA_Bandyta32_EXIT_Info;
-	permanent	= TRUE;
-	description     = DIALOG_ENDE;
+	condition		= DIA_Bandyta32_EXIT_Condition;
+	information		= DIA_Bandyta32_EXIT_Info;
+	permanent		= TRUE;
+	description 	= DIALOG_ENDE;
 };
 
 FUNC INT DIA_Bandyta32_EXIT_Condition()

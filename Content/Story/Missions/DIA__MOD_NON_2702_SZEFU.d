@@ -478,9 +478,9 @@ FUNC VOID DIA_SZEFU_HUGO_BACK_Info()
     AI_Output (other, self ,"DIA_SZEFU_HUGO_BACK_15_01"); //Odnalaz³em Hugo, pomog³em mu w pewnej sprawie. Powinien wkrótce wróciæ.
     AI_Output (self, other ,"DIA_SZEFU_HUGO_BACK_03_02"); //Dobra robota. Hugo to porz¹dny goœæ. WeŸ to w nagrodê. 
     AI_Output (other, self ,"DIA_SZEFU_HUGO_BACK_15_03"); //Dziêki.
-	CreateInvItems (self, ItMiNugget, 130);
-    B_GiveInvItems (self, other, ItMiNugget, 130);
-    B_LogEntry                     (CH1_HunterHugo,"Wilson by³ bardzo zadowolony, gdy wspomnia³em o powrocie Hugo. Wynagrodzi³ mnie rud¹.");
+	CreateInvItems (self, ItFo_Potion_Haste_02, 3);
+    B_GiveInvItems (self, other, ItFo_Potion_Haste_02, 3);
+    B_LogEntry                     (CH1_HunterHugo,"Wilson by³ bardzo zadowolony, gdy wspomnia³em o powrocie Hugo. Wynagrodzi³ mnie miksturami szybkoœci.");
     //Log_SetTopicStatus       (CH1_HunterHugo, LOG_SUCCESS);
     //MIS_HunterHugo = LOG_SUCCESS;
     //B_GiveXP (50);

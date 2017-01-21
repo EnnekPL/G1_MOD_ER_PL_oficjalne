@@ -1415,9 +1415,54 @@ FUNC VOID Info_Diego_WhatToSayToGomez_Info()
 	AI_Output (self, hero,"Info_Diego_WhatToSayToGomez_Info_11_02"); //Od tej pory musisz sobie radziæ sam - postaraj siê! Powodzenia!
 };
 
+//#####################################################################
+//##
+//##						ROZDZIA£ 1
+//##							
+//##						MODYFIKACJA
+//##
+//#####################################################################
+
+//========================================
+//-----------------> GiveParcel
+//========================================
+
+INSTANCE DIA_PC_Thief_GiveParcel (C_INFO)
+{
+   npc          = PC_Thief;
+   nr           = 1;
+   condition    = DIA_PC_Thief_GiveParcel_Condition;
+   information  = DIA_PC_Thief_GiveParcel_Info;
+   permanent	= FALSE;
+   description	= "Mam twoj¹ przesy³kê.";
+};
+
+FUNC INT DIA_PC_Thief_GiveParcel_Condition()
+{
+    if (Npc_HasItems (other, ItMi_DiegoBag) >=1)
+    {
+    return TRUE;
+    };
+};
 
 
-
+FUNC VOID DIA_PC_Thief_GiveParcel_Info()
+{
+    AI_Output (other, self ,"DIA_PC_Thief_GiveParcel_15_01"); //Chyba mam coœ co nale¿y do ciebie.
+    AI_Output (self, other ,"DIA_PC_Thief_GiveParcel_03_02"); //Co takiego?
+    AI_Output (other, self ,"DIA_PC_Thief_GiveParcel_15_03"); //Spójrz. Wspomina³eœ coœ o jakiejœ przesy³ce ze Œwiata Zewnêtrznego.
+    AI_Output (self, other ,"DIA_PC_Thief_GiveParcel_03_04"); //Gdzie to znalaz³eœ?
+    AI_Output (other, self ,"DIA_PC_Thief_GiveParcel_15_05"); //Mia³ to przy sobie Bullit.
+    AI_Output (self, other ,"DIA_PC_Thief_GiveParcel_03_06"); //Chcesz powiedzieæ, ¿e pokona³eœ go w walce?
+    AI_Output (other, self ,"DIA_PC_Thief_GiveParcel_15_07"); //To nieistotne.
+    AI_Output (self, other ,"DIA_PC_Thief_GiveParcel_03_08"); //Jestem pod olbrzymim wra¿eniem! A z tym sukinsynem policzê siê póŸniej.
+    AI_Output (other, self ,"DIA_PC_Thief_GiveParcel_15_09"); //Mo¿e tak jakaœ nagroda?
+    AI_Output (self, other ,"DIA_PC_Thief_GiveParcel_03_10"); //Jasne, zas³u¿y³eœ.
+    CreateInvItems (self, ItMiNugget, 50);
+    B_GiveInvItems (self, other, ItMiNugget, 50);
+	B_GiveInvItems (other, self, ItMi_DiegoBag, 1);
+    B_GiveXP (150);
+};
 
 //#####################################################################
 //##
@@ -1469,50 +1514,6 @@ FUNC void  PC_Thief_ARMOR_Info()
 		AI_Output (self, hero,"PC_Thief_ARMOR_Info_11_03"); //Zdob¹dŸ rudê, to dostaniesz zbrojê.
 	};
 };  
-
-//========================================
-//-----------------> GiveParcel
-//========================================
-
-INSTANCE DIA_PC_Thief_GiveParcel (C_INFO)
-{
-   npc          = PC_Thief;
-   nr           = 1;
-   condition    = DIA_PC_Thief_GiveParcel_Condition;
-   information  = DIA_PC_Thief_GiveParcel_Info;
-   permanent	= FALSE;
-   description	= "Mam twoj¹ przesy³kê.";
-};
-
-FUNC INT DIA_PC_Thief_GiveParcel_Condition()
-{
-    if (Npc_HasItems (other, ItMi_DiegoBag) >=1)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_PC_Thief_GiveParcel_Info()
-{
-    AI_Output (other, self ,"DIA_PC_Thief_GiveParcel_15_01"); //Chyba mam coœ co nale¿y do ciebie.
-    AI_Output (self, other ,"DIA_PC_Thief_GiveParcel_03_02"); //Co takiego?
-    AI_Output (other, self ,"DIA_PC_Thief_GiveParcel_15_03"); //Spójrz. Wspomina³eœ coœ o jakiejœ przesy³ce ze Œwiata Zewnêtrznego.
-    AI_Output (self, other ,"DIA_PC_Thief_GiveParcel_03_04"); //Gdzie to znalaz³eœ?
-    AI_Output (other, self ,"DIA_PC_Thief_GiveParcel_15_05"); //Mia³ to przy sobie Bullit.
-    AI_Output (self, other ,"DIA_PC_Thief_GiveParcel_03_06"); //Chcesz powiedzieæ, ¿e pokona³eœ go w walce?
-    AI_Output (other, self ,"DIA_PC_Thief_GiveParcel_15_07"); //To nieistotne.
-    AI_Output (self, other ,"DIA_PC_Thief_GiveParcel_03_08"); //Jestem pod olbrzymim wra¿eniem! A z tym sukinsynem policzê siê póŸniej.
-    AI_Output (other, self ,"DIA_PC_Thief_GiveParcel_15_09"); //Mo¿e tak jakaœ nagroda?
-    AI_Output (self, other ,"DIA_PC_Thief_GiveParcel_03_10"); //Jasne, zas³u¿y³eœ.
-    CreateInvItems (self, ItMiNugget, 50);
-    B_GiveInvItems (self, other, ItMiNugget, 50);
-	B_GiveInvItems (other, self, ItMi_DiegoBag, 1);
-    B_GiveXP (150);
-};
-
-
-
 
 
 //#####################################################################

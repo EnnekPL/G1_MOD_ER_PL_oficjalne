@@ -1,8 +1,98 @@
-/****************************************************
-******* GOTHIC EDYCJA ROZSZERZONA 1.4
-******* PRZEDMIOTY ZADAÑ - ROZDZIA£ 1
-******* Opis: Ró¿norodne przedmioty zwi¹zane z zadaniami.
-*****************************************************/
+//**********************************************************
+//***** GOTHIC EDYCJA ROZSZERZONA 1.4
+//***** PRZEDMIOTY ZADAÑ - ROZDZIA£ 1
+//***** Opis: Ró¿norodne przedmioty zwi¹zane z zadaniami.
+//**********************************************************
+
+////////////////////////////////////////////////
+// Zaginiona paczuszka Diego
+////////////////////////////////////////////////
+INSTANCE ItMi_DiegoBag (C_Item)
+{
+	name 				=	"Przesy³ka Diega";
+
+	mainflag 			=	ITEM_KAT_NONE;
+	flags 				=	ITEM_MISSION;
+
+	value 				=	200;
+
+	visual 				=	"ItMi_Pocket.3ds";
+	material 			=	MAT_LEATHER;
+
+	description			= name;
+	TEXT[2]				= "Diego podobno mia³ otrzymaæ jak¹œ";
+	TEXT[3]				= "przesy³kê ze Œwiata Zewnêtrznego.";
+	TEXT[4]				= NAME_Value;					COUNT[4]	= value;
+};
+
+////////////////////////////////////////////////
+// Pamiêtnik z chaty Œwistaka
+////////////////////////////////////////////////
+INSTANCE ItWr_PamietnikSwistaka (C_Item)
+{	
+	name 				=	"Dziennik Œwistaka";
+
+	mainflag 			=	ITEM_KAT_DOCS;
+	flags 				=	ITEM_MISSION;
+	value 				=	0;
+	visual 				=	"ItWr_Scroll_01.3DS";
+	material 			=	MAT_LEATHER;
+	on_state[0]			=   Use_WhistelrNotes;
+	scemeName			=	"MAP";
+	description			=   name;
+	TEXT[2]				= 	"Notatki nale¿¹ce do Œwistaka";
+	TEXT[2]				= 	"znalezione w jego chacie.";
+	TEXT[5]				= 	NAME_Value;
+	COUNT[5]			= 	value;
+	
+};
+
+func void Use_WhistelrNotes ()
+{  
+/* var int raz;
+if (raz == false) && (pierscienieEBR == LOG_RUNNING)
+{
+raz = true;
+B_givexp (100);
+B_LogEntry (CH1_Problem_ZLY,"Z pamiêtnika Œwistaka dowiedzia³em siê, ¿e jeden z ukradzionych pierœcieni zachowa³ dla siebie, a drugi sprzeda³ szkodnikowi imieniem Cipher.");
+};*/
+		var int nDocID;
+		
+		nDocID = 	Doc_Create		()			  ;								// DocManager 
+					Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
+					Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
+					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"	   			); 	// -1 -> all pages 
+					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
+					Doc_PrintLine	( nDocID,  0, "15 paŸdziernika "					);//fixxxxx
+					Doc_PrintLine	( nDocID,  0, ""					);
+					Doc_PrintLines	( nDocID,  0, "Uda³o mi siê nie zwróciæ na siebie uwagi, a kradzie¿ przebieg³a pomyœlnie.Ci têpi Stra¿nicy prêdzej powybijaj¹ siê nawzajem ni¿ odkryj¹, kto ich okrad³."					);
+					
+					Doc_PrintLine	( nDocID,  0, "16 paŸdziernika"	);
+					Doc_PrintLine	( nDocID,  0, ""	);
+					Doc_PrintLines	( nDocID,  0, "Wybra³em siê do Nowego Obozu w celu znalezienia kupca na pierœcieñ. Jedynie niejaki Cipher by³ zainteresowany. Zdecydowa³em siê jednak zachowaæ pierœcieñ dla siebie."					);
+					
+					Doc_PrintLine	( nDocID,  0, "17 paŸdziernika"					);
+					Doc_PrintLine	( nDocID,  0, ""	);
+					Doc_PrintLines	( nDocID,  0, "Zacznê sprzedawaæ czêœæ ukradzionych przedmiotów tak, by nie wzbudziæ podejrzeñ. Za zebran¹ rudê wynaj¹³em sobie stra¿nika do pilnowania ³upów. Pod moj¹ chatê œci¹gnê³o wielu chêtnych do ubicie interesu. Fisk jest z³y, ¿e mam lepszy utarg od niego... "					);
+					Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
+				
+					Doc_Show		( nDocID );
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 INSTANCE dostawa_cyrusa (C_Item)
 {
@@ -292,74 +382,11 @@ INSTANCE ItMi_SnafBag (C_Item)
 	TEXT[4]				= NAME_Value;					COUNT[4]	= value;
 };
 
-INSTANCE ItMi_DiegoBag (C_Item)
-{
-	name 				=	"Przesy³ka Diega";
 
-	mainflag 			=	ITEM_KAT_NONE;
-	flags 				=	ITEM_MISSION;
 
-	value 				=	200;
 
-	visual 				=	"ItMi_Pocket.3ds";
-	material 			=	MAT_LEATHER;
-
-	description		= name;
-	TEXT[2]			= "Diego podobno mia³ otrzymaæ jak¹œ";
-	TEXT[3]			= "przesy³kê ze Œwiata Zewnêtrznego.";
-	TEXT[4]			= NAME_Value;					COUNT[4]	= value;
-};
-
-var int raz;
 /********************************************************************************/
-INSTANCE ItWr_PamietnikSwistaka (C_Item)
-{	
-	name 					=	"Dziennik Œwistaka";
 
-	mainflag 				=	ITEM_KAT_DOCS;
-	flags 					=	ITEM_MISSION;
-	value 					=	0;
-	visual 					=	"ItWr_Scroll_01.3DS";
-	material 				=	MAT_LEATHER;
-	on_state[0]			=   PamietnikSwistaka;
-	scemeName		=	"MAP";
-	description			=   name;
-	TEXT[2]				= "Notatki nale¿¹ce do Œwistaka.";
-	TEXT[5]				= NAME_Value;
-	COUNT[5]			= value;
-	
-};
-
-func void PamietnikSwistaka ()
-{   
-if (raz == false) && (pierscienieEBR == LOG_RUNNING)
-{
-raz = true;
-B_givexp (100);
-B_LogEntry                     (CH1_Problem_ZLY,"Z pamiêtnika Œwistaka dowiedzia³em siê, ¿e jeden z ukradzionych pierœcieni zachowa³ dla siebie, a drugi sprzeda³ szkodnikowi imieniem Cipher.");
-};
-		var int nDocID;
-		
-		nDocID = 	Doc_Create		()			  ;								// DocManager 
-					Doc_SetPages	( nDocID,  1 );                         //wieviel Pages
-					Doc_SetPage 	( nDocID,  0, "letters.TGA"  , 0 		); 
-					Doc_SetFont 	( nDocID, -1, "font_10_book.tga"	   			); 	// -1 -> all pages 
-					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
-					Doc_PrintLine	( nDocID,  0, "15 paŸdziernika "					);//fixxxxx
-					Doc_PrintLine	( nDocID,  0, ""					);
-					Doc_PrintLines	( nDocID,  0, "Uda³o mi siê. Kradzie¿ przebieg³a pomyœlnie. Mój plan by³ œwietny. Ci têpi Stra¿nicy prêdzej powybijaj¹ siê nawzajem ni¿ odkryj¹ kto ich okrad³."					);
-					
-					Doc_SetFont 	( nDocID, -1, "font_10_book.TGA"	   			); 	// -1 -> all pages 
-					Doc_PrintLine	( nDocID,  0, "16 paŸdziernika"	);
-					Doc_PrintLine	( nDocID,  0, ""	);
-					Doc_PrintLines	( nDocID,  0, "By³em w Nowym Obozie. Znalaz³em tam kupca na jeden z pierœcieni. Nazywa³ siê Cipher. To by³ dobry uk³ad. Nie doœæ, ¿e dosta³em rudê, to obdarowa³ mnie te¿ zielem."					);
-					Doc_PrintLine	( nDocID,  0, "17 paŸdziernika"					);
-					Doc_PrintLine	( nDocID,  0, ""	);
-					Doc_PrintLines	( nDocID,  0, "Zacznê sprzedawaæ czêœæ ukradzionych przedmiotów tak, by nie wzbudziæ podejrzeñ. Za zebran¹ rudê wynaj¹³em sobie stra¿nika do pilnowania dóbr. Kopacze gdy tylko dowiedzieli siê o moich towarach, zbiegli siê wokó³ mojej chaty. Fisk jest z³y, ¿e mam lepszy utarg od niego... "					);
-					Doc_SetMargins	( nDocID, -1, 200, 50, 50, 50, 1   		);  //  0 -> margins are in pixels (Position des Textes von den Ränder des TGAs aus
-				
-					Doc_Show		( nDocID );
-};
 
 INSTANCE ItKeKeyPLAC(C_Item)
 {

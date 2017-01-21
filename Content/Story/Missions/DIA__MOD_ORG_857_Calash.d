@@ -219,8 +219,8 @@ FUNC VOID DIA_Calash_Win_Info()
     AI_Output (self, other ,"DIA_Calash_Win_03_03"); //Teraz muszê zebraæ trofea z tego olbrzyma.
     AI_Output (self, other ,"DIA_Calash_Win_03_04"); //W nagrodê mo¿esz zachowaæ resztê zwojów.
     AI_Output (self, other ,"DIA_Calash_Win_03_05"); //WeŸ te¿ te skórê. Zdj¹³em j¹ niegdyœ z b³otnego wê¿a.
-    CreateInvItems (self, ItMiNugget, 100);
-    B_GiveInvItems (self, other, ItMiNugget, 100);
+    CreateInvItems (self, ItMiNugget, 50);
+    B_GiveInvItems (self, other, ItMiNugget, 50);
     CreateInvItems (self, ItAt_Swampshark_01, 1);
     B_GiveInvItems (self, other, ItAt_Swampshark_01, 1);
     B_LogEntry                     (CH1_TrollGroundHunting,"Troll zosta³ upolowany. W nagrodê otrzyma³em skórê wê¿a b³otnego i trochê rudy. ");

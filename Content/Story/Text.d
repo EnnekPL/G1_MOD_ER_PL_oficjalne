@@ -291,7 +291,7 @@ CONST STRING TXT_TALENTS [NPC_TALENT_MAX] =
 	"Broñ dwurêczna",
 	"£uk",
 	"Kusza",
-	"Otwieranie zamków",
+	"W³amywanie siê",
 	"Kradzie¿",
 	"Magia",
 	"Skradanie siê",
@@ -322,18 +322,18 @@ CONST STRING TXT_TALENTS_DESC [NPC_TALENT_MAX] =
 
 CONST STRING TXT_TALENTS_SKILLS [NPC_TALENT_MAX] = 
 {
-	"Nie|poz.1|poz.2",	
-	"Nie|poz. 1/10|poz. 2/10|poz. 3/10|poz. 4/10|poz. 5/10|poz. 6/10|poz. 7/10|poz. 8/10|poz. 9/10|poz. 10/10",	//NPC_TALENT_1H          
-	"Nie|poz. 1/10|poz. 2/10|poz. 3/10|poz. 4/10|poz. 5/10|poz. 6/10|poz. 7/10|poz. 8/10|poz. 9/10|poz. 10/10",	//NPC_TALENT_2H           
-	"Nie|adept|mistrz",								//NPC_TALENT_BOW         
-	"Nie|adept|mistrz",								//NPC_TALENT_CROSSBOW    
-	"Nie|adept|mistrz",								//NPC_TALENT_PICKLOCK   
-	"Nie|adept|mistrz",								//NPC_TALENT_PICKPOCKET
-	"Nie|Kr¹g 1 |Kr¹g 2 |Kr¹g 3 (reg. +1)|Kr¹g 4 (reg. +1)|Kr¹g 5 (reg. +2)|Kr¹g 6 (reg. +2)",	//NPC_TALENT_MAGE         
-	"Nie|Tak|",                                          //NPC_TALENT_SNEAK       
-	"Nie|Tak",                                      		    //NPC_TALENT_REGENERATE 
-	"Nie|adept|mistrz",                                          		//NPC_TALENT_FIREMASTER   
-	"Nie|Tak"                                           //NPC_TALENT_ACROBAT      
+	"|poz.1|poz.2",	
+	"poz. 0/10|poz. 1/10|poz. 2/10|poz. 3/10|poz. 4/10|poz. 5/10|poz. 6/10|poz. 7/10|poz. 8/10|poz. 9/10|poz. 10/10",	//NPC_TALENT_1H          
+	"poz. 0/10|poz. 1/10|poz. 2/10|poz. 3/10|poz. 4/10|poz. 5/10|poz. 6/10|poz. 7/10|poz. 8/10|poz. 9/10|poz. 10/10",	//NPC_TALENT_2H           
+	"poz. 0/2|poz. 1/2|poz. 2/2",								//NPC_TALENT_BOW         
+	"poz. 0/2|poz. 1/2|poz. 2/2",								//NPC_TALENT_CROSSBOW    
+	"-|poz.1/2|poz. 2/2",								//NPC_TALENT_PICKLOCK   
+	"-|poz.1/2|poz. 2/2",								//NPC_TALENT_PICKPOCKET
+	"-|kr¹g 1 |kr¹g 2 |kr¹g 3 (reg. +1)|kr¹g 4 (reg. +1)|kr¹g 5 (reg. +2)|kr¹g 6 (reg. +2)",	//NPC_TALENT_MAGE         
+	"-|poz.1/1|",                                          //NPC_TALENT_SNEAK       
+	"-|poz.1/1",                                      		    //NPC_TALENT_REGENERATE 
+	"-|poz.1/2|poz. 2/2",                                          		//NPC_TALENT_FIREMASTER   
+	"-|poz.1/1"                                           //NPC_TALENT_ACROBAT      
 };
 
 // *****************************************************************************************

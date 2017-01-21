@@ -751,7 +751,7 @@ INSTANCE DIA_Snaf_IanQuest (C_INFO)
 
 FUNC INT DIA_Snaf_IanQuest_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_IAN_NextToAwansCienQuest))
+    if (MIS_FoodForOldMine == LOG_RUNNING)
     {
     return TRUE;
     };
@@ -764,15 +764,15 @@ FUNC VOID DIA_Snaf_IanQuest_Info()
     AI_Output (other, self ,"DIA_Snaf_IanQuest_03_02"); //Podobno dostawy ¿ywnoœci, które wysy³asz s¹ niezgodne z zamówieniami.
     AI_Output (self, other ,"DIA_Snaf_IanQuest_03_03"); //¯e co? To niemo¿liwe! 
     AI_Output (self, other ,"DIA_Snaf_IanQuest_03_04"); //Zaraz spojrzê na swoj¹ listê i porównam j¹ z zamówieniami.
-    AI_Output (self, other ,"DIA_Snaf_IanQuest_03_05"); //Przy ka¿dej dostawiê sporz¹dzam dok³adn¹ listê.
+    AI_Output (self, other ,"DIA_Snaf_IanQuest_03_05"); //Dokumentujê ka¿d¹ dostawê.
     B_UseFakeScroll ();
     AI_Output (self, other ,"DIA_Snaf_IanQuest_03_06"); //Tak, wszystko siê zgadza.
-    AI_Output (other, self ,"DIA_Snaf_IanQuest_03_07"); //W takim razie dlaczego do kopalni s¹ dostarczane mniejsze racje?
+    AI_Output (other, self ,"DIA_Snaf_IanQuest_03_07"); //W takim razie, dlaczego do kopalni s¹ dostarczane mniejsze racje?
     AI_Output (self, other ,"DIA_Snaf_IanQuest_03_08"); //Nie mam pojêcia. Konwoje s¹ dostarczane do obozu przed kopalni¹.
-    AI_Output (self, other ,"DIA_Snaf_IanQuest_03_09"); //Tam s¹ rozdzielane racje ¿ywnoœciowe.
+    AI_Output (self, other ,"DIA_Snaf_IanQuest_03_09"); //Tam wszystko jest rozdzielane. B³êdów szukaj w³aœnie tam.
     B_LogEntry                     (CH1_FoodForOldMine,"Snaf zdradzi³ mi, ¿e konwoje s¹ dostarczane do obozu przed kopalni¹. Powinienem siê tam rozejrzeæ.");
 
-    B_GiveXP (50);
+    //B_GiveXP (50);
 };
 
 //========================================

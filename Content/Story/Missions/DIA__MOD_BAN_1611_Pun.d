@@ -245,8 +245,8 @@ FUNC VOID DIA_Raeuber_VERY_IMPORTATN_Info()
 
     Info_ClearChoices		(DIA_Raeuber_VERY_IMPORTATN);
     Info_AddChoice		(DIA_Raeuber_VERY_IMPORTATN, "Dobra. Wyruszê najszybciej jak siê da.", DIA_Raeuber_VERY_IMPORTATN_DEAL);
-    Info_AddChoice		(DIA_Raeuber_VERY_IMPORTATN, "Chcê 200 bry³ek rudy.", DIA_Raeuber_VERY_IMPORTATN_CHCE_200);
-    Info_AddChoice		(DIA_Raeuber_VERY_IMPORTATN, "300 bry³ek rudy, albo sobie pójdê.", DIA_Raeuber_VERY_IMPORTATN_TARGUJ_SIE);
+    Info_AddChoice		(DIA_Raeuber_VERY_IMPORTATN, "Chcê 120 bry³ek rudy.", DIA_Raeuber_VERY_IMPORTATN_CHCE_200);
+    Info_AddChoice		(DIA_Raeuber_VERY_IMPORTATN, "150 bry³ek rudy, albo sobie pójdê.", DIA_Raeuber_VERY_IMPORTATN_TARGUJ_SIE);
 };
 
 FUNC VOID DIA_Raeuber_VERY_IMPORTATN_DEAL()
@@ -261,21 +261,21 @@ FUNC VOID DIA_Raeuber_VERY_IMPORTATN_DEAL()
 
 FUNC VOID DIA_Raeuber_VERY_IMPORTATN_CHCE_200()
 {
-    AI_Output (other, self ,"DIA_Raeuber_VERY_IMPORTATN_CHCE_200_15_01"); //Chcê 200 bry³ek rudy.
+    AI_Output (other, self ,"DIA_Raeuber_VERY_IMPORTATN_CHCE_200_15_01"); //Chcê 120 bry³ek rudy.
     AI_Output (self, other ,"DIA_Raeuber_VERY_IMPORTATN_CHCE_200_03_02"); //Szlag by to! Masz. Tylko szybko.
-    CreateInvItems (self, ItMiNugget, 200);
-    B_GiveInvItems (self, other, ItMiNugget, 200);
+    CreateInvItems (self, ItMiNugget, 120);
+    B_GiveInvItems (self, other, ItMiNugget, 120);
     Info_ClearChoices		(DIA_Raeuber_VERY_IMPORTATN);
     AI_StopProcessInfos	(self);
 };
 
 FUNC VOID DIA_Raeuber_VERY_IMPORTATN_TARGUJ_SIE()
 {
-    AI_Output (other, self ,"DIA_Raeuber_VERY_IMPORTATN_TARGUJ_SIE_15_01"); //300 bry³ek rudy, albo sobie pójdê.
+    AI_Output (other, self ,"DIA_Raeuber_VERY_IMPORTATN_TARGUJ_SIE_15_01"); //150 bry³ek rudy, albo sobie pójdê.
     AI_Output (self, other ,"DIA_Raeuber_VERY_IMPORTATN_TARGUJ_SIE_03_02"); //Innos ciê opuœci³, czy co?! 
     AI_Output (self, other ,"DIA_Raeuber_VERY_IMPORTATN_TARGUJ_SIE_03_03"); //Masz, ale ruszaj siê.
-    CreateInvItems (self, ItMiNugget, 300);
-    B_GiveInvItems (self, other, ItMiNugget, 300);
+    CreateInvItems (self, ItMiNugget, 150);
+    B_GiveInvItems (self, other, ItMiNugget, 150);
     AI_Output (other, self ,"DIA_Raeuber_VERY_IMPORTATN_TARGUJ_SIE_15_04"); //Tak jest.
     Info_ClearChoices		(DIA_Raeuber_VERY_IMPORTATN);
     AI_StopProcessInfos	(self);

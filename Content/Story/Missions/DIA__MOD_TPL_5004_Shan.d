@@ -262,8 +262,8 @@ FUNC VOID DIA_Shan_QUEST2_WIN_Info()
     MIS_StrangeResearcher = LOG_SUCCESS;
 
     B_GiveXP (120);
-    CreateInvItems (self, ItMiNugget, 150);
-    B_GiveInvItems (self, other, ItMiNugget, 150);
+    CreateInvItems (self, ItMiNugget, 80);
+    B_GiveInvItems (self, other, ItMiNugget, 80);
 	AI_StopProcessInfos (self);
 };
 
@@ -755,8 +755,8 @@ FUNC VOID DIA_Shan_Uwolnieni_Info()
     MIS_HelpBrothersBra = LOG_SUCCESS;
 
     B_GiveXP (550);
-    CreateInvItems (self, ItMiNugget, 380);
-    B_GiveInvItems (self, other, ItMiNugget, 380);
+    //CreateInvItems (self, ItMiNugget, 200);
+    //B_GiveInvItems (self, other, ItMiNugget, 200);
     CreateInvItems (self, ItMw_2H_Sword_Heavy_01, 1);
     B_GiveInvItems (self, other, ItMw_2H_Sword_Heavy_01, 1);
     AI_StopProcessInfos	(self);

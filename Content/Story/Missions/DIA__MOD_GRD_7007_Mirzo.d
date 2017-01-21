@@ -40,8 +40,10 @@ INSTANCE DIA_Mirzo_IamGardist (C_INFO)
 
 FUNC INT DIA_Mirzo_IamGardist_Condition()
 {
-if  (MIS_FoodForOldMine != LOG_SUCCESS) && !Npc_KnowsInfo (hero,DIA_Mirzo_Caught) { 
-    return TRUE; };
+	if  (MIS_FoodForOldMine != LOG_SUCCESS) && !Npc_KnowsInfo (hero,DIA_Mirzo_Caught) 
+	{ 
+    return TRUE; 
+	};
 };
 
 FUNC VOID DIA_Mirzo_IamGardist_Info()
@@ -121,7 +123,7 @@ FUNC VOID DIA_Mirzo_QuestIan_Info()
     AI_Output (self, other ,"DIA_Mirzo_QuestIan_03_06"); //Pewnie Ÿle policzy³. Z naszej strony praca przebiega sprawnie.
     B_LogEntry                     (CH1_FoodForOldMine,"Mirzo uwa¿a, ¿e dobrze wykonuje swoj¹ pracê. Coœ mi tu jednak œmierdzi, popytam jeszcze innych mieszkañców obozu.");
 
-    B_GiveXP (50);
+    //B_GiveXP (50);
     AI_StopProcessInfos	(self);
 };
 
@@ -136,7 +138,7 @@ INSTANCE DIA_Mirzo_Caught (C_INFO)
    condition    = DIA_Mirzo_Caught_Condition;
    information  = DIA_Mirzo_Caught_Info;
    permanent	= FALSE;
-   description	= "No proszê, kogo ja widzê.";
+   description	= "Mam ciê!";
 };
 
 FUNC INT DIA_Mirzo_Caught_Condition()
@@ -151,22 +153,19 @@ FUNC INT DIA_Mirzo_Caught_Condition()
 
 FUNC VOID DIA_Mirzo_Caught_Info()
 {
-    AI_Output (other, self ,"DIA_Mirzo_Caught_15_01"); //No proszê, kogo ja widzê.
-    AI_Output (self, other ,"DIA_Mirzo_Caught_03_02"); //O cholera! Co tu robisz?
-    AI_Output (other, self ,"DIA_Mirzo_Caught_15_03"); //Œledzi³em ciê, przejrza³em twoje machlojki.
-    AI_Output (self, other ,"DIA_Mirzo_Caught_03_04"); //Jakie machlojki? Spotka³em siê z przyjacielem. 
-    AI_Output (other, self ,"DIA_Mirzo_Caught_15_05"); //S¹dzisz, ¿e w to uwierzê? Przemycasz towary ze Starej Kopalni do Nowego Obozu!
-    AI_Output (self, other ,"DIA_Mirzo_Caught_03_06"); //Poczekaj no, skurczybyku! Nie pozwolê, byœ komuœ o tym powiedzia³.
-	Npc_ExchangeRoutine (GRD_7007_Mirzo, "spisek2");
+    AI_Output (other, self ,"DIA_Mirzo_Caught_15_01"); //Mam ciê!
+    AI_Output (self, other ,"DIA_Mirzo_Caught_03_02"); //Czemu za mn¹ ³azisz? Masz jakiœ problem?
+    AI_Output (other, self ,"DIA_Mirzo_Caught_15_03"); //Ian ma. A wiêc to tutaj wszystko sprzedajesz.
+    AI_Output (self, other ,"DIA_Mirzo_Caught_03_04"); //Dopilnujê, byœ nikomu nie przekaza³ tej informacji.
+   
+	//Npc_ExchangeRoutine (GRD_7007_Mirzo, "spisek2");
     AI_StopProcessInfos	(self);
-    self.flags = 2;
-	AI_Wait 	(self, 3);
-	PrintScreen	("Uciekaj!", -1,-1,"FONT_OLD_20_WHITE.TGA",5);
-	PrintScreen	("Inaczej Mirzo ciê zabije!", -1,55,"FONT_OLD_20_WHITE.TGA",5);
+    //self.flags = 2;
+	//AI_Wait 	(self, 3);
     Npc_SetPermAttitude (self, ATT_HOSTILE);
     Npc_SetTarget (self, other);
     AI_StartState (self, ZS_ATTACK, 1, "");
-    B_LogEntry                     (CH1_FoodForOldMine,"Nakry³em Mirzo, jak robi³ interesy w Nowym Obozie. Stra¿nik rzuci³ siê na mnie, ale obawiam siê, ¿e nie mam szans. Muszê uciec jak najszybciej do obozu przed kopalni¹.");
+    B_LogEntry    (CH1_FoodForOldMine,"Nakry³em Mirzo, jak robi³ interesy w Nowym Obozie. Stra¿nik rzuci³ siê na mnie. Muszê powiedzieæ o wszystkim Artegrowi.");
   
 };
 

@@ -8,9 +8,9 @@ INSTANCE DIA_Miguel_EXIT(C_INFO)
 {
 	npc             = BAN_1600_Miguel;
 	nr              = 999;
-	condition	= DIA_Miguel_EXIT_Condition;
-	information	= DIA_Miguel_EXIT_Info;
-	permanent	= TRUE;
+	condition		= DIA_Miguel_EXIT_Condition;
+	information		= DIA_Miguel_EXIT_Info;
+	permanent		= TRUE;
 	description     = DIALOG_ENDE;
 };
 
@@ -98,7 +98,7 @@ FUNC VOID DIA_Miguel_HELLO2_Info()
 	{
 	AI_Output (self, other ,"DIA_Miguel_HELLO2_03_12"); //Pierœcieñ zosta³ ukradziony kilka lat temu przez pewnego Cienia. Wo³aj¹ na niego Œwistak.
 	AI_Output (self, other ,"DIA_Miguel_HELLO2_03_13"); //Kojarzysz goœcia? Mieszka nieopodal. SprawdŸ jego chatê.
-	AI_Output (self, other ,"DIA_Miguel_HELLO2_03_14"); //Wierni ludzie Gomeza. Ha! W³aœnie widaæ. ¯a³osne...
+	AI_Output (self, other ,"DIA_Miguel_HELLO2_03_14"); //Wierni ludzie Gomeza... Ha! W³aœnie widaæ... 
 	B_LogEntry                     (CH1_BaronsRings,"Poszukiwania pierœcienia powinienem zacz¹æ od chaty Œwistaka.");
 	};
     AI_Output (self, other ,"DIA_Miguel_HELLO2_03_15"); //Jak ju¿ ukradniesz pierœcieñ, przynieœ mi go. Dam ci dalsze wskazówki.
@@ -206,7 +206,7 @@ FUNC VOID DIA_Miguel_FindSecondRing_Info()
     AI_Output (other, self ,"DIA_Miguel_FindSecondRing_15_02"); //By³ w komnacie Gomeza.
     AI_Output (self, other ,"DIA_Miguel_FindSecondRing_03_03"); //Pewnie le¿a³ sobie na stole.
     AI_Output (other, self ,"DIA_Miguel_FindSecondRing_15_04"); //Dok³adnie tak.
-    AI_Output (self, other ,"DIA_Miguel_FindSecondRing_03_05"); //Ha ha ha. Co za g³upiec!
+    AI_Output (self, other ,"DIA_Miguel_FindSecondRing_03_05"); //Ha ha ha. Pomyœleæ, ¿e ktoœ taki ma koloniê w garœci...
     AI_Output (self, other ,"DIA_Miguel_FindSecondRing_03_06"); //Dobra robota.
     B_GiveXP (150);
 	B_LogEntry      (CH1_BaronsRings,"Odda³em Miguelowi pierœcieñ, który znalaz³em na stole w pokoju Gomeza. Pora poszukaæ ostatniego.");

@@ -83,7 +83,7 @@ INSTANCE ItFoSoupFish1(C_Item)
 		{
 		ilosc_zupF3 = ilosc_zupF3 - 10;
 		B_RaiseAttribute	(ATR_HITPOINTS_MAX,	2);
-		Print ("Punkty ¿ycia + 2");
+		//Print ("Punkty ¿ycia + 2");
 		};
 	};		
 /******************************************************************************************/	
@@ -386,7 +386,7 @@ Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	22);
 //edit by Nocturn
 INSTANCE JajoSca1(C_Item)
 {	
-	name 					=	"Jajo œcierwoajada";
+	name 					=	"Jajo œcierwojada";
 	
 	mainflag 				=	ITEM_KAT_FOOD;
 	flags 					=	ITEM_MULTI;	
@@ -399,7 +399,7 @@ INSTANCE JajoSca1(C_Item)
 	on_state[0]				=	UseCookScaEgg;
 	description				=	name;
 	TEXT[0]					=	"Te jaja zosta³y z³o¿one przez";
-	TEXT[1]					=	"œcierwoajady.";
+	TEXT[1]					=	"œcierwojady.";
 	TEXT[2]					=	"";
 	TEXT[5]					=	NAME_Value;					COUNT[5]	= value;
 };
@@ -410,7 +410,7 @@ Npc_ChangeAttribute	(self,	ATR_HITPOINTS,	7);
 /******************************************************************************************/
 INSTANCE JajoSca2(C_Item)
 {	
-	name 					=	"Ugotowane jajo œcierwoajada";
+	name 					=	"Ugotowane jajo œcierwojada";
 	
 	mainflag 				=	ITEM_KAT_FOOD;
 	flags 					=	ITEM_MULTI;	
@@ -423,7 +423,7 @@ INSTANCE JajoSca2(C_Item)
 	on_state[0]				=	UseCookScaEgg2;
 	description				=	name;
 	TEXT[0]					=	"Te jaja zosta³y z³o¿one przez";
-	TEXT[1]					=	"œcierwoajady.";
+	TEXT[1]					=	"œcierwojady.";
 	TEXT[2]					=	"Zosta³y ugotowane";
 	TEXT[5]					=	NAME_Value;					COUNT[5]	= value;
 };

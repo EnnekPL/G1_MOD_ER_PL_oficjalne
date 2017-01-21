@@ -428,8 +428,8 @@ FUNC VOID DIA_Raeuber_END_WORK_Info()
     B_GiveXP (XP_NaprawaPaliasady);
     CreateInvItems (self, ItAmArrow, 25);
     B_GiveInvItems (self, other, ItAmArrow, 25);
-    CreateInvItems (self, ItMiNugget, 30);
-    B_GiveInvItems (self, other, ItMiNugget, 30);
+    CreateInvItems (self, ItMiNugget, 20);
+    B_GiveInvItems (self, other, ItMiNugget, 20);
 	Npc_ExchangeRoutine (self,"start");
 	AI_StopProcessInfos	(self);
 };

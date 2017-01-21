@@ -29,6 +29,8 @@ func void B_Give_CronosChapter1Runes ()
 	CreateInvItems	(npc, ItMi_Alchemy_Salt_01,3);
 	CreateInvItems	(npc, ItMi_Alchemy_Moleratlubric_01,3);
 	CreateInvItems	(npc, ItMi_Alchemy_Alcohol_01,3);
+	CreateInvItems (npc,ItFo_Potion_Haste_01 ,4);	
+	CreateInvItems (npc,ItFo_Potion_Haste_02 ,3);
 };
 func void B_Give_CronosChapter2Runes ()
 {
@@ -64,6 +66,8 @@ func void B_Give_CronosChapter2Runes ()
 	CreateInvItems	(npc, ItMi_Alchemy_Alcohol_01,3);
 	CreateInvItem (npc,ItWr_Book_Circle_03);
 	CreateInvItem (npc,ItWr_Book_Circle_04);
+	CreateInvItems (npc,ItFo_Potion_Haste_01 ,5);	
+	CreateInvItems (npc,ItFo_Potion_Haste_02 ,4);
 
 };
 func void B_Give_CronosChapter3Runes ()
@@ -101,6 +105,9 @@ func void B_Give_CronosChapter3Runes ()
 	
 	CreateInvItem (npc,ItWr_Book_Circle_05);
 	CreateInvItem (npc,ItWr_Book_Circle_06);
+	
+	CreateInvItems (npc,ItFo_Potion_Haste_01 ,7);	
+	CreateInvItems (npc,ItFo_Potion_Haste_03 ,2);
 };
 func void B_Give_CronosChapter4Runes ()
 {

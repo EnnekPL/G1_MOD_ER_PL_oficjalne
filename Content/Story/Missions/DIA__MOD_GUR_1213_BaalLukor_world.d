@@ -260,8 +260,8 @@ FUNC VOID DIA_BaalLukor_world_HELLO4_MAM_JUZ()
     B_GiveXP (300);
     B_GiveInvItems (other, self, lukor_amulet, 1);
     AI_Output (self, other ,"DIA_BaalLukor_world_HELLO4_MAM_JUZ_03_04"); //Dziêkujê ci. WeŸ te rudê jako nagrodê.
-    CreateInvItems (self, ItMiNugget, 150);
-    B_GiveInvItems (self, other, ItMiNugget, 150);
+    CreateInvItems (self, ItMiNugget, 100);
+    B_GiveInvItems (self, other, ItMiNugget, 100);
 	 B_GiveInvItems (hero, self, lukor_amulet, 1);
 	 B_SetPermAttitude	(GUR_1213_BaalLukor_world,	ATT_NEUTRAL);
 	GUR_1213_BaalLukor_world.aivar[AIV_PARTYMEMBER] = false;
@@ -497,10 +497,13 @@ FUNC VOID DIA_BaalLukor_world_QUEST_END_Info()
     B_LogEntry                     (CH2_MissedSpy,"Baal Lukor by³ bardzo zadowolony z powrotu Gor Na Lina, jednak zaskoczy³o go jego zachowanie. Na szczêœcie to nie jest mój problem.");
 
     B_GiveXP (400);
-    CreateInvItems (self, ItMiNugget, 300);
-    B_GiveInvItems (self, other, ItMiNugget, 300);
+    CreateInvItems (self, ItMiNugget, 80);
+    B_GiveInvItems (self, other, ItMiNugget, 80);
     CreateInvItems (self, ItFo_Potion_Health_01, 4);
     B_GiveInvItems (self, other, ItFo_Potion_Health_01, 4);
+	
+	CreateInvItems (self, ItFo_Potion_Haste_01, 1);
+    B_GiveInvItems (self, other, ItFo_Potion_Haste_01, 1);
 	
 	var c_npc gorlin;
 	gorlin = Hlp_GetNpc(TPL_3928_GorNaLin);
