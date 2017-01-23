@@ -198,7 +198,7 @@ INSTANCE ItMis_JoruSecretBook(C_Item)
 					Doc_PrintLine	( nDocID,  0, "Lista przepisów"			);
 					Doc_PrintLine	( nDocID,  0, "");
 					Doc_SetFont 	( nDocID, -1, "font_10_book.TGA"	   			); 	// -1 -> all pages 
-					Doc_PrintLine	( nDocID,  0, "1. Miodowy Nowcijusz");
+					Doc_PrintLine	( nDocID,  0, "1. Miodowy Nowicjusz");
 					Doc_PrintLine	( nDocID,  0, "-------------");
 					Doc_PrintLine	( nDocID,  0, "2. Grzybowy Nowicjusz");
 					Doc_PrintLine	( nDocID,  0, "-------------");

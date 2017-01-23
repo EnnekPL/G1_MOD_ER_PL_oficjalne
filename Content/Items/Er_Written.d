@@ -1183,9 +1183,9 @@ Doc_PrintLine	( nDocID,  0, "0 ¯¹d³a krwiopijców");
 
 if (Knows_GetUluMulu == true)
 {
-Doc_PrintLine	( nDocID,  0, "1 £owiectwo orków (Ulu-mulu)");
+Doc_PrintLine	( nDocID,  0, "1 £owiectwo orków (Ulu-Mulu)");
 } else {
-Doc_PrintLine	( nDocID,  0, "0 £owiectwo orków (Ulu-mulu)");
+Doc_PrintLine	( nDocID,  0, "0 £owiectwo orków (Ulu-Mulu)");
 };
 if (Knows_GetLurkerMeat == true)
 {
@@ -1360,7 +1360,7 @@ func void Use_Book_AboutCastleRevaran ()
 					Doc_PrintLine	( nDocID,  0, ""					);
 					Doc_PrintLines	( nDocID,  0, "le siê sta³o, gdy¿ oto rzeka poch³onê³a zamek Revaran. Lord Etienne obwinia o to nas, Magów Ognia i nasz¹ tamê, któr¹ byliœmy postawili nieopodal Trellis. Etienne domaga siê od nas rozebrania zapory rzecznej i odbudowy tej g³ównej twierdzy paladynów. "					);
 					Doc_PrintLine	( nDocID,  0, ""					);
-					Doc_PrintLines	( nDocID,  0, "Choæ Innnos jest z nami, to przywódca paladynów ma niema³e wp³ywy i wszystkie je zamierza wykorzystaæ przeciwko Koœcio³owi Magów Ognia. Jako, ¿e przy Gomezie bracie stoicie, wtedy namawiajcie pierwszego z magnatów by przed królem za nami przemawia³. "	);
+					Doc_PrintLines	( nDocID,  0, "Choæ Innos jest z nami, to przywódca paladynów ma niema³e wp³ywy i wszystkie je zamierza wykorzystaæ przeciwko Koœcio³owi Magów Ognia. Jako, ¿e przy Gomezie bracie stoicie, wtedy namawiajcie pierwszego z magnatów by przed królem za nami przemawia³. "	);
 					Doc_PrintLine	( nDocID,  0, ""					);
 					Doc_PrintLine	( nDocID,  0, "Niechaj spe³ni siê wola Innosa! "					);
 					Doc_PrintLine	( nDocID,  0, ""					);
@@ -2520,7 +2520,7 @@ FUNC VOID Use_Book_Inferiusy()
 	
 	B_LogEntry		(BookLog_Inferiusy,	"Wbrew pozorom nekromanci nie wskrzeszaj¹ wcale zmar³ych, ani nie powracaj¹ im ¿ycia. Za spraw¹ czarnej magii w truchle pojawia siê nekromanckie tchnienie, które niewoli cia³o zmar³ego i czyni je powolnym woli nekromanty. Tak oto powstaj¹ z ziemi trupy naszych bliŸnich, zaœ ich rozk³adaj¹ce siê cia³a i koœci budz¹ grozê w ¿ywych. Inferiusy mog¹ ujawniaæ siê jako szkielety, b¹dŸ ulegaj¹ce rozpadowi chodz¹ce zw³oki. W dodatku jak podaj¹ ludzie, którym dane by³o spotkaæ inferiusa, w oczach o¿ywieñca mo¿na dostrzec niewyobra¿alne cierpienie. ");
 	
-	B_LogEntry		(BookLog_Inferiusy,	"Czyn nekromancki jest zbrodni¹ przeciwko prawom boskim i przeciw przyrodzonej godnoœci cz³owieka - przeciwko temu darowi jakim w swej m¹droœci obdarzyli nas bogowie. Owo wynaturzenie sprowadza o¿ywione zw³oki do poziomu krwio¿erczego zwierzêcia, które jest gotowe zaatakowaæ ka¿dego napotkanego cz³owieka. Inferiusy to ¿ywi¹ siê padlin¹. Na tym jednak nie koniec, gdy¿ po¿eraj¹ nawet ludzkie zw³oki, ³ami¹c kolejne z praw boskich. Nie one s¹ jednak winne owym wystêpkom, jeno plugawi nekromanci, którzy w swej pysze powo³ali do ¿ycia inferiusa. W ci¹gu wieków moc z³ego sta³o siê za spraw¹ tych bezecnych magusów. Zdarzali siê w³adcy, którzy nachylali ucha ku podszeptom nekromantów, by pognêbic swych wrogów. Inni spoœród plugawych magusów dzia³ali na w³asn¹ rêkê.");
+	B_LogEntry		(BookLog_Inferiusy,	"Czyn nekromandki jest zbrodni¹ przeciwko prawom boskim i przeciw przyrodzonej godnoœci cz³owieka - przeciwko temu darowi jakim w swej m¹droœci obdarzyli nas bogowie. Owo wynaturzenie sprowadza o¿ywione zw³oki do poziomu krwio¿erczego zwierzêcia, które jest gotowe zaatakowaæ ka¿dego napotkanego cz³owieka. Inferiusy to ¿ywi¹ siê padlin¹. Na tym jednak nie koniec, gdy¿ po¿eraj¹ nawet ludzkie zw³oki, ³ami¹c kolejne z praw boskich. Nie one s¹ jednak winne owym wystêpkom, jeno plugawi nekromanci, którzy w swej pysze powo³ali do ¿ycia inferiusa. W ci¹gu wieków moc z³ego sta³o siê za spraw¹ tych bezecnych magusów. Zdarzali siê w³adcy, którzy nachylali ucha ku podszeptom nekromantów, by pognêbic swych wrogów. Inni spoœród plugawych magusów dzia³ali na w³asn¹ rêkê.");
 	
 	B_LogEntry		(BookLog_Inferiusy,	"Dobry nasz Innos, Pan Ognia przedwieczny, w swej ³asce obdarzy³ ludzi wspania³ym b³ogos³awieñstwem. Z jego nakazu, ka¿dy prawowierny Innosyta winien jest udzieliæ zmar³emu pochówku w imiê Innosa. Wielu ludzi zignorowa³o ten nakaz, gdy¿ nie ufa³a m¹droœci Pana Ognia. Dopiero z czasem ludzie odkryli, ¿e Innos nie bez przyczyny da³ ludziom owe przykazanie, gdy¿ ten kto zgodnie z obrz¹dkiem Innosyckim by³ pochowany, ten by³ jego ³ask¹ chroniony przed praktyk¹ nekromanck¹. Dziêki owemu b³ogos³awieñstwu 'o¿ywieñcem' nie stanie siê cz³owiek nale¿ycie pochowany. Jasnym wiêc siê staje, ¿e odmówienie pochówku zmar³emu jest w³aœciwie wydaniem jego cia³a na pastwê nekromantów, a co za tym idzie podobny postêpek jest cie¿kim przewinieniem wobec bogów. ");
 	
@@ -2589,7 +2589,7 @@ FUNC VOID Use_Book_WhiteScavenger()
 	B_LogEntry		(BookLog_WhiteScavenger,	"Œcierwojad bia³y");
 	B_LogEntry		(BookLog_WhiteScavenger,	"Œcierwojady s¹ niezwykle zró¿nicowan¹ gatunkowo grup¹ zwierz¹t. Wystêpuj¹ zarówno na ³¹kach i lasach Zielonej Myrtany, jak i na licznych wyspach po³o¿onych na wschód od Kontynentu. Te wielkie ptaki zaliczane s¹ do nielotów. Choæ istnieje wiele rodzajów œcierwojadów, to ksiêga ta skupia siê jedynie na bia³o-niebieskawym nieopierzonym œcierwojadzie z Khorinis, która to odmiana nazywana jest œcierwojadem bia³ym. Opisywany rodzaj zamieszkuje ca³y obszar wyspy Khorinis, pocz¹wszy od ³¹k, pól i lasów rozpoœcieraj¹cych siê u podnó¿y miasta portowego, a¿ po wiêzienn¹ Górnicz¹ Dolinê. ");
 	
-	B_LogEntry		(BookLog_WhiteScavenger,	"Œcierwojad bia³y swymi rozmiarami góruje tam nad wszelkim ptactwem jakie znajdziemy na terenie wyspy. Porusza siê na dwóch tylnych koñczynach, zakoñczonych ostrymi pazurami. Posiada równie¿ masywny dziób, s³u¿¹cy mu podobie jak szpony podczas ³owów do atakowania ofiary, a nastêpnie do rozrywania jej miêsa. Choæ tu nale¿y dodaæ, ¿e ani szpony œcierwojada, ani dziób nie s¹ uwa¿ane za nazbyt po¿¹dane trofeum myœliwskie. Podobnie rzecz siê ma z ich ³uskowat¹ skór¹, czy niewykszta³conymi niemal skrzyd³ami. ");
+	B_LogEntry		(BookLog_WhiteScavenger,	"Œcierwojad bia³y swymi rozmiarami góruje tam nad wszelkim ptactwem jakie znajdziemy na terenie wyspy. Porusza siê na dwóch tylnych koñczynach, zakoñczonych ostrymi pazurami. Posiada równie¿ masywny dziób, s³u¿¹cy mu podobnie jak szpony podczas ³owów do atakowania ofiary, a nastêpnie do rozrywania jej miêsa. Choæ tu nale¿y dodaæ, ¿e ani szpony œcierwojada, ani dziób nie s¹ uwa¿ane za nazbyt po¿¹dane trofeum myœliwskie. Podobnie rzecz siê ma z ich ³uskowat¹ skór¹, czy niewykszta³conymi niemal skrzyd³ami. ");
 	
 	B_LogEntry		(BookLog_WhiteScavenger,	"Gatunek ten podobnie jak jego krewniacy z Kontynentu, czy Wysp Po³udniowych, ¿ywi siê drobnymi zwierzêtami polnymi i padlin¹. Temu ostatniemu sk³adnikowi swej diety zawdziêcza sw¹ niechlubn¹ nazwê œcierwojada. Œcierowjad bia³y wiêkszoœæ dnia poœwiêca rozgrzebywaniu ziemi w poszukiwaniu po¿ywienia, choæ niekiedy mo¿na zaobserwowaæ te¿ jak ów ptak poluje na inne zwierzêta. Jest w stanie zaatakowaæ mniejsze od siebie istoty jak owce, szczury, a w grupie równie¿ pojedyncze wilki. Jak przysta³o na ptaki, przedstawiciele tego gatunku s¹ jajorodne. ");
 	
@@ -5234,7 +5234,7 @@ B_LogEntry(BookLog_FolkmarFamily,"5. Lutbert syn Gerlacha. M³odszym bêd¹c, najst
 
 B_LogEntry(BookLog_FolkmarFamily,"6. Ekbert syn Lutberta. M¹¿ stateczny, ojciec po dwakroæ nieszczêœciem dotkniêty. Przedwczeœnie zgas³, œmierci¹ swych ukochanych dzieci strapiony. ");
 
-B_LogEntry(BookLog_FolkmarFamily,"7. Emilda córka Ekberta. Dziewczê nadzwyczajnej urody, posiadaj¹ce dar widzenia. Rozstrzyga³a spory, wskazywa³a przestêpców, leczy³a chorych. Los zawistnie strzeg¹cy swych tajemnic, w zemœcie zes³a³ na jej umys³ szaleñstwo. ");
+B_LogEntry(BookLog_FolkmarFamily,"7. Emilda córka Ekberta. Dziewczê nadzwyczajnej urody, posiadaj¹ce dar widzenia. Rozstrzyga³a spory, wskazywa³a przestêpców, leczy³a chorych. Los zawistnie strzeg¹cy swych tajemnic, w zemœcie zes³a³ na jej umys³ szaleñstwo.");
 
 B_LogEntry(BookLog_FolkmarFamily,"8. Manfred syn Ekberta. Ukochawszy gonitwê i pe³ny zwierzyny las, nad sierp i z³oto zbo¿a, rozszarpany przez dzik¹ besti¹ myœliwy skona³ na leœnej polanie.");
 
