@@ -41,7 +41,7 @@ instance KDF_8084_CorristoOT (Npc_Default)
 
 
 	//-------- Spells--------                                    
-	CreateInvItem(self,ItArRuneFireball);
+	CreateInvItem(self,ItArRuneBreathOfDeath);
 		
 	//-------- inventory --------                                    
 	CreateInvItems(self, ItFo_Potion_Health_02, 2);
