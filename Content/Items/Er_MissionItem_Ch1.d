@@ -65,7 +65,7 @@ B_LogEntry (CH1_Problem_ZLY,"Z pamiêtnika Œwistaka dowiedzia³em siê, ¿e jeden z 
 					Doc_SetMargins	( nDocID, -1, 50, 50, 50, 50, 1   		);  //  0 -> margins are in pixels
 					Doc_PrintLine	( nDocID,  0, "15 paŸdziernika "					);//fixxxxx
 					Doc_PrintLine	( nDocID,  0, ""					);
-					Doc_PrintLines	( nDocID,  0, "Uda³o mi siê nie zwróciæ na siebie uwagi, a kradzie¿ przebieg³a pomyœlnie.Ci têpi Stra¿nicy prêdzej powybijaj¹ siê nawzajem ni¿ odkryj¹, kto ich okrad³."					);
+					Doc_PrintLines	( nDocID,  0, "Uda³o mi siê nie zwróciæ na siebie uwagi, a kradzie¿ przebieg³a pomyœlnie. Ci têpi Stra¿nicy prêdzej powybijaj¹ siê nawzajem ni¿ odkryj¹, kto ich okrad³."					);
 					
 					Doc_PrintLine	( nDocID,  0, "16 paŸdziernika"	);
 					Doc_PrintLine	( nDocID,  0, ""	);
