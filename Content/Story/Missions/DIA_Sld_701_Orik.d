@@ -65,7 +65,7 @@ INSTANCE DIA_Orik_QUEST1 (C_INFO)
 
 FUNC INT DIA_Orik_QUEST1_Condition()
 {
-	if (QuestFromOrik == FALSE)
+	if (QuestFromOrik == FALSE) && (kapitel == 10)
 	{
     return TRUE;
 	};

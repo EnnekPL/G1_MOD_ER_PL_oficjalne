@@ -318,7 +318,7 @@ FUNC VOID DIA_Guy_Ucieczka_Info()
     AI_Output (self, other ,"DIA_Guy_Ucieczka_03_03"); //Gomez traci poparcie. Tyle ci powiem.
     AI_Output (self, other ,"DIA_Guy_Ucieczka_03_04"); //Zosta³o przy nim tylko kilku Stra¿ników, których wys³a³ na œmieræ.
     AI_Output (self, other ,"DIA_Guy_Ucieczka_03_05"); //Powiem wiêcej.
-    AI_Output (self, other ,"DIA_Guy_Ucieczka_03_06"); //Nawet Kruk uciek³. Wzi¹³ ze sob¹ Thorusa, Bloodwyna i kilku Kopaczy.
+    AI_Output (self, other ,"DIA_Guy_Ucieczka_03_06"); //Nawet Kruk uciek³. Wzi¹³ ze sob¹ Thorusa, Dextera i kilku Kopaczy. Bloodwyn wkróce ma do nich do³¹czyæ.
     AI_Output (other, self ,"DIA_Guy_Ucieczka_15_07"); //Gdzie mogli uciec?
     AI_Output (self, other ,"DIA_Guy_Ucieczka_03_08"); //Nie wiem. Pewnie ukryli siê gdzieœ i czekaj¹, a¿ to wszystko siê skoñczy.
     AI_Output (other, self ,"DIA_Guy_Ucieczka_15_09"); //Co masz na myœli?

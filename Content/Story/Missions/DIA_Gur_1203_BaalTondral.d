@@ -131,7 +131,7 @@ INSTANCE DIA_BaalTondral_Loyality (C_INFO)
 
 FUNC INT DIA_BaalTondral_Loyality_Condition()
 {
-	if (Npc_KnowsInfo(hero,DIA_BaalTondral_YouTalked))
+	if (Npc_KnowsInfo(hero,DIA_BaalTondral_YouTalked)) && (Npc_GetTrueGuild(other) == GIL_NONE)
 	{
 		return 1;
 	};

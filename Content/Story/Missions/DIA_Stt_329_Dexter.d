@@ -767,8 +767,8 @@ FUNC VOID DIA_Dexter_Kapitel4_dialog_Info()
     AI_Output (self, other ,"DIA_Dexter_Kapitel4_dialog_03_02"); //Ju¿ nie. Po tym jak zostali zamordowani Magowie Ognia, urwa³ mi siê kontakt z Bractwem.
     AI_Output (self, other ,"DIA_Dexter_Kapitel4_dialog_03_03"); //Straci³em dostawców. Nie mia³em wyboru i musia³em zwin¹æ interes.
     AI_Output (self, other ,"DIA_Dexter_Kapitel4_dialog_03_04"); //Teraz jestem zwiadowc¹ Kruka i jego lew¹ rêk¹.
-    AI_Output (other, self ,"DIA_Dexter_Kapitel4_dialog_15_05"); //A kto jest praw¹?
-    AI_Output (self, other ,"DIA_Dexter_Kapitel4_dialog_03_06"); //Bloodwyn, dawny Stra¿nik z Zewnêtrznego Pierœcienia.
+    AI_Output (other, self ,"DIA_Dexter_Kapitel4_dialog_15_05"); //Ktoœ jeszcze siê liczy?
+    AI_Output (self, other ,"DIA_Dexter_Kapitel4_dialog_03_06"); //Bloodwyn, ale jego na razie tu nie ma. Za³atwia porachunki w Obozie.
     AI_Output (other, self ,"DIA_Dexter_Kapitel4_dialog_15_07"); //Czym sobie zas³u¿y³eœ na ten zaszczyt?
     AI_Output (self, other ,"DIA_Dexter_Kapitel4_dialog_03_08"); //Dobrze siê sprawowa³em. To dziêki moim poradom Kruk zabra³ ze sob¹ Toma. Taki cz³owiek bardzo nam siê przyda.
     AI_Output (self, other ,"DIA_Dexter_Kapitel4_dialog_03_09"); //Ponadto szef darzy mnie wielkim zaufaniem.

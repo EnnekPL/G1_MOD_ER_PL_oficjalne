@@ -91,7 +91,7 @@ INSTANCE DIA_Buddler_LOTH3 (C_INFO)
    nr           = 3;
    condition    = DIA_Buddler_LOTH3_Condition;
    information  = DIA_Buddler_LOTH3_Info;
-   permanent	= FALSE;
+   permanent	= TRUE;
    description	= "Co s³ychaæ?";
 };
 

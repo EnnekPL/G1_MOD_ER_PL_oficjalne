@@ -1,0 +1,168 @@
+//========================================
+//-----------------> RuneHelp
+//========================================
+
+INSTANCE DIA_Cronos_RuneHelp (C_INFO)
+{
+   npc          = KDW_604_Cronos;
+   nr           = 1;
+   condition    = DIA_Cronos_RuneHelp_Condition;
+   information  = DIA_Cronos_RuneHelp_Info;
+   permanent	= FALSE;
+   description	= "Gdzie znajdę pusty kamień runiczny?";
+};
+
+FUNC INT DIA_Cronos_RuneHelp_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Cronos_FindMage))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Cronos_RuneHelp_Info()
+{
+    AI_Output (other, self ,"DIA_Cronos_RuneHelp_15_01"); //Gdzie znajdę pusty kamień runiczny?
+    AI_Output (self, other ,"DIA_Cronos_RuneHelp_03_02"); //Z tym może być problem. W Obozie nic takiego nie znajdziesz.
+    AI_Output (other, self ,"DIA_Cronos_RuneHelp_15_03"); //Czyli mam szukać gdzieś indziej?
+    AI_Output (self, other ,"DIA_Cronos_RuneHelp_03_04"); //Niestety. Wydaje mi się, że w Bractwie uda ci się coś znaleźć. Porozmawiaj z Baalami.
+    B_LogEntry                     (CH4_GardistsInBC,"Pustego kamienia runicznego powinienem szukać w Bractwie.");
+
+    B_GiveXP (200);
+};
+//========================================
+//-----------------> AllProducts
+//========================================
+
+INSTANCE DIA_Cronos_AllProducts (C_INFO)
+{
+   npc          = KDW_604_Cronos;
+   nr           = 2;
+   condition    = DIA_Cronos_AllProducts_Condition;
+   information  = DIA_Cronos_AllProducts_Info;
+   permanent	= FALSE;
+   description	= "Mam wszystkie produkty.";
+};
+
+FUNC INT DIA_Cronos_AllProducts_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Cronos_FindMage))
+    && (Npc_HasItems (other, ItFo_Plants_Nightshadow_02) >=1)
+    && (Npc_HasItems (other, ItFo_Plants_mountainmoos_01) >=1)
+    && (Npc_HasItems (other, ItFo_Potion_Mana_01) >=1)
+    && (Npc_HasItems (other, ItMi_runa0) >=1)
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Cronos_AllProducts_Info()
+{
+    AI_Output (other, self ,"DIA_Cronos_AllProducts_15_01"); //Mam wszystkie produkty.
+    AI_Output (self, other ,"DIA_Cronos_AllProducts_03_02"); //Bardzo dobrze. Pieczęć powinna być za chwilę gotowa.
+    B_GiveXP (500);
+    AI_StopProcessInfos	(self);
+};
+
+//========================================
+//-----------------> GiveMeRune
+//========================================
+
+INSTANCE DIA_Cronos_GiveMeRune (C_INFO)
+{
+   npc          = KDW_604_Cronos;
+   nr           = 3;
+   condition    = DIA_Cronos_GiveMeRune_Condition;
+   information  = DIA_Cronos_GiveMeRune_Info;
+   permanent	= FALSE;
+   description	= "Czy pieczęć jest już gotowa?";
+};
+
+FUNC INT DIA_Cronos_GiveMeRune_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Cronos_AllProducts))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Cronos_GiveMeRune_Info()
+{
+    AI_Output (other, self ,"DIA_Cronos_GiveMeRune_15_01"); //Czy pieczęć jest już gotowa?
+    AI_Output (self, other ,"DIA_Cronos_GiveMeRune_03_02"); //Tak, oto ona.
+    AI_Output (self, other ,"DIA_Cronos_GiveMeRune_03_03"); //Pozbądźcie się tych śmieci!
+    AI_Output (other, self ,"DIA_Cronos_GiveMeRune_15_04"); //Dzięki, za słowo wsparcia.
+    AI_Output (self, other ,"DIA_Cronos_GiveMeRune_03_05"); //Byłbym zapomniał. Tej pieczęci możesz użyć tylko raz!
+    AI_Output (self, other ,"DIA_Cronos_GiveMeRune_03_06"); //Jest nietrwała.
+    AI_Output (other, self ,"DIA_Cronos_GiveMeRune_15_07"); //Będę pamiętał.
+	CreateInvItems		(self, ItMa_RuneBandit,	1);
+	B_GiveInvItems (self, hero, ItMa_RuneBandit,	1);
+    B_LogEntry                     (CH4_GardistsInBC,"Cronos wreszcie dał mi pieczęć, która przywoła górskie trolle. Muszę pamiętać, że mogę jej użyć tylko raz.");
+    AI_StopProcessInfos	(self);
+};
+
+
+
+// *****************************************
+//					TokasSword
+// *****************************************
+
+instance  KDW_604_Cronos_TokasSword (C_INFO)
+{
+	npc			=  KDW_604_Cronos;	
+	condition	=  KDW_604_Cronos_TokasSword_Condition;
+	information	=  KDW_604_Cronos_TokasSword_Info;
+	description = "Potrafisz zniszczyć magiczną broń?";
+};                       
+
+FUNC int  KDW_604_Cronos_TokasSword_Condition()
+{
+    if (CronosTalk_Sword == true)
+	&& (MIS_NieSpelnionaZemsta == LOG_RUNNING)
+    {
+    return TRUE;
+};
+};
+
+FUNC VOID  KDW_604_Cronos_TokasSword_Info()
+{
+    AI_Output (other, self ,"DIA_Cronos_DelteSword_15_01"); //Potrafisz zniszczyć magiczną broń?
+    AI_Output (self, other ,"DIA_Cronos_DelteSword_03_02"); //Magiczne bronie są niezwykle cenne i przydatne. 
+    AI_Output (other, self ,"DIA_Cronos_DelteSword_15_03"); //To nie jest zwykła broń. To przeklęty miecz.
+    AI_Output (other, self ,"DIA_Cronos_DelteSword_15_04"); //Skazuje na wieczną tułaczkę po świecie każdego, kto od niego zginie.
+    AI_Output (other, self ,"DIA_Cronos_DelteSword_15_05"); //Myśliwy Biorn padł ofiarą tego miecza. Muszę mu pomóc.
+    AI_Output (self, other ,"DIA_Cronos_DelteSword_03_06"); //Kto był w posiadaniu tej broni i dlaczego zaatakował nią myśliwego?
+    AI_Output (other, self ,"DIA_Cronos_DelteSword_15_07"); //To człowiek z Bractwa - Gor Na Tokas.
+    AI_Output (self, other ,"DIA_Cronos_DelteSword_03_08"); //To wiele wyjaśnia...
+    AI_Output (self, other ,"DIA_Cronos_DelteSword_03_09"); //Musisz porozmawiać z Merdarionem. Ponoć kiedyś miał kontakt z takimi artefaktami.
+    B_LogEntry                     (CH1_NieSpelnionaZemsta,"Muszę porozmawiać z Merdarionem. Tylko on może mi pomóc. ");
+    B_GiveXP (200);
+	MerdarionTalk_Sword == true;
+};
+
+//========================================
+//-----------------> DelteSword
+//========================================
+
+INSTANCE DIA_Cronos_DelteSword (C_INFO)
+{
+   npc          = KDW_604_Cronos;
+   nr           = 1;
+   condition    = DIA_Cronos_DelteSword_Condition;
+   information  = DIA_Cronos_DelteSword_Info;
+   permanent	= FALSE;
+   description	= "Potrafisz zniszczyć magiczną broń?";
+};
+
+FUNC INT DIA_Cronos_DelteSword_Condition()
+{
+   // if (Npc_KnowsInfo (hero, DIA_Duch_TokasSwordDuch))
+   // && (Npc_HasItems (hero, Tokas_Sword) >=1)
+  //  && (MIS_NieSpelnionaZemsta == LOG_RUNNING)
+  //  {
+  //  return TRUE;
+//};
+};

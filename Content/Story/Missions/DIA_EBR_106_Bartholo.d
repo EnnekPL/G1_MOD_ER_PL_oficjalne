@@ -518,7 +518,7 @@ INSTANCE DIA_Bartholo_GOLDSWORD (C_INFO)
 
 FUNC INT DIA_Bartholo_GOLDSWORD_Condition()
 {
-	if (kapitel >= 2)
+	if (kapitel >= 2) && (Npc_KnowsInfo (hero, Info_Bartholo_HAllo))
 	{
     return TRUE;
 	};

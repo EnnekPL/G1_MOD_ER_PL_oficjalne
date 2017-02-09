@@ -485,9 +485,9 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 
 		//-------- Kampfgruppe vor Hinterem Tor --------
 		//1.24 fixed
-		//B_ExchangeRoutine	(GRD_233_Bloodwyn,	"FMTaken");	// Verstärkung vor das Hinterem Tor (Anführer)
-		Wld_InsertNpc		(GRD_262_Aaron,"OC1");//fixed Aaron
-		B_ExchangeRoutine 	(GRD_262_Aaron,"FMTaken");
+		B_ExchangeRoutine	(GRD_233_Bloodwyn,	"FMTaken");	// Verstärkung vor das Hinterem Tor (Anführer)
+		//Wld_InsertNpc		(GRD_262_Aaron,"OC1");//fixed Aaron
+		//B_ExchangeRoutine 	(GRD_262_Aaron,"FMTaken");
 		B_ExchangeRoutine	(GRD_232_Gardist,	"FMTaken");	// Verstärkung vor das Hinterem Tor
 		B_ExchangeRoutine	(GRD_229_Gardist,	"FMTaken");	// Verstärkung vor das Hinterem Tor (Fernkämpfer)
 		B_ExchangeRoutine	(GRD_216_Torwache,	"FMTaken");	// reguläre Wache am Hinteren Tor

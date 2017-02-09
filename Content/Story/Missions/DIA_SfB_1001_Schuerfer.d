@@ -32,7 +32,7 @@ INSTANCE DIA_Sfb_1001_Hello(C_INFO)
 	nr			= 1;
 	condition	= DIA_Sfb_1001_Hello_Condition;
 	information	= DIA_Sfb_1001_Hello_Info;
-	permanent	= 0;
+	permanent	= 1;
 	description = "Co s³ychaæ w kopalni?";
 };                       
 

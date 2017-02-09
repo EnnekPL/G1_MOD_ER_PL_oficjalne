@@ -244,8 +244,8 @@ FUNC VOID  DIA_BaalParvez_GotoPSI_Info()
 		{
 			Log_CreateTopic		(CH1_JoinPsi,	LOG_MISSION);
 			Log_SetTopicStatus	(CH1_JoinPsi,	LOG_RUNNING);
+			B_LogEntry				(CH1_JoinPsi, "Baal Parvez jest wys³annikiem Obozu Bractwa. Kr¹¿y po Starym Obozie werbuj¹c nowych cz³onków Sekty. Mo¿e mnie zaprowadziæ do obozu na bagnie, gdzie rezyduj¹ wyznawcy ŒNI¥CEGO!");
 		};
-		B_LogEntry				(CH1_JoinPsi, "Baal Parvez jest wys³annikiem Obozu Bractwa. Kr¹¿y po Starym Obozie werbuj¹c nowych cz³onków Sekty. Mo¿e mnie zaprowadziæ do obozu na bagnie, gdzie rezyduj¹ wyznawcy ŒNI¥CEGO!");
 		Psi_Walk	= 1;
 	};
 	AI_Output (self, other,"DIA_BaalParvez_GotoPSI_10_01"); //To wspaniale. ChodŸ za mn¹!

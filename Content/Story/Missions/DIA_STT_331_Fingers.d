@@ -448,14 +448,15 @@ FUNC VOID DIA_Fingers_InTavern_Info()
 FUNC VOID DIA_Fingers_InTavern_Dedaj()
 {
     AI_Output (other, self ,"DIA_Fingers_InTavern_Dedaj_15_01"); //Zginiesz. Zapêdzi³eœ siê za daleko!
+	Info_ClearChoices		(DIA_Fingers_InTavern);
+    AI_StopProcessInfos	(self);
     Npc_SetPermAttitude (self, ATT_HOSTILE);
     Npc_SetTarget (self,other);
     AI_StartState (self,ZS_ATTACK,1,"");
     B_LogEntry                     (CH1_KillFingers,"Spotka³em R¹czkê w karczmie Silasa i postanowi³em natychmiast siê z nim rozprawiæ.");
 
     //B_GiveXP (100);
-    Info_ClearChoices		(DIA_Fingers_InTavern);
-    AI_StopProcessInfos	(self);
+   
 };
 
 FUNC VOID DIA_Fingers_InTavern_Dobra()

@@ -185,6 +185,7 @@ FUNC VOID DIA_Jonas_HELLO5_Info()
 {
     AI_Output (other, self ,"DIA_Jonas_HELLO5_15_01"); //Chcê coœ kupiæ.
 };
+var int next_wood;
 //========================================
 //-----------------> Wood
 //========================================
@@ -203,6 +204,7 @@ FUNC INT DIA_Jonas_Wood_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Jonas_HELLO2))
     && (robota1 != wld_getday())
+	&& (next_wood == false)
     {
     return TRUE;
     };
@@ -216,6 +218,7 @@ FUNC VOID DIA_Jonas_Wood_Info()
     CreateInvItems (self, ItMi_Wood_01, 15);
     B_GiveInvItems (self, other, ItMi_Wood_01, 15);
 	robota1 = wld_getday();
+	next_wood = true;
 };
 
 //========================================
@@ -252,6 +255,7 @@ FUNC VOID DIA_Jonas_Drewno2_Info()
     B_GiveInvItems (self, other, ItMiNugget, 45);
     B_GIVEXP (70);
 	robota1_oddawanie = wld_getday();
+	next_wood = false;
 };
 
 //========================================

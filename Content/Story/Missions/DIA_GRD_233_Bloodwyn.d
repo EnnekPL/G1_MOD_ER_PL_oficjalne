@@ -373,7 +373,7 @@ FUNC VOID DIA_Bloodwyn_TroublesSolved_Info()
 //***************************************************************************
 //	Info DIE
 //***************************************************************************
-/*
+
 instance Info_Bloodwyn_DIE (C_INFO)
 {
 	npc			= Grd_233_Bloodwyn;
@@ -473,7 +473,7 @@ FUNC VOID Info_Bloodwyn_DIE_Info()
 	
 	AI_StopProcessInfos	(self);
 };
-*/
+
 /*
 // *Script was make in Easy Dialog Maker (EDM)
 var int replyC;
@@ -656,7 +656,7 @@ FUNC VOID DIA_Bloodwyn_REPLYC_Info()
    Npc_SetPermAttitude (STT_315_Sly, ATT_NEUTRAL);
 };
 */
-
+/*
 //========================================
 //-----------------> helloFriendCH4
 //========================================
@@ -723,3 +723,4 @@ FUNC VOID DIA_Bloodwyn_MysteryOfRaven_Info()
     Npc_SetTarget (self, other);
     AI_StartState (self, ZS_ATTACK, 1, "");
 };
+*/

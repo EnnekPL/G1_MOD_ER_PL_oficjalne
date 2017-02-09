@@ -1599,9 +1599,9 @@ INSTANCE ItMw_1H_Warhammer_02 (C_Item)
 	flags 				=	ITEM_AXE|ITEM_MULTI;	
 	material 			=	MAT_WOOD;
 
-	value 				=	1040;//520;//261
+	value 				=	1400;//520;//261
 
-	damageTotal			=   51;
+	damageTotal			=   55;
 	damagetype			=	DAM_BLUNT;
 	range    			=  	100;		
 
@@ -1654,9 +1654,9 @@ INSTANCE ItMw_1H_Warhammer_03 (C_Item)
 	flags 				=	ITEM_AXE|ITEM_MULTI;	
 	material 			=	MAT_WOOD;
 
-	value 				=	1080;//540;//272
+	value 				=	1650;//540;//272
 
-	damageTotal			=   52;
+	damageTotal			=   60;
 	damagetype			=	DAM_BLUNT;
 	range    			=  	100;		
 

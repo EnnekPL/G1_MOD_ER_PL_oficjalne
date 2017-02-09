@@ -484,12 +484,12 @@ INSTANCE StoneOfKnowledge (C_Item)
 /******************************************************************************************/
 INSTANCE ZapiskiScattego(C_Item)
 {
-	name 				=	"Fa³szywy raport";
+	name 				=	"Raport Scatty'ego";
 
 	mainflag 			=	ITEM_KAT_NONE;
 	flags 				=	ITEM_MULTI;
 
-	value 				=	100;
+	value 				=	1;
 
 	visual 				=	"ItWr_Scroll_01.3ds";
 	material 			=	MAT_CLAY;

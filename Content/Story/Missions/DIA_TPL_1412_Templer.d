@@ -70,7 +70,10 @@ INSTANCE DIA_Templer_HowAreYou (C_INFO)
 
 FUNC INT DIA_Templer_HowAreYou_Condition()
 {
+	if (!Npc_KnowsInfo (hero, DIA_GorNaIdon_LOAN))
+	{
     return TRUE;
+	};
 };
 
 FUNC VOID DIA_Templer_HowAreYou_Info()
