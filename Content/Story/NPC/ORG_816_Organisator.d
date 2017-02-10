@@ -70,9 +70,14 @@ FUNC VOID Rtn_start_816 ()
 
 FUNC VOID Rtn_magic_816 ()
 {
-	TA_PracticeMagic		(00,05,08,05,"NC_HUT28_IN");
-	TA_PracticeMagic		(08,05,00,05,"NC_HUT28_IN");
+	TA_Sleep		(00,05,08,05,"NC_HUT28_IN");
+	TA_Sleep		(08,05,00,05,"NC_HUT28_IN");
 };
 
+FUNC VOID Rtn_die_816 ()
+{
+	TA_Die		(00,05,08,05,"NC_HUT28_IN");
+	TA_Die		(08,05,00,05,"NC_HUT28_IN");
+};
 
 

@@ -711,23 +711,23 @@ FUNC VOID DIA_Lefty_LastFight_Info()
     AI_Output (self, other ,"DIA_Lefty_LastFight_03_01"); //Niczego siê nie nauczy³eœ. Posun¹³eœ siê za daleko.
     AI_Output (self, other ,"DIA_Lefty_LastFight_03_02"); //A to oznacza twój koniec.
     
-	B_ChangeGuild (self, GIL_GRD);
+	B_ChangeGuild (self, GIL_DMB);
 	
     AI_StopProcessInfos	(self);
     Npc_SetTarget (self, other);
     AI_StartState (self, ZS_ATTACK, 1, "");
 	
-	B_ChangeGuild (Org_846_Schlaeger, GIL_GRD);
-	B_ChangeGuild (Org_845_Schlaeger, GIL_GRD);
-	B_ChangeGuild (BAU_900_Ricelord, GIL_GRD);
-	B_ChangeGuild (BAU_908_Bauer, GIL_GRD);
-	B_ChangeGuild (BAU_902_Pock, GIL_GRD);
+	B_ChangeGuild (Org_846_Schlaeger, GIL_DMB);
+	B_ChangeGuild (Org_845_Schlaeger, GIL_DMB);
+	B_ChangeGuild (BAU_900_Ricelord, GIL_DMB);
+	B_ChangeGuild (BAU_908_Bauer, GIL_DMB);
+	B_ChangeGuild (BAU_902_Pock, GIL_DMB);
 	
-	B_ChangeGuild (BAU_920_Bauer, GIL_GRD);
-	B_ChangeGuild (BAU_922_Bauer, GIL_GRD);
-	B_ChangeGuild (BAU_923_Bauer, GIL_GRD);
-	B_ChangeGuild (BAU_924_Bauer, GIL_GRD);
-	B_ChangeGuild (BAU_927_Bauer, GIL_GRD);
+	B_ChangeGuild (BAU_920_Bauer, GIL_DMB);
+	B_ChangeGuild (BAU_922_Bauer, GIL_DMB);
+	B_ChangeGuild (BAU_923_Bauer, GIL_DMB);
+	B_ChangeGuild (BAU_924_Bauer, GIL_DMB);
+	B_ChangeGuild (BAU_927_Bauer, GIL_DMB);
 	
 	B_LogEntry   (CH1_BuntZbieraczy,"Wœciek³y Lewus rzuci³ siê na mnie. Pora siê z nim zmierzyæ.");
 };

@@ -463,7 +463,7 @@ func VOID STARTUP_SUB_NEWCAMP ()
 	Wld_InsertNpc				(ORG_950_Organisator,"NC_DAM");
 	//Wld_InsertNpc				(ORG_954_Kil,"KIL");
 	//Wld_InsertNpc				(ORG_955_Fil,"FIL");
-	//Wld_InsertNpc				(ORG_956_Bofur,"BOFUR");
+	Wld_InsertNpc				(ORG_956_Vincent,"BOFUR");
 	Wld_InsertNpc				(ORG_9550_Huan,"NO_WODA");
 	
 	Wld_InsertNpc				(BAU_914_Bauer,"NC_DAM"); //Hut, Peasant2

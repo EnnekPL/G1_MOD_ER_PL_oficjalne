@@ -33,7 +33,7 @@ instance STT_335_Santino (Npc_Default)
 	//-------- Talente -------- 
 
 	
-	Npc_SetTalentSkill 	( self, NPC_TALENT_1H,1 );	
+	Npc_SetTalentSkill 	( self, NPC_TALENT_1H,4 );	
 		
 	//-------- inventory --------
 	

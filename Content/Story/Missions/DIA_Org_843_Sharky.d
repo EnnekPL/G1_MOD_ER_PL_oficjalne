@@ -109,7 +109,43 @@ FUNC void  Org_843_Sharky_GREET_Info()
 	B_LogEntry		(GE_TraderNC,"Szkodnik Sharky handluje broni¹ i innymi dobrami. Przebywa zwykle na terenie Nowego Obozu."); 
 };
 
+//////////////////////////////////////////////
+//	Cronos Theft
+//////////////////////////////////////////////
 
+INSTANCE DIA_Sharky_CronosTheft (C_INFO)
+{
+   npc          = Org_843_Sharky;
+   nr           = 1;
+   condition    = DIA_Sharky_CronosTheft_Condition;
+   information  = DIA_Sharky_CronosTheft_Info;
+   permanent	= FALSE;
+   description	= "Podobno ktoœ okrad³ Cronosa.";
+};
+
+FUNC INT DIA_Sharky_CronosTheft_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Wedge_CronosTheft))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Sharky_CronosTheft_Info()
+{
+    AI_Output (other, self ,"DIA_Sharky_CronosTheft_15_01"); //Podobno ktoœ okrad³ Cronosa.
+    AI_Output (self, other ,"DIA_Sharky_CronosTheft_03_02"); //S³ysza³em. Odwa¿ny goœæ.
+    AI_Output (other, self ,"DIA_Sharky_CronosTheft_15_03"); //Znasz go mo¿e?
+    AI_Output (self, other ,"DIA_Sharky_CronosTheft_03_04"); //Nie mam pojêcia kto to, ale goœæ ponoæ nie opuœci³ obozu. Pewnie zaszy³ siê w swojej chacie i ani myœli wychodziæ.
+    AI_Output (self, other ,"DIA_Sharky_CronosTheft_03_05"); //No chyba, ¿e zwia³ przez góry...
+    AI_Output (other, self ,"DIA_Sharky_CronosTheft_15_06"); //Sprawdzê lepiej chaty. 
+    AI_Output (self, other ,"DIA_Sharky_CronosTheft_03_07"); //Hej, chyba nale¿y mi siê kilka bry³ek rudy za pomoc.
+	AI_Output (other, self ,"DIA_Sharky_CronosTheft_15_08"); //Jasne. Pogadaj z Cronosem.
+    AI_Output (self, other ,"DIA_Sharky_CronosTheft_03_09"); //Niewa¿ne... 
+	
+    B_LogEntry               (CH1_MagicySzkodnicy,"Sharky nie zna z³odzieja, ale twierdzi, ¿e jeœli jest w obozie i nie uciek³ to pewnie nie wychyla siê z chaty licz¹c, ¿e przeczeka zamieszanie. Powinienem pozagl¹daæ do chat i poszukaæ kogoœ podejrzanego.");
+};
 
 //========================================
 //-----------------> UkradzionyPosag
@@ -141,7 +177,7 @@ FUNC VOID DIA_Sharky_UkradzionyPosag_Info()
     AI_Output (self, other ,"DIA_Sharky_UkradzionyPosag_03_02"); //Co? Czemu niby ja?
     AI_Output (other, self ,"DIA_Sharky_UkradzionyPosag_15_03"); //Pos¹¿ek kupi³em od Fiska. Z tego co mi wiadomo, to jesteœ jego paserem!
     AI_Output (self, other ,"DIA_Sharky_UkradzionyPosag_03_04"); //Ten idiota móg³ go przed tob¹ ukryæ.
-    AI_Output (self, other ,"DIA_Sharky_UkradzionyPosag_03_05"); //Pos³uchaj. Mam dla ciebiê propozycjê.
+    AI_Output (self, other ,"DIA_Sharky_UkradzionyPosag_03_05"); //Pos³uchaj. Mam dla ciebie propozycjê.
     AI_Output (self, other ,"DIA_Sharky_UkradzionyPosag_03_06"); //Nie donoœ na mnie Klinowi.
     AI_Output (self, other ,"DIA_Sharky_UkradzionyPosag_03_07"); //Zap³acê ci za to 200 bry³ek rudy.
     AI_Output (other, self ,"DIA_Sharky_UkradzionyPosag_15_08"); //Na kogo niby mia³bym wskazaæ winê?
@@ -153,58 +189,57 @@ FUNC VOID DIA_Sharky_UkradzionyPosag_Info()
     AI_StopProcessInfos	(self);
 };
 
-
 //========================================
-//-----------------> LamuskuSpierdalaj
+//-----------------> CatchedConfident
 //========================================
 
-INSTANCE DIA_Sharky_LamuskuSpierdalaj (C_INFO)
+INSTANCE DIA_Sharky_CatchedConfident (C_INFO)
 {
    npc          = Org_843_Sharky;
    nr           = 1;
-   condition    = DIA_Sharky_LamuskuSpierdalaj_Condition;
-   information  = DIA_Sharky_LamuskuSpierdalaj_Info;
+   condition    = DIA_Sharky_CatchedConfident_Condition;
+   information  = DIA_Sharky_CatchedConfident_Info;
    permanent	= FALSE;
    Important    = TRUE;
 };
 
-FUNC INT DIA_Sharky_LamuskuSpierdalaj_Condition()
+FUNC INT DIA_Sharky_CatchedConfident_Condition()
 {
     if (WedgeKnowsSharky == true)
-    && (Npc_KnowsInfo (hero, DIA_Wedge_WiemWiemWiemHehehe))
+    && (Npc_KnowsInfo (hero, DIA_Wedge_Judge))
     {
     return TRUE;
     };
 };
 
 
-FUNC VOID DIA_Sharky_LamuskuSpierdalaj_Info()
+FUNC VOID DIA_Sharky_CatchedConfident_Info()
 {
-    AI_Output (self, other ,"DIA_Sharky_LamuskuSpierdalaj_03_01"); //Ty idioto!
-    AI_Output (self, other ,"DIA_Sharky_LamuskuSpierdalaj_03_02"); //Donios³eœ na mnie! IdŸ precz.
-    AI_Output (self, other ,"DIA_Sharky_LamuskuSpierdalaj_03_03"); //Bêdziesz mia³ k³opoty w Obozie!
-    AI_Output (self, other ,"DIA_Sharky_LamuskuSpierdalaj_03_04"); //Zobaczysz.
-    AI_Output (other, self ,"DIA_Sharky_LamuskuSpierdalaj_15_05"); //Spieprzaj. Nie bojê siê twoich kolegów!
+    AI_Output (self, other ,"DIA_Sharky_CatchedConfident_03_01"); //Ty idioto!
+    AI_Output (self, other ,"DIA_Sharky_CatchedConfident_03_02"); //Donios³eœ na mnie! IdŸ precz.
+    AI_Output (self, other ,"DIA_Sharky_CatchedConfident_03_03"); //Bêdziesz mia³ k³opoty w Obozie!
+    AI_Output (self, other ,"DIA_Sharky_CatchedConfident_03_04"); //Zobaczysz.
+    AI_Output (other, self ,"DIA_Sharky_CatchedConfident_15_05"); //Spieprzaj. Nie bojê siê twoich kolegów!
     AI_StopProcessInfos	(self);
 };
 
 //========================================
-//-----------------> ITakCieZruchal
+//-----------------> Cheated
 //========================================
 
-INSTANCE DIA_Sharky_ITakCieZruchal (C_INFO)
+INSTANCE DIA_Sharky_Cheated (C_INFO)
 {
    npc          = Org_843_Sharky;
    nr           = 2;
-   condition    = DIA_Sharky_ITakCieZruchal_Condition;
-   information  = DIA_Sharky_ITakCieZruchal_Info;
+   condition    = DIA_Sharky_Cheated_Condition;
+   information  = DIA_Sharky_Cheated_Info;
    permanent	= FALSE;
    Important    = TRUE;
 };
 
-FUNC INT DIA_Sharky_ITakCieZruchal_Condition()
+FUNC INT DIA_Sharky_Cheated_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Wedge_WiemWiemWiemHehehe))
+    if (Npc_KnowsInfo (hero, DIA_Wedge_Judge))
     && (WedgeKnowsSharky == false)
     {
     return TRUE;
@@ -212,22 +247,22 @@ FUNC INT DIA_Sharky_ITakCieZruchal_Condition()
 };
 
 
-FUNC VOID DIA_Sharky_ITakCieZruchal_Info()
+FUNC VOID DIA_Sharky_Cheated_Info()
 {
-    AI_Output (self, other ,"DIA_Sharky_ITakCieZruchal_03_01"); //Nie donios³eœ na mnie!
-    AI_Output (self, other ,"DIA_Sharky_ITakCieZruchal_03_02"); //Œwietnie.
+    AI_Output (self, other ,"DIA_Sharky_Cheated_03_01"); //Nie donios³eœ na mnie!
+    AI_Output (self, other ,"DIA_Sharky_Cheated_03_02"); //Œwietnie.
     oszukanieSharkiego = Hlp_Random (2);
     if (oszukanieSharkiego == 1)
     {
-        AI_Output (self, other ,"DIA_Sharky_ITakCieZruchal_03_03"); //Oto twoja zap³ata.
-        AI_Output (self, other ,"DIA_Sharky_ITakCieZruchal_03_04"); //200 bry³ek. Tak jak siê umawialiœmy.
+        AI_Output (self, other ,"DIA_Sharky_Cheated_03_03"); //Oto twoja zap³ata.
+        AI_Output (self, other ,"DIA_Sharky_Cheated_03_04"); //200 bry³ek. Tak jak siê umawialiœmy.
         CreateInvItems (self, ItMiNugget, 200);
         B_GiveInvItems (self, other, ItMiNugget, 200);
     }
     else
     {
-        AI_Output (self, other ,"DIA_Sharky_ITakCieZruchal_03_05"); //Naprawdê myœla³eœ, ¿e dam ci tyle rudy.
-        AI_Output (self, other ,"DIA_Sharky_ITakCieZruchal_03_06"); //Jesteœ skoñczonym g³upcem!
+        AI_Output (self, other ,"DIA_Sharky_Cheated_03_05"); //Naprawdê myœla³eœ, ¿e dam ci tyle rudy.
+        AI_Output (self, other ,"DIA_Sharky_Cheated_03_06"); //Jesteœ skoñczonym g³upcem!
     };
    // B_KillNpc (Org_850_Wedge);
    
@@ -237,7 +272,7 @@ FUNC VOID DIA_Sharky_ITakCieZruchal_Info()
 };
 
 
-	//========================================
+//========================================
 //-----------------> Goods
 //========================================
 

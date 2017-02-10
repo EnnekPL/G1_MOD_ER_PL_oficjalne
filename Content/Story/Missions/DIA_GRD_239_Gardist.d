@@ -67,8 +67,8 @@ FUNC VOID DIA_Gardist_OkupOplacony_Info()
     AI_Output (self, other ,"DIA_Gardist_OkupOplacony_03_02"); //Podobno Magnaci wyznaczyli spor¹ sumkê.
     AI_Output (self, other ,"DIA_Gardist_OkupOplacony_03_03"); //Masz zrêczne rêce, nie?
     AI_Output (other, self ,"DIA_Gardist_OkupOplacony_15_04"); //Po prostu daj mi klucz do celi.
-    CreateInvItems (self, DUNGEONKEY, 1);
-    B_GiveInvItems (self, other, DUNGEONKEY, 1);
+    CreateInvItems (self, DUNGEONKEY_ALEX, 1);
+    B_GiveInvItems (self, other, DUNGEONKEY_ALEX, 1);
 };
 
 //========================================
@@ -101,7 +101,7 @@ FUNC VOID DIA_Gardist_ProwoISprawiedliwosc_Info()
     AI_Output (other, self ,"DIA_Gardist_ProwoISprawiedliwosc_15_01"); //Daj mi klucz do celi!
     AI_Output (self, other ,"DIA_Gardist_ProwoISprawiedliwosc_03_02"); //Widzê, ¿e ktoœ jest spieszny do bitki.
     AI_Output (self, other ,"DIA_Gardist_ProwoISprawiedliwosc_03_03"); //No dawaj!
-    CreateInvItems (self, DUNGEONKEY, 1);
+    CreateInvItems (self, DUNGEONKEY_ALEX, 1);
     AI_StopProcessInfos	(self);
     Npc_SetTarget (self, other);
     AI_StartState (self, ZS_ATTACK, 1, "");

@@ -4,6 +4,28 @@
 ******* Opis: Ró¿norodne przedmioty zwi¹zane z zadaniami.
 *****************************************************/
 
+////////////////////////////////////////////////
+// Precjoza Cronosa
+////////////////////////////////////////////////
+INSTANCE ItMi_CronosPrecious (C_Item)
+{
+	name 				=	"Precjoza Cronosa";
+
+	mainflag 			=	ITEM_KAT_NONE;
+	flags 				=	ITEM_MISSION;
+
+	value 				=	200;
+
+	visual 				=	"ItMi_Pocket.3ds";
+	material 			=	MAT_LEATHER;
+
+	description			= name;
+	TEXT[2]				= "Wewn¹trz znajduj¹ siê fragmenty";
+	TEXT[3]				= "magicznych artefaktów.";
+	TEXT[4]				= NAME_Value;					COUNT[4]	= value;
+};
+
+
 /****************************************************
 ******* ZADANIE: ZAGINIÊCIE R¥CZKI 
 ******* KLUCZ: ZNAJDUJEMY GO W CHACIE R¥CZKI NA BECZCE

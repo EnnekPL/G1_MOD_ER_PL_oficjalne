@@ -346,6 +346,48 @@ func VOID DIA_Wedge_Lehrer_BACK()
 {
 	Info_ClearChoices	( DIA_Wedge_Lehrer );
 };
+
+/////////////////////////////////////////////////
+// Cronos Theft
+/////////////////////////////////////////////////
+
+instance  DIA_Wedge_CronosTheft (C_INFO)
+{
+	npc				= Org_850_Wedge;
+	condition		= DIA_Wedge_CronosTheft_Condition;
+	information		= DIA_Wedge_CronosTheft_Info;
+	important		= 0;
+	permanent		= 0;
+	description		= "Szukam pewnego z³odzieja."; 
+};
+
+FUNC int  DIA_Wedge_CronosTheft_Condition()
+{	
+	if (Npc_KnowsInfo (hero,DIA_Cronos_KRADZIEZ))
+	{
+		return TRUE;
+	};
+
+};
+FUNC void  DIA_Wedge_CronosTheft_Info()
+{
+	AI_Output (other, self,"DIA_Wedge_CronosTheft_15_00"); //Szukam pewnego z³odzieja.
+	AI_Output (self, other,"DIA_Wedge_CronosTheft_05_01"); //Rozmawiasz z prawdziwym mistrzem z³odziejskiego fachu.
+	AI_Output (other, self,"DIA_Wedge_CronosTheft_15_02"); //Ktoœ okrad³ Cronosa.
+	AI_Output (self, other,"DIA_Wedge_CronosTheft_05_03"); //I przychodzisz z tymi zarzutami do mnie? To obelga!
+	AI_Output (other, self,"DIA_Wedge_CronosTheft_15_04"); //A to dlaczego?
+	AI_Output (self, other,"DIA_Wedge_CronosTheft_05_05"); //¯aden porz¹dny z³odziej nie okrada w³asnego obozu. Tej kradzie¿y dopuœci³a siê jakaœ szuja. Ktoœ, kto jest tu nowy i luŸno zwi¹zany.
+	AI_Output (other, self,"DIA_Wedge_CronosTheft_15_06"); //Znasz nowych rekrutów Laresa?
+	AI_Output (self, other,"DIA_Wedge_CronosTheft_05_07"); //Nie. I pewnie on sam te¿ ich nie zna. Zdobycie stroju Szkodnika z drugiej rêki wcale nie jest takie trudne.
+	AI_Output (other, self,"DIA_Wedge_CronosTheft_15_08"); //Muszê jakoœ znaleŸæ z³odzieja. 
+	AI_Output (self, other,"DIA_Wedge_CronosTheft_05_09"); //Nie wszystko stracone. Goœæ musia³ mieæ jakichœ kumpli w obozie. Popytaj. Zacznij od Sharkiego. 
+	AI_Output (self, other,"DIA_Wedge_CronosTheft_05_10"); //Ka¿dy potrzebuje broni, wiêc ka¿dy prêdzej czy póŸniej zajrzy do handlarza.
+	
+	B_LogEntry               (CH1_MagicySzkodnicy,"Klin zasugerowa³ ¿eby porozmawiaæ z Sharkym o kradzie¿y. Handlarz broni¹ mo¿e znaæ z³odzieja.");
+	
+	B_GiveXP (75);
+};  
+
 //========================================
 //-----------------> KluczBaala
 //========================================
@@ -540,20 +582,20 @@ FUNC VOID DIA_Wedge_Zlodzieje2_Info()
 };
 var int WedgeKnowsSharky;
 //========================================
-//-----------------> WiemWiemWiemHehehe
+//-----------------> Judge
 //========================================
 
-INSTANCE DIA_Wedge_WiemWiemWiemHehehe (C_INFO)
+INSTANCE DIA_Wedge_Judge (C_INFO)
 {
    npc          = Org_850_Wedge;
    nr           = 1;
-   condition    = DIA_Wedge_WiemWiemWiemHehehe_Condition;
-   information  = DIA_Wedge_WiemWiemWiemHehehe_Info;
+   condition    = DIA_Wedge_Judge_Condition;
+   information  = DIA_Wedge_Judge_Info;
    permanent	= FALSE;
    description	= "Wiem, kto ukrad³ pos¹¿ek.";
 };
 
-FUNC INT DIA_Wedge_WiemWiemWiemHehehe_Condition()
+FUNC INT DIA_Wedge_Judge_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_Sharky_UkradzionyPosag))
     {
@@ -562,45 +604,45 @@ FUNC INT DIA_Wedge_WiemWiemWiemHehehe_Condition()
 };
 
 
-FUNC VOID DIA_Wedge_WiemWiemWiemHehehe_Info()
+FUNC VOID DIA_Wedge_Judge_Info()
 {
-    AI_Output (other, self ,"DIA_Wedge_WiemWiemWiemHehehe_15_01"); //Wiem, kto ukrad³ pos¹¿ek.
-    AI_Output (self, other ,"DIA_Wedge_WiemWiemWiemHehehe_03_02"); //Kto to taki?
+    AI_Output (other, self ,"DIA_Wedge_Judge_15_01"); //Wiem, kto ukrad³ pos¹¿ek.
+    AI_Output (self, other ,"DIA_Wedge_Judge_03_02"); //Kto to taki?
 
-    Info_ClearChoices	(DIA_Wedge_WiemWiemWiemHehehe);
-    Info_AddChoice		(DIA_Wedge_WiemWiemWiemHehehe, "To Butch!", DIA_Wedge_WiemWiemWiemHehehe_Butch);
-    Info_AddChoice		(DIA_Wedge_WiemWiemWiemHehehe, "To Sharky!", DIA_Wedge_WiemWiemWiemHehehe_Sharky);
+    Info_ClearChoices	(DIA_Wedge_Judge);
+    Info_AddChoice		(DIA_Wedge_Judge, "To Butch!", DIA_Wedge_Judge_Butch);
+    Info_AddChoice		(DIA_Wedge_Judge, "To Sharky!", DIA_Wedge_Judge_Sharky);
 };
 
-FUNC VOID DIA_Wedge_WiemWiemWiemHehehe_Butch()
+FUNC VOID DIA_Wedge_Judge_Butch()
 {
-    AI_Output (other, self ,"DIA_Wedge_WiemWiemWiemHehehe_Butch_15_01"); //To Butch!
-    AI_Output (self, other ,"DIA_Wedge_WiemWiemWiemHehehe_Butch_03_02"); //Wiedzia³em, ¿e z niego kawa³ sukinsyna!
-    AI_Output (self, other ,"DIA_Wedge_WiemWiemWiemHehehe_Butch_03_03"); //Dziêki.
+    AI_Output (other, self ,"DIA_Wedge_Judge_Butch_15_01"); //To Butch!
+    AI_Output (self, other ,"DIA_Wedge_Judge_Butch_03_02"); //Wiedzia³em, ¿e z niego kawa³ sukinsyna!
+    AI_Output (self, other ,"DIA_Wedge_Judge_Butch_03_03"); //Dziêki.
     B_LogEntry                     (CH1_ZnowuZapierdalam,"Zaufa³em Sharkiemu i powiedzia³em, ¿e to Butch okrad³ Klina.");
     Log_SetTopicStatus       (CH1_ZnowuZapierdalam, LOG_SUCCESS);
     MIS_ZnowuZapierdalam = LOG_SUCCESS;
 	WedgeKnowsSharky = false;
     B_GiveXP (50);
-    Info_ClearChoices		(DIA_Wedge_WiemWiemWiemHehehe);
+    Info_ClearChoices		(DIA_Wedge_Judge);
     AI_StopProcessInfos	(self);
 };
 
-FUNC VOID DIA_Wedge_WiemWiemWiemHehehe_Sharky()
+FUNC VOID DIA_Wedge_Judge_Sharky()
 {
-    AI_Output (other, self ,"DIA_Wedge_WiemWiemWiemHehehe_Sharky_15_01"); //To Sharky!
+    AI_Output (other, self ,"DIA_Wedge_Judge_Sharky_15_01"); //To Sharky!
 
-    AI_Output (other, self ,"DIA_Wedge_WiemWiemWiemHehehe_Sharky_15_03"); //Co wiêcej, próbowa³ mnie przekupiæ.
-    AI_Output (self, other ,"DIA_Wedge_WiemWiemWiemHehehe_Sharky_03_04"); //Sk¹d wiesz, ¿e to on?
-    AI_Output (other, self ,"DIA_Wedge_WiemWiemWiemHehehe_Sharky_15_05"); //To w³aœnie Sharky jest nowym paserem Fiska.
-    AI_Output (other, self ,"DIA_Wedge_WiemWiemWiemHehehe_Sharky_15_06"); //Sam za³atwia³em mu tê robotê.
-    AI_Output (self, other ,"DIA_Wedge_WiemWiemWiemHehehe_Sharky_03_07"); //Ju¿ ja go dorwê!
+    AI_Output (other, self ,"DIA_Wedge_Judge_Sharky_15_03"); //Co wiêcej, próbowa³ mnie przekupiæ.
+    AI_Output (self, other ,"DIA_Wedge_Judge_Sharky_03_04"); //Sk¹d wiesz, ¿e to on?
+    AI_Output (other, self ,"DIA_Wedge_Judge_Sharky_15_05"); //To w³aœnie Sharky jest nowym paserem Fiska.
+    AI_Output (other, self ,"DIA_Wedge_Judge_Sharky_15_06"); //Sam za³atwia³em mu tê robotê.
+    AI_Output (self, other ,"DIA_Wedge_Judge_Sharky_03_07"); //Ju¿ ja go dorwê!
     B_LogEntry                     (CH1_ZnowuZapierdalam,"Nie ufam Sharky'emu. Powiedzia³em, ¿e to on okrad³ Klina. ");
     Log_SetTopicStatus       (CH1_ZnowuZapierdalam, LOG_SUCCESS);
     MIS_ZnowuZapierdalam = LOG_SUCCESS;
 	WedgeKnowsSharky = true;
     B_GiveXP (200);
-    Info_ClearChoices		(DIA_Wedge_WiemWiemWiemHehehe);
+    Info_ClearChoices		(DIA_Wedge_Judge);
     AI_StopProcessInfos	(self);
 };
 

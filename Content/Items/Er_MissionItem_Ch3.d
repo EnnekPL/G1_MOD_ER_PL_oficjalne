@@ -156,3 +156,20 @@ INSTANCE ItMis_AidanKey (C_Item)
 	TEXT[2]				= "Otwiera skrzyniê";
 	TEXT[3]				= "w jaskini zêbaczy.";
 };
+/******************************************************************************************/
+INSTANCE DUNGEONKEY_ALEX (C_Item)
+{
+	name 				=	"Klucz do celi Alexa";
+
+	mainflag 			=	ITEM_KAT_NONE;
+	flags 				=	ITEM_MISSION;
+
+	value 				=	0;
+
+	visual 				=	"ItKe_Key_01.3ds";
+	material 			=	MAT_METAL;
+
+	description			= name;
+	TEXT[2]				= "Otwiera celê Alexa";
+	TEXT[3]				= "w lochach Starego Obozu.";
+};

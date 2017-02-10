@@ -68,7 +68,7 @@ INSTANCE DIA_Butch_KlinDed (C_INFO)
 
 FUNC INT DIA_Butch_KlinDed_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Sharky_ITakCieZruchal))
+    if (Npc_KnowsInfo (hero, DIA_Sharky_Cheated))
     {
     return TRUE;
     };
@@ -99,7 +99,7 @@ INSTANCE DIA_Butch_KolegaCHuj (C_INFO)
 
 FUNC INT DIA_Butch_KolegaCHuj_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Sharky_LamuskuSpierdalaj))
+    if (Npc_KnowsInfo (hero, DIA_Sharky_CatchedConfident))
     {
     return TRUE;
     };

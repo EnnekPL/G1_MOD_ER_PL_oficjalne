@@ -1,4 +1,4 @@
-//========================================
+﻿//========================================
 //-----------------> RuneHelp
 //========================================
 
@@ -165,4 +165,50 @@ FUNC INT DIA_Cronos_DelteSword_Condition()
   //  {
   //  return TRUE;
 //};
+};
+
+
+//========================================
+//-----------------> FindMage
+//========================================
+
+INSTANCE DIA_Cronos_FindMage (C_INFO)
+{
+   npc          = KDW_604_Cronos;
+   nr           = 1;
+   condition    = DIA_Cronos_FindMage_Condition;
+   information  = DIA_Cronos_FindMage_Info;
+   permanent	= FALSE;
+   description	= "Potrzebuję czaru, który przywoła górskie trolle.";
+};
+
+FUNC INT DIA_Cronos_FindMage_Condition()
+{
+    if (PlanB == true)
+    && (Npc_KnowsInfo (hero, DIA_Quentin_Plan))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Cronos_FindMage_Info()
+{
+    AI_Output (other, self ,"DIA_Cronos_FindMage_15_01"); //Potrzebuję czaru, który przywoła górskie trolle.
+    AI_Output (self, other ,"DIA_Cronos_FindMage_03_02"); //Co? Po co ci coś takiego?
+    AI_Output (other, self ,"DIA_Cronos_FindMage_15_03"); //Strażnicy zajęli Obóz Bandytów w górach i chcemy się ich pozbyć.
+    AI_Output (self, other ,"DIA_Cronos_FindMage_03_04"); //Jesteś dosyć pomysłowy, chłopcze.
+    AI_Output (self, other ,"DIA_Cronos_FindMage_03_05"); //No dobrze. Sporządzę ci taki czar, ale potrzebuję składników.
+    AI_Output (other, self ,"DIA_Cronos_FindMage_15_06"); //Co konkretnie?
+    AI_Output (self, other ,"DIA_Cronos_FindMage_03_07"); //Potrzebny mi przede wszystkim górski mech.
+    AI_Output (self, other ,"DIA_Cronos_FindMage_03_08"); //A także jedna kocianka, kamień runiczny i esencja many.
+    AI_Output (self, other ,"DIA_Cronos_FindMage_03_09"); //To wszystko. Przynieś wymienione przeze mnie produkty, a utworzę runę.
+    B_LogEntry                     (CH4_GardistsInBC,"Cronos sporządzi dla mnie runę przywołującą górskie trolle, gdy przyniosę mu: górski mech, kociankę, kamień runiczny i esencję many.");
+
+    B_GiveXP (200);
+};
+
+FUNC VOID DIA_Cronos_DelteSword_Info()
+{
+
 };

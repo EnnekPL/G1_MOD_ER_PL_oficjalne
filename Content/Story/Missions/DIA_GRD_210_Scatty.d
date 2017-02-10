@@ -1457,7 +1457,7 @@ INSTANCE DIA_Scatty_DowodyNaOszustwa (C_INFO)
    condition    = DIA_Scatty_DowodyNaOszustwa_Condition;
    information  = DIA_Scatty_DowodyNaOszustwa_Info;
    permanent	= FALSE;
-   description	= "Oszukujesz Gomeza! Mam na to dowody,";
+   description	= "Oszukujesz Gomeza! Mam na to dowody.";
 };
 
 FUNC INT DIA_Scatty_DowodyNaOszustwa_Condition()
@@ -1472,7 +1472,7 @@ FUNC INT DIA_Scatty_DowodyNaOszustwa_Condition()
 
 FUNC VOID DIA_Scatty_DowodyNaOszustwa_Info()
 {
-    AI_Output (other, self ,"DIA_Scatty_DowodyNaOszustwa_15_01"); //Oszukujesz Gomeza! Mam na to dowody,
+    AI_Output (other, self ,"DIA_Scatty_DowodyNaOszustwa_15_01"); //Oszukujesz Gomeza! Mam na to dowody.
     AI_Output (self, other ,"DIA_Scatty_DowodyNaOszustwa_03_02"); //Co? Jak œmiesz mnie oskar¿aæ?!
     AI_Output (other, self ,"DIA_Scatty_DowodyNaOszustwa_15_03"); //Mam tutaj twoje fa³szywe raporty. O twoich oszustwach Kopacze wiedz¹ ju¿ od dawna.
     AI_Output (self, other ,"DIA_Scatty_DowodyNaOszustwa_03_04"); //I co teraz zrobisz? Doniesiesz na mnie Thorusowi?

@@ -34,7 +34,7 @@ instance STT_331_Fingers (Npc_Default)
 	//-------- Talente -------- 
 
 	Npc_SetTalentSkill 	( self, NPC_TALENT_BOW,1 );
-	Npc_SetTalentSkill 	( self, NPC_TALENT_1H,1 );	
+	Npc_SetTalentSkill 	( self, NPC_TALENT_1H,5 );	
 		
 	//-------- inventory --------
 	
@@ -62,7 +62,7 @@ FUNC VOID Rtn_ded_331 ()
 };
 FUNC VOID Rtn_zlo_331 ()
 {
-	TA_Boss		(02,35,00,00,"OCR_OUTSIDE_HUT_20");             
+	TA_Boss		(02,35,23,50,"OCR_OUTSIDE_HUT_20");             
 	TA_Stay		(23,50,02,35,"NC_TAVERN_MOVE2");
 };
 FUNC VOID Rtn_hanargument_331 ()
