@@ -134,8 +134,9 @@ INSTANCE DIA_Silas_Robota (C_INFO)
 
 FUNC INT DIA_Silas_Robota_Condition()
 {
-    if (Kapitel == 2)
+    if (Kapitel == 3)
     && ((Npc_GetTrueGuild(hero) == GIL_SLD) || (Npc_GetTrueGuild(hero) == GIL_ORG))
+	&& (HeroPermitToKillFingers == FALSE)
     {
     return TRUE;
     };
