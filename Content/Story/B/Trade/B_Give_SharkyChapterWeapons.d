@@ -48,6 +48,7 @@ func void B_Give_SharkyChapter2Weapons ()
 	CreateInvItem (npc,ItMw_1H_Mace_War_03);
 	//2h er lekkie 1.4.5.v7
 	CreateInvItem (npc,ItMw_2H_Axe_Big_04);
+	CreateInvItem (npc,	ItMw_2H_Axe_Big_05);
 	CreateInvItem (npc,ItMw_2H_Sword_New_02);
 	//-------- Fernkampfwaffen --------
 	//-------- Munition --------
@@ -75,7 +76,7 @@ func void B_Give_SharkyChapter3Weapons ()
 	CreateInvItem	(npc,	ItMw_2H_Sword_New_02); 
 	CreateInvItem	(npc,	ItMw_2H_Sword_New_03);
 	CreateInvItem	(npc,	ItMw_2h_Sword_Solid_01);
-	CreateInvItem	(npc,	ItMw_2H_Sword_New_05);
+	
 	//-------- Fernkampfwaffen --------
 	
  	//-------- Munition --------
@@ -90,6 +91,7 @@ func void B_Give_SharkyChapter4Weapons ()
 	npc = Hlp_GetNpc(ORG_843_Sharky);
 	
 	//-------- Nahkampfwaffen --------
+	CreateInvItem	(npc,	ItMw_2H_Sword_New_05);
 	CreateInvItem (npc,ItMw_2H_Axe_Old_02);
 	CreateInvItem (npc,ItMw_2H_Axe_Old_01);
 	CreateInvItem (npc,ItMw_2H_Axe_light_01); // Kapitel 5 und 6 zusammengefasst

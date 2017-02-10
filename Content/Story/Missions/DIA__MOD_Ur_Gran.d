@@ -46,12 +46,12 @@ FUNC INT DIA_Ur_Gran_HELLO1_Condition()
 FUNC VOID DIA_Ur_Gran_HELLO1_Info()
 {
     AI_Output (self, other ,"DIA_Ur_Gran_HELLO1_03_01"); //KHROTOK JABARTH!
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO1_03_02"); //Czego tu szukasz cz³owiek?
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO1_03_03"); //Nie wolno ci siê tu pa³êtaæ. Tu byæ sala tronowa miasta orków.
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO1_03_02"); //Czego tu wêszyæ MORRA?
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO1_03_03"); //Jabarath nie wolno byæ w sala tronowa wodza orków. 
     AI_Output (other, self ,"DIA_Ur_Gran_HELLO1_15_04"); //No, no. Widzê, ¿e nawet lepiej w³adasz jêzykiem ludzi ni¿ reszta twoich pobratymców.
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO1_03_05"); //Ja byæ doœwiadczony wojownik, stoczyæ wiele bitew przeciwko czerwonym ¿o³nierzom.
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO1_03_06"); //Te przeklête szubrawcy zniewalaæ moich ludzi i zmuszaæ do niewolniczej pracy w kopalniach.
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO1_03_07"); //Ale ju¿ wkrótce nadejœæ dzieñ zap³aty i œmierdz¹cy Gomez utonie we w³asnej krwi!
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO1_03_05"); //Ja byæ doœwiadczona wojownik, stoczyæ wiele URR-GARRGH z czerwoni ¿o³nierze.
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO1_03_06"); //Przeklête szubrawcy ³apaæ moich bracia. Oni zmuszaæ moich bracia do ciê¿ka praca w kopalnia.
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO1_03_07"); //Ju¿ wkrótce dzieñ zap³ata i œmierdz¹ca wódz wrednych morr, GOMASH uton¹æ we w³asna krew!
     AI_Output (other, self ,"DIA_Ur_Gran_HELLO1_15_08"); //Tu siê zgadzamy.
 };
 
@@ -81,10 +81,10 @@ FUNC INT DIA_Ur_Gran_HELLO2_Condition()
 FUNC VOID DIA_Ur_Gran_HELLO2_Info()
 {
     AI_Output (other, self ,"DIA_Ur_Gran_HELLO2_15_01"); //Czy wiesz jak mogê dostaæ siê do Œwi¹tyni Œni¹cego?
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO2_03_02"); //RUSHTASOK Cz³owiek byæ g³upi, czy jak?!
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO2_03_03"); //Œwi¹tynia KRUSHAK jest zamkniêta, nie dostanie siê tam nikt - ani cz³owiek ani ork.
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO2_03_04"); //Tylko syn ducha znaæ sposób na dostanie siê do œwi¹tyni KRUSHAK.
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO2_03_05"); //I z pewnoœci¹ nie podziel¹ siê wiedz¹ z Obcym, takim jak ty!
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO2_03_02"); //RUSHTASOK! JABARTH byæ g³upia?! Chcieæ dostaæ siê œwi¹tynia!? Do KARRASH!?
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO2_03_03"); //Œwi¹tynia KRUSHAK zamkniêta, nie wejœæ tam nikt - ani MORRA ani ork.
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO2_03_04"); //Tylko NAKK, syny ducha, morry mówiæ na nich szaman, znaæ jak dostaæ siê do KARRASH KRUSHAK. 
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO2_03_05"); //Ale ¿adna NAKK nigdy nie podzieliæ wiedz¹ z Obcym, taka jak ty!
 };
 
 //========================================
@@ -113,11 +113,11 @@ FUNC INT DIA_Ur_Gran_HELLO3_Condition()
 FUNC VOID DIA_Ur_Gran_HELLO3_Info()
 {
     AI_Output (other, self ,"DIA_Ur_Gran_HELLO3_15_01"); //Czy znasz szamana imieniem Ur-Shak?
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO3_03_02"); //Czy Ur-Gran znaæ? Oczywiœcie, ¿e tak!
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO3_03_03"); //Za kogo ty mnie masz cz³owiek?!
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO3_03_04"); //Ur-Shak byæ zdrajca! On siê wyprzeæ KRUSHAK i mówiæ o nim bluŸnierstwa.
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO3_03_02"); //Czy Ur-Gran znaæ? Oczywiœcie, ¿e Ur-Gran znaæ ta g³upia NAKK!
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO3_03_03"); //Za kogo ty mnie ma JABARTH?!
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO3_03_04"); //Ur-Shak byæ zdrajca! G³upia NAKK Ur-Shak siê wyprzeæ KRUSHAK. Ur-Shak mówiæ o nim bluŸnierstwa.
     AI_Output (self, other ,"DIA_Ur_Gran_HELLO3_03_05"); //Gdy Ur-Gran spotkaæ Ur-Shak, polaæ siê krew!
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO3_03_06"); //Nasz bóg nie tolerowaæ takiej zdrady!
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO3_03_06"); //KRUSHAK nie tolerowaæ zdrady!
 };
 
 //========================================
@@ -145,15 +145,15 @@ FUNC INT DIA_Ur_Gran_HELLO4_Condition()
 
 FUNC VOID DIA_Ur_Gran_HELLO4_Info()
 {
-    AI_Output (other, self ,"DIA_Ur_Gran_HELLO4_15_01"); //Co mo¿esz mi powiedzieæ o Œni¹cym?
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO4_03_02"); //On byæ naszym bogiem od wieków. Œwi¹tynia powsta³a w czasach Pradawnych.
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO4_03_03"); //My ofiarowaæ mu podarki i oddawaæ czeœæ. My d¹¿yæ do wielkie przebudzenie KRUSHAK!
+	AI_Output (other, self ,"DIA_Ur_Gran_HELLO4_15_01"); //Co mo¿esz mi powiedzieæ o Œni¹cym?
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO4_03_02"); //KRUSHAK byæ nasza bóg od wiele wieka. KARRASH KRUSHAK byæ wzniesiona przez przodkowie nasza przodków.
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO4_03_03"); //My sk³adaæ NRVUHR dla KRUSHAK i oddawaæ czeœæ. My d¹¿yæ do wielkie przebudzenie KRUSHAK!
     AI_Output (other, self ,"DIA_Ur_Gran_HELLO4_15_04"); //Wielkie przebudzenie?
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO4_03_05"); //Cz³owiek sam siê przekona ju¿ nied³ugo!
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO4_03_05"); //JABARTH siê przekonaæ ju¿ nied³ugo!
     AI_Output (self, other ,"DIA_Ur_Gran_HELLO4_03_06"); //Gdy KRUSHAK siê przebudziæ, zniszczyæ wszystkie siedliska Morr na œwiecie. 
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO4_03_07"); //Jeszcze po¿a³ujecie tego, ¿e nie poddaliœcie siê w tej wojnie!
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO4_03_08"); //Pierwsi za grzechy zap³ac¹ wstrêtne ludzie z bagien. Oni byæ zdrajcy i przestaæ wierzyæ w KRUSHAK.
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO4_03_09"); //Ich Obóz ju¿ wkrótce bêdzie nasz!
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO4_03_07"); //MORRA i ich król jeszcze po¿a³owaæ, ¿e nie byæ poddaæ siê w ta wojna dla nas orków!
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO4_03_08"); //KRUSHAK ukaraæ wpierw g³upie MORRA z bagien. Oni byæ zdrajcy i przestaæ wierzyæ w KRUSHAK.
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO4_03_09"); //Ich HESH-GHURG na bagnach ju¿ wkrótce byæ nasz! My go zrównaæ z ziemia. 
 };
 
 //========================================
@@ -182,16 +182,16 @@ FUNC INT DIA_Ur_Gran_HELLO5_Condition()
 FUNC VOID DIA_Ur_Gran_HELLO5_Info()
 {
     AI_Output (other, self ,"DIA_Ur_Gran_HELLO5_15_01"); //Sk¹d wiesz, ¿e Bractwo przesta³o wyznawaæ Œni¹cego?
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO5_03_02"); //Powiedzieæ nam o tym przyjaciel Kalom.
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO5_03_03"); //Jakiœ czas temu KRUSHAK zes³aæ nam wizjê, w której powiedzieæ, ¿e nied³ugo do miasta przyjœæ jego najwierniejszy s³uga.
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO5_03_02"); //Powiedzieæ nam Kalom. On nasza GHARRESH - nasza przyjaciel i najwierniejsza s³uga KRUSHAK. 
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO5_03_03"); //KRUSHAK zes³aæ wizja i powiedzieæ, ¿e do nasza SHER-KHURGH przyjœæ najwierniejsza s³uga KRUSHAK.
     AI_Output (self, other ,"DIA_Ur_Gran_HELLO5_03_04"); //My musieæ pomóc s³uga, my wesprzeæ s³uga!
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO5_03_05"); //Przyjaciel Kalom byæ bardzo potê¿na mag, przyprowadziæ ze sob¹ wielu wojowników i wyznawców.
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO5_03_06"); //My ugoœciæ Kalom i wpuœciæ go do Œwi¹tynia.
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO5_03_07"); //KRUSHAK powiedzieæ, ¿e to Kalom go zbudziæ.
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO5_03_08"); //Podczas wizyty w naszym mieœcie Kalom powiedzieæ o zdradzie ludzi z bagna. On poleciæ nam zniszczyæ ich w pierwszej kolejnoœci.
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO5_03_05"); //GHARRESH Kalom byæ bardzo potê¿na NAKK, przyprowadziæ wiele wojownik i wyznawca KRUSHAK.
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO5_03_06"); //My ugoœciæ Kalom i wpuœciæ go do KARRASH - do morra mówiæ œwi¹tynia.
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO5_03_07"); //KRUSHAK powiedzieæ, to Kalom mieæ zbudziæ KRUSHAK.
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO5_03_08"); //Kalom powiedzieæ o zdrada MORRA z HESH-GHURG na bagno. NAKK Kalom poleciæ nam zniszczyæ ich najpierw.
     AI_Output (other, self ,"DIA_Ur_Gran_HELLO5_15_09"); //Có¿ za ironia, sam nale¿a³ do Bractwa. Zawsze wiedzia³em, ¿e to kawa³ sukinsyna...
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO5_03_10"); //Obcy uwa¿aæ co mówi! Kalom byæ wielki Guru i mag. My nie pozwolimy go obra¿aæ.
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO5_03_11"); //Jedno z³e s³owo, a mój KRUSH skróciæ cz³owiek o ³eb.
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO5_03_10"); //Obcy uwa¿aæ co mówi! Kalom byæ wielki GHERRESH dla ork i NAKK. Ork nie pozwoliæ go obra¿aæ, MORRA. 
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO5_03_11"); //Jedna z³a s³owo, a KRUSH Ur-Grana str¹ciæ ³eb g³upia MORRA! 
 };
 
 //========================================
@@ -219,9 +219,9 @@ FUNC INT DIA_Ur_Gran_HELLO6_Condition()
 
 FUNC VOID DIA_Ur_Gran_HELLO6_Info()
 {
-    AI_Output (other, self ,"DIA_Ur_Gran_HELLO6_15_01"); //Na czym bêdzie polega³ rytua³ Cor Kaloma?
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO6_03_02"); //On wspólnie z wyznawcami obudziæ KRUSHAK i zostaæ jego arcykap³anem.
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO6_03_03"); //On wyzwoliæ potêga orkowych serc. Nasi przodkowie w koñcu przestan¹ byæ ¿ywi i martwi w jednym.
+	AI_Output (other, self ,"DIA_Ur_Gran_HELLO6_15_01"); //Na czym bêdzie polega³ rytua³ Cor Kaloma?
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO6_03_02"); //On z wyznawcy obudziæ KRUSHAK i zostaæ jego wielki NAKK. Zostaæ arcykap³an KRUSHAK. 
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO6_03_03"); //On wyzwoliæ potêga orkowa serc. Nasze przodki w koñcu przestaæ byæ ¿ywa i martwa naraz.
 };
 
 //========================================
@@ -249,17 +249,17 @@ FUNC INT DIA_Ur_Gran_HELLO7_Condition()
 
 FUNC VOID DIA_Ur_Gran_HELLO7_Info()
 {
-    AI_Output (other, self ,"DIA_Ur_Gran_HELLO7_15_01"); //Opowiedz mi o ULU-MULU.
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO7_03_02"); //ULU-MULU byæ symbol przyjaŸni orków i ludzi.
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO7_03_03"); //Tylko zrêczny orkowy kowal potrafi wykuæ ULU-MULU i mo¿e on przekazaæ go cz³owiek, który jest temu godzien.
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO7_03_04"); //Sk¹d Obcy zdobyæ ULU-MULU?
+      AI_Output (other, self ,"DIA_Ur_Gran_HELLO7_15_01"); //Opowiedz mi o ULU-MULU.
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO7_03_02"); //ULU-MULU byæ symbol przyjaŸñ orkowie i JABARTH.
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO7_03_03"); //Tylko zrêczna ork potrafi wykuæ ULU-MULU i mo¿e daæ go godna JABARTH.
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO7_03_04"); //Sk¹d obcy zdobyæ ULU-MULU?
     AI_Output (other, self ,"DIA_Ur_Gran_HELLO7_15_05"); //Zrobi³ go dla mnie Tarrok, uwolni³em go z kopalni.
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO7_03_06"); //To wielki czyn. KRUSHAK z pewnoœci¹ ci to wynagrodziæ.
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO7_03_07"); //W ka¿dym b¹dŸ razie ULU-MULU to zwyczaj naszego klanu. Nie wszyscy nasi pobratymcy go popieraæ.
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO7_03_08"); //Berserker we w³asnej osobie zakaza³ stosowania ULU-MULU wœród innych orków.
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO7_03_06"); //Wielka czyn JABARTH. KRUSHAK ci to wkrótce wynagrodziæ.
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO7_03_07"); //ULU-MULU byæ zwyczaj nasz klan. Nie ka¿da inna klan orka go uznawaæ.
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO7_03_08"); //Berserker we w³asna osoba zakazaæ stosowania ULU-MULU wœród innych orków. Nie wszystkie plemiona go pos³uchaæ. 
     AI_Output (other, self ,"DIA_Ur_Gran_HELLO7_15_09"); //Kim jest Berserker?
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO7_03_10"); //To byæ poprzedni król ork. Cz³owiek go nie spotka, on nie ¿yæ.
-    AI_Output (self, other ,"DIA_Ur_Gran_HELLO7_03_11"); //Jego miejsce zaj¹æ Kan, nasz nowy król. On poprowadziæ orki przeciwko ludzie z Myrtany.
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO7_03_10"); //To byæ król orków. Ju¿ dawno nie ¿yæ. On przewodziæ dla wielu szczepom. Kan obwo³aæ siê król po nim. Ur-Gran Kana nie uznaæ. 
+    AI_Output (self, other ,"DIA_Ur_Gran_HELLO7_03_11"); //Kan zjednoczyæ ju¿ i sprzymierzyæ wiele plemion za wielka woda. Kan zawrzeæ te¿ przymierze z wieloma orkowie z naszych gór. 
 };
 /*
 //========================================

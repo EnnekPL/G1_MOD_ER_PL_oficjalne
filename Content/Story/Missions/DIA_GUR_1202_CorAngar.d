@@ -1436,44 +1436,86 @@ FUNC VOID Info_CorAngar_TELEPORT_Info()
 	B_Story_SentToNC	();
 };
 
-//========================================
-//-----------------> KopalniaClear
-//========================================
+///////////////////////////////////////////////////
+// 	Where Is Kalom
+//////////////////////////////////////////////////
 
-INSTANCE DIA_CorAngar_KopalniaClear (C_INFO)
+INSTANCE DIA_CorAngar_WhereIsKalom (C_INFO)
 {
    npc          = GUR_1202_CorAngar;
    nr           = 1;
-   condition    = DIA_CorAngar_KopalniaClear_Condition;
-   information  = DIA_CorAngar_KopalniaClear_Info;
+   condition    = DIA_CorAngar_WhereIsKalom_Condition;
+   information  = DIA_CorAngar_WhereIsKalom_Info;
    permanent	= FALSE;
-   description	= "Oczyœci³em kopalniê.";
+   description	= "Wiesz dok¹d uda³ siê Cor Kalom?";
 };
 
-FUNC INT DIA_CorAngar_KopalniaClear_Condition()
+FUNC INT DIA_CorAngar_WhereIsKalom_Condition()
 {
-    if (MIS_PsiAbadonedMine == LOG_SUCCESS)
+    if (CorAngar_FindHerb == LOG_SUCCESS)
     {
     return TRUE;
     };
 };
 
 
-FUNC VOID DIA_CorAngar_KopalniaClear_Info()
+FUNC VOID DIA_CorAngar_WhereIsKalom_Info()
 {
-    AI_Output (other, self ,"DIA_CorAngar_KopalniaClear_15_01"); //Pomog³em pozbyæ siê ludzi Gomeza z Kopalni.
-    AI_Output (self, other ,"DIA_CorAngar_KopalniaClear_03_02"); //To œwietnie. Pos³aniec dotar³? 
-    AI_Output (other, self ,"DIA_CorAngar_KopalniaClear_15_03"); //Tak, ale nie widzia³em siê z nim. Informacjê przekaza³ mi Najemnik, który poleci³ mi rozmowê z Laresem.
-    AI_Output (self, other ,"DIA_CorAngar_KopalniaClear_03_04"); //Lares to twardy i odpowiedzialny cz³owiek. Dobrze zna Bandytów i stosunki miêdzy obozami.
-    AI_Output (other, self ,"DIA_CorAngar_KopalniaClear_15_05"); //Kopalnia by³a pe³na o¿ywieñców. 
-    AI_Output (other, self ,"DIA_CorAngar_KopalniaClear_15_06"); //Czêœæ korytarzy by³a zalana przez podziemn¹ rzekê. 
-    AI_Output (other, self ,"DIA_CorAngar_KopalniaClear_15_07"); //Wszêdzie roi³o siê od pe³zaczy i innych bestii.
-    AI_Output (self, other ,"DIA_CorAngar_KopalniaClear_03_08"); //To niewiarygodne, ¿e te legendy okaza³y siê prawd¹. Zas³u¿y³eœ na nagrodê. Jesteœ dzielnym wojownikiem i dobrze mieæ ciê po swojej stronie. 
-    CreateInvItems (self, ItMiNugget, 500);
-    B_GiveInvItems (self, other, ItMiNugget, 500);
-    B_GiveXP (500);
+    AI_Output (other, self ,"DIA_CorAngar_WhereIsKalom_15_01"); //Wiesz dok¹d uda³ siê Cor Kalom?
+    AI_Output (self, other ,"DIA_CorAngar_WhereIsKalom_03_02"); //Nie, wci¹¿ jest to dla mnie zagadk¹. 
+    AI_Output (other, self ,"DIA_CorAngar_WhereIsKalom_15_03"); //Chcia³bym dowiedzieæ siê dok¹d poszed³.
+    AI_Output (self, other ,"DIA_CorAngar_WhereIsKalom_03_04"); //Byæ mo¿e ktoœ go widzia³. Tak du¿a liczba œwi¹tynnych nie mog³a przejœæ przez koloniê niezauwa¿ona.
+	AI_Output (self, other ,"DIA_CorAngar_WhereIsKalom_03_05"); //Ktoœ móg³ ich widzieæ. Powinieneœ porozmawiaæ z myœliwymi. Czêsto wêdruj¹ po Kolonii w poszukiwaniu zwierzyny. 
+	AI_Output (self, other ,"DIA_CorAngar_WhereIsKalom_03_06"); //Podobno maj¹ swój obóz nad rzek¹.
+    AI_Output (other, self ,"DIA_CorAngar_WhereIsKalom_15_07"); //Tak, znam to miejsce. Udam siê tam jak najszybciej. 
+
+	MIS_SearchKalom = LOG_RUNNING;
+
+    Log_CreateTopic         (CH3_SearchKalom, LOG_MISSION);
+    Log_SetTopicStatus      (CH3_SearchKalom, LOG_RUNNING);
+    B_LogEntry              (CH3_SearchKalom,"Cor Kalom uciek³ z Bractwa wraz z grup¹ Nowicjuszy i Œwi¹tynnych. Muszê dowiedzieæ siê dok¹d poszli. Wskazówki mog¹ mi daæ myœliwi. Cor Angar uwa¿a, ¿e któryœ z nich móg³ ich widzieæ.");
 };
 
+///////////////////////////////////////////////////
+// 	Kalom Is In Orc City
+//////////////////////////////////////////////////
+
+INSTANCE DIA_CorAngar_KalomOrcCity (C_INFO)
+{
+   npc          = GUR_1202_CorAngar;
+   nr           = 1;
+   condition    = DIA_CorAngar_KalomOrcCity_Condition;
+   information  = DIA_CorAngar_KalomOrcCity_Info;
+   permanent	= FALSE;
+   description	= "Kalom uda³ siê do miasta orków.";
+};
+
+FUNC INT DIA_CorAngar_KalomOrcCity_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_SZEFU_SectTeam))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_CorAngar_KalomOrcCity_Info()
+{
+    AI_Output (other, self ,"DIA_CorAngar_KalomOrcCity_15_01"); //Kalom, wraz z kilkoma Stra¿nikami Œwi¹tynnymi uda³ siê do Miasta Orków.
+    AI_Output (other, self ,"DIA_CorAngar_KalomOrcCity_15_02"); //£owcy orków ostatni raz widzieli go przy bagnie na Ziemiach Orków.
+	AI_Output (other, self ,"DIA_CorAngar_KalomOrcCity_15_03"); //Ciekawi mnie tylko jak Kalom przedosta³ siê przez grupy zielonoskórych.
+    AI_Output (self, other ,"DIA_CorAngar_KalomOrcCity_03_04"); //Widocznie musia³ mieæ ze sob¹ jakiœ atut, który go ochroni³.
+    AI_Output (self, other ,"DIA_CorAngar_KalomOrcCity_03_05"); //Prawdopodobnie nigdy siê tego nie dowiemy.
+	//log
+    B_LogEntry               (CH3_SearchKalom,"Powiedzia³em Cor Angarowi, ¿e ³owcy orków widzieli Kaloma, który prawdopodobnie uda³ siê na ziemie orków. Pozostaje nam mieæ nadziejê, ¿e szalony Guru nie zrobi nic g³upiego.");
+    Log_SetTopicStatus       (CH3_SearchKalom, LOG_SUCCESS);
+    MIS_SearchKalom = LOG_SUCCESS;
+	//experience
+    B_GiveXP (XP_AboutKalom);
+	//prize
+    CreateInvItems (self, ItMiNugget, 50);
+    B_GiveInvItems (self, other, ItMiNugget, 50);
+};
 //========================================
 //-----------------> GuruMomPlese
 //========================================
@@ -1502,17 +1544,17 @@ FUNC INT DIA_CorAngar_GuruMomPlese_Condition()
 FUNC VOID DIA_CorAngar_GuruMomPlese_Info()
 {
     AI_Output (other, self ,"DIA_CorAngar_GuruMomPlese_15_01"); //Mistrzu, kto zast¹pi Y'Beriona?
-    AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_02"); //Ciê¿ko mi siê pogodziæ z jego œmierci¹... Na razie to ja postaram siê mieæ wszystko pod kontrol¹.
+    AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_02"); //Œmieræ Wielkiego Mistrza stawia nasz¹ spo³ecznoœæ przed powa¿nym problemem. Na razie osobiœcie postaram siê mieæ wszystko pod kontrol¹.
     AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_03"); //Jednak sam nie dam sobie rady. Zw³aszcza, ¿e Cor Kalom odszed³. Ktoœ musi go zast¹piæ. 
 	AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_04"); //Ty... Sta³eœ siê silniejszy i bardziej doœwiadczony od kiedy tu przyby³eœ.
     AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_05"); //Pomagasz nam w trudnoœciach, wiernie s³u¿ysz Bractwu, bez ciebie nie odby³o by siê przywo³anie...
 	AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_06"); //Czy nie zechcia³byœ za³o¿yæ szatê Guru?
-    AI_Output (other, self ,"DIA_CorAngar_GuruMomPlese_15_07"); //Có¿, nie wygl¹da na zbyt wygodn¹... Strasznie d³uga, a to wzornictwo... Okropnoœci...
+    AI_Output (other, self ,"DIA_CorAngar_GuruMomPlese_15_07"); //Có¿, nie wygl¹da na zbyt wygodn¹...
     AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_08"); //Próbujesz ukryæ siê pod p³aszczykiem arogancji. Mów, co ciê trapi.
 	AI_Output (other, self ,"DIA_CorAngar_GuruMomPlese_15_09"); //Mistrzu, chodzi o to, ¿e Œni¹cy jest demonem. Obaj dobrze o tym wiemy. Dlaczego mia³bym chcieæ zostaæ Guru, jego najwierniejszym s³ug¹?
     AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_10"); //Rozumiem twoje obawy. To siê bardzo chwali, ¿e mi o tym powiedzia³eœ. Nie licz¹ siê dla ciebie tytu³y lecz duch!
-    AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_11"); //Zrób to dla tych wszystkich zagubionych ludzi, którzy b³¹kaj¹ siê po tym Obozie bez celu. Oni potrzebuj¹ kogoœ, kto wska¿e im drogê.
-	AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_12"); //Zagubili siê! Musisz im pomóc. Pomyœl o tym. Robisz to nie dla Œni¹cego, tylko dla jego by³ych wyznawców.
+    AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_11"); //Bractwo wymaga teraz wiele pracy, aby przetrwa³o. Wiara w Œni¹cego nie jest ju¿ tym, co nas spaja. £¹czy nas wspólna przesz³oœæ i nowe wyzwania. 
+	AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_12"); //Ci ludzie potrzebuj¹ kogoœ, kto pomo¿e im siê po tym wszystkim otrz¹sn¹æ. Robisz to wiêc nie dla Œni¹cego, tylko dla jego by³ych wyznawców.
     AI_Output (other, self ,"DIA_CorAngar_GuruMomPlese_15_13"); //No dobrze. Za³o¿ê szatê Guru.
     AI_Output (self, other ,"DIA_CorAngar_GuruMomPlese_03_14"); //Zaczekaj! Musisz mi wczeœniej udowodniæ, ¿e jesteœ gotów.
 	AI_Output (other, self ,"DIA_CorAngar_GuruMomPlese_15_15"); //CO?!
@@ -1557,7 +1599,7 @@ FUNC VOID DIA_CorAngar_Mixtura156_Info()
     AI_Output (other, self ,"DIA_CorAngar_Mixtura156_15_04"); //Przepis by³ bardzo skomplikowany i wymaga³ wielu sk³adników trudnych do zdobycia.
     AI_Output (self, other ,"DIA_CorAngar_Mixtura156_03_05"); //Udowodni³eœ, ¿e jesteœ godzien nosiæ szatê Guru. Witaj wœród nas. Mo¿esz rozgoœciæ siê w laboratorium Kaloma.
     AI_Output (self, other ,"DIA_CorAngar_Mixtura156_03_06"); //WeŸ upragnion¹ szatê i ten kostur. Niechaj ci s³u¿¹. Bractwo na ciebie liczy.
-    AI_Output (self, other ,"DIA_CorAngar_Mixtura156_03_07"); //Shan bêdzie twoim asystentem i powie ci czym nale¿y siê zaj¹æ.
+    AI_Output (self, other ,"DIA_CorAngar_Mixtura156_03_07"); //Shan bêdzie twoim asystentem i powie ci, czym nale¿y siê zaj¹æ.
     hero.guild = GIL_GUR;
     CreateInvItems (self, GUR_ARMOR_M, 1);
     B_GiveInvItems (self, other, GUR_ARMOR_M, 1);
@@ -1602,7 +1644,7 @@ FUNC INT DIA_CorAngar_BuyArmorH_Condition()
 FUNC VOID DIA_CorAngar_BuyArmorH_Info()
 {
     AI_Output (other, self ,"DIA_CorAngar_BuyArmorH_15_01"); //Chcê nosiæ zdobion¹ szatê.
-    AI_Output (self, other ,"DIA_CorAngar_BuyArmorH_03_02"); //A masz rudê?
+    AI_Output (self, other ,"DIA_CorAngar_BuyArmorH_03_02"); //Ten wyj¹tkowy pancerz nie jest tani. Masz wystarczaj¹co du¿o rudy?
     if (Npc_HasItems (hero, ItMiNugget)>=2460)
     {
         AI_Output (other, self ,"DIA_CorAngar_BuyArmorH_15_03"); //Oczywiœcie.
@@ -1622,20 +1664,20 @@ FUNC VOID DIA_CorAngar_BuyArmorH_Info()
 
 
 //========================================
-//-----------------> Bractwo_Kopalnia_Finish
+//-----------------> KopalniaClear
 //========================================
 
-INSTANCE DIA_CorAngar_Bractwo_Kopalnia_Finish (C_INFO)
+INSTANCE DIA_CorAngar_KopalniaClear (C_INFO)
 {
    npc          = GUR_1202_CorAngar;
    nr           = 1;
-   condition    = DIA_CorAngar_Bractwo_Kopalnia_Finish_Condition;
-   information  = DIA_CorAngar_Bractwo_Kopalnia_Finish_Info;
+   condition    = DIA_CorAngar_KopalniaClear_Condition;
+   information  = DIA_CorAngar_KopalniaClear_Info;
    permanent	= FALSE;
-   description	= "Zaj¹³em siê spraw¹ w Nowym Obozie. ";
+   description	= "Oczyœci³em kopalniê.";
 };
 
-FUNC INT DIA_CorAngar_Bractwo_Kopalnia_Finish_Condition()
+FUNC INT DIA_CorAngar_KopalniaClear_Condition()
 {
     if (MIS_PsiAbadonedMine == LOG_SUCCESS)
     {
@@ -1644,16 +1686,17 @@ FUNC INT DIA_CorAngar_Bractwo_Kopalnia_Finish_Condition()
 };
 
 
-FUNC VOID DIA_CorAngar_Bractwo_Kopalnia_Finish_Info()
+FUNC VOID DIA_CorAngar_KopalniaClear_Info()
 {
-    AI_Output (other, self ,"DIA_CorAngar_Bractwo_Kopalnia_Finish_15_01"); //Zaj¹³em siê spraw¹ w Nowym Obozie. 
-    AI_Output (other, self ,"DIA_CorAngar_Bractwo_Kopalnia_Finish_15_02"); //Dziêki mojej pomocy Najemnicy odzyskali dostêp do Opuszczonej Kopalni.
-    AI_Output (self, other ,"DIA_CorAngar_Bractwo_Kopalnia_Finish_03_03"); //Gomez ma teraz niez³y k³opot. To powinno na chwilê ostudziæ jego zapa³.
-    AI_Output (self, other ,"DIA_CorAngar_Bractwo_Kopalnia_Finish_03_04"); //Dobrze siê spisa³eœ. Obawia³em siê, ¿e pos³aniec móg³ nie dotrzeæ do Nowego Obozu.
-    AI_Output (self, other ,"DIA_CorAngar_Bractwo_Kopalnia_Finish_03_05"); //Zas³u¿y³eœ na nagrodê.
+    AI_Output (other, self ,"DIA_CorAngar_KopalniaClear_15_01"); //Pomog³em pozbyæ siê ludzi Gomeza z Kopalni.
+    AI_Output (self, other ,"DIA_CorAngar_KopalniaClear_03_02"); //To œwietnie. Pos³aniec dotar³? 
+    AI_Output (other, self ,"DIA_CorAngar_KopalniaClear_15_03"); //Tak, ale nie widzia³em siê z nim. Informacjê przekaza³ mi Najemnik, który poleci³ mi rozmowê z Laresem.
+    AI_Output (self, other ,"DIA_CorAngar_KopalniaClear_03_04"); //Lares to twardy i odpowiedzialny cz³owiek. Dobrze zna Bandytów i stosunki miêdzy obozami.
+    AI_Output (other, self ,"DIA_CorAngar_KopalniaClear_15_05"); //Kopalnia by³a pe³na o¿ywieñców a czêœæ korytarzy zala³a podziemna rzeka. 
+    AI_Output (self, other ,"DIA_CorAngar_KopalniaClear_03_06"); //Wiele siê mówi³o o tej kopalni. Widocznie czêœæ z nich by³a prawd¹...
     CreateInvItems (self, ItMiNugget, 500);
     B_GiveInvItems (self, other, ItMiNugget, 500);
-    b_givexp (200);
+    B_GiveXP (500);
 };
 
 

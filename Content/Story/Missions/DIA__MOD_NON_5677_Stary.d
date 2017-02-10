@@ -153,6 +153,46 @@ FUNC VOID DIA_Stary_SELL_SWAMPSHARKS_Info()
 	Npc_RemoveInvItems (self, ItAt_Swampshark_01, 10);
 	B_GIVEXP (250);
 };
+
+///////////////////////////////////////////////////
+// 	Where Is Kalom
+//////////////////////////////////////////////////
+
+INSTANCE DIA_Stary_WhereIsKalom (C_INFO)
+{
+   npc          = NON_5677_Stary;
+   nr           = 1;
+   condition    = DIA_Stary_WhereIsKalom_Condition;
+   information  = DIA_Stary_WhereIsKalom_Info;
+   permanent	= FALSE;
+   description	= "Widzia³eœ mo¿e w okolicy grupê Stra¿ników Œwi¹tynnych?";
+};
+
+FUNC INT DIA_Stary_WhereIsKalom_Condition()
+{
+	if	Npc_KnowsInfo(hero,DIA_Alex_WhereIsKalom)
+	{
+		return TRUE;
+	};	
+};
+
+FUNC VOID DIA_Stary_WhereIsKalom_Info()
+{
+    AI_Output (other, self ,"DIA_Stary_WhereIsKalom_15_01"); //Widzia³eœ mo¿e w okolicy grupê Stra¿ników Œwi¹tynnych?
+    AI_Output (self, other ,"DIA_Stary_WhereIsKalom_15_02"); //Widzia³em, leczy tylko przez chwilê. To by³o w zniszczonej chacie za Starym Obozem.
+    AI_Output (self, other ,"DIA_Stary_WhereIsKalom_03_03"); //Obdziera³em w³aœnie ze skóry starego jaszczura, gdy nagle us³ysza³em g³oœne szepty.
+    AI_Output (self, other ,"DIA_Stary_WhereIsKalom_03_04"); //£ysy mê¿czyzna w jasnej szacie prowadzi³ ze sob¹ Nowicjuszy i Stra¿ników Œwi¹tynnych. Szli w kierunku Ziem Orków.
+    AI_Output (self, other ,"DIA_Stary_WhereIsKalom_03_05"); //Szkoda, ¿e Pacho nie by³o na posterunku. Chcia³bym zobaczyæ co by z nim zrobili.
+	AI_Output (other, self ,"DIA_Stary_WhereIsKalom_15_06"); //Dlaczego go nie by³o?
+    AI_Output (self, other ,"DIA_Stary_WhereIsKalom_03_07"); //Nie wiem. Pewnie poszed³ po piwo do Obozu. 
+	AI_Output (other, self ,"DIA_Stary_WhereIsKalom_15_08"); //Jest ktoœ kto powie mi wiêcej o tej grupie?
+	AI_Output (self, other ,"DIA_Stary_WhereIsKalom_03_09"); //Zapytaj w obozie ³owców orków. Mo¿e oni ich widzieli.
+	
+	B_LogEntry              (CH3_SearchKalom,"Tom widzia³ Kaloma wraz z jego gwardi¹ Œwi¹tynnych, gdy szli w kierunku Ziem Orków. £owcy mog¹ mi daæ wiêcej odpowiedzi. ");
+	
+	B_GiveXP (100);	
+};
+
 //========================================
 //-----------------> RavensCamp
 //========================================

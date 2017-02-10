@@ -709,6 +709,40 @@ FUNC VOID DIA_Alex_Ratunek_Info()
     B_GiveXP (1000);
 };
 
+///////////////////////////////////////////////////
+// 	Where Is Kalom
+//////////////////////////////////////////////////
+
+INSTANCE DIA_Alex_WhereIsKalom (C_INFO)
+{
+   npc          = NON_5600_Alex;
+   nr           = 1;
+   condition    = DIA_Alex_WhereIsKalom_Condition;
+   information  = DIA_Alex_WhereIsKalom_Info;
+   permanent	= FALSE;
+   description	= "Szukam grupy sekciarzy.";
+};
+
+FUNC INT DIA_Alex_WhereIsKalom_Condition()
+{
+	if (MIS_SearchKalom == LOG_RUNNING)
+	{
+    return TRUE;
+	};
+};
+
+FUNC VOID DIA_Alex_WhereIsKalom_Info()
+{
+    AI_Output (other, self ,"DIA_Alex_WhereIsKalom_15_01"); //Szukam grupy sekciarzy.
+    AI_Output (self, other ,"DIA_Alex_WhereIsKalom_03_02"); //Nie ma ich tu.
+    AI_Output (other, self ,"DIA_Alex_WhereIsKalom_15_03"); //To wiem. Mo¿e któryœ z twoich ludzi coœ widzia³? 
+    AI_Output (self, other ,"DIA_Alex_WhereIsKalom_03_04"); //Moi ludzie przesiaduj¹ w obozie od czasu kiedy w kolonii zrobi³o siê doœæ nerwowo. Jedynie stary Tom poluje nad rzek¹. 
+	AI_Output (self, other ,"DIA_Alex_WhereIsKalom_03_05"); //Mo¿esz z nim pogadaæ. Nie bêdê dopytywa³ co to za sekciarze i czemu ich szukasz, ale mam tylko nadziejê, ¿e s¹ nieszkodliwi. 
+	
+	B_LogEntry              (CH3_SearchKalom,"Ludzie Alexa od jakiegoœ czasu siedz¹ w obozie. Jedynie stary Tom wychodzi na polowania. Znajdê go nad rzek¹.");
+};
+
+
 //========================================
 //-----------------> QUEST_TROLL
 //========================================

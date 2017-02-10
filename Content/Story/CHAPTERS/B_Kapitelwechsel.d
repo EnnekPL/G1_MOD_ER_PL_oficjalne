@@ -354,9 +354,9 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		B_ChangeGuild    (GRD_210_Scatty,GIL_NONE);  
 		B_SetPermAttitude	(GRD_210_Scatty,	ATT_NEUTRAL);
 		
-		B_ExchangeRoutine (GRD_233_Bloodwyn,"nockruka");
-		B_ChangeGuild    (GRD_233_Bloodwyn,GIL_NONE);  
-		B_SetPermAttitude	(GRD_233_Bloodwyn,	ATT_NEUTRAL);
+		//B_ExchangeRoutine (GRD_233_Bloodwyn,"nockruka");
+		//B_ChangeGuild    (GRD_233_Bloodwyn,GIL_NONE);  
+		//B_SetPermAttitude	(GRD_233_Bloodwyn,	ATT_NEUTRAL);
 		
 		B_ExchangeRoutine (Grd_200_Thorus,"nockruka");
 		B_ChangeGuild    (Grd_200_Thorus,GIL_NONE);  

@@ -44,7 +44,7 @@ func void B_Give_HuanChapter2Ingredients ()
 	
 	CreateInvItems	(self,	Plan_BanditTrader,1);
 	
-		CreateInvItems	(self,	ItMw_2H_Axe_Big_05,1);
+	CreateInvItems	(self,	ItMw_2H_Axe_Big_05,1);
 };
 
 func void B_Give_HuanChapter3Ingredients ()

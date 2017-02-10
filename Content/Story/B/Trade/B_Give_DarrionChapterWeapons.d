@@ -70,11 +70,21 @@ func void B_Give_DarrionChapter3Weapons ()
 	CreateInvItem (npc,ItMw_1H_Warhammer_01); 
 	CreateInvItem (npc,ItMw_1H_Warhammer_02); 
 	CreateInvItem (npc,ItMw_1H_Warhammer_03); 
+	
+	CreateInvItems	(self, ItKeLockpick,30);
+	CreateInvItem	(npc,	ItMw_1H_Sword_Long_01);
+	CreateInvItem	(npc,	ItMw_1H_Sword_Long_02);
+	CreateInvItem	(npc,	ItMw_1H_Sword_Long_03);
+	CreateInvItem	(npc,	ItMw_1H_Sword_Long_04);
+	CreateInvItem	(npc,	ItMw_1H_Sword_Long_04);
+	CreateInvItems	(npc,	ItMw_1H_Sword_Broad_01,1);
+	
+	//tępy miecz półtoraroczny
+	
 	//er 1.4.5 v7 ch3
 	CreateInvItem	(npc,	ItMw_2H_Sword_New_02); 
 	CreateInvItem	(npc,	ItMw_2H_Sword_New_03);
 	CreateInvItem	(npc,	ItMw_2h_Sword_Solid_01);
-	CreateInvItem	(npc,	ItMw_2H_Sword_New_05);
 	//-------- Fernkampfwaffen --------
 
  
@@ -97,6 +107,8 @@ func void B_Give_DarrionChapter4Weapons ()
 	npc = Hlp_GetNpc(NOV_1312_Darrion);
 	
 	//-------- Nahkampfwaffen --------
+	CreateInvItem	(npc,	ItMw_2H_Sword_New_05);
+	
 	CreateInvItem (npc,ItMw_2H_Sword_Old_01); 
 	CreateInvItem (npc,ItMw_2H_Sword_Light_01);
 	CreateInvItem (npc,ItMw_2H_Sword_Light_02); 

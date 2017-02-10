@@ -930,12 +930,12 @@ INSTANCE ItMw_2H_Axe_Big_04 (C_Item) //handlarze, stara kopalnia
 
 	value 				=	200;//900;//454
 	
-	damageTotal			= 	31;
+	damageTotal			= 	29;
 	damagetype			=	DAM_EDGE;
 	range    			=  	160;		
 
 	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	30;
+	cond_value[2]  		= 	28;
 	visual 				=	"ItMw_035_2H_Axe_Light_03.3DS";
 
 	description			= name;
@@ -1358,12 +1358,12 @@ INSTANCE ItMw_2H_Sword_New_02 (C_Item) //cmentarzysko orków
 
 	value 				=	400;//900;//454
 	
-	damageTotal			= 	40;
+	damageTotal			= 	34;
 	damagetype			=	DAM_EDGE;
 	range    			=  	160;		
 
 	cond_atr[2]   		= 	ATR_STRENGTH;
-	cond_value[2]  		= 	42;
+	cond_value[2]  		= 	30;
 	visual 				=	"ItMw_035_2H_SLD_Sword_01.3DS";
 
 	description			= name;
@@ -1375,7 +1375,7 @@ INSTANCE ItMw_2H_Sword_New_02 (C_Item) //cmentarzysko orków
 
 /******************************************************************************************/
 //ER: M³ot wojenny
-INSTANCE ItMw_2h_Hammer_War_01 (C_Item)  //kamien ogniskujacy diego
+INSTANCE ItMw_2h_Hammer_War_01 (C_Item)  //kamieñ ogniskuj¹cy diego
 {	
 	 
 	name 				=	"M³ot wojenny";  
@@ -1629,7 +1629,7 @@ INSTANCE ItMw_2h_Sword_Solid_01 (C_Item) //handlarze, r 3
 
 	value 				=	1050;
 	
-	damageTotal			= 	52;
+	damageTotal			= 	55;
 	damagetype			=	DAM_EDGE;
 	range    			=  	150;		
 
@@ -1950,7 +1950,7 @@ INSTANCE ItMw_2H_Sword_New_05 (C_Item) //handlarze
 
 	value 				=	1350;//900;//454
 	
-	damageTotal			= 	58;
+	damageTotal			= 	63;
 	damagetype			=	DAM_EDGE;
 	range    			=  	160;		
 
@@ -2145,7 +2145,7 @@ INSTANCE ItMw_1H_Sword_Bastard_04 (C_Item)
 
 	value 				=	1760;//880;//442
 
-	damageTotal			= 	70;
+	damageTotal			= 	72;
 	damagetype 			= 	DAM_EDGE;
 	range    			=  	130;		
 

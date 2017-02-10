@@ -201,7 +201,7 @@ INSTANCE DIA_SZEFU_SectTeam (C_INFO)
 
 FUNC INT DIA_SZEFU_SectTeam_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Quentin_HELLO1))
+    if (Npc_KnowsInfo (hero, DIA_Stary_WhereIsKalom))
     {
     return TRUE;
     };
@@ -215,7 +215,8 @@ FUNC VOID DIA_SZEFU_SectTeam_Info()
     AI_Output (self, other ,"DIA_SZEFU_SectTeam_03_03"); //Widzia³em jakiegoœ ³ysola otoczonego grupk¹ Stra¿ników. 
     AI_Output (self, other ,"DIA_SZEFU_SectTeam_03_04"); //Szli w kierunku orkowego miasta.
     AI_Output (self, other ,"DIA_SZEFU_SectTeam_03_05"); //Zatrzymali siê na kilka dni przy bagnie i rozbili tam ma³y obóz. 
-    AI_Output (self, other ,"DIA_SZEFU_SectTeam_03_06"); //Jednak pewnej nocy wszystko zniknê³o.
+    AI_Output (self, other ,"DIA_SZEFU_SectTeam_03_06"); //Jednak pewnej nocy wszystko zniknê³o. 
+	
     B_LogEntry                     (CH3_SearchKalom,"Wilson widzia³ kilku Stra¿ników Œwi¹tynnych id¹cych w kierunku orkowego miasta. Ma³o prawdopodobne, ¿ebym ich znalaz³. ");
     B_GiveXP (150);
 };

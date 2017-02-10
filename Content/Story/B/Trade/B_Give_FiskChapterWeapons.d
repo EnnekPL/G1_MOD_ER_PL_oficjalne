@@ -64,18 +64,22 @@ func void B_Give_FiskChapter3Weapons ()
 	npc = Hlp_GetNpc(Stt_311_Fisk);
 	
 	//-------- Nahkampfwaffen --------
+	CreateInvItem (npc,ItMw_1H_Warhammer_01); 
+	CreateInvItem (npc,ItMw_1H_Warhammer_02); 
+	CreateInvItem (npc,ItMw_1H_Warhammer_03); 
+	
 	CreateInvItems	(self, ItKeLockpick,30);
 	CreateInvItem	(npc,	ItMw_1H_Sword_Long_01);
 	CreateInvItem	(npc,	ItMw_1H_Sword_Long_02);
 	CreateInvItem	(npc,	ItMw_1H_Sword_Long_03);
 	CreateInvItem	(npc,	ItMw_1H_Sword_Long_04);
 	CreateInvItem	(npc,	ItMw_1H_Sword_Long_04);
-	CreateInvItems	(npc,	ItMw_1H_Sword_Broad_01,2);
+	CreateInvItem	(npc,	ItMw_1H_Sword_Broad_01);
 	//er 1.4.5 v7 ch3
 	CreateInvItem	(npc,	ItMw_2H_Sword_New_02); 
 	CreateInvItem	(npc,	ItMw_2H_Sword_New_03);
 	CreateInvItem	(npc,	ItMw_2h_Sword_Solid_01);
-	CreateInvItem	(npc,	ItMw_2H_Sword_New_05);
+	
 	CreateInvItems (npc,ItMiNugget,300); 
 	//-------- Fernkampfwaffen --------
 	//-------- Munition --------

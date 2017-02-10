@@ -420,9 +420,9 @@ FUNC VOID Info_Bloodwyn_DIE_Info()
 		AI_Output		(self,hero,"Info_Bloodwyn_DIE_08_09"); //Zdrajcy tacy jak ty zas³uguj¹ tylko na œmieræ.
 		AI_Output		(self,hero,"Info_Bloodwyn_DIE_08_10"); //GIÑ!!!
 
-		if	Npc_KnowsInfo(hero, Info_Fletcher_DIE)
+		if	Npc_KnowsInfo(hero, Info_Aaron_DIE)
 		{
-			B_LogEntry			(CH4_BannedFromOC,	"Fletcher, który pilnuje teraz g³ównej bramy, zareagowa³ podobnie jak Bloodwyn. Mam wra¿enie, ¿e ma to coœ wspólnego z moimi poszukiwaniami kamienia ogniskuj¹cego dla Nowego Obozu.");
+			B_LogEntry			(CH4_BannedFromOC,	"Aaron, który pilnuje teraz g³ównej bramy, zareagowa³ podobnie jak Bloodwyn. Mam wra¿enie, ¿e ma to coœ wspólnego z moimi poszukiwaniami kamienia ogniskuj¹cego dla Nowego Obozu.");
 		}
 		else if	(Npc_GetTrueGuild(hero) == GIL_NONE)
 		{
@@ -466,7 +466,7 @@ FUNC VOID Info_Bloodwyn_DIE_Info()
 	B_SetPermAttitude	(GRD_217_Torwache,	ATT_HOSTILE);
 
 	
-	if	!Npc_KnowsInfo(hero, Info_Fletcher_DIE)
+	if	!Npc_KnowsInfo(hero, Info_Aaron_DIE)
 	{
 		B_LogEntry		(CH4_Firemages,	"Bramy do Starego Obozu zosta³y zamkniête i pozostaj¹ pilnie strze¿one. Stra¿nicy atakuj¹ ka¿dego, kto podejdzie w pobli¿e Obozu.");
 	};

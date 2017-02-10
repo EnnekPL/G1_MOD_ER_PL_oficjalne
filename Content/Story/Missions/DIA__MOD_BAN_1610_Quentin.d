@@ -1049,6 +1049,7 @@ FUNC VOID DIA_Quentin_BractwoNews_Info()
     B_GiveXP (XP_YBerionDeath);
 };
 
+/*
 //========================================
 //-----------------> HELLO1
 //========================================
@@ -1077,7 +1078,7 @@ FUNC VOID DIA_Quentin_HELLO1_Info()
     AI_Output (other, self ,"DIA_Quentin_HELLO1_15_01"); //Cor Angar wys³a³ mnie do Nowego Obozu.
     AI_Output (self, other ,"DIA_Quentin_HELLO1_03_02"); //W jakim celu?
     AI_Output (other, self ,"DIA_Quentin_HELLO1_15_03"); //Jedyn¹ nadziej¹ na ucieczkê z Kolonii wydaje siê byæ plan Magów Wody.
-    AI_Output (self, other ,"DIA_Quentin_HELLO1_03_04"); //Chyba nie mamy wyboru. Musisz spróbowaæ. Marwti mnie tylko jedna rzecz...
+    AI_Output (self, other ,"DIA_Quentin_HELLO1_03_04"); //Chyba nie mamy wyboru. Musisz spróbowaæ. Martwi mnie tylko jedna rzecz...
     AI_Output (other, self ,"DIA_Quentin_HELLO1_15_05"); //Jaka?
     AI_Output (self, other ,"DIA_Quentin_HELLO1_03_06"); //Chodzi o Cor Kaloma. To niebezpieczny cz³owiek.
     AI_Output (other, self ,"DIA_Quentin_HELLO1_15_07"); //Kalom wyrzek³ siê Bractwa. Guru uœwiadomili sobie, ¿e Œni¹cy nie jest tym, za kogo by³ uwa¿any. Ponoæ to prastary demon.
@@ -1138,7 +1139,7 @@ FUNC VOID DIA_Quentin_Kalom2_Info()
     CreateInvItems (self, ItMiNugget, 50);
     B_GiveInvItems (self, other, ItMiNugget, 50);
 };
-
+*/
 ///////////////////////////////////////////////////////////////////////////////////////////
 // Quentin
 // Rozdzia³ 4
@@ -3329,144 +3330,6 @@ FUNC VOID DIA_Quentin_EmanuelLife_Info()
         AI_Output (other, self ,"DIA_Quentin_EmanuelLife_15_05"); //Emanuel ¿yje.
         AI_Output (self, other ,"DIA_Quentin_EmanuelLife_03_06"); //To bardzo dobra wiadomoœæ. Dobrze, ¿e jakoœ mu siê uda³o.
     };
-};
-
-//========================================
-//-----------------> MamPiczec
-//========================================
-
-INSTANCE DIA_Quentin_MamPiczec (C_INFO)
-{
-   npc          = BAN_1610_Quentin;
-   nr           = 1;
-   condition    = DIA_Quentin_MamPiczec_Condition;
-   information  = DIA_Quentin_MamPiczec_Info;
-   permanent	= FALSE;
-   description	= "Mam pieczêæ z zaklêciem.";
-};
-
-FUNC INT DIA_Quentin_MamPiczec_Condition()
-{
-    if (Npc_HasItems (other, ItMa_RuneBandit) >=1)
-    && (Npc_KnowsInfo (hero, DIA_Cronos_GiveMeRune))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Quentin_MamPiczec_Info()
-{
-    AI_Output (other, self ,"DIA_Quentin_MamPiczec_15_01"); //Mam pieczêæ z zaklêciem.
-    AI_Output (self, other ,"DIA_Quentin_MamPiczec_03_02"); //Teraz musisz jej u¿yæ.
-    AI_Output (other, self ,"DIA_Quentin_MamPiczec_15_03"); //Dobra. ChodŸcie za mn¹. U¿yjê jej przed Obozem.
-    AI_Output (self, other ,"DIA_Quentin_MamPiczec_03_04"); //A co je¿eli trole rzuc¹ siê i na nas?
-    AI_Output (other, self ,"DIA_Quentin_MamPiczec_15_05"); //To wyprujemy im flaki. W czym problem?
-    AI_Output (self, other ,"DIA_Quentin_MamPiczec_03_06"); //Dobra, zostawmy ten temat.
-    AI_Output (self, other ,"DIA_Quentin_MamPiczec_03_07"); //ProwadŸ i postaraj siê nas nie pozabijaæ.
-    B_LogEntry                     (CH4_GardistsInBC,"Muszê podejœæ jak najbli¿ej Obozu i u¿yæ czaru. Potem zostanie nam ju¿ tylko obserwowaæ i pozbyæ siê tego, co zostanie po tym starciu.");
-    B_ExchangeRoutine (BAN_1610_Quentin , "atak");
-    B_ExchangeRoutine (BAN_1603_Martin , "atak");
-    B_ExchangeRoutine (BAN_1606_Josh , "atak");
-    B_ExchangeRoutine (BAN_1604_Jens , "atak");
-    B_ExchangeRoutine (NON_2702_SZEFU , "atak");
-    Npc_ExchangeRoutine (NON_2705_Rakus,"burdel");
-    Npc_ExchangeRoutine (NON_2703_MYSLIWY,"burdel");  
-	//***FIX****
-	Npc_ExchangeRoutine (BAN_1614_Drax, "ded");
-	CreateInvItems (BAN_1614_Drax, ItMi_Listdraxa,1);
-	B_KillNpc (BAN_1614_Drax);
-	AI_StopProcessInfos	(self);
-};
-
-//========================================
-//-----------------> UseCZAr
-//========================================
-
-INSTANCE DIA_Quentin_UseCZAr (C_INFO)
-{
-   npc          = BAN_1610_Quentin;
-   nr           = 2;
-   condition    = DIA_Quentin_UseCZAr_Condition;
-   information  = DIA_Quentin_UseCZAr_Info;
-   permanent	= FALSE;
-   description	= "U¿y³em czaru.";
-};
-
-FUNC INT DIA_Quentin_UseCZAr_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Cronos_GiveMeRune))
-    && (HeroUseRuneB == true)
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Quentin_UseCZAr_Info()
-{
-    AI_Output (other, self ,"DIA_Quentin_UseCZAr_15_01"); //U¿y³em czaru.
-    AI_Output (self, other ,"DIA_Quentin_UseCZAr_03_02"); //ChodŸmy dalej do Obozu. Zobaczymy co zosta³o ze Stra¿ników.
-    AI_Output (self, other ,"DIA_Quentin_UseCZAr_03_03"); //Trzeba bêdzie siê te¿ pozbyæ naszych w³ochatych przyjació³.
-    B_LogEntry                     (CH4_GardistsInBC,"U¿y³em pieczêci. Pora udaæ siê do naszego Obozu i sprawdziæ co siê sta³o.");
-
-    B_GiveXP (200);
-    AI_StopProcessInfos	(self);
-};
-//========================================
-//-----------------> DedALlQuent
-//========================================
-
-INSTANCE DIA_Quentin_DedALlQuent (C_INFO)
-{
-   npc          = BAN_1610_Quentin;
-   nr           = 2;
-   condition    = DIA_Quentin_DedALlQuent_Condition;
-   information  = DIA_Quentin_DedALlQuent_Info;
-   permanent	= FALSE;
-   important	 = true;
-};
-
-FUNC INT DIA_Quentin_DedALlQuent_Condition()
-{
-    if (Npc_KnowsInfo (hero, DIA_Quentin_UseCZAr))
-    && (HeroUseRuneB == true) 
-	&& (Npc_IsDead(GRD_2280_Stra¿nik))
-    && (Npc_IsDead(GRD_2281_Stra¿nik))
-    && (Npc_IsDead(GRD_2282_Stra¿nik))
-    && (Npc_IsDead(GRD_2283_Stra¿nik))
-    && (Npc_IsDead(GRD_2284_Stra¿nik))
-    {
-    return TRUE;
-    };
-};
-
-
-FUNC VOID DIA_Quentin_DedALlQuent_Info()
-{
-	CreateInvItem		(hero, BAU_ARMOR_H);
-	
-	CreateInvItem		(self, ItAmArrow);
-	B_GiveInvItems      (self, hero, ItAmArrow, 1);
-	Npc_RemoveInvItem	(hero, ItAmArrow);
-    AI_Output (other, self ,"DIA_Quentin_DedALlQuent_15_01"); //Pokonaliœmy ich.
-    AI_Output (self, other ,"DIA_Quentin_DedALlQuent_03_02"); //Wszystko siê uda³o! Dobra robota!
-    AI_Output (self, other ,"DIA_Quentin_DedALlQuent_03_03"); //Myœlê, ¿e zas³u¿y³eœ ju¿ na lepszy pancerz. Niech ci dobrze s³u¿y.
-    B_LogEntry                     (CH4_GardistsInBC,"Pozbyliœmy siê troli grasuj¹cych po Obozie. Wszystko przebieg³o zgodnie z planem.");
-    Log_SetTopicStatus       (CH4_GardistsInBC, LOG_SUCCESS);
-    MIS_GardistsInBC = LOG_SUCCESS;
-	Npc_ExchangeRoutine (self,"start");
-    Npc_ExchangeRoutine (BAN_1603_Martin , "start");
-    Npc_ExchangeRoutine (BAN_1606_Josh , "start");
-    Npc_ExchangeRoutine (BAN_1604_Jens , "start");
-    Npc_ExchangeRoutine (NON_2702_SZEFU , "wait");
-	Npc_ExchangeRoutine (BAN_1605_Rocky , "start");
-	Npc_ExchangeRoutine (NON_2703_MYSLIWY , "wait");
-	Npc_ExchangeRoutine (NON_2705_Rakus , "wait");
-	Npc_ExchangeRoutine (NON_2706_osko , "lowcaPoszukiwaczy");
-    B_GiveXP (1000);
-	AI_EquipBestArmor	(hero); 
-    AI_StopProcessInfos	(self);
 };
 
 //========================================

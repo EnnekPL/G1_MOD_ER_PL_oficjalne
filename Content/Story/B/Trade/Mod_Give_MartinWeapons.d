@@ -40,9 +40,17 @@ func void B_GiveMartinItemsCH3 ()
 {
 	var C_NPC npc;
 	npc = Hlp_GetNpc(BAN_1603_Martin);
+	CreateInvItem (npc,ItMw_1H_Warhammer_01); 
+	CreateInvItem (npc,ItMw_1H_Warhammer_02); 
+	CreateInvItem (npc,ItMw_1H_Warhammer_03); 
+	
+	CreateInvItems	(self, ItKeLockpick,30);
 	CreateInvItem	(npc,	ItMw_1H_Sword_Long_01);
 	CreateInvItem	(npc,	ItMw_1H_Sword_Long_02);
 	CreateInvItem	(npc,	ItMw_1H_Sword_Long_03);
+	CreateInvItem	(npc,	ItMw_1H_Sword_Long_04);
+	CreateInvItem	(npc,	ItMw_1H_Sword_Long_04);
+	CreateInvItems	(npc,	ItMw_1H_Sword_Broad_01,1);
 	CreateInvItems (npc,ItMiNugget,400);
 };
 
