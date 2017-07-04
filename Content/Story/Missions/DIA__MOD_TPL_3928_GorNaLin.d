@@ -154,7 +154,7 @@ FUNC INT DIA_HELLO2_POBITY_Condition()
 
 FUNC VOID DIA_HELLO2_POBITY_Info()
 {
-    AI_Output (self, other ,"DIA_HELLO2_POBITY_03_01"); //Jasna cholera! Moja rêka! Beliarze, ile krwi. Daj mi banda¿. SZYBKO!
+    AI_Output (self, other ,"DIA_HELLO2_POBITY_03_01"); //Coœ ty najlepszego narobi³. Rozci¹³eœ mi ca³¹ rêkê!
     AI_Output (other, self ,"DIA_HELLO2_POBITY_15_02"); //To tylko draœniêcie.
     AI_Output (self, other ,"DIA_HELLO2_POBITY_03_03"); //(wyje z bólu) POMÓ¯ MI! Aaagh...
     AI_Output (other, self ,"DIA_HELLO2_POBITY_15_04"); //Pij to.
@@ -188,8 +188,7 @@ INSTANCE DIA_HELLO2_RANA (C_INFO)
 FUNC INT DIA_HELLO2_RANA_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_HELLO2_POBITY))
-    && (Npc_HasItems (other, ItMi_Bandaz40) >=1)
-    || (Npc_HasItems (other, ItMi_Bandaz60) >=1)
+    && ( (Npc_HasItems (other, ItMi_Bandaz40) >=1) || (Npc_HasItems (other, ItMi_Bandaz60) >=1) )
     {
     return TRUE;
     };

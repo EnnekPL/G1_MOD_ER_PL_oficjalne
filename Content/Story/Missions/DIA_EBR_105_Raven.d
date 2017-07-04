@@ -163,7 +163,7 @@ FUNC int DIA_Raven_EnterFireNov_Condition()
 {
 	if (Npc_KnowsInfo(hero,DIA_Torrez_NOWICJUSZ)) && (Npc_HasItems (other, It_glejtmagow) >=1) && (Npc_GetTrueGuild(other) == GIL_NONE) && (Kapitel < 4)
 	{
-		return 1;
+		return 0;
 	};
 };
 

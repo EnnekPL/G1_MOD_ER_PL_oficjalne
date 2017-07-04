@@ -577,9 +577,13 @@ INSTANCE DIA_THORUS_WEJSCIE_RING_FIRE (C_INFO)
 
 FUNC INT DIA_THORUS_WEJSCIE_RING_FIRE_Condition()
 {
+	var C_NPC wache212; wache212 = Hlp_GetNpc(Grd_212_Torwache);
+	var C_NPC wache213; wache213 = Hlp_GetNpc(Grd_213_Torwache);
     if (Npc_HasItems (other, It_FireRing) >=1)
     && (hero.guild == GIL_NONE)
 	&& (kapitel < 4)
+	&& (wache212.aivar[AIV_PASSGATE] == false) 
+	&& (wache213.aivar[AIV_PASSGATE] == false)
     {
     return TRUE;
     };
@@ -740,9 +744,12 @@ INSTANCE Info_Thorus_KdWSiegel (C_INFO)
 
 FUNC INT Info_Thorus_KdWSiegel_Condition()
 {	
+	var C_NPC wache212; wache212 = Hlp_GetNpc(Grd_212_Torwache);
+	var C_NPC wache213; wache213 = Hlp_GetNpc(Grd_213_Torwache);
 	if 	(( (Npc_KnowsInfo(hero, Org_826_Mordrag_Courier))||(Npc_HasItems(other,KdW_Amulett)>=1) )
 		&& (thorus_Amulettgezeigt == FALSE)  && (kapitel < 4)
-		)
+		&& (wache212.aivar[AIV_PASSGATE] == false) 
+		&& (wache213.aivar[AIV_PASSGATE] == false) )
 	{
 		return 1;
 	};
@@ -2342,7 +2349,8 @@ FUNC VOID DIA_THORUS_FlintFindPath_Info()
 
 	// important
 	CanTellToGomezAboutSecretPath = TRUE;
-	
+	Npc_SetTrueGuild (hero, GIL_NONE);
+	hero.guild = GIL_NONE;
     MIS_SayOkylFlintDead = LOG_RUNNING;
 
     //Log_CreateTopic          (CH1_SayOkylFlintDead, LOG_MISSION);

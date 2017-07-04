@@ -308,7 +308,7 @@ FUNC VOID DIA_MagnusOT_HELLO1_Info()
         AI_Output (self, other ,"DIA_MagnusOT_HELLO1_03_06"); //Chcia³em to zrobiæ noc¹. Zasztyletowaæ go w chacie.
         AI_Output (self, other ,"DIA_MagnusOT_HELLO1_03_07"); //Jednak, gdy zjawi³em siê w Bractwie dowiedzia³em siê, ¿e jest w niemal kompletnej ruinie. 
         AI_Output (self, other ,"DIA_MagnusOT_HELLO1_03_08"); //Gor Na Tokasa nie by³o ju¿ w Obozie. Prawie nikogo tam nie by³o. Cor Angar i kilkudziesiêciu wiernych ludzi.
-        AI_Output (self, other ,"DIA_MagnusOT_HELLO1_03_09"); //Za³amany wraca³em do naszego obozu, myœl¹æ jakby tu ze sob¹ skoñczyæ.
+        AI_Output (self, other ,"DIA_MagnusOT_HELLO1_03_09"); //Za³amany wraca³em do naszego obozu, myœl¹c jakby tu ze sob¹ skoñczyæ.
         AI_Output (self, other ,"DIA_MagnusOT_HELLO1_03_10"); //Po drodze spotka³em jednak Lestera, jednego z Nowicjuszy. Powiedzia³, ¿e idzie na spotkanie.
         AI_Output (self, other ,"DIA_MagnusOT_HELLO1_03_11"); //Opowiedzia³em mu o tym, co mi le¿y na sercu, a on wspomnia³ o Œwi¹tyni Œni¹cego, o twoich dokonaniach.
         AI_Output (self, other ,"DIA_MagnusOT_HELLO1_03_12"); //Podziêkowa³em mu i poszed³em ciê szukaæ. Wiedzia³em, ¿e dziêki tobie bêdê mia³ szansê stan¹æ do walki z Tokasem. 

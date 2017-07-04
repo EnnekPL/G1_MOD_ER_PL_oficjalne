@@ -32,7 +32,10 @@ B_KillNpc			(STT_306_Schatten);
 B_ExchangeRoutine	(STT_314_Schatten, "ded");
 B_KillNpc			(STT_314_Schatten);
 
+if (!Npc_knowsinfo (hero, DIA_Abel_Win))
+{
 B_KillNpc			(VLK_7003_Abel);
+};
 
 B_ExchangeRoutine	(GRD_7001_Artegor, "stay");
 B_ChangeGuild    (GRD_7001_Artegor,GIL_NONE);  

@@ -641,6 +641,7 @@ FUNC VOID B_Kapitelwechsel (VAR INT neues_Kapitel)
 		Npc_ExchangeRoutine (ORG_869_Raeuber,"pupil");
 		
 		//---------------Cavalorn-------------------------
+		EquipItem			(NON_3071_Vart, VartSword);
 		NPC_ExchangeRoutine (NON_3071_Vart,"ded");  
 		B_KillNpc			(NON_3071_Vart);
 		Wld_InsertNpc				(NON_4005_MadNovize,"POGAN1");	

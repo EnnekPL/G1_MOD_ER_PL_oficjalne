@@ -338,6 +338,8 @@ FUNC VOID DIA_Abel_Win_Info()
 	B_LogEntry			(CH1_GhoransVine, "Abel w jednym kawa³ku zwia³ z obozu. Mam siê z nim spotkaæ w Bractwie. Ciekawe co powie Ghoran na takiego wspólnika.");
 	B_GiveXP (150);
 };
+
+//wy³¹czone
 //========================================
 //-----------------> UCIECZKA
 //========================================
@@ -356,7 +358,7 @@ FUNC INT DIA_Abel_UCIECZKA_Condition()
 {
     if (Kapitel == 4)
     {
-    return TRUE;
+    return FALSE;
     };
 };
 

@@ -572,6 +572,8 @@ FUNC VOID DIA_Cavalorn_WhereIsVart_Info()
     Log_CreateTopic          (CH4_VartSeeking, LOG_MISSION);
     Log_SetTopicStatus       (CH4_VartSeeking, LOG_RUNNING);
     B_LogEntry               (CH4_VartSeeking,"Cavalorn nie ma pojêcia, gdzie znajduje siê Vart. Mo¿liwe, ¿e uciek³ b¹dŸ zgubi³ siê w lesie.");
+	
+	
 };
 
 //========================================

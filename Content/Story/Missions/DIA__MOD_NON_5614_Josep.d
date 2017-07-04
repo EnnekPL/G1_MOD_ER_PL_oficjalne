@@ -288,7 +288,7 @@ FUNC INT DIA_Josep_Camp_Condition()
 FUNC VOID DIA_Josep_Camp_Info()
 {
     AI_Output (self, other ,"DIA_Josep_Camp_03_01"); //Jesteœmy na miejscu! Jestem ci cholernie wdziêczny za pomoc. 
-	AI_Output (self, other ,"DIA_Josep_Camp_03_02"); //Postaram ci siê to jakoœ wynagrodziæ w przysz³oœci. W ci¹gu kilku tygdoni powinienem siê odkuæ i zarobiæ sporo rudy.
+	AI_Output (self, other ,"DIA_Josep_Camp_03_02"); //Postaram ci siê to jakoœ wynagrodziæ w przysz³oœci. W ci¹gu kilku tygodni powinienem siê odkuæ i zarobiæ sporo rudy.
 	AI_Output (self, other ,"DIA_Josep_Camp_03_03"); //Niestety te bandziory zabra³y mi wszystko co mia³em.
 	AI_Output (other, self ,"DIA_Josep_Camp_15_04"); //W porz¹dku. Wynagrodzenie od Alexa powinno wystarczyæ na jakiœ czas.
 

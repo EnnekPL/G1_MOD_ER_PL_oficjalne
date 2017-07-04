@@ -839,7 +839,7 @@ instance KDW_600_Saturas_KDWAUFNAHME (C_INFO)
 
 FUNC int  KDW_600_Saturas_KDWAUFNAHME_Condition()
 {	
-	if (Npc_KnowsInfo (hero,KDW_600_Saturas_OATH)) || (Npc_KnowsInfo (hero,KDW_600_Saturas_WannaMage_Run))
+	if (Npc_KnowsInfo (hero,KDW_600_Saturas_OATH)) 
 	{
 		return TRUE;
 	};
@@ -863,33 +863,73 @@ func void  KDW_600_Saturas_KDWAUFNAHME_Info()
 	
 	AI_Output			(self, other,"KDW_600_Saturas_KDWAUFNAHME_Info_14_15"); //Po kostur zg³oœ siê do Nefariusa. 
 
-	if (kapitel >= 4)
-	{
 	CreateInvItem		(self,KDW_ARMOR_L);
 	B_GiveInvItems		(self,other,KDW_ARMOR_L,1);
 	AI_EquipBestArmor	(hero);
-	}
-	else
-	{
-	CreateInvItem		(self,KDW_ARMOR_L_MOD);
-	B_GiveInvItems		(self,other,KDW_ARMOR_L_MOD,1);
-	AI_EquipBestArmor	(hero);
-	Saturas_give_weak_armor = true;
-	};
 	
 	Snd_Play  			("MFX_Heal_Cast"); 
 	Npc_SetTrueGuild	(hero,GIL_KDW);
 	hero.guild = GIL_KDW;
 	//HeroJoinToNC ();
-	if (Npc_KnowsInfo (hero,KDW_600_Saturas_OATH))
-	{
 	B_LogEntry			(CH4_BannedFromOC,	"Do³¹czy³em do Magów Wody. Od tej chwili uzyska³em dostêp do obydwu szkó³ magii."); 
 	Log_SetTopicStatus	(CH4_BannedFromOC,	LOG_SUCCESS);
-	};
 	
-	B_LogEntry			(GE_BecomeWatermage,"Cronos przyj¹³ mnie w poczet Magów Wody.");	
+	B_LogEntry			(GE_BecomeWatermage,"Saturas przyj¹³ mnie w poczet Magów Wody.");	
 	AI_StopProcessInfos	(self);
 };
+
+/*------------------------------------------------------------------------
+//							KDWAUFNAHME_CH2									//
+------------------------------------------------------------------------*/
+instance KDW_600_Saturas_KDWAUFNAHME_CH2 (C_INFO)
+{
+	npc				= KDW_600_Saturas;
+	condition		= KDW_600_Saturas_KDWAUFNAHME_CH2_Condition;
+	information		= KDW_600_Saturas_KDWAUFNAHME_CH2_Info;
+	important		= 0;
+	permanent		= 0;
+	description		= "Jestem gotów do z³o¿enia œlubów"; 
+};
+
+FUNC int  KDW_600_Saturas_KDWAUFNAHME_CH2_Condition()
+{	
+	if (Npc_KnowsInfo (hero,KDW_600_Saturas_WannaMage_Run)) && (Npc_GetTrueGuild(hero)==GIL_ORG) 
+	{
+		return TRUE;
+	};
+};
+func void  KDW_600_Saturas_KDWAUFNAHME_CH2_Info()
+{
+	
+	AI_GotoNpc 			(hero,self);	
+	AI_Output			(other, self,"KDW_600_Saturas_KDWAUFNAHME_Info_15_01"); //Jestem gotów do z³o¿enia œlubów.
+	AI_Output			(self, other,"KDW_600_Saturas_KDWAUFNAHME_Info_14_03"); //Powtarzaj za mn¹ s³owa przysiêgi:
+	AI_Output			(self, other,"KDW_600_Saturas_KDWAUFNAHME_Info_14_04"); //Przysiêgam, na wszechmocnych bogów...
+	AI_Output			(other, self,"KDW_600_Saturas_KDWAUFNAHME_Info_15_05"); //Przysiêgam, na wszechmocnych bogów...
+	AI_Output			(self, other,"KDW_600_Saturas_KDWAUFNAHME_Info_14_06"); //...Przysiêgam, na potêgê œwiêtej Wody...
+	AI_Output			(other, self,"KDW_600_Saturas_KDWAUFNAHME_Info_15_07"); //...Przysiêgam, na potêgê œwiêtej Wody...
+	AI_Output			(self, other,"KDW_600_Saturas_KDWAUFNAHME_Info_14_08"); //...¯e ma wiedza i me czyny teraz i na wieki stanowiæ bêd¹ jednoœæ z Wod¹...
+	AI_Output			(other, self,"KDW_600_Saturas_KDWAUFNAHME_Info_15_09"); //...¯e ma wiedza i me czyny teraz i na wieki stanowiæ bêd¹ jednoœæ z Wod¹...
+	AI_Output			(self, other,"KDW_600_Saturas_KDWAUFNAHME_Info_14_10"); //...Dopóki me cia³o nie powróci do królestwa Beliara, gdy Ÿród³o mego ¿ycia wyschnie.
+	AI_Output			(other, self,"KDW_600_Saturas_KDWAUFNAHME_Info_15_11"); //...Dopóki me cia³o nie powróci do królestwa Beliara, gdy Ÿród³o mego ¿ycia wyschnie.
+	
+	AI_Output			(self, other,"KDW_600_Saturas_KDWAUFNAHME_Info_14_14"); //Noœ tê szatê, jako symbol twojego przymierza ze œwiêt¹ Wod¹ i wszechmocnym Adanosem.
+	
+	AI_Output			(self, other,"KDW_600_Saturas_KDWAUFNAHME_Info_14_15"); //Po kostur zg³oœ siê do Nefariusa. 
+
+
+	CreateInvItem		(self,KDW_ARMOR_L_MOD);
+	B_GiveInvItems		(self,other,KDW_ARMOR_L_MOD,1);
+	AI_EquipBestArmor	(hero);
+	Saturas_give_weak_armor = true;
+	
+	Snd_Play  			("MFX_Heal_Cast"); 
+	Npc_SetTrueGuild	(hero,GIL_KDW);
+	hero.guild = GIL_KDW;
+	
+	B_LogEntry			(GE_BecomeWatermage,"Saturas przyj¹³ mnie w poczet Magów Wody.");	
+};
+
 /*------------------------------------------------------------------------
 						DIE MAGISCHEN KREISE							
 ------------------------------------------------------------------------*/

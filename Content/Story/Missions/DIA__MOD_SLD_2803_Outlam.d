@@ -409,6 +409,10 @@ FUNC VOID DIA_Outlam_KOCIOL_Info()
     if (Npc_KnowsInfo (hero, DIA_Cyrus_DOSTAWY))
     {
         AI_Output (self, other ,"DIA_Outlam_KOCIOL_03_02"); //Cyrus kaza³ mi na ciebie uwa¿aæ. Mówi³, ¿e o to spytasz! OdejdŸ.
+		
+		B_LogEntry         (CH1_Scams,"Cyrus dowiedzia³ siê, ¿e wêszê i namówi³ przeciwko mnie swoich towarzyszy. Nie mam szans na wykonanie tego zadania.");
+		Log_SetTopicStatus (CH1_Scams, LOG_FAILED);
+		MIS_Scams = LOG_FAILED;
     }
     else
     {

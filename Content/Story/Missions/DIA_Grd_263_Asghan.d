@@ -206,6 +206,7 @@ FUNC INT DIA_Asghan_PIJACZEK_Condition()
 {
     if (Npc_KnowsInfo (hero, DIA_GorNaBar_SZPIEG))
 	&& (AsUpity == false)
+	&& (CorKalom_BringMCQBalls == LOG_RUNNING) 
     {
     return TRUE;
     };
@@ -267,6 +268,7 @@ FUNC INT DIA_Asghan_SZPIEG2_Condition()
 {
     if (AsUpity == true)
     && (Npc_HasItems (other, ItFoBeer) >=1)
+	&& (CorKalom_BringMCQBalls == LOG_RUNNING) 
     {
     return TRUE;
     };

@@ -134,7 +134,7 @@ INSTANCE DIA_GorNaBar_SZPIEG (C_INFO)
 
 FUNC INT DIA_GorNaBar_SZPIEG_Condition()
 {
-    if (MIS_PSIcampWORK == LOG_RUNNING)
+    if (MIS_PSIcampWORK == LOG_RUNNING) && (CorKalom_BringMCQBalls == LOG_RUNNING) 
     {
     return TRUE;
     };

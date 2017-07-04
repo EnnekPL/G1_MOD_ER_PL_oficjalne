@@ -10,7 +10,7 @@ instance KDF_405_Torrez (Npc_Default)
 	id 			=	405;
 	
 	//-------- abilities --------
-	attribute[ATR_STRENGTH] 	= 40;
+	attribute[ATR_STRENGTH] 	= 50;
 	attribute[ATR_DEXTERITY] 	= 40;
 	attribute[ATR_MANA_MAX] 	= 85;
 	attribute[ATR_MANA] 		= 85;

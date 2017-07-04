@@ -49,7 +49,7 @@ INSTANCE PC_Hero(NPC_DEFAULT)
 	//------------------------------
 	
 	//--------- abilities --------
-	attribute[ATR_STRENGTH] 	=	5;     
+	attribute[ATR_STRENGTH] 	=	10;     
 	attribute[ATR_DEXTERITY] 	=	10;     
 	attribute[ATR_MANA_MAX] 	=	10;
 	attribute[ATR_MANA] 		=	10;

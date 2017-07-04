@@ -85,7 +85,7 @@ FUNC int DIA_Gomez_Hello_Condition()
 FUNC VOID DIA_Gomez_Hello_Info()
 {
 	AI_Output (other, self,"DIA_Gomez_Hello_15_00"); //Przychodzê zaoferowaæ swoje us³ugi.
-	if (Npc_GetTrueGuild(hero) == GIL_SFB) || (Npc_GetTrueGuild(hero) == GIL_NONE) || (Npc_GetTrueGuild(hero) == GIL_VLK)
+	if (Npc_GetTrueGuild(hero) == GIL_NONE) || (Npc_GetTrueGuild(hero) == GIL_VLK)
 	{
 	AI_Output (self, other,"DIA_Gomez_Hello_11_01"); //A dlaczego myœlisz, ¿e potrzebujê twoich us³ug?
 	
@@ -338,7 +338,8 @@ instance DIA_Gomez_Dabei (C_INFO)
 FUNC int DIA_Gomez_Dabei_Condition()
 {
 	if	(gomez_kontakte >= 4)
-	&&	((Npc_GetTrueGuild(hero) == GIL_NONE) || (Npc_GetTrueGuild(hero) == GIL_VLK) || (CanTellToGomezAboutSecretPath == TRUE))
+	&&	((Npc_GetTrueGuild(hero) == GIL_NONE) || (Npc_GetTrueGuild(hero) == GIL_VLK) ) //|| (CanTellToGomezAboutSecretPath == TRUE)
+	&& (kapitel == 1)
 	{
 		return 1;
 	};

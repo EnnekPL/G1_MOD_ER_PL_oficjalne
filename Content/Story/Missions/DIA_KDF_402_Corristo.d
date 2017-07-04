@@ -293,7 +293,7 @@ instance  KDF_402_Corristo_KDFTEST (C_INFO)
 
 FUNC int  KDF_402_Corristo_KDFTEST_Condition()
 {	
-	if (Corristo_KDFAufnahme == 1)
+	if (Corristo_KDFAufnahme == 1) && (Npc_GetTrueGuild(hero) == GIL_STT)
 	{
 		return TRUE;
 	};
@@ -425,6 +425,7 @@ FUNC int  KDF_402_Corristo_AUFNAHME_Condition()
 {	
 	if ( Npc_GetDistToWp (hero,"OCC_CHAPEL_UPSTAIRS") < 500)
 	&& (Corristo_KDFAufnahme == 4)
+	&& (Npc_GetTrueGuild(hero) == GIL_STT)
 	{
 		return TRUE;
 	};
@@ -462,6 +463,7 @@ instance KDF_402_Corristo_ROBE (C_INFO)
 FUNC int  KDF_402_Corristo_ROBE_Condition()
 {	
 	if (Npc_KnowsInfo (hero,KDF_402_Corristo_AUFNAHME))
+	&& (Npc_GetTrueGuild(hero) == GIL_STT)
 	{
 		return TRUE;
 	};

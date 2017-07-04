@@ -95,7 +95,7 @@ INSTANCE ItMwPickaxe (C_Item)
 
 	value 				=	4;
 
-	damageTotal			= 	7;
+	damageTotal			= 	12;
 	damagetype			=	DAM_EDGE;
 	range    			=  	100;		
 
@@ -289,7 +289,7 @@ INSTANCE ItMw_2H_Axe_Big_01 (C_Item) //w starym wozie za so, u fiska
 
 	value 				=	40;//900;//454
 	
-	damageTotal			= 	13;
+	damageTotal			= 	16;
 	damagetype			=	DAM_EDGE;
 	range    			=  	150;		
 
@@ -400,7 +400,7 @@ INSTANCE ItMw_2H_Axe_Big_02 (C_Item) //las ko³o so
 
 	value 				=	130;//900;//454
 	
-	damageTotal			= 	15;
+	damageTotal			= 	19;
 	damagetype			=	DAM_EDGE;
 	range    			=  	150;		
 
@@ -456,7 +456,7 @@ INSTANCE ItMw_2H_Sword_Old_02 (C_Item) //handlarze
 
 	value 				=	160;//900;//454
 	
-	damageTotal			= 	18;
+	damageTotal			= 	20;
 	damagetype			=	DAM_EDGE;
 	range    			=  	150;		
 
@@ -624,7 +624,7 @@ INSTANCE ItMw_2H_Axe_Big_03 (C_Item) //las - most
 
 	value 				=	200;//900;//454
 	
-	damageTotal			= 	22;
+	damageTotal			= 	23;
 	damagetype			=	DAM_EDGE;
 	range    			=  	160;		
 
@@ -768,7 +768,7 @@ INSTANCE ItMw_2H_Sword_New_01 (C_Item) //handlarze
 
 	value 				=	200;//900;//454
 	
-	damageTotal			= 	26;
+	damageTotal			= 	29;
 	damagetype			=	DAM_EDGE;
 	range    			=  	150;		
 
@@ -930,7 +930,7 @@ INSTANCE ItMw_2H_Axe_Big_04 (C_Item) //handlarze, stara kopalnia
 
 	value 				=	200;//900;//454
 	
-	damageTotal			= 	29;
+	damageTotal			= 	30;
 	damagetype			=	DAM_EDGE;
 	range    			=  	160;		
 
@@ -1086,7 +1086,7 @@ INSTANCE ItMw_2H_Axe_Big_05 (C_Item) //huan r2
 
 	value 				=	350;//900;//454
 	
-	damageTotal			= 	34;
+	damageTotal			= 	38;
 	damagetype			=	DAM_EDGE;
 	range    			=  	160;		
 
@@ -1140,7 +1140,7 @@ INSTANCE ItMw_2h_Axe_Lumber_01 (C_Item) //jaskinia goblinów
 
 	value 				=	400;
 	
-	damageTotal			= 	35;
+	damageTotal			= 	40;
 	damagetype			=	DAM_EDGE;
 	range    			=  	130;		
 
@@ -1358,7 +1358,7 @@ INSTANCE ItMw_2H_Sword_New_02 (C_Item) //cmentarzysko orków
 
 	value 				=	400;//900;//454
 	
-	damageTotal			= 	34;
+	damageTotal			= 	42;
 	damagetype			=	DAM_EDGE;
 	range    			=  	160;		
 

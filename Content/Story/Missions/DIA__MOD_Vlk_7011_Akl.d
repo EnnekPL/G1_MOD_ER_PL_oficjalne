@@ -204,3 +204,68 @@ FUNC VOID DIA_Kopacz_AngryBezio_Info()
 	AI_StopProcessInfos	(self);
 };
 
+// **************************************************
+//	Watch out
+// **************************************************
+INSTANCE DIA_Akl_WatchOut (C_INFO)
+{
+	npc				= VLK_7011_Kopacz;
+	nr				= 2;
+	condition		= DIA_Akl_WatchOut_Condition;
+	information		= DIA_Akl_WatchOut_Info;
+	permanent		= 0;
+	important		= 1;
+};
+
+FUNC INT DIA_Akl_WatchOut_Condition()
+{	
+	if	Npc_KnowsInfo(hero, DIA_Claw_MIX_MAX_HEAL) && (Npc_GetDistToWP (hero, "OW_PATH_265") < 1000)
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_Akl_WatchOut_Info()
+{
+	
+	AI_Output (self,other,"DIA_Akl_WatchOut_09_01"); //Ej ty, uwa¿aj!
+};
+
+// **************************************************
+//	What are u doing
+// **************************************************
+INSTANCE DIA_Akl_WhatsWrong (C_INFO)
+{
+	npc				= VLK_7011_Kopacz;
+	nr				= 2;
+	condition		= DIA_Akl_WhatsWrong_Condition;
+	information		= DIA_Akl_WhatsWrong_Info;
+	permanent		= 0;
+	important		= 0;
+	description		= "Szukasz czegoœ?";
+};
+
+FUNC INT DIA_Akl_WhatsWrong_Condition()
+{	
+	if	Npc_KnowsInfo(hero, DIA_Akl_WatchOut)
+	{
+		return TRUE;
+	};
+};
+
+FUNC VOID DIA_Akl_WhatsWrong_Info()
+{
+	AI_Output (other,self,"DIA_Akl_WhatsWrong_15_00"); //Szukasz czegoœ?
+	AI_Output (self,other,"DIA_Akl_WhatsWrong_09_01"); //Szukam skarbów.
+	AI_Output (other,self,"DIA_Akl_WhatsWrong_15_02"); //Jakich skarbów?
+	AI_Output (self,other,"DIA_Akl_WhatsWrong_09_03"); //Nie wiem no... Zale¿y co wpadnie w rêce. 
+	AI_Output (self,other,"DIA_Akl_WhatsWrong_09_04"); //Ostatnio znalaz³em w trawie dziwny napój. Matt odkupi³ go ode mnie za 30 bry³ek rudy.
+	
+	B_LogEntry                     (CH1_RannyWojownik,"Kopacz Akl znalaz³ niepodal lasu tajemniczy napój i sprzeda³ go Mattowi. To mo¿e byæ mikstura, o której mówi³ mi Claw.");
+
+    B_GiveXP (50);
+	
+	Npc_ExchangeRoutine (VLK_7011_kopacz,"start");
+	
+	AI_StopProcessInfos	(self);
+};

@@ -258,7 +258,7 @@ func void TPL_1402_GorNaToth_ARMOR_H ()
 	{
 		AI_Output			(self, hero,"Info_GorNaToth_ARMOR_H_11_02"); //Nie jesteœ jeszcze wystarczaj¹co doœwiadczony. Udowodnij swoj¹ przydatnoœæ dla naszej spo³ecznoœci, a dost¹pisz zaszczytu noszenia tak wspania³ego pancerza.
 	}
-	else if (Npc_HasItems(hero, ItMiNugget)>=VALUE_TPL_ARMOR_H)
+	else if (Npc_HasItems(hero, ItMiNugget)<VALUE_TPL_ARMOR_H)
 	{
 		AI_Output			(self, hero,"Info_GorNaToth_ARMOR_H_11_03"); //Widzê, ¿e jesteœ ju¿ gotów, by nosiæ tê wspania³¹ zbrojê. Gdybyœ tylko mia³ doœæ rudy, by wspomóc nasz¹ ma³¹ spo³ecznoœæ jakimœ hojnym datkiem...
 	}
@@ -345,7 +345,7 @@ func void TPL_1402_GorNaToth_Teach_BACK()
 
 func void TPL_1402_GorNaToth_Teach_STR_1()
 {
-	B_BuyAttributePoints(other, ATR_STRENGTH, LPCOST_ATTRIBUTE_STRENGTH);
+	Mod_KupAtrybut (hero, ATR_STRENGTH, 1);
 	Info_ClearChoices	(TPL_1402_GorNaToth_Teach);
 	Info_AddChoice		(TPL_1402_GorNaToth_Teach,DIALOG_BACK									,TPL_1402_GorNaToth_Teach_BACK);
 	Info_AddChoice		(TPL_1402_GorNaToth_Teach,B_BuildLearnString(NAME_LearnStrength_5,5*LPCOST_ATTRIBUTE_STRENGTH,0)			,TPL_1402_GorNaToth_Teach_STR_5);
@@ -358,7 +358,7 @@ func void TPL_1402_GorNaToth_Teach_STR_1()
 
 func void TPL_1402_GorNaToth_Teach_STR_5()
 {
-	B_BuyAttributePoints(other, ATR_STRENGTH, 5*LPCOST_ATTRIBUTE_STRENGTH);
+	Mod_KupAtrybut (hero, ATR_STRENGTH, 5);
 	Info_ClearChoices	(TPL_1402_GorNaToth_Teach);
 	Info_AddChoice		(TPL_1402_GorNaToth_Teach,DIALOG_BACK									,TPL_1402_GorNaToth_Teach_BACK);
 	Info_AddChoice		(TPL_1402_GorNaToth_Teach,B_BuildLearnString(NAME_LearnStrength_5,5*LPCOST_ATTRIBUTE_STRENGTH,0)			,TPL_1402_GorNaToth_Teach_STR_5);
@@ -371,7 +371,7 @@ func void TPL_1402_GorNaToth_Teach_STR_5()
 
 func void TPL_1402_GorNaToth_Teach_DEX_1()
 {
-	B_BuyAttributePoints(other, ATR_DEXTERITY, LPCOST_ATTRIBUTE_DEXTERITY);
+	Mod_KupAtrybut (hero, ATR_DEXTERITY, 1);
 	Info_ClearChoices	(TPL_1402_GorNaToth_Teach);
 	Info_AddChoice		(TPL_1402_GorNaToth_Teach,DIALOG_BACK									,TPL_1402_GorNaToth_Teach_BACK);
 	Info_AddChoice		(TPL_1402_GorNaToth_Teach,B_BuildLearnString(NAME_LearnStrength_5,5*LPCOST_ATTRIBUTE_STRENGTH,0)			,TPL_1402_GorNaToth_Teach_STR_5);
@@ -384,7 +384,7 @@ func void TPL_1402_GorNaToth_Teach_DEX_1()
 
 func void TPL_1402_GorNaToth_Teach_DEX_5()
 {
-	B_BuyAttributePoints(other, ATR_DEXTERITY, 5*LPCOST_ATTRIBUTE_DEXTERITY);
+	Mod_KupAtrybut (hero, ATR_DEXTERITY, 5);
 	Info_ClearChoices	(TPL_1402_GorNaToth_Teach);
 	Info_AddChoice		(TPL_1402_GorNaToth_Teach,DIALOG_BACK									,TPL_1402_GorNaToth_Teach_BACK);
 	Info_AddChoice		(TPL_1402_GorNaToth_Teach,B_BuildLearnString(NAME_LearnStrength_5,5*LPCOST_ATTRIBUTE_STRENGTH,0)			,TPL_1402_GorNaToth_Teach_STR_5);

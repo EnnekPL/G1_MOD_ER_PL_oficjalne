@@ -247,7 +247,7 @@ INSTANCE DIA_Cronos_JosepAmulet (C_INFO)
 
 FUNC INT DIA_Cronos_JosepAmulet_Condition()
 {
-    if (Npc_HasItems (other, JosepSamulet) >=1)
+    if (Npc_HasItems (other, JosepSamulet) >=1) && (kapitel == 10)
     {
     return TRUE;
     };

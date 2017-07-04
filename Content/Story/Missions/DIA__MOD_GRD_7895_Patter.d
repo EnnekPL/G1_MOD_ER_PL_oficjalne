@@ -146,7 +146,7 @@ FUNC VOID DIA_Patter_TEACH_Info()
     {
         AI_Output (self, other ,"DIA_Patter_TEACH_03_02"); //Wielu rzeczy. Co konkretnie chcesz wiedzieæ?
 		 Info_ClearChoices		(DIA_Patter_TEACH);
-	 Info_AddChoice		(DIA_Patter_TEACH, "Wróæ", DIA_Patter_TEACH_Back);
+	 Info_AddChoice		(DIA_Patter_TEACH, DIALOG_BACK, DIA_Patter_TEACH_Back);
     Info_AddChoice		(DIA_Patter_TEACH, "Usuwanie miêsa topielców (150 bry³ek rudy, 1 punkt nauki)", DIA_Patter_TEACH_LurkerMeat);
     Info_AddChoice		(DIA_Patter_TEACH, "Usuwanie w¹troby kretoszczurów (50 bry³ek rudy, 1 punkt nauki)", DIA_Patter_TEACH_MoleratW);
     Info_AddChoice		(DIA_Patter_TEACH, "Usuwanie sad³a kretoszczurów (50 bry³ek rudy, 1 punkt nauki)", DIA_Patter_TEACH_MoleratT);

@@ -105,7 +105,10 @@ INSTANCE DIA_Fingers_Lehrer (C_INFO)
 
 FUNC INT DIA_Fingers_Lehrer_Condition()
 {	
-	if (Fingers_CanTeach == TRUE)
+	if (Fingers_CanTeach == TRUE) 
+	|| (Npc_GetTrueGuild (hero) == GIL_STT)
+	|| (Npc_GetTrueGuild (hero) == GIL_GRD)
+	|| (Npc_GetTrueGuild (hero) == GIL_KDF) 
 	{
 		return 1;	
 	};

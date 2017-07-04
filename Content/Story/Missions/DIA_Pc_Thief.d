@@ -81,7 +81,7 @@ FUNC VOID Info_Diego_Gamestart_Info()
 	Wld_SendTrigger ("EVT_OW_STARTLOCKOUT_MOVER"); 
 	Info_ClearChoices(Info_Diego_Gamestart );
 	Info_AddChoice	 (Info_Diego_Gamestart, "Zosta³em przy³apany na kradzie¿y ³adunku rudy. (+5 zrêcznoœæ)"	,Info_Diego_Gamestart_Choice_Dex);
-	Info_AddChoice	 (Info_Diego_Gamestart, "Mia³em ma³¹ sprzeczkê ze stra¿nikiem królewskim. (+5 si³a)"				,Info_Diego_Gamestart_Choice_Str);
+	Info_AddChoice	 (Info_Diego_Gamestart, "Mia³em ma³¹ sprzeczkê ze stra¿nikiem królewskim. (+2 si³a)"				,Info_Diego_Gamestart_Choice_Str);
 	Info_AddChoice	 (Info_Diego_Gamestart, "Królowi nie spodoba³y siê moje pogl¹dy.  (+10 mana)"				,Info_Diego_Gamestart_Choice_Man);
 	Info_AddChoice	 (Info_Diego_Gamestart, "Za niewinnoœæ.  (+2 do wszystkich atrybutów)"	,Info_Diego_Gamestart_Choice_All);
 };
@@ -101,8 +101,8 @@ FUNC VOID Info_Diego_Gamestart_Choice_Str()
 	AI_Output(hero,self,"CM_Info_Diego_Gamestart_Choice_Str_15_00"); //Ujmê to tak: jeden z tych królewskich przydupasów mia³ trochê za d³ugi jêzyk.
 	AI_Output(hero,self,"CM_Info_Diego_Gamestart_Choice_Str_15_01"); //O wiele za d³ugi. 	
 	//PrintScreen	("Si³a +3", -1,-1,"FONT_OLD_20_WHITE.TGA",3);
-	PrintS_Ext ("Si³a + 5",COL_Yellow) ;
-	hero.attribute[ATR_STRENGTH] = hero.attribute[ATR_STRENGTH]+5;
+	PrintS_Ext ("Si³a + 2",COL_Yellow) ;
+	hero.attribute[ATR_STRENGTH] = hero.attribute[ATR_STRENGTH]+2;
 	//B_RaiseAttribute	(ATR_STRENGTH,	3);
 	Info_ClearChoices(Info_Diego_Gamestart );
 };
@@ -829,7 +829,11 @@ INSTANCE Info_Diego_Teach(C_INFO)
 
 FUNC INT Info_Diego_Teach_Condition()
 {
-	if ( Npc_KnowsInfo(hero,Info_Diego_Teachers) ) 
+	if (Npc_KnowsInfo(hero,Info_Diego_Teachers))  
+	|| (Npc_GetTrueGuild (hero) == GIL_STT)
+	|| (Npc_GetTrueGuild (hero) == GIL_GRD)
+	|| (Npc_GetTrueGuild (hero) == GIL_KDF) 
+	|| (kapitel >= 4) 
 	{
 		return 1;
 	};

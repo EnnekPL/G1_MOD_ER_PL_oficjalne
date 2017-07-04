@@ -95,7 +95,7 @@ FUNC VOID DIA_Novize_Kupcy_Info()
     AI_Output (self, other ,"DIA_Novize_Kupcy_03_02"); //Hmmm... Najwiêkszy skup jest w Nowym Obozie. Powinieneœ tam zajrzeæ.
     AI_Output (self, other ,"DIA_Novize_Kupcy_03_03"); //Mo¿e dogadasz siê z jakimœ Baalem. Spróbuj mu udowodniæ, ¿e nasz towar warto sprzedaæ.
 	AI_Output (self, other ,"DIA_Novize_Kupcy_03_04"); //Mo¿esz te¿ poszukaæ w Starym Obozie.
-    AI_Output (self, other ,"DIA_Novize_Kupcy_03_04"); //Tylko pamiêtaj o dyskrecji. 
+    AI_Output (self, other ,"DIA_Novize_Kupcy_03_05"); //Tylko pamiêtaj o dyskrecji. 
 	
     B_LogEntry                     (CH1_NewWeed,"Davson stwierdzi³, ¿e najlepiej przekonaæ kogoœ w Nowym Obozie. Powinienem pogadaæ z którymœ z tamtych handlarzy.");
 };

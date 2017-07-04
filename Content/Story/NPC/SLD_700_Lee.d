@@ -63,6 +63,14 @@ FUNC VOID Rtn_start_700 ()
 	TA_Smalltalk   (07,00,19,00,"NC_SMALL_CAVE_CENTER");
 	TA_ReadBook	   (19,00,01,00,"NC_SMALL_CAVE_READBOOK");
 };
+//////////////////////////////////////////////////
+// CHAPTER 3, CAVE NEARBY OLD CAMP
+//////////////////////////////////////////////////
+FUNC VOID Rtn_WaitInCave_700 () 
+{
+	TA_Boss		(23,00,06,00,"#ToDo");
+	TA_Boss     (06,00,23,00,"#ToDo");
+};
 
 FUNC VOID Rtn_damnpast_700 () // LEE DAMM STORY KAPITEL 3
 {

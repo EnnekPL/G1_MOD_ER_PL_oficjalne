@@ -48,6 +48,14 @@ TA_SitCampfire 		(15,03,19,21,"GRD2");
 TA_CookforMe 		(19,21,20,00,"OMC_SMALL_PAN");
 TA_Sleep			(20,00,06,35,"OMC_BED_VLK");
 };
+
+FUNC VOID Rtn_searching_7011 ()
+{
+TA_PickRice (06,00,12,00,"OW_PATH_265");
+TA_PickRice (12,00,21,00,"OW_PATH_265");
+TA_Sleep (21,00,06,00,"OMC_BED_VLK");
+};
+
 FUNC VOID Rtn_ded_7011 ()
 {
 TA_Stand (06,00,12,00,"WAR3");

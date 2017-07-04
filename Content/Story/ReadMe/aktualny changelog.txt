@@ -1,3 +1,28 @@
+1.4.91
+- po zap³aceniu Thorusowi 1000 bry³ek, nie widnieje ju¿ u niego opcja o próbie przejœcia do zamku jako pos³aniec magów wody
+- poprawione zadanie "Szpieg na bagnach"
+- mo¿emy dawaæ mikstury lecznicze Clawowi kiedy z nami podró¿uje
+- poprawiona literówka u Josepha
+- poprawiona powtarzaj¹ca siê kwestia u Davsona
+- zadanie od Okyla zalicza siê do zepsutych, jeœli zablokujemy sobie drogê dalej
+- amulet Josepa zosta³ usuniêty z gry
+- zablokowana mo¿liwoœæ oszustwa i zostania dwa razy magiem wody
+- bohater zaczyna z 10 pkt si³y a bonus od Diega wynosi 2 pkt
+- kowal Nordmarczyk ma du¿o lepsz¹ broñ, dziêki czemu mo¿e siê broniæ
+- uniemo¿liwono oszustwa podczas zdradzania nowego obozu (gdy donosimy Thorusowi tracimy gildiê Kret)
+- naprawiony b³êdy z Doylem
+- usuniêto stary dialog Abla
+- poprawiony b³¹d z rud¹ przy zakupie ciê¿kiego pancerza œwiatynnego
+- nowe tekstury w starym obozie
+- Diego uczy nas si³y i zrêcznoœci, jeœli do³¹czymy do Cieni/Stra¿ników/Magów (niezale¿nie od tego czy rozmawialiœmy z nim o nauczycielach) oraz bêdzie nas uczy³ niezale¿nie od gildii w 4 rozdziale
+- naprawiona nauka u Gor Na Totha
+- Torrez nosi ju¿ kostur
+- zmienione obra¿enia niektórych broni dwurêcznych
+- naprawiony pojawiajacy siê dialog z Gor Na Linem o banda¿ach
+- zmieniona kwestia dialogowa wypowidana przez Lina po pobiciu
+- miecz Varta pojawia siê w jego kieszeniach dopiero na 4 rozdziale
+- dokoñczone zadanie "Ranny wojownik' (w¹tek Clawa i mikstury)
+
 1.4.82
 - Lukor dzieli siê z nami punktami XP za przeciwników pokonanych na cmentarzysku orków
 - u Gravera i Chrisa nie powinno ju¿ siê kumulowaæ tyle rudy z zak³adów 

@@ -436,7 +436,7 @@ INSTANCE Miecz2H1 (C_Item) //Œwi¹tynia Œni¹cego
 
 	value 				=	3500;
 	
-	damageTotal			= 	78;
+	damageTotal			= 	110;
 	damagetype			=	DAM_EDGE|DAM_MAGIC;
 	range    			=  	80;		
 	damage[DAM_INDEX_MAGIC]	=	 10;
@@ -495,9 +495,9 @@ INSTANCE Miecz2H3 (C_Item) //skrzynia Gomeza
 	flags 				=	ITEM_2HD_SWD;	
 	material 			=	MAT_METAL;
 
-	value 				=	2200;
+	value 				=	3000;
 	
-	damageTotal			= 	90;
+	damageTotal			= 	105;
 	damagetype			=	DAM_EDGE;
 	range    			=  	150;		
 

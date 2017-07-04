@@ -34,7 +34,7 @@ instance GUR_1203_BaalTondral (Npc_Default)
 
 	//-------- inventory --------
 	CreateInvItem(self, ItArRuneWindfist);
-	
+	EquipItem (self, ItMw_2H_Staff_GuruMage_03);
 	fight_tactic	=	FAI_HUMAN_MAGE;
 	
 	//-------------Daily Routine-------------

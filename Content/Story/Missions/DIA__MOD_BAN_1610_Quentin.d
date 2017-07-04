@@ -951,6 +951,7 @@ FUNC INT DIA_Quentin_HELLO112_Condition()
     if (Npc_KnowsInfo (hero, DIA_Asghan_SZPIEG2))
     && (Npc_KnowsInfo (hero, DIA_GorNaBar_SZPIEG))
     && (MIS_PSIcampWORK == LOG_RUNNING)
+	&& (CorKalom_BringMCQBalls == LOG_SUCCESS)
     {
     return TRUE;
     };

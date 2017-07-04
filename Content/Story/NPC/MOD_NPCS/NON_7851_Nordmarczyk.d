@@ -47,7 +47,7 @@ instance NON_7851_Nordmarczyk (Npc_Default)
 	CreateInvItems (self, ItFo_Potion_Health_01, 5);
 	CreateInvItem (self, ItFoLoaf);
 	CreateInvItem (self, ItAt_Claws_01);
- 	EquipItem (self, ItMw_2H_Axe_Big_01);		
+ 	EquipItem (self, ItMw_2H_Axe_Big_06);		
 	EquipItem (self, ItRw_Bow_Long_05_Z);
 	CreateInvItems (self, ItAmArrow, 60);
 	//smith

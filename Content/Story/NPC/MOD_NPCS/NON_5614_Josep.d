@@ -37,7 +37,7 @@ instance NON_5614_Josep (Npc_Default)
 		
 	EquipItem (self, ItMw_1H_Scythe_01);
 	CreateInvItems (self, ItFoRice,5);
-	EquipItem (self, JosepSamulet);
+	//EquipItem (self, JosepSamulet);
 	
 
 	//-------------Daily Routine-------------

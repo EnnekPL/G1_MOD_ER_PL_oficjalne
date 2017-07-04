@@ -630,3 +630,74 @@ FUNC VOID DIA_KUCHARZ_AskAboutTreasure_Info()
 	Wld_InsertItem	   (ItMi_CraigsMap,"OW_JOELMAPSPAWN");
 	B_LogEntry(CH2_TreasureOldGuard, "Matt zdradzi³, ¿e Joel co wieczór idzie siê przejœæ w stronê w¹wozu nieopodal Kopalni. Musze sprawdziæ ten trop.");
 };
+
+////////////////////////////////////////////
+// Bought Mixture
+////////////////////////////////////////////
+
+INSTANCE DIA_KUCHARZ_StrangePotion (C_INFO)
+{
+   npc          = GRD_7002_KUCHARZ;
+   nr           = 1;
+   condition    = DIA_KUCHARZ_StrangePotion_Condition;
+   information  = DIA_KUCHARZ_StrangePotion_Info;
+   permanent	= FALSE;
+   description	= "Podobno kupi³eœ ostatnio jakiœ dziwny napój.";
+};
+
+FUNC INT DIA_KUCHARZ_StrangePotion_Condition()
+{
+	if (Npc_KnowsInfo (hero, DIA_Akl_WhatsWrong)) 
+	{
+    return TRUE;
+	};
+};
+
+FUNC VOID DIA_KUCHARZ_StrangePotion_Info()
+{
+    AI_Output (other, self ,"DIA_KUCHARZ_StrangePotion_15_01"); //Podobno kupi³eœ ostatnio jakiœ dziwny napój.
+    AI_Output (self, other ,"DIA_KUCHARZ_StrangePotion_03_02"); //Mo¿e kupi³em. I co z tego?
+	AI_Output (other, self ,"DIA_KUCHARZ_StrangePotion_15_03"); //Odkupiê go od ciebie.
+	AI_Output (self, other ,"DIA_KUCHARZ_StrangePotion_03_04"); //W sumie i tak nie wiem do czego s³u¿y, a nie znalaz³em jeszcze nikogo wystarczaj¹co g³upiego ¿eby spróbowa³ go za mnie. 
+	AI_Output (self, other ,"DIA_KUCHARZ_StrangePotion_03_05"); //To bêdzie 60 bry³ek rudy. 
+	AI_Output (other, self ,"DIA_KUCHARZ_StrangePotion_15_06"); //Chwila, Aklowi zap³aci³eœ 30 bry³ek.
+	AI_Output (self, other ,"DIA_KUCHARZ_StrangePotion_03_07"); //A ty mi zap³acisz 60. Na tym polegaj¹ interesy. 
+	
+	B_LogEntry                     (CH1_RannyWojownik,"60 bry³ek rudy to cena jak¹ za¿yczy³ sobie Matt za miksturê.");
+};
+
+////////////////////////////////////////////
+// Give Me Mixture
+////////////////////////////////////////////
+
+INSTANCE DIA_KUCHARZ_StrangePotionBuy (C_INFO)
+{
+   npc          = GRD_7002_KUCHARZ;
+   nr           = 1;
+   condition    = DIA_KUCHARZ_StrangePotionBuy_Condition;
+   information  = DIA_KUCHARZ_StrangePotionBuy_Info;
+   permanent	= FALSE;
+   description	= "Daj mi ten napój.";
+};
+
+FUNC INT DIA_KUCHARZ_StrangePotionBuy_Condition()
+{
+	if (Npc_KnowsInfo (hero, DIA_KUCHARZ_StrangePotion)) && (Npc_HasItems(hero,itminugget) >= 60)
+	{
+    return TRUE;
+	};
+};
+
+FUNC VOID DIA_KUCHARZ_StrangePotionBuy_Info()
+{
+    AI_Output (other, self ,"DIA_KUCHARZ_StrangePotionBuy_15_01"); //Daj mi ten napój.
+    AI_Output (self, other ,"DIA_KUCHARZ_StrangePotionBuy_03_02"); //Proszê, mi³ej zabawy.
+
+	B_LogEntry                     (CH1_RannyWojownik,"Odkupi³em napój od kucharza. Pora wróciæ z nim do Clawa. Mam tylko nadziejê, ¿e to ten w³aœciwy.");
+	
+	CreateInvItems (self, StrangePotion, 1);
+    B_GiveInvItems (self, other, StrangePotion, 1);
+	
+	B_GiveInvItems (hero, self, itminugget, 60);
+	
+};

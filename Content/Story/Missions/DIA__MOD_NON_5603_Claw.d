@@ -625,7 +625,7 @@ FUNC INT DIA_Claw_Help22_Condition()
 
 FUNC VOID DIA_Claw_Help22_Info()
 {
-polujclaw = false;
+	polujclaw = false;
     AI_Output (other, self ,"DIA_Claw_Help22_15_01"); //Obieca³eœ mi pomoc.
     AI_Output (self, other ,"DIA_Claw_Help22_03_02"); //Je¿eli bêdê ci potrzebny, powiedz tylko.
 };
@@ -646,8 +646,8 @@ INSTANCE DIA_Claw_ZAMNA (C_INFO)
 
 FUNC INT DIA_Claw_ZAMNA_Condition()
 {
-    if (Npc_KnowsInfo (hero, DIA_Claw_Help22))
-	&& (polujClaw == false)
+    if (polujClaw == false)
+	&& (Npc_KnowsInfo (hero, DIA_Claw_Help22))
     {
     return TRUE;
     };
@@ -692,6 +692,116 @@ FUNC VOID DIA_Claw_COmeBack_Info()
     Npc_ExchangeRoutine (self, "start");
     self.aivar[AIV_PARTYMEMBER] = false;
     polujClaw = false;
+};
+
+//========================================
+//-----------------> GivePotion
+//========================================
+
+INSTANCE DIA_Claw_GivePotion (C_INFO)
+{
+   npc          = NON_5603_Claw;
+   nr           = 990;
+   condition    = DIA_Claw_GivePotion_Condition;
+   information  = DIA_Claw_GivePotion_Info;
+   permanent	= true;
+   description	= "(Daj miksturê uzdrawiaj¹c¹)";
+};
+
+FUNC INT DIA_Claw_GivePotion_Condition()
+{
+    if (self.aivar[AIV_PARTYMEMBER] == TRUE)
+	&& (self.attribute[ATR_HITPOINTS] < self.attribute[ATR_HITPOINTS_MAX])
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Claw_GivePotion_Info()
+{
+    Info_ClearChoices	(DIA_Claw_GivePotion);
+	Info_AddChoice		(DIA_Claw_GivePotion, DIALOG_BACK, DIA_Claw_GivePotion_B);
+	IF (Npc_HasItems (other, ItFo_Potion_Health_01) >=1) 
+	{
+    Info_AddChoice		(DIA_Claw_GivePotion, "(Daj ma³¹ miksturê)", DIA_Claw_GivePotion_M);
+	};
+	IF (Npc_HasItems (other, ItFo_Potion_Health_02) >=1) 
+	{
+    Info_AddChoice		(DIA_Claw_GivePotion, "(Daj œredni¹ miksturê)", DIA_Claw_GivePotion_S);
+	};
+	IF (Npc_HasItems (other, ItFo_Potion_Health_03) >=1) 
+	{
+	Info_AddChoice		(DIA_Claw_GivePotion, "(Daj du¿¹ miksturê)", DIA_Claw_GivePotion_D);
+	};
+};
+
+FUNC VOID DIA_Claw_GivePotion_B ()
+{
+	Info_ClearChoices	(DIA_Claw_GivePotion);
+};
+
+FUNC VOID DIA_Claw_GivePotion_M ()
+{
+	B_GiveInvItems (hero, self, ItFo_Potion_Health_01, 1);
+	AI_USEITEM (self, ItFo_Potion_Health_01);
+
+	Info_ClearChoices	(DIA_Claw_GivePotion);
+	Info_AddChoice		(DIA_Claw_GivePotion, DIALOG_BACK, DIA_Claw_GivePotion_B);
+	IF (Npc_HasItems (other, ItFo_Potion_Health_01) >=1) 
+	{
+    Info_AddChoice		(DIA_Claw_GivePotion, "(Daj ma³¹ miksturê)", DIA_Claw_GivePotion_M);
+	};
+	IF (Npc_HasItems (other, ItFo_Potion_Health_02) >=1) 
+	{
+    Info_AddChoice		(DIA_Claw_GivePotion, "(Daj œredni¹ miksturê)", DIA_Claw_GivePotion_S);
+	};
+	IF (Npc_HasItems (other, ItFo_Potion_Health_03) >=1) 
+	{
+	Info_AddChoice		(DIA_Claw_GivePotion, "(Daj du¿¹ miksturê)", DIA_Claw_GivePotion_D);
+	};
+};
+
+FUNC VOID DIA_Claw_GivePotion_S ()
+{
+	B_GiveInvItems (hero, self, ItFo_Potion_Health_02, 1);
+	AI_USEITEM (self, ItFo_Potion_Health_02);
+
+	Info_ClearChoices	(DIA_Claw_GivePotion);
+	Info_AddChoice		(DIA_Claw_GivePotion, DIALOG_BACK, DIA_Claw_GivePotion_B);
+	IF (Npc_HasItems (other, ItFo_Potion_Health_01) >=1) 
+	{
+    Info_AddChoice		(DIA_Claw_GivePotion, "(Daj ma³¹ miksturê)", DIA_Claw_GivePotion_M);
+	};
+	IF (Npc_HasItems (other, ItFo_Potion_Health_02) >=1) 
+	{
+    Info_AddChoice		(DIA_Claw_GivePotion, "(Daj œredni¹ miksturê)", DIA_Claw_GivePotion_S);
+	};
+	IF (Npc_HasItems (other, ItFo_Potion_Health_03) >=1) 
+	{
+	Info_AddChoice		(DIA_Claw_GivePotion, "(Daj du¿¹ miksturê)", DIA_Claw_GivePotion_D);
+	};
+};
+
+FUNC VOID DIA_Claw_GivePotion_D ()
+{
+	B_GiveInvItems (hero, self, ItFo_Potion_Health_03, 1);
+	AI_USEITEM (self, ItFo_Potion_Health_03);
+
+	Info_ClearChoices	(DIA_Claw_GivePotion);
+	Info_AddChoice		(DIA_Claw_GivePotion, DIALOG_BACK, DIA_Claw_GivePotion_B);
+	IF (Npc_HasItems (other, ItFo_Potion_Health_01) >=1) 
+	{
+    Info_AddChoice		(DIA_Claw_GivePotion, "(Daj ma³¹ miksturê)", DIA_Claw_GivePotion_M);
+	};
+	IF (Npc_HasItems (other, ItFo_Potion_Health_02) >=1) 
+	{
+    Info_AddChoice		(DIA_Claw_GivePotion, "(Daj œredni¹ miksturê)", DIA_Claw_GivePotion_S);
+	};
+	IF (Npc_HasItems (other, ItFo_Potion_Health_03) >=1) 
+	{
+	Info_AddChoice		(DIA_Claw_GivePotion, "(Daj du¿¹ miksturê)", DIA_Claw_GivePotion_D);
+	};
 };
 
 //========================================
@@ -786,6 +896,8 @@ FUNC VOID DIA_Claw_MIX_MAX_HEAL_Info()
     B_LogEntry                     (CH1_RannyWojownik,"Claw mo¿e sporz¹dziæ lekarstwo, jednak potrzebuje mikstury, któr¹ zgubi³ niedaleko Starej Kopalni. Muszê j¹ odnaleŸæ.");
 
     B_GiveXP (50);
+	
+	Npc_ExchangeRoutine (VLK_7011_kopacz,"searching");
 };
 
 //========================================

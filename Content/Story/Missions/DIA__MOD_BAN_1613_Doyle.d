@@ -242,6 +242,7 @@ FUNC INT DIA_Raeuber_HelloNoGRD_Condition()
     || (Npc_GetTrueGuild(other) == GIL_ORG)
     || (Npc_GetTrueGuild(other) == GIL_SLD)
     || (Npc_GetTrueGuild(other) == GIL_TPL)
+	&& (kapitel <=3)
     {
     return TRUE;
     };
@@ -272,7 +273,7 @@ INSTANCE DIA_Raeuber_OhGURU (C_INFO)
 
 FUNC INT DIA_Raeuber_OhGURU_Condition()
 {
-    if (Npc_GetTrueGuild(other) == GIL_GUR)
+    if (Npc_GetTrueGuild(other) == GIL_GUR) && (kapitel <=3)
     {
     return TRUE;
     };

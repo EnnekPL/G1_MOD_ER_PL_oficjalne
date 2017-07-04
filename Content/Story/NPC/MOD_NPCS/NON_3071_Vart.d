@@ -34,8 +34,8 @@ Npc_SetTalentSkill (self, NPC_TALENT_1H,4);
 Npc_SetTalentSkill (self, NPC_TALENT_BOW,2);
 
 //----------Ekwipunek---------- //edit by Nocturn
-EquipItem		(self, VartSword);
-EquipItem		(self, ItRw_Bow_Long_05_Z);
+EquipItem		(self, ItMwZ_1H_Sword_01); //VartSword
+EquipItem		(self, ItRw_Bow_Long_05_Z);  
 CreateInvItems  (self,ItAmArrow,200);
 CreateInvItems  (self,ItFo_wineberrys_01,2);
 CreateInvItems  (self,ItFoMuttonRaw,3);
