@@ -22,7 +22,9 @@
 - zmieniona kwestia dialogowa wypowidana przez Lina po pobiciu
 - miecz Varta pojawia siê w jego kieszeniach dopiero na 4 rozdziale
 - dokoñczone zadanie "Ranny wojownik' (w¹tek Clawa i mikstury)
-
+- obni¿ona iloœæ XP za zadanie "Porwanie Alexa"
+- dodana nagroda od Alexa za ratunek (wyci¹g zwinnoœci)
+- usuniêto mo¿liwoœæ zabrania klucza do celi Alexa od stra¿nika (pozstaje okup, który zosta³ trochê rozbudowany)
 1.4.82
 - Lukor dzieli siê z nami punktami XP za przeciwników pokonanych na cmentarzysku orków
 - u Gravera i Chrisa nie powinno ju¿ siê kumulowaæ tyle rudy z zak³adów 

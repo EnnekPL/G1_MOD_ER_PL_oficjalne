@@ -602,10 +602,11 @@ FUNC VOID DIA_Raven_ZaplataZaWolnosc_Info()
 {
     AI_Output (other, self ,"DIA_Raven_ZaplataZaWolnosc_15_01"); //Chcê, ¿ebyœ go wypuœci³. 
     AI_Output (self, other ,"DIA_Raven_ZaplataZaWolnosc_03_02"); //Dobrze. Skoro tego sobie ¿yczysz.
-    B_LogEntry                     (CH3_Kidnapping,"Poœwiêci³em siê i zap³aci³em 1000 bry³ek rudy za wolnoœæ Alexa.");
+    B_LogEntry                     (CH3_Kidnapping,"Zap³aci³em Krukowi rudê za wolnoœæ Alexa. Dosta³em klucz. Pora zejsæ do celi.");
     B_GiveInvItems (other, self, ItMiNugget, 1000);
-
+	CreateInvItems (self, DUNGEONKEY_ALEX, 1);
+    B_GiveInvItems (self, other, DUNGEONKEY_ALEX, 1);
     B_GiveXP (500);
-    AI_Output (self, other ,"DIA_Raven_ZaplataZaWolnosc_03_03"); //IdŸ do Stra¿nika lochów i poproœ go o klucz do celi.
+    AI_Output (self, other ,"DIA_Raven_ZaplataZaWolnosc_03_03"); //Masz tu klucz do celi. Lepiej siê pochwal Stra¿nikowi, ¿e zap³aci³eœ okup, bo inaczej mo¿esz dostaæ niespodziewanie w czaszkê.
     AI_StopProcessInfos	(self);
 };
