@@ -193,6 +193,45 @@ FUNC VOID DIA_Magnus_BurnedBiorn_Info()
     AI_StopProcessInfos	(self);
 };
 
+
+//////////////////////////////////////////////
+// Alex Help
+//////////////////////////////////////////////
+
+INSTANCE DIA_Magnus_AlexPrisoner (C_INFO)
+{
+   npc          = NON_5675_Magnus;
+   nr           = 3;
+   condition    = DIA_Magnus_AlexPrisoner_Condition;
+   information  = DIA_Magnus_AlexPrisoner_Info;
+   permanent	= FALSE;
+   description	= "Alex zosta³ porwany.";
+};
+
+FUNC INT DIA_Magnus_AlexPrisoner_Condition()
+{
+    if (MIS_Kidnapping == LOG_RUNNING)
+    && (Npc_KnowsInfo (hero, DIA_Raven_ZniewolonyAlex))
+    && (!Npc_KnowsInfo (hero, DIA_Raven_ZaplataZaWolnosc))
+	&& (!Npc_KnowsInfo (hero, DIA_Magnus_Ucieczka))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Magnus_AlexPrisoner_Info()
+{
+    AI_Output (other, self ,"DIA_Magnus_AlexPrisoner_15_01"); //Alex zosta³ porwany. Potrzebujê rudy na okup.
+    AI_Output (self, other ,"DIA_Magnus_AlexPrisoner_03_02"); //Alex przyj¹³ mnie tutaj, gdy nie wiedzia³em co ze sob¹ zrobiæ. Jestem mu wdziêczny, kto wie co by teraz ze mn¹ by³o, gdyby nie on. 
+    AI_Output (self, other ,"DIA_Magnus_AlexPrisoner_03_03"); //WeŸ tê rudê. Mam nadziejê, ¿e przynajmniej czêœciowo sp³aci³em swój d³ug. 
+  
+	CreateInvItems (self, ItMiNugget, 50);
+    B_GiveInvItems (self, other, ItMiNugget, 50);
+	
+	getmoneyfor_Magnus = true;
+};
+
 //========================================
 //-----------------> Ucieczka
 //========================================

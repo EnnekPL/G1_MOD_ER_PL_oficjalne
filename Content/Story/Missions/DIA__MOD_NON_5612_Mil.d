@@ -238,6 +238,38 @@ FUNC VOID DIA_Mil_BliznaDed_Info()
 	Mdl_SetVisualBody (blizna,"hum_body_Naked0", 0, 1,"Hum_Head_FatBald", 79,  1, BLIZNA_ARMOR_H);
 };
 
+///////////////////////////////////////////////////
+// Help Alex
+///////////////////////////////////////////////////
 
+INSTANCE DIA_Mil_AlexPrisoner (C_INFO)
+{
+   npc          = NON_5612_Mil;
+   nr           = 3;
+   condition    = DIA_Mil_AlexPrisoner_Condition;
+   information  = DIA_Mil_AlexPrisoner_Info;
+   permanent	= FALSE;
+   description	= "Alex zosta³ porwany.";
+};
 
-
+FUNC INT DIA_Mil_AlexPrisoner_Condition()
+{
+	if (MIS_Kidnapping == LOG_RUNNING)
+    && (Npc_KnowsInfo (hero, DIA_Raven_ZniewolonyAlex))
+    && (!Npc_KnowsInfo (hero, DIA_Raven_ZaplataZaWolnosc))
+    {
+    return TRUE;
+    };
+};
+FUNC VOID DIA_Mil_AlexPrisoner_Info()
+{
+    AI_Output (other, self ,"DIA_Mil_AlexPrisoner_15_01"); //Alex zosta³ porwany.
+    AI_Output (self, other ,"DIA_Mil_AlexPrisoner_03_02"); //Wiem, wiem. Jakieœ postêpy w tej sprawie?
+    AI_Output (other, self ,"DIA_Mil_AlexPrisoner_15_03"); //Potrzebujemy 1000 bry³ek rudy na okup. 
+    AI_Output (self, other ,"DIA_Mil_AlexPrisoner_03_04"); //Przeklêty Gomez! Masz tu mój ostatni utarg. 
+   
+	CreateInvItems (self, ItMiNugget, 250);
+    B_GiveInvItems (self, other, ItMiNugget, 250);
+	
+	getmoneyfor_Mil = true;
+};

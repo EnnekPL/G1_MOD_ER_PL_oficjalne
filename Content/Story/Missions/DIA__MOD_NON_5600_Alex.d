@@ -686,7 +686,7 @@ FUNC INT DIA_Alex_Ratunek_Condition()
 FUNC VOID DIA_Alex_Ratunek_Info()
 {
     AI_Output (self, other ,"DIA_Alex_Ratunek_03_01"); //Wreszcie ktoœ przyszed³ mnie uwolniæ.
-    AI_Output (self, other ,"DIA_Alex_Ratunek_03_02"); //Przybywasz z ratunkiem? Tak?
+    AI_Output (self, other ,"DIA_Alex_Ratunek_03_02"); //Bo przybywasz z ratunkiem? Tak?
     AI_Output (other, self ,"DIA_Alex_Ratunek_15_03"); //To twój szczêœliwy dzieñ.
     AI_Output (other, self ,"DIA_Alex_Ratunek_15_04"); //Ratowanie i pieczeñ ze œcierwojada w zestawie.
     AI_Output (self, other ,"DIA_Alex_Ratunek_03_05"); //Ha! Zjad³bym pieczeñ.
@@ -701,12 +701,18 @@ FUNC VOID DIA_Alex_Ratunek_Info()
     AI_UseItem (self, ItFoBeer);
     AI_UseItem (hero, ItFoBeer);
     AI_Output (self, other ,"DIA_Alex_Ratunek_03_12"); //ChodŸmy. 
+	AI_Output (self, other ,"DIA_Alex_Ratunek_03_13"); //A, by³bym zapomnia³. Nale¿y ci siê coœ za pomoc. WeŸ tê miksturê. Pomo¿e ci podczas ³owów. 
     AI_StopProcessInfos	(self);
-    B_LogEntry                     (CH3_Kidnapping,"Myœliwy Alex zosta³ uwolniony. Mo¿emy wracaæ do obozu. Wszystko dobrze siê skoñczy³o. ");
+    B_LogEntry               (CH3_Kidnapping,"Myœliwy Alex zosta³ uwolniony. Mo¿emy wracaæ do obozu. Wszystko dobrze siê skoñczy³o, a ja dosta³em cenn¹ miksturê - wyci¹g zwinnoœci.");
     Log_SetTopicStatus       (CH3_Kidnapping, LOG_SUCCESS);
     MIS_Kidnapping = LOG_SUCCESS;
- Npc_ExchangeRoutine (self, "start");
-    B_GiveXP (1000);
+	Npc_ExchangeRoutine (self, "start");
+	
+	
+    B_GiveXP (750);
+	
+	CreateInvItems (self, ItFo_Potion_Dex_02, 1);
+    B_GiveInvItems (self, other, ItFo_Potion_Dex_02, 1);
 };
 
 ///////////////////////////////////////////////////

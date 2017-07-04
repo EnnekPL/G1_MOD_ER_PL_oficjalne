@@ -432,6 +432,9 @@ const string CH3_Kidnapping    				= "Porwanie Alexa";
 var int MIS_PlantsForClaw;
 const string CH3_PlantsForClaw      		= "Ziele dla Clawa";
 
+var int MIS_WoodForCavalorn;
+const string CH3_WoodForCavalorn      		= "Dostawa chrustu";
+
 var int MIS_CorristoEvil;
 const string CH4_CorristoEvil      			= "Ucieczka Corristo";
 
@@ -519,7 +522,14 @@ var int hero_explore_aidanquestcave;
 var int Nyras_splacil_Talasa; var int Hero_dogadany_Nyras; var int Hero_donosi_na_Nyras; var int ruda_talasa_odzyskana; //oszukany handlarz
 var int guysay_about_hut;
 
+//***porwanie Alexa***
+var int getmoneyfor_Claw;
+var int getmoneyfor_Magnus;
+var int getmoneyfor_Firn;
+var int getmoneyfor_Jonas;
+var int getmoneyfor_Mil;
 
+var int HerotrytoCheatHunters;
 
 //***Pomocnicze***
 //***Wld_GetDay***

@@ -554,6 +554,36 @@ FUNC VOID DIA_Stanley_Porwanie_Info()
     B_LogEntry                     (CH3_Kidnapping,"Alex zosta³ porwany przez oddzia³ Stra¿ników pod dowództwem Siekacza. ");
 };
 
+//////////////////////////////////////////////////
+// Alex Help
+//////////////////////////////////////////////////
+
+INSTANCE DIA_Stanley_AlexPrisoner (C_INFO)
+{
+   npc          = NON_5602_Stanley;
+   nr           = 2;
+   condition    = DIA_Stanley_AlexPrisoner_Condition;
+   information  = DIA_Stanley_AlexPrisoner_Info;
+   permanent	= FALSE;
+   description	= "Potrzebujê rudy na okup za Alexa.";
+};
+
+FUNC INT DIA_Stanley_AlexPrisoner_Condition()
+{
+    if (MIS_Kidnapping == LOG_RUNNING)
+    && (Npc_KnowsInfo (hero, DIA_Raven_ZniewolonyAlex))
+    && (!Npc_KnowsInfo (hero, DIA_Raven_ZaplataZaWolnosc))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Stanley_AlexPrisoner_Info()
+{
+    AI_Output (other, self ,"DIA_Stanley_AlexPrisoner_15_01"); //Potrzebujê rudy na okup za Alexa.
+    AI_Output (self, other ,"DIA_Stanley_AlexPrisoner_03_02"); //Niestety nie mam ani bry³ki. ¯a³ujê, ¿e nie mogê pomóc. Porozmawiaj z pozosta³ymi.
+};
 
 //========================================
 //-----------------> Arrows

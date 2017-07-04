@@ -173,3 +173,20 @@ INSTANCE DUNGEONKEY_ALEX (C_Item)
 	TEXT[2]				= "Otwiera celê Alexa";
 	TEXT[3]				= "w lochach Starego Obozu.";
 };
+/******************************************************************************************/
+INSTANCE CavalornWood (C_Item)
+{
+	name 				=	"Chrust dla Cavalorna";
+
+	mainflag 			=	ITEM_KAT_NONE;
+	flags 				=	ITEM_MULTI;
+
+	value 				=	80;
+
+	visual 				=	"OC_FIREWOOD_V1.3DS";
+	material 			=	MAT_WOOD;
+
+	description			= 	name;
+	TEXT[2]				= 	"Dostawa dla Cavalorna.";
+	TEXT[3]				= 	"Dobrze wysuszony.";
+};

@@ -41,6 +41,8 @@ var int Scar_die; 					//u¿yta u Thorusa i Kosy
 var int Snake_help;					//u¿yta u Kosy i Snake'a
 var int TondralNovizesBack;			//u¿yta NON_4001_MadNovize & Tondral
 var int backDoyle1; 			//perm dia DIA_Raeuber_NAPASC, tru na DIA_Quentin_QUEST4
+
+
 // *************************
 // Zmienne dialogów 
 // *************************

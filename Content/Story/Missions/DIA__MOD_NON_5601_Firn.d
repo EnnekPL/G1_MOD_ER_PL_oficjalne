@@ -576,6 +576,42 @@ FUNC VOID DIA_Firn_PorwanieInicjacja_Info()
     AI_StopProcessInfos	(self);
 };
 
+//////////////////////////////////////////////////
+// Alex Help
+//////////////////////////////////////////////////
+
+INSTANCE DIA_Firn_AlexPrisoner (C_INFO)
+{
+   npc          = NON_5601_Firn;
+   nr           = 1;
+   condition    = DIA_Firn_AlexPrisoner_Condition;
+   information  = DIA_Firn_AlexPrisoner_Info;
+   permanent	= FALSE;
+   description	= "Potrzebujê rudy na okup za Alexa.";
+};
+
+FUNC INT DIA_Firn_AlexPrisoner_Condition()
+{
+    if (MIS_Kidnapping == LOG_RUNNING)
+    && (Npc_KnowsInfo (hero, DIA_Raven_ZniewolonyAlex))
+    && (!Npc_KnowsInfo (hero, DIA_Raven_ZaplataZaWolnosc))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Firn_AlexPrisoner_Info()
+{
+    AI_Output (other, self ,"DIA_Firn_AlexPrisoner_15_01"); //Potrzebujê rudy na okup za Alexa.
+    AI_Output (self, other ,"DIA_Firn_AlexPrisoner_03_02"); //Jak najbardziej s³u¿ê pomoc¹. Dobrze, ¿e nie zostawi³eœ tej sprawy samej sobie.
+
+    CreateInvItems (self, ItMiNugget, 100);
+    B_GiveInvItems (self, other, ItMiNugget, 100);
+	
+	getmoneyfor_Firn = true;
+};
+
 //========================================
 //-----------------> CHAPTER_5
 //========================================

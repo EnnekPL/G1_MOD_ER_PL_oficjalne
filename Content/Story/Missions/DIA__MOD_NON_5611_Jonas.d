@@ -397,3 +397,43 @@ FUNC VOID DIA_Jonas_PobityMysliwy_Info()
     AI_StopProcessInfos	(self);
 };
 
+////////////////////////////////////////////////////
+// Alex Help
+////////////////////////////////////////////////////
+
+INSTANCE DIA_Jonas_AlexPrisoner (C_INFO)
+{
+   npc          = NON_5611_Jonas;
+   nr           = 2;
+   condition    = DIA_Jonas_AlexPrisoner_Condition;
+   information  = DIA_Jonas_AlexPrisoner_Info;
+   permanent	= FALSE;
+   description	= "Alex ma k³opoty.";
+};
+
+FUNC INT DIA_Jonas_AlexPrisoner_Condition()
+{
+    if (MIS_Kidnapping == LOG_RUNNING)
+    && (Npc_KnowsInfo (hero, DIA_Raven_ZniewolonyAlex))
+    && (!Npc_KnowsInfo (hero, DIA_Raven_ZaplataZaWolnosc))
+    {
+    return TRUE;
+    };
+};
+
+FUNC VOID DIA_Jonas_AlexPrisoner_Info()
+{
+    AI_Output (other, self ,"DIA_Jonas_AlexPrisoner_15_01"); //Alex ma k³opoty. Trzeba zap³aciæ 1000 bry³ek rudy okupu.
+    AI_Output (self, other ,"DIA_Jonas_AlexPrisoner_03_02"); //Ale¿ to ca³a skrzynia rudy!
+	AI_Output (other, self ,"DIA_Jonas_AlexPrisoner_15_03"); //Dlatego liczê na wsparcie.
+    AI_Output (self, other ,"DIA_Jonas_AlexPrisoner_03_04"); //Zabierz to drewno do Cavalorna. Przygotowa³em je specjalnie dla niego. Powinien daæ ci za nie 80 bry³ek rudy.
+	
+	MIS_WoodForCavalorn = LOG_RUNNING;
+	
+	Log_CreateTopic          (CH3_WoodForCavalorn, LOG_MISSION);
+    Log_SetTopicStatus       (CH3_WoodForCavalorn, LOG_RUNNING);
+    B_LogEntry               (CH3_WoodForCavalorn,"Jonas nie ma rudy na okup za Alexa, ale da³ mi specjalnie przygotowany chrust dla Cavalorna. Jeœli mu go dostarczê, dostanê trochê rudy.");
+	
+	CreateInvItems (self, CavalornWood,1);
+	B_GiveInvItems (self, hero, CavalornWood, 1);
+};

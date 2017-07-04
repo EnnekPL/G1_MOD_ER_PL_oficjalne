@@ -507,16 +507,16 @@ FUNC VOID DIA_Claw_Okup_Info()
     AI_Output (other, self ,"DIA_Claw_Okup_15_01"); //Alex jest w niewoli. Potrzebujemy rudy, ¿eby zap³aciæ okup.
     AI_Output (self, other ,"DIA_Claw_Okup_03_02"); //Kto go porwa³?
     AI_Output (other, self ,"DIA_Claw_Okup_15_03"); //Zosta³ porwany przez Stra¿ników na polecenie Kruka. Magnat chce za niego 1000 bry³ek rudy.
-    AI_Output (self, other ,"DIA_Claw_Okup_03_04"); //Cholera, dorzuci³bym siê, ale mam tylko 200 bry³ek rudy. Jak ci je oddam, nie bêdê mia³ z czego ¿yæ.
+    AI_Output (self, other ,"DIA_Claw_Okup_03_04"); //Cholera, dorzuci³bym siê, ale mam tylko 100 bry³ek rudy. Jak ci je oddam, nie bêdê mia³ z czego ¿yæ.
     AI_Output (self, other ,"DIA_Claw_Okup_03_05"); //Nie mam ju¿ ziela, które móg³bym sprzedaæ lub uwarzyæ z niego eliksiry.
     AI_Output (self, other ,"DIA_Claw_Okup_03_06"); //Pos³uchaj. Przynieœ mi po trzy ziela: nadmorskie, górskie, polne i lecznicze. Pamiêtaj, po trzy sztuki ka¿dego.
     AI_Output (other, self ,"DIA_Claw_Okup_15_07"); //Dobra. Spróbujê to zrobiæ jak najszybciej.
     AI_Output (self, other ,"DIA_Claw_Okup_03_08"); //Bêdê wdziêczny.
     MIS_PlantsForClaw = LOG_RUNNING;
 
-    Log_CreateTopic            (CH3_PlantsForClaw, LOG_MISSION);
+    Log_CreateTopic          (CH3_PlantsForClaw, LOG_MISSION);
     Log_SetTopicStatus       (CH3_PlantsForClaw, LOG_RUNNING);
-    B_LogEntry                     (CH3_PlantsForClaw,"Claw dorzuci siê na okup za Alexa, je¿eli przyniosê mu po trzy sztuki ziela: górskiego, nadmorskiego, polnego i leczniczego (chodzi o najs³absze ziele).");
+    B_LogEntry               (CH3_PlantsForClaw,"Claw dorzuci siê na okup za Alexa, je¿eli przyniosê mu po trzy sztuki ziela: górskiego, nadmorskiego, polnego i leczniczego (chodzi o najs³absze ziele).");
 };
 
 //========================================
@@ -551,7 +551,7 @@ FUNC VOID DIA_Claw_MamZiele_Info()
     AI_Output (other, self ,"DIA_Claw_MamZiele_15_01"); //Mam to, o co prosi³eœ.
     AI_Output (self, other ,"DIA_Claw_MamZiele_03_02"); //Œwietnie. Masz tu moje oszczêdnoœci.
     AI_Output (other, self ,"DIA_Claw_MamZiele_15_03"); //Dziêkujê. Przydadz¹ siê.
-    B_LogEntry                     (CH3_PlantsForClaw,"Odda³em Clawowi roœliny. Otrzyma³em 200 bry³ek rudy na zap³atê okupu.");
+    B_LogEntry                     (CH3_PlantsForClaw,"Odda³em Clawowi roœliny. Otrzyma³em 100 bry³ek rudy na zap³atê okupu.");
     Log_SetTopicStatus       (CH3_PlantsForClaw, LOG_SUCCESS);
     MIS_PlantsForClaw = LOG_SUCCESS;
 
@@ -560,9 +560,11 @@ FUNC VOID DIA_Claw_MamZiele_Info()
     B_GiveInvItems (other, self, ItFo_SeaHerb, 3);
     B_GiveInvItems (other, self, ItFo_MountainHerb, 3);
     B_GiveInvItems (other, self, ItFo_FieldHerb, 3);
-    CreateInvItems (self, ItMiNugget, 200);
-    B_GiveInvItems (self, other, ItMiNugget, 200);
+    CreateInvItems (self, ItMiNugget, 100);
+    B_GiveInvItems (self, other, ItMiNugget, 100);
     AI_StopProcessInfos	(self);
+	
+	getmoneyfor_Claw = true;
 };
 
 //========================================

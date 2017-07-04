@@ -657,7 +657,45 @@ FUNC VOID DIA_Cavalorn_LifeIsBrutal_Info()
     B_LogEntry                     (CH4_VartSeeking2,"Cavalorn chce abym ustali³ o co chodzi z tymi Poszukiwaczami.");*/
 };
 
+//////////////////////////////////////////////
+// Alex Wood
+//////////////////////////////////////////////
 
+INSTANCE DIA_cavalorn_AlexPrisoner (C_INFO)
+{
+	npc				= STT_336_cavalorn;
+	nr				= 2;
+	condition		= DIA_cavalorn_AlexPrisoner_Condition;
+	information		= DIA_cavalorn_AlexPrisoner_Info;
+	permanent		= 0;
+	description		= "Mam tu drewno dla ciebie."; 
+};
+
+FUNC INT DIA_cavalorn_AlexPrisoner_Condition()
+{	
+	if (MIS_WoodForCavalorn == LOG_RUNNING)
+	&& (Npc_HasItems (other, CavalornWood) >=1)
+	{
+	return 1;	
+	};
+};
+
+FUNC VOID DIA_cavalorn_AlexPrisoner_Info()
+{
+	AI_Output (other, self,"DIA_cavalorn_AlexPrisoner_15_00"); //Mam tu drewno dla ciebie.
+	AI_Output (self, other,"DIA_cavalorn_AlexPrisoner_12_01"); //Jonas znowu ma bóle pleców, ¿e wys³uguje siê m³odymi? Dziêki, ch³opcze. 
+	
+	B_GiveInvItems (hero, self, CavalornWood,1);
+	B_GiveXP (25);
+	
+	B_LogEntry                     (CH3_WoodForCavalorn,"Cavalorn otrzyma³ swoje drewno, a ja kilka kolejnych bry³ek. ");
+    Log_SetTopicStatus       (CH3_WoodForCavalorn, LOG_SUCCESS);
+    MIS_WoodForCavalorn = LOG_SUCCESS;
+	
+	CreateInvItems (self, ItMiNugget, 80);
+    B_GiveInvItems (self, other, ItMiNugget, 80);
+	getmoneyfor_Jonas = true;
+};
 
 ////////////////////////////////////////////////
 // USUNIÊTE 
