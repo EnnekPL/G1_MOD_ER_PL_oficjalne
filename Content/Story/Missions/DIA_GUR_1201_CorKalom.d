@@ -647,6 +647,12 @@ FUNC VOID DIA_CorKalom_MessengerIglica_Info()
 	Npc_ExchangeRoutine (GUR_1208_BaalCadar, "messenger");
 };
 
+func void messenger_spawn ()
+{
+	Wld_PlayEffect("spellFX_Demon",hero,self, 0, 0, 0, TRUE);
+	Wld_SpawnNpcRange	(hero,OrcMessengerRecalled,	1,	500);
+};
+
 //========================================
 //-----------------> ReadyToCall
 //========================================
@@ -675,14 +681,15 @@ FUNC VOID DIA_CorKalom_ReadyToCall_Info()
 {
     AI_Output (self, other ,"DIA_CorKalom_ReadyToCall_03_01"); //Jesteœ. A wiêc zaczynajmy. 
 	AI_GotoWP (self, "PSI_MESSENGER_RITUAL"); 
-    AI_Output (self, other ,"DIA_CorKalom_ReadyToCall_03_02"); //O wielki Œni¹cy! Uznaj nasze pragnienia  kontaktu z tw¹ nieskoñczon¹ chwa³¹!
+    AI_Output (self, other ,"DIA_CorKalom_ReadyToCall_03_02"); //O wielki Œni¹cy! Uznaj nasze pragnienia kontaktu z tw¹ nieskoñczon¹ chwa³¹!
     AI_Output (self, other ,"DIA_CorKalom_ReadyToCall_03_03"); //Jako zapowiedŸ swego tryumfalnego nadejœcia, ujawnij teraz swego pos³añca!
-	Wld_PlayEffect("spellFX_Demon",hero,self, 0, 0, 0, TRUE);
+	
 	AI_StopProcessInfos (Self);
-	Wld_SpawnNpcRange	(self,OrcMessengerRecalled,	1,	800);
+	
 	B_GiveXP (500);
 	
 	B_LogEntry(CH2_MessengerRecall, "Coœ chyba posz³o nie tak. Kalom przywo³a³ istotê podobn¹ do orka. Cokolwiek to by³o od razu zaatakowa³o wszystkich wokó³.");
+	AI_Function (self, messenger_spawn);
 };
 
 //========================================

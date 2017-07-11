@@ -19,7 +19,8 @@ FUNC void ZS_Talk ()
 		AI_ContinueRoutine	(self);
 		return;				
 	};
-	
+	CreateInvItems (hero, itminugget, 1);
+	Npc_RemoveInvItems (hero, itminugget,1);
 	C_ZSInit();	
 	B_SetFaceExpression(self, other); //Attitüde bestimmt Gesichtsausdruck
 

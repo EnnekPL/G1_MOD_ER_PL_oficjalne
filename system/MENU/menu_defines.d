@@ -32,6 +32,7 @@
 	// StaticScreen
 	const string STAT_FONT_DEFAULT		= "font_old_10_white.tga";
 	const string STAT_FONT_TITLE		= "font_old_10_white.tga";
+	const string STAT_FONT_BALLS		= "FONT_NEW_STATS_BALLS.tga";
 	
 
 

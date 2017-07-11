@@ -323,7 +323,8 @@ CONST STRING TXT_TALENTS_DESC [NPC_TALENT_MAX] =
 CONST STRING TXT_TALENTS_SKILLS [NPC_TALENT_MAX] = 
 {
 	"|poz.1|poz.2",	
-	"poz. 0/10|poz. 1/10|poz. 2/10|poz. 3/10|poz. 4/10|poz. 5/10|poz. 6/10|poz. 7/10|poz. 8/10|poz. 9/10|poz. 10/10",	//NPC_TALENT_1H          
+	//"poz. 0/10 | poz. 1/10 | poz. 2/10 | poz. 3/10 |poz. 4/10|poz. 5/10|poz. 6/10|poz. 7/10|poz. 8/10|poz. 9/10|poz. 10/10",	//NPC_TALENT_1H    
+	"# 0/10 |$ 1/10 |& 2/10 |? 3/10 |@ 4/10|X 5/10|Y 6/10|x 7/10|y 8/10|v 9/10|q 10/10",	
 	"poz. 0/10|poz. 1/10|poz. 2/10|poz. 3/10|poz. 4/10|poz. 5/10|poz. 6/10|poz. 7/10|poz. 8/10|poz. 9/10|poz. 10/10",	//NPC_TALENT_2H           
 	"poz. 0/2|poz. 1/2|poz. 2/2",								//NPC_TALENT_BOW         
 	"poz. 0/2|poz. 1/2|poz. 2/2",								//NPC_TALENT_CROSSBOW    
