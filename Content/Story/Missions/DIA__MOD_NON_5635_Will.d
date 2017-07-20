@@ -190,6 +190,10 @@ FUNC VOID DIA_Will_ThompsonDED_Info()
     AI_Output (other, self ,"DIA_Will_ThompsonDED_15_13"); //Co mam zrobiæ?
     AI_Output (self, other ,"DIA_Will_ThompsonDED_03_14"); //Szybko siê uczysz. TRZY ZAUFANE OSOBY, tylko o tyle ciê proszê. Postaraj siê! Dwóch robotników i jeden ma³o wygadany ochroniarz. Zapamiêtasz?
     AI_Output (self, other ,"DIA_Will_ThompsonDED_03_15"); //Zadbaj, ¿eby mieli kompetencje, a jak ju¿ zbierzesz ekipê, to przyjdŸ do mnie.
+	AI_Output (other, self ,"DIA_Will_ThompsonDED_15_16"); //Niby gdzie mia³bym ich szukaæ?
+	AI_Output (self, other ,"DIA_Will_ThompsonDED_03_17"); //U¿yj g³owy. Nawi¹¿ jakieœ przydatne znajomoœci. Poszukaj jakichœ desperatów, cokolwiek. Mo¿e nawet tutaj kogoœ znajdziesz. Pogadaj z ludŸmi w karczmie. 
+	AI_Output (self, other ,"DIA_Will_ThompsonDED_03_18"); //Z tego co mi wiadomo to niejaki Kosa by³ niegdyœ ³owc¹ g³ów. Mo¿e on da ci jak¹œ wskazówkê?
+	AI_Output (other, self ,"DIA_Will_ThompsonDED_15_19"); //W porz¹dku. Zacznê od karczmy a rozejrzê siê dalej. 
     B_LogEntry               (CH2_WillQuest,"Thompson nie ¿yje, a Will by³ pe³en podziwu. Co wiêcej, ten tajemniczy cz³owiek opowiedzia³ mi o ¿yle z³ota, któr¹ znalaz³ w Kolonii. Wiedzia³em, ¿e znajomoœæ z nim siê op³aci.");
     Log_SetTopicStatus       (CH2_WillQuest, LOG_SUCCESS);
     MIS_WillQuest = LOG_SUCCESS;
@@ -201,7 +205,7 @@ FUNC VOID DIA_Will_ThompsonDED_Info()
 
     Log_CreateTopic          (CH2_GoldMine, LOG_MISSION);
     Log_SetTopicStatus       (CH2_GoldMine, LOG_RUNNING);
-    B_LogEntry               (CH2_GoldMine,"Will w sekrecie zdradzi³ mi, ¿e odnalaz³ w Kolonii ¿y³ê z³ota. Oznacza to dla nas ca³kiem niez³y zarobek, o ile pomogê mu zorganizowaæ wydobycie. Mam zebraæ ekipê, która podjê³aby siê pracy w ma³ej kopalni z³ota. Potrzebni s¹ dwaj robotnicy i jeden ochroniarz. Tylko, gdzie ja znajdê takich ludzi...");
+    B_LogEntry               (CH2_GoldMine,"Will w sekrecie zdradzi³ mi, ¿e odnalaz³ w Kolonii ¿y³ê z³ota. Oznacza to dla nas ca³kiem niez³y zarobek, o ile pomogê mu zorganizowaæ wydobycie. Mam zebraæ ekipê, która podjê³aby siê pracy w ma³ej kopalni z³ota. Potrzebni s¹ dwaj robotnicy i jeden ochroniarz. Will poleci³ mi zacz¹æ poszukiwania od karczmy. Poza tym Najemnik Kosa byæ mo¿e bêdzie mi móg³ coœ doradziæ.");
     AI_StopProcessInfos	(self);
 };
 
@@ -246,7 +250,7 @@ INSTANCE DIA_Will_Rekrut_Shrat (C_INFO)
    condition    = DIA_Will_Rekrut_Shrat_Condition;
    information  = DIA_Will_Rekrut_Shrat_Info;
    permanent	= FALSE;
-   description	= "Shrat chce dla ciebie pracowaæ.";
+   description	= "Ghorim chce dla ciebie pracowaæ.";
 };
 
 FUNC INT DIA_Will_Rekrut_Shrat_Condition()
@@ -261,8 +265,8 @@ FUNC INT DIA_Will_Rekrut_Shrat_Condition()
 
 FUNC VOID DIA_Will_Rekrut_Shrat_Info()
 {
-    AI_Output (other, self ,"DIA_Will_Rekrut_Shrat_15_01"); //Shrat chce dla ciebie pracowaæ. To jeden z Nowicjuszy, renegat.
-    AI_Output (self, other ,"DIA_Will_Rekrut_Shrat_03_02"); //Mam nadziejê, ¿e to go zdeterminuje do pracy!
+    AI_Output (other, self ,"DIA_Will_Rekrut_Shrat_15_01"); //Ghorim chce dla ciebie pracowaæ.
+    AI_Output (self, other ,"DIA_Will_Rekrut_Shrat_03_02"); //Dobra robota. Robotnicy s¹ mi potrzebni.
 };
 
 //========================================
@@ -552,7 +556,7 @@ FUNC VOID DIA_Will_Ruchy_Info()
     Npc_ExchangeRoutine (will, "guide");
 	will.flags = 2;
 	AI_StopProcessInfos	(will);
-	var c_npc shrat; shrat = Hlp_GetNpc (NOV_1356_Shrat);
+	var c_npc shrat; shrat = Hlp_GetNpc (NOV_1310_Ghorim);
 	var c_npc schut; schut = Hlp_GetNpc (SFB_1001_Schuerfer);
 	var c_npc magnus; magnus = Hlp_GetNpc (NON_5675_Magnus);
 	Npc_ExchangeRoutine (shrat, "FOLLOW");
@@ -645,7 +649,7 @@ FUNC VOID DIA_Will_PrzystanekZamosc_Info()
     B_GiveXP (100);
 	
 	var c_npc will; will = Hlp_GetNpc (NON_5635_Will);
-	var c_npc shrat; shrat = Hlp_GetNpc (NOV_1356_Shrat);
+	var c_npc shrat; shrat = Hlp_GetNpc (NOV_1310_Ghorim);
 	var c_npc schut; schut = Hlp_GetNpc (SFB_1001_Schuerfer);
 	var c_npc magnus; magnus = Hlp_GetNpc (NON_5675_Magnus);
 	

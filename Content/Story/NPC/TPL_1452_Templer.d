@@ -30,7 +30,7 @@ instance TPL_1452_Templer (Npc_Default)
 	Mdl_SetVisual		(self,"HUMANS.MDS");
 	Mdl_ApplyOverlayMds	(self,"Humans_Mage.mds");
 	//			body mesh     ,bdytex,skin,head mesh     ,headtex,teethtex,ruestung	
-	Mdl_SetVisualBody (self,"hum_body_Naked0", 1, 1 ,"Hum_Head_Bald", 117,  2, TPL_ARMOR_M);
+	Mdl_SetVisualBody (self,"hum_body_Naked0", 1, 1 ,"Hum_Head_Bald", 117,  2, TPL_ARMOR_H);
 
 	B_Scale (self);
 	Mdl_SetModelFatness(self,1);
@@ -39,7 +39,7 @@ instance TPL_1452_Templer (Npc_Default)
 	
 	//-------- Talente -------- 
 
-	Npc_SetTalentSkill (self, NPC_TALENT_2H,4);
+	Npc_SetTalentSkill (self, NPC_TALENT_2H,10);
 	
 	//-------- inventory --------
 	

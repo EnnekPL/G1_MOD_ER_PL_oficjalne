@@ -57,3 +57,19 @@ func void Rtn_start_1310 ()
 	TA_Sleep 		(23,55,06,55,"PSI_6_HUT_IN_BED3");
 };
 
+FUNC VOID Rtn_wait_1310 ()
+{
+   TA_Stand	(08,00,20,00,"SHRAT2");
+   TA_Stay	(20,00,08,00,"SHRAT2");
+};
+FUNC VOID Rtn_follow2_1310 ()
+{
+   TA_FollowPC	(08,00,20,00,"OW_PATH_067");
+   TA_FollowPC	(20,00,08,00,"OW_PATH_067");
+};
+
+func void Rtn_mine_1310 ()
+{
+	TA_PickOre	(23,00,16,00,"GOLDMINE_SHRAT");
+	TA_PickOre	(16,00,23,00,"GOLDMINE_SHRAT");
+};

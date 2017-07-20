@@ -331,9 +331,9 @@ instance WD_7046_GhostKinggardist (Npc_Default)
 	
 	name =					"Duch królewskiego stra¿nika";
 	Npctype =				Npctype_Main;
-	guild =					GIL_NONE;      
+	guild =					GIL_MEATBUG;      
 	level =					16;
-	
+	flags = 2;
 	voice =					6;
 	id =					7046;
 
@@ -378,7 +378,11 @@ FUNC VOID Rtn_start_7046 ()
 	TA_Stay		(08,00,00,00,"ER_WD_GHOST_01");
 };
 
-
+FUNC VOID Rtn_away_7046 ()
+{
+	TA_Stay		(00,00,08,00,"");
+	TA_Stay		(08,00,00,00,"");
+};
 //quest character
 instance WD_7047_DeadNovize (Npc_Default)
 {

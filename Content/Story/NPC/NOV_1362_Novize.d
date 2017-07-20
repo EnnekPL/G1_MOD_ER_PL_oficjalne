@@ -17,8 +17,8 @@ instance NOV_1362_Novize (Npc_Default)
 	attribute[ATR_DEXTERITY] 		=	50;
 	attribute[ATR_MANA_MAX] 		=	0;
 	attribute[ATR_MANA] 			=	0;
-	attribute[ATR_HITPOINTS_MAX] 	=	250;
-	attribute[ATR_HITPOINTS] 		=	250;
+	attribute[ATR_HITPOINTS_MAX] 	=	290;
+	attribute[ATR_HITPOINTS] 		=	290;
 
 	//------ Protection -------
 	protection	[PROT_BLUNT]		=	1000;
@@ -39,7 +39,7 @@ instance NOV_1362_Novize (Npc_Default)
 	fight_tactic	=	FAI_HUMAN_STRONG;
 
 	//-------- Talente --------
-	
+	Npc_SetTalentSkill (self, NPC_TALENT_2H,4);	
 		
 	//-------- inventory --------
 

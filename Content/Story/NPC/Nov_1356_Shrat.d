@@ -75,13 +75,3 @@ FUNC VOID Rtn_hunters_1356 ()
    TA_CookForMe	(12,30,17,00,"CAMP_SHRAT");
    TA_Smoke	(17,00,06,00,"CAMP_SHRAT");
 };
-FUNC VOID Rtn_wait_1356 ()
-{
-   TA_Stand	(08,00,20,00,"SHRAT2");
-   TA_Stay	(20,00,08,00,"SHRAT2");
-};
-FUNC VOID Rtn_follow2_1356 ()
-{
-   TA_FollowPC	(08,00,20,00,"OW_PATH_067");
-   TA_FollowPC	(20,00,08,00,"OW_PATH_067");
-};

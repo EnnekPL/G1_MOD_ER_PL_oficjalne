@@ -26,6 +26,57 @@ func int B_GiveSkill(var C_NPC typ, var int TAL, var int NEW_Wert, var int LP_Co
 				Npc_SetTalentSkill(typ, NPC_TALENT_1H, NEW_Wert);
 				Npc_SetTalentValue(typ, NPC_TALENT_1H, Npc_GetTalentValue(typ, NPC_TALENT_1H)+5); //zmienione z piêciu na 1 poniewa¿ 10 poziomów x 1pkt krytyka = 10%
 				PrintScreen	("Nowa umiejêtnoœæ: Walka jednorêcznym orê¿em", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
+				if (NEW_Wert == 1)
+				{
+				PrintScreen	("Mno¿nik obra¿eñ: 60%", -1,55,"FONT_OLD_10_WHITE.TGA",2);
+				PrintScreen	("Postawa bojowa: Amator", -1,58,"FONT_OLD_10_WHITE.TGA",2);
+				}
+				else if (NEW_Wert == 2)
+				{
+				PrintScreen	("Mno¿nik obra¿eñ: 70%", -1,55,"FONT_OLD_10_WHITE.TGA",2);
+				PrintScreen	("Postawa bojowa: Amator", -1,58,"FONT_OLD_10_WHITE.TGA",2);
+				}
+				else if (NEW_Wert == 3)
+				{
+				PrintScreen	("Mno¿nik obra¿eñ: 80%", -1,55,"FONT_OLD_10_WHITE.TGA",2);
+				PrintScreen	("Postawa bojowa: Amator", -1,58,"FONT_OLD_10_WHITE.TGA",2);
+				}
+				else if (NEW_Wert == 4)
+				{
+				PrintScreen	("Mno¿nik obra¿eñ: 90%", -1,55,"FONT_OLD_10_WHITE.TGA",2);
+				PrintScreen	("Postawa bojowa: Wojownik", -1,58,"FONT_OLD_10_WHITE.TGA",2);
+				}
+				else if (NEW_Wert == 5)
+				{
+				PrintScreen	("Mno¿nik obra¿eñ: 100%", -1,55,"FONT_OLD_10_WHITE.TGA",2);
+				PrintScreen	("Postawa bojowa: Wojownik", -1,58,"FONT_OLD_10_WHITE.TGA",2);
+				}
+				else if (NEW_Wert == 6)
+				{
+				PrintScreen	("Mno¿nik obra¿eñ: 110%", -1,55,"FONT_OLD_10_WHITE.TGA",2);
+				PrintScreen	("Postawa bojowa: Wojownik", -1,58,"FONT_OLD_10_WHITE.TGA",2);
+				}
+				else if (NEW_Wert == 7)
+				{
+				PrintScreen	("Mno¿nik obra¿eñ: 120%", -1,55,"FONT_OLD_10_WHITE.TGA",2);
+				PrintScreen	("Postawa bojowa: Mistrz", -1,58,"FONT_OLD_10_WHITE.TGA",2);
+				}
+				else if (NEW_Wert == 8)
+				{
+				PrintScreen	("Mno¿nik obra¿eñ: 130%", -1,55,"FONT_OLD_10_WHITE.TGA",2);
+				PrintScreen	("Postawa bojowa: Mistrz", -1,58,"FONT_OLD_10_WHITE.TGA",2);
+				}
+				else if (NEW_Wert == 9)
+				{
+				PrintScreen	("Mno¿nik obra¿eñ: 140%", -1,55,"FONT_OLD_10_WHITE.TGA",2);
+				PrintScreen	("Postawa bojowa: Mistrz", -1,58,"FONT_OLD_10_WHITE.TGA",2);
+				}
+				else if (NEW_Wert == 10)
+				{
+				PrintScreen	("Mno¿nik obra¿eñ: 150%", -1,55,"FONT_OLD_10_WHITE.TGA",2);
+				PrintScreen	("Postawa bojowa: Mistrz", -1,58,"FONT_OLD_10_WHITE.TGA",2);
+				};
+				
 				return 1;
 			}
 			else if (tal == NPC_TALENT_2H)
@@ -33,6 +84,56 @@ func int B_GiveSkill(var C_NPC typ, var int TAL, var int NEW_Wert, var int LP_Co
 				Npc_SetTalentSkill(typ, NPC_TALENT_2H, NEW_Wert);
 				Npc_SetTalentValue(typ, NPC_TALENT_2H, Npc_GetTalentValue(typ, NPC_TALENT_2H)+5); //-II-
 				PrintScreen	("Nowa umiejêtnoœæ: Walka dwurêcznym orê¿em", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
+				if (NEW_Wert == 1)
+				{
+				PrintScreen	("Mno¿nik obra¿eñ: 60%", -1,55,"FONT_OLD_10_WHITE.TGA",2);
+				PrintScreen	("Postawa bojowa: Amator", -1,58,"FONT_OLD_10_WHITE.TGA",2);
+				}
+				else if (NEW_Wert == 2)
+				{
+				PrintScreen	("Mno¿nik obra¿eñ: 70%", -1,55,"FONT_OLD_10_WHITE.TGA",2);
+				PrintScreen	("Postawa bojowa: Amator", -1,58,"FONT_OLD_10_WHITE.TGA",2);
+				}
+				else if (NEW_Wert == 3)
+				{
+				PrintScreen	("Mno¿nik obra¿eñ: 80%", -1,55,"FONT_OLD_10_WHITE.TGA",2);
+				PrintScreen	("Postawa bojowa: Amator", -1,58,"FONT_OLD_10_WHITE.TGA",2);
+				}
+				else if (NEW_Wert == 4)
+				{
+				PrintScreen	("Mno¿nik obra¿eñ: 90%", -1,55,"FONT_OLD_10_WHITE.TGA",2);
+				PrintScreen	("Postawa bojowa: Wojownik", -1,58,"FONT_OLD_10_WHITE.TGA",2);
+				}
+				else if (NEW_Wert == 5)
+				{
+				PrintScreen	("Mno¿nik obra¿eñ: 100%", -1,55,"FONT_OLD_10_WHITE.TGA",2);
+				PrintScreen	("Postawa bojowa: Wojownik", -1,58,"FONT_OLD_10_WHITE.TGA",2);
+				}
+				else if (NEW_Wert == 6)
+				{
+				PrintScreen	("Mno¿nik obra¿eñ: 110%", -1,55,"FONT_OLD_10_WHITE.TGA",2);
+				PrintScreen	("Postawa bojowa: Wojownik", -1,58,"FONT_OLD_10_WHITE.TGA",2);
+				}
+				else if (NEW_Wert == 7)
+				{
+				PrintScreen	("Mno¿nik obra¿eñ: 120%", -1,55,"FONT_OLD_10_WHITE.TGA",2);
+				PrintScreen	("Postawa bojowa: Mistrz", -1,58,"FONT_OLD_10_WHITE.TGA",2);
+				}
+				else if (NEW_Wert == 8)
+				{
+				PrintScreen	("Mno¿nik obra¿eñ: 130%", -1,55,"FONT_OLD_10_WHITE.TGA",2);
+				PrintScreen	("Postawa bojowa: Mistrz", -1,58,"FONT_OLD_10_WHITE.TGA",2);
+				}
+				else if (NEW_Wert == 9)
+				{
+				PrintScreen	("Mno¿nik obra¿eñ: 140%", -1,55,"FONT_OLD_10_WHITE.TGA",2);
+				PrintScreen	("Postawa bojowa: Mistrz", -1,58,"FONT_OLD_10_WHITE.TGA",2);
+				}
+				else if (NEW_Wert == 10)
+				{
+				PrintScreen	("Mno¿nik obra¿eñ: 150%", -1,55,"FONT_OLD_10_WHITE.TGA",2);
+				PrintScreen	("Postawa bojowa: Mistrz", -1,58,"FONT_OLD_10_WHITE.TGA",2);
+				};
 				return 1;
 			}
 			else if (tal == NPC_TALENT_BOW)
@@ -40,6 +141,16 @@ func int B_GiveSkill(var C_NPC typ, var int TAL, var int NEW_Wert, var int LP_Co
 				Npc_SetTalentSkill(typ, NPC_TALENT_BOW, NEW_Wert);
 				Npc_SetTalentValue(typ, NPC_TALENT_BOW, Npc_GetTalentValue(typ, NPC_TALENT_BOW)+15);
 				PrintScreen	("Nowa umiejêtnoœæ: Strzelanie z ³uku", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
+				if (NEW_Wert == 1)
+				{
+				
+				PrintScreen	("Postawa bojowa: Strzelec", -1,58,"FONT_OLD_10_WHITE.TGA",2);
+				}
+				else if (NEW_Wert == 2)
+				{
+				
+				PrintScreen	("Postawa bojowa: Mistrz", -1,58,"FONT_OLD_10_WHITE.TGA",2);
+				};
 				return 1;
 			}
 			else if (tal == NPC_TALENT_CROSSBOW)
@@ -47,6 +158,16 @@ func int B_GiveSkill(var C_NPC typ, var int TAL, var int NEW_Wert, var int LP_Co
 				Npc_SetTalentSkill(typ, NPC_TALENT_CROSSBOW, NEW_Wert);
 				Npc_SetTalentValue(typ, NPC_TALENT_CROSSBOW, Npc_GetTalentValue(typ, NPC_TALENT_CROSSBOW)+20);
 				PrintScreen	("Nowa umiejêtnoœæ: Strzelanie z kuszy", -1,-1,"FONT_OLD_20_WHITE.TGA",2);
+				if (NEW_Wert == 1)
+				{
+				
+				PrintScreen	("Postawa bojowa: Strzelec", -1,58,"FONT_OLD_10_WHITE.TGA",2);
+				}
+				else if (NEW_Wert == 2)
+				{
+				
+				PrintScreen	("Postawa bojowa: Mistrz", -1,58,"FONT_OLD_10_WHITE.TGA",2);
+				};
 				return 1;
 			}
 			else if (tal == NPC_TALENT_PICKLOCK)

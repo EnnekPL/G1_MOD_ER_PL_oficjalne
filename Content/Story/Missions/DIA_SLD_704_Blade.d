@@ -177,6 +177,44 @@ FUNC VOID DIA_Blade_InFreeMineCamp_Info()
 };
 
 
+////////////////////////////////////////////////
+//   About Recruit
+////////////////////////////////////////////////
+
+INSTANCE DIA_Blade_About_Recruit (C_INFO)
+{
+   npc          = SLD_704_Blade;
+   nr           = 1;
+   condition    = DIA_Blade_About_Recruit_Condition;
+   information  = DIA_Blade_About_Recruit_Info;
+   permanent	= FALSE;
+   description	= "Podobno mo¿esz mi pomóc.";
+};
+
+FUNC INT DIA_Blade_About_Recruit_Condition()
+{
+    if (Npc_KnowsInfo (hero, DIA_Will_ThompsonDED)) && (!Npc_KnowsInfo (hero, DIA_Will_Rekrut_Shrat))
+    {
+    return TRUE;
+    };
+};
+
+
+FUNC VOID DIA_Blade_About_Recruit_Info()
+{
+    AI_Output (other, self ,"DIA_Blade_About_Recruit_15_01"); //Podobno mo¿esz mi pomóc.
+    AI_Output (self, other ,"DIA_Blade_About_Recruit_03_02"); //Czy¿by? A w czym?
+    AI_Output (other, self ,"DIA_Blade_About_Recruit_15_03"); //Podobno znasz siê na poszukiwaniu wiarygodnych pracowników.
+    AI_Output (self, other ,"DIA_Blade_About_Recruit_03_04"); //Hmm... Czego chcesz?
+    AI_Output (other, self ,"DIA_Blade_About_Recruit_15_05"); //Muszê zrekrutowaæ robotnika. Nie wiem od czego zacz¹æ poszukiwania.
+    AI_Output (self, other ,"DIA_Blade_About_Recruit_03_06"); //Nie wiem dlaczego mia³bym ci pomagaæ, ale jeœli potrzebujesz tylko robotnika to szukaj wœród Kopaczy lub Nowicjuszy. 
+    AI_Output (self, other ,"DIA_Blade_About_Recruit_03_07"); //Proponowa³bym udaæ siê do Bractwa. Bramy w Starym Obozie s¹ strze¿one i ciê¿ko kogoœ stamt¹d wyprowadziæ. 
+    AI_Output (self, other ,"DIA_Blade_About_Recruit_03_08"); //Wœród sekciarzy rozgl¹daj siê za kimœ, komu nie odpowiada ¿ycie w obozie. £atwiej bêdzie ci go namówiæ.
+    AI_Output (other, self ,"DIA_Blade_About_Recruit_15_09"); //Tylko tyle?
+    AI_Output (self, other ,"DIA_Blade_About_Recruit_03_10"); //Dosta³eœ za darmo ca³kiem dobre rady. A teraz spadaj! 
+   
+    B_LogEntry               (CH2_GoldMine,"Kosa poleci³ mi szukaæ robotnika w obozie Bractwa.");
+};
 
 
 //************************************************************

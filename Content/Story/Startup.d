@@ -1378,6 +1378,7 @@ FUNC VOID STARTUP_SUB_SURFACE ()
 	//Npc_SetAttitude			(wd_7044,ATT_HOSTILE);
 	Wld_InsertNpc				(WD_7045_DeadHunter,"SPAWN_OW_MOLERATL__PSIWOOD_01");
 	Wld_InsertNpc				(WD_7046_GhostKinggardist,"ER_WD_GHOST_01");
+	//SetGhost(WD_7049_BanditGhost, 60);
 	
 	
 	//-----------Buddler vorm OC---------------------------------------------
@@ -3336,10 +3337,6 @@ FUNC VOID STARTUP_ORCTEMPEL ()
 	// ------------------ PSI ----------------------------------------
 	// ---------------------------------------------------------------
 	
-	//------------------ rabusie =======----------------------------
-	Wld_InsertNpc				( NON_3924_Rabus, "BANDIT_1" );
-	Wld_InsertNpc				( NON_3925_Rabus, "BANDIT_1" );
-	Wld_InsertNpc				( NON_3926_HersztGrupy, "BANDIT_1" );
 	// TPL - Vorstufe (Rüstung 150)
 	Wld_InsertNpc				( TPL_1455_GorBoba, "TPL_408" ); // Spricht den SC an
 	Wld_InsertNpc				( TPL_1447_Templer, "TPL_408" ); 

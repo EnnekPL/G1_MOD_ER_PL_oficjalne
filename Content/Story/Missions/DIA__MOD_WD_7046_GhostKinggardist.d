@@ -69,7 +69,7 @@ FUNC VOID DIA_GhostKinggardist_HELLO1_Info()
 	AI_Output (other, self ,"DIA_GhostKinggardist_HELLO1_15_24"); //Myœlê, ¿e mówisz o jeziorze znajduj¹cym siê przy Nowym Obozie. Rozejrzê siê tam. 
 	
 	Wld_InsertNpc				(WD_7049_BanditGhost,"GHOST_OLDBANDIT");	
-	SetGhost(WD_7049_BanditGhost, 60);
+	
 	
 	MIS_GhostsOldStories = LOG_RUNNING;
 	Log_CreateTopic		(Ch1_GhostsOldStories, LOG_MISSION); //fix
@@ -126,4 +126,5 @@ FUNC VOID DIA_GhostKinggardist_GiveBag_Info()
     B_GiveInvItems (other, self, ItMi_GhostsBagSpecial, 1);
     B_GiveXP (1000);
     AI_StopProcessInfos	(self);
+	Npc_ExchangeRoutine (self, "away");
 };
