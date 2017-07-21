@@ -26,7 +26,6 @@
 - dodana nagroda od Alexa za ratunek (wyci¹g zwinnoœci)
 - usuniêto mo¿liwoœæ zabrania klucza do celi Alexa od stra¿nika (pozstaje okup, który zosta³ trochê rozbudowany)
 - poprawiono spawnowanie pos³añca Œni¹cego (ju¿ nie podczas dialogu z Kalomem)
-- kosmetyczne zmiany w menu statystyk
 
 1.4.82
 - Lukor dzieli siê z nami punktami XP za przeciwników pokonanych na cmentarzysku orków

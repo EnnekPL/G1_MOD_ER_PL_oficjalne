@@ -559,7 +559,7 @@ FUNC VOID DIA_Will_Ruchy_Info()
 	var c_npc shrat; shrat = Hlp_GetNpc (NOV_1310_Ghorim);
 	var c_npc schut; schut = Hlp_GetNpc (SFB_1001_Schuerfer);
 	var c_npc magnus; magnus = Hlp_GetNpc (NON_5675_Magnus);
-	Npc_ExchangeRoutine (shrat, "FOLLOW");
+	Npc_ExchangeRoutine (shrat, "FOLLOW2");
 	shrat.flags = 2;
 	Npc_ExchangeRoutine (schut, "FOLLOW");
 	schut.flags = 2;

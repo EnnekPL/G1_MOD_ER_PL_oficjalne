@@ -74,7 +74,7 @@ instance  DIA_Ghorim_SUCCESS (C_INFO)
 
 FUNC int  DIA_Ghorim_SUCCESS_Condition()
 {
-	if (Ghorim_KickHarlok == LOG_SUCCESS)
+	if (Ghorim_KickHarlok == LOG_SUCCESS) && (!Npc_KnowsInfo (hero,DIA_Shrat_GoldMine)) 
 	{
 		return 1;
 	};
