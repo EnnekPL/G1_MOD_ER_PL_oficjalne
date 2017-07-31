@@ -327,10 +327,7 @@ FUNC VOID Cord_nauka1h3 ()
 		AI_Output (self,other,"DIA_Cord_TRAIN_1h_npc_10"); //Pamiêtasz o balansowaniu cia³em? A o odpowiedniej odleg³oœci od przeciwnika? 
 		AI_Output (self,other,"DIA_Cord_TRAIN_1h_npc_11"); //Spróbuj wyczuæ ile si³y musisz u¿yæ, aby broñ uderza³a mocno, a przy tym nie polecia³a bez³adnie przed siebie. 
 		AI_Output (self,other,"DIA_Cord_TRAIN_1h_npc_12"); //Gdy to opanujesz, bêdziemy mogli pomyœleæ nad ³¹czeniem po sobie uderzeñ. 
-		AI_Output (self,other,"DIA_Cord_TRAIN_1h_npc_13"); //Poka¿ mi jeszcze jak wyci¹gasz broñ. Robisz jakieœ postêpy?
-		AI_DrawWeapon (other);
-		AI_Output (self,other,"DIA_Cord_TRAIN_1h_npc_14"); //Rêce opadaj¹... Nie dwiema, tylko jedn¹! Omówimy to na nastêpnej lekcji.
-		AI_RemoveWeapon (other);
+		
 		B_GiveInvItems(other,self,itminugget,300);
 		};
 	}
